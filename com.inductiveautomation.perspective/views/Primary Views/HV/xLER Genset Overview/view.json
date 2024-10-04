@@ -1,0 +1,275 @@
+{
+  "custom": {
+    "controlPopupId": "High Voltage/xLER Substations/All Standby GensetsCmd",
+    "deviceTagPath": "High Voltage/xLER Substations/All Standby Gensets"
+  },
+  "params": {
+    "deviceName": "All Standby Gensets",
+    "deviceParentPath": "High Voltage/xLER Substations",
+    "sitePath": "High Voltage/Domestic/Bennett Substation"
+  },
+  "propConfig": {
+    "custom.controlPopupId": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.deviceTagPath} + \"Cmd\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "xLER Overview"
+        },
+        "position": {
+          "height": 0.2596,
+          "width": 0.1719,
+          "x": 0.1862,
+          "y": 0.0651
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/TLER Substation/Genset PLC"
+          },
+          "path": "Templates/HV/xLER Genset/xLER Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "xLER Overview_0"
+        },
+        "position": {
+          "height": 0.2596,
+          "width": 0.1719,
+          "x": 0.4166,
+          "y": 0.0651
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/International/WLER Substation/Genset PLC"
+          },
+          "path": "Templates/HV/xLER Genset/xLER Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "xLER Overview_1"
+        },
+        "position": {
+          "height": 0.2596,
+          "width": 0.1719,
+          "x": 0.647,
+          "y": 0.0651
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/NLER Substation/Genset PLC"
+          },
+          "path": "Templates/HV/xLER Genset/xLER Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "xLER Overview_2"
+        },
+        "position": {
+          "height": 0.2596,
+          "width": 0.1719,
+          "x": 0.186,
+          "y": 0.3904
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/LLER Substation/Genset PLC"
+          },
+          "path": "Templates/HV/xLER Genset/xLER Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "xLER Overview_3"
+        },
+        "position": {
+          "height": 0.2596,
+          "width": 0.1719,
+          "x": 0.4164,
+          "y": 0.3904
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/ELER Substation/Genset PLC"
+          },
+          "path": "Templates/HV/xLER Genset/xLER Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "xLER Overview_4"
+        },
+        "position": {
+          "height": 0.2596,
+          "width": 0.1719,
+          "x": 0.6468,
+          "y": 0.3904
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/SLER Substation/Genset PLC"
+          },
+          "path": "Templates/HV/xLER Genset/xLER Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Start Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Start Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0415,
+          "width": 0.0703,
+          "x": 0.0571,
+          "y": 0.715
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry(\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/High Voltage\u0027),\r\nfalse) //fallback"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/not_started"
+            }
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "All Start"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Stop Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Stop Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.0415,
+          "width": 0.0703,
+          "x": 0.0571,
+          "y": 0.8127
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry(\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/High Voltage\u0027),\r\nfalse) //fallback"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/stop_circle"
+            }
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "All Stop"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

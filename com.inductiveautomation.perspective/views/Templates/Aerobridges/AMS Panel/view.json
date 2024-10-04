@@ -1,0 +1,289 @@
+{
+  "custom": {
+    "deviceDescription": "AMS Panel",
+    "deviceLocation": "International",
+    "deviceTagPath": "International/T1/Pier B/Arrivals/Aerobridge 30_test",
+    "deviceTypePath": "International/T1/Pier B/Arrivals/Aerobridge 30_test/AMS Panel Alarms",
+    "tags": []
+  },
+  "params": {
+    "alwaysVisible": false,
+    "deviceName": "Aerobridge 30_test",
+    "deviceParentPath": "International/T1/Pier B/Arrivals",
+    "deviceType": "AMS Panel Alarms",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+    "popupWindow": "Popups/Aerobridge/AMS Panel"
+  },
+  "propConfig": {
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTypePath": "{view.custom.deviceTypePath}"
+          },
+          "tagPath": "{deviceTypePath}/Parameters.Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceLocation": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "transforms": [
+          {
+            "code": "\tword_to_search_1 \u003d \"International\"\n\tword_to_search_2 \u003d \"Domestic\"\n\t\n\tif word_to_search_1 in value:\n\t    result \u003d word_to_search_1\n\telif word_to_search_2 in value:\n\t    result \u003d word_to_search_2\n\telse:\n\t    result \u003d \"Neither word found\"\n\t\n\treturn(result)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceTypePath": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.deviceTagPath}+\u0027/\u0027+{view.params.deviceType}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.alwaysVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceType": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.popupWindow": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 34,
+      "width": 64
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "2333048"
+            },
+            "position": {
+              "basis": "300px"
+            },
+            "props": {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "m4.5922 485.99c-2.8519-1.4211-6.9146-4.5486-9.0282-6.9498-7.7808-8.8394-7.1793 9.3804-7.1793-217.47 0-226.85-0.60149-208.63 7.1793-217.47 2.1137-2.4012 6.1764-5.5286 9.0282-6.9498l5.1852-2.5839 234.55 0.02196c225.89 0.02115 234.7 0.09014 238.62 1.8684 5.8841 2.6725 11.173 7.6912 14.249 13.52l2.6858 5.09 0.52782 273.19-2.0865 2.6525c-2.084 2.6493-6.9568 3.6131-9.5416 1.8872-3.3204-2.2171-3.3997-4.5406-3.3997-99.669v-94.566h-214.57c-149.33 0-215.17-0.32252-216.55-1.0608-4.7964-2.567-4.3455-10.498 0.72825-12.809 1.8181-0.82838 59.549-1.1297 216.43-1.1297h213.95l-4e-3 -32.25c-4e-3 -30.202-0.12746-32.453-1.9523-35.446-1.0717-1.7576-3.1877-4.0076-4.7023-5-2.6339-1.726-12.809-1.8043-234.34-1.8043-221.53 0-231.71 0.07834-234.34 1.8043-1.5146 0.99238-3.6306 3.2424-4.7023 5-1.8248 2.9928-1.9488 5.2434-1.9523 35.446l-0.0037 32.25h11.045c10.394 0 11.19 0.14478 13.5 2.4546 3.1496 3.1496 3.2082 7.4888 0.14009 10.371-2.0915 1.9649-3.3918 2.1743-13.5 2.1743h-11.186l0.0037 162.75c0.0037 159.55 0.04201 162.81 1.9523 165.95 1.0717 1.7576 3.1877 4.0076 4.7023 5 2.6342 1.726 12.814 1.8043 234.47 1.8043h231.72l2.8233-2.0711c6.435-4.7204 6.3201-3.6201 6.3218-60.544 2e-3 -50.702 0.0382-51.662 2.0741-54.25 2.8817-3.6635 7.9884-3.6441 10.887 0.0414 2.0894 2.6563 2.103 3.0786 1.8226 56.75l-0.28248 54.074-2.6858 5.09c-3.0754 5.8283-8.3648 10.847-14.249 13.52-3.9153 1.7783-12.726 1.8473-238.62 1.8684l-234.55 0.022zm120.29-76.332c-4.6188-1.998-8.5-8.4231-8.5-14.071 0-2.4269-0.56489-3.0338-3.75-4.0287-2.0625-0.64423-7.2139-2.764-11.448-4.7106l-7.6975-3.5393-3.0835 2.5946c-4.1892 3.525-9.079 4.7656-13.771 3.4942-5.2398-1.4198-20.653-16.833-22.073-22.073-1.2715-4.6925-0.03083-9.5822 3.4942-13.771l2.5946-3.0835-3.5393-7.6975c-1.9466-4.2336-4.0664-9.385-4.7106-11.448-1.0067-3.2229-1.5866-3.75-4.1259-3.75-4.0674 0-8.9078-2.2193-11.89-5.4517-2.4326-2.6364-2.5-3.1094-2.5-17.548s0.06738-14.912 2.5-17.548c2.9825-3.2324 7.8229-5.4517 11.89-5.4517 2.5393 0 3.1192-0.52711 4.1259-3.75 0.64423-2.0625 2.764-7.2139 4.7106-11.448l3.5393-7.6975-2.5946-3.0835c-3.525-4.1892-4.7657-9.079-3.4942-13.771 1.4198-5.2398 16.833-20.653 22.073-22.073 4.6925-1.2715 9.5822-0.0308 13.771 3.4942l3.0835 2.5946 7.6975-3.5393c4.2336-1.9466 9.385-4.0664 11.448-4.7106 3.2229-1.0067 3.75-1.5866 3.75-4.1259 0-4.0674 2.2193-8.9078 5.4517-11.89 2.6364-2.4326 3.1094-2.5 17.548-2.5s14.912 0.0674 17.548 2.5c3.2324 2.9825 5.4517 7.8229 5.4517 11.89 0 2.5393 0.52711 3.1192 3.75 4.1259 2.0625 0.64423 7.2139 2.764 11.448 4.7106l7.6975 3.5393 3.0835-2.5946c4.2039-3.5374 9.0843-4.7689 13.771-3.4753 5.2278 1.4429 20.611 16.826 22.054 22.054 1.2924 4.6825 0.0627 9.5668-3.4637 13.758l-2.583 3.0698 3.4918 7.7113c1.9205 4.2412 4.035 9.3988 4.699 11.461 1.0349 3.2148 1.6289 3.75 4.1618 3.75 4.0674 0 8.9078 2.2193 11.89 5.4517 2.4326 2.6364 2.5 3.1094 2.5 17.548s-0.0674 14.912-2.5 17.548c-2.9825 3.2324-7.8229 5.4517-11.89 5.4517-2.5329 0-3.1269 0.53521-4.1618 3.75-0.66397 2.0625-2.7917 7.2488-4.7282 11.525l-3.521 7.7752 2.0257 2.2248c4.9912 5.4818 5.8795 12.394 2.3306 18.136-3.4311 5.5517-16.542 17.353-20.49 18.443-4.4932 1.2406-9.4465-0.0418-13.573-3.5142l-3.0698-2.583-7.7113 3.4918c-4.2412 1.9205-9.3988 4.035-11.461 4.699-3.2148 1.0349-3.75 1.6289-3.75 4.1618 0 4.0652-2.2184 8.9065-5.4486 11.89-2.5819 2.385-3.3353 2.5103-16.379 2.7245-7.5199 0.12347-14.573-0.16482-15.673-0.64064zm22.5-17.634c0-7.6236 3.6862-11.452 14.391-14.946 4.2807-1.3974 10.811-4.1074 14.511-6.0223 3.7002-1.9149 7.6817-3.4816 8.8476-3.4816 3.3335 0 7.5036 1.8921 10.527 4.7762l2.7766 2.6489 11.372-11.372-2.6489-2.7766c-2.8841-3.0231-4.7762-7.1932-4.7762-10.527 0-1.1659 1.5667-5.1474 3.4816-8.8476 1.9149-3.7002 4.6249-10.23 6.0223-14.511 3.4946-10.705 7.3229-14.391 14.946-14.391h3.5497v-16h-3.5497c-7.6236 0-11.452-3.6862-14.946-14.391-1.3974-4.2807-4.1074-10.811-6.0223-14.511-1.9149-3.7002-3.4816-7.6817-3.4816-8.8476 0-3.3335 1.8921-7.5036 4.7762-10.527l2.6489-2.7766-11.372-11.372-2.7766 2.6489c-3.0231 2.8841-7.1932 4.7762-10.527 4.7762-1.1659 0-5.1474-1.5667-8.8476-3.4816-3.7002-1.9149-10.23-4.6249-14.511-6.0223-10.705-3.4946-14.391-7.3229-14.391-14.946v-3.5497h-16v3.5657c0 6.9369-4.1873 11.866-11.954 14.072-3.0505 0.86639-9.9067 3.6075-15.236 6.0913-11.224 5.2313-14.498 5.24-20.404 0.0546l-3.5508-3.1176-11.19 11.19 3.1176 3.5508c5.1854 5.9059 5.1767 9.1792-0.05461 20.404-2.4838 5.3294-5.2249 12.186-6.0913 15.236-2.2058 7.7664-7.1352 11.954-14.072 11.954h-3.5657v16h3.5657c6.9369 0 11.866 4.1873 14.072 11.954 0.86638 3.0505 3.6075 9.9067 6.0913 15.236 5.2313 11.224 5.24 14.498 0.05461 20.404l-3.1176 3.5508 11.281 11.281 2.7766-2.6489c3.0231-2.8841 7.1932-4.7762 10.527-4.7762 1.1659 0 5.1474 1.5667 8.8476 3.4816 3.7002 1.9149 10.23 4.6249 14.511 6.0223 10.705 3.4946 14.391 7.3229 14.391 14.946v3.5497h16zm-18.487-33.625c-15.363-2.9299-30.893-14.687-37.974-28.748-11.152-22.146-7.3777-46.238 9.9612-63.577 17.339-17.339 41.431-21.114 63.577-9.9612 20.265 10.205 32.5 33.834 29.106 56.211-4.647 30.639-34.413 51.846-64.67 46.075zm18.688-14.95c16.087-3.4134 27.877-15.888 31.028-32.829 2.9299-15.755-6.2979-33.98-20.969-41.415-15.258-7.7316-34.2-4.7871-46.163 7.1758-15.72 15.72-15.788 40.597-0.15291 56.232 9.7088 9.7088 22.937 13.662 36.256 10.836zm167.79 64.835c-5.6217-2.9728-9.9724-8.4358-11.488-14.424l-1.2111-4.7865-8.7273-0.5c-7.1257-0.40824-8.9872-0.85623-10.144-2.4411-1.8596-2.5487-1.7992-6.5672 0.14038-9.3364 1.4004-1.9994 2.4075-2.2225 10.031-2.2225 5.9241 0 8.5814-0.37621 8.8291-1.25 0.19492-0.6875 0.8761-3.17 1.5137-5.5166 4.6473-17.103 28.684-20.797 38.727-5.9513 1.7368 2.5675 3.4639 6.4793 3.8379 8.693l0.68 4.0249h51.912c50.579 0 51.963 0.0514 53.912 2 1.1111 1.1111 2 3.3333 2 5s-0.88889 3.8889-2 5c-1.9486 1.9486-3.3333 2-53.912 2h-51.912l-0.66263 3.922c-2.3707 14.032-19.052 22.386-31.527 15.789zm14.7-14.885c2.1147-1.9867 2.3144-3.0223 2.3144-12 0-11.208-1.3578-13.826-7.1713-13.826-5.8775 0-6.8287 1.9638-6.8287 14.098 0 10.015 0.15937 10.9 2.2225 12.345 3.1071 2.1763 6.7415 1.9391 9.463-0.61761zm72.744-61.718c-5.2964-2.4056-10.018-8.2248-11.562-14.249l-1.2318-4.8063-51.713-0.27577c-49.238-0.26257-51.814-0.36696-53.818-2.1808-2.7461-2.486-2.7994-7.8999-0.10432-10.595 1.9486-1.9486 3.3333-2 53.872-2h51.872l0.60175-3.7631c1.5713-9.8263 11.558-18.237 21.654-18.237s20.083 8.4106 21.654 18.237l0.60175 3.7631h8.3722c7.0389 0 8.6907 0.31851 10.372 2 2.527 2.527 2.5668 7.0785 0.0884 10.139-1.6896 2.0866-2.9086 2.4016-10.5 2.7134-8.0005 0.32857-8.5899 0.49972-8.6104 2.5001-0.0337 3.2929-3.3996 9.8415-6.6019 12.844-6.2263 5.8384-16.988 7.5252-24.947 3.9102zm15.101-15.454c1.0493-1.4981 1.4694-4.8932 1.4694-11.875 0-8.4442-0.27274-10.05-2-11.777-2.6179-2.6179-6.7934-2.5428-9.6856 0.17431-2.1076 1.98-2.3144 3.0324-2.3144 11.778 0 6.9426 0.41802 10.2 1.5088 11.757 2.5565 3.6499 8.447 3.6199 11.022-0.0562zm-102.03-61.549c-6.6519-3.0797-12.5-11.067-12.5-17.072 0-1.8706-0.62523-2.0321-7.8651-2.0321-9.5921 0-13.135-2.0229-13.135-7.5s3.5428-7.5 13.135-7.5h7.8651l0.022-2.75c0.0533-6.6696 6.2637-14.787 13.696-17.902 8.7392-3.6622 21.203 0.30414 26.323 8.3763 1.5456 2.4371 3.1083 6.196 3.4728 8.3532l0.66259 3.922h51.277c50.362 0 51.324 0.037 53.912 2.0726 1.911 1.5032 2.6349 2.9942 2.6349 5.4274s-0.72383 3.9242-2.6349 5.4274c-2.5878 2.0356-3.5504 2.0726-53.921 2.0726h-51.286l-0.6775 3.25c-2.8714 13.774-18.357 21.699-30.981 15.854zm14.461-15.293c1.7552-1.884 2.039-3.5103 2.039-11.686 0-8.3745-0.257-9.7706-2.1743-11.811-2.5168-2.679-6.4205-2.987-9.6032-0.75775-2.0593 1.4424-2.2225 2.3361-2.2225 12.171 0 8.4736 0.33381 10.983 1.655 12.443 2.3267 2.571 7.7521 2.3815 10.306-0.35982zm11.207-130.41c-15.491-7.7195-18.615-28.045-6.216-40.444 16.239-16.239 43.248-4.9676 43.248 18.048 0 6.9166-2.1833 12.335-6.9988 17.369-5.1989 5.4349-10.351 7.5823-18.255 7.6088-5.0857 0.017-7.7239-0.56119-11.778-2.5814zm19.177-15.379c6.4151-6.1914 1.594-18.017-7.3451-18.017-5.3001 0-11 5.6999-11 11 0 6.2135 6.7643 11.561 13 10.278 1.375-0.28304 3.7803-1.7503 5.3451-3.2605zm53.823 15.379c-7.4463-3.7107-12.345-10.72-13.671-19.563-1.7043-11.365 6.3994-23.944 17.561-27.258 6.5766-1.953 9.2518-1.971 15.51-0.10394 17.948 5.3546 23.681 28.956 10.307 42.43-7.5245 7.5806-19.791 9.437-29.707 4.4956zm18.973-15.109c6.7892-6.3081 2.1109-18.288-7.1417-18.288-6.1669 0-11.685 6.5343-10.564 12.509 1.6066 8.5639 11.302 11.728 17.706 5.7785zm-395.97-2.6023c-2.6836-2.8566-2.7866-6.7078-0.26267-9.8248l1.9116-2.3608h257.35l1.9116 2.3608c2.4784 3.0607 2.4387 7.6121-0.0883 10.139-1.9792 1.9792-3.3333 2-130.33 2h-128.33z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "name": "group",
+                  "transform": "translate(11.626 -34.575)",
+                  "type": "group"
+                }
+              ],
+              "viewBox": "0 0 512.04 454"
+            },
+            "type": "ia.shapes.svg"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTypePath, self.view.params.popupWindow, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027deviceType\u0027 : self.view.params.deviceType}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTypePath, self.view.params.popupWindow, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027deviceType\u0027 : self.view.params.deviceType}, showCloseIcon \u003d False, draggable \u003d False)"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "VmM7X4Mn",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-50)",
+            "borderBottomLeftRadius": 5,
+            "borderBottomRightRadius": 5,
+            "borderTopLeftRadius": 5,
+            "borderTopRightRadius": 5,
+            "classes": "AMS/Button/Button-normal",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "3px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Symbol_Double",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "basis": "20px"
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath}+\u0027/\u0027+{view.params.deviceType}+\u0027/Alarm Summary/Active Unack\u0027)"
+              },
+              "transforms": [
+                {
+                  "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.deviceTagPath}+\u0027/\u0027+{view.params.deviceType}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceType"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "meta.visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.aerobridges"
+          },
+          "transforms": [
+            {
+              "expression": "{value}||{view.params.alwaysVisible}",
+              "type": "expression"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

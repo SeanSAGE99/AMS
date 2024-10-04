@@ -1,0 +1,445 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/Bennett Substation"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.029,
+          "width": 0.158,
+          "x": 0.4512,
+          "y": 0.2552
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "Bennett Substation",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.2621,
+          "y": 0.3076
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Bennett Substation/PLC",
+            "EarthTop": true,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_0"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.7861,
+          "y": 0.3071
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB03",
+            "DeviceParentPath": "High Voltage/Domestic/Bennett Substation/PLC",
+            "EarthTop": true,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_1"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.5242,
+          "y": 0.5415
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/Domestic/Bennett Substation/PLC",
+            "EarthTop": false,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.929,
+          "y": 0.1099
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/Domestic/Bennett Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Shiers"
+        },
+        "position": {
+          "height": 0.1113,
+          "width": 0.4784,
+          "x": 0.0042,
+          "y": 0.0093
+        },
+        "props": {
+          "params": {
+            "CB10": false,
+            "CB12": false,
+            "CB14": false,
+            "CB15": false,
+            "CB16": false,
+            "CB18": false,
+            "CB19": false,
+            "CB3": false,
+            "CB4": false,
+            "CB5": true,
+            "CB6": false,
+            "CB7": false,
+            "CB9": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/Shiers"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "11th St"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.0941,
+          "x": 0.7864,
+          "y": 0.0095
+        },
+        "props": {
+          "params": {
+            "SW01": true,
+            "SW03": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/11th St"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX static"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0651,
+          "x": 0.5162,
+          "y": 0.7923
+        },
+        "props": {
+          "params": {
+            "DeviceName": "TX01",
+            "Rating": "0.5MVA",
+            "TXDetail": "",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/TX static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9221,
+          "y": 0.0202
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.2741,
+                    "y": 0.4044
+                  },
+                  {
+                    "x": 0.1285,
+                    "y": 0.5338
+                  }
+                ],
+                "x": 0.2741,
+                "y": 0.5338
+              },
+              {
+                "x": 0.536,
+                "y": 0.5916
+              },
+              {
+                "connections": [
+                  {
+                    "x": 0.905,
+                    "y": 0.5338
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.7981,
+                    "y": 0.4044
+                  }
+                ],
+                "x": 0.7981,
+                "y": 0.5338
+              }
+            ],
+            "x": 0.536,
+            "y": 0.5338
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.536,
+                "y": 0.7941
+              }
+            ],
+            "x": 0.536,
+            "y": 0.6395
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.536,
+                "y": 0.9701
+              }
+            ],
+            "x": 0.536,
+            "y": 0.8357
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.7981,
+                "y": 0.1155
+              }
+            ],
+            "x": 0.7981,
+            "y": 0.3565
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2741,
+                        "y": 0.3565
+                      }
+                    ],
+                    "x": 0.2741,
+                    "y": 0.1413
+                  }
+                ],
+                "x": 0.1052,
+                "y": 0.1413
+              }
+            ],
+            "x": 0.1052,
+            "y": 0.1144
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

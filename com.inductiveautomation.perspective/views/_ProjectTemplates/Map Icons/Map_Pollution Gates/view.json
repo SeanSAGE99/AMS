@@ -1,0 +1,300 @@
+{
+  "custom": {
+    "PollutionGateStatus": 2,
+    "deviceTagPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps/Macerator Pit Penstock 1"
+  },
+  "params": {
+    "ZoomLevel": 16,
+    "deviceName": "Macerator Pit Penstock 1",
+    "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+    "popupWindow": ""
+  },
+  "propConfig": {
+    "custom.PollutionGateStatus": {
+      "binding": {
+        "config": {
+          "expression": "binEnc (tag({view.custom.deviceTagPath} + \u0027/Status/Closed\u0027), tag({view.custom.deviceTagPath} + \u0027/Status/Open\u0027))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.ZoomLevel": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.popupWindow": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 39,
+      "width": 89
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.5128,
+          "width": 0.2247,
+          "x": 0.7749,
+          "y": 0.0513
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.3846,
+          "width": 1,
+          "y": 0.6154
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "enabled": false,
+              "type": "property"
+            }
+          },
+          "props.textStyle.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "text": "K",
+          "textStyle": {
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/International/Pollution Gates"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Pollution Gates"
+        },
+        "position": {
+          "height": 0.5769,
+          "width": 0.5393,
+          "x": 0.2247
+        },
+        "propConfig": {
+          "props.elements[0].elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "expression": "Case(\r\n     {view.custom.PollutionGateStatus},\r\n     1, \"#AAAAAA\",\r\n     2, \"#FFFFFF\",\r\n     \"#AAAAAA\"\r\n)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].style.classes": {
+            "binding": {
+              "config": {
+                "expression": "//moving both open and clode are zero\r\nIf ({view.custom.PollutionGateStatus} \u003d 0, \"Flash\", \"\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].fill.paint": {
+            "binding": {
+              "config": {
+                "expression": "Case(\r\n     {view.custom.PollutionGateStatus},\r\n     1, \"#AAAAAA\",\r\n     2, \"#FFFFFF\",\r\n     \"#AAAAAA\"\r\n)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].style.classes": {
+            "binding": {
+              "config": {
+                "expression": "If ({view.custom.PollutionGateStatus} \u003d 0, \"Flash\", \"\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m313.65 354.04-2.1743-2.3144v-214.46l2.5663-2.5663c1.9581-1.9581 3.2293-2.4337 5.3641-2.0067 1.5388 0.30775 52.363 22.858 112.94 50.112 60.58 27.254 110.37 49.552 110.64 49.552 0.26958 0 0.49015-20.904 0.49015-46.453 0-31.915 0.34748-47.216 1.1103-48.89 1.0832-2.3774 4.6577-4.6573 7.3019-4.6573 0.72495 0 2.5038 0.93266 3.953 2.0726l2.6349 2.0726v47.368c0 26.053 0.3375 47.555 0.75 47.782s50.25-21.883 110.75-49.135c75.003-33.785 111.07-49.55 113.38-49.555 2.3289-4e-3 3.9603 0.71185 5.25 2.3046 1.8021 2.2256 1.8712 6.2551 1.8712 109.25v106.93l-2.4546 2.4545c-1.35 1.35-3.5043 2.4546-4.7874 2.4546-1.2831 0-51.366-22.103-111.3-49.119-59.929-27.015-109.98-49.343-111.21-49.617l-2.25-0.49802v47.617c0 46.283-0.056 47.673-2 49.617-2.5269 2.5269-7.0783 2.5668-10.139 0.0889l-2.3608-1.9111-0.27816-48.185c-0.21631-37.471-0.54983-48.075-1.5-47.688-0.67201 0.27325-50.768 22.817-111.32 50.096-60.557 27.28-111.22 49.599-112.58 49.599-1.3601 0-3.4513-1.0415-4.6472-2.3144zm216.99-109.92c-0.40034-0.4016-6.1143-3.1415-12.698-6.0887-6.5834-2.9472-52.112-23.431-101.17-45.52-49.062-22.089-89.45-40.161-89.75-40.161-0.30015 0-0.54572 41.561-0.54572 92.358v92.358l102.45-46.108c56.346-25.359 102.12-46.437 101.72-46.838zm244.83 0.12318c0-87.295-0.0914-92.074-1.75-91.474-5.0971 1.8433-203.21 91.166-203.23 91.631-0.0132 0.30218 5.2634 2.9232 11.726 5.8245s52.025 23.434 101.25 45.627c49.225 22.194 90.062 40.385 90.75 40.426 0.99148 0.0581 1.25-18.976 1.25-92.034z",
+                  "fill": "Var(--neutral-80)",
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "m15.84 112.19c0-72.77 0.23765-91.328 1.1647-90.953 5.6692 2.296 194.03 87.026 198.06 89.095l3.0942 1.5867-15.673 7.2888c-27.318 12.704-171.64 78.036-183.62 83.121l-3.0282 1.2853z",
+                  "fill": {},
+                  "name": "path",
+                  "opacity": 1,
+                  "stroke": {
+                    "paint": "#0a0a0a",
+                    "width": ".18635"
+                  },
+                  "style": {
+                    "paintOrder": "fill markers stroke"
+                  },
+                  "transform": "translate(311.47 132.36)",
+                  "type": "path"
+                },
+                {
+                  "d": "m440.72 193.69c-11.018-4.9057-53.576-24.036-94.573-42.511-40.997-18.475-76.951-34.675-79.898-36s-5.3576-2.6604-5.3576-2.968c0-0.60237 18.443-9.0293 114.61-52.366 77.779-35.052 86.392-38.829 87.051-38.17 0.29357 0.29357 0.53376 41.135 0.53376 90.759 0 71.572-0.24078 90.22-1.1647 90.2-0.64058-0.0135-10.179-4.0384-21.197-8.9441z",
+                  "fill": {},
+                  "name": "path",
+                  "opacity": 1,
+                  "stroke": {
+                    "paint": "#0a0a0a",
+                    "width": ".18635"
+                  },
+                  "style": {
+                    "paintOrder": "fill markers stroke"
+                  },
+                  "transform": "translate(311.47 132.36)",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-311.47 -132.36)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "viewBox": "0 0 479 224"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "meta.visible": {
+        "binding": {
+          "config": {
+            "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{view.params.ZoomLevel}"
+          },
+          "transforms": [
+            {
+              "fallback": null,
+              "inputType": "range",
+              "mappings": [
+                {
+                  "input": {
+                    "max": 15,
+                    "min": 0
+                  },
+                  "output": false
+                },
+                {
+                  "input": {
+                    "max": 19,
+                    "min": 15.1
+                  },
+                  "output": true
+                }
+              ],
+              "outputType": "scalar",
+              "type": "map"
+            }
+          ],
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

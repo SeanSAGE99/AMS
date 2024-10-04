@@ -1,0 +1,1895 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "Domestic/Precinct/T2 Loading Dock",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_0"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.2294,
+          "y": 0.2277
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR001",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_0"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.2136,
+          "y": 0.1305
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB01",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.087,
+          "x": 0.1853,
+          "y": 0.068
+        },
+        "props": {
+          "text": "Substation 22 MSB-2 (bus section -2)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB static_1"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.0021,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB03",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR003",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_1"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.0172,
+          "y": 0.5728
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR003",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_2"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.2136,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_2"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.2921,
+          "y": 0.7761
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR070",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": -0.0024,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "Lift 13 T2PBL3NW",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB static Horizontal"
+        },
+        "position": {
+          "height": 0.0808,
+          "width": 0.0526,
+          "x": 0.2312,
+          "y": 0.367
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB16",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_3"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.0846,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB04",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR004",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_3"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.1002,
+          "y": 0.5728
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR004",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_4"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.1661,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB05",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR005",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_4"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.1811,
+          "y": 0.5728
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR005",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_5"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.2964,
+          "y": 0.6372
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR072",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_5"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.4226,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB17",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/CB17",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_6"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.4958,
+          "y": 0.6372
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR071",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_6"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.6211,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB12",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR012",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_7"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.6361,
+          "y": 0.5728
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR012",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_7"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.7026,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB13",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR013",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_8"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.7181,
+          "y": 0.5728
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR013",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_8"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.7851,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB14",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR014",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_9"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.8001,
+          "y": 0.5728
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR014",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_9"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.8666,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "CB15",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR015",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_10"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.8822,
+          "y": 0.5728
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR015",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_10"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.9491,
+          "y": 0.4766
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "CB18",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_11"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.2461,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_12"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.2776,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR070",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_13"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.3621,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": true,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR069",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Small_12"
+        },
+        "position": {
+          "height": 0.0349,
+          "rotate": {
+            "anchor": "133% -22%"
+          },
+          "width": 0.0518,
+          "x": 0.3776,
+          "y": 0.7772
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR069",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_14"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.4456,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_15"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.4771,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_16"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.5096,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_17"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.5411,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_18"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.5736,
+          "y": 0.7132
+        },
+        "props": {
+          "params": {
+            "CurrentLabelVisible": false,
+            "DeviceName": "",
+            "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.0795,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "Lift 14 T2L2NW",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_16"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.1615,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "Spare",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_17"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0653,
+          "x": 0.209,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "General Power Sub - Circuits",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_18"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.273,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "Cardboard Compactor",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_19"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.3575,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "Waste Compactor",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_21"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.4405,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "To AMS System",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_22"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0653,
+          "x": 0.4725,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "General Internal Lighting Sub - Circuits",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_23"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0653,
+          "x": 0.5365,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "External Lighting Sub - Circuits",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_24"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.616,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "Spare",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_25"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.78,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "DB 2.1.22",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_26"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0428,
+          "x": 0.693,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "MSSB-MT-1.2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_27"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0328,
+          "x": 0.862,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "DB 2.1.23",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_28"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0428,
+          "x": 0.9395,
+          "y": 0.9207
+        },
+        "props": {
+          "text": "Retail Tenant Metered Section",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_20"
+        },
+        "position": {
+          "height": 0.0313,
+          "rotate": {
+            "anchor": "25% 50%"
+          },
+          "width": 0.1698,
+          "x": 0.4629,
+          "y": 0.1718
+        },
+        "props": {
+          "text": "DBE-2.1.20 Loading Dock MSB",
+          "textStyle": {
+            "fontSize": "clamp(10pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_29"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0495,
+          "x": 0.3497,
+          "y": 0.6399
+        },
+        "props": {
+          "text": "Power Chassis",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_30"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0495,
+          "x": 0.4389,
+          "y": 0.4836
+        },
+        "props": {
+          "text": "DB 2.1.21",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_31"
+        },
+        "position": {
+          "height": 0.0313,
+          "rotate": {
+            "anchor": "446% 75%"
+          },
+          "width": 0.0495,
+          "x": 0.5486,
+          "y": 0.6389
+        },
+        "props": {
+          "text": "Lightning Chassis",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.8728,
+          "y": 0.1473
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Lights",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Boolean Status with Alarm_0"
+        },
+        "position": {
+          "height": 0.0294,
+          "width": 0.1167,
+          "x": 0.8426,
+          "y": 0.0984
+        },
+        "props": {
+          "params": {
+            "deviceName": "PE Cell",
+            "deviceParentPath": "Domestic/Precinct/T2 Loading Dock/Lights"
+          },
+          "path": "Templates/Car Parks/Boolean Status with Alarm"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Modbus Gateway"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.0672,
+          "x": 0.8761,
+          "y": 0.2823
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Gateway 1",
+            "DeviceParentPath": "Domestic/Precinct/T2 Loading Dock",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus Gateway"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2255,
+                "y": 0.1097
+              }
+            ],
+            "x": 0.2255,
+            "y": 0.1837
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.2432,
+                                "y": 0.399
+                              },
+                              {
+                                "connections": [],
+                                "x": 0.2255,
+                                "y": 0.2269
+                              }
+                            ],
+                            "x": 0.2255,
+                            "y": 0.399
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.1781,
+                            "y": 0.5298
+                          }
+                        ],
+                        "x": 0.1781,
+                        "y": 0.399
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.0964,
+                        "y": 0.5298
+                      }
+                    ],
+                    "x": 0.0964,
+                    "y": 0.399
+                  }
+                ],
+                "x": 0.0141,
+                "y": 0.399
+              }
+            ],
+            "x": 0.0141,
+            "y": 0.5298
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0141,
+                "y": 0.901
+              }
+            ],
+            "x": 0.0141,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0963,
+                "y": 0.901
+              }
+            ],
+            "x": 0.0963,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1781,
+                "y": 0.901
+              }
+            ],
+            "x": 0.1781,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.2708,
+                    "y": 0.399
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6328,
+                        "y": 0.5298
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.7146,
+                            "y": 0.5298
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.7969,
+                                "y": 0.5298
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.8786,
+                                    "y": 0.5298
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.9609,
+                                        "y": 0.5298
+                                      }
+                                    ],
+                                    "x": 0.9609,
+                                    "y": 0.399
+                                  }
+                                ],
+                                "x": 0.8786,
+                                "y": 0.399
+                              }
+                            ],
+                            "x": 0.7969,
+                            "y": 0.399
+                          }
+                        ],
+                        "x": 0.7146,
+                        "y": 0.399
+                      }
+                    ],
+                    "x": 0.6328,
+                    "y": 0.399
+                  }
+                ],
+                "x": 0.4344,
+                "y": 0.399
+              }
+            ],
+            "x": 0.4344,
+            "y": 0.5298
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2255,
+                "y": 0.901
+              }
+            ],
+            "x": 0.2255,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2578,
+                "y": 0.901
+              }
+            ],
+            "x": 0.2578,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2896,
+                "y": 0.901
+              }
+            ],
+            "x": 0.2896,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_9",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.374,
+                "y": 0.901
+              }
+            ],
+            "x": 0.374,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_10",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.4891,
+                        "y": 0.7663
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.4344,
+                                    "y": 0.5731
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [],
+                                                "x": 0.374,
+                                                "y": 0.7663
+                                              }
+                                            ],
+                                            "x": 0.374,
+                                            "y": 0.6933
+                                          },
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [],
+                                                "x": 0.2896,
+                                                "y": 0.7663
+                                              },
+                                              {
+                                                "connections": [
+                                                  {
+                                                    "connections": [],
+                                                    "x": 0.2578,
+                                                    "y": 0.7663
+                                                  },
+                                                  {
+                                                    "connections": [
+                                                      {
+                                                        "connections": [],
+                                                        "x": 0.2255,
+                                                        "y": 0.7663
+                                                      }
+                                                    ],
+                                                    "x": 0.2255,
+                                                    "y": 0.6933
+                                                  }
+                                                ],
+                                                "x": 0.2578,
+                                                "y": 0.6933
+                                              }
+                                            ],
+                                            "x": 0.2896,
+                                            "y": 0.6933
+                                          }
+                                        ],
+                                        "x": 0.293,
+                                        "y": 0.6933
+                                      }
+                                    ],
+                                    "x": 0.293,
+                                    "y": 0.6298
+                                  }
+                                ],
+                                "x": 0.4344,
+                                "y": 0.6298
+                              }
+                            ],
+                            "x": 0.4925,
+                            "y": 0.6298
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.5214,
+                                "y": 0.7663
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.5531,
+                                    "y": 0.7663
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.5854,
+                                        "y": 0.7663
+                                      }
+                                    ],
+                                    "x": 0.5854,
+                                    "y": 0.6933
+                                  }
+                                ],
+                                "x": 0.5531,
+                                "y": 0.6933
+                              }
+                            ],
+                            "x": 0.5214,
+                            "y": 0.6933
+                          }
+                        ],
+                        "x": 0.4925,
+                        "y": 0.6933
+                      }
+                    ],
+                    "x": 0.4891,
+                    "y": 0.6933
+                  }
+                ],
+                "x": 0.4573,
+                "y": 0.6933
+              }
+            ],
+            "x": 0.4573,
+            "y": 0.7663
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4573,
+                "y": 0.9007
+              }
+            ],
+            "x": 0.4573,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_11",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4887,
+                "y": 0.8997
+              }
+            ],
+            "x": 0.4887,
+            "y": 0.8086
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5211,
+                "y": 0.9007
+              }
+            ],
+            "x": 0.5211,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_13",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5529,
+                "y": 0.9007
+              }
+            ],
+            "x": 0.5529,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_14",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6328,
+                "y": 0.9024
+              }
+            ],
+            "x": 0.6328,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_15",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5854,
+                "y": 0.9007
+              }
+            ],
+            "x": 0.5854,
+            "y": 0.8096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_16",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7143,
+                "y": 0.9024
+              }
+            ],
+            "x": 0.7143,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_17",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.797,
+                "y": 0.9024
+              }
+            ],
+            "x": 0.797,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_18",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8784,
+                "y": 0.9024
+              }
+            ],
+            "x": 0.8784,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_19",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9609,
+                "y": 0.9024
+              }
+            ],
+            "x": 0.9609,
+            "y": 0.5731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

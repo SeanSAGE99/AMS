@@ -1,0 +1,370 @@
+{
+  "custom": {
+    "Label": null,
+    "auto": false,
+    "current": null,
+    "lightCircuitName": "Light Circuit 20",
+    "lightStatus": null,
+    "manual": false,
+    "mode": "Off mode",
+    "modeAvailable": false
+  },
+  "params": {
+    "circuitNumber": 20,
+    "commmandEnable": true,
+    "tagParentPath": "[default]International/Precinct/Cooks River Drive/CRD_DBX01/Lights",
+    "tagQuality": "Bad_NotFound(\"Path \u0027[default]International/Precinct/Cooks River Drive/CRD_DBX01/Lights/Light Circuit 20/Status/Auto.quality\u0027 not found.\")"
+  },
+  "propConfig": {
+    "custom.Label": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.tagParentPath}+ \u0027/Light Circuit \u0027+{view.params.circuitNumber}+\u0027/Parameters.Description\u0027"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.auto": {
+      "binding": {
+        "config": {
+          "expression": "if(isavailable (tag({view.params.tagParentPath}+\u0027/\u0027+{view.custom.lightCircuitName}+\u0027/Status/Auto\u0027)),\r\ntag({view.params.tagParentPath}+\u0027/\u0027+{view.custom.lightCircuitName}+\u0027/Status/Auto\u0027),\r\nfalse )"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.current": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "lightCircuitName": "{view.custom.lightCircuitName}",
+            "tagParentPath": "{view.params.tagParentPath}"
+          },
+          "tagPath": "{tagParentPath}/{lightCircuitName}/Status/Current"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.lightCircuitName": {
+      "binding": {
+        "config": {
+          "expression": "\"Light Circuit \"+{view.params.circuitNumber}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.lightStatus": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "lightCircuitName": "{view.custom.lightCircuitName}",
+            "tagParentPath": "{view.params.tagParentPath}"
+          },
+          "tagPath": "{tagParentPath}/{lightCircuitName}/Status/On"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.manual": {
+      "binding": {
+        "config": {
+          "expression": "if(isavailable (tag({view.params.tagParentPath}+\u0027/\u0027+{view.custom.lightCircuitName}+\u0027/Status/Manual\u0027)),\r\ntag({view.params.tagParentPath}+\u0027/\u0027+{view.custom.lightCircuitName}+\u0027/Status/Manual\u0027),\r\nfalse )"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.mode": {
+      "binding": {
+        "config": {
+          "expression": "case(binEnc({view.custom.auto},{view.custom.manual}),\r\n0,\"Off mode\",\r\n1,\"Auto mode\",\r\n2,\"Manual mode\",\r\n3,\"bad state\",\r\n\"bad state\"\r\n)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.modeAvailable": {
+      "binding": {
+        "config": {
+          "expression": "if(isavailable (tag({view.params.tagParentPath}+\u0027/\u0027+{view.custom.lightCircuitName}+\u0027/Status/Manual\u0027)),\r\ntrue,\r\nfalse )"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.circuitNumber": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.commmandEnable": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagQuality": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.tagParentPath}+ \u0027/Light Circuit \u0027+{view.params.circuitNumber}+\u0027/Status/Auto.Quality\u0027"
+        },
+        "type": "tag"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 340
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Heading"
+        },
+        "position": {
+          "basis": "113px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.Label"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "overflow": "hidden",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Boolean Value w Label Opposite"
+        },
+        "position": {
+          "basis": "40px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.tagParentPath} + \u0027/\u0027 + {view.custom.lightCircuitName} + \u0027/Status\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "controlEnable": true,
+            "labelOverride": "On",
+            "styleClasses": "",
+            "tagName": "On",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]International/Precinct/Cooks River Drive/CRD_DBX01/Lights/Light Circuit 20/Status/On.quality\u0027 not found.\")"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Boolean Value",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "30px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "if ({view.custom.modeAvailable},\r\n{view.custom.mode},\r\n\"manual does not exist\")"
+              },
+              "transforms": [
+                {
+                  "fallback": "material/error_outline",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Manual mode",
+                      "output": "material/pan_tool"
+                    },
+                    {
+                      "input": "Auto mode",
+                      "output": "material/autorenew"
+                    },
+                    {
+                      "input": "Off mode",
+                      "output": "material/not_interested"
+                    },
+                    {
+                      "input": "manual does not exist",
+                      "output": ""
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "margin": 5
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value"
+        },
+        "position": {
+          "basis": "45px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "if({this.props.params.tagQuality}\u003d\"Good\", \u0027true\u0027, \u0027false\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.tagParentPath} + \u0027/\u0027 + {view.custom.lightCircuitName} + \u0027/Status\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]International/Precinct/Cooks River Drive/CRD_DBX01/Lights/Light Circuit 20/Status/Current.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value",
+          "style": {
+            "margin": 2
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Single Tag"
+        },
+        "position": {
+          "basis": "75px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.buttonText": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.lightStatus},\"Off\",\"On\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tagName": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.lightStatus},\"Off Command\",\"On Command\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.tagParentPath} + \u0027/\u0027 + {view.custom.lightCircuitName} + \u0027/Control\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.writeEnable": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.commmandEnable}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.opacity": {
+            "binding": {
+              "config": {
+                "expression": "// check if \"Light Circuits Commands Enabled\" tag exist:\r\n if(isavailable(tag({view.params.tagParentPath}+\u0027/Light Circuits Commands Enabled\u0027)),\r\n //then check if it is not the \"Night Mode\" circuit, that is 999\r\n if({view.params.circuitNumber}!\u003d999 ,if(tag({view.params.tagParentPath}+\u0027/Light Circuits Commands Enabled\u0027),1 , 0.2),1),\r\n 1 )"
+              },
+              "enabled": false,
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "writeValue": true
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag with Enable",
+          "style": {
+            "marginLeft": "10px",
+            "marginRight": "0px",
+            "opacity": 1,
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "center",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Main Terminal Lounges"
+        },
+        "position": {
+          "height": 0.9615,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/Domestic/Main Terminal Lounges.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "Domestic/T2/Terminal/Lounges"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_11"
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.251,
+          "y": 0.4086
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 16",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_17"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.125,
+          "y": 0.2865
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 12",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_18"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.1385,
+          "y": 0.474
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 3",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_19",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.0484,
+          "y": 0.3798
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 07",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_12"
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.3083,
+          "y": 0.4086
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 17",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

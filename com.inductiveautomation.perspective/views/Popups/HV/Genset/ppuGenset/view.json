@@ -1,0 +1,1956 @@
+{
+  "custom": {
+    "DeviceName": "Genset",
+    "authenticationOK": "false",
+    "controlPopupId": "High Voltage/Domestic/Northern Ponds MSB/Genset/Standby GensetCmd",
+    "deviceDescription": "Standby Generator",
+    "deviceTagPath": "High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset",
+    "pens": [
+      {
+        "axis": "Curr/Power",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Current Phase A",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "Curr/Power",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Current Phase B",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "Curr/Power",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Current Phase C",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      }
+    ],
+    "siteName": "Northern Ponds Genset",
+    "sitePath": "High Voltage/Domestic/Northern Ponds MSB/Genset",
+    "subArea": "HV Domestic"
+  },
+  "params": {
+    "deviceName": "Standby Genset",
+    "deviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/Genset"
+  },
+  "propConfig": {
+    "custom.DeviceName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.DeviceName"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.authenticationOK": {
+      "binding": {
+        "config": {
+          "path": "/root/TabContainer/Commands/Authentication.custom.authenticationOK"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.controlPopupId": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.deviceTagPath} + \"Cmd\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.pens": {
+      "persistent": true
+    },
+    "custom.pens[0].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/Status Folder/Power Meter/Current Phase A\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.pens[1].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/Status Folder/Power Meter/Current Phase B\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.pens[2].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/Status Folder/Power Meter/Current Phase C\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Alarm_ParentDevice"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.sitePath": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Alarm_Area"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 581,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.DeviceName} + \u0027 - \u0027 + {view.custom.deviceDescription}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Symbol_Double"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.device.name": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.deviceName}"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.params.device.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.sitePath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_1"
+                },
+                "position": {
+                  "basis": "10%"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Alarm Summary/Priority Counts/Active"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "marginRight": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexRepeater_0"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.instances[0].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[0].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[0].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[1].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[1].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[1].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[2].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[2].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[2].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[3].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[3].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[3].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Alarms\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[4].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[4].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[4].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Alarms\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[5].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[5].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[5].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[6].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[6].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[6].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[7].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[7].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[7].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[8].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.instances[8].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[8].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "elementPosition": {
+                    "basis": "36px",
+                    "grow": 0,
+                    "shrink": 0
+                  },
+                  "instances": [
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Genset Auto Mode",
+                      "tagQuality": "Uncertain_LastKnownValue"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Genset Running",
+                      "tagQuality": "Uncertain_LastKnownValue"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Mains Connected",
+                      "tagQuality": "Uncertain_LastKnownValue"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Genset Connected",
+                      "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset/Alarms/Genset Connected.quality\u0027 not found.\")"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Genset Online",
+                      "tagQuality": "Uncertain_LastKnownValue"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Local Test",
+                      "tagQuality": "Uncertain_LastKnownValue"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Remote Start",
+                      "tagQuality": "Uncertain_LastKnownValue"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Remote Test",
+                      "tagQuality": "Uncertain_LastKnownValue"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "tagName": "Genset Off Mode",
+                      "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset/Status Folder/Genset Off Mode.quality\u0027 not found.\")"
+                    }
+                  ],
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": false,
+                  "useDefaultViewWidth": false
+                },
+                "type": "ia.display.flex-repeater"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "50px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Heading"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "hidden",
+                        "textAlign": "left"
+                      },
+                      "text": "load bank"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "26px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.path": {
+                        "binding": {
+                          "config": {
+                            "path": ".../load bank_expanded.position.display"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": null,
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": false,
+                                  "output": "material/keyboard_arrow_up"
+                                },
+                                {
+                                  "input": true,
+                                  "output": "material/keyboard_arrow_down"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "status_header"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if (isAvailable (tag ({view.custom.deviceTagPath}+\u0027/Status Folder/Load Selected\u0027)),true,false)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading1",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "FlexRepeater"
+                    },
+                    "position": {
+                      "basis": "295px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.instances[0].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[0].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[0].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[1].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[1].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[1].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[2].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[2].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[2].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[3].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[3].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[3].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[4].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[4].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[4].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "direction": "column",
+                      "elementPosition": {
+                        "basis": "36px",
+                        "grow": 0,
+                        "shrink": 0
+                      },
+                      "instances": [
+                        {
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "tagName": "Load Selected",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset/Status Folder/Load Selected.quality\u0027 not found.\")"
+                        },
+                        {
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "tagName": "Load Bank Stage 1",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset/Status Folder/Load Bank Stage 1.quality\u0027 not found.\")"
+                        },
+                        {
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "tagName": "Load Bank Stage 2",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset/Status Folder/Load Bank Stage 2.quality\u0027 not found.\")"
+                        },
+                        {
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "tagName": "Load Bank Stage 3",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset/Status Folder/Load Bank Stage 3.quality\u0027 not found.\")"
+                        },
+                        {
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "tagName": "Load Bank Stage 4",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Northern Ponds MSB/Genset/Standby Genset/Status Folder/Load Bank Stage 4.quality\u0027 not found.\")"
+                        }
+                      ],
+                      "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                      "useDefaultViewHeight": false,
+                      "useDefaultViewWidth": false
+                    },
+                    "type": "ia.display.flex-repeater"
+                  }
+                ],
+                "meta": {
+                  "name": "load bank_expanded"
+                },
+                "position": {
+                  "basis": "180px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if (isAvailable (tag ({view.custom.deviceTagPath}+\u0027/Status Folder/Load Selected\u0027)),true,false)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginBottom": 2,
+                    "marginTop": 2,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Info Icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#009BFF",
+                  "path": "material/info",
+                  "style": {
+                    "classes": "Input/Icon",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "\u0027Tag path: \u0027 + {value}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "fontSize": "8pt",
+                        "fontWeight": "lighter",
+                        "marginLeft": "5px",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Info"
+                },
+                "position": {
+                  "align": "flex-end",
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginTop": "5px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "alarms_expanded"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceName}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.deviceParentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.sitePath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "controlEnable": true,
+                "show": {
+                  "area": false,
+                  "device": false
+                }
+              },
+              "path": "Shared/Templates/Devices/Control/Common/Alarms",
+              "style": {
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "32px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading2"
+                      },
+                      "text": "Authentication"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "display": "true"
+                    },
+                    "propConfig": {
+                      "props.textStyle.classes": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({parent.custom.authenticationOK} \u003d \"true\",\r\n\t\u0027Pipework/KeyStones/Connected\u0027,\r\n\t\u0027Pipework/KeyStones/Pigging\u0027\r\n)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label Only"
+                        },
+                        "position": {
+                          "basis": "320px"
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "tagName": "username:"
+                          },
+                          "path": "Shared/Templates/Display/Label Only"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Username"
+                        },
+                        "position": {
+                          "basis": "300px"
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry(\r\nisAuthorized (true,\u0027Authenticated/Roles/High Voltage\u0027),\r\nfalse) //fallback"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "marginRight": "30px"
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Username Group"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Popups/ContentMargins",
+                        "overflow": "hidden",
+                        "padding": 5
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label Only"
+                        },
+                        "position": {
+                          "basis": "320px"
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "tagName": "password:"
+                          },
+                          "path": "Shared/Templates/Display/Label Only"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Password"
+                        },
+                        "position": {
+                          "basis": "400px"
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry(\r\nisAuthorized (true,\u0027Authenticated/Roles/High Voltage\u0027),\r\nfalse) //fallback"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "key": "value"
+                        },
+                        "type": "ia.input.password-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Password Group"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Popups/ContentMargins",
+                        "overflow": "hidden",
+                        "padding": 5
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "custom": {
+                      "key": "value"
+                    },
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tusername \u003d self.getSibling(\u0027Username Group\u0027).getChild(\u0027Username\u0027).props.text\n\tpassword \u003d self.getSibling(\u0027Password Group\u0027).getChild(\u0027Password\u0027).props.text\n\t\n\tvalid \u003d 0\n\treqRole \u003d \"High Voltage\"\n\troles \u003d system.security.getUserRoles(username, password)\n\n\tif reqRole in roles:\n\t   self.parent.custom.authenticationOK \u003d \"true\" \n\t   self.getSibling(\"Status\").props.text \u003d \"Authentication Successful\"\n\telse:\n\t \tself.parent.custom.authenticationOK \u003d \"false\"\n\t \tself.getSibling(\"Status\").props.text \u003d \"Authentication Failed!\"\n\n  \tself.getSibling(\u0027Username Group\u0027).getChild(\u0027Username\u0027).props.text \u003d \"\"\n   \tself.getSibling(\u0027Password Group\u0027).getChild(\u0027Password\u0027).props.text \u003d \"\" \n   \tself.getSibling(\u0027Status\u0027).position.display \u003d \"true\""
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Authenticate"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "propConfig": {
+                      "props.enabled": {
+                        "binding": {
+                          "config": {
+                            "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry(\r\nisAuthorized (true,\u0027Authenticated/Roles/High Voltage\u0027),\r\nfalse) //fallback"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "icon": {
+                          "path": "material/login"
+                        }
+                      },
+                      "primary": false,
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Text",
+                        "margin": 2,
+                        "marginBottom": 10,
+                        "paddingLeft": "20px",
+                        "paddingRight": "20px"
+                      },
+                      "text": "Login"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "custom": {
+                  "authenticationOK": "false"
+                },
+                "meta": {
+                  "name": "Authentication"
+                },
+                "position": {
+                  "basis": "200px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins",
+                    "marginBottom": "25px",
+                    "marginTop": "25px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "45px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2"
+                  },
+                  "text": "Control"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Stop Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Stop Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)\t\t"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Stop",
+                          "tooltip": {
+                            "enabled": true
+                          }
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Authentication.custom.authenticationOK"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.enabled} \u003d \"true\",\r\n\t\u0027Input/Button/Body-normal Input/Button/Colour/Normal\u0027,\r\n\t\u0027UI/Icon/Button-faded\u0027\r\n)"
+                              },
+                              "enabled": false,
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "primary": false,
+                          "style": {
+                            "backgroundColor": "",
+                            "classes": "Input/Button/Body-normal Input/Button/Text",
+                            "marginBottom": "5px",
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "marginTop": "5px"
+                          },
+                          "text": "Genset Stop"
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Stop Group"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Start Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Start Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)\t"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Start",
+                          "tooltip": {
+                            "enabled": true
+                          }
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Authentication.custom.authenticationOK"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.enabled} \u003d \"true\",\r\n\t\u0027Input/Button/Body-normal Input/Button/Colour/Normal\u0027,\r\n\t\u0027UI/Icon/Button-faded\u0027\r\n)"
+                              },
+                              "enabled": false,
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "primary": false,
+                          "style": {
+                            "backgroundColor": "",
+                            "classes": "Input/Button/Body-normal Input/Button/Text",
+                            "marginBottom": "5px",
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "marginTop": "5px"
+                          },
+                          "text": "Genset Start"
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Start Group"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Test Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Test Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)\t"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Test",
+                          "tooltip": {
+                            "enabled": true
+                          }
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Authentication.custom.authenticationOK"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.enabled} \u003d \"true\",\r\n\t\u0027Input/Button/Body-normal Input/Button/Colour/Normal\u0027,\r\n\t\u0027UI/Icon/Button-faded\u0027\r\n)"
+                              },
+                              "enabled": false,
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "primary": false,
+                          "style": {
+                            "backgroundColor": "",
+                            "classes": "Input/Button/Body-normal Input/Button/Text",
+                            "marginBottom": "5px",
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "marginTop": "5px"
+                          },
+                          "text": "Genset Test"
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Test Group"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Command buttons"
+                },
+                "position": {
+                  "basis": "50px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins",
+                    "marginBottom": "25px",
+                    "marginTop": "25px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Commands"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "400px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.tabs[2].disabled": {
+            "binding": {
+              "config": {
+                "expression": "isAvailable(tag({view.custom.deviceTagPath} + \u0027/Command\u0027))"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn not(value)",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "classes": "UI/Popups/Background"
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Status",
+            "Alarms",
+            {
+              "text": "Controls"
+            }
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

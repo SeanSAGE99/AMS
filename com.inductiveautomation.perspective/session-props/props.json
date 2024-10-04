@@ -1,0 +1,390 @@
+{
+  "custom": {
+    "alarms": {
+      "activeSortOrder": [
+        "state",
+        "priority",
+        "activeTime"
+      ],
+      "responsive": {
+        "breakpoint": 800,
+        "enabled": true
+      },
+      "rowStyles": {
+        "activeAcked": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "classes": "Alarms/ASTRowStyles/Critical",
+              "color": "#fff"
+            },
+            "diagnostic": {
+              "classes": "Alarms/ASTRowStyles/Diagnostic",
+              "color": "#2b2b2b"
+            },
+            "high": {
+              "classes": "Alarms/ASTRowStyles/High",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "classes": "Alarms/ASTRowStyles/Low",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "classes": "Alarms/ASTRowStyles/Medium",
+              "color": "#2b2b2b"
+            }
+          }
+        },
+        "activeUnacked": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "classes": "Alarms/ASTRowStyles/CriticalUnacked",
+              "color": "#fff"
+            },
+            "diagnostic": {
+              "classes": "Alarms/ASTRowStyles/DiagnosticUnacked",
+              "color": "#2b2b2b"
+            },
+            "high": {
+              "classes": "Alarms/ASTRowStyles/HighUnacked",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "classes": "Alarms/ASTRowStyles/LowUnacked",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "classes": "Alarms/ASTRowStyles/MediumUnacked",
+              "color": "#2b2b2b"
+            }
+          }
+        },
+        "clearAcked": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "diagnostic": {
+              "backgroundColor": "#fff",
+              "color": "#222222"
+            },
+            "high": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            }
+          }
+        },
+        "clearUnacked": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "diagnostic": {
+              "backgroundColor": "#fff",
+              "color": "#222222"
+            },
+            "high": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            }
+          }
+        }
+      },
+      "rowStylesJournal": {
+        "acked": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "classes": "Alarms/Background/Critical",
+              "color": "#fff"
+            },
+            "diagnostic": {
+              "backgroundColor": "var(--alm-diag-fill-acked)",
+              "color": "#2b2b2b"
+            },
+            "high": {
+              "classes": "Alarms/ASTRowStyles/High",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "classes": "Alarms/ASTRowStyles/Low",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "classes": "Alarms/ASTRowStyles/Medium",
+              "color": "#2b2b2b"
+            }
+          }
+        },
+        "active": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "classes": "Alarms/ASTRowStyles/CriticalUnacked",
+              "color": "#fff"
+            },
+            "diagnostic": {
+              "backgroundColor": "Alarms/ASTRowStyles/HighUnacked",
+              "classes": ""
+            },
+            "high": {
+              "classes": "Alarms/ASTRowStyles/HighUnacked",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "classes": "Alarms/ASTRowStyles/LowUnacked",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "classes": "Alarms/ASTRowStyles/MediumUnacked",
+              "color": "#2b2b2b"
+            }
+          }
+        },
+        "cleared": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "diagnostic": {
+              "backgroundColor": "#fff",
+              "color": "#222222"
+            },
+            "high": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            }
+          }
+        },
+        "disabled": {
+          "base": {
+            "backgroundColor": "#FFFFFF",
+            "classes": "",
+            "color": "#222222"
+          },
+          "priorities": {
+            "critical": {
+              "classes": ""
+            },
+            "diagnostic": {
+              "classes": ""
+            },
+            "high": {
+              "classes": ""
+            },
+            "low": {
+              "classes": ""
+            },
+            "medium": {
+              "classes": ""
+            }
+          }
+        },
+        "enabled": {
+          "base": {
+            "backgroundColor": "#FFFFFF",
+            "classes": "",
+            "color": "#222222"
+          },
+          "priorities": {
+            "critical": {
+              "classes": ""
+            },
+            "diagnostic": {
+              "classes": ""
+            },
+            "high": {
+              "classes": ""
+            },
+            "low": {
+              "classes": ""
+            },
+            "medium": {
+              "classes": ""
+            }
+          }
+        },
+        "system": {
+          "base": {
+            "backgroundColor": "#DB3939",
+            "classes": "",
+            "color": "#FAFAFB",
+            "fontWeight": "500"
+          },
+          "priorities": {
+            "critical": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "diagnostic": {
+              "backgroundColor": "#fff",
+              "color": "#222222"
+            },
+            "high": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "low": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            },
+            "medium": {
+              "backgroundColor": "#fff",
+              "color": "#2b2b2b"
+            }
+          }
+        }
+      },
+      "shelvingTimes": [
+        3600,
+        7200,
+        14400,
+        28800,
+        57600,
+        86400
+      ]
+    },
+    "header": {
+      "currentlyOpen": "",
+      "menu": "T3",
+      "smallBreakPoint": 1000
+    },
+    "visibility": {
+      "aerobridges": false,
+      "apronLights": false,
+      "distributionBoards": false,
+      "geniusBlocks": false,
+      "hydraulics": false,
+      "internalTransport": true,
+      "pollutionGates": false
+    }
+  },
+  "propConfig": {
+    "props.auth": {
+      "access": "PRIVATE",
+      "persistent": false
+    },
+    "props.device.accelerometer": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.identifier": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.timezone": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.type": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.device.userAgent": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.gateway": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.data": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.geolocation.permissionGranted": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.host": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.id": {
+      "access": "SYSTEM",
+      "persistent": false
+    },
+    "props.lastActivity": {
+      "access": "SYSTEM",
+      "persistent": false
+    }
+  },
+  "props": {
+    "address": "192.168.20.211",
+    "appBar": {
+      "togglePosition": "hidden"
+    },
+    "device": {},
+    "geolocation": {},
+    "locale": "en-AU",
+    "theme": "sage",
+    "timeZoneId": "Australia/Sydney"
+  }
+}

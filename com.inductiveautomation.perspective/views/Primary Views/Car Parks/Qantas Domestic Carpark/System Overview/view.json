@@ -1,0 +1,125 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Qantas Domestic Carpark"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/CarParks/Domestic/Qantas Domestic Carpark.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "Domestic/Precinct/Qantas Domestic Car Park",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_1"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.0736,
+          "y": 0.7258
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Lift 107",
+            "deviceParentPath": "Domestic/Precinct/Qantas Domestic Car Park/QSCP-VT-BX1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

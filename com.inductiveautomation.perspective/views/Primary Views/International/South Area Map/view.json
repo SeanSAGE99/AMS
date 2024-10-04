@@ -1,0 +1,612 @@
+{
+  "custom": {
+    "offlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "urlTemplateParams": {}
+      }
+    ],
+    "onlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlTemplateParams": {}
+      }
+    ],
+    "satellite": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      },
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      }
+    ],
+    "selectedMap": "offlineStreet"
+  },
+  "params": {
+    "sitePath": "International/Precinct/South Area"
+  },
+  "propConfig": {
+    "custom.offlineStreet": {
+      "persistent": true
+    },
+    "custom.offlineStreet[0].url": {
+      "binding": {
+        "config": {
+          "expression": "{session.props.gateway.address} + \u0027/main/tiles/{z}/{x}/{y}.png\u0027"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.onlineStreet": {
+      "persistent": true
+    },
+    "custom.satellite": {
+      "persistent": true
+    },
+    "custom.selectedMap": {
+      "persistent": true
+    },
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Map"
+        },
+        "position": {
+          "height": 1040,
+          "width": 1920
+        },
+        "propConfig": {
+          "props.layers.raster.tile": {
+            "binding": {
+              "config": {
+                "path": "view.custom.selectedMap"
+              },
+              "transforms": [
+                {
+                  "fallback": "{view.custom.offlineStreet}",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "satellite",
+                      "output": "{view.custom.satellite}"
+                    },
+                    {
+                      "input": "onlineStreet",
+                      "output": "{view.custom.onlineStreet}"
+                    },
+                    {
+                      "input": "offlineStreet",
+                      "output": "{view.custom.offlineStreet}"
+                    }
+                  ],
+                  "outputType": "expression",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "dragging": false,
+          "init": {
+            "center": {
+              "lat": -33.936,
+              "lng": 151.164
+            },
+            "zoom": 18
+          },
+          "layers": {
+            "raster": {}
+          },
+          "zoom": {
+            "controls": false,
+            "max": 18,
+            "min": 18,
+            "onBoxZoom": false,
+            "onDoubleClick": false,
+            "onScrollWheel": false
+          }
+        },
+        "type": "ia.display.map"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027satellite\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 34.01,
+          "width": 145.92,
+          "x": 23.95,
+          "y": 24.284
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Live Satellite"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027onlineStreet\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 34.01,
+          "width": 145.92,
+          "x": 23.95,
+          "y": 68.274
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Live Street"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027offlineStreet\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 34.01,
+          "width": 145.92,
+          "x": 23.95,
+          "y": 112.264
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Offline Street"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 48.05,
+          "width": 128.06,
+          "x": 1759.28,
+          "y": 20.22
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "height": 34.01,
+          "width": 139.97,
+          "x": 905.76,
+          "y": 752.24
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "T1_DBXVBUS",
+            "deviceParentPath": "International/Precinct/South Area",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "height": 34.01,
+          "width": 139.97,
+          "x": 620.62,
+          "y": 981.08
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "T1_DBXG25",
+            "deviceParentPath": "International/Precinct/South Area",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "height": 34.01,
+          "width": 139.97,
+          "x": 617.19775,
+          "y": 123.27125000000001
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "CRD_DBX01",
+            "deviceParentPath": "International/Precinct/South Area/Cooks River Drive",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps"
+        },
+        "position": {
+          "height": 126,
+          "width": 126,
+          "x": 821,
+          "y": 792.078
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "GeoPage": true,
+            "LabelOverride": "",
+            "Pump1Name": "Sump Pump 1",
+            "Pump2Name": "Sump Pump 2",
+            "Pump3Name": "Sump Pump 3",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Well",
+            "alwaysVisible": true,
+            "combinedPump": "",
+            "deviceName": "Stormwater Pumps",
+            "deviceParentPath": "International/Precinct/South Area",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_0"
+        },
+        "position": {
+          "height": 126,
+          "width": 126,
+          "x": 625.7,
+          "y": 162.3
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "GeoPage": true,
+            "LabelOverride": "",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Well",
+            "alwaysVisible": true,
+            "combinedPump": "",
+            "deviceName": "Pump Station",
+            "deviceParentPath": "[default]International/Precinct/South Area/Cooks River Drive",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/South Area"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 34.01,
+          "width": 169.92,
+          "x": 8.25,
+          "y": 172.344
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "South Area Layout",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

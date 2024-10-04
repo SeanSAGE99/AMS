@@ -1,0 +1,724 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/Substation C"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "MiCOM P127 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.1324,
+          "y": 0.3815
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED101",
+            "deviceParentPath": "High Voltage/Domestic/Substation C"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P127 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P127 Medium_0"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.6566,
+          "y": 0.3815
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED104",
+            "deviceParentPath": "High Voltage/Domestic/Substation C"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P127 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P123 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.2044,
+          "y": 0.6832
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED102",
+            "deviceParentPath": "High Voltage/Domestic/Substation C",
+            "fontSize": "clamp(4pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.2043,
+          "y": 0.8277
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR001",
+            "deviceParentPath": "High Voltage/Domestic/Substation C"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.158,
+          "x": 0.4172,
+          "y": 0.2925
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "Substation C",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.262,
+          "y": 0.3051
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": true,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_0"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.7861,
+          "y": 0.3051
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB04",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": true,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_1"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.3337,
+          "y": 0.5393
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_2"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.6387,
+          "y": 0.5391
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB03",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Voltage Transformer"
+        },
+        "position": {
+          "height": 0.1092,
+          "width": 0.0333,
+          "x": 0.6424,
+          "y": 0.7523
+        },
+        "props": {
+          "params": {
+            "CircuitNumber": "",
+            "deviceID": "01",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/Voltage Transformer static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM VIP410 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.2043,
+          "y": 0.5514
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED202",
+            "deviceParentPath": "High Voltage/Domestic/Substation C"
+          },
+          "path": "Templates/HV/IEDs/MiCOM VIP410 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_0"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.3249,
+          "y": 0.7891
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "TXDetail": "",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0651,
+          "x": 0.313,
+          "y": 0.9679
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "normal"
+          },
+          "text": "Substation C MSB",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "RED615 Medium_0"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.6565,
+          "y": 0.2516
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED004",
+            "deviceParentPath": "High Voltage/Domestic/Substation C"
+          },
+          "path": "Templates/HV/IEDs/RED615 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0833,
+          "width": 0.0557,
+          "x": 0.9306,
+          "y": 0.1085
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Battery Charger"
+        },
+        "position": {
+          "height": 0.0833,
+          "width": 0.0557,
+          "x": 0.9304,
+          "y": 0.3237
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Battery Charger",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Battery Chargers/Battery Charger"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P521 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.1327,
+          "y": 0.2514
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED001",
+            "deviceParentPath": "High Voltage/Domestic/Substation C"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Arc Flash"
+        },
+        "position": {
+          "height": 0.0808,
+          "width": 0.0745,
+          "x": 0.9192,
+          "y": 0.3653
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Arc Flash Relay",
+            "DeviceParentPath": "High Voltage/Domestic/Substation C/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Arc Flash/Arc Flash"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9221,
+          "y": 0.0202
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Modbus Gateway_1"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.0672,
+          "x": 0.9241,
+          "y": 0.2084
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Gateway 1",
+            "DeviceParentPath": "High Voltage/Domestic/Substation A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus Gateway"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation E"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1255,
+          "x": 0.2616,
+          "y": 0.0433
+        },
+        "props": {
+          "params": {
+            "CB01": true,
+            "CB02": false
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation E - Sub C"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation S"
+        },
+        "position": {
+          "height": 0.1135,
+          "width": 0.4026,
+          "x": 0.4563,
+          "y": 0.0416
+        },
+        "props": {
+          "params": {
+            "CB06": false,
+            "CB08": false,
+            "CB11": false,
+            "CB13": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation S - Sub C"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.0031,
+      "y": -0.0029
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.2739,
+                                "y": 0.4022
+                              },
+                              {
+                                "x": 0.1285,
+                                "y": 0.5347
+                              }
+                            ],
+                            "x": 0.2739,
+                            "y": 0.5347
+                          },
+                          {
+                            "x": 0.3453,
+                            "y": 0.5882
+                          }
+                        ],
+                        "x": 0.3453,
+                        "y": 0.5347
+                      },
+                      {
+                        "x": 0.6507,
+                        "y": 0.5882
+                      }
+                    ],
+                    "x": 0.6507,
+                    "y": 0.5347
+                  },
+                  {
+                    "x": 0.905,
+                    "y": 0.5347
+                  }
+                ],
+                "x": 0.7981,
+                "y": 0.5347
+              }
+            ],
+            "x": 0.7981,
+            "y": 0.4022
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.3453,
+                "y": 0.7926
+              }
+            ],
+            "x": 0.3453,
+            "y": 0.6359
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.6507,
+                "y": 0.7542
+              }
+            ],
+            "x": 0.6507,
+            "y": 0.6359
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3453,
+                "y": 0.9646
+              }
+            ],
+            "x": 0.3453,
+            "y": 0.8336
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.2739,
+                "y": 0.3545
+              }
+            ],
+            "x": 0.2739,
+            "y": 0.1503
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.7981,
+                "y": 0.3545
+              }
+            ],
+            "x": 0.7981,
+            "y": 0.1421
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/ELER Substation"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "PM5000 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.3943,
+          "y": 0.859
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR001",
+            "deviceParentPath": "High Voltage/Domestic/ELER Substation"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.029,
+          "width": 0.158,
+          "x": 0.4512,
+          "y": 0.2552
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "ELER Substation",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB_1"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.5247,
+          "y": 0.5425
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "EarthTop": false,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_0"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.5164,
+          "y": 0.7426
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "TXDetail": "",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.9278,
+          "y": 0.2444
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.5287,
+          "y": 0.9059
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.9278,
+          "y": 0.4606
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS 1",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lords Road"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.0941,
+          "x": 0.2027,
+          "y": 0.025
+        },
+        "props": {
+          "params": {
+            "SW01": false,
+            "SW03": true
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/Lords Road"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Shiers"
+        },
+        "position": {
+          "height": 0.1113,
+          "width": 0.4784,
+          "x": 0.3703,
+          "y": 0.0252
+        },
+        "props": {
+          "params": {
+            "CB10": false,
+            "CB12": false,
+            "CB14": false,
+            "CB15": false,
+            "CB16": false,
+            "CB18": false,
+            "CB19": true,
+            "CB3": false,
+            "CB4": false,
+            "CB5": false,
+            "CB6": false,
+            "CB7": false,
+            "CB9": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/Shiers"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Brearley - ELER"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.8612,
+          "y": 0.025
+        },
+        "props": {
+          "params": {
+            "CB04": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/Brearley - ELER"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.9278,
+          "y": 0.5808
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS 2",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "FIP"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.075,
+          "x": 0.9176,
+          "y": 0.7009
+        },
+        "props": {
+          "params": {
+            "DeviceName": "FIP 1",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Fire Indicator Panel/FIP"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_1"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.2619,
+          "y": 0.3067
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW01",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "EarthTop": "True",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_2"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.7859,
+          "y": 0.3067
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW03",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "EarthTop": "True",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LV Supply standby"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1464,
+          "x": 0.1332,
+          "y": 0.5547
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "High Voltage/Domestic/ELER Substation/PLC/LV Supply/Standby Generator Supply Selected"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Tag/Label"
+          },
+          "text": "Standby Generator Supply Selected",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "LV Supply Generator"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1464,
+          "x": 0.1332,
+          "y": 0.5547
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "High Voltage/Domestic/ELER Substation/PLC/LV Supply/Emergency Generator Supply Selected"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Tag/Label"
+          },
+          "text": "Emergency Generator Supply Selected",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SurgeAlarm"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.7484,
+          "y": 0.5688
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Surge Arrester Alarm 1",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GensetEarthAlarm"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.1177,
+          "y": 0.5462
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Genset Earth Fault",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AirConAlarm"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.7484,
+          "y": 0.5976
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Air Conditioning",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9221,
+          "y": 0.1622
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Modbus Gateway_1"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.0672,
+          "x": 0.9215,
+          "y": 0.3502
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Gateway 1",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus Gateway"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genset"
+        },
+        "position": {
+          "height": 0.074,
+          "width": 0.0885,
+          "x": 0.038,
+          "y": 0.7406
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/ELER Substation/Genset PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/xLER Genset/Genset"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC_0"
+        },
+        "position": {
+          "height": 0.079,
+          "width": 0.0543,
+          "x": 0.0349,
+          "y": 0.6061
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/Domestic/ELER Substation/Genset PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.2741,
+                    "y": 0.4044
+                  },
+                  {
+                    "x": 0.1285,
+                    "y": 0.5378
+                  }
+                ],
+                "x": 0.2741,
+                "y": 0.5378
+              },
+              {
+                "x": 0.5364,
+                "y": 0.5916
+              },
+              {
+                "connections": [
+                  {
+                    "x": 0.905,
+                    "y": 0.5378
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.7981,
+                    "y": 0.4044
+                  }
+                ],
+                "x": 0.7981,
+                "y": 0.5378
+              }
+            ],
+            "x": 0.5364,
+            "y": 0.5378
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5364,
+                "y": 0.7459
+              }
+            ],
+            "x": 0.5364,
+            "y": 0.6395
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5364,
+                "y": 0.9701
+              }
+            ],
+            "x": 0.5364,
+            "y": 0.7882
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5364,
+                "y": 0.92
+              }
+            ],
+            "x": 0.5046,
+            "y": 0.92
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2741,
+                "y": 0.3577
+              }
+            ],
+            "x": 0.2741,
+            "y": 0.1303
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.7981,
+                        "y": 0.1303
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.7981,
+                        "y": 0.3577
+                      }
+                    ],
+                    "x": 0.7981,
+                    "y": 0.1702
+                  }
+                ],
+                "x": 0.8729,
+                "y": 0.1702
+              }
+            ],
+            "x": 0.8729,
+            "y": 0.1303
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

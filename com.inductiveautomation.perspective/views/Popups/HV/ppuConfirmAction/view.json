@@ -1,0 +1,232 @@
+{
+  "custom": {
+    "controlPopupId": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PrioritiesCmd",
+    "deviceTagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Priorities/Command/Priority Load 1 Command",
+    "message": "Do you really want to run Priority Load 1 Command for Priorities?"
+  },
+  "params": {
+    "command": "Priority Load 1 Command",
+    "deviceName": "Priorities",
+    "deviceParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC",
+    "messageOverride": "",
+    "onConfirm_WriteValue": null
+  },
+  "propConfig": {
+    "custom.controlPopupId": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} +\"/\" + {view.params.deviceName} + \"Cmd\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \"/\" + {view.params.deviceName} + \"/Command/\" + {view.params.command}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.message": {
+      "binding": {
+        "config": {
+          "expression": "if({view.params.messageOverride}!\u003d\"\",{view.params.messageOverride},\r\n\"Do you really want to run \" + {view.params.command} + \" for \" +  {view.params.deviceName} +\"?\")"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.command": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.messageOverride": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.onConfirm_WriteValue": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 139,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "path": "material/priority_high"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Markdown"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.source": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.message"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "markdown": {
+                    "escapeHtml": false
+                  }
+                },
+                "type": "ia.display.markdown"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "justify": "center"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginBottom": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\n\tself.view.params.onConfirm_WriteValue \u003d None\n\tsystem.perspective.closePopup(self.view.custom.controlPopupId)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnConfirm"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Body Buttons/Text"
+              },
+              "text": "Cancel"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "5px",
+              "shrink": 0
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\ttagPath \u003d self.view.custom.deviceTagPath\n\tval \u003d self.view.params.onConfirm_WriteValue\n\tif tagPath is not None:\n\t\tsystem.tag.writeBlocking(tagPath, val)\n\tself.view.params.onConfirm_WriteValue \u003d None\n\tsystem.perspective.closePopup(self.view.custom.controlPopupId)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnConfirm_0"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Buttons/Body_DestructiveAction Buttons/Text"
+              },
+              "text": "Confirm"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--warningSecondary)",
+        "overflow": "hidden",
+        "padding": "5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

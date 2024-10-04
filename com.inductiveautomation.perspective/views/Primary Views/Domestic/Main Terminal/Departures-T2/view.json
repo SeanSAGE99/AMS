@@ -1,0 +1,621 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Main Terminal Departures"
+        },
+        "position": {
+          "height": 0.9615,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/Domestic/Main Terminal Departures.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "Domestic/T2/Terminal/Departures"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0127,
+          "y": 0.2042
+        },
+        "props": {
+          "params": {
+            "deviceName": "T2_DBX1-3-1",
+            "deviceParentPath": "Domestic/T2/Terminal/Departures",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.9138,
+          "y": 0.1912
+        },
+        "props": {
+          "params": {
+            "deviceName": "T2_DBX1-3-2",
+            "deviceParentPath": "Domestic/T2/Terminal/Departures",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4631,
+          "y": 0.8274
+        },
+        "props": {
+          "params": {
+            "deviceName": "T2_DBX1-3-4-1",
+            "deviceParentPath": "Domestic/T2/Terminal/Departures",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4632,
+          "y": 0.1802
+        },
+        "props": {
+          "params": {
+            "deviceName": "T2_DBX1-3-3",
+            "deviceParentPath": "Domestic/T2/Terminal/Departures",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_3"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.9136,
+          "y": 0.5524
+        },
+        "props": {
+          "params": {
+            "deviceName": "T2_DBX1-3-4",
+            "deviceParentPath": "Domestic/T2/Terminal/Departures",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_4"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0126,
+          "y": 0.6694
+        },
+        "props": {
+          "params": {
+            "deviceName": "T2_DBX1-3-5",
+            "deviceParentPath": "Domestic/T2/Terminal/Departures",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_19"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4125,
+          "y": 0.3792
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 4",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_11",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.373,
+          "y": 0.4912
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 03",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_20"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.383,
+          "y": 0.3792
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 3",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_21",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3346,
+          "y": 0.4321
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 07",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_22"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3929,
+          "y": 0.4379
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 10",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_23",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.5934,
+          "y": 0.6321
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 05",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_24",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.5674,
+          "y": 0.2418
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 06",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_12",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.4305,
+          "y": 0.5556
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 06",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_13",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.4885,
+          "y": 0.62
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 05",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_14",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.5872,
+          "y": 0.258
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 10",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_15",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.6445,
+          "y": 0.27
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 09",
+            "deviceParentPath": "Domestic/T2/Terminal/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[5].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0813,
+                "y": 0.2202
+              }
+            ],
+            "x": 0.4089,
+            "y": 0.2558
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9187,
+                "y": 0.2067
+              }
+            ],
+            "x": 0.7854,
+            "y": 0.2654
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5323,
+                "y": 0.1952
+              }
+            ],
+            "x": 0.7849,
+            "y": 0.3058
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9167,
+                "y": 0.5683
+              }
+            ],
+            "x": 0.5938,
+            "y": 0.5308
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5,
+                "y": 0.8317
+              }
+            ],
+            "x": 0.4516,
+            "y": 0.7356
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0818,
+                "y": 0.6865
+              }
+            ],
+            "x": 0.412,
+            "y": 0.4923
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

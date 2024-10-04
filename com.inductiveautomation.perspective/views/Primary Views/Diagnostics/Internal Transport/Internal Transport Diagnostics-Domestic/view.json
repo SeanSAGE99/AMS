@@ -1,0 +1,141 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 828,
+      "width": 2378
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "HYD Navigation"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "params": {
+            "Device": "Domestic Internal Transport",
+            "area": "SYD"
+          },
+          "path": "Primary Views/Diagnostics/Embedded/Internal Transport Navigation",
+          "style": {
+            "margin": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "T2 Pier B"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "Domestic/T2/Pier B"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Internal Transport Devices",
+                "title": "T2/Pier B",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Internal Transport"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "T2 Terminal"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "Domestic/T2/Terminal"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Internal Transport Devices",
+                "title": "T2/Terminal",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Internal Transport"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "T2 Pier A"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "Domestic/T2/Pier A"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Internal Transport Devices",
+                "title": "T2/Pier A",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Internal Transport"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "DOM Precinct"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "Domestic/Precinct"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Internal Transport Devices",
+                "title": "Domestic Precinct",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Internal Transport"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Pages/Background"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

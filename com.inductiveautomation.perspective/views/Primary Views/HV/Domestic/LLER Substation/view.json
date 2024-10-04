@@ -1,0 +1,669 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/LLER Substation"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.4904,
+          "width": 0.5339,
+          "x": 0.2226,
+          "y": 0.5032
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-60)",
+            "borderStyle": "dashed",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.028,
+          "width": 0.1568,
+          "x": 0.4348,
+          "y": 0.2738
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "LLER Substation",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.126,
+          "x": 0.5339,
+          "y": 0.5077
+        },
+        "props": {
+          "text": "LLER LV Switchboard",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.076,
+          "x": 0.6268,
+          "y": 0.7035
+        },
+        "props": {
+          "text": "415V BUSBAR",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.076,
+          "x": 0.4534,
+          "y": 0.9325
+        },
+        "props": {
+          "text": "415V BUSBAR",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.066,
+          "x": 0.3064,
+          "y": 0.7577
+        },
+        "props": {
+          "text": "415V BUSBAR",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ATSC - Overview"
+        },
+        "position": {
+          "height": 0.1533,
+          "width": 0.2117,
+          "x": 0.5492,
+          "y": 0.0251
+        },
+        "props": {
+          "params": {
+            "CB02": false,
+            "CB09": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/ATSC - Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9221,
+          "y": 0.0202
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Genset"
+        },
+        "position": {
+          "height": 0.074,
+          "width": 0.0885,
+          "x": 0.2451,
+          "y": 0.3964
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/LLER Substation/Genset PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/xLER Genset/Genset"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genset static_0"
+        },
+        "position": {
+          "height": 0.074,
+          "width": 0.0885,
+          "x": 0.4444,
+          "y": 0.3999
+        },
+        "props": {
+          "params": {
+            "deviceName": "Mobile Genset",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/Genset static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC_0"
+        },
+        "position": {
+          "height": 0.079,
+          "width": 0.0543,
+          "x": 0.2433,
+          "y": 0.2483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/Domestic/LLER Substation/Genset PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static"
+        },
+        "position": {
+          "height": 0.1538,
+          "width": 0.047,
+          "x": 0.6969,
+          "y": 0.5222
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB",
+            "circuitNo": "5-139",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX static"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0651,
+          "x": 0.6885,
+          "y": 0.3298
+        },
+        "props": {
+          "params": {
+            "DeviceName": "TX01",
+            "Rating": "500kVA",
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/TX static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_0"
+        },
+        "position": {
+          "height": 0.1587,
+          "width": 0.0469,
+          "x": 0.4766,
+          "y": 0.5193
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_1"
+        },
+        "position": {
+          "height": 0.1587,
+          "width": 0.0469,
+          "x": 0.587,
+          "y": 0.8149
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_2"
+        },
+        "position": {
+          "height": 0.1587,
+          "width": 0.0469,
+          "x": 0.3667,
+          "y": 0.8156
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static_3"
+        },
+        "position": {
+          "height": 0.1587,
+          "width": 0.0469,
+          "x": 0.257,
+          "y": 0.5201
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB",
+            "circuitNo": "",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.0094,
+      "y": -0.0087
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2687,
+                "y": 0.4635
+              }
+            ],
+            "x": 0.2687,
+            "y": 0.576
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4885,
+                "y": 0.4635
+              }
+            ],
+            "x": 0.4885,
+            "y": 0.575
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7089,
+                "y": 0.376
+              }
+            ],
+            "x": 0.7089,
+            "y": 0.576
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7089,
+                "y": 0.1731
+              }
+            ],
+            "x": 0.7089,
+            "y": 0.3327
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.4885,
+                        "y": 0.625
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.5238,
+                        "y": 0.7462
+                      }
+                    ],
+                    "x": 0.4885,
+                    "y": 0.7462
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2342,
+                        "y": 0.7462
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.2687,
+                        "y": 0.625
+                      }
+                    ],
+                    "x": 0.2687,
+                    "y": 0.7462
+                  }
+                ],
+                "x": 0.3786,
+                "y": 0.7462
+              }
+            ],
+            "x": 0.3786,
+            "y": 0.8712
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.3437,
+                    "y": 0.975
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.599,
+                        "y": 0.9202
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.6338,
+                        "y": 0.975
+                      }
+                    ],
+                    "x": 0.599,
+                    "y": 0.975
+                  }
+                ],
+                "x": 0.3786,
+                "y": 0.975
+              }
+            ],
+            "x": 0.3786,
+            "y": 0.9202
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.5672,
+                    "y": 0.7462
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.7089,
+                        "y": 0.625
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.7438,
+                        "y": 0.7462
+                      }
+                    ],
+                    "x": 0.7089,
+                    "y": 0.7462
+                  }
+                ],
+                "x": 0.599,
+                "y": 0.7462
+              }
+            ],
+            "x": 0.599,
+            "y": 0.8702
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

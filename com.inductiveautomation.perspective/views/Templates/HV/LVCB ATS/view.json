@@ -1,0 +1,784 @@
+{
+  "custom": {
+    "ActiveAck": null,
+    "ActiveUnack": null,
+    "AlarmCount": null,
+    "Closed": null,
+    "DeviceTagPath": "High Voltage/Domestic/Test Substation/PLC/LV Supply",
+    "Isolated": null,
+    "Open": null,
+    "Rackable": null,
+    "tags": []
+  },
+  "params": {
+    "DeviceName": "Normal Supply Selected",
+    "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC/LV Supply",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.Closed": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.Isolated": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Isolated"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.Open": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "transforms": [
+          {
+            "expression": "!{value}",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.Rackable": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.DeviceParentPath}+\u0027/Isolated.Enabled\u0027"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 151,
+      "width": 78
+    },
+    "dropConfig": {
+      "udts": [
+        {
+          "action": "path",
+          "param": "DeviceParentPath",
+          "type": "High Voltage/Substations/Child/LVCB"
+        }
+      ]
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "io4nDKog",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "CB_0"
+        },
+        "position": {
+          "height": 0.4457,
+          "width": 0.2177,
+          "x": 0.1374,
+          "y": 0.2755
+        },
+        "propConfig": {
+          "props.elements[0].elements[0].elements[0].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].elements[1].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].elements[2].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].elements[3].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].type": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.Open} \u003d 1 \u0026\u0026 {view.custom.Closed} \u003d 0) , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].elements[0].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--qual-4)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].elements[1].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--qual-4)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].elements[2].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--qual-4)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].type": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Open} \u003d 0 \u0026\u0026 {view.custom.Closed} \u003d 1 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].elements[0].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--callToAction--disabled)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].elements[1].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--callToAction--disabled)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].elements[2].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--callToAction--disabled)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].type": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Open} \u003d 0 \u0026\u0026 {view.custom.Closed} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[3].type": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Open} \u003d 1 \u0026\u0026 {view.custom.Closed} \u003d 1, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.style.marginLeft": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Rackable}\u003dtrue,{view.custom.Isolated} , false)"
+              },
+              "transforms": [
+                {
+                  "fallback": "0px",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": false,
+                      "output": "0px"
+                    },
+                    {
+                      "input": true,
+                      "output": "-10px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "M 8.0233797,7.7328842 5.3356751,6.0238855",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 5.348556,7.7393246 8.0362606,6.0303259",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m 6.6990531,22.364074 -0.00376,-6.260393",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.545231px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 6.6953345,15.970567 2.6459996,6.9975501",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14758",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.546586px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30707",
+                  "transform": "translate(-0.18033219,-0.64404353)"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M 8.0233792,7.7328845 5.3356751,6.0238855",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 5.348556,7.7393246 8.0362602,6.0303256",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 6.6990395,22.364061 6.6974667,7.2394847",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30701",
+                  "transform": "translate(-0.180332,-0.6440435)"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M -3.0938728,4.8212516 -5.7815769,3.1122526",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m -5.768696,4.8276917 2.6877042,-1.708999",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1-0",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M -4.4182125,19.452428 -4.4197853,4.3278518",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3-4",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30696",
+                  "transform": "translate(10.93692,2.2675894)"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M -3.0938728,4.8212516 -5.7815769,3.1122526",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m -5.768696,4.8276917 2.6877042,-1.708999",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1-0",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M -4.4182125,19.452428 -4.4197853,4.3278518",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3-4",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30696",
+                  "transform": "translate(10.93692,2.2675894)"
+                }
+              ],
+              "name": "g30722",
+              "transform": "matrix(1.5212484,0,0,1.8467105,-3.1848551,-9.4026418)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "cursor": "pointer"
+          },
+          "viewBox": "0 0 9.260125 31.750588"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

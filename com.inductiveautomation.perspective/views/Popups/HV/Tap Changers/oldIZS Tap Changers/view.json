@@ -1,0 +1,2546 @@
+{
+  "custom": {
+    "SelectedTab": "Transformer 4 Tap Changer",
+    "deviceTagPath": "High Voltage/International/IZS Substation/Tap Changer/Transformer 4 Tap Changer"
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.getChild(\"root\").getChild(\"TabContainer\").props.currentTabIndex\u003dself.params.InitialTab"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "InitialTab": 1,
+    "deviceParentPath": "High Voltage/International/IZS Substation/Tap Changer"
+  },
+  "propConfig": {
+    "custom.SelectedTab": {
+      "binding": {
+        "config": {
+          "path": "/root/TabContainer.props.currentTabIndex"
+        },
+        "transforms": [
+          {
+            "fallback": "Transformer 4 Tap Changer",
+            "inputType": "scalar",
+            "mappings": [
+              {
+                "input": 0,
+                "output": "Transformer 4 Tap Changer"
+              },
+              {
+                "input": 1,
+                "output": "Transformer 5 Tap Changer"
+              },
+              {
+                "input": 2,
+                "output": "Transformer 6 Tap Changer"
+              }
+            ],
+            "outputType": "scalar",
+            "type": "map"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.custom.SelectedTab}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.InitialTab": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 665,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "TAP CHANGERS"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "International - IZS"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "custom": {
+                      "key": "value"
+                    },
+                    "meta": {
+                      "name": "AlarmsIcon"
+                    },
+                    "position": {
+                      "height": 40,
+                      "width": 40
+                    },
+                    "propConfig": {
+                      "props.image.icon.path": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "1": "{view.custom.deviceTagPath}"
+                            },
+                            "tagPath": "{1}/Alarm Summary/Active Unack"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "if({value} \u003d 0, \u0027material/warning\u0027, \u0027\u0027)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "height": 38,
+                        "icon": {
+                          "color": "var(--neutral-60)"
+                        },
+                        "width": 38
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginRight": "10px",
+                        "overflow": "hidden"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "meta": {
+                      "name": "Alarm Icon"
+                    },
+                    "position": {
+                      "height": 38,
+                      "width": 38,
+                      "x": 1,
+                      "y": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "deviceName": "",
+                          "deviceParentPath": "Alexandrina/Mt Compass/WWPS/MCP01",
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Alarm Button"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "marginBottom": 3,
+                    "marginRight": 5,
+                    "marginTop": 3,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-90)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_7"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Tap Position",
+                            "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "80px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_8"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Voltage",
+                            "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "100px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_9"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Current",
+                            "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "100px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Analogue"
+                    },
+                    "position": {
+                      "basis": "144px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+                      },
+                      "text": "Historical Trends"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Heading"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "overflow": "hidden",
+                                "textAlign": "left"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer_0"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "Status"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "26px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../status_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "status_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1",
+                        "cursor": "pointer",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "FlexRepeater"
+                        },
+                        "position": {
+                          "basis": "320px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.instances[0].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[1].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[2].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[3].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[4].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[5].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "direction": "column",
+                          "elementPosition": {
+                            "basis": "100%"
+                          },
+                          "instances": [
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Automatic Mode",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Circulating Current",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Tap Change in Progress",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Master",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Follower",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Parallel Control",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            }
+                          ],
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                          "useDefaultViewHeight": false,
+                          "useDefaultViewWidth": false
+                        },
+                        "type": "ia.display.flex-repeater"
+                      }
+                    ],
+                    "meta": {
+                      "name": "status_expanded"
+                    },
+                    "position": {
+                      "basis": "220px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "marginBottom": 2,
+                        "marginTop": 2,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label_1"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\tself.view.custom.showAlarms \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "textAlign": "center",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "Alarms"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "dom": {
+                                "onClick": {
+                                  "config": {
+                                    "script": "\ttagPath \u003d self.view.custom.deviceTagPath + \u0027/Alarm Reset CMD\u0027\n\tsystem.tag.writeBlocking([tagPath], [1])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "Button"
+                            },
+                            "position": {
+                              "basis": "80px"
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "Input/Button/Body-normal Input/Button/Text",
+                                "marginBottom": "5px",
+                                "marginTop": "5px",
+                                "overflow": "hidden"
+                              },
+                              "text": "reset"
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "display": false,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "flex-end",
+                          "style": {
+                            "marginRight": 10,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../alarms_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "alarms_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "alarms_expanded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.deviceParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "controlEnable": true,
+                        "deviceName": "Alarms"
+                      },
+                      "path": "Shared/Templates/Devices/Control/Common/Alarms",
+                      "style": {
+                        "marginBottom": "5px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "300px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Transformer 4"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_7"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Tap Position",
+                            "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "80px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_8"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Voltage",
+                            "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "100px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_9"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Current",
+                            "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "100px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Analogue"
+                    },
+                    "position": {
+                      "basis": "144px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+                      },
+                      "text": "Historical Trends"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Heading"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "overflow": "hidden",
+                                "textAlign": "left"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer_0"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "Status"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "26px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../status_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "status_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1",
+                        "cursor": "pointer",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "FlexRepeater"
+                        },
+                        "position": {
+                          "basis": "320px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.instances[0].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[1].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[2].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[3].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[4].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[5].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "direction": "column",
+                          "elementPosition": {
+                            "basis": "100%"
+                          },
+                          "instances": [
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Automatic Mode",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Circulating Current",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Tap Change in Progress",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Master",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Follower",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Parallel Control",
+                              "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")"
+                            }
+                          ],
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                          "useDefaultViewHeight": false,
+                          "useDefaultViewWidth": false
+                        },
+                        "type": "ia.display.flex-repeater"
+                      }
+                    ],
+                    "meta": {
+                      "name": "status_expanded"
+                    },
+                    "position": {
+                      "basis": "220px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "marginBottom": 2,
+                        "marginTop": 2,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label_1"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\tself.view.custom.showAlarms \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "textAlign": "center",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "Alarms"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "dom": {
+                                "onClick": {
+                                  "config": {
+                                    "script": "\ttagPath \u003d self.view.custom.deviceTagPath + \u0027/Alarm Reset CMD\u0027\n\tsystem.tag.writeBlocking([tagPath], [1])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "Button"
+                            },
+                            "position": {
+                              "basis": "80px"
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "Input/Button/Body-normal Input/Button/Text",
+                                "marginBottom": "5px",
+                                "marginTop": "5px",
+                                "overflow": "hidden"
+                              },
+                              "text": "reset"
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "display": false,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "flex-end",
+                          "style": {
+                            "marginRight": 10,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../alarms_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "alarms_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "alarms_expanded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.deviceParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "controlEnable": true,
+                        "deviceName": "Alarms"
+                      },
+                      "path": "Shared/Templates/Devices/Control/Common/Alarms",
+                      "style": {
+                        "marginBottom": "5px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "300px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Transformer 5"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_7"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Tap Position",
+                            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Tap Position.quality\u0027 not found.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "80px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_8"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Voltage",
+                            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Voltage.quality\u0027 not found.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "100px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Analogue Value w Label_9"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "showUnitsInValue": true,
+                            "tagName": "Current",
+                            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Current.quality\u0027 not found.\")",
+                            "unitsWidth": "25px",
+                            "valueWidth": "100px"
+                          },
+                          "path": "Shared/Templates/Display/Analogue Value w Label",
+                          "style": {
+                            "marginBottom": "0px",
+                            "marginLeft": "5px",
+                            "marginRight": "10px",
+                            "marginTop": "5px",
+                            "overflow": "hidden"
+                          },
+                          "useDefaultViewHeight": true
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Analogue"
+                    },
+                    "position": {
+                      "basis": "144px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+                      },
+                      "text": "Historical Trends"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Heading"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "overflow": "hidden",
+                                "textAlign": "left"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer_0"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "Status"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "26px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../status_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "status_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1",
+                        "cursor": "pointer",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "FlexRepeater"
+                        },
+                        "position": {
+                          "basis": "320px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.instances[0].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[1].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[2].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[3].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[4].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.instances[5].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTagPath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "direction": "column",
+                          "elementPosition": {
+                            "basis": "100%"
+                          },
+                          "instances": [
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Automatic Mode",
+                              "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Automatic Mode.quality\u0027 not found.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Circulating Current",
+                              "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Circulating Current.quality\u0027 not found.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Tap Change in Progress",
+                              "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Tap Change in Progress.quality\u0027 not found.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Master",
+                              "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Master.quality\u0027 not found.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Follower",
+                              "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Follower.quality\u0027 not found.\")"
+                            },
+                            {
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "tagName": "Parallel Control",
+                              "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/International/IZS Substation/Tap Changer/value/Status Folder/Parallel Control.quality\u0027 not found.\")"
+                            }
+                          ],
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                          "useDefaultViewHeight": false,
+                          "useDefaultViewWidth": false
+                        },
+                        "type": "ia.display.flex-repeater"
+                      }
+                    ],
+                    "meta": {
+                      "name": "status_expanded"
+                    },
+                    "position": {
+                      "basis": "220px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "marginBottom": 2,
+                        "marginTop": 2,
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label_1"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\tself.view.custom.showAlarms \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "textAlign": "center",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "Alarms"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "dom": {
+                                "onClick": {
+                                  "config": {
+                                    "script": "\ttagPath \u003d self.view.custom.deviceTagPath + \u0027/Alarm Reset CMD\u0027\n\tsystem.tag.writeBlocking([tagPath], [1])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "Button"
+                            },
+                            "position": {
+                              "basis": "80px"
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "Input/Button/Body-normal Input/Button/Text",
+                                "marginBottom": "5px",
+                                "marginTop": "5px",
+                                "overflow": "hidden"
+                              },
+                              "text": "reset"
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "display": false,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "flex-end",
+                          "style": {
+                            "marginRight": 10,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../alarms_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "alarms_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "alarms_expanded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.deviceParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "controlEnable": true,
+                        "deviceName": "Alarms"
+                      },
+                      "path": "Shared/Templates/Devices/Control/Common/Alarms",
+                      "style": {
+                        "marginBottom": "5px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "300px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Transformer 6"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "586px"
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "overflow": "hidden"
+          },
+          "tabSize": {
+            "width": 115
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Transformer 4",
+            "Transformer 5",
+            "Transformer 6"
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": true,
+                  "id": "IZS{/root/TabContainer.props.currentTabIndex}",
+                  "modal": false,
+                  "overlayDismiss": false,
+                  "resizable": false,
+                  "showCloseIcon": true,
+                  "type": "close",
+                  "viewPath": "Popups/HV/Tap Changers/IZS Tap Changers",
+                  "viewportBound": false
+                },
+                "enabled": false,
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "overflow": "hidden"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

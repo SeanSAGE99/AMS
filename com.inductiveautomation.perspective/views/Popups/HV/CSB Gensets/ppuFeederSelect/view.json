@@ -1,0 +1,1370 @@
+{
+  "custom": {
+    "action": "Synchronise with Mains",
+    "deviceTagPath": "High Voltage/International/Substation 1/CSB Genset PLC/Master/Command/Synch with Mains Command"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.action": {
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 504,
+      "width": 466
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "12pt",
+                "fontWeight": "bold",
+                "letterSpacing": "1px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              },
+              "text": "Feeder Connction Sequence"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "10pt",
+                "fontStyle": "italic",
+                "fontWeight": "lighter",
+                "letterSpacing": "1px",
+                "marginBottom": "5px",
+                "textAlign": "center",
+                "textTransform": "none"
+              },
+              "text": "Substation 1 - CSB Genset"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "text": "First",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "text": "Second",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "text": "Third",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "70px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Feeder 1 (CB 5)",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t\n\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect First\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 1 to Connect First\"\n\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect First"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect First"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 5 First"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect Second\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 1 to Connect Second\"\n\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect Second"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect Second"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 5 Second"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect Third\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 1 to Connect Third\"\n\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_1"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect Third"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 1 Selected to Connect Third"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 5 Third"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Feeder 2 (CB 7)",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect First\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 2 to Connect First\"\n\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect First"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect First"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 7 First"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect Second\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 2 to Connect Second\"\n\t\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect Second"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect Second"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 7 Second"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect Third\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 2 to Connect Third\"\n\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_1"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect Third"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 2 Selected to Connect Third"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 7 Third"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Feeder 3 (CB 11)",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect First\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 3 to Connect First\"\n\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect First"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect First"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 11 First"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect Second\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 3 to Connect Second\"\n\t\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect Second"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect Second"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 11 Second"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tstatusTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect Third\"\n\tcommandTagPath \u003d \"[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Feeder 3 to Connect Third\"\n\t\n\tstatusTag\u003d system.tag.readBlocking(statusTagPath)\n\t\n\tif statusTag[0].value \u003d\u003d True:\n\t\tsystem.tag.writeBlocking(commandTagPath, 0)\n\telif statusTag[0].value \u003d\u003d False:\n\t\tsystem.tag.writeBlocking(commandTagPath, 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_1"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect Third"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Status/Feeder 3 Selected to Connect Third"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB 11 Third"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1
+            },
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "25px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Sub 8 CB 4",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.tag.writeBlocking(\"High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Sub 8 CB4 to Close on Sync\", 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Sub 8 CB4 to Close on Sync"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Sub 8 CB4 to Close on Sync"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB Selected to Close on Sync"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "30px",
+              "grow": 1
+            },
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "25px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Sub 9 CB 4",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.tag.writeBlocking(\"High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Sub 9 CB4 to Close on Sync\", 1)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Sub 9 CB4 to Close on Sync"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Input/Button/Body-normal Input/Button/Colour/Selected Input/Button/Text"
+                        },
+                        {
+                          "input": true,
+                          "output": "Input/Button/Colour/Normal Input/Button/Colour/Selected Input/Button/Text"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Synch With Mains/Command/Select Sub 9 CB4 to Close on Sync"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": false,
+                          "output": "Select"
+                        },
+                        {
+                          "input": true,
+                          "output": "CB Selected to Close on Sync"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 5,
+                "marginRight": 5,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_3"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.togglePopup(\"ppuSecondLevelAuthentication\", \u0027Popups/HV/CSB Gensets/ppuSecondLevelAuthentication\u0027, {\u0027deviceTagPath\u0027 : self.view.custom.deviceTagPath, \u0027action\u0027 : self.view.custom.action}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.togglePopup(\"ppuSecondLevelAuthentication\", \u0027Popups/HV/CSB Gensets/ppuSecondLevelAuthentication\u0027, {\u0027deviceTagPath\u0027 : self.view.custom.deviceTagPath, \u0027action\u0027 : self.view.custom.action}, showCloseIcon \u003d False, draggable \u003d False)\n\t\t\n\tsystem.perspective.closePopup(\"ppuFeederSelect\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "basis": "45px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 2,
+            "marginBottom": 10,
+            "marginLeft": 70,
+            "marginRight": 70,
+            "paddingLeft": "20px",
+            "paddingRight": "20px"
+          },
+          "text": "Sync with Mains and Close Selected Feeders"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "20px",
+          "grow": 1
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\"ppuFeederSelect\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

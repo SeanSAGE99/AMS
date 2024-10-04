@@ -1,0 +1,458 @@
+{
+  "custom": {
+    "alarmHighestPriority": 0,
+    "gpsCoords": {},
+    "pump1Status": "Stopped",
+    "pump2Status": "Stopped",
+    "siteTagPath": "Alexandrina/Mt Compass/WWPS/MCP02",
+    "zoomLevels": [
+      11,
+      13,
+      14
+    ]
+  },
+  "params": {
+    "area": "Alexandrina",
+    "gpsCoords": {
+      "lat": -35.361072214645645,
+      "lng": 138.6141160171612
+    },
+    "gpsLat": -35.361072214645645,
+    "gpsLng": 138.6141160171612,
+    "mapZoom": 11,
+    "siteId": "MCP02",
+    "subArea": "Mt Compass"
+  },
+  "propConfig": {
+    "custom.alarmHighestPriority": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.siteTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Highest Priority"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.gpsCoords": {
+      "persistent": true
+    },
+    "custom.gpsCoords.lat": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.siteTagPath}"
+          },
+          "tagPath": "{1}/Parameters.GPS_Lattitude"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.gpsCoords.lng": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.siteTagPath}"
+          },
+          "tagPath": "{1}/Parameters.GPS_Longitude"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.pump1Status": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.siteTagPath}"
+          },
+          "tagPath": "{1}/Pump 1/Status Desc"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.pump2Status": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.siteTagPath}"
+          },
+          "tagPath": "{1}/Pump 2/Status Desc"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.siteTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.area} + \u0027/\u0027 +\r\n{view.params.subArea} + \u0027/\u0027 +\r\n\u0027WWPS/\u0027 +\r\n{view.params.siteId}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.zoomLevels": {
+      "persistent": true
+    },
+    "params.area": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.gpsCoords": {
+      "binding": {
+        "config": {
+          "path": "view.custom.gpsCoords"
+        },
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.gpsLat": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.siteTagPath}"
+          },
+          "tagPath": "{1}/Parameters.GPS_Lattitude"
+        },
+        "type": "tag"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.gpsLng": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.siteTagPath}"
+          },
+          "tagPath": "{1}/Parameters.GPS_Longitude"
+        },
+        "type": "tag"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.mapZoom": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.siteId": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.subArea": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 64,
+      "width": 64
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Pump_01_opt_0"
+                },
+                "position": {
+                  "height": 1,
+                  "width": 1
+                },
+                "propConfig": {
+                  "props.style.classes": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.pump1Status} \u003d \u0027Running\u0027 ||\r\n{view.custom.pump2Status} \u003d \u0027Running\u0027"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": "Device/Status/Shape/Off",
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": true,
+                              "output": "Device/Status/Shape/On"
+                            }
+                          ],
+                          "outputType": "style-list",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "d": "m35.755 41.415a14.628 14.628 0 0 1-14.628 14.628 14.628 14.628 0 0 1-14.628-14.628 14.628 14.628 0 0 1 14.628-14.628 14.628 14.628 0 0 1 14.628 14.628z",
+                              "name": "body",
+                              "style": {
+                                "stroke": "var(--neutral-90)",
+                                "strokeWidth": "3px",
+                                "vector-effect": "REMOVEnon-scaling-stroke"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m13.851 53.676v-12.223-12.223l10.585 6.1115 10.585 6.1114-10.585 6.1115z",
+                              "name": "direction",
+                              "style": {
+                                "stroke": "var(--neutral-90)",
+                                "strokeWidth": "1px",
+                                "vector-effect": "non-scaling-stroke"
+                              },
+                              "type": "circle"
+                            }
+                          ],
+                          "name": "group",
+                          "transform": "matrix(.80229 0 0 .80228 .17723 12.189)",
+                          "type": "group"
+                        }
+                      ],
+                      "name": "group",
+                      "transform": "translate(-4.1275 -32.415) rotate(0, 17.1,45.5)",
+                      "type": "group"
+                    }
+                  ],
+                  "style": {},
+                  "viewBox": "0 0 26 26"
+                },
+                "type": "ia.shapes.svg"
+              }
+            ],
+            "custom": {
+              "straightLineConstants": {},
+              "zoom1Level": 15,
+              "zoom1Size": 64,
+              "zoom2Level": 11,
+              "zoom2Size": 16
+            },
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "page": "/wwps/details/{view.params.area}/{view.params.subArea}/{view.params.siteId}"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "pumpSymbol"
+            },
+            "position": {
+              "height": 16,
+              "width": 16,
+              "x": 24,
+              "y": 24
+            },
+            "propConfig": {
+              "custom.actualSize": {
+                "binding": {
+                  "config": {
+                    "expression": "{this.custom.straightLineConstants.m}*{this.custom.mapZoom} + {this.custom.straightLineConstants.c}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.mapZoom": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.mapZoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "custom.straightLineConstants.c": {
+                "binding": {
+                  "config": {
+                    "expression": "-1*{this.custom.straightLineConstants.m}*{this.custom.zoom1Level} + {this.custom.zoom1Size} "
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.straightLineConstants.m": {
+                "binding": {
+                  "config": {
+                    "expression": "({this.custom.zoom1Size}-{this.custom.zoom2Size})/({this.custom.zoom1Level}-{this.custom.zoom2Level})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "mode": "percent",
+              "style": {
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.container.coord"
+          },
+          {
+            "custom": {
+              "straightLineConstants": {},
+              "zoom1Level": 15,
+              "zoom1Size": 64,
+              "zoom2Level": 11,
+              "zoom2Size": 20
+            },
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "page": "/wwps/details/{view.params.area}/{view.params.subArea}/{view.params.siteId}"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "alarm"
+            },
+            "propConfig": {
+              "custom.actualSize": {
+                "binding": {
+                  "config": {
+                    "expression": "{this.custom.straightLineConstants.m}*{this.custom.mapZoom} + {this.custom.straightLineConstants.c}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.mapZoom": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.mapZoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "custom.straightLineConstants.c": {
+                "binding": {
+                  "config": {
+                    "expression": "-1*{this.custom.straightLineConstants.m}*{this.custom.zoom1Level} + {this.custom.zoom1Size} "
+                  },
+                  "type": "expr"
+                }
+              },
+              "custom.straightLineConstants.m": {
+                "binding": {
+                  "config": {
+                    "expression": "({this.custom.zoom1Size}-{this.custom.zoom2Size})/({this.custom.zoom1Level}-{this.custom.zoom2Level})"
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.height": {
+                "binding": {
+                  "config": {
+                    "expression": "{this.custom.actualSize}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.width": {
+                "binding": {
+                  "config": {
+                    "expression": "{this.custom.actualSize}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.x": {
+                "binding": {
+                  "config": {
+                    "expression": "({view.props.defaultSize.width}-{this.custom.actualSize})/2"
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.y": {
+                "binding": {
+                  "config": {
+                    "expression": "({view.props.defaultSize.width}-{this.custom.actualSize})/2"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.alarmSummary.parentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.siteTagPath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "alarmSummary": {
+                  "enabled": true
+                },
+                "device": {
+                  "enabled": false,
+                  "name": "value",
+                  "parentPath": "value"
+                }
+              },
+              "path": "Shared/Alarms/Symbol",
+              "style": {
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "symbol"
+        },
+        "position": {
+          "height": 64,
+          "width": 64
+        },
+        "props": {
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.coord"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

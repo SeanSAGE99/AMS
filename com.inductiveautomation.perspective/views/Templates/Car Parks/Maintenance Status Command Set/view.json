@@ -1,0 +1,259 @@
+{
+  "custom": {
+    "onStatus": true
+  },
+  "params": {
+    "label": "Maintenance Mode",
+    "onOffCommandPLC1": {
+      "tagParentPath": "[default]International/test/ER Light Maintenance Mode test/Control"
+    },
+    "onOffCommandPLC2": {
+      "tagParentPath": "[default]International/test/WR Light Maintenance Mode test/Control"
+    },
+    "singleCommandPLC1": {
+      "tagParentPath": "[default]International/test/Light Maintenance Mode Level 8-11 test/Control"
+    },
+    "singleCommandPLC2": {
+      "tagParentPath": "[default]International/test/Light Maintenance Mode Level 8-12 test/Control"
+    },
+    "statusTag": {
+      "tagName": "On",
+      "tagParentPath": "[default]International/test/ER Light Maintenance Mode test/Status"
+    }
+  },
+  "propConfig": {
+    "custom.onStatus": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "tagName": "{view.params.statusTag.tagName}",
+            "tagParentPath": "{view.params.statusTag.tagParentPath}"
+          },
+          "tagPath": "{tagParentPath}/{tagName}"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.onOffCommandPLC1": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.onOffCommandPLC2": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.singleCommandPLC1": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.singleCommandPLC2": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.statusTag": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 320
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Heading"
+        },
+        "position": {
+          "basis": "178px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.label"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Tag/Label",
+            "overflow": "hidden",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Boolean Value w Label Opposite"
+        },
+        "position": {
+          "basis": "45px"
+        },
+        "propConfig": {
+          "props.params.tagName": {
+            "binding": {
+              "config": {
+                "path": "view.params.statusTag.tagName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.statusTag.tagParentPath}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "controlEnable": true,
+            "labelOverride": "On",
+            "styleClasses": "",
+            "tagQuality": "Good"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Boolean Value",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Multiple Tag"
+        },
+        "position": {
+          "basis": "90px"
+        },
+        "propConfig": {
+          "props.params.buttonText": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.onStatus},\"Off\",\"On\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tags[0].tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.singleCommandPLC1.tagParentPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tags[0].writeValue": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.onStatus},false,true)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tags[1].tagName": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.onStatus},\u0027Off Command\u0027,\u0027On Command\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tags[1].tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.onOffCommandPLC1.tagParentPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tags[2].tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.singleCommandPLC2.tagParentPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tags[2].writeValue": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.onStatus},false,true)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tags[3].tagName": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.onStatus},\u0027Off Command\u0027,\u0027On Command\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tags[3].tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.onOffCommandPLC2.tagParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "tagOneName": "",
+            "tagOneParentPath": "",
+            "tagOneWriteValue": "",
+            "tags": [
+              {
+                "tagName": "Single Command"
+              },
+              {
+                "writeValue": true
+              },
+              {
+                "tagName": "Single Command"
+              },
+              {
+                "writeValue": true
+              }
+            ]
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Multiple Tag - AMS",
+          "style": {
+            "marginLeft": 10
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "center",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

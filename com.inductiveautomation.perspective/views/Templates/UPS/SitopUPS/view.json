@@ -1,0 +1,387 @@
+{
+  "custom": {
+    "ActiveAck": false,
+    "ActiveUnack": false,
+    "AlarmCount": 0,
+    "DeviceTagPath": "High Voltage/International/ACS1 Substation/PLC/UPS",
+    "tags": [
+      {
+        "tagName": "Battery Fault",
+        "tagParentPath": "[default]High Voltage/International/ACS1 Substation/PLC/UPS/Alarms"
+      },
+      {
+        "tagName": "Mains Failed",
+        "tagParentPath": "[default]High Voltage/International/ACS1 Substation/PLC/UPS/Alarms"
+      },
+      {
+        "tagName": "SPD Alarm",
+        "tagParentPath": "[default]High Voltage/International/ACS1 Substation/PLC/UPS/Alarms"
+      },
+      {
+        "tagName": "UPS Alarm",
+        "tagParentPath": "[default]High Voltage/International/ACS1 Substation/PLC/UPS/Alarms"
+      }
+    ]
+  },
+  "params": {
+    "DeviceName": "UPS",
+    "DeviceParentPath": "High Voltage/International/ACS1 Substation/PLC",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 85,
+      "width": 105
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.3294,
+          "width": 1.0286,
+          "x": -0.0057,
+          "y": 0.0592
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.2235,
+          "width": 0.181,
+          "x": 0.665,
+          "y": 0.4721
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.1765,
+          "width": 0.3619,
+          "x": 0.3276,
+          "y": 0.7965
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Parameters.Voltage"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "9Fn45oqa",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "ups_opt_0"
+        },
+        "position": {
+          "height": 0.4941,
+          "width": 0.3905,
+          "x": 0.3133,
+          "y": 0.3293
+        },
+        "propConfig": {
+          "props.elements[0].fill.paint": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "fallback": "var(--dev-sym-abnormal)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 0,
+                      "output": null
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "fallback": "Device/Status/Shape/Faulted",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 0,
+                      "output": null
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M 26,4 A 2,2 0 0 0 24,2 H 8 A 2,2 0 0 0 6,4 v 23 a 2,2 0 0 0 2,2 h 16 a 2,2 0 0 0 2,-2 z M 8,4 H 24 V 27 H 8 Z",
+                  "name": "path4",
+                  "type": "path"
+                },
+                {
+                  "d": "m 21,25 a 1,1 0 0 0 -1,-1 h -8 a 1,1 0 0 0 -1,1 v 3 a 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 z m -2,1 v 1 H 13 V 26 Z M 22,3 A 1,1 0 0 0 21,2 H 11 a 1,1 0 0 0 -1,1 v 13 c 0,1.591 0.632,3.117 1.757,4.243 a 6.003,6.003 0 0 0 8.486,0 A 6.003,6.003 0 0 0 22,16 Z M 16,20 A 3.995,3.995 0 0 1 13.172,18.828 3.995,3.995 0 0 1 12,16 V 4 h 8 V 16 A 3.995,3.995 0 0 1 18.828,18.828 3.995,3.995 0 0 1 16,20 Z",
+                  "name": "path6",
+                  "type": "path"
+                },
+                {
+                  "cx": "16",
+                  "cy": "12",
+                  "name": "circle10",
+                  "r": "1",
+                  "type": "circle"
+                },
+                {
+                  "cx": "16",
+                  "cy": "9",
+                  "name": "circle12",
+                  "r": "1",
+                  "type": "circle"
+                },
+                {
+                  "cx": "16",
+                  "cy": "6",
+                  "name": "circle14",
+                  "r": "1",
+                  "type": "circle"
+                }
+              ],
+              "fill": {
+                "paint": "var(--neutral-80)"
+              },
+              "name": "g1342",
+              "type": "group"
+            }
+          ],
+          "stroke-miterlimit": "2",
+          "style": {
+            "classes": null
+          },
+          "viewBox": "0 0 32 32"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -50,
+      "y": -26.9999942779541
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

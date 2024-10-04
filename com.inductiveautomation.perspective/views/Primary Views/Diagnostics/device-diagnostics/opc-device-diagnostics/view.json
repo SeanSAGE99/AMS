@@ -1,0 +1,77 @@
+{
+  "custom": {
+    "deviceName": null
+  },
+  "params": {},
+  "propConfig": {
+    "custom.deviceName": {
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "main-lg"
+        },
+        "position": {
+          "size": "large"
+        },
+        "propConfig": {
+          "props.params.deviceName": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Primary Views/Diagnostics/device-diagnostics/framework/opc-main-lg"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "main-sm"
+        },
+        "propConfig": {
+          "props.params.deviceName": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Primary Views/Diagnostics/device-diagnostics/framework/main-sm"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "breakpoint": 1300
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "update_device_name",
+          "pageScope": true,
+          "script": "\t# when device selection is changed from either large view\n\t# or small view, this updates the custom prop that holds\n\t# the name of the selected device\n\t\n\t# both embedded views in this breakpoint container have \n\t# input param (\u0027deviceName\u0027) that is bound to this custom prop\n\t\n\tself.view.custom.deviceName \u003d payload[\u0027name\u0027]",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.breakpt"
+  }
+}

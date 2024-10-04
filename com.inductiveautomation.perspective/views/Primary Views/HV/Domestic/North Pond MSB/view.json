@@ -1,0 +1,673 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/Northern Ponds MSB"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Bravo"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.197,
+          "y": 0.025
+        },
+        "props": {
+          "params": {
+            "CB01": false,
+            "CB02": true,
+            "CB04": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/Bravo"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.0604,
+          "x": 0.2277,
+          "y": 0.2162
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/MSB PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.0627,
+          "y": 0.4353
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR001",
+            "deviceParentPath": "High Voltage/Domestic/Northern Ponds MSB"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB_0"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.0604,
+          "x": 0.5153,
+          "y": 0.6323
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB02",
+            "DeviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/MSB PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Medium_0"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.3503,
+          "y": 0.8512
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR002",
+            "deviceParentPath": "High Voltage/Domestic/Northern Ponds MSB"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB_1"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.0604,
+          "x": 0.6393,
+          "y": 0.6323
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB03",
+            "DeviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/MSB PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.812,
+          "y": 0.1038
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/Genset",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.8118,
+          "y": 0.2239
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Genset UPS",
+            "DeviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/Genset",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.9295,
+          "y": 0.1038
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "[default]High Voltage/Domestic/Northern Ponds MSB/MSB PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.9293,
+          "y": 0.2239
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS",
+            "DeviceParentPath": "[default]High Voltage/Domestic/Northern Ponds MSB/MSB PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.086,
+          "x": 0.4014,
+          "y": 0.3513
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1"
+          },
+          "text": "NORTHERN PONDS MSB",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.2309,
+          "y": 0.4807
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_0"
+        },
+        "position": {
+          "height": 0.0576,
+          "width": 0.0312,
+          "x": 0.5728,
+          "y": 0.5745
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/arrow_drop_up"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_1"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.5187,
+          "y": 0.8972
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9221,
+          "y": 0.0202
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Genset"
+        },
+        "position": {
+          "height": 0.0702,
+          "width": 0.0563,
+          "x": 0.6223,
+          "y": 0.0428
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/Genset",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/HV/Genset/ppuGenset"
+          },
+          "path": "Templates/HV/Genset/Genset"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Northern Pond"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 0.0311,
+          "width": 0.0885,
+          "x": 0.0043,
+          "y": 0.0245
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Northern Pond",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2385,
+                "y": 0.1327
+              }
+            ],
+            "x": 0.2385,
+            "y": 0.2635
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.3828,
+                    "y": 0.5933
+                  }
+                ],
+                "x": 0.2385,
+                "y": 0.5933
+              }
+            ],
+            "x": 0.2385,
+            "y": 0.3135
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.3826,
+                    "y": 0.5933
+                  }
+                ],
+                "x": 0.5263,
+                "y": 0.5933
+              }
+            ],
+            "x": 0.5263,
+            "y": 0.6798
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5263,
+                "y": 0.9714
+              }
+            ],
+            "x": 0.5263,
+            "y": 0.7298
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.65,
+                "y": 0.1115
+              }
+            ],
+            "x": 0.65,
+            "y": 0.6798
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.65,
+                "y": 0.8512
+              }
+            ],
+            "x": 0.65,
+            "y": 0.7298
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "dashed",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6502,
+                "y": 0.8497
+              }
+            ],
+            "x": 0.527,
+            "y": 0.8497
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "dashed",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6502,
+                "y": 0.6032
+              }
+            ],
+            "x": 0.5269,
+            "y": 0.6032
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2385,
+                "y": 0.4954
+              }
+            ],
+            "x": 0.1719,
+            "y": 0.4954
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5263,
+                "y": 0.9113
+              }
+            ],
+            "x": 0.4599,
+            "y": 0.9113
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

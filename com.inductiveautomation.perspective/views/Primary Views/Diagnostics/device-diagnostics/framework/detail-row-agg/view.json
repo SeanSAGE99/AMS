@@ -1,0 +1,105 @@
+{
+  "custom": {},
+  "params": {
+    "name": "value",
+    "units": "",
+    "val": "value"
+  },
+  "propConfig": {
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.units": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.val": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 27,
+      "width": 215
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "detailName"
+        },
+        "position": {
+          "basis": "146px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.name"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "device-diagnostics/font",
+            "fontSize": 13,
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "detailVal"
+        },
+        "position": {
+          "basis": "30px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.val"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(value) + self.view.params.units",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderLeftColor": "--neutral-30",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "1px",
+            "classes": "device-diagnostics/font",
+            "fontSize": 13,
+            "paddingLeft": "5px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

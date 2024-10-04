@@ -1,0 +1,263 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "username_text_field"
+        },
+        "position": {
+          "height": 32,
+          "width": 255,
+          "x": 298,
+          "y": 97
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "username_label"
+        },
+        "position": {
+          "height": 32,
+          "width": 91,
+          "x": 159,
+          "y": 97
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "text": "Username"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "password_label"
+        },
+        "position": {
+          "height": 32,
+          "width": 91,
+          "x": 159,
+          "y": 144
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "text": "Password"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tusersource \u003d self.getSibling(\"user_source_dropdown\").props.value\n\tusername \u003d self.getSibling(\"username_text_field\").props.text\n\tpassword \u003d self.getSibling(\"password_text_field\").props.text\n\tresult \u003d system.security.validateUser(username, password, usersource)\n\tself.getSibling(\"result_label\").props.text \u003d result"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "verify_credentials_button"
+        },
+        "position": {
+          "height": 44,
+          "width": 89,
+          "x": 464,
+          "y": 206
+        },
+        "props": {
+          "text": "Verify Credentials"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "result_label"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 378,
+          "y": 280
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"user_source_dropdown\").props.value \u003d None\n\tself.getSibling(\"username_text_field\").props.text \u003d \u0027\u0027\n\tself.getSibling(\"password_text_field\").props.text \u003d \u0027\u0027\n\tself.getSibling(\"result_label\").props.text \u003d \u0027\u0027\n\tself.getSibling(\"info_label\").props.text \u003d \u0027\u0027\n\tself.getSibling(\"warn_label\").props.text \u003d \u0027\u0027\n\tself.getSibling(\"error_label\").props.text \u003d \u0027\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "clear_result_button"
+        },
+        "position": {
+          "height": 39,
+          "width": 89,
+          "x": 464,
+          "y": 312
+        },
+        "props": {
+          "text": "Clear"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "password_text_field"
+        },
+        "position": {
+          "height": 32,
+          "width": 255,
+          "x": 298,
+          "y": 144
+        },
+        "type": "ia.input.password-field"
+      },
+      {
+        "meta": {
+          "name": "user_source_dropdown"
+        },
+        "position": {
+          "height": 36,
+          "width": 256,
+          "x": 297,
+          "y": 38
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "expression": "now(10000)"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom com.inductiveautomation.ignition.gateway import IgnitionGateway\n\tfrom simpleorm.dataset import SQuery\n\tfrom com.inductiveautomation.ignition.gateway.user import UserSourceProfileRecord\n\tquery \u003d SQuery(UserSourceProfileRecord.META).ascending(UserSourceProfileRecord.Name)\n\tresults \u003d IgnitionGateway.get().getPersistenceInterface().query(query)\n\tuserSourceProfiles \u003d []\n\tfor result in results:\n\t\tname \u003d result.getName()\n\t\tuserSourceProfiles.append({\u0027value\u0027: name, \u0027label\u0027: name})\n\treturn userSourceProfiles",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "value": "AD"
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "user_source_label"
+        },
+        "position": {
+          "height": 32,
+          "width": 91,
+          "x": 159,
+          "y": 42
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "text": "User Source"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tfrom com.inductiveautomation.ignition.common.user import User\n\tusersource \u003d self.getSibling(\"user_source_dropdown\").props.value\n\tusername \u003d self.getSibling(\"username_text_field\").props.text\n\tpassword \u003d self.getSibling(\"password_text_field\").props.text\n\tuser \u003d system.user.getUser(usersource, username)\n\tuser.set(User.Password, password)\n\tresult \u003d system.user.editUser(usersource, user)\n\tself.getSibling(\"info_label\").props.text \u003d result.getInfos()\n\tself.getSibling(\"warn_label\").props.text \u003d result.getWarns()\n\tself.getSibling(\"error_label\").props.text \u003d result.getErrors()"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "verify_credentials_button_0"
+        },
+        "position": {
+          "height": 44,
+          "width": 89,
+          "x": 464,
+          "y": 258
+        },
+        "props": {
+          "text": "Change Password"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "info_label"
+        },
+        "position": {
+          "height": 32,
+          "width": 616,
+          "x": 121,
+          "y": 450
+        },
+        "props": {
+          "style": {
+            "color": "#0000FF"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "warn_label"
+        },
+        "position": {
+          "height": 32,
+          "width": 616,
+          "x": 121,
+          "y": 493
+        },
+        "props": {
+          "style": {
+            "color": "#FFC900"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "error_label"
+        },
+        "position": {
+          "height": 32,
+          "width": 616,
+          "x": 121,
+          "y": 537
+        },
+        "props": {
+          "style": {
+            "color": "#FF0000"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

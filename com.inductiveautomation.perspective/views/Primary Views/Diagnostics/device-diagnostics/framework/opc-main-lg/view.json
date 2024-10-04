@@ -1,0 +1,564 @@
+{
+  "custom": {},
+  "params": {
+    "deviceName": ""
+  },
+  "propConfig": {
+    "custom.diagnostics": {
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 835,
+      "width": 917
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "title"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "fontSize": 26,
+                "marginLeft": "8px"
+              },
+              "text": "OPC Device Diagnostics"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "device-diagnostics/header"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "title"
+                    },
+                    "position": {
+                      "basis": "50px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "marginLeft": "5px"
+                      },
+                      "text": "OPC Device List"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\t# if a device is selected, then this will \u0027clear out\u0027 the device selection;\n\t# by setting selectedRow to None, this triggers the table\u0027s onSelectionChange\n\t# event, which will send a message to the \u0027update_device_name\u0027 message\n\t# handler on the \u0027main\u0027 view (to set the selected device to null)\n\t\n\t# this will also refresh the data in the device list\n\t\n\tself.parent.parent.getChild(\"table\").props.selection.selectedRow \u003d None\n\tself.parent.parent.getChild(\"table\").refreshBinding(\u0027props.data\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "refresh"
+                    },
+                    "position": {
+                      "basis": "25px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/refresh",
+                      "style": {
+                        "cursor": "pointer"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "titleContainer"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "device-diagnostics/header"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onSelectionChange": {
+                      "config": {
+                        "script": "\t# when the selected row changes, this sends a message to the\n\t# \u0027update_device_name\u0027 message handler on the \u0027main\u0027 view to\n\t# update the selected device custom prop\n\t\n\tif event.selectedRow \u003d\u003d None:\n\t\tpayload \u003d {\u0027name\u0027:None}\n\telse:\n\t\tpayload \u003d {\u0027name\u0027:event.data[0][\u0027Name\u0027]}\n\tsystem.perspective.sendMessage(\u0027update_device_name\u0027,payload\u003dpayload,scope\u003d\u0027page\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "table"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "expression": "0"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\t# this gets the list of device connections from the gateway and\n\t# forms the dataset for the device list table\n\t\n\tdata \u003d []\n\tres \u003d system.tag.browse(path\u003d\"[System]Gateway/OPC/Connections\")\n\tfor result in res.getResults():\n\t\tserver \u003d result[\"name\"]\n\t\tisEnabled \u003d system.tag.readBlocking(\"[System]Gateway/OPC/Connections/\" + server + \"/Enabled\")\n\t\tif isEnabled[0].value \u003d\u003d 1: \n\t\t\tisEnabled \u003d \"yes\"\n\t\telse:\n\t\t\tisEnabled \u003d \"no\"\n\t\t\t\n\t\tisConnected \u003d system.tag.readBlocking(\"[System]Gateway/OPC/Connections/\" + server + \"/Connected\")\n\t\tif isConnected[0].value \u003d\u003d 1: \n\t\t\tisConnected \u003d \"yes\"\n\t\telse:\n\t\t\tisConnected \u003d \"no\"\n\t\t\n\t\tstatus \u003d system.tag.readBlocking(\"[System]Gateway/OPC/Connections/\" + server + \"/State\")\n\t\t\n\t\tdata.append({\u0027server\u0027:server, \u0027Enabled\u0027: isEnabled, \u0027Connected\u0027: isConnected, \u0027Status\u0027: status})\n\t\t#pds \u003d system.dataset.toPyDataSet(data)\n\treturn data",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr"
+                    },
+                    "onChange": {
+                      "enabled": null,
+                      "script": "\t# the only purpose of this script is to ensure that the proper\n\t# row is selected in the device list when the breakpoint\n\t# container switches from the small view to the large view:\n\t# I can select a device on the small view (updates the selected\n\t# device custom prop on the \u0027main\u0027 view, which updates the\n\t# deviceName param for the large embedded view), then, when\n\t# the breakpoint container switches to the large version, we\n\t# see the diagnostics for the selected device, but there is not\n\t# a row selected in the device list\n\t\n\t# so, once the data for the device list has finished loading,\n\t# if the \u0027deviceName\u0027 param is not empty, then this will iterate\n\t# through the data to find the row index of the selected device,\n\t# and then it will set the selectedRow of the table equal to\n\t# the correct row index\n\t\n\tif self.view.params.deviceName not in [\u0027\u0027,None]:\n\t\timport time\n\t\ttime.sleep(0.3)\n\t\tdata \u003d currentValue.value\n\t\tfor index,row in enumerate(data):\n\t\t\tif row.value[\u0027Name\u0027].value \u003d\u003d self.view.params.deviceName:\n\t\t\t\tself.props.selection.selectedRow \u003d index\n\t\t\t\tself.props.selection.selectedColumn \u003d \u0027Driver\u0027\n\t\t\t\tbreak\t"
+                    }
+                  }
+                },
+                "props": {
+                  "columns": [
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Server",
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": false,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Is Enabled",
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": false,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Is Connected",
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": false,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    },
+                    {
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY",
+                      "editable": false,
+                      "field": "Status",
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "justify": "auto",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": false,
+                      "style": {
+                        "classes": ""
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": ""
+                    }
+                  ],
+                  "pager": {
+                    "bottom": false
+                  },
+                  "style": {
+                    "borderStyle": "none",
+                    "overflow": "hidden"
+                  },
+                  "virtualized": false
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "deviceListContainer"
+            },
+            "position": {
+              "basis": "40%"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "device-diagnostics/main-section"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "title"
+                    },
+                    "position": {
+                      "basis": "50px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "marginLeft": "5px"
+                      },
+                      "text": "Diagnostics"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "titleContainer"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "device-diagnostics/header"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "diagnostics"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.params.deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.deviceName"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "device-diagnostics/framework/diagnostics-lg"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "diagnosticsContainer"
+            },
+            "position": {
+              "basis": "60%",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "device-diagnostics/main-section",
+                "marginLeft": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "content"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginBottom": "5px",
+            "marginLeft": "5px",
+            "marginRight": "5px",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "custom": {},
+  "params": {
+    "CurrentLabelVisible": false,
+    "DeviceName": "LVCB01",
+    "DeviceTagPath": "[default]Domestic/Precinct/T2 Loading Dock/MTR001",
+    "circuitNo": "5-111",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "params.CurrentLabelVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceTagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.circuitNo": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 150,
+      "width": 90.24
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.1902,
+          "width": 0.6222,
+          "x": 0.3587,
+          "y": 0.3765
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.26,
+          "width": 0.6222,
+          "x": 0.3596,
+          "y": 0.5191
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.circuitNo"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontStyle": "italic"
+          },
+          "textStyle": {
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB_0"
+        },
+        "position": {
+          "height": 0.34,
+          "width": 0.1881,
+          "x": 0.1192,
+          "y": 0.3353
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "M 8.0233797,7.7328842 5.3356751,6.0238855",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "var(--success)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 5.348556,7.7393246 8.0362606,6.0303259",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "var(--success)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m 6.6990531,22.364074 -0.00376,-6.260393",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "var(--success)",
+                        "width": "0.545231px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 6.6953345,15.970567 2.6459996,6.9975501",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14758",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "var(--success)",
+                        "width": "0.546586px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30707",
+                  "transform": "translate(-0.18033219,-0.64404353)",
+                  "type": "path"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M 8.0233792,7.7328845 5.3356751,6.0238855",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--qual-4)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 5.348556,7.7393246 8.0362602,6.0303256",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--qual-4)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 6.6990395,22.364061 6.6974667,7.2394847",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--qual-4)",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30701",
+                  "transform": "translate(-0.180332,-0.6440435)",
+                  "type": "path"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M -3.0938728,4.8212516 -5.7815769,3.1122526",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--callToAction--disabled)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m -5.768696,4.8276917 2.6877042,-1.708999",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1-0",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--callToAction--disabled)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M -4.4182125,19.452428 -4.4197853,4.3278518",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3-4",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--callToAction--disabled)",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30696",
+                  "transform": "translate(10.93692,2.2675894)",
+                  "type": "group"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M -3.0938728,4.8212516 -5.7815769,3.1122526",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m -5.768696,4.8276917 2.6877042,-1.708999",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1-0",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M -4.4182125,19.452428 -4.4197853,4.3278518",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3-4",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30696",
+                  "transform": "translate(10.93692,2.2675894)",
+                  "type": "path"
+                }
+              ],
+              "name": "g30722",
+              "transform": "matrix(1.5212484,0,0,1.8467105,-3.1848551,-9.4026418)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "cursor": "pointer",
+            "marginLeft": "0px"
+          },
+          "viewBox": "0 0 9.260125 31.750588"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.1902,
+          "width": 0.6222,
+          "x": 0.3587,
+          "y": 0.2224
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.CurrentLabelVisible"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "(tag({view.params.DeviceTagPath}+\u0027/Current Phase A\u0027)+tag({view.params.DeviceTagPath}+\u0027/Current Phase B\u0027)+tag({view.params.DeviceTagPath}+\u0027/Current Phase C\u0027))/3"
+              },
+              "transforms": [
+                {
+                  "code": "\tformatted_value \u003d \"{:.2f} A\".format(value)\n\treturn formatted_value",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

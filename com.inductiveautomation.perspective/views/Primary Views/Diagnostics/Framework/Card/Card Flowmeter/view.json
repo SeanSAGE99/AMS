@@ -1,0 +1,288 @@
+{
+  "custom": {
+    "instances": [
+      {
+        "deviceName": "Flow Meter A",
+        "deviceTagPath": "[default]Water Monitoring System/International/Flow Meters/NWS7/NWS7/Flow Meter A"
+      },
+      {
+        "deviceName": "Flow Meter 1",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 1"
+      },
+      {
+        "deviceName": "Flow Meter 2",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 2"
+      },
+      {
+        "deviceName": "Flow Meter 3",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 3"
+      },
+      {
+        "deviceName": "Flow Meter 1010-50",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 1010-50"
+      },
+      {
+        "deviceName": "Flow Meter 3060-50",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 3060-50"
+      },
+      {
+        "deviceName": "Flow Meter 4020-53",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 4020-53"
+      },
+      {
+        "deviceName": "Flow Meter 5050-53",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 5050-53"
+      },
+      {
+        "deviceName": "Flow Meter 5050-56",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 5050-56"
+      },
+      {
+        "deviceName": "Flow Meter 5070-51",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter 5070-51"
+      },
+      {
+        "deviceName": "Flow Meter Claculated Total Waste",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter Claculated Total Waste"
+      },
+      {
+        "deviceName": "Flow Meter Trade Waste",
+        "deviceTagPath": "[default]Water Monitoring System/International/Cooks River Pump Station/Flow Meter Trade Waste"
+      }
+    ]
+  },
+  "params": {
+    "params": {
+      "areaPath": [
+        "Water Monitoring System/International/Flow Meters/NWS7",
+        "Water Monitoring System/International/Cooks River Pump Station",
+        "Water Monitoring System/International/Flow Meters/NWS2B",
+        "value",
+        "value"
+      ],
+      "key": "value"
+    },
+    "path": "Primary Views/Diagnostics/Embedded/Flowmeter Devices",
+    "title": "International",
+    "useDefaultHeight": false,
+    "useDefaultWidth": false
+  },
+  "propConfig": {
+    "custom.instances": {
+      "binding": {
+        "config": {
+          "expression": "now(60000)"
+        },
+        "transforms": [
+          {
+            "code": "\tinstances \u003d []\n\n\tlength \u003d len(self.params.params.areaPath)\n  \n\tfor i in range(length):\n\t\tarea \u003d self.params.params.areaPath[i]\n\t\tres \u003d system.tag.browse(area, {\"tagType\":\"UdtInstance\", \"recursive\":True, \u0027name\u0027:\u0027**\u0027})\n\t\tfor result in res.getResults():\n\t\t    if \"NWS\" in result[\"name\"] or \"Flow\" in result[\"name\"] or \"NES\" in result[\"name\"]:\n\t\t    \tdeviceTagPath \u003d result[\"fullPath\"]\n\t\t    \t\t\t    \t    \n\t\t    \t# Check if the Flow Meter instance is enabled. it is done by checking if the \"High Flow Set Point\" tag is enabled for the instance\n\t\t    \tmodeTagEnabledPath \u003d \"{}/Set Points/High Flow Set Point.Enabled\".format(deviceTagPath)\n\t\t    \tmodeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\t    \t\n\t\t    \tif modeTagEnabled.value:\n\t\t\t    \tinstances.append({\"deviceTagPath\":result[\"fullPath\"],\"deviceName\":result[\"name\"]})\n\t\t\n\n\t\n\n\t\t    \t\n\n\t\n\n \n\t\t    \t\n\t\t    \t\n\treturn instances\n\t",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.params": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.path": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultHeight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultWidth": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 339,
+      "width": 369
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Command/Reset Totaliser Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Reset Totaliser"
+            },
+            "position": {
+              "basis": "NaNpx",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Water\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                "marginLeft": 50,
+                "marginRight": 50
+              },
+              "text": "Reset Totalisers"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-evenly",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params": {
+            "binding": {
+              "config": {
+                "path": "view.params.params"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.params.path"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewHeight": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultHeight"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewWidth": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultWidth"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Embedded"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Framework/Card/Card UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,666 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "International Zone Substation"
+        },
+        "position": {
+          "height": 0.1341,
+          "width": 0.8156,
+          "x": 0.0928,
+          "y": 0.0097
+        },
+        "props": {
+          "params": {
+            "Pipes": {
+              "CB1-CB31": true,
+              "CB16": false,
+              "CB2": true,
+              "CB23": false,
+              "CB24": true,
+              "CB25": false,
+              "CB26": false,
+              "CB27": true,
+              "CB29": false,
+              "CB3": false,
+              "CB30": true,
+              "CB4": false,
+              "CB5": false,
+              "CB6": true,
+              "CB7": true,
+              "CB8": false,
+              "CB9": false
+            }
+          },
+          "path": "Templates/HV/Small Subs Views/International/International Zone Substation"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Sub ULM"
+        },
+        "position": {
+          "height": 0.1136,
+          "width": 0.08,
+          "x": 0.6394,
+          "y": 0.529
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/Sub ULM"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0178,
+          "width": 0.0924,
+          "x": 0.0003,
+          "y": 0.0411
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "T1 Precinct Ring",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ACS 2"
+        },
+        "position": {
+          "height": 0.1266,
+          "width": 0.0516,
+          "x": 0.5717,
+          "y": 0.2698
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/ACS 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "ACS 1"
+        },
+        "position": {
+          "height": 0.1266,
+          "width": 0.0516,
+          "x": 0.4227,
+          "y": 0.2698
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/ACS 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "T1 Hotel"
+        },
+        "position": {
+          "height": 0.1266,
+          "width": 0.0578,
+          "x": 0.2857,
+          "y": 0.7754
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/T1 Hotel - Ring"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "ICP"
+        },
+        "position": {
+          "height": 0.1266,
+          "width": 0.0578,
+          "x": 0.4614,
+          "y": 0.7762
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/ICP - Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "WLER"
+        },
+        "position": {
+          "height": 0.1266,
+          "width": 0.1062,
+          "x": 0.6135,
+          "y": 0.7762
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/WLER - ICP, Ring"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Sub Link Road"
+        },
+        "position": {
+          "height": 0.1274,
+          "width": 0.1533,
+          "x": 0.257,
+          "y": 0.5223
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/Sub Link Road"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/overview"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.0045,
+          "y": 0.9536
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "T1 Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/t1-non-essential-ring"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.0045,
+          "y": 0.9156
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "T1 Non - Ess Ring",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/t1-essential-ring"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.0045,
+          "y": 0.8766
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "T1 Ess Ring",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/overview"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.0045,
+          "y": 0.8386
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "HV Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6083,
+                        "y": 0.276
+                      }
+                    ],
+                    "x": 0.6083,
+                    "y": 0.2385
+                  }
+                ],
+                "x": 0.4328,
+                "y": 0.2385
+              }
+            ],
+            "x": 0.4328,
+            "y": 0.276
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.7469,
+                        "y": 0.1375
+                      }
+                    ],
+                    "x": 0.7469,
+                    "y": 0.177
+                  }
+                ],
+                "x": 0.5818,
+                "y": 0.177
+              }
+            ],
+            "x": 0.5818,
+            "y": 0.276
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2964,
+                        "y": 0.8962
+                      }
+                    ],
+                    "x": 0.2964,
+                    "y": 0.9519
+                  }
+                ],
+                "x": 0.1401,
+                "y": 0.9519
+              }
+            ],
+            "x": 0.1401,
+            "y": 0.1375
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2672,
+                "y": 0.5288
+              }
+            ],
+            "x": 0.2672,
+            "y": 0.1375
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.4594,
+                        "y": 0.276
+                      }
+                    ],
+                    "x": 0.4594,
+                    "y": 0.177
+                  }
+                ],
+                "x": 0.2995,
+                "y": 0.177
+              }
+            ],
+            "x": 0.2995,
+            "y": 0.1375
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6505,
+                "y": 0.1375
+              }
+            ],
+            "x": 0.6505,
+            "y": 0.5317
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.7047,
+                                "y": 0.6365
+                              }
+                            ],
+                            "x": 0.7047,
+                            "y": 0.7028
+                          }
+                        ],
+                        "x": 0.5224,
+                        "y": 0.7028
+                      }
+                    ],
+                    "x": 0.5224,
+                    "y": 0.4519
+                  }
+                ],
+                "x": 0.3958,
+                "y": 0.4519
+              }
+            ],
+            "x": 0.3958,
+            "y": 0.5288
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_11",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.4719,
+                        "y": 0.7827
+                      }
+                    ],
+                    "x": 0.4719,
+                    "y": 0.7433
+                  }
+                ],
+                "x": 0.3286,
+                "y": 0.7433
+              }
+            ],
+            "x": 0.3286,
+            "y": 0.7808
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6438,
+                        "y": 0.8971
+                      }
+                    ],
+                    "x": 0.6438,
+                    "y": 0.9519
+                  }
+                ],
+                "x": 0.5052,
+                "y": 0.9519
+              }
+            ],
+            "x": 0.5052,
+            "y": 0.8971
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_14",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.8422,
+                        "y": 0.1375
+                      }
+                    ],
+                    "x": 0.8422,
+                    "y": 0.9519
+                  }
+                ],
+                "x": 0.7047,
+                "y": 0.9519
+              }
+            ],
+            "x": 0.7047,
+            "y": 0.8971
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

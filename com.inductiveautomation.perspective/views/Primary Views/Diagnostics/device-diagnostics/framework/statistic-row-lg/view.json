@@ -1,0 +1,1063 @@
+{
+  "custom": {},
+  "params": {
+    "info": {
+      "ActualSamplingInterval": 3000.097973054129,
+      "ActualThroughput": 0.32770617586831313,
+      "Count": 2711,
+      "FiveMinuteRate": 0.33202123268467915,
+      "IdealSamplingInterval": 3000,
+      "IdealThroughput": 0.3333333333333333,
+      "Max": 8.9,
+      "Mean": 2.92129708,
+      "MeanRate": 0.333247408,
+      "Min": 1.1722,
+      "OneMinuteRate": 0.327706176,
+      "OverloadFactor": 0.00003265768471,
+      "QueueDuration": 3,
+      "RequestCount": 5000,
+      "aggregate": 1,
+      "deviceName": "test",
+      "monitoredItemCount": 66,
+      "ninetyEighthPercentile": 7,
+      "ninetyFifthPercentile": 6,
+      "ninetyNinthPercentile": 8,
+      "seventyFifthPercentile": 5,
+      "tagGroupRate": 3000
+    }
+  },
+  "propConfig": {
+    "custom.key": {
+      "persistent": true
+    },
+    "custom.sum": {
+      "persistent": true
+    },
+    "params.info": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 253,
+      "width": 970
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "title"
+            },
+            "position": {
+              "basis": "255px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "aggregate": "{view.params.info.aggregate}",
+                      "rate": "{view.params.info.tagGroupRate}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# if the \u0027aggregate\u0027 prop is equal to 1, then we are displaying the aggregate\n\t# statistics; otherwise, we are displaying statistics for a certain rate\n\t\n\tif value[\u0027aggregate\u0027] \u003d\u003d 1:\n\t\treturn \u0027Aggregate Statistics\u0027\n\telse:\n\t\treturn \u0027Sampled at \u0027 + str(value[\u0027rate\u0027]) + \u0027ms\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "device-diagnostics/font",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginLeft": "5px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "43px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.info"
+              },
+              "transforms": [
+                {
+                  "code": "\t# if \u0027na\u0027 is one of the keys in the \u0027info\u0027 param, then the selected device does not\n\t# contain sampling diagnostics, and so we should not display the header\n\t\n\tif \u0027na\u0027 in value.keys():\n\t\treturn False\n\telse:\n\t\treturn True",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "details"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#F3F6F9",
+                    "borderBottomColor": "#E1E8EE",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": "1px",
+                    "classes": "device-diagnostics/font",
+                    "paddingLeft": "8px"
+                  },
+                  "text": "Details"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "requestCount"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "props.params.val": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.RequestCount"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.info.aggregate}\u003d1,\u0027device-diagnostics/framework/detail-row-agg\u0027,\u0027device-diagnostics/framework/detail-row-lg\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "name": "Request Count",
+                    "units": ""
+                  },
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "meanThroughput"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "props.params.val": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.MeanRate"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027{:.2f}\u0027.format(round(value,2))",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.info.aggregate}\u003d1,\u0027device-diagnostics/framework/detail-row-agg\u0027,\u0027device-diagnostics/framework/detail-row-lg\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "name": "Throughput (Mean)",
+                    "units": "/sec"
+                  },
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "oneMinThroughput"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "props.params.val": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.ActualThroughput"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027{:.2f}\u0027.format(round(value,2))",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.info.aggregate}\u003d1,\u0027device-diagnostics/framework/detail-row-agg\u0027,\u0027device-diagnostics/framework/detail-row-lg\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "name": "Throughput (1 min)",
+                    "units": "/sec"
+                  },
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "meanResponseTime"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "props.params.val": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.Mean"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027{:.2f}\u0027.format(round(value,2))",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.info.aggregate}\u003d1,\u0027device-diagnostics/framework/detail-row-agg\u0027,\u0027device-diagnostics/framework/detail-row-lg\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "name": "Mean Response Time",
+                    "units": "ms"
+                  },
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "meanQueueDuration"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "expression": "!({view.params.info.aggregate})"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.val": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.QueueDuration"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027{:.2f}\u0027.format(round(value,2))",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "name": "Mean Queue Duration",
+                    "units": "ms"
+                  },
+                  "path": "device-diagnostics/framework/detail-row-lg",
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "actualSamplingInterval"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "expression": "!({view.params.info.aggregate})"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.val": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.ActualSamplingInterval"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027{:.2f}\u0027.format(round(value,2))",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "name": "Actual Sampling Interval",
+                    "units": "ms"
+                  },
+                  "path": "device-diagnostics/framework/detail-row-lg",
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "detailsContainer"
+            },
+            "position": {
+              "basis": "255px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "device-diagnostics/section",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "basis": "20px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.aggregate"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\t# if the \u0027aggregate\u0027 prop in the \u0027info\u0027 param is equal to 1, then we are displaying\n\t# the aggregate statistics, and so this label should read \u0027Monitored Item Count\u0027 because\n\t# we are displaying the monitored item count beneath this; otherwise, this label should\n\t# read \u0027Overload\u0027 because we are displaying the load factor\n\t\n\tif value \u003d\u003d 1:\n\t\treturn \u0027Monitored Item Count\u0027\n\telse:\n\t\treturn \u0027Overload\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "device-diagnostics/font",
+                    "color": "--neutral-60",
+                    "fontSize": 13,
+                    "fontWeight": "bold",
+                    "paddingLeft": "8px"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "itemCount"
+                },
+                "position": {
+                  "basis": "32px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "toBoolean({view.params.info.aggregate})"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.monitoredItemCount"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "device-diagnostics/font",
+                    "fontSize": 50,
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "loadFactor"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "!toBoolean({view.params.info.aggregate})"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.loadFactor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.info.OverloadFactor"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "device-diagnostics/framework/gauge"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "outOf100"
+                },
+                "position": {
+                  "basis": "16px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "device-diagnostics/font",
+                    "color": "--neutral-60",
+                    "fontSize": 13,
+                    "fontWeight": "bold",
+                    "paddingRight": "8px",
+                    "textAlign": "right"
+                  },
+                  "text": "/100"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "itemCountOrOverload"
+            },
+            "position": {
+              "basis": "280px"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "device-diagnostics/section"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "responseTimes"
+            },
+            "position": {
+              "basis": "339px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.dataSources.response_times": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.info"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# using the 4 percentile values and the max response time, this\n\t# creates the data for the histogram \n\t\n\tdata \u003d []\n\t\n\tseventy_five \u003d value[\u0027seventyFifthPercentile\u0027]\n\tninety_five \u003d value[\u0027ninetyFifthPercentile\u0027]\n\tninety_eight \u003d value[\u0027ninetyEighthPercentile\u0027]\n\tninety_nine \u003d value[\u0027ninetyNinthPercentile\u0027]\n\tmax \u003d self.view.params.info.Max\n\t\n\t# to prevent a bar from appearing on the far right side of the chart (prevent\n\t# the tooltip from being cut off): if the difference between the max and\n\t# the 99th percentile time is less than (max/4), then increase the max until\n\t# the difference is greater than or equal to (max/4)\n\tdiff \u003d max/4.0\n\twhile (max-ninety_nine) \u003c diff:\n\t\tmax \u003d max + 0.1\n\t\n\t# \u0027bins\u0027/categories are created for the x-axis; the first \u0027bin\u0027 has a range\n\t# of 0 to max/30; the second \u0027bin\u0027 has a range of max/30 to (max/30 + max/30),\n\t# the third \u0027bin\u0027 has a range of (max/30 + max/30) to (max/30 + max/30 + max/30), \n\t# and so on; for example, if max\u003d30, then the ranges of the \u0027bins\u0027 would be\n\t# as follows: 0-1, 1-2, 2-3, 3-4....30-31\n\t\n\tstep \u003d max/30.0\n\tcurr \u003d 0.0\n\t\n\tdata.append({\"request_count\":0,\"time\": str(round(curr,1)) + \u0027ms\u0027,\"message\":\u0027\u0027,\u0027range\u0027:(curr,curr+step)})\n\tcurr \u003d curr + step\n\t\n\twhile curr \u003c (max+step):\n\t\tdata.append({\"request_count\":0,\"time\": \u0027\u003c\u0027 + str(round(curr,1)) + \u0027ms\u0027,\"message\":\u0027\u0027,\u0027range\u0027:(curr,curr+step)})\n\t\tcurr \u003d curr + step\n\t\n\t# after the above loop, all of the \u0027bins\u0027/categories have been created in the data, and the height \n\t# of all the bars (request count) is 0 in the \u0027data\u0027 list\n\t\n\t# creating a list of objects to store info about each percentile (the message to display\n\t# when hovering the mouse over the bar, height of the bar, percentile val)\n\tresponse_times \u003d [{\u0027height\u0027:75,\u0027time\u0027:seventy_five,\u0027message\u0027:\u002775% finished within \u0027 + str(round(seventy_five,3)) + \u0027ms\u0027},\n\t\t\t\t\t\t\t{\u0027height\u0027:20,\u0027time\u0027:ninety_five,\u0027message\u0027:\u002795% finished within \u0027 + str(round(ninety_five,3)) + \u0027ms\u0027},\n\t\t\t\t\t\t\t{\u0027height\u0027:3,\u0027time\u0027:ninety_eight,\u0027message\u0027:\u002798% finished within \u0027 + str(round(ninety_eight,3)) + \u0027ms\u0027},\n\t\t\t\t\t\t\t{\u0027height\u0027:2,\u0027time\u0027:ninety_nine,\u0027message\u0027:\u002799% finished within \u0027 + str(round(ninety_nine,3)) + \u0027ms\u0027}]\n\t\n\t# for each of the 4 percentile values, we figure out which bin the bar should be in; it is\n\t# possible that multiple percentile values could end up in the same bin; if multiple\n\t# percentile values end up in the same bin, then these percentiles are merged into a single\n\t# bar; for example, if the 75th percentile time is 5.4ms and the 95th percentile time is 5.6ms,\n\t# and if the range of the bin is 5ms-6ms, then the 75th percentile and the 95th percentile\n\t# times will be displayed in a single bar in this bin, and the height of this bar will be\n\t# the height of the 75th percentile bar, 75, plus the height of the 95th percentile bar, 20,\n\t# which would be 95; when hovering over this bar, both the 75th percentile and the 95th \n\t# percentile times will be displayed in the tooltip\t\t\t\t\t\t\t\t\n\ti \u003d 0\n\tlength \u003d len(response_times)\n\twhile i \u003c (length-1):\n\t\tresponse_time_curr \u003d response_times[i][\u0027time\u0027]\n\t\tresponse_time_next \u003d response_times[i+1][\u0027time\u0027]\n\t\t\n\t\t# \u0027same category\u0027 var tells us if two percentile times belong in the same category/bin \n\t\tsame_cat \u003d 0\n\t\t\n\t\t# iterating through the data, figuring out which category/bin the current percentile\n\t\t# time should be placed in\n\t\tfor index,obj in enumerate(data):\n\t\t\tcat_start \u003d obj[\u0027range\u0027][0]\n\t\t\tcat_end \u003d obj[\u0027range\u0027][1]\n\t\t\tif response_time_curr \u003e\u003d cat_start and response_time_curr \u003c cat_end:\n\t\t\t\t# the category/bin to place this percentile time in has been found, now we\n\t\t\t\t# check to see if the next percentile time also belongs in this same bin\n\t\t\t\tif response_time_next \u003e\u003d cat_start and response_time_next \u003c cat_end:\n\t\t\t\t\t# the two percentiles times should be in the same category/bin, so\n\t\t\t\t\t# set same_cat\u003d1\n\t\t\t\t\tsame_cat \u003d 1\n\t\t\t\t\tbreak\n\t\t\t\telse:\n\t\t\t\t\t# the following response time does not belong in the same bin\n\t\t\t\t\t# as the current response time, so, we can save the index of\n\t\t\t\t\t# the category/bin in the \u0027response_times\u0027 object\n\t\t\t\t\tresponse_times[i][\u0027bin_index\u0027] \u003d index\n\t\t\t\t\tbreak\n\t\t\n\t\t# after the above loop, if same_cat is still 0, then we properly found the category/bin\n\t\t# index of the current response time and we found that the following response time does\n\t\t# not belong in the same bin, so we can increment i to move on to the next response time\n\t\tif same_cat \u003d\u003d 0:\n\t\t\ti \u003d i + 1\n\t\t# is same_cat is 1, then we need to merge percentile times; we calculate the height of the\n\t\t# merged bar, we combine the two messages, we get the category/bin index, and we store this\n\t\t# info in the current object in the response_times list, and we delete the following object;\n\t\t# we do not increment i in this \u0027else\u0027 because it is possible that this merged bar \n\t\t# (response_times[i]) will need to be merged with the next response time (response_times[i+1])\n\t\telse:\n\t\t\tnew_bar_height \u003d response_times[i][\u0027height\u0027] + response_times[i+1][\u0027height\u0027]\n\t\t\tnew_message \u003d response_times[i][\u0027message\u0027] + \u0027\\n\u0027 + response_times[i+1][\u0027message\u0027]\n\t\t\tresponse_times[i][\u0027height\u0027] \u003d new_bar_height\n\t\t\tresponse_times[i][\u0027message\u0027] \u003d new_message\n\t\t\tresponse_times[i][\u0027bin_index\u0027] \u003d index\n\t\t\tdel response_times[i+1]\n\t\t\tlength \u003d len(response_times)\n\t\n\t# after the above, it is possible that response_times could have a single object, two objects,\n\t# three objects, or four objects; we iterate through these objects, extracting the bar height,\n\t# hover message, and bin index, and then we add this info to the data\t\t\n\tfor response_time in response_times:\n\t\theight \u003d response_time[\u0027height\u0027]\n\t\tmessage \u003d response_time[\u0027message\u0027]\n\t\t# with the while loop responsible for figuring out the bin index and if percentiles need\n\t\t# to be merged, it is possible that the 99th percentile does not have a bin index; so,\n\t\t# before getting the bin index, we need to see if it exists; if the bin index does exist,\n\t\t# then we can add the info for this percentile to the data\n\t\tif \u0027bin_index\u0027 in response_time.keys(): \n\t\t\tbin_index \u003d response_time[\u0027bin_index\u0027]\n\t\t\tdata[bin_index][\u0027request_count\u0027] \u003d height\n\t\t\tdata[bin_index][\u0027message\u0027] \u003d message\n\t\telse:\n\t\t\t# if the 99 percentile does not have a bin index, then we will use the same strategy\n\t\t\t# here to figure out the bin index, and then we can add this percentile info to the data\n\t\t\ttime \u003d response_time[\u0027time\u0027]\n\t\t\tfor index,obj in enumerate(data):\n\t\t\t\tcat_start \u003d obj[\u0027range\u0027][0]\n\t\t\t\tcat_end \u003d obj[\u0027range\u0027][1]\n\t\t\t\tif time \u003e\u003d cat_start and time \u003c cat_end:\n\t\t\t\t\tdata[index][\u0027request_count\u0027] \u003d height\n\t\t\t\t\tdata[index][\u0027message\u0027] \u003d message\n\t\n\treturn data",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "dataSources": {},
+              "legend": {
+                "enabled": false
+              },
+              "series": [
+                {
+                  "candlestick": {
+                    "appearance": {
+                      "deriveFieldsFromData": {
+                        "fill": {
+                          "color": "",
+                          "opacity": ""
+                        },
+                        "stroke": {
+                          "color": "",
+                          "opacity": "",
+                          "width": ""
+                        }
+                      },
+                      "fill": {
+                        "color": "",
+                        "opacity": 1
+                      },
+                      "heatRules": {
+                        "dataField": "",
+                        "enabled": false,
+                        "max": "",
+                        "min": ""
+                      },
+                      "stacked": false,
+                      "stroke": {
+                        "color": "",
+                        "opacity": 1,
+                        "width": 1
+                      }
+                    },
+                    "high": {
+                      "x": "",
+                      "y": ""
+                    },
+                    "low": {
+                      "x": "",
+                      "y": ""
+                    },
+                    "open": {
+                      "x": "",
+                      "y": ""
+                    }
+                  },
+                  "column": {
+                    "appearance": {
+                      "deriveFieldsFromData": {
+                        "fill": {
+                          "color": "",
+                          "opacity": ""
+                        },
+                        "stroke": {
+                          "color": "",
+                          "opacity": "",
+                          "width": ""
+                        }
+                      },
+                      "fill": {
+                        "color": "#003E69",
+                        "opacity": 1
+                      },
+                      "heatRules": {
+                        "dataField": "",
+                        "enabled": false,
+                        "max": "",
+                        "min": ""
+                      },
+                      "height": null,
+                      "stacked": false,
+                      "stroke": {
+                        "color": "",
+                        "opacity": 1,
+                        "width": 1
+                      },
+                      "width": null
+                    },
+                    "open": {
+                      "x": "",
+                      "y": ""
+                    }
+                  },
+                  "data": {
+                    "source": "response_times",
+                    "x": "time",
+                    "y": "request_count"
+                  },
+                  "defaultState": {
+                    "visible": true
+                  },
+                  "hiddenInLegend": false,
+                  "label": {
+                    "text": "Output Temp"
+                  },
+                  "line": {
+                    "appearance": {
+                      "bullets": [
+                        {
+                          "deriveFieldsFromData": {
+                            "fill": {
+                              "color": "",
+                              "opacity": ""
+                            },
+                            "rotation": "",
+                            "stroke": {
+                              "color": "",
+                              "opacity": "",
+                              "width": ""
+                            }
+                          },
+                          "enabled": false,
+                          "fill": {
+                            "color": "",
+                            "opacity": 1
+                          },
+                          "heatRules": {
+                            "dataField": "",
+                            "enabled": false,
+                            "max": 100,
+                            "min": 2
+                          },
+                          "height": 10,
+                          "label": {
+                            "position": {
+                              "dx": 0,
+                              "dy": 0
+                            },
+                            "text": "{value}"
+                          },
+                          "render": "circle",
+                          "rotation": 0,
+                          "stroke": {
+                            "color": "",
+                            "opacity": 1,
+                            "width": 1
+                          },
+                          "tooltip": {
+                            "background": {
+                              "color": "",
+                              "opacity": 1
+                            },
+                            "cornerRadius": 3,
+                            "enabled": true,
+                            "pointerLength": 4,
+                            "text": "{name}: [bold]{valueY}[/]"
+                          },
+                          "width": 10
+                        }
+                      ],
+                      "connect": true,
+                      "fill": {
+                        "color": "",
+                        "opacity": 0
+                      },
+                      "minDistance": 0.5,
+                      "stroke": {
+                        "color": "",
+                        "dashArray": "",
+                        "opacity": 1,
+                        "width": 3
+                      },
+                      "tensionX": 1,
+                      "tensionY": 1
+                    },
+                    "open": {
+                      "x": "",
+                      "y": ""
+                    }
+                  },
+                  "name": "response times",
+                  "render": "column",
+                  "stepLine": {
+                    "appearance": {
+                      "bullets": [
+                        {
+                          "deriveFieldsFromData": {
+                            "fill": {
+                              "color": "",
+                              "opacity": ""
+                            },
+                            "rotation": "",
+                            "stroke": {
+                              "color": "",
+                              "opacity": "",
+                              "width": ""
+                            }
+                          },
+                          "enabled": true,
+                          "fill": {
+                            "color": "",
+                            "opacity": 1
+                          },
+                          "heatRules": {
+                            "dataField": "",
+                            "enabled": false,
+                            "max": 100,
+                            "min": 2
+                          },
+                          "height": 10,
+                          "label": {
+                            "position": {
+                              "dx": 0,
+                              "dy": 0
+                            },
+                            "text": "{value}"
+                          },
+                          "render": "circle",
+                          "rotation": 0,
+                          "stroke": {
+                            "color": "",
+                            "opacity": 1,
+                            "width": 1
+                          },
+                          "tooltip": {
+                            "background": {
+                              "color": "",
+                              "opacity": 1
+                            },
+                            "cornerRadius": 3,
+                            "enabled": true,
+                            "pointerLength": 4,
+                            "text": "{name}: [bold]{valueY}[/]"
+                          },
+                          "width": 10
+                        }
+                      ],
+                      "connect": true,
+                      "fill": {
+                        "color": "",
+                        "opacity": 0
+                      },
+                      "minDistance": 0.5,
+                      "stroke": {
+                        "color": "",
+                        "dashArray": "",
+                        "opacity": 1,
+                        "width": 3
+                      },
+                      "tensionX": 1,
+                      "tensionY": 1
+                    },
+                    "open": {
+                      "x": "",
+                      "y": ""
+                    }
+                  },
+                  "tooltip": {
+                    "background": {
+                      "color": "#ECE5E5",
+                      "opacity": 1
+                    },
+                    "cornerRadius": 0,
+                    "enabled": true,
+                    "pointerLength": 4,
+                    "text": "{message}"
+                  },
+                  "visible": true,
+                  "xAxis": "time",
+                  "yAxis": "request_count",
+                  "zIndex": 0
+                }
+              ],
+              "xAxes": [
+                {
+                  "appearance": {
+                    "font": {
+                      "size": 12,
+                      "weight": 500
+                    },
+                    "grid": {
+                      "color": "",
+                      "dashArray": "",
+                      "minDistance": 60,
+                      "opacity": 1,
+                      "position": 0.5
+                    },
+                    "inside": false,
+                    "labels": {
+                      "color": "",
+                      "opacity": 1
+                    },
+                    "opposite": false
+                  },
+                  "category": {
+                    "break": {
+                      "enabled": false,
+                      "endCategory": "",
+                      "size": 0.05,
+                      "startCategory": ""
+                    }
+                  },
+                  "date": {
+                    "baseInterval": {
+                      "count": 1,
+                      "enabled": false,
+                      "skipEmptyPeriods": false,
+                      "timeUnit": "hour"
+                    },
+                    "break": {
+                      "enabled": false,
+                      "endDate": "",
+                      "size": 0.05,
+                      "startDate": ""
+                    },
+                    "format": "M/d",
+                    "inputFormat": "yyyy-MM-dd kk:mm:ss",
+                    "range": {
+                      "max": "",
+                      "min": "",
+                      "useStrict": false
+                    }
+                  },
+                  "inversed": false,
+                  "label": {
+                    "color": "",
+                    "enabled": false,
+                    "text": "time"
+                  },
+                  "name": "time",
+                  "render": "category",
+                  "tooltip": {
+                    "background": {
+                      "color": "",
+                      "opacity": 1
+                    },
+                    "cornerRadius": 3,
+                    "enabled": true,
+                    "pointerLength": 4,
+                    "text": ""
+                  },
+                  "value": {
+                    "break": {
+                      "enabled": false,
+                      "endValue": 100,
+                      "size": 0.05,
+                      "startValue": 0
+                    },
+                    "format": "#,###.##",
+                    "logarithmic": false,
+                    "range": {
+                      "max": "",
+                      "min": "",
+                      "useStrict": false
+                    }
+                  },
+                  "visible": true
+                }
+              ],
+              "yAxes": [
+                {
+                  "appearance": {
+                    "font": {
+                      "size": "",
+                      "weight": 500
+                    },
+                    "grid": {
+                      "color": "",
+                      "dashArray": "",
+                      "minDistance": null,
+                      "opacity": 1,
+                      "position": 0.5
+                    },
+                    "inside": false,
+                    "labels": {
+                      "color": "",
+                      "opacity": 1
+                    },
+                    "opposite": false
+                  },
+                  "category": {
+                    "break": {
+                      "enabled": false,
+                      "endCategory": "",
+                      "size": 0.05,
+                      "startCategory": ""
+                    }
+                  },
+                  "date": {
+                    "baseInterval": {
+                      "count": 1,
+                      "enabled": false,
+                      "skipEmptyPeriods": false,
+                      "timeUnit": "hour"
+                    },
+                    "break": {
+                      "enabled": false,
+                      "endDate": "",
+                      "size": 0.05,
+                      "startDate": ""
+                    },
+                    "format": "M/d/yyyy HH:mm:ss",
+                    "inputFormat": "yyyy-MM-dd kk:mm:ss",
+                    "range": {
+                      "max": "",
+                      "min": "",
+                      "useStrict": false
+                    }
+                  },
+                  "inversed": false,
+                  "label": {
+                    "color": "",
+                    "enabled": false,
+                    "text": "percent"
+                  },
+                  "name": "request_count",
+                  "render": "value",
+                  "tooltip": {
+                    "background": {
+                      "color": "",
+                      "opacity": 1
+                    },
+                    "cornerRadius": 3,
+                    "enabled": true,
+                    "pointerLength": 4,
+                    "text": ""
+                  },
+                  "value": {
+                    "break": {
+                      "enabled": false,
+                      "endValue": 100,
+                      "size": 0.05,
+                      "startValue": 0
+                    },
+                    "format": "#,###.##",
+                    "logarithmic": false,
+                    "range": {
+                      "max": "",
+                      "min": "",
+                      "useStrict": false
+                    }
+                  },
+                  "visible": true
+                }
+              ]
+            },
+            "type": "ia.chart.xy"
+          }
+        ],
+        "meta": {
+          "name": "content"
+        },
+        "position": {
+          "basis": "210px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.info"
+              },
+              "transforms": [
+                {
+                  "code": "\t# if \u0027na\u0027 is one of the keys in the \u0027info\u0027 param, then the selected device does not\n\t# contain sampling diagnostics, and so we should not display the \u0027content\u0027 container,\n\t# which contains the components to display the metrics\n\t\n\tif \u0027na\u0027 in value.keys():\n\t\tself.getSibling(\"noDiagnostics\").position.display \u003d True\n\t\treturn False\n\telse:\n\t\tself.getSibling(\"noDiagnostics\").position.display \u003d False\n\t\treturn True",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "noDiagnostics"
+        },
+        "position": {
+          "basis": "255px",
+          "display": false,
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "classes": "device-diagnostics/font",
+            "fontSize": 18,
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Sampling diagnostics are not available for this device connection."
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "sql_data",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "da181e68391cafcf6da2e95a405b9ab85875bf0c66af33be486c5e38504da8c0",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2023-02-09T04:09:18Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "day_lights",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "night_lights",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "off_time",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "on_time",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dynalite",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "enabled",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "id",
+        "sqlType": 2
+      },
+      {
+        "type": "QueryString",
+        "identifier": "table_name",
+        "sqlType": 7
+      }
+    ]
+  }
+}

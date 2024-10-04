@@ -1,0 +1,1583 @@
+{
+  "custom": {
+    "instances": [
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]Domestic/Precinct/Northern Ponds/Bay 83/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]Domestic/Precinct/Northern Ponds/Bay 84/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]Domestic/Precinct/Northern Ponds/Bay 85/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]Domestic/Precinct/Northern Ponds/Bay 85/Light Mast B"
+      }
+    ],
+    "offlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "urlTemplateParams": {}
+      }
+    ],
+    "onlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlTemplateParams": {}
+      }
+    ],
+    "satellite": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      },
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      }
+    ],
+    "selectedMap": "offlineStreet"
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\t# Check the instances of \"Light Mast\" UDT type in the areaPath\n\tinstances \u003d []\n\tres \u003d system.tag.browse(self.params.areaPath, {\"tagType\": \"UdtInstance\", \"recursive\": True, \u0027typeId\u0027: \u0027Common/Light Mast\u0027})\n\tfor result in res.getResults():\n\t    deviceTagPath \u003d result[\"fullPath\"]\n\t\n\t    # Check if the light mast instance is enabled. It is done by checking if the \"contactor 2 on\" tag is enabled for the instance\n\t    modeTagEnabledPath \u003d \"{}/Status/Contactor 2 On.Enabled\".format(deviceTagPath)\n\t    modeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\n\t    if modeTagEnabled.value:\n\t        instances.append({\"deviceTagPath\": result[\"fullPath\"], \"deviceName\": result[\"name\"]})\n\t\n\t# Assign the \u0027instances\u0027 list to the custom property to make it available in the view.\n\tself.custom.instances \u003d instances"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "areaPath": "Domestic/Precinct/Northern Ponds"
+  },
+  "propConfig": {
+    "custom.offlineStreet": {
+      "persistent": true
+    },
+    "custom.offlineStreet[0].url": {
+      "binding": {
+        "config": {
+          "expression": "{session.props.gateway.address} + \u0027/main/tiles/{z}/{x}/{y}.png\u0027"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.onlineStreet": {
+      "persistent": true
+    },
+    "custom.satellite": {
+      "persistent": true
+    },
+    "custom.selectedMap": {
+      "persistent": true
+    },
+    "params.areaPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Map"
+        },
+        "position": {
+          "height": 1040,
+          "width": 1920
+        },
+        "propConfig": {
+          "props.layers.raster.tile": {
+            "binding": {
+              "config": {
+                "path": "view.custom.selectedMap"
+              },
+              "transforms": [
+                {
+                  "fallback": "{view.custom.offlineStreet}",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "satellite",
+                      "output": "{view.custom.satellite}"
+                    },
+                    {
+                      "input": "onlineStreet",
+                      "output": "{view.custom.onlineStreet}"
+                    },
+                    {
+                      "input": "offlineStreet",
+                      "output": "{view.custom.offlineStreet}"
+                    }
+                  ],
+                  "outputType": "expression",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "dragging": false,
+          "init": {
+            "center": {
+              "lat": -33.928,
+              "lng": 151.176
+            },
+            "zoom": 18
+          },
+          "layers": {
+            "raster": {}
+          },
+          "zoom": {
+            "controls": false,
+            "max": 18,
+            "min": 18,
+            "onBoxZoom": false,
+            "onDoubleClick": false,
+            "onScrollWheel": false
+          }
+        },
+        "type": "ia.display.map"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 30,
+          "width": 30,
+          "x": 832,
+          "y": 642
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_0"
+        },
+        "position": {
+          "height": 30,
+          "width": 30,
+          "x": 803,
+          "y": 507
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_1"
+        },
+        "position": {
+          "height": 30,
+          "width": 30,
+          "x": 774,
+          "y": 372
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_2"
+        },
+        "position": {
+          "height": 30,
+          "width": 30,
+          "x": 751,
+          "y": 237
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 867,
+          "y": 641
+        },
+        "props": {
+          "text": "AL-M4",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 838,
+          "y": 506
+        },
+        "props": {
+          "text": "AL-M3",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 809,
+          "y": 371
+        },
+        "props": {
+          "text": "AL-M2",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 786,
+          "y": 236
+        },
+        "props": {
+          "text": "AL-M1",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 907,
+          "y": 438
+        },
+        "props": {
+          "text": "Northern Pond",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 1"
+        },
+        "position": {
+          "height": 54,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 54,
+          "x": 706,
+          "y": 259
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Bay 83",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 2"
+        },
+        "position": {
+          "height": 54,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 54,
+          "x": 729,
+          "y": 394
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Bay 84",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 3"
+        },
+        "position": {
+          "height": 54,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 54,
+          "x": 757,
+          "y": 528
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Bay 85",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 4"
+        },
+        "position": {
+          "height": 54,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 54,
+          "x": 788,
+          "y": 596
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Bay 85",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 5"
+        },
+        "position": {
+          "height": 54,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 54,
+          "x": 756,
+          "y": 463
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Bay 85",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 6"
+        },
+        "position": {
+          "height": 54,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 54,
+          "x": 727,
+          "y": 328
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Bay 84",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 648,
+          "y": 313
+        },
+        "props": {
+          "text": "Bay 83",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 673,
+          "y": 454
+        },
+        "props": {
+          "text": "Bay 84",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 708,
+          "y": 580
+        },
+        "props": {
+          "text": "Bay 85",
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "props": {
+              "text": "Bay 83",
+              "textStyle": {
+                "color": "#000000",
+                "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+                "marginLeft": 57
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "AMS Panel"
+                },
+                "props": {
+                  "params": {
+                    "alwaysVisible": true,
+                    "deviceName": "Bay 83",
+                    "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                    "deviceType": "AMS Panel",
+                    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                    "popupWindow": "Popups/Aerobridge/AMS Panel"
+                  },
+                  "path": "Templates/Aerobridges/AMS Panel",
+                  "style": {
+                    "marginLeft": 8
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "GP Unit"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 83",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Ground Power Unit A",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/GP Unit"
+              },
+              "path": "Templates/Aerobridges/GP Unit"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "GP Unit_0"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 83",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Ground Power Unit B",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/GP Unit"
+              },
+              "path": "Templates/Aerobridges/GP Unit"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "PCA Unit"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 83",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Preconditioning Air Unit A",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/PCA Unit"
+              },
+              "path": "Templates/Aerobridges/PCA Unit"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "25%",
+          "height": 199.99,
+          "width": 186.05,
+          "x": 400,
+          "y": 267.1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "props": {
+              "text": "Bay 84",
+              "textStyle": {
+                "color": "#000000",
+                "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+                "marginLeft": 57
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "AMS Panel"
+                },
+                "props": {
+                  "params": {
+                    "alwaysVisible": true,
+                    "deviceName": "Bay 84",
+                    "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                    "deviceType": "AMS Panel",
+                    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                    "popupWindow": "Popups/Aerobridge/AMS Panel"
+                  },
+                  "path": "Templates/Aerobridges/AMS Panel",
+                  "style": {
+                    "marginLeft": 8
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "GP Unit"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 84",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Ground Power Unit A",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/GP Unit"
+              },
+              "path": "Templates/Aerobridges/GP Unit"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "GP Unit_0"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 84",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Ground Power Unit B",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/GP Unit"
+              },
+              "path": "Templates/Aerobridges/GP Unit"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "PCA Unit"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 84",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Preconditioning Air Unit A",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/PCA Unit"
+              },
+              "path": "Templates/Aerobridges/PCA Unit"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "25%",
+          "height": 199.99,
+          "width": 186.05,
+          "x": 400,
+          "y": 472.1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "20%"
+            },
+            "props": {
+              "text": "Bay 85",
+              "textStyle": {
+                "color": "#000000",
+                "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+                "marginLeft": 57
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "AMS Panel"
+                },
+                "props": {
+                  "params": {
+                    "alwaysVisible": true,
+                    "deviceName": "Bay 85",
+                    "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                    "deviceType": "AMS Panel",
+                    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                    "popupWindow": "Popups/Aerobridge/AMS Panel"
+                  },
+                  "path": "Templates/Aerobridges/AMS Panel",
+                  "style": {
+                    "marginLeft": 8
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "GP Unit"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 85",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Ground Power Unit A",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/GP Unit"
+              },
+              "path": "Templates/Aerobridges/GP Unit"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "GP Unit_0"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 85",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Ground Power Unit B",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/GP Unit"
+              },
+              "path": "Templates/Aerobridges/GP Unit"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "PCA Unit"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "params": {
+                "deviceName": "Bay 85",
+                "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+                "deviceType": "Preconditioning Air Unit A",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+                "popupWindow": "Popups/Aerobridge/PCA Unit"
+              },
+              "path": "Templates/Aerobridges/PCA Unit"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "25%",
+          "height": 199.99,
+          "width": 186.05,
+          "x": 400,
+          "y": 677.1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Bay Light"
+        },
+        "position": {
+          "height": 35,
+          "width": 100,
+          "x": 1086,
+          "y": 234.5
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "AL-M1",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "Domestic/Precinct/Northern Ponds/Bay 83",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "Domestic/Precinct/Northern Ponds/Bay 83",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control",
+            "threeWayControl": false
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_0"
+        },
+        "position": {
+          "height": 35,
+          "width": 100,
+          "x": 1086,
+          "y": 369.5
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "AL-M2",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "Domestic/Precinct/Northern Ponds/Bay 84",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "Domestic/Precinct/Northern Ponds/Bay 84",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control",
+            "threeWayControl": false
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_1"
+        },
+        "position": {
+          "height": 35,
+          "width": 100,
+          "x": 1086,
+          "y": 504.5
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "AL-M3",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "Domestic/Precinct/Northern Ponds/Bay 85",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "Domestic/Precinct/Northern Ponds/Bay 85",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control",
+            "threeWayControl": false
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_2"
+        },
+        "position": {
+          "height": 35,
+          "width": 100,
+          "x": 1086,
+          "y": 639.5
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "AL-M4",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "mast1Name": "Light Mast B",
+            "mast1ParentPath": "Domestic/Precinct/Northern Ponds/Bay 85",
+            "mast2Name": "Light Mast B",
+            "mast2ParentPath": "Domestic/Precinct/Northern Ponds/Bay 85",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control",
+            "threeWayControl": false
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 32.03,
+          "width": 200.06,
+          "x": 839.48,
+          "y": 822.22
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Title"
+          },
+          "text": "Northern Pond Light Level",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights Off Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Off"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Low Voltage\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "Off"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights 100pct Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "100pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Low Voltage\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "ON"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "height": 33.59,
+          "width": 200.06,
+          "x": 839.48,
+          "y": 855.5
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-evenly",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027satellite\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 34,
+          "width": 146,
+          "x": 25,
+          "y": 24
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Live Satellite"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027onlineStreet\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 34,
+          "width": 146,
+          "x": 25,
+          "y": 68
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Live Street"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027offlineStreet\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 34,
+          "width": 146,
+          "x": 25,
+          "y": 112
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Offline Street"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.areaPath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 45.74,
+          "width": 128.06,
+          "x": 1763.28,
+          "y": 20.2
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.areaPath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Genset"
+        },
+        "position": {
+          "height": 69.5,
+          "width": 108.1,
+          "x": 697.797,
+          "y": 161.344
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/Northern Ponds MSB/Genset",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/HV/Genset/ppuGenset"
+          },
+          "path": "Templates/HV/Genset/Genset"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/north-pond-msb"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 32.37,
+          "width": 169.92,
+          "x": 8.25,
+          "y": 172.125
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "North Pond MSB",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Pumps"
+        },
+        "position": {
+          "height": 126,
+          "width": 126,
+          "x": 207,
+          "y": 160
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "GeoPage": true,
+            "LabelOverride": "SB81 Pumps",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "Pump5Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit 1",
+            "WellOrPit2": "",
+            "WellOrPit3": "",
+            "WellOrPit4": "",
+            "WellOrPit5": "",
+            "alwaysVisible": true,
+            "combinedPump": "Diagnostics Pump",
+            "deviceName": "Nigel Love Bridge - SB81 Pumps",
+            "deviceParentPath": "Domestic/Precinct/Northern Ponds",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

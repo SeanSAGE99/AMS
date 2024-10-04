@@ -1,0 +1,209 @@
+{
+  "custom": {
+    "C1": false,
+    "C2": true,
+    "deviceLocation": "International",
+    "deviceTagPath": "International/T1/Pier B/Arrivals/Aerobridge 30_test/Light Mast A"
+  },
+  "params": {
+    "deviceName": "Aerobridge 30_test",
+    "deviceParentPath": "International/T1/Pier B/Arrivals",
+    "lightmastName": "Light Mast A"
+  },
+  "propConfig": {
+    "custom.C1": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.custom.deviceTagPath} + \u0027/Status/Contactor 1 On\u0027"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.C2": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "({view.custom.deviceTagPath} + \u0027/Status/Contactor 2 On\u0027)"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceLocation": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "transforms": [
+          {
+            "code": "\tword_to_search_1 \u003d \"International\"\n\tword_to_search_2 \u003d \"Domestic\"\n\t\n\tif word_to_search_1 in value:\n\t    result \u003d word_to_search_1\n\telif word_to_search_2 in value:\n\t    result \u003d word_to_search_2\n\telse:\n\t    result \u003d \"Neither word found\"\n\t\n\treturn(result)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 + {view.params.deviceName} + \u0027/\u0027 + {view.params.lightmastName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.lightmastName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 180,
+      "width": 180
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "PieChart",
+          "tooltip": {
+            "location": "top",
+            "width": ""
+          }
+        },
+        "position": {
+          "height": 2.331,
+          "width": 3.7296,
+          "x": -1.8448,
+          "y": -0.1829
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.C1}\u0026\u0026{view.custom.C2}"
+              },
+              "transforms": [
+                {
+                  "fallback": null,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": false
+                    },
+                    {
+                      "input": false,
+                      "output": true
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.colors[0]": {
+            "binding": {
+              "config": {
+                "expression": "binEnc({view.custom.C2}, {view.custom.C1})"
+              },
+              "transforms": [
+                {
+                  "fallback": "#000000",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 0,
+                      "output": "#FBF16B"
+                    },
+                    {
+                      "input": 1,
+                      "output": "#4FD0B2"
+                    },
+                    {
+                      "input": 2,
+                      "output": "#4FD0B2"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "colors": [
+            null,
+            "#FFFFFF03"
+          ],
+          "data": [
+            {
+              "count": 3,
+              "flavor": "Light"
+            },
+            {
+              "count": 9,
+              "flavor": "Transparent"
+            }
+          ],
+          "enableTransitions": false,
+          "labels": {
+            "showName": false
+          },
+          "showLabels": false,
+          "showLegend": false,
+          "tooltipFormat": "{none}",
+          "valueFormat": {
+            "showPercentSymbol": false,
+            "showValueAsPercent": false
+          }
+        },
+        "type": "ia.chart.pie"
+      }
+    ],
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "enabled": true
+      }
+    },
+    "propConfig": {
+      "meta.visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "expression",
+            "tagPath": "{view.custom.deviceLocation} +\u0027/Apron Lights Visible\u0027"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "custom": {
+    "deviceLocation": "International",
+    "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 1",
+    "tags": [
+      {
+        "tagName": "Fault",
+        "tagParentPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 1/Alarms"
+      },
+      {
+        "tagName": "Healthy Running",
+        "tagParentPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 1/Status Folder"
+      },
+      {
+        "tagName": "Service - Maintenance Mode",
+        "tagParentPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 1/Status Folder"
+      }
+    ]
+  },
+  "params": {
+    "alwaysVisible": false,
+    "deviceName": "Escalator 1",
+    "deviceParentPath": "[default]International/T1/Pier B/Internal Transportation",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.deviceLocation": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "transforms": [
+          {
+            "code": "\tword_to_search_1 \u003d \"International\"\n\tword_to_search_2 \u003d \"Domestic\"\n\t\n\tif word_to_search_1 in value:\n\t    result \u003d word_to_search_1\n\telif word_to_search_2 in value:\n\t    result \u003d word_to_search_2\n\telse:\n\t    result \u003d \"Neither word found\"\n\t\n\treturn(result)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.alwaysVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 112,
+      "width": 184
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.2679,
+          "width": 0.163,
+          "x": 0.8019,
+          "y": 0.3516
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "IED03A",
+              "parentPath": "[default]High Voltage/International/Link Road Substation"
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.2679,
+          "width": 0.163,
+          "x": 0.0374,
+          "y": 0.3951
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath} + \"/Status Folder/Service - Maintenance Mode\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#555555",
+          "path": "material/build",
+          "style": {
+            "classes": "",
+            "opacity": 1
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "aJnB8BgA",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Escalator"
+        },
+        "position": {
+          "height": 1,
+          "width": 1
+        },
+        "propConfig": {
+          "props.elements[1].elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath} + \u0027/Status Folder/Healthy Running\u0027)"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": false,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "m198.08 70.406c-2.2472 0.06373-4.4953 0.10356-6.7422 0.12305-2.0273 0.01756-4.0548-0.02663-6.082 0-1.811 0.02379-3.621 0.1041-5.4316 0.15039-2.1557 0.05511-4.311 0.10285-6.4668 0.1543-5.5871 0.12927-11.176 0.08347-16.764 0.04102-1.6484-0.01252-3.297-0.06246-4.9453-0.03906-1.3056 0.01853-3.3856 0.10512-5.4414 0.20117l2.1543 1.9395c-3.3976 4.1081-7.3954 7.6055-11.584 10.873l1.0918 0.91016c-0.65849 0.7391-1.2716 1.5238-1.9766 2.2188-3.7711 3.7179-7.9605 6.5462-12.391 9.4199-2.664 1.7281-5.3771 3.3815-8.0664 5.0703-0.0744 0.0913-0.14201 0.18952-0.22852 0.26953-0.56015 0.51809-1.1331 1.0211-1.7207 1.5078-0.98051 0.81208-1.9786 1.6056-2.9824 2.3887-1.2772 0.99624-2.0086 1.535-2.8008 2.1191-0.0881 0.0806-0.17857 0.15933-0.26171 0.24414-0.86853 0.88597-1.6872 1.8207-2.5898 2.6719-0.6389 0.60243-1.3152 1.1659-1.9726 1.748-1.0524 0.8414-2.1166 1.6907-3.2656 2.4004-0.46891 0.28963-0.96068 0.53824-1.4258 0.83398-0.09698 0.0617 0.20769-0.0999 0.31836-0.13086 0.02837-8e-3 0.05704 0.0116 0.08594 0.0176-1.5506 1.4502-3.2263 2.8313-5.0703 3.9004-0.11464 0.0665-0.26411 0.13754-0.39453 0.20703-1.0027 0.88275-1.7236 1.4817-2.957 2.2363-1.3904 0.8507-1.7492 0.96142-3.1328 1.5742-0.94743 0.24407-1.8944 0.48835-2.8418 0.73242l-0.38476-2.791c-0.0164 9e-3 -0.03245 0.0184-0.04883 0.0273l-0.81836-1.5723c-1.1377 0.32049-2.2783 0.63253-3.4102 0.9707l0.1582-3.0371c-3.4323-0.86199-6.6746-1.9796-8.7832-4.6191-1.7304-2.1661-0.75434-4.4606 1.0547-6.4531l-0.06445-0.0664c0.19813-0.19236 0.39814-0.38309 0.59766-0.57422l-4.416-3.541c-4.1749 1.8701-8.8073 3.946-11 4.9277-3.5405 1.6986-7.1445 3.2698-10.621 5.0957-2.2052 1.1581-4.3193 2.4861-6.4062 3.8457-0.2649 0.17259-0.55867 0.57702-0.83594 0.93946l0.26562 0.50781c-11.762 3.4863-11.163 5.9876-13.746-16.139-0.18731-1.6043 2.5116-2.0439 3.8711-2.916 2.6037-1.6703 5.2624-3.2625 8.002-4.6992 3.6351-1.9064 7.4037-3.547 11.105-5.3203 1.6714-0.74834 5.5197-2.4733 8.625-3.8633l-2.8242-3.9473c2.7837-1.9766 5.6939-3.7735 8.5117-5.6992l-0.52735-1.0723c-0.68731 0.04785-1.3754 0.08568-2.0625 0.13672-2.6566 0.19733-5.3117 0.41916-7.959 0.7168-1.5874 0.17848-4.3962 0.69734-6.1855 1.0176-2.1409 0.35632-4.3056 0.45345-6.4668 0.58594-0.90318 0.05537-1.8055 0.13643-2.709 0.1875-1.204 0.06806-2.4097 0.09392-3.6133 0.16992-0.9744 0.06153-1.945 0.16164-2.918 0.24219-1.4536 0.09889-2.9062 0.22386-4.3613 0.29688-1.664 0.0835-3.3314 0.1049-4.9961 0.17188-0.49399 0.01987-0.63589 0.02508-1.0391 0.04297v105.23h184.79v-112c-2.048-0.1338-4.7795-0.37234-6.8984-0.58789zm-165.14 29.207c-0.72611 0.01338-1.6855 0.05854-2.9512 0.0957l6.2246 11.9c-3.0001-10.992 1.0931-12.077-3.2734-11.996z",
+                      "fill": {
+                        "paint": "#f00"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "id": "clipPath98",
+                  "name": "clipPath98",
+                  "type": "clipPath"
+                }
+              ],
+              "name": "defs",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "clipPath": "url(#clipPath98)",
+                  "d": "m30.5 181.43c-10.158-5.2833-13.342-17.024-7.1515-26.378 4.3897-6.6333 8.9208-8.0496 25.752-8.0496h14.469l17.043-13.75c9.3734-7.5625 29.275-23.875 44.226-36.25 15.705-12.999 28.762-23.057 30.923-23.819 2.6811-0.94543 8.4328-1.2285 20.316-1 16.057 0.3088 16.703 0.40296 20.629 3.0028 4.6347 3.0697 8.3061 9.674 8.2728 14.882-0.0439 6.8618-5.1964 14.558-11.293 16.868-1.5483 0.58663-9.2174 1.0666-17.042 1.0666h-14.227l-44.958 36.615c-24.727 20.138-45.999 37.013-47.273 37.5-1.2733 0.487-10.048 0.88269-19.5 0.8793-13.613-5e-3 -17.808-0.33047-20.185-1.5664zm83.699-40.398 45.301-36.97 13.5-0.0354c7.425-0.0195 15.101-0.48003 17.057-1.0235 11.102-3.0843 13.38-18.105 3.6446-24.041-2.834-1.728-5.095-1.9519-19.701-1.9505-14.012 0.0013-16.9 0.2646-19.156 1.7463-1.4608 0.9596-17.661 14.143-36 29.297-18.339 15.154-37.98 31.241-43.645 35.75l-10.301 8.1977-15.199 4e-3c-13.31 3e-3 -15.596 0.2463-18.4 1.9558-7.4614 4.5494-8.4059 14.805-1.9118 20.756l3.5838 3.2841h35.928zm-16.199-44.822c0-17.997 0.10982-19.076 2.2699-22.31 5.9657-8.9301 18.494-8.9301 24.46 0 1.8473 2.7653 2.2594 4.7201 2.2131 10.5l-0.0568 7.1021-5.6932 4.61c-3.1313 2.5355-9.6307 7.8498-14.443 11.81l-8.75 7.1997zm6.4-34.608c-2.9021-2.9021-3.4-4.0882-3.4-8.1s0.49787-5.1979 3.4-8.1 4.0882-3.4 8.1-3.4 5.1979 0.49787 8.1 3.4 3.4 4.0882 3.4 8.1-0.49787 5.1979-3.4 8.1-4.0882 3.4-8.1 3.4-5.1979-0.49787-8.1-3.4z",
+                  "fill": {
+                    "paint": "Var(--neutral-80)"
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "m11.049 105.84c-3.3775-3.0433-4.4588-4.508-5.4377-7.3655-0.70772-2.066-0.79973-5.197-0.21053-7.1636 1.1937-3.9845 4.3037-7.3818 7.8855-8.614 2.2377-0.76982 5.0108-0.90562 18.636-0.91255l12.811-0.0065 7.9845-6.3936c8.9349-7.1547 20.764-16.824 44.631-36.485 27.393-22.564 36.331-29.815 37.841-30.701 0.50083-0.2935 1.5758-0.67234 2.3889-0.84187 4.4622-0.9304 28.091-0.93001 32.554 5.412e-4 2.1117 0.4403 3.7348 1.3831 5.6497 3.2815 2.7168 2.6935 3.9199 5.8246 3.7001 9.6299-0.2856 4.9451-2.9673 9.06-7.3315 11.25-3.0456 1.5281-5.5863 1.7575-20.977 1.8942l-11.893 0.10564-10.832 8.8404c-15.547 12.688-49.875 40.701-66.062 53.908l-13.874 11.32h-35.527z",
+                  "fill": {},
+                  "name": "path",
+                  "opacity": 1,
+                  "style": {
+                    "paintOrder": "fill markers stroke"
+                  },
+                  "transform": "translate(20.19 70.406)",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "stroke": {
+                "miterlimit": "0",
+                "width": "0"
+              },
+              "transform": "translate(-20.19 -70.406)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 184.79 112.59"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2768,
+          "width": 0.2337,
+          "x": 0.7391,
+          "y": 0.0374
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath} + \"/Parameters.DeviceID\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "meta.visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.internalTransport"
+          },
+          "transforms": [
+            {
+              "expression": "{value}||{view.params.alwaysVisible}",
+              "type": "expression"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

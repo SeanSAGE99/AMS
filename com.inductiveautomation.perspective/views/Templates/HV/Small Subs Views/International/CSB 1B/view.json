@@ -1,0 +1,211 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 137,
+      "width": 145
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2407,
+          "width": 0.461,
+          "x": -0.0026,
+          "y": 0.0038
+        },
+        "props": {
+          "text": "CSB 1B",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.188,
+          "width": 0.2978,
+          "x": 0.3617,
+          "y": 0.1933
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/International/Substation 1B/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 11 - Overview"
+        },
+        "position": {
+          "height": 0.0057,
+          "width": 0.0163,
+          "x": 0.035,
+          "y": 0.0214
+        },
+        "props": {
+          "path": "Templates/International Views/Substation 11 - Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "height": 0.1908,
+          "width": 0.3237,
+          "x": 0.0477,
+          "y": 0.7927
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW01",
+            "DeviceParentPath": "High Voltage/International/Substation 1B/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "height": 0.1908,
+          "width": 0.3237,
+          "x": 0.6484,
+          "y": 0.7937
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW03",
+            "DeviceParentPath": "[default]High Voltage/International/Substation 1B/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/International/substation-1b"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "x": 0.0427,
+                        "y": 0.6165
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.1487,
+                        "y": 0.8271
+                      }
+                    ],
+                    "x": 0.1487,
+                    "y": 0.6165
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.4682,
+                    "y": 0.3044
+                  }
+                ],
+                "x": 0.4682,
+                "y": 0.6165
+              },
+              {
+                "connections": [],
+                "x": 0.787,
+                "y": 0.8271
+              },
+              {
+                "x": 0.9284,
+                "y": 0.6165
+              }
+            ],
+            "x": 0.787,
+            "y": 0.6165
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4682,
+                "y": -0.0451
+              }
+            ],
+            "x": 0.4682,
+            "y": 0.2256
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

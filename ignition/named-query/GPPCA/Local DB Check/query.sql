@@ -1,0 +1,1 @@
+SELECT * FROM GPPCA_SCADA_EVENT_stage where event_date = :eventDate and Remote_DB_checked = 0

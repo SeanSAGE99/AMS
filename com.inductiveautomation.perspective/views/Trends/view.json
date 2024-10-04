@@ -1,0 +1,569 @@
+{
+  "custom": {},
+  "params": {
+    "filterText": ""
+  },
+  "propConfig": {
+    "custom.filterText": {
+      "persistent": true
+    },
+    "params.filterText": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "custom": {
+                  "key": "histprov:sql_history:/drv:ignition-alexandrina-council:mqtt engine:/tag:edge nodes/"
+                },
+                "meta": {
+                  "name": "PowerChart"
+                },
+                "position": {
+                  "height": 1,
+                  "width": 1
+                },
+                "props": {
+                  "config": {
+                    "tagBrowserStartPath": "[MQTT Engine]Edge Nodes"
+                  },
+                  "interaction": {
+                    "chartZoomLevel": 1,
+                    "rangeZoomLevel": 1
+                  },
+                  "title": {
+                    "visible": true
+                  }
+                },
+                "type": "ia.chart.powerchart"
+              },
+              {
+                "custom": {
+                  "docked": 0
+                },
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tif self.custom.docked:\n\t\tself.custom.docked \u003d 0\n\t\tself.parent.parent.parent.getChild(\"trendConfig\").position.basis \u003d \u0027350px\u0027\n\telse:\n\t\tself.custom.docked \u003d 1\n\t\tself.parent.parent.parent.getChild(\"trendConfig\").position.basis \u003d \u00270px\u0027"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Hide"
+                },
+                "position": {
+                  "height": 0.0303,
+                  "rotate": {
+                    "anchor": "50% 37%"
+                  },
+                  "width": 0.0156,
+                  "x": 0.9844,
+                  "y": 0.4849
+                },
+                "propConfig": {
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.custom.docked}\r\n\t,\u0027material/keyboard_arrow_left\u0027\r\n\t,\u0027material/keyboard_arrow_right\u0027\r\n)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "bounce-once",
+                    "cursor": "pointer",
+                    "marginLeft": "-10px",
+                    "marginRight": "-10px"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "custom": {
+              "docked": 1
+            },
+            "meta": {
+              "name": "CoordinateContainer"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "mode": "percent"
+            },
+            "type": "ia.container.coord"
+          }
+        ],
+        "meta": {
+          "name": "powerChart"
+        },
+        "position": {
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold",
+                    "marginLeft": "5px"
+                  },
+                  "text": "Loaded Trend: "
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-no-shadow"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tconfigName \u003d self.parent.parent.getChild(\"Table\").props.selection.data[0].Config\n\tfilePath \u003d self.parent.parent.getChild(\"Table\").props.selection.data[0].Path\n\tpowerChart \u003d self.parent.parent.parent.getChild(\"powerChart\").getChild(\"CoordinateContainer\").getChild(\"PowerChart\")\n\t\n\tshared.perspective.trend.setPowerChartProps(filePath,powerChart)\n\tself.parent.parent.getChild(\"FlexContainer\").getChild(\"Label\").props.text \u003d configName\n\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button_4",
+                  "tooltip": {
+                    "enabled": true,
+                    "text": "Load Selected Trend"
+                  }
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "props": {
+                  "image": {
+                    "height": 30,
+                    "icon": {
+                      "path": "material/done"
+                    },
+                    "width": 30
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                    "marginBottom": "3px",
+                    "marginLeft": "5px",
+                    "marginRight": "40px",
+                    "marginTop": "3px"
+                  },
+                  "text": ""
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\t#get current user\u0027s username\n\tcurrentUser \u003d self.session.props.auth.user.userName\n\t#clean username\n\tif currentUser is not None:\n\t\tcurrentUser \u003d currentUser.replace(\u0027/\u0027,\u0027\u0027).replace(\u0027\\\\\u0027,\u0027\u0027)\n\t\n\tdropdownOptions \u003d [\n\t  {\n\t    \"value\": \"user\" + \u0027/\u0027 + currentUser,\n\t    \"label\": \"User\"\n\t  },\n\t  {\n\t    \"value\": \"general\",\n\t    \"label\": \"General\"\n\t  }\n\t]\n\t\n\tAlerts.showAlert(state\u003d\u0027info\u0027\n\t\t\t\t\t,title\u003d\u0027Type a name for the trend configuration\u0027\n\t\t\t\t\t,message\u003d\u0027Then choose where to save it\u0027\n\t\t\t\t\t,showCloseBtn\u003dTrue\n\t\t\t\t\t,btnTextPrimary\u003d\u0027Save\u0027\n\t\t\t\t\t,btnTextSecondary\u003d\u0027Close\u0027\n\t\t\t\t\t,btnIconPrimary\u003d\u0027chevron_right\u0027\n\t\t\t\t\t,btnIconSecondary\u003d\u0027chevron_right\u0027\n\t\t\t\t\t,btnIconAlignment\u003d\u0027right\u0027\n\t\t\t\t\t,btnActionPrimary\u003d\u0027save-trend\u0027\n\t\t\t\t\t,btnActionSecondary\u003d\u0027closePopup\u0027\n\t\t\t\t\t,btnActionClose\u003d\u0027closePopup\u0027\n\t\t\t\t\t,dropdownOptions\u003ddropdownOptions\n\t\t\t\t\t,showTextInput\u003dTrue\n\t)\n\t\n\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button_0",
+                  "tooltip": {
+                    "enabled": true,
+                    "text": "Save Trend"
+                  }
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "image": {
+                    "height": 30,
+                    "icon": {
+                      "path": "material/save"
+                    },
+                    "width": 30
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                    "marginBottom": "3px",
+                    "marginLeft": "5px",
+                    "marginTop": "3px"
+                  },
+                  "text": ""
+                },
+                "scripts": {
+                  "customMethods": [],
+                  "extensionFunctions": null,
+                  "messageHandlers": [
+                    {
+                      "messageType": "save-trend",
+                      "pageScope": false,
+                      "script": "\tfrom com.inductiveautomation.ignition.gateway import IgnitionGateway\n\timport traceback\n\timport os\n\t\n\t# function to clean up object data\n\tdef sanitise_tree(element):\n\t\tif hasattr(element, \u0027__iter__\u0027):\n\t\t\tif hasattr(element, \u0027keys\u0027):\n\t\t\t\treturn dict(zip(element.keys(), (sanitise_tree(element[k] for k in element.keys()))))\n\t\t\telse:\n\t\t\t\treturn list(sanitise_tree(x) for x in element)\n\t\treturn element\n\t\t\n\ttry:\n\t\t# build file save path\n\t\tcontext \u003d IgnitionGateway.get()\n\t\tprojectParentFolder \u003d str(context.systemManager.dataDir.absoluteFile).replace(\u0027\\\\\u0027,\u0027/\u0027) + \u0027/projects/\u0027\n\t\tprojectFolder \u003d \u0027AlexandrinaCouncil/com.inductiveautomation.perspective/trend-configs\u0027\n\t\ttrendsPath \u003d projectParentFolder + projectFolder\n\t\tfilename \u003d payload[\u0027textInput\u0027]\n\t\tsave_file_path \u003d trendsPath + \u0027/\u0027 + filename\n\t\t\n\t\t# get chart object data and convert to JSON format\n\t\tchart_props \u003d self.parent.parent.parent.getChild(\"powerChart\").getChild(\"CoordinateContainer\").getChild(\"PowerChart\").props\n\t\tchart_props_sanitised \u003d sanitise_tree(chart_props)\n\t\tchart_props_json \u003d system.util.jsonEncode(chart_props_sanitised)\n\t\t\n\t\t# save the file to the save_file_path\n\t\tsystem.file.writeFile(save_file_path, chart_props_json)\n\t\t\n\t\t# send a messager to to refresh the table after saving\n\t\tid \u003d payload[\u0027id\u0027]\n\t\tsystem.perspective.closePopup(id\u003did)\n\t\tsystem.perspective.sendMessage(\u0027refresh-table\u0027,scope\u003d\u0027page\u0027)\n\texcept Exception, e:\n\t\ttb \u003d traceback.format_exc()\n\t\tsystem.perspective.print(tb)\n\t\t\n\t\t",
+                      "sessionScope": true,
+                      "viewScope": false
+                    }
+                  ]
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\t\n\t# brings up a dialogue box to confirm deletion\n\t# if OK is pressed, it send\u0027s a message to the message handler\n\t# on this button which deletes the file and refreshes the table\n\tAlerts.showAlert(state\u003d\u0027warning\u0027\n\t\t\t\t\t,title\u003d\u0027Warning\u0027\n\t\t\t\t\t,message\u003d\u0027Are you sure you want to delete this config?\u0027\n\t\t\t\t\t,showCloseBtn\u003dTrue\n\t\t\t\t\t,btnTextPrimary\u003d\u0027Yes\u0027\n\t\t\t\t\t,btnTextSecondary\u003d\u0027No\u0027\n\t\t\t\t\t,btnIconPrimary\u003d\u0027chevron_right\u0027\n\t\t\t\t\t,btnIconSecondary\u003d\u0027\u0027\n\t\t\t\t\t,btnIconAlignment\u003d\u0027right\u0027\n\t\t\t\t\t,btnActionPrimary\u003d\u0027delete-trend\u0027\n\t\t\t\t\t,btnActionSecondary\u003d\u0027closePopup\u0027\n\t\t\t\t\t,btnActionClose\u003d\u0027closePopup\u0027 \n\t)\n\t\n\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button_7",
+                  "tooltip": {
+                    "enabled": true,
+                    "text": "Delete Trend"
+                  }
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "image": {
+                    "height": 30,
+                    "icon": {
+                      "path": "material/delete"
+                    },
+                    "width": 30
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                    "marginBottom": "3px",
+                    "marginLeft": "5px",
+                    "marginTop": "3px"
+                  },
+                  "text": ""
+                },
+                "scripts": {
+                  "customMethods": [],
+                  "extensionFunctions": null,
+                  "messageHandlers": [
+                    {
+                      "messageType": "delete-trend",
+                      "pageScope": false,
+                      "script": "\timport traceback\n\timport os\n\ttry:\n\t\t# build file path and then delete the file\n\t\tdeleteFilePath \u003d self.parent.parent.getChild(\"Table\").props.selection.data[0].Path\n\t\tos.remove(deleteFilePath)\n\t\t\n\t\t# send message to refresh the table\n\t\tid \u003d payload[\u0027id\u0027]\n\t\tsystem.perspective.closePopup(id\u003did)\n\t\tsystem.perspective.sendMessage(\u0027refresh-table\u0027,scope\u003d\u0027page\u0027)\n\texcept Exception, e:\n\t\ttb \u003d traceback.format_exc()\n\t\tsystem.perspective.print(tb)\n\t\t\t\t",
+                      "sessionScope": true,
+                      "viewScope": false
+                    }
+                  ]
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Form/Panel-normal",
+                "paddingRight": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "basis": "400px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.filter.text": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.filterText"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "Config",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": false,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": false,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": false,
+                  "width": ""
+                }
+              ],
+              "enableHeader": false,
+              "filter": {
+                "enabled": true
+              },
+              "pager": {
+                "bottom": false
+              },
+              "rows": {
+                "highlight": {
+                  "color": "#C0C0C0"
+                }
+              }
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "refresh-table",
+                  "pageScope": true,
+                  "script": "\timport os\n\timport traceback\t\n\tfrom com.inductiveautomation.ignition.gateway import IgnitionGateway\n\t\n\ttry:\n\t\t# get path to ignition folder and then append project folder to it\n\t\tcontext \u003d IgnitionGateway.get()\n\t\tprojectParentFolder \u003d str(context.systemManager.dataDir.absoluteFile).replace(\u0027\\\\\u0027,\u0027/\u0027) + \u0027/projects/\u0027\n\t\tprojectFolder \u003d \u0027AlexandrinaCouncil/com.inductiveautomation.perspective/trend-configs\u0027\n\t\ttrendsPath \u003d projectParentFolder + projectFolder\n\t\t\n\t\t#get current user\u0027s username\n\t\tcurrentUser \u003d self.session.props.auth.user.userName\n\t\t#clean username\n\t\tif currentUser is not None:\n\t\t\tcurrentUser \u003d currentUser.replace(\u0027/\u0027,\u0027\u0027).replace(\u0027\\\\\u0027,\u0027\u0027)\n\t\t\n\t\t#set data for table\n\t\tdata \u003d shared.perspective.trend.dirToData(trendsPath,currentUser)\n\t\tself.props.data \u003d data\n\t\t\n\texcept Exception, e:\n\t\ttb \u003d traceback.format_exc()\n\t\tsystem.perspective.print(tb)",
+                  "sessionScope": false,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "trendConfig"
+        },
+        "position": {
+          "basis": "350px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tmessageType \u003d \u0027refresh-table\u0027\n\tsystem.perspective.sendMessage(messageType, scope\u003d\u0027page\u0027)\n\t\t"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "custom": {
+    "DeviceTagPath": {
+      "CURA_RW": 71.596214,
+      "CURB_RW": 66.07431,
+      "CURC_RW": 75.29272,
+      "Connected": 1,
+      "DEMKW_RW": 49.501076,
+      "FREQ_RW": 49.99202,
+      "Hostname": "10.32.15.38",
+      "KVAR_RW": 21.338875,
+      "KVA_RW": 53.40362,
+      "KWA_RW": 15.95502,
+      "KWB_RW": 15.296532,
+      "KWC_RW": 17.627895,
+      "KWH_RW": 770190608,
+      "KW_RW": 48.879444,
+      "PF_RW": 0.9153581,
+      "Status": "Connected",
+      "VAB_RW": 433.14575,
+      "VBC_RW": 433.25467,
+      "VCA_RW": 436.32877,
+      "VPA_RW": 251.63313,
+      "VPB_RW": 249.07838,
+      "VPC_RW": 251.41817
+    }
+  },
+  "params": {
+    "DeviceName": "MtrLV001",
+    "DeviceParentPath": "[default]HV/T1/Sub12/"
+  },
+  "propConfig": {
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceName": "{view.params.DeviceName}",
+            "DeviceParentPath": "{view.params.DeviceParentPath}"
+          },
+          "tagPath": "{DeviceParentPath}/{DeviceName}"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {},
+          "tagPath": "[default]HV/T1/Sub12/MtrLV001/Parameters.DeviceName"
+        },
+        "type": "tag"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {},
+          "tagPath": "[default]HV/T1/Sub12/MtrLV001/Parameters.DeviceParentPath"
+        },
+        "type": "tag"
+      },
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 138,
+      "width": 239
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "PM53xx"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "text": "A Ph",
+              "textStyle": {
+                "fontWeight": "bold",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "text": "B Ph",
+              "textStyle": {
+                "fontWeight": "bold",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "text": "C Ph",
+              "textStyle": {
+                "fontWeight": "bold",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "80px"
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "fontWeight": "bold",
+                "textAlign": "center"
+              },
+              "text": "Cur (A)"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.DeviceTagPath.CURA_RW"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.DeviceTagPath.CURB_RW"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.DeviceTagPath.CURC_RW"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "80px"
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "44px"
+            },
+            "props": {
+              "text": "Trends",
+              "textStyle": {
+                "fontWeight": "bold",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "94px"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#808080"
+              },
+              "text": "Currents"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "80px"
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

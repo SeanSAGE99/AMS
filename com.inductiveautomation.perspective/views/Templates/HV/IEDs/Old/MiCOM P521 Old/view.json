@@ -1,0 +1,109 @@
+{
+  "custom": {
+    "deviceTagPath": "High Voltage/T1/IZS Substation/IED003",
+    "sitePath": "High Voltage/T1/IZS Substation"
+  },
+  "params": {
+    "deviceName": "IED003",
+    "deviceParentPath": "High Voltage/T1/IZS Substation"
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027 + {view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.sitePath": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 96
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "draggable": true,
+                "id": "{view.custom.deviceTagPath}",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": false,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewParams": {
+                  "deviceName": "{view.params.deviceName}",
+                  "deviceParentPath": "{view.params.deviceParentPath}"
+                },
+                "viewPath": "Popups/HV/IEDs/MiCOM P521",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "100%",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#808080",
+            "classes": "Input/Button/Body-normal \nInput/Button/Colour/Normal UI/Popups/Background"
+          },
+          "textStyle": {
+            "classes": "Alarms/Text/Critical"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "direction": "column",
+      "justify": "space-around"
+    },
+    "type": "ia.container.flex"
+  }
+}

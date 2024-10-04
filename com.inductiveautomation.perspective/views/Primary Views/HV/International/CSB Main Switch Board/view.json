@@ -1,0 +1,772 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/International/CSB MSB"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.116,
+          "x": 0.4425,
+          "y": 0.0899
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "CSB Main Switch Board",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.1546,
+          "y": 0.2076
+        },
+        "props": {
+          "text": "Ess Supply from SUB 1 TX01",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Medium"
+        },
+        "position": {
+          "height": 0.12,
+          "width": 0.115,
+          "x": 0.0125,
+          "y": 0.6161
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR001",
+            "deviceParentPath": "High Voltage/International/CSB MSB"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0672,
+          "x": 0.1605,
+          "y": 0.3849
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB Horizontal"
+        },
+        "position": {
+          "height": 0.0813,
+          "width": 0.0526,
+          "x": 0.2908,
+          "y": 0.8232
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "LVCB03",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "EarthOnLeft": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/substation-1"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0646,
+          "x": 0.1403,
+          "y": 0.2653
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "SUB 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9197,
+          "y": 0.033
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Battery Charger"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.9313,
+          "y": 0.2499
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Battery Charger",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Battery Chargers/Battery Charger"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB Horizontal_0"
+        },
+        "position": {
+          "height": 0.0813,
+          "width": 0.0526,
+          "x": 0.4583,
+          "y": 0.8232
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "LVCB04",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "EarthOnLeft": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB Horizontal_1"
+        },
+        "position": {
+          "height": 0.0813,
+          "width": 0.0526,
+          "x": 0.6258,
+          "y": 0.8232
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "LVCB05",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "EarthOnLeft": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.046,
+          "x": 0.8291,
+          "y": 0.2076
+        },
+        "props": {
+          "text": "Non - Ess Supply from SUB 1A TX02",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/substation-1a"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0646,
+          "x": 0.8193,
+          "y": 0.2653
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "SUB 1A",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "LVCB_0"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0672,
+          "x": 0.8395,
+          "y": 0.3849
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB02",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Medium_0"
+        },
+        "position": {
+          "height": 0.12,
+          "width": 0.115,
+          "x": 0.6915,
+          "y": 0.6161
+        },
+        "props": {
+          "params": {
+            "deviceName": "MTR002",
+            "deviceParentPath": "High Voltage/International/CSB MSB"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.2139,
+          "y": 0.8132
+        },
+        "props": {
+          "text": "ESS BUS 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.3744,
+          "y": 0.8132
+        },
+        "props": {
+          "text": "ESS BUS 2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.5414,
+          "y": 0.8132
+        },
+        "props": {
+          "text": "NESS BUS 3",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.7314,
+          "y": 0.8132
+        },
+        "props": {
+          "text": "NESS BUS 4",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.8438,
+          "y": 0.6621
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_0"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.1648,
+          "y": 0.6621
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "GE PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.9239,
+          "y": 0.1193
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/GE PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SurgeAlarm"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.0416,
+          "y": 0.8732
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Surge Arrester Alarm 1",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SurgeAlarm_0"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.725,
+          "y": 0.8742
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Surge Arrester Alarm 2",
+            "DeviceParentPath": "High Voltage/International/CSB MSB/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1724,
+                "y": 0.2894
+              }
+            ],
+            "x": 0.1724,
+            "y": 0.4327
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.3031,
+                    "y": 0.8519
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.1276,
+                    "y": 0.8519
+                  }
+                ],
+                "x": 0.1724,
+                "y": 0.8519
+              }
+            ],
+            "x": 0.1724,
+            "y": 0.4827
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4708,
+                "y": 0.8519
+              }
+            ],
+            "x": 0.3307,
+            "y": 0.8519
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6385,
+                "y": 0.8519
+              }
+            ],
+            "x": 0.4984,
+            "y": 0.8519
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.8516,
+                    "y": 0.4827
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.9067,
+                    "y": 0.8519
+                  }
+                ],
+                "x": 0.8516,
+                "y": 0.8519
+              }
+            ],
+            "x": 0.6656,
+            "y": 0.8519
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8516,
+                "y": 0.2894
+              }
+            ],
+            "x": 0.8516,
+            "y": 0.4337
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1724,
+                "y": 0.6762
+              }
+            ],
+            "x": 0.1229,
+            "y": 0.6762
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8516,
+                "y": 0.6762
+              }
+            ],
+            "x": 0.802,
+            "y": 0.6762
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

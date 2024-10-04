@@ -1,0 +1,1243 @@
+{
+  "custom": {
+    "alarmsActive": null,
+    "deviceTagPath": "Alexandrina/Mt Compass/WWPS/MCP01/Sump",
+    "showAlarms": false,
+    "siteName": null,
+    "subArea": null,
+    "typeId": null
+  },
+  "params": {
+    "controlEnable": true,
+    "deviceName": "Sump",
+    "deviceParentPath": "Alexandrina/Mt Compass/WWPS/MCP01",
+    "popupHeight": 0,
+    "popupId": ""
+  },
+  "propConfig": {
+    "custom.alarmsActive": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{1}/Alarms/_AnyActive"
+        },
+        "type": "tag"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tif not currentValue.value:\n\t\tself.custom.showAlarms \u003d False\n\tif currentValue.value:\n\t\tself.custom.showAlarms \u003d True"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tsystem.perspective.sendMessage(\u0027refresh-alarms-list\u0027)"
+      },
+      "persistent": true
+    },
+    "custom.showAlarms": {
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceParentPath": "{view.params.deviceParentPath}"
+          },
+          "tagPath": "{deviceParentPath}/Parameters/Site_Name"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceParentPath": "{view.params.deviceParentPath}"
+          },
+          "tagPath": "{deviceParentPath}/Parameters/Site_SubArea"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.typeId": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{1}.TypeId"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.controlEnable": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.popupHeight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.popupId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 516,
+      "width": 349
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginLeft": 40
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "custom": {
+                      "key": "value"
+                    },
+                    "meta": {
+                      "name": "AlarmsIcon"
+                    },
+                    "position": {
+                      "height": 40,
+                      "width": 40
+                    },
+                    "propConfig": {
+                      "props.image.icon.path": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "1": "{view.custom.deviceTagPath}"
+                            },
+                            "tagPath": "{1}/Alarm Summary/Active Unack"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "if({value} \u003d 0, \u0027material/warning\u0027, \u0027\u0027)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "height": 38,
+                        "icon": {
+                          "color": "var(--neutral-60)"
+                        },
+                        "width": 38
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginRight": "10px"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "meta": {
+                      "name": "Alarm Icon"
+                    },
+                    "position": {
+                      "height": 38,
+                      "width": 38,
+                      "x": 1,
+                      "y": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "deviceName": "",
+                          "deviceParentPath": "Alexandrina/Mt Compass/WWPS/MCP01",
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Body\").getChild(\"setpoints_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"alarms_expanded\").position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Alarm Button"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "marginBottom": 3,
+                    "marginRight": 5,
+                    "marginTop": 3,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-90)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.deviceTagPath"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "\u0027Tag path: \u0027 + {value}",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "auto"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "18px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.popupId"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "\u0027Popup Id: \u0027 + {view.params.popupHeight} + {value}",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Info"
+        },
+        "position": {
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Status_Title"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading1"
+              },
+              "text": "Status"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Analogue Value w Label"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/ALS\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "Level",
+                    "showUnitsInValue": true,
+                    "tagName": "PV",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[MQTT Engine]Edge Nodes/Mt Compass/MCP01 Arthur Road/TAGS/MitsuPLC_FX3G/Sump/ALS/PV\u0027 not found.\")",
+                    "unitsWidth": "auto",
+                    "valueWidth": "100px"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+                  "style": {
+                    "marginLeft": "3px",
+                    "marginRight": "3px"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Heading"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "textAlign": "left"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "50px",
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Heading"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "textAlign": "left"
+                  },
+                  "text": "setpoints"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "26px",
+                  "grow": 1
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "path": ".../setpoints_expanded.position.display"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": null,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": false,
+                              "output": "material/keyboard_arrow_up"
+                            },
+                            {
+                              "input": true,
+                              "output": "material/keyboard_arrow_down"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "setpoints_header"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading1",
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Analogue Setpoint w Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.params.controlEnable": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.controlEnable"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/ALS/Setpoints\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "setpointWidth": "100px",
+                    "tagName": "High High Alarm",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[MQTT Engine]Edge Nodes/Mt Compass/MCP01 Arthur Road/TAGS/MitsuPLC_FX3G/Sump/ALS/Setpoints/High_High_Alarm\u0027 not found.\")",
+                    "unitsOverride": "",
+                    "unitsWidth": "auto",
+                    "useDeviceRanges": false
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Control/Analogue Input w Label",
+                  "style": {
+                    "marginBottom": 2
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Setpoint w Label_0"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.params.controlEnable": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.controlEnable"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/ALS/Setpoints\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "setpointWidth": "100px",
+                    "tagName": "High Alarm",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[MQTT Engine]Edge Nodes/Mt Compass/MCP01 Arthur Road/TAGS/MitsuPLC_FX3G/Sump/ALS/Setpoints/High_Alarm\u0027 not found.\")",
+                    "unitsOverride": "",
+                    "unitsWidth": "auto",
+                    "useDeviceRanges": false
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Control/Analogue Input w Label",
+                  "style": {
+                    "marginBottom": "2px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Setpoint w Label_1"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.params.controlEnable": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.controlEnable"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/ALS/Setpoints\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "setpointWidth": "100px",
+                    "tagName": "Low Alarm",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[MQTT Engine]Edge Nodes/Mt Compass/MCP01 Arthur Road/TAGS/MitsuPLC_FX3G/Sump/ALS/Setpoints/Low_Alarm\u0027 not found.\")",
+                    "unitsOverride": "",
+                    "unitsWidth": "auto",
+                    "useDeviceRanges": false
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Control/Analogue Input w Label",
+                  "style": {
+                    "marginBottom": "2px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Setpoint w Label_2"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.params.controlEnable": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.controlEnable"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/ALS/Setpoints\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "setpointWidth": "100px",
+                    "tagName": "Start Level",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[MQTT Engine]Edge Nodes/Mt Compass/MCP01 Arthur Road/TAGS/MitsuPLC_FX3G/Sump/ALS/Setpoints/Start_Level\u0027 not found.\")",
+                    "unitsOverride": "",
+                    "unitsWidth": "auto",
+                    "useDeviceRanges": false
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Control/Analogue Input w Label",
+                  "style": {
+                    "marginBottom": "2px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Setpoint w Label_3"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.params.controlEnable": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.controlEnable"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/ALS/Setpoints\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "setpointWidth": "100px",
+                    "tagName": "Backup Start Level",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[MQTT Engine]Edge Nodes/Mt Compass/MCP01 Arthur Road/TAGS/MitsuPLC_FX3G/Sump/ALS/Setpoints/Backup_Start_Level\u0027 not found.\")",
+                    "unitsOverride": "",
+                    "unitsWidth": "auto",
+                    "useDeviceRanges": false
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Control/Analogue Input w Label",
+                  "style": {
+                    "marginBottom": "2px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Setpoint w Label_4"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.params.controlEnable": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.controlEnable"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/ALS/Setpoints\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "setpointWidth": "100px",
+                    "tagName": "Stop Level",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[MQTT Engine]Edge Nodes/Mt Compass/MCP01 Arthur Road/TAGS/MitsuPLC_FX3G/Sump/ALS/Setpoints/Stop_Level\u0027 not found.\")",
+                    "unitsOverride": "",
+                    "unitsWidth": "auto",
+                    "useDeviceRanges": false
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Control/Analogue Input w Label",
+                  "style": {
+                    "marginBottom": "2px"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "setpoints_expanded"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.view.custom.showAlarms \u003d False"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Heading"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "textAlign": "center",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\ttagPath \u003d self.view.custom.deviceTagPath + \u0027/Alarm Reset CMD\u0027\n\tsystem.tag.writeBlocking([tagPath], [1])"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Text",
+                        "marginBottom": "5px",
+                        "marginTop": "5px"
+                      },
+                      "text": "reset"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "60px",
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "flex-end",
+                  "style": {
+                    "marginRight": 10
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "path": ".../alarms_expanded.position.display"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": null,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": false,
+                              "output": "material/keyboard_arrow_up"
+                            },
+                            {
+                              "input": true,
+                              "output": "material/keyboard_arrow_down"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "alarms_header"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading1"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "alarms_expanded"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.deviceParentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceParentPath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "controlEnable": true
+              },
+              "path": "Shared/Templates/Devices/Control/Common/Alarms",
+              "style": {
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Body"
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "UI/Popups/ContentMargins"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Info Icon"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "// Check user roles\r\ntry(hasRole(\u0027Administrator\u0027, {session.props.auth.user.userName}, \u0027default\u0027), false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#009BFF",
+          "path": "material/info",
+          "style": {
+            "classes": "Input/Icon"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.params.popupId)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

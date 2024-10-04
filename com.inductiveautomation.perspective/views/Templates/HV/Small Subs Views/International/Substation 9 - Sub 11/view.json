@@ -1,0 +1,436 @@
+{
+  "custom": {},
+  "params": {
+    "Pipes": {}
+  },
+  "propConfig": {
+    "params.Pipes": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 139.15,
+      "width": 343
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.1988,
+          "width": 0.2767,
+          "x": 0.2886
+        },
+        "props": {
+          "text": "Substation 9",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB Block"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.0226,
+          "y": 0.6511
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.1342,
+          "y": 0.6491
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB03",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_1"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.4307,
+          "y": 0.6511
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB07",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_2"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.6542,
+          "y": 0.6479
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB09",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_5"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.2471,
+          "y": 0.6491
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB04",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_6"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.7705,
+          "y": 0.6491
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB10",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_7"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.543,
+          "y": 0.6522
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB08",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_8"
+        },
+        "position": {
+          "height": 0.1553,
+          "width": 0.1055,
+          "x": 0.8804,
+          "y": 0.6498
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB11",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block Vertical"
+        },
+        "position": {
+          "height": 0.2609,
+          "width": 0.0652,
+          "x": 0.3595,
+          "y": 0.3106
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB05",
+            "DeviceParentPath": "High Voltage/International/Substation 9/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block Horizontal"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/International/substation-9"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "view.params.Pipes.CB09"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[5].visible": {
+        "binding": {
+          "config": {
+            "path": "view.params.Pipes.CB04"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6838,
+                        "y": 0.7044
+                      },
+                      {
+                        "connections": [
+                          {
+                            "x": 0.7998,
+                            "y": 0.7044
+                          },
+                          {
+                            "connections": [
+                              {
+                                "x": 0.9099,
+                                "y": 0.7044
+                              },
+                              {
+                                "x": 0.9683,
+                                "y": 0.4871
+                              }
+                            ],
+                            "x": 0.9099,
+                            "y": 0.4871
+                          }
+                        ],
+                        "x": 0.7998,
+                        "y": 0.4871
+                      }
+                    ],
+                    "x": 0.6838,
+                    "y": 0.4871
+                  },
+                  {
+                    "x": 0.5748,
+                    "y": 0.7044
+                  }
+                ],
+                "x": 0.5748,
+                "y": 0.4871
+              },
+              {
+                "connections": [],
+                "x": 0.4218,
+                "y": 0.4871
+              },
+              {
+                "x": 0.4621,
+                "y": 0.7044
+              }
+            ],
+            "x": 0.4621,
+            "y": 0.4871
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2779,
+                "y": 0.6639
+              },
+              {
+                "connections": [
+                  {
+                    "x": 0.1645,
+                    "y": 0.6639
+                  },
+                  {
+                    "connections": [
+                      {
+                        "x": 0.015,
+                        "y": 0.4871
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.0527,
+                        "y": 0.6659
+                      }
+                    ],
+                    "x": 0.0527,
+                    "y": 0.4871
+                  }
+                ],
+                "x": 0.1645,
+                "y": 0.4871
+              },
+              {
+                "connections": [],
+                "x": 0.3687,
+                "y": 0.4871
+              }
+            ],
+            "x": 0.2779,
+            "y": 0.4871
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4621,
+                "y": 1.0186
+              }
+            ],
+            "x": 0.4621,
+            "y": 0.7826
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": null,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0527,
+                "y": 1.0186
+              }
+            ],
+            "x": 0.0527,
+            "y": 0.7826
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": null,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

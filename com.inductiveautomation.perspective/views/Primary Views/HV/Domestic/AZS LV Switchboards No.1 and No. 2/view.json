@@ -1,0 +1,1935 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/AZS RMU Substation"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.029,
+          "width": 0.168,
+          "x": 0.3372,
+          "y": 0.262
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "AZS LV Switchboards No. 1 and No. 2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9221,
+          "y": 0.0202
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/airport-zone-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_4"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.0273,
+          "y": 0.2918
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "AZS Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_23"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.2067,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "Ausgrid Substation AC Board No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "AZS - Bus 1"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.213,
+          "x": 0.0023,
+          "y": 0.005
+        },
+        "props": {
+          "params": {
+            "CB06": true
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/AZS - Bus 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AZS - Bus 2"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1833,
+          "x": 0.5619,
+          "y": 0.005
+        },
+        "props": {
+          "params": {
+            "CB04": true,
+            "CB06": true
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/AZS - Bus 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_1"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0974,
+          "x": 0.0716,
+          "y": 0.1233
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 4",
+            "DeviceParentPath": "High Voltage/International/Link Road Substation/PLC"
+          },
+          "path": "Templates/HV/Transformers/TX with Temp"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P521 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.1842,
+          "y": 0.1742
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED028",
+            "deviceParentPath": "High Voltage/Domestic/AZS RMU Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB01"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.1243,
+          "y": 0.2992
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB1"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.1718,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_24"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.2932,
+          "y": 0.6588
+        },
+        "props": {
+          "text": "Bus Tie 1-2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "LVCB2"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.6218,
+          "y": 0.6723
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P521 Medium_0"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.7887,
+          "y": 0.8213
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED028",
+            "deviceParentPath": "High Voltage/Domestic/AZS RMU Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_25"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.062,
+          "x": 0.6662,
+          "y": 0.9463
+        },
+        "props": {
+          "text": "AC Light + Power Distribution Board",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "LVCB3"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.2213,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB4"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.2707,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB5"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.3202,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB6"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.3697,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB7"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.4192,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB8"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.4687,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB9"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.6426,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB10"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.6921,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB11"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.7416,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB12"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.7911,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB13"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.8406,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB14"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.89,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB15"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.9395,
+          "y": 0.4483
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_2"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0974,
+          "x": 0.5426,
+          "y": 0.1233
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 4",
+            "DeviceParentPath": "High Voltage/International/Link Road Substation/PLC"
+          },
+          "path": "Templates/HV/Transformers/TX with Temp"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P521 Medium_1"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.6552,
+          "y": 0.1742
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED028",
+            "deviceParentPath": "High Voltage/Domestic/AZS RMU Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB16"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.5953,
+          "y": 0.2992
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB17"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.756,
+          "y": 0.6723
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_26"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.6713,
+          "y": 0.7281
+        },
+        "props": {
+          "text": "ATS",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_1"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.1251,
+          "y": 0.2201
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_2"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.5956,
+          "y": 0.2201
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_27"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.3032,
+          "y": 0.4073
+        },
+        "props": {
+          "text": "Switchboard No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_28"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.4022,
+          "y": 0.4073
+        },
+        "props": {
+          "text": "2500A, 65kA/1sec",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_29"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.7737,
+          "y": 0.4073
+        },
+        "props": {
+          "text": "Switchboard No. 2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_30"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.8727,
+          "y": 0.4073
+        },
+        "props": {
+          "text": "2500A, 65kA/1sec",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_31"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.2537,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "TLER Switchboard ATS Supply No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_32"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.3052,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "Spare",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_33"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.3547,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "Spare",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_34"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.4042,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "AC3 3 Phase Outlets HVC TX1/ HVC TX2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_35"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.4812,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "AC L+P DB ATS Supply No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_36"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.6772,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "Ausgrid Substation AC Board No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_37"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.7247,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "TLER Switchboard ATS Supply No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_38"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.7757,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "Spare",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_39"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.8252,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "Spare",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_40"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.8747,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "AC3 3 Phase Outlets HVC TX1/ HVC TX2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_41"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.047,
+          "x": 0.9517,
+          "y": 0.6073
+        },
+        "props": {
+          "text": "AC L+P DB ATS Supply No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_3"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6895,
+          "y": 0.8669
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "ATS Icon"
+        },
+        "position": {
+          "height": 0.0876,
+          "width": 0.0312,
+          "x": 0.6817,
+          "y": 0.6288
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/arrow_drop_up"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_4"
+        },
+        "position": {
+          "height": 0.0245,
+          "width": 0.0118,
+          "x": 0.4713,
+          "y": 0.6338
+        },
+        "props": {
+          "color": "var(--neutral-60)",
+          "path": "material/looks"
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0.0151,
+      "y": 0.0558
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1328,
+                "y": 0.1663
+              }
+            ],
+            "x": 0.1328,
+            "y": 0.3548
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1328,
+                "y": 0.1125
+              }
+            ],
+            "x": 0.1328,
+            "y": 0.126
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.0716,
+                    "y": 0.4481
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1802,
+                        "y": 0.5038
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.2297,
+                            "y": 0.5038
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.2792,
+                                "y": 0.5038
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.3286,
+                                    "y": 0.5038
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.3781,
+                                        "y": 0.5038
+                                      },
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [],
+                                            "x": 0.4276,
+                                            "y": 0.5038
+                                          },
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [],
+                                                "x": 0.4771,
+                                                "y": 0.5038
+                                              },
+                                              {
+                                                "connections": [],
+                                                "x": 0.5156,
+                                                "y": 0.4481
+                                              }
+                                            ],
+                                            "x": 0.4771,
+                                            "y": 0.4481
+                                          }
+                                        ],
+                                        "x": 0.4276,
+                                        "y": 0.4481
+                                      }
+                                    ],
+                                    "x": 0.3781,
+                                    "y": 0.4481
+                                  }
+                                ],
+                                "x": 0.3286,
+                                "y": 0.4481
+                              }
+                            ],
+                            "x": 0.2792,
+                            "y": 0.4481
+                          }
+                        ],
+                        "x": 0.2297,
+                        "y": 0.4481
+                      }
+                    ],
+                    "x": 0.1802,
+                    "y": 0.4481
+                  }
+                ],
+                "x": 0.1328,
+                "y": 0.4481
+              }
+            ],
+            "x": 0.1328,
+            "y": 0.3885
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.651,
+                        "y": 0.5385
+                      }
+                    ],
+                    "x": 0.651,
+                    "y": 0.6511
+                  }
+                ],
+                "x": 0.1802,
+                "y": 0.6511
+              }
+            ],
+            "x": 0.1802,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2297,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.2297,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2792,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.2792,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3286,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.3286,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3781,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.3781,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_10",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4276,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.4276,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6302,
+                        "y": 0.7279
+                      }
+                    ],
+                    "x": 0.6302,
+                    "y": 0.6723
+                  }
+                ],
+                "x": 0.4771,
+                "y": 0.6723
+              }
+            ],
+            "x": 0.4771,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_15",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6036,
+                "y": 0.1673
+              }
+            ],
+            "x": 0.6036,
+            "y": 0.3548
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_15",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6036,
+                "y": 0.1125
+              }
+            ],
+            "x": 0.6036,
+            "y": 0.126
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_16",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.5426,
+                    "y": 0.4481
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.651,
+                        "y": 0.5038
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.7005,
+                            "y": 0.5038
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.75,
+                                "y": 0.5038
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.7995,
+                                    "y": 0.5038
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.849,
+                                        "y": 0.5038
+                                      },
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [],
+                                            "x": 0.8984,
+                                            "y": 0.5038
+                                          },
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [],
+                                                "x": 0.9479,
+                                                "y": 0.5038
+                                              },
+                                              {
+                                                "connections": [],
+                                                "x": 0.9864,
+                                                "y": 0.4481
+                                              }
+                                            ],
+                                            "x": 0.9479,
+                                            "y": 0.4481
+                                          }
+                                        ],
+                                        "x": 0.8984,
+                                        "y": 0.4481
+                                      }
+                                    ],
+                                    "x": 0.849,
+                                    "y": 0.4481
+                                  }
+                                ],
+                                "x": 0.7995,
+                                "y": 0.4481
+                              }
+                            ],
+                            "x": 0.75,
+                            "y": 0.4481
+                          }
+                        ],
+                        "x": 0.7005,
+                        "y": 0.4481
+                      }
+                    ],
+                    "x": 0.651,
+                    "y": 0.4481
+                  }
+                ],
+                "x": 0.6036,
+                "y": 0.4481
+              }
+            ],
+            "x": 0.6036,
+            "y": 0.3885
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_18",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7005,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.7005,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_20",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.75,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.75,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_22",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7995,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.7995,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_24",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.849,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.849,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_26",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8984,
+                "y": 0.5973
+              }
+            ],
+            "x": 0.8984,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_28",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.7646,
+                        "y": 0.7279
+                      }
+                    ],
+                    "x": 0.7646,
+                    "y": 0.6723
+                  }
+                ],
+                "x": 0.9479,
+                "y": 0.6723
+              }
+            ],
+            "x": 0.9479,
+            "y": 0.5385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6973,
+                "y": 0.9463
+              }
+            ],
+            "x": 0.6973,
+            "y": 0.8165
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1328,
+                "y": 0.2343
+              }
+            ],
+            "x": 0.1886,
+            "y": 0.2343
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6034,
+                "y": 0.2345
+              }
+            ],
+            "x": 0.6602,
+            "y": 0.2345
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6973,
+                "y": 0.8814
+              }
+            ],
+            "x": 0.7927,
+            "y": 0.8814
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "dashed",
+          "name": "pipe_14",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7646,
+                "y": 0.8165
+              }
+            ],
+            "x": 0.6302,
+            "y": 0.8165
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 2
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "dashed",
+          "name": "pipe_17",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7646,
+                "y": 0.6723
+              }
+            ],
+            "x": 0.6302,
+            "y": 0.6723
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 2
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_11",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7646,
+                "y": 0.8165
+              }
+            ],
+            "x": 0.7646,
+            "y": 0.7625
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_19",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6302,
+                "y": 0.8165
+              }
+            ],
+            "x": 0.6302,
+            "y": 0.7625
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

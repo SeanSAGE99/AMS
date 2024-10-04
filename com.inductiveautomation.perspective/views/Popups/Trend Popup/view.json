@@ -1,0 +1,559 @@
+{
+  "custom": {
+    "deviceTagPath": "International/T1/Pier B/Plant Room/Hydraulics/BPP-RSC02 Hot Water Pumps",
+    "siteName": null,
+    "subArea": null
+  },
+  "params": {
+    "deviceName": "BPP-RSC02 Hot Water Pumps",
+    "deviceParentPath": "International/T1/Pier B/Plant Room/Hydraulics",
+    "pens": [
+      {
+        "axis": "",
+        "data": {
+          "aggregateMode": "default",
+          "source": "histprov:MSSQL:/drv:ignition-opswamstst1:default:/tag:International/T1/Pier B/Plant Room/Hydraulics/bpp-rsc02 hot water pumps/discharge temperature/status/process value"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#63BEA2",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#63BEA2",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#63BEA2",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#63BEA2",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#63BEA2",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#63BEA2",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#63BEA2",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#63BEA2",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "discharge temperature",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "",
+        "data": {
+          "aggregateMode": "default",
+          "source": "histprov:MSSQL:/drv:ignition-opswamstst1:default:/tag:International/T1/Pier B/Plant Room/Hydraulics/bpp-rsc02 hot water pumps/suction temperature/status/process value"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#fc8d62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#fc8d62",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#fc8d62",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#fc8d62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "suction temperature",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "expression": "if (isAvailable (tag ({view.params.deviceParentPath}+\u0027/Site Details/Parameters.Site_Name\u0027)),\r\ntag ({view.params.deviceParentPath}+\u0027/Site Details/Parameters.Site_Name\u0027),\r\ntag ({view.params.deviceParentPath}+\u0027/Parameters.Alarm_ParentDevice\u0027))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "expression": "if (isAvailable (tag ({view.params.deviceParentPath}+\u0027/Site Details/Parameters.Site_SubArea\u0027)),\r\ntag ({view.params.deviceParentPath}+\u0027/Site Details/Parameters.Site_SubArea\u0027),\r\ntag ({view.params.deviceParentPath}+\u0027/Parameters.Alarm_Area\u0027))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.pens": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 667,
+      "width": 999
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "12pt",
+                "fontWeight": "bold",
+                "letterSpacing": "1px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceParentPath}"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "replace({value},\"/\",\" - \")",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "10pt",
+                "fontStyle": "italic",
+                "fontWeight": "lighter",
+                "letterSpacing": "1px",
+                "marginBottom": "5px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "PowerChart"
+        },
+        "position": {
+          "basis": "600px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.config.tagBrowserStartPath": {
+            "binding": {
+              "config": {
+                "expression": "{HistorySource} + {view.params.deviceParentPath} + \u0027/\u0027"
+              },
+              "transforms": [
+                {
+                  "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+                  "type": "expression"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.pens": {
+            "binding": {
+              "config": {
+                "path": "view.params.pens"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "axes": [
+            {
+              "color": "#757A7F",
+              "dataFormat": "0,0.##",
+              "grid": {
+                "color": "",
+                "dashArray": 0,
+                "opacity": 0.9,
+                "style": {
+                  "classes": ""
+                },
+                "visible": false
+              },
+              "label": {
+                "font": {
+                  "color": "#757A7F",
+                  "size": 10
+                },
+                "offset": 0,
+                "style": {
+                  "classes": ""
+                },
+                "text": "Curr/Power"
+              },
+              "name": "Curr/Power",
+              "position": "left",
+              "range": {
+                "auto": true,
+                "max": "",
+                "min": ""
+              },
+              "style": {
+                "classes": ""
+              },
+              "tick": {
+                "color": "#757A7F",
+                "count": "Auto",
+                "label": {
+                  "font": {
+                    "color": "#757A7F",
+                    "size": 10
+                  },
+                  "format": "Auto",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "style": {
+                  "classes": ""
+                }
+              },
+              "width": 60
+            },
+            {
+              "color": "#757A7F",
+              "dataFormat": "0,0.##",
+              "grid": {
+                "color": "",
+                "dashArray": 0,
+                "opacity": 0.9,
+                "style": {
+                  "classes": ""
+                },
+                "visible": false
+              },
+              "label": {
+                "font": {
+                  "color": "#757A7F",
+                  "size": 10
+                },
+                "offset": 0,
+                "style": {
+                  "classes": ""
+                },
+                "text": "PF"
+              },
+              "name": "PF",
+              "position": "left",
+              "range": {
+                "auto": true,
+                "max": "",
+                "min": ""
+              },
+              "style": {
+                "classes": ""
+              },
+              "tick": {
+                "color": "#757A7F",
+                "count": "Auto",
+                "label": {
+                  "font": {
+                    "color": "#757A7F",
+                    "size": 10
+                  },
+                  "format": "Auto",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "style": {
+                  "classes": ""
+                }
+              },
+              "width": 60
+            },
+            {
+              "color": "#757A7F",
+              "dataFormat": "0,0.##",
+              "grid": {
+                "color": "",
+                "dashArray": 0,
+                "opacity": 0.9,
+                "style": {
+                  "classes": ""
+                },
+                "visible": false
+              },
+              "label": {
+                "font": {
+                  "color": "#757A7F",
+                  "size": 10
+                },
+                "offset": 0,
+                "style": {
+                  "classes": ""
+                },
+                "text": "Energy"
+              },
+              "name": "Energy",
+              "position": "right",
+              "range": {
+                "auto": true,
+                "max": "",
+                "min": ""
+              },
+              "style": {
+                "classes": ""
+              },
+              "tick": {
+                "color": "#757A7F",
+                "count": "Auto",
+                "label": {
+                  "font": {
+                    "color": "#757A7F",
+                    "size": 10
+                  },
+                  "format": "Auto",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "style": {
+                  "classes": ""
+                }
+              },
+              "width": 60
+            }
+          ],
+          "config": {
+            "measureOfTime": "minutes",
+            "rangeEndDate": {
+              "$": [
+                "ts",
+                0,
+                1718210654576
+              ],
+              "$ts": 1718210652565
+            },
+            "rangeStartDate": {
+              "$": [
+                "ts",
+                0,
+                1718210654576
+              ],
+              "$ts": 1718210054565
+            },
+            "unitOfTime": 10,
+            "visibility": {
+              "showTagBrowser": true
+            }
+          },
+          "interaction": {
+            "chartZoomLevel": 1,
+            "mode": "xTrace",
+            "rangeZoomLevel": 1,
+            "xTrace": {
+              "values": [
+                0.1301571906354515,
+                0.4746020066889632,
+                0.47301505016722406,
+                0.4443561872909699,
+                0.47301505016722406,
+                0.4603160535117057,
+                0.47618896321070237,
+                0.4666655518394649,
+                0.45070735785953175
+              ]
+            }
+          },
+          "plots": [
+            {
+              "color": "#FFFFFF",
+              "markers": [],
+              "relativeWeight": 1,
+              "style": {
+                "classes": ""
+              }
+            },
+            {
+              "color": "#FFFFFF",
+              "markers": [],
+              "relativeWeight": 1,
+              "style": {
+                "classes": ""
+              }
+            }
+          ]
+        },
+        "type": "ia.chart.powerchart"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

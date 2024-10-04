@@ -1,0 +1,90 @@
+{
+  "custom": {},
+  "params": {
+    "Multiplier": 180,
+    "StartAngle": 0,
+    "deviceName": "NWS51",
+    "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+  },
+  "propConfig": {
+    "params.Multiplier": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.StartAngle": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 128,
+      "width": 128
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlowDir"
+        },
+        "position": {
+          "height": 0.75,
+          "rotate": {},
+          "width": 1,
+          "y": 0.125
+        },
+        "propConfig": {
+          "position.rotate.angle": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.StartAngle}+{view.params.Multiplier}*(tag({view.params.deviceParentPath} + \u0027/\u0027 + {view.params.deviceName} + \u0027/Status Folder/Flow Direction\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m149.48 168.45c-8.4322-1.405-24.614-8.0511-43.333-17.797-17.395-9.0567-48.667-28.429-48.667-30.149 0-1.7132 31.234-21.071 48.667-30.162 30.324-15.814 44.192-20.061 57.717-17.679 7.4816 1.3178 21.616 8.0324 21.616 10.269 0 0.57237-2.85 2.4104-6.3333 4.0844-13.876 6.6687-54.981 31.705-54.981 33.488 0 1.7844 41.106 26.819 55 33.497 3.494 1.6793 6.1506 3.6794 5.9035 4.4447-0.80476 2.493-17.435 9.8484-23.59 10.433-3.3 0.31365-8.7 0.1204-12-0.42945z",
+                  "fill": "var(--neutral-60)",
+                  "name": "path",
+                  "stroke": {
+                    "width": "1.3333"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-57.476 -72.051)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 128 96.982"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

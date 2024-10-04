@@ -1,0 +1,2452 @@
+{
+  "custom": {
+    "availableRosters": [
+      {
+        "label": "Alarm Roster",
+        "value": "Alarm Roster"
+      },
+      {
+        "label": "Test",
+        "value": "Test"
+      }
+    ],
+    "availableUsers": [
+      {
+        "errorMessage": "No Users Exist",
+        "username": "No Users Exist"
+      }
+    ],
+    "currentRoster": "",
+    "errorMessage": [
+      {
+        "errorLocation": "rosterName",
+        "errorMessage": "Please select a roster."
+      },
+      {
+        "errorLocation": "userSource",
+        "errorMessage": "No Users Exist"
+      }
+    ],
+    "onCallUsers": [
+      {
+        "errorMessage": "No On-Call Users Exist",
+        "username": "No On-Call Users Exist"
+      }
+    ]
+  },
+  "params": {
+    "userSource": "lgits.local"
+  },
+  "propConfig": {
+    "custom.availableRosters": {
+      "binding": {
+        "config": {
+          "expression": "1"
+        },
+        "transforms": [
+          {
+            "code": "\trosters \u003d system.roster.getRosters()\n\trosterArray \u003d []\n\t\n\tfor roster in rosters:\n\t\tvalue \u003d roster\n\t\tlabel \u003d roster\n\t\trosterArray.append({\"value\":value, \"label\":label})\n\t\n\treturn rosterArray",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.availableUsers": {
+      "binding": {
+        "config": {
+          "struct": {
+            "currentRoster": "{view.custom.currentRoster}",
+            "userSource": "{view.params.userSource}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tuserSource \u003d value.userSource\n\t\n\tif userSource:\n\t\tusers \u003d system.user.getUsers(userSource)\n\t\tif users:\n\t\t\t# Loops through the users stored on Gateway based on the user source and create a list of user objects.\n\t\t\troles \u003d [\"GroupSCADAIgnitionOperators\",\"GroupSCADAIgnitionMaintenance\"]\n\t\t\tuserArray \u003d []\n\t\t\tfor user in users:\n\t\t\t\tuserRoles \u003d user.getRoles()\n\t\t\t\tif any([role in userRoles for role in roles]):\n\t\t\t\t\tusername    \u003d user.get(\"username\")\n\t\t\t\t\tfirstName   \u003d user.get(\"firstname\") if user.get(\"firstname\") else \"\"\n\t\t\t\t\tlastName    \u003d user.get(\"lastname\") if user.get(\"lastname\") else \"\"\n\t\t\t\t\tcontactInfo \u003d user.getContactInfo() if user.getContactInfo() else []\n\t\t\t\t\tsource      \u003d userSource\n\t\t\t\t\tuserArray.append({\"username\":username, \"firstName\":firstName, \"lastName\":lastName, \"contactInfo\":contactInfo, \"errorMessage\":\"\", \"userSource\":source})\n\t\t\tuserArray.sort(key\u003dlambda x:x[\"username\"].lower())\n\t\t\treturn userArray\n\t\t\t\n\t\t# No Users exist if the object returns for the user source is empty.\n\t\telse:\n\t\t\treturn [{\"username\": \"No Users Exist\", \"errorMessage\": \"No Users Exist\"}]\n\n\t# User source not valid if a user source does not exist in the incoming param.\n\telse:\n\t\treturn [{\"username\": \"No User Source\", \"errorMessage\": \"No User Source\"}]",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.currentRoster": {
+      "binding": {
+        "config": {
+          "path": "/root/Roster Name/Dropdown.props.value"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.errorMessage": {
+      "binding": {
+        "config": {
+          "struct": {
+            "availableUsers": "{view.custom.availableUsers[0]}",
+            "rosterNameError": "{/root/Roster Name/Icon.custom.errorMessage}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\trosterNameError \u003d value[\"rosterNameError\"]\n\tavailableUsers  \u003d value[\"availableUsers\"]\n\t\n\terrorMessage  \u003d []\n\t\n\t# Check if roster name has errors.\n\tif rosterNameError:\t\n\t\terrorMessage.append({\"errorMessage\": rosterNameError, \"errorLocation\": \"rosterName\"})\n\n\t# If a user source doesn\u0027t exist or there are no available users\n\t# in the user source, return the error. Else, return \"\"\n\tif availableUsers[\"errorMessage\"]:\n\t\terrorMessage.append({\"errorMessage\": availableUsers[\"errorMessage\"], \"errorLocation\":\"userSource\"})\n\t\n\treturn errorMessage",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.onCallUsers": {
+      "binding": {
+        "config": {
+          "struct": {
+            "currentRoster": "{view.custom.currentRoster}",
+            "userSource": "{view.params.UserSource}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tcurrentRoster \u003d value.currentRoster\n\tuserSource   \u003d value.userSource\n\t\n\t# If rosterAction is \"edit\" get users that exist in roster. Else, display \"No On-Call Users Exist\".\n\tif currentRoster:\n\t\tusers \u003d system.roster.getRoster(currentRoster).getUsers()\n\t\t\t\t\n\t\t# If currentRoster has users, create a list of user object attributes.\n\t\tif users:\n\t\t\tuserArray \u003d []\n\t\t\tfor user in users:\n\t\t\t\tuserSource   \u003d user.getPath().getPathComponent(\u0027usr-prov\u0027)\n\t\t\t\tusername     \u003d user.getPath().getPathComponent(\u0027usr\u0027)\n\t\t\t\tuserInfo     \u003d system.user.getUser(userSource, username)\n\t\t\t\tif userInfo:\n\t\t\t\t\tfirstName    \u003d userInfo.get(\"firstName\") if userInfo.get(\"firstName\") is not None else \"\"\n\t\t\t\t\tlastName     \u003d userInfo.get(\"lastName\") if userInfo.get(\"lastName\") is not None else \"\"\n\t\t\t\t\tcontactInfo  \u003d userInfo.getContactInfo()\n\t\t\t\t\tuserArray.append({\"username\":username, \"firstName\":firstName, \"lastName\":lastName, \"contactInfo\":contactInfo, \"userSource\": userSource, \"errorMessage\": \"\"})\n\t\t\treturn userArray\t\t\n\t\telse:\n\t\t\treturn [{\"username\": \"No On-Call Users Exist\", \"errorMessage\": \"No On-Call Users Exist\"}]\n\telse:\n\t\treturn [{\"username\": \"No On-Call Users Exist\", \"errorMessage\": \"No On-Call Users Exist\"}]",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "params.currentRoster": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rosterAction": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.userSource": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.userSources": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 745,
+      "width": 1102
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Header"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "RosterManagement/Header"
+              },
+              "text": "Alarm Settings"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Spacing"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "ScheduleManagement/Headers"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header_0"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2",
+            "marginBottom": "10px",
+            "marginLeft": "5px",
+            "marginRight": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "Auto"
+                },
+                "props": {
+                  "style": {
+                    "marginRight": "auto"
+                  },
+                  "text": "Medium Priority Alarm Paging Times"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "props": {
+                  "text": "Start Time:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "NumericEntryField"
+                },
+                "position": {
+                  "basis": "45px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "{session.props.auth.authenticated} \u0026\u0026\r\nhasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.inputBounds.maximum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Start Hour.EngHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.inputBounds.minimum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Start Hour.EngLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Start Hour"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "00",
+                  "inputBounds": {},
+                  "style": {
+                    "classes": "UI/Text/Size/Size0",
+                    "marginLeft": "5px",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "text": ":"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "NumericEntryField_0"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "{session.props.auth.authenticated} \u0026\u0026\r\nhasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.inputBounds.maximum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Start Minute.EngHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.inputBounds.minimum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Start Minute.EngLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Start Minute"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "00",
+                  "inputBounds": {},
+                  "style": {
+                    "classes": "UI/Text/Size/Size0",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "meta": {
+                  "name": "Label_3"
+                },
+                "props": {
+                  "style": {
+                    "marginLeft": "10px"
+                  },
+                  "text": "Finish Time:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "NumericEntryField_2"
+                },
+                "position": {
+                  "basis": "45px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "{session.props.auth.authenticated} \u0026\u0026\r\nhasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.inputBounds.maximum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Finish Hour.EngHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.inputBounds.minimum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Finish Hour.EngLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Finish Hour"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "00",
+                  "inputBounds": {},
+                  "style": {
+                    "classes": "UI/Text/Size/Size0",
+                    "marginLeft": "5px",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "meta": {
+                  "name": "Label_2"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "text": ":"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "NumericEntryField_1"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "{session.props.auth.authenticated} \u0026\u0026\r\nhasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.inputBounds.maximum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Finish Minute.EngHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.inputBounds.minimum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Finish Minute.EngLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Finish Minute"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "00",
+                  "inputBounds": {},
+                  "style": {
+                    "classes": "UI/Text/Size/Size0",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginLeft": "20px",
+                "marginRight": "20px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Medium Priority Alarms"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "style": {
+            "marginBottom": "2px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "Auto"
+                },
+                "props": {
+                  "style": {
+                    "marginRight": "auto"
+                  },
+                  "text": "Site Paging Disable Notification Time (Note: notification may be delayed by up to 10 minutes):"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "NumericEntryField"
+                },
+                "position": {
+                  "basis": "45px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "{session.props.auth.authenticated} \u0026\u0026\r\nhasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.inputBounds.maximum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Paging Disabled Notification Hour.EngHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.inputBounds.minimum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Paging Disabled Notification Hour.EngLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Paging Disabled Notification Hour"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "00",
+                  "inputBounds": {},
+                  "style": {
+                    "classes": "UI/Text/Size/Size0",
+                    "marginLeft": "5px",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "text": ":"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "NumericEntryField_0"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "{session.props.auth.authenticated} \u0026\u0026\r\nhasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.inputBounds.maximum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Paging Disabled Notification Minute.EngHigh"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.inputBounds.minimum": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Paging Disabled Notification Minute.EngLow"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Alarms/Settings/Paging Disabled Notification Minute"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "00",
+                  "inputBounds": {},
+                  "style": {
+                    "classes": "UI/Text/Size/Size0",
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginLeft": "20px",
+                "marginRight": "20px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Paging Disable"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Header"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "RosterManagement/Header"
+              },
+              "text": "Alarm Rosters"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Spacing"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "ScheduleManagement/Headers"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2",
+            "marginBottom": "10px",
+            "marginLeft": "5px",
+            "marginRight": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Header"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginRight": "10px"
+              },
+              "text": "Roster Name:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "propConfig": {
+              "props.options": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.availableRosters"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "search": {
+                "enabled": false
+              }
+            },
+            "type": "ia.input.dropdown"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onMouseOut": {
+                      "config": {
+                        "script": "\tself.getSibling(\"Label\").props.style.visibility \u003d \"hidden\""
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    },
+                    "onMouseOver": {
+                      "config": {
+                        "script": "\tif self.getSibling(\"Label\").props.text !\u003d None:\n\t\tself.getSibling(\"Label\").props.style.visibility \u003d \"visible\""
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Icon",
+                  "tooltip": {
+                    "text": "Please Select a Roster"
+                  }
+                },
+                "position": {
+                  "basis": "23px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.tooltip.enabled": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.path"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} \u003d \u0027material/error\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.color": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.errorMessage"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\terrorMessages \u003d value\n\tif errorMessages:\n\t\tfor errorMessage in errorMessages:\n\t\t\tif \"rosterName\" in errorMessage[\"errorLocation\"]:\n\t\t\t\treturn \"#FF0000\"\n\treturn \"#228B22\"",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.errorMessage"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\terrorMessages \u003d value\n\tif errorMessages:\n\t\tfor errorMessage in errorMessages:\n\t\t\tif \"rosterName\" in errorMessage[\"errorLocation\"]:\n\t\t\t\treturn \"material/error\"\n\treturn \"material/check_circle\"",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "maxHeight": "23px"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "50px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.text"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": true,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "",
+                              "output": false
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "errorMessage": "{view.custom.errorMessage}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\terrorMessages  \u003d value[\"errorMessage\"]\n\t\n\tfor errorMessage in errorMessages:\n\t\tif \"rosterName\" in errorMessage[\"errorLocation\"]:\n\t\t\tif \"Roster\" in errorMessage[\"errorMessage\"]:\n\t\t\t\treturn errorMessage[\"errorMessage\"]\n\treturn \"\"\n\t\t",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#F6F6F6",
+                    "borderColor": "#BBBBBB",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "fontSize": "12px",
+                    "marginLeft": "30px",
+                    "padding": "4px",
+                    "position": "absolute",
+                    "visibility": "hidden",
+                    "width": "auto",
+                    "zIndex": 999999
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "23px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.errorMessage": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "currentRoster": "{view.custom.currentRoster}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tcurrentRoster \u003d value[\"currentRoster\"]\n\n\tif currentRoster \u003d\u003d \"\":\n\t\treturn \"Please select a roster.\"\n\telse:\n\t\treturn \"\"",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tcurrentRoster \u003d self.view.custom.currentRoster\n\tuserSource   \u003d self.view.params.userSource\n\tcurrentUsers  \u003d system.roster.getRoster(currentRoster).getUsers()\n\tonCallUsers   \u003d self.parent.parent.getChild(\"Users and Rosters\").getChild(\"On Call Users Container\").getChild(\"On Call Users\").getChild(\"Table\").props.data\n\t\t\t\t\t\n\t# If the roster being modified has users, remove all the users before adding the new list.\t\t\t\t\t\t\n\tif currentUsers:\n\t\tuserArray \u003d []\n\t\tcheckDuplicates \u003d []\n\t\tfor user in currentUsers:\n\t\t\tuserSource \u003d user.getPath().getPathComponent(\u0027usr-prov\u0027)\n\t\t\tusername   \u003d user.getPath().getPathComponent(\u0027usr\u0027)\n\t\t\tuserObj    \u003d system.user.getUser(userSource, username)\n\t\t\t\n\t\t\t# Create an exclusive list of all users in roster. Cannot have duplicates.\n\t\t\tif userObj and {\"userSource\":userSource, \"username\":username} not in checkDuplicates:\n\t\t\t\tuserArray.append(userObj)\n\t\t\t\tcheckDuplicates.append({\"userSource\":userSource, \"username\":username})\n\t\t\t\t\n\t\tif userArray:\n\t\t\tsystem.roster.removeUsers(currentRoster, userArray)\n\t\t\t\n\t# If the first onCallUsers index has an empty string for errorMessage, there are no errors.\n\tif onCallUsers[0][\"errorMessage\"] \u003d\u003d \"\":\n\t\t# Create a list of the user objects from the new list of users for the On-Call Roster and add them to current roster.\n\t\tnewUserArray \u003d []\n\t\tfor user in onCallUsers:\n\t\t\tuserSource \u003d user[\"userSource\"]\n\t\t\tusername   \u003d user[\"username\"]\n\t\t\tuserInfo \u003d system.user.getUser(userSource, username)\n\t\t\tif userInfo:\n\t\t\t\tnewUserArray.append(userInfo)\n\t\tsystem.roster.addUsers(currentRoster, newUserArray)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button",
+              "tooltip": {
+                "text": "Requires Maintenance Login and Roster selected"
+              }
+            },
+            "position": {
+              "basis": "75px"
+            },
+            "propConfig": {
+              "meta.tooltip.enabled": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.enabled"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "!{value}",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.currentRoster} !\u003d \u0027\u0027 \u0026\u0026\r\n{session.props.auth.authenticated} \u0026\u0026\r\n{.../Users and Rosters/On Call Users Container/On Call Users/Table.props.data[0].errorMessage} \u003d \u0027\u0027 \u0026\u0026\r\n(hasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027) ||\r\nhasRole(\u0027GroupSCADAIgnitionAdministrator\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "position": "center"
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text",
+                "marginLeft": "auto"
+              },
+              "text": "Save"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Roster Name"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginBottom": "10px",
+            "marginLeft": "20px",
+            "marginRight": "20px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Header"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "text": "Available Users"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Header Dropdown"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "justify": "space-between",
+                      "style": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "custom": {
+                      "errorMessage": "value"
+                    },
+                    "meta": {
+                      "name": "Table"
+                    },
+                    "position": {
+                      "basis": "320px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.columns[0].viewParams": {
+                        "binding": {
+                          "config": {
+                            "expression": "{this.props.data}"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn {\"data\":value}",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      },
+                      "props.columns[1].visible": {
+                        "binding": {
+                          "config": {
+                            "path": "this.props.data"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\ttry:\n\t\tvalue[0][\"userSource\"]\n\t\treturn True\n\texcept:\n\t\treturn False",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.columns[2].visible": {
+                        "binding": {
+                          "config": {
+                            "path": "this.props.data"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\ttry:\n\t\tvalue[0][\"userSource\"]\n\t\treturn True\n\texcept:\n\t\treturn False",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.availableUsers"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.selection.enableRowSelection": {
+                        "binding": {
+                          "config": {
+                            "path": "this.props.data"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value[0].has_key(\"errorMessage\"):\n\t\tif value[0][\"errorMessage\"] !\u003d \"\" or value[0][\"errorMessage\"] is None:\n\t\t\treturn False\n\t\telse:\n\t\t\treturn True\n\telse:\n\t\treturn True",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.borderColor": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.errorMessage"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\terrorMessages \u003d value\n\tif errorMessages:\n\t\tfor errorMessage in errorMessages:\n\t\t\tif \"userSource\" in errorMessage[\"errorLocation\"]:\t\t\n\t\t\t\treturn \"#FF0000\"\n\treturn \"#000000\"",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.borderStyle": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.errorMessage"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\terrorMessages \u003d value\n\tif errorMessages:\n\t\tfor errorMessage in errorMessages:\n\t\t\tif \"userSource\" in errorMessage[\"errorLocation\"]:\n\t\t\t\treturn \"dashed\"\n\treturn \"solid\"",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.borderWidth": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.errorMessage"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\terrorMessages \u003d value\n\tif errorMessages:\n\t\tfor errorMessage in errorMessages:\n\t\t\tif \"userSource\" in errorMessage[\"errorLocation\"]:\n\t\t\t\treturn \"2px\"\n\treturn \"1px\"",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "columns": [
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "dateFormat": "MM/DD/YYYY",
+                          "editable": false,
+                          "field": "username",
+                          "footer": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": ""
+                          },
+                          "header": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "User"
+                          },
+                          "justify": "auto",
+                          "number": "value",
+                          "numberFormat": "0,0.##",
+                          "progressBar": {
+                            "bar": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "track": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "value": {
+                              "enabled": true,
+                              "format": "0,0.##",
+                              "justify": "center",
+                              "style": {
+                                "classes": ""
+                              }
+                            }
+                          },
+                          "render": "view",
+                          "resizable": false,
+                          "sort": "none",
+                          "sortable": false,
+                          "strictWidth": false,
+                          "style": {
+                            "classes": ""
+                          },
+                          "toggleSwitch": {
+                            "color": {
+                              "selected": "",
+                              "unselected": ""
+                            }
+                          },
+                          "viewPath": "RosterManagement/Tools/Users",
+                          "visible": true,
+                          "width": ""
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "dateFormat": "MM/DD/YYYY",
+                          "editable": false,
+                          "field": "firstName",
+                          "footer": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": ""
+                          },
+                          "header": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "First Name"
+                          },
+                          "justify": "auto",
+                          "number": "value",
+                          "numberFormat": "0,0.##",
+                          "progressBar": {
+                            "bar": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "track": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "value": {
+                              "enabled": true,
+                              "format": "0,0.##",
+                              "justify": "center",
+                              "style": {
+                                "classes": ""
+                              }
+                            }
+                          },
+                          "render": "auto",
+                          "resizable": false,
+                          "sort": "none",
+                          "sortable": false,
+                          "strictWidth": false,
+                          "style": {
+                            "classes": ""
+                          },
+                          "toggleSwitch": {
+                            "color": {
+                              "selected": "",
+                              "unselected": ""
+                            }
+                          },
+                          "viewParams": {},
+                          "viewPath": "",
+                          "width": ""
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "dateFormat": "MM/DD/YYYY",
+                          "editable": false,
+                          "field": "lastName",
+                          "footer": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": ""
+                          },
+                          "header": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "Last Name"
+                          },
+                          "justify": "auto",
+                          "number": "value",
+                          "numberFormat": "0,0.##",
+                          "progressBar": {
+                            "bar": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "track": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "value": {
+                              "enabled": true,
+                              "format": "0,0.##",
+                              "justify": "center",
+                              "style": {
+                                "classes": ""
+                              }
+                            }
+                          },
+                          "render": "auto",
+                          "resizable": false,
+                          "sort": "none",
+                          "sortable": false,
+                          "strictWidth": false,
+                          "style": {
+                            "classes": ""
+                          },
+                          "toggleSwitch": {
+                            "color": {
+                              "selected": "",
+                              "unselected": ""
+                            }
+                          },
+                          "viewParams": {},
+                          "viewPath": "",
+                          "width": ""
+                        }
+                      ],
+                      "pager": {
+                        "bottom": false
+                      },
+                      "selection": {
+                        "mode": "multiple interval"
+                      },
+                      "style": {
+                        "classes": "RosterManagement/Tables"
+                      }
+                    },
+                    "type": "ia.display.table"
+                  }
+                ],
+                "meta": {
+                  "name": "Available Users"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "display": false,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#DFDFDF",
+                            "borderStyle": "solid",
+                            "borderWidth": "1px",
+                            "fontSize": "12px",
+                            "padding": "5px",
+                            "position": "absolute",
+                            "transform": "translate(53px, 5px)",
+                            "zIndex": 999
+                          },
+                          "text": "Add Selected User"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\trowSelected    \u003d self.parent.parent.parent.getChild(\"Available Users\").getChild(\"Table\").props.selection.selectedRow\n\tavailableUsers \u003d self.parent.parent.parent.getChild(\"Available Users\").getChild(\"Table\").props.data\n\tonCallUsers   \u003d self.parent.parent.parent.parent.getChild(\"On Call Users Container\").getChild(\"On Call Users\").getChild(\"Table\").props.data\n\t\n\t# If onCallUsers has an errorMessage for no users existing, pop the error and add user.\n\tif rowSelected is not None:\n\t\tif onCallUsers[0][\"errorMessage\"] !\u003d \"\":\n\t\t\tonCallUsers.pop()\n\t\tonCallUsers.append(availableUsers[rowSelected])"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Add One"
+                        },
+                        "position": {
+                          "basis": "35px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.color": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Available Users/Table.props.selection.selectedRow"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": "#5A5A5A",
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": null,
+                                      "output": "#CACACA"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "path": "material/chevron_right",
+                          "style": {
+                            "classes": "RosterManagement/Icons"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onMouseOut": {
+                          "config": {
+                            "script": "\tself.getChild(\"Label\").position.display \u003d False"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        },
+                        "onMouseOver": {
+                          "config": {
+                            "script": "\tself.getChild(\"Label\").position.display \u003d True"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Add One User"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "display": false,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#DFDFDF",
+                            "borderStyle": "solid",
+                            "borderWidth": "1px",
+                            "fontSize": "12px",
+                            "padding": "5px",
+                            "position": "absolute",
+                            "transform": "translate(53px, 5px)",
+                            "zIndex": 999
+                          },
+                          "text": "Add All Users"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Second Chevron"
+                            },
+                            "position": {
+                              "basis": "20px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "color": "#5A5A5A",
+                              "path": "material/chevron_right",
+                              "style": {
+                                "classes": "RosterManagement/Icons",
+                                "position": "absolute",
+                                "transform": "translate(12px, 0px)",
+                                "width": "32px"
+                              }
+                            },
+                            "type": "ia.display.icon"
+                          },
+                          {
+                            "meta": {
+                              "name": "First Chevron"
+                            },
+                            "position": {
+                              "basis": "42px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "color": "#5A5A5A",
+                              "path": "material/chevron_right",
+                              "style": {
+                                "classes": "RosterManagement/Icons",
+                                "height": "32px"
+                              }
+                            },
+                            "type": "ia.display.icon"
+                          }
+                        ],
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\tonCallUsers \u003d self.parent.parent.parent.parent.getChild(\"On Call Users Container\").getChild(\"On Call Users\").getChild(\"Table\").props.data\n\tavailableUsers \u003d self.parent.parent.parent.getChild(\"Available Users\").getChild(\"Table\").props.data\n\t\n\t# Do not add all users if available users contains an errorMessage instead of users.\n\t# Else, pop the errorMessage on onCallUsers if there are no users currently and add all users from Available Users list.\n\tif availableUsers[0][\"errorMessage\"] !\u003d \"\":\n\t\treturn\n\telse:\n\t\tif onCallUsers[0][\"errorMessage\"] !\u003d \"\":\n\t\t\tonCallUsers.pop()\n\n\t\tconcatList \u003d onCallUsers + availableUsers\n\t\tself.parent.parent.parent.parent.getChild(\"On Call Users Container\").getChild(\"On Call Users\").getChild(\"Table\").props.data \u003d concatList"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Add One"
+                        },
+                        "position": {
+                          "basis": "30px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "visible"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onMouseOut": {
+                          "config": {
+                            "script": "\tself.getChild(\"Label\").position.display \u003d False"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        },
+                        "onMouseOver": {
+                          "config": {
+                            "script": "\tself.getChild(\"Label\").position.display \u003d True"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Add All Users"
+                    },
+                    "position": {
+                      "basis": "35px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Transfer Controls"
+                },
+                "position": {
+                  "basis": "50px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginLeft": "10px",
+                    "marginTop": "40px",
+                    "overflow": "visible",
+                    "transform": "z-index(999)"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Available Users Container"
+            },
+            "position": {
+              "basis": "450px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Headers"
+                    },
+                    "position": {
+                      "basis": "32px"
+                    },
+                    "props": {
+                      "text": "On-Call Users"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Table"
+                    },
+                    "position": {
+                      "basis": "320px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.columns[0].viewParams": {
+                        "binding": {
+                          "config": {
+                            "expression": "{this.props.data}"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn {\"data\":value}",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      },
+                      "props.columns[1].visible": {
+                        "binding": {
+                          "config": {
+                            "path": "this.props.data"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\ttry:\n\t\tvalue[0][\"userSource\"]\n\t\treturn True\n\texcept:\n\t\treturn False",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.data": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.onCallUsers"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn value if value is not None else [{\"firstName\": \"No On-Call Users Exist\"}]",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.selection.enableRowSelection": {
+                        "binding": {
+                          "config": {
+                            "path": "this.props.data"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value[0].has_key(\"errorMessage\"):\n\t\tif value[0][\"errorMessage\"] !\u003d \"\" or value[0][\"errorMessage\"] is None:\n\t\t\treturn False\n\t\telse:\n\t\t\treturn True\n\telse:\n\t\treturn True",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "columns": [
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "dateFormat": "MM/DD/YYYY",
+                          "editable": false,
+                          "field": "username",
+                          "footer": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": ""
+                          },
+                          "header": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "User"
+                          },
+                          "justify": "auto",
+                          "number": "value",
+                          "numberFormat": "0,0.##",
+                          "progressBar": {
+                            "bar": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "track": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "value": {
+                              "enabled": true,
+                              "format": "0,0.##",
+                              "justify": "center",
+                              "style": {
+                                "classes": ""
+                              }
+                            }
+                          },
+                          "render": "view",
+                          "resizable": false,
+                          "sort": "none",
+                          "sortable": false,
+                          "strictWidth": false,
+                          "style": {
+                            "classes": ""
+                          },
+                          "toggleSwitch": {
+                            "color": {
+                              "selected": "",
+                              "unselected": ""
+                            }
+                          },
+                          "viewPath": "RosterManagement/Tools/Users",
+                          "visible": true,
+                          "width": ""
+                        },
+                        {
+                          "align": "center",
+                          "boolean": "checkbox",
+                          "dateFormat": "MM/DD/YYYY",
+                          "editable": false,
+                          "field": "userSource",
+                          "footer": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": ""
+                          },
+                          "header": {
+                            "align": "center",
+                            "justify": "left",
+                            "style": {
+                              "classes": ""
+                            },
+                            "title": "User Source"
+                          },
+                          "justify": "auto",
+                          "number": "value",
+                          "numberFormat": "0,0.##",
+                          "progressBar": {
+                            "bar": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "max": 100,
+                            "min": 0,
+                            "track": {
+                              "color": "",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "value": {
+                              "enabled": true,
+                              "format": "0,0.##",
+                              "justify": "center",
+                              "style": {
+                                "classes": ""
+                              }
+                            }
+                          },
+                          "render": "auto",
+                          "resizable": false,
+                          "sort": "none",
+                          "sortable": false,
+                          "strictWidth": false,
+                          "style": {
+                            "classes": ""
+                          },
+                          "toggleSwitch": {
+                            "color": {
+                              "selected": "",
+                              "unselected": ""
+                            }
+                          },
+                          "viewParams": {},
+                          "viewPath": "",
+                          "width": ""
+                        }
+                      ],
+                      "pager": {
+                        "bottom": false
+                      },
+                      "selection": {},
+                      "style": {
+                        "borderColor": "#000000",
+                        "borderStyle": "solid",
+                        "borderWidth": "1px",
+                        "classes": "RosterManagement/Tables"
+                      }
+                    },
+                    "type": "ia.display.table"
+                  }
+                ],
+                "meta": {
+                  "name": "On Call Users"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\trowSelected \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\tenabled \u003d self.custom.iconEnabled\n\t\n\t# If enabled, pop the last object in array and insert as the first indice in the same array.\n\tif enabled:\n\t\troster.insert(0, roster.pop(rowSelected))\n\t\tself.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow \u003d 0\n\t\t"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Top"
+                    },
+                    "position": {
+                      "basis": "28px"
+                    },
+                    "propConfig": {
+                      "custom.iconEnabled": {
+                        "binding": {
+                          "config": {
+                            "expression": "if ({.../On Call Users/Table.props.selection.selectedRow}!\u003dnull \u0026 {.../On Call Users/Table.props.data}!\u003dnull, True, False)"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tselectedRow \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\t\n\tif value is True and selectedRow \u003c\u003d 0 or selectedRow is None:\n\t\treturn False\n\telse:\n\t\treturn True",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      },
+                      "props.color": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "#CACACA",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "#5A5A5A"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.cursor": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "auto",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "pointer"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "material/vertical_align_top",
+                      "style": {
+                        "classes": "RosterManagement/Icons"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\trowSelected \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\tenabled \u003d self.custom.iconEnabled\n\t\n\t# If enabled, insert popped object one indice up in the same array.\n\tif enabled:\n\t\troster.insert(rowSelected-1, roster.pop(rowSelected))\n\t\tself.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow -\u003d 1"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Up"
+                    },
+                    "position": {
+                      "basis": "22px"
+                    },
+                    "propConfig": {
+                      "custom.iconEnabled": {
+                        "binding": {
+                          "config": {
+                            "expression": "if ({.../On Call Users/Table.props.selection.selectedRow}!\u003dnull \u0026 {.../On Call Users/Table.props.data}!\u003dnull, True, False)"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tselectedRow \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\t\n\tif value is True and selectedRow \u003c\u003d 0 or selectedRow is None:\n\t\treturn False\n\telse:\n\t\treturn True",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      },
+                      "props.color": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "#CACACA",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "#5A5A5A"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.cursor": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "auto",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "pointer"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "material/arrow_upward",
+                      "style": {
+                        "classes": "RosterManagement/Icons"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\trowSelected \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\tenabled \u003d self.custom.iconEnabled\n\t\n\t# If enabled, insert popped object one indice down in the array.\n\tif enabled:\n\t\troster.insert(rowSelected+1, roster.pop(rowSelected))\n\t\tself.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow +\u003d 1"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Down"
+                    },
+                    "position": {
+                      "basis": "22px"
+                    },
+                    "propConfig": {
+                      "custom.iconEnabled": {
+                        "binding": {
+                          "config": {
+                            "expression": "if ({.../On Call Users/Table.props.selection.selectedRow}!\u003dnull \u0026 {.../On Call Users/Table.props.data}!\u003dnull, True, False)"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tselectedRow \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\t\n\tif value is True and len(roster) \u003d\u003d selectedRow+1 or selectedRow is None:\n\t\treturn False\n\telse:\n\t\treturn True",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      },
+                      "props.color": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "#CACACA",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "#5A5A5A"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.cursor": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "auto",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "pointer"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "material/arrow_downward",
+                      "style": {
+                        "classes": "RosterManagement/Icons"
+                      }
+                    },
+                    "scripts": {
+                      "customMethods": [
+                        {
+                          "name": "editRoster",
+                          "params": [],
+                          "script": "\t# If the table row is not selected do nothing. Else, navigate to EditRoster view and pass chosen roster name to view.\n\tif self.parent.parent.getChild(\"Table\").props.selection.selectedRow \u003d\u003d None:\n\t\tpass\n\telse:\t\t\n\t\tname \u003d self.parent.parent.getChild(\"Table\").props.selection.data[0].Name\n\t\tsystem.perspective.sendMessage(\u0027RosterManagement_ChangeViews\u0027, payload \u003d {\u0027view\u0027:\u0027editRoster\u0027}, scope\u003d\"page\")\n"
+                        }
+                      ],
+                      "extensionFunctions": null,
+                      "messageHandlers": []
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\trowSelected \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\tenabled \u003d self.custom.iconEnabled\n\t\n\t# If enabled, selected object in roster list and append to the end of list.\n\tif enabled:\n\t\troster.insert(len(roster)-1, roster.pop(rowSelected))\n\t\tself.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow \u003d len(roster)-1\n\t\t"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Bottom"
+                    },
+                    "position": {
+                      "basis": "28px"
+                    },
+                    "propConfig": {
+                      "custom.iconEnabled": {
+                        "binding": {
+                          "config": {
+                            "expression": "if ({.../On Call Users/Table.props.selection.selectedRow}!\u003dnull \u0026 {.../On Call Users/Table.props.data}!\u003dnull, True, False)"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tselectedRow \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\troster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\t\n\tif value is True and selectedRow \u003e\u003d len(roster)-1 or selectedRow is None:\n\t\treturn False\n\telse:\n\t\treturn True",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      },
+                      "props.color": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "#CACACA",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "#5A5A5A"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.cursor": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "auto",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "pointer"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "material/vertical_align_bottom",
+                      "style": {
+                        "classes": "RosterManagement/Icons"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tonCallRoster \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\trowSelected \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow\n\tenabled \u003d self.custom.iconEnabled\n\t\n\t# If enabled and users exist in table, pop the selected row.\n\tif enabled and onCallRoster[0][\"username\"] !\u003d \"No On-Call Users Exist\":\n\t\tonCallRoster.pop(rowSelected)\n\t\t# Deselect the row deleted.\n\t\tself.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.selection.selectedRow \u003d None\n\t\tif len(onCallRoster) \u003d\u003d 0:\n\t\t\tself.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data \u003d [{\"username\": \"No On-Call Users Exist\", \"errorMessage\": \"No On-Call Users Exist\"}]"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Delete"
+                    },
+                    "position": {
+                      "basis": "24px"
+                    },
+                    "propConfig": {
+                      "custom.iconEnabled": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({.../On Call Users/Table.props.data}\u003dnull, \"#5A5A5A\", if({.../On Call Users/Table.props.selection.selectedRow}!\u003dnull, True, False))"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.color": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "#CACACA",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "#5A5A5A"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            },
+                            {
+                              "code": "\tonCallUser \u003d self.parent.parent.getChild(\"On Call Users\").getChild(\"Table\").props.data\n\tif onCallUser:\n\t\tif onCallUser[0][\"username\"] \u003d\u003d \"No On-Call Users Exist\":\n\t\t\treturn \"#CACACA\"\n\treturn value",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.cursor": {
+                        "binding": {
+                          "config": {
+                            "path": "this.custom.iconEnabled"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": "auto",
+                              "inputType": "scalar",
+                              "mappings": [
+                                {
+                                  "input": true,
+                                  "output": "pointer"
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "material/clear",
+                      "style": {
+                        "classes": "RosterManagement/Icons"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "Rearrange Controls"
+                },
+                "position": {
+                  "basis": "50px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginTop": "40px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "On Call Users Container"
+            },
+            "position": {
+              "basis": "450px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "minWidth": "330px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Users and Rosters"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginBottom": "20px",
+            "marginLeft": "20px",
+            "marginRight": "10px",
+            "overflow": "visible"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "borderStyle": "solid",
+        "borderWidth": "1px",
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

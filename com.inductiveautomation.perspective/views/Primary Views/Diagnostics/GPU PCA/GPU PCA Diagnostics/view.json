@@ -1,0 +1,183 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 828,
+      "width": 2378
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Simple Navigation"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "params": {
+            "Device": "GPu and  PCA",
+            "area": "SYD"
+          },
+          "path": "Primary Views/Diagnostics/Embedded/Simple Navigation",
+          "style": {
+            "margin": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "T1 Pier B"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/T1/Pier B/Arrivals"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/GPU PCA Devices",
+                "title": "T1/Pier B",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card GPU PCA"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "T1 Pier C"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/T1/Pier C/Arrivals"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/GPU PCA Devices",
+                "title": "T1/Pier C",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card GPU PCA"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "T1 Precinct"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/Precinct"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/GPU PCA Devices",
+                "title": "T1/Precinct",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card GPU PCA"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "T2 Pier A"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "Domestic/T2/Pier A/Concourse"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/GPU PCA Devices",
+                "title": "T2/Pier A",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card GPU PCA"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "T2 Pier B"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "Domestic/T2/Pier B/Concourse"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/GPU PCA Devices",
+                "title": "T2/Pier B",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card GPU PCA"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "T2 Precinct"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "Domestic/Precinct"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/GPU PCA Devices",
+                "title": "T2/Precinct",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card GPU PCA"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Pages/Background"
+      },
+      "wrap": "wrap"
+    },
+    "type": "ia.container.flex"
+  }
+}

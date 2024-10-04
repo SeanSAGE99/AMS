@@ -1,0 +1,218 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 131.66,
+      "width": 110.98
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2106,
+          "width": 0.4762,
+          "x": 0.3384,
+          "y": -0.0161
+        },
+        "props": {
+          "text": "ICP",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.3333,
+          "x": 0.301,
+          "y": 0.6875
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/International/ICP Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_5"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.3333,
+          "x": 0.6579,
+          "y": 0.6897
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW03",
+            "DeviceParentPath": "High Voltage/International/ICP Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_1"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.3333,
+          "x": 0.0717,
+          "y": 0.1381
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW01",
+            "DeviceParentPath": "High Voltage/International/ICP Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/International/icp-substation"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1668,
+                        "y": 0.2697
+                      },
+                      {
+                        "x": 0.0079,
+                        "y": 0.5393
+                      }
+                    ],
+                    "x": 0.1668,
+                    "y": 0.5393
+                  },
+                  {
+                    "connections": [
+                      {
+                        "x": 0.7606,
+                        "y": 0.7237
+                      },
+                      {
+                        "x": 0.9194,
+                        "y": 0.5393
+                      }
+                    ],
+                    "x": 0.7606,
+                    "y": 0.5393
+                  }
+                ],
+                "x": 0.4035,
+                "y": 0.5393
+              }
+            ],
+            "x": 0.4035,
+            "y": 0.7237
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1668,
+                "y": -0.0329
+              }
+            ],
+            "x": 0.1668,
+            "y": 0.1974
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.7619,
+                "y": 1.0066
+              }
+            ],
+            "x": 0.7619,
+            "y": 0.7961
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

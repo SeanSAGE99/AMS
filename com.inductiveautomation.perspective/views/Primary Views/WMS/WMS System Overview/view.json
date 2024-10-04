@@ -1,0 +1,1139 @@
+{
+  "custom": {
+    "offlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "urlTemplateParams": {}
+      }
+    ],
+    "onlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlTemplateParams": {}
+      }
+    ],
+    "satellite": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      },
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      }
+    ],
+    "selectedMap": "offlineStreet"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.offlineStreet": {
+      "persistent": true
+    },
+    "custom.offlineStreet[0].url": {
+      "binding": {
+        "config": {
+          "expression": "{session.props.gateway.address} + \u0027/main/tiles/{z}/{x}/{y}.png\u0027"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.onlineStreet": {
+      "persistent": true
+    },
+    "custom.satellite": {
+      "persistent": true
+    },
+    "custom.selectedMap": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "custom": {
+              "zoom": 15
+            },
+            "events": {
+              "component": {
+                "onZoom": {
+                  "config": {
+                    "script": "\tself.custom.zoom \u003d event.zoom"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Map_0"
+            },
+            "position": {
+              "height": "100%",
+              "width": "100%"
+            },
+            "propConfig": {
+              "custom.scale": {
+                "binding": {
+                  "config": {
+                    "expression": "22/(22+16*({this.custom.zoom}-11))"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.layers.raster.tile": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.selectedMap"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "{view.custom.offlineStreet}",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "satellite",
+                          "output": "{view.custom.satellite}"
+                        },
+                        {
+                          "input": "onlineStreet",
+                          "output": "{view.custom.onlineStreet}"
+                        },
+                        {
+                          "input": "offlineStreet",
+                          "output": "{view.custom.offlineStreet}"
+                        }
+                      ],
+                      "outputType": "expression",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[0].params.zoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[10].params.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "{[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Alarm}||{[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Communications Alarm}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.layers.ui.view[1].params.zoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "init": {
+                "center": {
+                  "lat": -33.935,
+                  "lng": 151.17
+                },
+                "zoom": 15
+              },
+              "layers": {
+                "raster": {},
+                "ui": {
+                  "view": [
+                    {
+                      "lat": -33.9345,
+                      "lng": 151.1659,
+                      "params": {
+                        "navigationLabel": "International Precinct",
+                        "navigationPage": "/WMS/International/International Geo Layout"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9333,
+                      "lng": 151.182,
+                      "params": {
+                        "navigationLabel": "Domestic Precinct",
+                        "navigationPage": "/WMS/Domestic/Domestic Geo Layout"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9264,
+                      "lng": 151.1813,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/Domestic/Northern Pump Station",
+                        "navigationLabel": "Northern Pump Station",
+                        "navigationPage": "/WMS/T3/northern-pump-station",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.927,
+                      "lng": 151.16075,
+                      "params": {},
+                      "path": "Templates/WMS/Tempe Tower",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9325,
+                      "lng": 151.1643,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/International/North West Pump Station",
+                        "navigationLabel": "North West Pump Station",
+                        "navigationPage": "/WMS/International/north-west-pumping-station",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9379,
+                      "lng": 151.164,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/International/Water Recycling Plant",
+                        "navigationLabel": "Water Recycling Plant",
+                        "navigationPage": "/WMS/International/water-recycling-plant",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.937,
+                      "lng": 151.1639,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/International/Cooks River Pump Station",
+                        "navigationLabel": "Cooks River Pump Station",
+                        "navigationPage": "/WMS/International/Cooks River Pumping Station",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.93355,
+                      "lng": 151.1796,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/Domestic/Domestic Sewer Pump Station",
+                        "navigationLabel": "Domestic Sewer Pump Station",
+                        "navigationPage": "/WMS/Domestic/domestic-sewer-pumping-station",
+                        "visible": true,
+                        "zoomLevel": 15
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9334,
+                      "lng": 151.1851,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/Domestic/North East Pump Station",
+                        "navigationLabel": "North East Pump Station",
+                        "navigationPage": "/WMS/Domestic/north-east-pumping-station",
+                        "visible": true,
+                        "zoomLevel": 15
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9334,
+                      "lng": 151.1916,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+                        "navigationLabel": "Lords Rd Pump Station",
+                        "navigationPage": "/WMS/Domestic/lords-road-pumping-station",
+                        "visible": true,
+                        "zoomLevel": 15
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9341,
+                      "lng": 151.1869,
+                      "params": {
+                        "deviceTagPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+                        "navigationLabel": "Eleventh Street Sewer Pump Station Alarm",
+                        "navigationPage": "/WMS/Domestic/lords-road-pumping-station",
+                        "zoomLevel": 15
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_PumpStation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.50440987,
+                      "lng": 138.7856756,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_GoolwaWharf",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.50564673,
+                      "lng": 138.793893,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_GowEstate",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.49464457,
+                      "lng": 138.8184259,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_HowellSt",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.50810917,
+                      "lng": 138.7736196,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_JubileeEst",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.51979369,
+                      "lng": 138.7864462,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_KestrelCt",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.494166926,
+                      "lng": 138.807744281,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_LiverpoolRd",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.49788625,
+                      "lng": 138.7914855,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_MarkLn",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.50150785,
+                      "lng": 138.7781145,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_MooreSt",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.493083895,
+                      "lng": 138.799259107,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_NewOrleansSt",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.50829594,
+                      "lng": 138.7810622,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_OliverSt",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.51166485,
+                      "lng": 138.7831318,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_RiversideDr",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.50085572,
+                      "lng": 138.7757462,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_SeaChange",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.504509115,
+                      "lng": 138.802929785,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_SturtRidge",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.49536445,
+                      "lng": 138.7980181,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_WashingtonSt",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.40645447,
+                      "lng": 138.9754916,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Milang_PS_CaravanPark",
+                        "subArea": "Milang"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.40439074,
+                      "lng": 138.9771467,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Milang_PS_LyonSt",
+                        "subArea": "Milang"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.40184001,
+                      "lng": 138.9782541,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Milang_PS_MilangBay",
+                        "subArea": "Milang"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.388607025146484,
+                      "lng": 138.96365356445312,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Milang_PS_Ponds",
+                        "subArea": "Milang"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.40298894,
+                      "lng": 138.97097,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Milang_PS_RiversSt",
+                        "subArea": "Milang"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.41113925,
+                      "lng": 138.9696762,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Milang_PS_StirlingSt",
+                        "subArea": "Milang"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.35171211913,
+                      "lng": 138.611314694435,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "MtComp_PS_ArthurRd",
+                        "subArea": "Mt Compass"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.361072214645645,
+                      "lng": 138.6141160171612,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "MtComp_PS_CaravanPark",
+                        "subArea": "Mt Compass"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.35769013,
+                      "lng": 138.60595771,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "MtComp_PS_GeorgeFrancisDrv",
+                        "subArea": "Mt Compass"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.34593045700167,
+                      "lng": 138.61681066455253,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "MtComp_PS_PetersTce",
+                        "subArea": "Mt Compass"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.34964910191429,
+                      "lng": 138.62257130720147,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "MtComp_PS_SamCrt",
+                        "subArea": "Mt Compass"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.531869254,
+                      "lng": 138.689681973,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_CaravanPark",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53015423,
+                      "lng": 138.691913898,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_CrockeryBay",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53119113,
+                      "lng": 138.6720047,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_DriveIn",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.52719497680664,
+                      "lng": 138.6719207763672,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_EffluentStation",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53650548,
+                      "lng": 138.6813829,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_Esplanade",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53419064,
+                      "lng": 138.6835872,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_FlyingFishCafe",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.52048516,
+                      "lng": 138.6810432,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_GregorySt",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.52208844,
+                      "lng": 138.6725585,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_HillSt",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.533627488,
+                      "lng": 138.684303362,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_HorseshoeBay",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53064904,
+                      "lng": 138.6878647,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_HusseySt",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.535548107,
+                      "lng": 138.670066696,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_LadyEmmaCt",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53170376,
+                      "lng": 138.6782535,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_LakalaRes",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.535814301,
+                      "lng": 138.678022334,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_MerrilliCl",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.534108,
+                      "lng": 138.6833717,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_SLSC",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.25772064,
+                      "lng": 138.8903703,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Strath_PoolBackwash",
+                        "subArea": "Strathalbyn"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    }
+                  ]
+                },
+                "vector": {
+                  "rectangle": [
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": false,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "rectangles": [
+                        {
+                          "corner1": {
+                            "lat": -33.9335,
+                            "lng": 151.1635
+                          },
+                          "corner2": {
+                            "lat": -33.941,
+                            "lng": 151.171
+                          },
+                          "name": "",
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#000000",
+                        "dashArray": "5 5",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "opacity": 1,
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": false,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "rectangles": [
+                        {
+                          "corner1": {
+                            "lat": -33.9305,
+                            "lng": 151.176
+                          },
+                          "corner2": {
+                            "lat": -33.938,
+                            "lng": 151.186
+                          },
+                          "name": "",
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#000000",
+                        "dashArray": "5 5",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "opacity": 1,
+                        "weight": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "location": {
+                "enabled": true
+              },
+              "style": {
+                "background-image": "} .leaflet-container{ background: #2b2b2b;}{"
+              }
+            },
+            "type": "ia.display.map"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.selectedMap \u003d \u0027satellite\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "height": 34,
+              "width": 146,
+              "x": 24,
+              "y": 99
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Live Satellite"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.selectedMap \u003d \u0027onlineStreet\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "height": 34,
+              "width": 146,
+              "x": 24,
+              "y": 143
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Live Street"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.selectedMap \u003d \u0027offlineStreet\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_1"
+            },
+            "position": {
+              "height": 34,
+              "width": 146,
+              "x": 24,
+              "y": 187
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Offline Street"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.coord"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 25,
+      "y": 100
+    },
+    "type": "ia.container.flex"
+  }
+}

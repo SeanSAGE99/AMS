@@ -1,0 +1,394 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "P6 Ground Level"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/CarParks/International/P6 Ground Level.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "International/Precinct/P6 Car Park/Ground Level",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SWR GE PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.8828,
+          "y": 0.0769
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "International/Precinct/P6 Car Park/Ground Level/P6 Car Park South West Riser PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/GE PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump_0"
+        },
+        "position": {
+          "height": 0.0882,
+          "width": 0.0482,
+          "x": 0.4848,
+          "y": 0.1399
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Diesel Fire Pump 1",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level/Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L17"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.3625,
+          "y": 0.2807
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX0G-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L29"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.4635,
+          "y": 0.7392
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX0G-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3562,
+          "y": 0.87
+        },
+        "props": {
+          "params": {
+            "LiftNumber": 33,
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 1",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_0"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.377,
+          "y": 0.87
+        },
+        "props": {
+          "params": {
+            "LiftNumber": 33,
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 2",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_1"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3979,
+          "y": 0.87
+        },
+        "props": {
+          "params": {
+            "LiftNumber": 33,
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 3",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_2"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4187,
+          "y": 0.87
+        },
+        "props": {
+          "params": {
+            "LiftNumber": 33,
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 4",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_1"
+        },
+        "position": {
+          "height": 0.12117,
+          "width": 0.06566,
+          "x": 0.3177,
+          "y": 0.3838
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "GeoPage": true,
+            "LabelOverride": "P6 Sewer Pump Station",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "Pump 3",
+            "Pump4Name": "Macerator",
+            "PumpRight": false,
+            "WellOrPit": "Well",
+            "alwaysVisible": true,
+            "combinedPump": "",
+            "deviceName": "P6 Sewer Pump Station",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Floor",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Street Lights DB"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.684,
+          "y": 0.1204
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBXGE-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.684,
+          "y": 0.1531
+        },
+        "props": {
+          "text": "Street Lights",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.341,
+          "y": 0.2524
+        },
+        "props": {
+          "text": "South West Riser",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.4985,
+          "y": 0.703
+        },
+        "props": {
+          "text": "North East Riser",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

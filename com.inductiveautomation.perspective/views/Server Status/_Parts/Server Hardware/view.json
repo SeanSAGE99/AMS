@@ -1,0 +1,290 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2"
+          },
+          "text": "SCADA Server Hardware"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginLeft": 5
+              },
+              "text": "Uptime (h:mm:ss)"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "borderBottomStyle": "dashed",
+                    "borderBottomWidth": "1px"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginLeft": 5,
+                "marginRight": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[System]Gateway/UptimeSeconds"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "numberFormat(floor({value}/3600), \u0027##\u0027) + \u0027:\u0027 + numberFormat(floor((({value}/3600)-floor({value}/3600))*60), \u002700\u0027) + \u0027:\u0027 + numberFormat(floor((({value}/60)-floor({value}/60))*60), \u002700\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginRight": 5
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Size/Size1"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "labelOverride": "",
+            "tagName": "CPU Usage",
+            "tagParentPath": "[default]System/Performance"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_2"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "labelOverride": "Memory Utilisation",
+            "tagName": "RAM Utilisation",
+            "tagParentPath": "[default]System/Performance"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_1"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "labelOverride": "",
+            "tagName": "Memory Usage",
+            "tagParentPath": "[default]System/Performance"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_0"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "labelOverride": "",
+            "tagName": "Max Memory",
+            "tagParentPath": "[default]System/Performance"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_4"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "labelOverride": "Disk Utilisation",
+            "tagName": "Disk Utilisation",
+            "tagParentPath": "[default]System/Performance"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_3"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "labelOverride": "",
+            "tagName": "Available Disk Space (MB)",
+            "tagParentPath": "[System]Gateway/Performance"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_5"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "labelOverride": "Approximate Total Disk Space (Calculated)",
+            "tagName": "Approx Total Disk Space",
+            "tagParentPath": "[default]System/Performance"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Form/Panel-normal"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

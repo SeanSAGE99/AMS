@@ -1,0 +1,1009 @@
+{
+  "custom": {
+    "DeviceTagPath": "[default]HV/T1/Sub12/MtrLV001"
+  },
+  "params": {
+    "DeviceName": "MtrLV001",
+    "DeviceParentPath": "[default]HV/T1/Sub12/"
+  },
+  "propConfig": {
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 403,
+      "width": 310
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Cur (A)",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Phase (V)",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Line (V)",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_3"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "kW",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_4"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "kVar",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_5"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Dem kW",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_6"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "kWh",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_7"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "PF",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_8"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "text": "Freq (Hz)",
+                      "textStyle": {
+                        "fontWeight": "bold"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "80px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "borderColor": "#D5D5D5",
+                    "borderStyle": "solid",
+                    "borderWidth": 0.5,
+                    "classes": "Device/Status/Border/Normal UI/Popups/Background"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "50px"
+                            },
+                            "props": {
+                              "text": "A Ph",
+                              "textStyle": {
+                                "fontWeight": "bold",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_0"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/CURA_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_1"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/VPA_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_2"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/VAB_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "basis": "66px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "50px"
+                            },
+                            "props": {
+                              "text": "B Ph",
+                              "textStyle": {
+                                "fontWeight": "bold",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_0"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/CURB_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_1"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/VPB_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_2"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/VBC_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer_0"
+                        },
+                        "position": {
+                          "basis": "66px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "50px"
+                            },
+                            "props": {
+                              "text": "C Ph",
+                              "textStyle": {
+                                "fontWeight": "bold",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_0"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/CURC_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_1"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/VPC_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_2"
+                            },
+                            "position": {
+                              "basis": "32px"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "indirect",
+                                    "references": {
+                                      "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                                    },
+                                    "tagPath": "{DeviceTagPath}/VCA_RW"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "formatType": "numeric",
+                                      "formatValue": "integer",
+                                      "type": "format"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer_1"
+                        },
+                        "position": {
+                          "basis": "66px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_1"
+                    },
+                    "position": {
+                      "basis": "145px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "borderColor": "#D5D5D5",
+                        "borderWidth": 0.1,
+                        "classes": "UI/Popups/Background"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                            },
+                            "tagPath": "{DeviceTagPath}/KW_RW"
+                          },
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "integer",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                            },
+                            "tagPath": "{DeviceTagPath}/KVAR_RW"
+                          },
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "integer",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                            },
+                            "tagPath": "{DeviceTagPath}/DEMKW_RW"
+                          },
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "integer",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                            },
+                            "tagPath": "{DeviceTagPath}/KWH_RW"
+                          },
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "integer",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_3"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                            },
+                            "tagPath": "{DeviceTagPath}/PF_RW"
+                          },
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "##.##",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_4"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                            },
+                            "tagPath": "{DeviceTagPath}/FREQ_RW"
+                          },
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "##.##",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "borderColor": "#D5D5D5",
+                    "borderStyle": "solid",
+                    "borderWidth": 0.5,
+                    "classes": "Device/Status/Border/Normal UI/Popups/Background"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "props": {
+              "style": {
+                "borderColor": "#D5D5D5",
+                "borderStyle": "solid",
+                "borderWidth": 0.5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "TimeSeriesChart"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "series": [
+                {
+                  "data": [
+                    {
+                      "Pressure": 12,
+                      "Temperature": 52,
+                      "time": 1560469431423
+                    },
+                    {
+                      "Pressure": 42,
+                      "Temperature": 18,
+                      "time": 1560469432423
+                    },
+                    {
+                      "Pressure": 81,
+                      "Temperature": 26,
+                      "time": 1560469433423
+                    },
+                    {
+                      "Pressure": 11,
+                      "Temperature": 63,
+                      "time": 1560469434423
+                    },
+                    {
+                      "Pressure": 23,
+                      "Temperature": 65,
+                      "time": 1560469435423
+                    },
+                    {
+                      "Pressure": 43,
+                      "Temperature": 12,
+                      "time": 1560469436423
+                    },
+                    {
+                      "Pressure": 71,
+                      "Temperature": 61,
+                      "time": 1560469437423
+                    },
+                    {
+                      "Pressure": 89,
+                      "Temperature": 60,
+                      "time": 1560469438423
+                    },
+                    {
+                      "Pressure": 66,
+                      "Temperature": 58,
+                      "time": 1560469439423
+                    },
+                    {
+                      "Pressure": 33,
+                      "Temperature": 1,
+                      "time": 1560469440423
+                    }
+                  ],
+                  "name": "Boiler"
+                }
+              ]
+            },
+            "type": "ia.chart.timeseries"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "389px",
+          "grow": 1
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "borderColor": "#D5D5D5",
+            "borderStyle": "solid",
+            "borderWidth": 0.5,
+            "classes": "UI/Popups/Background"
+          },
+          "tabs": [
+            "Data",
+            "Trends"
+          ]
+        },
+        "type": "ia.container.tab"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

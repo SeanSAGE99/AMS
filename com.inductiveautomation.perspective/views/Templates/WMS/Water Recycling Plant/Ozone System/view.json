@@ -1,0 +1,310 @@
+{
+  "custom": {
+    "deviceTagPath": "Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System",
+    "tags": [
+      {
+        "tagName": "Chiller Unit Fault",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Oxygen Generator Fault",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone Contact Tank High Level Alarm",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone Contact Tank Low Level Alarm",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone Destructor Drive Fault",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone Emergency Stop Activated",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone Generator Fault",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone Generator Return Water Low Flow Switch Alarm",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone PSA Oxygen Generator High Pressure Switch Alarm",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone PSA Oxygen Generator Low Pressure Switch Alarm",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Ozone Room O3-O2 Leakage Detector Alarm",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Alarms"
+      },
+      {
+        "tagName": "Fault",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Room Vent Fan/Alarms"
+      },
+      {
+        "tagName": "Running",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Room Vent Fan/Status"
+      },
+      {
+        "tagName": "Chiller Unit Running",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Status"
+      },
+      {
+        "tagName": "Oxygen Generator Running",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Status"
+      },
+      {
+        "tagName": "Ozone Generator Running",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System/Ozone Status"
+      }
+    ]
+  },
+  "params": {
+    "deviceName": "Ozone System",
+    "deviceParentPath": "Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone"
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 222,
+      "width": 203
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTagPath, \u0027Popups/WMS/ppuOzoneSystem\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTagPath, \u0027Popups/WMS/ppuOzoneSystem\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName}, showCloseIcon \u003d False, draggable \u003d False)"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "2pMF-4Fl",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Ozone System"
+        },
+        "position": {
+          "height": 0.9989,
+          "width": 0.7986
+        },
+        "propConfig": {
+          "props.elements[0].elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "expression": "tag({view.custom.deviceTagPath} + \u0027/Ozone Status/Chiller Unit Running\u0027)||tag({view.custom.deviceTagPath} + \u0027/Ozone Status/Oxygen Generator Running\u0027)||tag({view.custom.deviceTagPath} + \u0027/Ozone Status/Ozone Generator Running\u0027)"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": false,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m570 1953.8c-58.45-7.4375-108.98-43.024-134.65-94.824-6.2764-12.665-12.929-32.932-15.63-47.615-1.3867-7.5392-1.7167-150.81-1.7167-745.33 0-699.61 0.11707-736.57 2.3663-747.61 7.1912-35.293 22.734-64.188 48.278-89.755 24.403-24.425 52.207-39.343 87.356-46.871 10.846-2.3231 32.783-2.4273 510.67-2.4273 477.83 0 499.82 0.10453 510.67 2.4266 34.538 7.3949 63.651 23.128 88 47.556 24.282 24.36 38.855 50.966 47.116 86.017l2.8284 12 0.3747 541.94c0.4212 609.23 1.4642 550.79-10.041 562.65-4.6868 4.8336-8.1137 7.0146-13.52 8.605-8.9563 2.6346-12.488 2.6631-20.849 0.1686-8.5959-2.5646-15.799-8.6615-20.288-17.173l-3.6208-6.8651-0.3347-319.33c-0.1841-175.63-0.3341-362.08-0.3333-414.33v-95h-1160l-7e-3 59.667c-7e-3 63.325-5e-3 789.8 3e-3 964.67l4e-3 103.67h1160v-69c0-104.63 0.147-109.14 3.863-116.33 7.1058-13.758 15.919-19.272 30.805-19.272 11.79 0 18.14 2.7472 25.704 11.12 9.4896 10.504 9.1446 4.422 8.6068 151.71-0.4709 128.95-0.5421 132.03-3.3218 143.78-8.443 35.666-22.642 61.652-46.989 86-24.084 24.084-50.923 38.728-87.333 47.652-8.7264 2.1387-41.676 2.2985-506.67 2.4583-273.53 0.095-499.13-0.059-501.33-0.338zm988.04-68.529c21.898-3.0457 40.626-12.254 57.474-28.257 17.554-16.675 29.306-40.525 30.815-62.539l0.716-10.446h-1160.8l0.71018 10.333c1.3993 20.36 11.702 42.88 26.908 58.819 17.188 18.016 37.238 28.701 60.096 32.026 12.127 1.7639 971.37 1.8275 984.04 0.065zm-716.71-1501.9v-136.67l-129 5e-3c-139.69 5e-3 -142.83 0.14684-160.33 7.2068-25.032 10.099-46.443 30.516-57.242 54.584-8.0522 17.947-8.0918 18.532-8.0918 119.47v92.07h354.67zm805.66 65.667c0.1897-39.05 0-82.1-0.41-95.667-0.6819-22.277-1.1092-25.7-4.4104-35.333-11.385-33.222-38.006-58.129-72.835-68.146-8.3429-2.3994-20.834-2.5063-334.33-2.8608l-325.67-0.36818v273.38h737.31zm-577.91 36.276c-35.574-4.1484-66.927-27.157-82.2-60.324-5.066-11.001-7.1638-21.077-7.8529-37.721-0.55738-13.462-0.2065-17.944 2.1397-27.333 9.0998-36.415 37.557-65.859 72.833-75.359 11.8-3.1776 35.239-3.8936 46.847-1.4311 39.55 8.39 69.729 37.175 79.919 76.226 3.5573 13.633 3.3117 36.714-0.5363 50.399-11.696 41.595-45.686 70.738-88.184 75.608-6.2587 0.71724-11.979 1.2302-12.713 1.1398-0.7333-0.0904-5.3472-0.63236-10.253-1.2044zm25.586-70.717c12.664-5.7324 19.964-17.164 19.987-31.297 0.05-30.965-38.016-45.334-58.889-22.23-6.7499 7.4713-9.6312 15.834-8.7613 25.427 0.9592 10.579 4.457 16.788 13.909 24.693 7.6771 6.4203 23.557 8.0231 33.755 3.407zm162.93 0.1108c-15.292-6.9398-23.306-24.309-18.766-40.666 6.3979-23.046 36.279-31.996 55.011-16.478 14.585 12.082 15.256 37.7 1.33 50.728-9.4965 8.8843-25.946 11.693-37.576 6.4149zm136.4-0.4714c-7.407-3.4493-14.608-10.833-17.653-18.101-1.0976-2.62-1.9968-8.3636-1.9986-12.764-0.013-31.227 38.264-45.509 59.365-22.152 15.557 17.219 8.879 45.08-12.996 54.22-7.1149 2.9728-18.89 2.4425-26.719-1.2033zm135.92-0.0393c-20.585-9.5852-25.57-37.722-9.5808-54.076 9.1139-9.3219 21.869-12.637 34.453-8.9548 29.456 8.6196 32.487 50.068 4.6105 63.049-9.1393 4.2558-20.318 4.2488-29.482-0.0185zm-443.91 1192.5c-78.046-8.6584-143.76-32.215-206.67-74.078-54.361-36.178-98.494-81.623-132.63-136.56-10.044-16.168-27.878-50.07-29.976-56.984l-0.91043-3-66.91-0.029c-64.401-0.028-67.135-0.1307-72.91-2.7421-7.3447-3.3208-13.952-9.4741-17.784-16.562l-2.8832-5.3333 0.0769-150c0.0697-136.07 0.27974-150.43 2.2612-154.67 3.1339-6.6955 10.059-13.823 16.995-17.493l6-3.174 134.67-0.91106 8.6667-18.111c54.762-114.44 158.39-201.32 282.64-236.95 41.018-11.764 73.124-16 121.36-16.013 35.976-9e-3 49.752 0.98174 76.667 5.5189 170.07 28.67 311.5 155.95 357.29 321.56 25.141 90.915 21.188 186.66-11.337 274.61-8.3013 22.446-27.39 61.359-39.567 80.658-61.428 97.361-156.91 167.94-266.39 196.92-17.775 4.7045-37.681 8.6952-57.333 11.494-17.222 2.4527-84.82 3.6962-101.33 1.8642zm97.333-70.656c31.755-4.7317 63.513-13.367 91.072-24.763 26.582-10.992 63.189-31.602 80.928-45.562 0.7333-0.5772 6.7193-5.2337 13.302-10.348 23.082-17.932 55.79-52.874 73.364-78.376 22.9-33.229 42.156-73.754 53.34-112.26 20.395-70.209 19.102-149.1-3.5915-219.2-43.944-135.74-160.26-235.71-301.08-258.76-83.318-13.638-170.46 1.0249-243.28 40.937-33.419 18.316-57.872 36.346-84.508 62.311-61.602 60.048-98.836 133.38-111.75 220.08-3.7234 25.005-3.4121 80.356 0.59307 105.46 10.749 67.361 35.556 124.89 77.117 178.84 12.357 16.04 50.246 53.517 66.879 66.151 39.637 30.107 83.134 51.92 130.28 65.334 18.822 5.3546 49.7 11.162 68.204 12.828 21.258 1.9134 67.698 0.521 89.129-2.6724zm-218.67-144.02c-13.038-1.3756-23.445-4.6244-36.886-11.515-27.051-13.868-46.697-37.872-56.012-68.437l-3.0474-10-0.43318-141.33c-0.30673-100.08 7e-3 -144.4 1.0729-151.85 6.0383-42.178 36.295-76.963 77.972-89.643 11.74-3.5717 12.889-3.6626 53.024-4.1931 34.483-0.4558 42.774-0.1891 52 1.6727 47.321 9.5494 82.239 46.202 88.932 93.35 1.7543 12.359 1.7537 273.8-7e-4 287.33-5.6181 43.35-36.105 78.42-79.545 91.504-11.393 3.4316-12.876 3.5454-49.743 3.8182-20.9 0.1545-42.2-0.1622-47.333-0.7038zm84.16-71.196c9.8314-4.4884 16.872-11.449 21.318-21.074l3.8558-8.349v-136.67c0-153.9 0.6272-144.28-10.204-156.58-12.177-13.834-20.651-15.851-63.897-15.213-31.035 0.45818-31.28 0.4845-38.791 4.1729-9.5514 4.6905-16.444 11.591-20.929 20.955l-3.5127 7.3333v277.33l2.8812 6.2342c3.8403 8.3095 12.629 17.634 19.968 21.187 8.3853 4.0593 15.388 4.6325 51.077 4.1815 29.63-0.3745 31.793-0.5732 38.234-3.5136zm232.89 70.592c-21.155-3.8368-41.051-14.625-56.094-30.416-10.461-10.982-14.207-18.833-14.123-29.599 0.1165-14.814 9.7976-27.878 23.742-32.038 8.3357-2.487 11.912-2.4652 20.636 0.1254 5.5031 1.6343 8.9553 3.9955 15.909 10.881 10.792 10.687 16.771 13.63 27.77 13.669 10.644 0.038 18.229-3.2502 25.355-10.992 17.225-18.713 8.7954-47.618-16.038-54.992-3.6797-1.0928-9.1316-2.0001-12.115-2.0162-10.664-0.058-22.73-8.388-28.146-19.433-3.656-7.4558-3.5009-22.056 0.3102-29.204 3.3315-6.2484 9.9687-12.807 16.073-15.883 2.3812-1.1998 8.9398-2.7661 14.575-3.4805 12.509-1.5859 20.321-5.1948 26.256-12.129 22.263-26.01-3.7695-64.154-36.991-54.201-3.5757 1.0713-8.7143 4.7061-14.821 10.484-11.442 10.825-16.223 13.373-26.669 14.212-10.271 0.8244-19.888-2.9949-26.797-10.642-6.4999-7.1947-8.9582-13.493-8.9872-23.027-0.031-10.195 3.2868-17.599 12.41-27.691 12.684-14.031 31.457-25.361 50.126-30.25 12.981-3.4 35.088-3.6732 48.974-0.6052 12.08 2.669 28.364 10.49 39.606 19.023 31.739 24.088 46.636 67.19 36.702 106.19-2.5527 10.022-12.641 30.307-18.531 37.262l-4.4563 5.2618 5.9997 8.0716c7.1138 9.5701 13.791 23.406 17.085 35.405 2.8758 10.474 3.2984 38.788 0.7162 48-6.089 21.723-16.046 38.742-30.313 51.816-24.543 22.489-56.408 31.958-88.163 26.199zm-589.72-124.03c0-0.3744-1.1662-5.9244-2.5916-12.333-12.63-56.786-13.116-121.91-1.3504-180.67 2.1681-10.828 3.942-19.978 3.942-20.333 0-0.3553-15.6-0.6461-34.667-0.6461h-34.667v106.44c0 58.544 0.4 106.84 0.88889 107.33 1.0273 1.0274 68.444 1.2324 68.444 0.2081z",
+                  "name": "path",
+                  "opacity": 0.5,
+                  "stroke": {
+                    "width": 1.3333
+                  },
+                  "type": "path"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "m676.89 1357.3c-59.01-4.5306-124.71-27.817-177.98-63.084-27.161-17.982-76.566-65.74-96.161-92.956-29.639-41.164-53.551-96.077-64.788-148.78-6.6816-31.337-6.6064-112.85 0.13259-143.58 17.131-78.117 49.432-137.43 105.47-193.69 75.754-76.045 176.45-115.43 282.99-110.7 178.66 7.9424 325.82 136.19 358.3 312.25 6.1142 33.147 6.1538 97.931 0.079 129.31-7.4451 38.458-16.493 64.922-35.065 102.56-21.466 43.504-35.715 63.096-72.813 100.12-53.054 52.952-115.64 86.711-189.99 102.48-24.226 5.1376-81.34 8.2844-110.18 6.0705zm-26.026-149.28c30.095-10.924 51.584-30.668 65.095-59.808 6.8767-14.832 6.9577-15.665 9.2194-94.78 1.3477-47.144 1.3311-112.22-0.0408-158.97-2.1635-73.734-2.7155-80.019-8.0661-91.853-13.74-30.388-37.731-52.176-69.084-62.738-13.548-4.5641-21.951-5.3156-58.833-5.2618-23.665 0.0345-48.087 1.2292-54.271 2.6549-31.537 7.2706-60.212 30.385-75.028 60.479l-8.5953 17.459v318.15l8.8082 17.895c10.777 21.895 29.65 41.328 49.603 51.076 21.31 10.41 26.26 11.136 78.004 11.426 42.88 0.241 48.019-0.2248 63.189-5.7316zm263.7 0.6946c29.169-9.8263 48.317-27.144 62.045-56.115 7.2294-15.256 7.9387-19.014 7.7755-41.189-0.15256-20.713-1.2058-26.643-6.9681-39.23-3.7336-8.1553-9.066-18.026-11.85-21.936l-5.0612-7.1078 7.5846-11.352c9.5077-14.231 17.756-40.223 17.756-55.953 0-6.6061-1.7907-18.888-3.9793-27.293-8.0862-31.053-26.433-52.801-56.652-67.151-17.642-8.3784-20.955-9.0787-42.706-9.0285-26.562 0.0613-41.636 4.5546-61.786 18.418-18.694 12.862-27.176 26.252-27.176 42.903 0 11.944 1.0971 14.952 8.3345 22.849 6.1888 6.7532 11.099 9.4654 19.075 10.535 15.222 2.0417 20.834 2e-3 36.29-13.191 16.127-13.766 27.478-15.346 41.649-5.7962 17.249 11.624 20.414 31.579 7.3651 46.44-6.275 7.1469-11.148 9.639-24.999 12.786-13.755 3.1249-18.875 5.7248-25.537 12.968-7.0188 7.631-8.3329 11.028-8.3329 21.538 0 8.7396 1.7536 15.089 5.8525 21.19 5.7902 8.6193 6.914 9.1547 38.934 18.548 34.03 9.983 25.596 60.674-10.095 60.674-11.132 0-17.33-2.9549-30.051-14.327-24.196-21.631-58.484-7.6736-58.484 23.808 0 17.437 9.2389 30.624 32.737 46.728 23.144 15.861 59.243 20.066 88.28 10.284z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(418 179.33)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m212.17 1086.6-5.769-1.1111v-209.89h65.826l-4.6557 26.281c-9.3703 52.894-8.7894 118.78 1.4794 167.8 2.8571 13.637 2.8026 16.084-0.3852 17.307-4.1986 1.6112-47.67 1.3151-56.496-0.3848z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(418 179.33)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m553.17 1142.4c-11.631-1.8935-23.977-11.552-30.342-23.735-2.9831-5.7101-3.6171-31.147-3.6171-145.12v-138.2l7.6414-10.549c11.062-15.271 19.76-18.812 49.858-20.298 50.002-2.469 71.599 7.2831 76.046 34.339 1.1214 6.8228 2.1078 71.366 2.1918 143.43l0.15285 131.02-5.769 8.4764c-8.8619 13.021-18.411 18.751-34.622 20.776-18.253 2.2804-47.061 2.2127-61.541-0.1446z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(418 179.33)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m71.036 241.66 0.7551-98.072 6.9305-14.79c8.5071-18.154 29.873-40.026 48.147-49.286 19.629-9.9468 42.278-11.412 177.6-11.493l117.3-0.06947v271.78h-351.49z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(418 179.33)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m493.57 203.84v-135.89l258.32 0.27928c142.08 0.15361 290.63 1.019 330.11 1.923 71.048 1.6267 71.945 1.7155 86.581 8.5742 18.876 8.8452 39.802 29.779 49.46 49.477l7.5423 15.384 0.7551 98.072 0.7551 98.072h-733.53zm190.1 101.42c9.3693-1.9859 21.974-6.1303 28.011-9.21 15.77-8.0454 36.099-29.507 44.843-47.344 7.018-14.314 7.5422-17.434 7.5422-44.87 0-27.665-0.47503-30.427-7.6919-44.731-10.194-20.204-27.987-37.559-49.227-48.015-16.305-8.0267-18.923-8.531-44.305-8.531-23.94 0-28.636 0.77786-41.725 6.9122-20.593 9.6507-41.197 29.937-51.315 50.522-7.8218 15.915-8.291 18.467-8.291 45.099 0 26.024 0.58799 29.431 7.5256 43.613 13.879 28.371 41.658 49.9 73.24 56.76 18.619 4.0447 21.401 4.0308 41.393-0.20651zm185.71-70.387c21.495-9.7626 25.646-39.582 7.7877-55.947-7.8799-7.2214-11.055-8.421-22.292-8.421-22.538 0-35.697 12.439-35.678 33.727 0.0128 13.973 7.6157 26.911 18.63 31.699 11.174 4.8578 19.114 4.5917 31.553-1.0577zm135.72 1.1673c11.485-4.7987 19.182-17.554 19.194-31.808 0.018-20.474-14.212-34.582-34.88-34.582-37.448 0-47.094 51.107-12.544 66.463 10.051 4.4672 17.411 4.4483 28.23-0.0722zm141.05-2.5231c15.005-9.8314 20.051-33.545 10.3-48.401-19.452-29.635-68.8-12.547-64.528 22.344 3.1814 25.985 32.694 40.166 54.228 26.057z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(418 179.33)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m651.25 234.71c-8.6871-3.617-18.749-16.317-20.397-25.744-3.1852-18.222 12.848-36.595 31.935-36.595 33.676 0 44.517 46.348 14.205 60.732-9.3169 4.4212-17.723 4.9458-25.743 1.6068z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(418 179.33)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m165.37 1703.9c-20.836-1.4371-26.677-2.9139-40.349-10.201-28.911-15.41-50.199-44.875-53.685-74.307l-1.5418-13.018h1157.8l-1.5417 13.018c-3.4208 28.883-25.115 59.08-53.198 74.048-13.788 7.349-19.483 8.7452-43.107 10.568-31.936 2.4644-928.52 2.3644-964.36-0.1076z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(418 179.33)",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": {},
+                  "name": "group",
+                  "stroke": {
+                    "width": "131.67"
+                  },
+                  "type": "group"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-418 -179.33)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "viewBox": "0 0 1297.9 1774.8"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.1802,
+          "width": 0.197,
+          "x": 0.803
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "",
+              "parentPath": ""
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

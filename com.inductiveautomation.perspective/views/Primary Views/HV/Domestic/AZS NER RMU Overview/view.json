@@ -1,0 +1,2382 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/AZS RMU Substation"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.6192,
+          "width": 0.2151,
+          "x": 0.7562,
+          "y": 0.1
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-60)",
+            "borderStyle": "dashed",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.6192,
+          "width": 0.2151,
+          "x": 0.5142,
+          "y": 0.1
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-60)",
+            "borderStyle": "dashed",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.6192,
+          "width": 0.2151,
+          "x": 0.2712,
+          "y": 0.1
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-60)",
+            "borderStyle": "dashed",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.6192,
+          "width": 0.2151,
+          "x": 0.0292,
+          "y": 0.1
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-60)",
+            "borderStyle": "dashed",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.029,
+          "width": 0.168,
+          "x": 0.4162,
+          "y": 0.262
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "AZS NER RMU Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.1133,
+          "y": 0.1056
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.9221,
+          "y": 0.2162
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "TX_1"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.1777,
+          "y": 0.0488
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 1",
+            "DeviceParentPath": "High Voltage/International/Substation 4/PLC",
+            "StarDeltaVisible": true,
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0291,
+          "width": 0.9,
+          "x": 0.0505,
+          "y": 0.0104
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-60)",
+            "borderStyle": "solid",
+            "borderWidth": 2
+          },
+          "text": "Ausgrid Sub No. XXXX 33kV Switchroom",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/airport-zone-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_4"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.0212,
+          "y": 0.0515
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "AZS Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/AZS - Bus 1"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_5"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.1628,
+          "y": 0.1609
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "AZS Bus 1 Detail",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/AZS - Bus 4"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_6"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.647,
+          "y": 0.1609
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "AZS Bus 4 Detail",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/AZS - Bus 3"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_9"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.4047,
+          "y": 0.1609
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "AZS Bus 3 Detail",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/AZS - Bus 5"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_10"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.8892,
+          "y": 0.1609
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "AZS Bus 5 Detail",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_21"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.7456,
+          "y": 0.9535
+        },
+        "props": {
+          "text": "5-XXX AZS NER 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Switch_2"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.0326,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_0"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.0326,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "NER"
+        },
+        "position": {
+          "height": 0.019728,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.038817,
+          "x": 0.7519,
+          "y": 0.876
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m318.62-155.49v98h-100v28h100v100h628v-100h100v-28h-100v-100h-628v2zm314 26h286v172h-572v-172h286z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-218.62 157.49)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 828 228"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Earthing"
+        },
+        "position": {
+          "height": 0.023056,
+          "width": 0.012947,
+          "x": 0.7651,
+          "y": 0.9208
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m89.425 227.81c-3.8823-3.8824-4.5069-8.5588-1.8336-13.728 2.9849-5.7722 3.8971-5.8716 53.934-5.8716 48.907 0 50.384 0.14021 53.869 5.1169 0.90468 1.2916 1.6307 4.2771 1.6307 6.7056 0 3.645-0.56893 4.9464-3.4 7.7775l-3.4 3.4h-97.4zm-24.4-44.24c-8.1023-2.7368-11.306-10-7.5853-17.195 3.0384-5.8756-0.08759-5.665 84.085-5.665 84.173 0 81.047-0.2106 84.085 5.665 2.8118 5.4373 1.2648 12.34-3.4894 15.571-2.4182 1.6433-7.8327 1.7766-79.096 1.9476-42.075 0.10095-77.175-0.0445-78-0.32312zm-30.622-48.797c-1.7169-0.74725-3.8544-2.4048-4.75-3.6834-2.0085-2.8675-2.1072-9.0529-0.2033-12.735 2.9-5.608 3.0091-5.62 53.796-5.9324l46.721-0.28738 0.55744-93.091 3.2658-2.9173c4.6001-4.1092 10.868-4.1092 15.468 0l3.2658 2.9173 0.55758 93.165h45.451c50.178 0 51.992 0.20027 55.03 6.0743 1.9374 3.7466 1.856 9.9176-0.16911 12.809-3.6935 5.2732-0.31016 5.1199-112.09 5.0777-85.188-0.0321-104.34-0.28257-106.9-1.3978z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-28.082 -13.046)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 226.88 218.16"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Switch_3"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.1133,
+          "y": 0.2594
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_1"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.1941,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_4"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.1941,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_5"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.2748,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_6"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.3555,
+          "y": 0.2594
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_7"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.4362,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_8"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.517,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_9"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.5977,
+          "y": 0.2594
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_2"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.2748,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_3"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.4362,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_4"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.517,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_5"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.6784,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_6"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.7592,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_7"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.9206,
+          "y": 0.5671
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_10"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.6784,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_11"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.7592,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_12"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.8399,
+          "y": 0.2594
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch_13"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.9206,
+          "y": 0.4133
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": "False",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_8"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.3555,
+          "y": 0.1056
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_9"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.5977,
+          "y": 0.1056
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_10"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.8399,
+          "y": 0.1056
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_2"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.4195,
+          "y": 0.0488
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 1",
+            "DeviceParentPath": "High Voltage/International/Substation 4/PLC",
+            "StarDeltaVisible": true,
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_3"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.6618,
+          "y": 0.0488
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 1",
+            "DeviceParentPath": "High Voltage/International/Substation 4/PLC",
+            "StarDeltaVisible": true,
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_4"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.9041,
+          "y": 0.0488
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 1",
+            "DeviceParentPath": "High Voltage/International/Substation 4/PLC",
+            "StarDeltaVisible": true,
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_22"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.9071,
+          "y": 0.9535
+        },
+        "props": {
+          "text": "5-XXX AZS NER 2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_23"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.1634,
+          "y": 0.3671
+        },
+        "props": {
+          "text": "RMU No. 4",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_24"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.4054,
+          "y": 0.3671
+        },
+        "props": {
+          "text": "RMU No. 2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_25"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.6479,
+          "y": 0.3671
+        },
+        "props": {
+          "text": "RMU No. 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_26"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.052,
+          "x": 0.8899,
+          "y": 0.3671
+        },
+        "props": {
+          "text": "RMU No. 3",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_27"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.022,
+          "x": 0.7407,
+          "y": 0.8693
+        },
+        "props": {
+          "text": "Temp Control Unit",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_28"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.016,
+          "x": 0.7811,
+          "y": 0.8693
+        },
+        "props": {
+          "text": "2 Ohms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_30"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.016,
+          "x": 0.9426,
+          "y": 0.8689
+        },
+        "props": {
+          "text": "2 Ohms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Earthing_1"
+        },
+        "position": {
+          "height": 0.0231,
+          "width": 0.0129,
+          "x": 0.9266,
+          "y": 0.9208
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m89.425 227.81c-3.8823-3.8824-4.5069-8.5588-1.8336-13.728 2.9849-5.7722 3.8971-5.8716 53.934-5.8716 48.907 0 50.384 0.14021 53.869 5.1169 0.90468 1.2916 1.6307 4.2771 1.6307 6.7056 0 3.645-0.56893 4.9464-3.4 7.7775l-3.4 3.4h-97.4zm-24.4-44.24c-8.1023-2.7368-11.306-10-7.5853-17.195 3.0384-5.8756-0.08759-5.665 84.085-5.665 84.173 0 81.047-0.2106 84.085 5.665 2.8118 5.4373 1.2648 12.34-3.4894 15.571-2.4182 1.6433-7.8327 1.7766-79.096 1.9476-42.075 0.10095-77.175-0.0445-78-0.32312zm-30.622-48.797c-1.7169-0.74725-3.8544-2.4048-4.75-3.6834-2.0085-2.8675-2.1072-9.0529-0.2033-12.735 2.9-5.608 3.0091-5.62 53.796-5.9324l46.721-0.28738 0.55744-93.091 3.2658-2.9173c4.6001-4.1092 10.868-4.1092 15.468 0l3.2658 2.9173 0.55758 93.165h45.451c50.178 0 51.992 0.20027 55.03 6.0743 1.9374 3.7466 1.856 9.9176-0.16911 12.809-3.6935 5.2732-0.31016 5.1199-112.09 5.0777-85.188-0.0321-104.34-0.28257-106.9-1.3978z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-28.082 -13.046)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 226.88 218.16"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "NER_1"
+        },
+        "position": {
+          "height": 0.0197,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0388,
+          "x": 0.9134,
+          "y": 0.876
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m318.62-155.49v98h-100v28h100v100h628v-100h100v-28h-100v-100h-628v2zm314 26h286v172h-572v-172h286z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-218.62 157.49)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 828 228"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label_32"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.022,
+          "x": 0.9022,
+          "y": 0.8689
+        },
+        "props": {
+          "text": "Temp Control Unit",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CT"
+        },
+        "position": {
+          "height": 0.0843,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.013,
+          "x": 0.766,
+          "y": 0.7659
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m735.85 80.701c-0.16794 92.837-0.33454 185.67-0.50196 278.51-16.355 0.0412-32.799-0.36522-49.038 1.9246-8.852 1.2822-17.561 3.6121-25.804 7.0996-14.157 5.7956-27.203 14.251-38.325 24.75-17.529 16.443-30.706 37.515-37.717 60.509-5.1351 16.961-7.088 34.838-6.1705 52.519 0.7969 14.624 3.5728 29.174 8.55 42.959 7.8648 21.429 21.092 40.844 38.036 56.126 4.6169 4.1405 9.5404 7.94 14.728 11.339-19.951 12.968-35.692 31.848-46.303 53.041-7.1568 14.353-12.07 29.878-14.02 45.815-1.3145 11.946-1.3021 24.015-0.43608 35.992 0.89796 10.467 3.3437 20.755 6.6054 30.723 7.4883 22.547 20.467 43.39 38.094 59.399 15.042 13.699 33.429 23.783 53.188 28.717 6.013 1.4971 12.185 2.2609 18.369 2.5516 11.648 0.66484 23.322 0.41775 34.983 0.50716 1.75 3e-3 3.5 5e-3 5.25 8e-3 0.0112 74.058-0.0577 148.12 0.12574 222.17 0.0832 21.843 0.113 43.687 0.47479 65.527 0.0289 2.6102 0.34769 5.5382 2.384 7.4096 2.2279 2.1642 5.5079 2.5336 8.466 2.6401 7.502 0.2538 15.004-0.1887 22.504-0.2615 3.3612-0.3605 5.9428-3.752 5.5595-7.0807 0.1082-84.612 0.28371-169.22 0.4165-253.84 0.0206-12.187 0.0413-24.375 0.0619-36.562h111.01v-39h-111v-198h111v-39h-111v-198h111v-40h-111.01c-0.16936-93.5-0.33795-187-0.50781-280.5h-38.969c-1e-3 0.66536-3e-3 1.3307-4e-3 1.9961zm-16.92 318.5h16.408v197.94c-8.7769-0.0727-17.606-0.0668-26.325-0.37498-9.8702-0.38972-19.905-0.96586-29.343-4.1213-7.0128-2.4782-13.662-5.949-19.839-10.082-16.245-10.958-28.414-27.407-35.342-45.643-1.1539-2.9891-2.2039-6.2034-3.0524-9.1756-0.24602-0.90273-0.47231-1.6848-0.67541-2.5215-3.4939-13.506-4.3903-27.672-2.6801-41.516 0.0595-0.39946 0.16261-1.1896 0.2388-1.7386 0.99599-7.1325 2.7742-14.342 5.1323-21.019 3.4116-9.6907 8.3352-18.853 14.649-26.964 1.1291-1.4892 2.4694-3.1039 3.5836-4.413 7.0652-8.1724 15.39-15.326 24.797-20.671 1.3056-0.73249 2.6003-1.4041 3.8796-2.0283 1.0898-0.53485 2.4571-1.1561 3.6837-1.6724 6.4969-2.7038 13.327-4.793 20.377-5.31 8.1674-0.71556 16.299-0.63749 24.508-0.68935zm16.408 336v98.969c-10.154-0.052-20.311 0.0316-30.463-0.25391-5.8923-0.15612-12.008-0.4319-17.847-1.7582-5.7097-1.3695-11.244-3.4456-16.532-5.9887-12.551-6.0465-23.432-15.313-31.855-26.371-0.91784-1.1837-1.8907-2.5639-2.684-3.6852-4.1826-6.048-7.6961-12.554-10.494-19.354-0.28424-0.70521-0.6862-1.6919-0.99231-2.5148-4.1488-10.867-6.4728-22.412-7.0136-34.026-0.0369-0.89248-0.0796-2.0736-0.0945-3.077-0.36208-19.944 4.6436-40.059 14.923-57.202 4.906-8.1875 10.979-15.69 18.088-22.068 0.81928-0.72631 1.839-1.6122 2.7626-2.3704 11.965-9.8751 26.654-16.622 42.101-18.501 7.8339-0.83244 15.726-0.68999 23.592-0.77882 5.5028-0.02 11.006-9e-3 16.509-0.0139v98.994z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-578.07 -78.705)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 308.26 1092.3"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "CT_0"
+        },
+        "position": {
+          "height": 0.0843,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.013,
+          "x": 0.9275,
+          "y": 0.7659
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m735.85 80.701c-0.16794 92.837-0.33454 185.67-0.50196 278.51-16.355 0.0412-32.799-0.36522-49.038 1.9246-8.852 1.2822-17.561 3.6121-25.804 7.0996-14.157 5.7956-27.203 14.251-38.325 24.75-17.529 16.443-30.706 37.515-37.717 60.509-5.1351 16.961-7.088 34.838-6.1705 52.519 0.7969 14.624 3.5728 29.174 8.55 42.959 7.8648 21.429 21.092 40.844 38.036 56.126 4.6169 4.1405 9.5404 7.94 14.728 11.339-19.951 12.968-35.692 31.848-46.303 53.041-7.1568 14.353-12.07 29.878-14.02 45.815-1.3145 11.946-1.3021 24.015-0.43608 35.992 0.89796 10.467 3.3437 20.755 6.6054 30.723 7.4883 22.547 20.467 43.39 38.094 59.399 15.042 13.699 33.429 23.783 53.188 28.717 6.013 1.4971 12.185 2.2609 18.369 2.5516 11.648 0.66484 23.322 0.41775 34.983 0.50716 1.75 3e-3 3.5 5e-3 5.25 8e-3 0.0112 74.058-0.0577 148.12 0.12574 222.17 0.0832 21.843 0.113 43.687 0.47479 65.527 0.0289 2.6102 0.34769 5.5382 2.384 7.4096 2.2279 2.1642 5.5079 2.5336 8.466 2.6401 7.502 0.2538 15.004-0.1887 22.504-0.2615 3.3612-0.3605 5.9428-3.752 5.5595-7.0807 0.1082-84.612 0.28371-169.22 0.4165-253.84 0.0206-12.187 0.0413-24.375 0.0619-36.562h111.01v-39h-111v-198h111v-39h-111v-198h111v-40h-111.01c-0.16936-93.5-0.33795-187-0.50781-280.5h-38.969c-1e-3 0.66536-3e-3 1.3307-4e-3 1.9961zm-16.92 318.5h16.408v197.94c-8.7769-0.0727-17.606-0.0668-26.325-0.37498-9.8702-0.38972-19.905-0.96586-29.343-4.1213-7.0128-2.4782-13.662-5.949-19.839-10.082-16.245-10.958-28.414-27.407-35.342-45.643-1.1539-2.9891-2.2039-6.2034-3.0524-9.1756-0.24602-0.90273-0.47231-1.6848-0.67541-2.5215-3.4939-13.506-4.3903-27.672-2.6801-41.516 0.0595-0.39946 0.16261-1.1896 0.2388-1.7386 0.99599-7.1325 2.7742-14.342 5.1323-21.019 3.4116-9.6907 8.3352-18.853 14.649-26.964 1.1291-1.4892 2.4694-3.1039 3.5836-4.413 7.0652-8.1724 15.39-15.326 24.797-20.671 1.3056-0.73249 2.6003-1.4041 3.8796-2.0283 1.0898-0.53485 2.4571-1.1561 3.6837-1.6724 6.4969-2.7038 13.327-4.793 20.377-5.31 8.1674-0.71556 16.299-0.63749 24.508-0.68935zm16.408 336v98.969c-10.154-0.052-20.311 0.0316-30.463-0.25391-5.8923-0.15612-12.008-0.4319-17.847-1.7582-5.7097-1.3695-11.244-3.4456-16.532-5.9887-12.551-6.0465-23.432-15.313-31.855-26.371-0.91784-1.1837-1.8907-2.5639-2.684-3.6852-4.1826-6.048-7.6961-12.554-10.494-19.354-0.28424-0.70521-0.6862-1.6919-0.99231-2.5148-4.1488-10.867-6.4728-22.412-7.0136-34.026-0.0369-0.89248-0.0796-2.0736-0.0945-3.077-0.36208-19.944 4.6436-40.059 14.923-57.202 4.906-8.1875 10.979-15.69 18.088-22.068 0.81928-0.72631 1.839-1.6122 2.7626-2.3704 11.965-9.8751 26.654-16.622 42.101-18.501 7.8339-0.83244 15.726-0.68999 23.592-0.77882 5.5028-0.02 11.006-9e-3 16.509-0.0139v98.994z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-578.07 -78.705)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 308.26 1092.3"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Icon_1"
+        },
+        "position": {
+          "height": 0.0245,
+          "width": 0.0118,
+          "x": 0.2005,
+          "y": 0.6931
+        },
+        "props": {
+          "color": "var(--neutral-60)",
+          "path": "material/looks"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_2"
+        },
+        "position": {
+          "height": 0.0245,
+          "width": 0.0118,
+          "x": 0.4428,
+          "y": 0.6937
+        },
+        "props": {
+          "color": "var(--neutral-60)",
+          "path": "material/looks"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_3"
+        },
+        "position": {
+          "height": 0.0245,
+          "width": 0.0118,
+          "x": 0.6848,
+          "y": 0.6935
+        },
+        "props": {
+          "color": "var(--neutral-60)",
+          "path": "material/looks"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_4"
+        },
+        "position": {
+          "height": 0.0245,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0118,
+          "x": 0.763,
+          "y": 0.7267
+        },
+        "props": {
+          "color": "var(--neutral-60)",
+          "path": "material/looks"
+        },
+        "type": "ia.display.icon"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0.0151,
+      "y": 0.0558
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.287,
+                        "y": 0.6644
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.5292,
+                            "y": 0.6644
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.7714,
+                                "y": 0.7665
+                              },
+                              {
+                                "connections": [],
+                                "x": 0.7714,
+                                "y": 0.6644
+                              }
+                            ],
+                            "x": 0.7714,
+                            "y": 0.7113
+                          }
+                        ],
+                        "x": 0.5292,
+                        "y": 0.7113
+                      }
+                    ],
+                    "x": 0.287,
+                    "y": 0.7113
+                  }
+                ],
+                "x": 0.0448,
+                "y": 0.7113
+              }
+            ],
+            "x": 0.0448,
+            "y": 0.6644
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1977,
+                "y": 0.051
+              }
+            ],
+            "x": 0.1977,
+            "y": 0.0385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6906,
+                        "y": 0.6644
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.9328,
+                            "y": 0.7665
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.9328,
+                            "y": 0.6644
+                          }
+                        ],
+                        "x": 0.9328,
+                        "y": 0.7394
+                      }
+                    ],
+                    "x": 0.6906,
+                    "y": 0.7394
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2062,
+                        "y": 0.6644
+                      }
+                    ],
+                    "x": 0.2062,
+                    "y": 0.7394
+                  }
+                ],
+                "x": 0.4484,
+                "y": 0.7394
+              }
+            ],
+            "x": 0.4484,
+            "y": 0.6644
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0448,
+                "y": 0.5115
+              }
+            ],
+            "x": 0.0448,
+            "y": 0.6154
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.0326,
+                    "y": 0.4077
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1255,
+                        "y": 0.3567
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.2062,
+                            "y": 0.4625
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.241,
+                            "y": 0.4077
+                          }
+                        ],
+                        "x": 0.2062,
+                        "y": 0.4077
+                      }
+                    ],
+                    "x": 0.1255,
+                    "y": 0.4077
+                  }
+                ],
+                "x": 0.0448,
+                "y": 0.4077
+              }
+            ],
+            "x": 0.0448,
+            "y": 0.4625
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2062,
+                "y": 0.6154
+              }
+            ],
+            "x": 0.2062,
+            "y": 0.5115
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1255,
+                "y": 0.2029
+              }
+            ],
+            "x": 0.1255,
+            "y": 0.3087
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.1977,
+                    "y": 0.0852
+                  }
+                ],
+                "x": 0.1255,
+                "y": 0.0852
+              }
+            ],
+            "x": 0.1255,
+            "y": 0.1538
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1977,
+                "y": 0.1635
+              }
+            ],
+            "x": 0.1977,
+            "y": 0.0933
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.287,
+                "y": 0.5115
+              }
+            ],
+            "x": 0.287,
+            "y": 0.6154
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.2748,
+                    "y": 0.4077
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.3677,
+                        "y": 0.3567
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.4484,
+                            "y": 0.4625
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.4831,
+                            "y": 0.4077
+                          }
+                        ],
+                        "x": 0.4484,
+                        "y": 0.4077
+                      }
+                    ],
+                    "x": 0.3677,
+                    "y": 0.4077
+                  }
+                ],
+                "x": 0.287,
+                "y": 0.4077
+              }
+            ],
+            "x": 0.287,
+            "y": 0.4625
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4484,
+                "y": 0.6154
+              }
+            ],
+            "x": 0.4484,
+            "y": 0.5115
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3677,
+                "y": 0.2029
+              }
+            ],
+            "x": 0.3677,
+            "y": 0.3087
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.4396,
+                    "y": 0.0856
+                  }
+                ],
+                "x": 0.3677,
+                "y": 0.0856
+              }
+            ],
+            "x": 0.3677,
+            "y": 0.1538
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4396,
+                "y": 0.0933
+              }
+            ],
+            "x": 0.4396,
+            "y": 0.1635
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6906,
+                "y": 0.5115
+              }
+            ],
+            "x": 0.6906,
+            "y": 0.6154
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.7253,
+                    "y": 0.4077
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6099,
+                        "y": 0.3567
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.517,
+                            "y": 0.4077
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.5292,
+                            "y": 0.4625
+                          }
+                        ],
+                        "x": 0.5292,
+                        "y": 0.4077
+                      }
+                    ],
+                    "x": 0.6099,
+                    "y": 0.4077
+                  }
+                ],
+                "x": 0.6906,
+                "y": 0.4077
+              }
+            ],
+            "x": 0.6906,
+            "y": 0.4625
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5292,
+                "y": 0.6154
+              }
+            ],
+            "x": 0.5292,
+            "y": 0.5115
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6099,
+                "y": 0.2029
+              }
+            ],
+            "x": 0.6099,
+            "y": 0.3087
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.6819,
+                    "y": 0.0852
+                  }
+                ],
+                "x": 0.6099,
+                "y": 0.0852
+              }
+            ],
+            "x": 0.6099,
+            "y": 0.1538
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6819,
+                "y": 0.0933
+              }
+            ],
+            "x": 0.6819,
+            "y": 0.1635
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9328,
+                "y": 0.5115
+              }
+            ],
+            "x": 0.9328,
+            "y": 0.6154
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.9675,
+                    "y": 0.4077
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.8521,
+                        "y": 0.3567
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.7592,
+                            "y": 0.4077
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.7714,
+                            "y": 0.4625
+                          }
+                        ],
+                        "x": 0.7714,
+                        "y": 0.4077
+                      }
+                    ],
+                    "x": 0.8521,
+                    "y": 0.4077
+                  }
+                ],
+                "x": 0.9328,
+                "y": 0.4077
+              }
+            ],
+            "x": 0.9328,
+            "y": 0.4625
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7714,
+                "y": 0.6154
+              }
+            ],
+            "x": 0.7714,
+            "y": 0.5115
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8521,
+                "y": 0.2029
+              }
+            ],
+            "x": 0.8521,
+            "y": 0.3087
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.9241,
+                    "y": 0.0852
+                  }
+                ],
+                "x": 0.8521,
+                "y": 0.0865
+              }
+            ],
+            "x": 0.8521,
+            "y": 0.1538
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9241,
+                "y": 0.0933
+              }
+            ],
+            "x": 0.9241,
+            "y": 0.1635
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4396,
+                "y": 0.051
+              }
+            ],
+            "x": 0.4396,
+            "y": 0.0385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6819,
+                "y": 0.051
+              }
+            ],
+            "x": 0.6819,
+            "y": 0.0385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9241,
+                "y": 0.051
+              }
+            ],
+            "x": 0.9241,
+            "y": 0.0385
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

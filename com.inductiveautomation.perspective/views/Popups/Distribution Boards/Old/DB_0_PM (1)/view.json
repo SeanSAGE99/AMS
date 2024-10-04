@@ -1,0 +1,1693 @@
+{
+  "custom": {
+    "controlTagPath": "International/T1/Pier B/Apron/BPG_DBX07",
+    "deviceTagPath": "International/T1/Pier B/Apron/BPG_DBX07",
+    "modeDesc": null,
+    "showAlarms": false,
+    "siteName": "Apron",
+    "sitePath": "International/T1/Pier B/Apron",
+    "subArea": "International T1 Pier B",
+    "typeId": "Devices/Distribution Boards/Siemens DB"
+  },
+  "params": {
+    "controlEnable": true,
+    "deviceName": "BPG_DBX07",
+    "deviceParentPath": "International/T1/Pier B/Apron"
+  },
+  "propConfig": {
+    "custom.alarmsActive": {
+      "persistent": true
+    },
+    "custom.controlSourceDesc": {
+      "persistent": true
+    },
+    "custom.controlTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \"/\" + {view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tsystem.perspective.sendMessage(\u0027refresh-alarms-list\u0027)"
+      },
+      "persistent": true
+    },
+    "custom.modeDesc": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/PLC status/ModeDesc"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.showAlarms": {
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Site_Name"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.sitePath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Site_SubArea"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.typeId": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{1}.TypeId"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.controlEnable": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 665,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "custom": {
+                      "key": "value"
+                    },
+                    "meta": {
+                      "name": "AlarmsIcon"
+                    },
+                    "position": {
+                      "height": 40,
+                      "width": 40
+                    },
+                    "propConfig": {
+                      "props.image.icon.path": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "1": "{view.custom.deviceTagPath}"
+                            },
+                            "tagPath": "{1}/Alarm Summary/Active Unack"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "if({value} \u003d 0, \u0027material/warning\u0027, \u0027\u0027)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "height": 38,
+                        "icon": {
+                          "color": "var(--neutral-60)"
+                        },
+                        "width": 38
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginRight": "10px",
+                        "overflow": "hidden"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "meta": {
+                      "name": "Alarm Icon"
+                    },
+                    "position": {
+                      "height": 38,
+                      "width": 38,
+                      "x": 1,
+                      "y": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "deviceName": "",
+                          "deviceParentPath": "Alexandrina/Mt Compass/WWPS/MCP01",
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Body\").getChild(\"details_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"trend_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"alarms_expanded\").position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Alarm Button"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "marginBottom": 3,
+                    "marginRight": 5,
+                    "marginTop": 3,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-90)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Analogue Value w Label_7"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/\"+\"Lights and Priority Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "showUnitsInValue": true,
+                    "tagName": "Light Intensity",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]International/T1/Pier B/Apron/BPG_DBX07/Lights and Priority Status/Light Intensity.quality\u0027 not found.\")",
+                    "unitsWidth": "25px",
+                    "valueWidth": "80px"
+                  },
+                  "path": "Shared/Templates/Display/Analogue Value w Label",
+                  "style": {
+                    "classes": "UI/Text/Heading1",
+                    "marginBottom": "0px",
+                    "marginLeft": "25px",
+                    "marginRight": "41px",
+                    "marginTop": "5px",
+                    "overflow": "hidden"
+                  },
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Heading"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "hidden",
+                        "textAlign": "left"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "50px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Heading"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "overflow": "hidden",
+                    "textAlign": "left"
+                  },
+                  "text": "control"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "position": {
+                  "basis": "26px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "path": ".../control_expanded.position.display"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": null,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": false,
+                              "output": "material/keyboard_arrow_up"
+                            },
+                            {
+                              "input": true,
+                              "output": "material/keyboard_arrow_down"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "control_header"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading1",
+                "cursor": "pointer",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Heading"
+                    },
+                    "position": {
+                      "basis": "141px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading3",
+                        "overflow": "hidden",
+                        "textAlign": "left"
+                      },
+                      "text": "Lighting Group"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading3",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Heading_0"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading3",
+                        "overflow": "hidden",
+                        "textAlign": "left"
+                      },
+                      "text": "Status"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "60px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading3",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Heading_1"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading3",
+                        "overflow": "hidden",
+                        "textAlign": "left"
+                      },
+                      "text": "Mode"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading3",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Heading_2"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading3",
+                        "overflow": "hidden",
+                        "textAlign": "left"
+                      },
+                      "text": "Control"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "control_header"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2",
+                    "cursor": "pointer",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "Essential 1:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heading_0"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "Essential 2:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heading_1"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "Non - Essential 1:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heading_2"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "Non - Essential 2:"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "190px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Boolean Value w Label Opposite"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.labelOverride": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "expression",
+                                "tagPath": "{this.props.params.tagParentPath}+\"/\"+{this.props.params.tagName}"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": "On",
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "On"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "Off"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          },
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTagPath} + \"/Lights and Priority Status\""
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "tagName": "Essential Lights 1 Off"
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label Opposite",
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Boolean Value w Label Opposite_0"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.labelOverride": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "expression",
+                                "tagPath": "{this.props.params.tagParentPath}+\"/\"+{this.props.params.tagName}"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": "On",
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "On"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "Off"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          },
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTagPath} + \"/Lights and Priority Status\""
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "tagName": "Essential Lights 2 Off"
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label Opposite",
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Boolean Value w Label Opposite_1"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.labelOverride": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "expression",
+                                "tagPath": "{this.props.params.tagParentPath}+\"/\"+{this.props.params.tagName}"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": "On",
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "On"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "Off"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          },
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTagPath} + \"/Lights and Priority Status\""
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "tagName": "Non-Essential Lights 1 Off"
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label Opposite",
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Boolean Value w Label Opposite_2"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.params.labelOverride": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "expression",
+                                "tagPath": "{this.props.params.tagParentPath}+\"/\"+{this.props.params.tagName}"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": "On",
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "On"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "Off"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          },
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTagPath} + \"/Lights and Priority Status\""
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "tagName": "Non-Essential Lights 2 Off"
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label Opposite",
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "105px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "FlexContainer_1"
+                    },
+                    "position": {
+                      "basis": "91px"
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Single Tag"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.controlTagPath}+\u0027/\u0027+\u0027Lights Control\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "buttonText": "OFF",
+                            "tagName": "Lights Off Cmd",
+                            "writeValue": true
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag",
+                          "style": {
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Single Tag_0"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.controlTagPath}+\u0027/\u0027+\u0027Lights Control\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "buttonText": "25%",
+                            "tagName": "Lights 25pct Cmd",
+                            "writeValue": true
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag",
+                          "style": {
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Single Tag_1"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.controlTagPath}+\u0027/\u0027+\u0027Lights Control\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "buttonText": "50%",
+                            "tagName": "Lights 50pct Cmd",
+                            "writeValue": true
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag",
+                          "style": {
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Single Tag_2"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.controlTagPath}+\u0027/\u0027+\u0027Lights Control\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "buttonText": "75%",
+                            "tagName": "Lights 75pct Cmd",
+                            "writeValue": true
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag",
+                          "style": {
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Single Tag_3"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.controlTagPath}+\u0027/\u0027+\u0027Lights Control\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "buttonText": "100%",
+                            "tagName": "Lights 100pct Cmd",
+                            "writeValue": true
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag",
+                          "style": {
+                            "marginLeft": "5px",
+                            "marginRight": "5px",
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_2"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Control_Mode"
+                },
+                "position": {
+                  "basis": "200px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "control_expanded"
+            },
+            "position": {
+              "basis": "242px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginBottom": 2,
+                "marginTop": 2,
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.view.custom.showAlarms \u003d False"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Heading"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "overflow": "hidden",
+                    "textAlign": "center",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\ttagPath \u003d self.view.custom.deviceTagPath + \u0027/Alarm Reset CMD\u0027\n\tsystem.tag.writeBlocking([tagPath], [1])"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Text",
+                        "marginBottom": "5px",
+                        "marginTop": "5px",
+                        "overflow": "hidden"
+                      },
+                      "text": "reset"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "60px",
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "justify": "flex-end",
+                  "style": {
+                    "marginRight": 10,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "24px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.path": {
+                    "binding": {
+                      "config": {
+                        "path": ".../alarms_expanded.position.display"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": null,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": false,
+                              "output": "material/keyboard_arrow_up"
+                            },
+                            {
+                              "input": true,
+                              "output": "material/keyboard_arrow_down"
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "alarms_header"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading1",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "alarms_expanded"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceName} + \u0027/Alarms\u0027"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.deviceParentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.sitePath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "controlEnable": true,
+                "show": {
+                  "area": false,
+                  "device": false
+                }
+              },
+              "path": "Shared/Templates/Devices/Control/Common/Alarms",
+              "style": {
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Body"
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "UI/Popups/ContentMargins"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Info Icon"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "// Check user roles\r\ntry(hasRole(\u0027Administrator\u0027, {session.props.auth.user.userName}, \u0027default\u0027), false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#009BFF",
+          "path": "material/info",
+          "style": {
+            "classes": "Input/Icon",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.deviceTagPath"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "\u0027Tag path: \u0027 + {value}",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "18px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.custom.deviceTagPath} + \"/PLC status/OUC Time Slot\""
+                  },
+                  "transforms": [
+                    {
+                      "expression": "\u0027Time Slot : \u0027 + {value}",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Info"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "overflow": "hidden"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

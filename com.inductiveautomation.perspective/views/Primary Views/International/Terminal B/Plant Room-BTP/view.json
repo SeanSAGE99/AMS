@@ -1,0 +1,404 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Terminal B Plant Room"
+        },
+        "position": {
+          "height": 0.9615,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Terminal B Plant Room.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/T1/Terminal B/Plant Room"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.2139,
+          "y": 0.3941
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTP_DBX01",
+            "deviceParentPath": "International/T1/Terminal B/Plant Room",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4639,
+          "y": 0.6239
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTP_DBN03",
+            "deviceParentPath": "International/T1/Terminal B/Plant Room",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.714,
+          "y": 0.3942
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTP_DBN04",
+            "deviceParentPath": "International/T1/Terminal B/Plant Room",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4642,
+          "y": 0.3945
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTP_DBX02",
+            "deviceParentPath": "International/T1/Terminal B/Plant Room",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_5"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.8699,
+          "y": 0.3315
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "Suction Temperature",
+            "Analogue2Name": "Discharge Temperature",
+            "LabelOverride": "",
+            "Pump1Name": "Pump 3",
+            "Pump2Name": "Pump 4",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "",
+            "deviceName": "BTP-RSC01 Hot Water Pumps",
+            "deviceParentPath": "[default]International/T1/Terminal B/Plant Room/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_6"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.7979,
+          "y": 0.3315
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "Suction Temperature",
+            "Analogue2Name": "Discharge Temperature",
+            "LabelOverride": "",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "",
+            "deviceName": "BTP-RSC01 Solar Pumps",
+            "deviceParentPath": "[default]International/T1/Terminal B/Plant Room/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_0"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.9695,
+          "y": 0.4938
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 10",
+            "deviceParentPath": "International/T1/Terminal B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.9179,
+          "y": 0.6558
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 1 Block 16",
+            "deviceParentPath": "International/T1/Terminal B/Plant Room/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4677,
+                "y": 0.6307
+              }
+            ],
+            "x": 0.3984,
+            "y": 0.5865
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60))",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7833,
+                "y": 0.4192
+              }
+            ],
+            "x": 0.8432,
+            "y": 0.5856
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60))",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2838,
+                "y": 0.4202
+              }
+            ],
+            "x": 0.3354,
+            "y": 0.5683
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60))",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5344,
+                "y": 0.4221
+              }
+            ],
+            "x": 0.788,
+            "y": 0.5413
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60))",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9385,
+                "y": 0.6596
+              }
+            ],
+            "x": 0.7135,
+            "y": 0.5183
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60))",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

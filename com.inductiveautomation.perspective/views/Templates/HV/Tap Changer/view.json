@@ -1,0 +1,286 @@
+{
+  "custom": {
+    "DeviceTagPath": "High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer",
+    "deviceId": "01",
+    "isolated": null,
+    "tags": [
+      {
+        "tagName": "Local Mode",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Alarms"
+      },
+      {
+        "tagName": "Motor Protective Switch Activated",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Alarms"
+      },
+      {
+        "tagName": "Overcurrent Alarm",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Alarms"
+      },
+      {
+        "tagName": "Overvoltage Alarm",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Alarms"
+      },
+      {
+        "tagName": "Parallel Operation Disturbed",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Alarms"
+      },
+      {
+        "tagName": "Undervoltage Alarm",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Alarms"
+      },
+      {
+        "tagName": "Automatic Mode",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Circulating Current",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Current",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Follower",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Master",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Parallel Control",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Tap Change in Progress",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Tap Position",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      },
+      {
+        "tagName": "Voltage",
+        "tagParentPath": "[default]High Voltage/Domestic/AZS Substation/Transformer 1 Tap Changer/Status Folder"
+      }
+    ]
+  },
+  "params": {
+    "DeviceName": "Transformer 1 Tap Changer",
+    "DeviceParentPath": "High Voltage/Domestic/AZS Substation",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+    "reverseIsolatedStatus": true
+  },
+  "propConfig": {
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceId": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Parameters.DeviceID"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.isolated": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Isolated"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.reverseIsolatedStatus": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 37,
+      "width": 161
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.4865,
+          "width": 0.1119,
+          "x": 0.0311,
+          "y": 0.2695
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": true,
+                "id": "{view.params.DeviceName}",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": false,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewParams": {
+                  "deviceName": "{view.params.DeviceName}",
+                  "deviceParentPath": "{view.params.DeviceParentPath}"
+                },
+                "viewPath": "Popups/HV/Tap Changers/ppuTapChangers",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            },
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "GUetQA_K",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.8919,
+          "width": 0.8199,
+          "x": 0.1693,
+          "y": 0.0397
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\u0027Tap Changer \u0027+{view.custom.deviceId}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

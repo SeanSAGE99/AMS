@@ -1,0 +1,1907 @@
+{
+  "custom": {
+    "offlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "urlTemplateParams": {}
+      }
+    ],
+    "onlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlTemplateParams": {}
+      }
+    ],
+    "satellite": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      },
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      }
+    ],
+    "selectedMap": "offlineStreet"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.offlineStreet": {
+      "persistent": true
+    },
+    "custom.offlineStreet[0].url": {
+      "binding": {
+        "config": {
+          "expression": "{session.props.gateway.address} + \u0027/main/tiles/{z}/{x}/{y}.png\u0027"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.onlineStreet": {
+      "persistent": true
+    },
+    "custom.satellite": {
+      "persistent": true
+    },
+    "custom.selectedMap": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Map"
+        },
+        "position": {
+          "height": 1040,
+          "width": 1920
+        },
+        "propConfig": {
+          "props.layers.raster.tile": {
+            "binding": {
+              "config": {
+                "path": "view.custom.selectedMap"
+              },
+              "transforms": [
+                {
+                  "fallback": "{view.custom.offlineStreet}",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "satellite",
+                      "output": "{view.custom.satellite}"
+                    },
+                    {
+                      "input": "onlineStreet",
+                      "output": "{view.custom.onlineStreet}"
+                    },
+                    {
+                      "input": "offlineStreet",
+                      "output": "{view.custom.offlineStreet}"
+                    }
+                  ],
+                  "outputType": "expression",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "dragging": false,
+          "init": {
+            "center": {
+              "lat": -33.9354,
+              "lng": 151.1665
+            },
+            "zoom": 16.8
+          },
+          "layers": {
+            "raster": {},
+            "ui": {
+              "view": [
+                {
+                  "lat": -33.933,
+                  "lng": 151.1647,
+                  "params": {
+                    "navigationLabel": "Cooling Towers (100-103)",
+                    "navigationPage": "/WMS/International/Cooling Towers Geo Layout",
+                    "zoomLevel": 15
+                  },
+                  "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                  "shadow": false,
+                  "transparentBackground": true
+                },
+                {
+                  "lat": -33.9371,
+                  "lng": 151.169,
+                  "params": {
+                    "navigationLabel": "Piers B \u0026 C",
+                    "navigationPage": "/WMS/International/International Term. Geo Layout",
+                    "zoomLevel": 15
+                  },
+                  "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                  "shadow": false,
+                  "transparentBackground": true
+                }
+              ]
+            },
+            "vector": {
+              "circle": [
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9383,
+                      "lng": 151.1656,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9365,
+                      "lng": 151.167,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9375,
+                      "lng": 151.1687,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9369,
+                      "lng": 151.1689,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9337,
+                      "lng": 151.1661,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9304,
+                      "lng": 151.165,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9305,
+                      "lng": 151.1648,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9327,
+                      "lng": 151.1642,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9328,
+                      "lng": 151.1645,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9335,
+                      "lng": 151.1646,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                },
+                {
+                  "circles": [
+                    {
+                      "lat": -33.9331,
+                      "lng": 151.1649,
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "radius": 6,
+                  "stroke": {
+                    "color": "",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 3
+                  }
+                }
+              ],
+              "polyline": [
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9383,
+                          "lng": 151.1656
+                        },
+                        {
+                          "lat": -33.9383,
+                          "lng": 151.1622
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9383,
+                          "lng": 151.1622
+                        },
+                        {
+                          "lat": -33.9395,
+                          "lng": 151.1622
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9365,
+                          "lng": 151.167
+                        },
+                        {
+                          "lat": -33.9395,
+                          "lng": 151.167
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9375,
+                          "lng": 151.1687
+                        },
+                        {
+                          "lat": -33.9375,
+                          "lng": 151.1707
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9375,
+                          "lng": 151.1707
+                        },
+                        {
+                          "lat": -33.9395,
+                          "lng": 151.1707
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9369,
+                          "lng": 151.1689
+                        },
+                        {
+                          "lat": -33.9369,
+                          "lng": 151.1751
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9369,
+                          "lng": 151.1751
+                        },
+                        {
+                          "lat": -33.9395,
+                          "lng": 151.1751
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9337,
+                          "lng": 151.1661
+                        },
+                        {
+                          "lat": -33.9337,
+                          "lng": 151.1737
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9337,
+                          "lng": 151.1737
+                        },
+                        {
+                          "lat": -33.9313,
+                          "lng": 151.1737
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9304,
+                          "lng": 151.165
+                        },
+                        {
+                          "lat": -33.9304,
+                          "lng": 151.1667
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9304,
+                          "lng": 151.1667
+                        },
+                        {
+                          "lat": -33.9309,
+                          "lng": 151.1667
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9305,
+                          "lng": 151.1648
+                        },
+                        {
+                          "lat": -33.9305,
+                          "lng": 151.1633
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9305,
+                          "lng": 151.1633
+                        },
+                        {
+                          "lat": -33.9309,
+                          "lng": 151.1633
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9327,
+                          "lng": 151.1642
+                        },
+                        {
+                          "lat": -33.9327,
+                          "lng": 151.16
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9327,
+                          "lng": 151.16
+                        },
+                        {
+                          "lat": -33.9313,
+                          "lng": 151.16
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9328,
+                          "lng": 151.1645
+                        },
+                        {
+                          "lat": -33.9328,
+                          "lng": 151.1565
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9328,
+                          "lng": 151.1565
+                        },
+                        {
+                          "lat": -33.9313,
+                          "lng": 151.1565
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9335,
+                          "lng": 151.1646
+                        },
+                        {
+                          "lat": -33.9335,
+                          "lng": 151.158
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9335,
+                          "lng": 151.158
+                        },
+                        {
+                          "lat": -33.9395,
+                          "lng": 151.158
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9331,
+                          "lng": 151.1649
+                        },
+                        {
+                          "lat": -33.9331,
+                          "lng": 151.1701
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": true,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "polylines": [
+                    {
+                      "name": "",
+                      "points": [
+                        {
+                          "lat": -33.9331,
+                          "lng": 151.1701
+                        },
+                        {
+                          "lat": -33.9313,
+                          "lng": 151.1701
+                        }
+                      ],
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 2
+                  }
+                }
+              ],
+              "rectangle": [
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": false,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "rectangles": [
+                    {
+                      "corner1": {
+                        "lat": -33.9324,
+                        "lng": 151.164
+                      },
+                      "corner2": {
+                        "lat": -33.9338,
+                        "lng": 151.1655
+                      },
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "5 5",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 1
+                  }
+                },
+                {
+                  "event": {
+                    "stopPropagation": false
+                  },
+                  "fill": {
+                    "color": "",
+                    "enabled": false,
+                    "opacity": 1,
+                    "rule": "nonzero"
+                  },
+                  "noClip": false,
+                  "rectangles": [
+                    {
+                      "corner1": {
+                        "lat": -33.9358,
+                        "lng": 151.1677
+                      },
+                      "corner2": {
+                        "lat": -33.9396,
+                        "lng": 151.1705
+                      },
+                      "name": "",
+                      "properties": {}
+                    }
+                  ],
+                  "smoothFactor": 1,
+                  "stroke": {
+                    "color": "#000000",
+                    "dashArray": "5 5",
+                    "dashOffset": "",
+                    "enabled": true,
+                    "lineCap": "round",
+                    "lineJoin": "round",
+                    "opacity": 1,
+                    "weight": 1
+                  }
+                }
+              ]
+            }
+          },
+          "zoom": {
+            "controls": false,
+            "max": 16.8,
+            "min": 16.8,
+            "onBoxZoom": false,
+            "onDoubleClick": false,
+            "onScrollWheel": false
+          }
+        },
+        "type": "ia.display.map"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027satellite\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 34,
+          "width": 146,
+          "x": 1758,
+          "y": 61
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Live Satellite"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027onlineStreet\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 34,
+          "width": 146,
+          "x": 1758,
+          "y": 105
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Live Street"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.selectedMap \u003d \u0027offlineStreet\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 34,
+          "width": 146,
+          "x": 1758,
+          "y": 149
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "text": "Offline Street"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/WMS/International/international-pipe-layout"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 34,
+          "width": 174,
+          "x": 4.22,
+          "y": 4.05
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "International Pipe Layout",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_1"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 59.7459,
+          "y": 73.12
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter NWS1B",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_0"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 336.7,
+          "y": 73.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter NWS1A",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_2"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 613.7,
+          "y": 73.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS2B",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_3"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 890.7,
+          "y": 73.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS2A",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_6"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 1167.7,
+          "y": 73.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS4A",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_7"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 164.027,
+          "y": 903.05
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS3",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_5"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 1444.7,
+          "y": 73.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS5",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_11"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 1572,
+          "y": 903.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter A",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters/NWS11"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_14"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 1220,
+          "y": 903.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter B",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters/NWS11"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_13"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 516,
+          "y": 903.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS6",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_12"
+        },
+        "position": {
+          "height": 52,
+          "width": 177.02,
+          "x": 868,
+          "y": 903.1
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter A",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters/NWS7/NWS7"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Analogue Value w Label"
+        },
+        "position": {
+          "height": 31,
+          "width": 255.17,
+          "x": 829,
+          "y": 960.08
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "labelOverride": "Air Temperature (°C)",
+            "showUnitsInValue": true,
+            "tagName": "Temperature",
+            "tagParentPath": "Water Monitoring System/International/Flow Meters/NWS7/Air Temperature/Status Folder",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "100px"
+          },
+          "path": "Shared/Templates/Display/Flow Analogue Value w Label",
+          "style": {
+            "backgroundColor": "var(--neutral-40)",
+            "borderStyle": "inset",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}

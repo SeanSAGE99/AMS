@@ -1,0 +1,320 @@
+{
+  "custom": {
+    "deviceLocation": "International",
+    "deviceTagPath": "International/test/Lift 33-test",
+    "tags": [
+      {
+        "tagName": "Healthy Running",
+        "tagParentPath": "[default]International/test/Lift 33-test/Status Folder"
+      },
+      {
+        "tagName": "Service - Maintenance Mode",
+        "tagParentPath": "[default]International/test/Lift 33-test/Status Folder"
+      }
+    ]
+  },
+  "params": {
+    "alarmRight": true,
+    "alwaysVisible": false,
+    "deviceName": "Lift 33-test",
+    "deviceParentPath": "International/test",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.deviceLocation": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "transforms": [
+          {
+            "code": "\tword_to_search_1 \u003d \"International\"\n\tword_to_search_2 \u003d \"Domestic\"\n\t\n\tif word_to_search_1 in value:\n\t    result \u003d word_to_search_1\n\telif word_to_search_2 in value:\n\t    result \u003d word_to_search_2\n\telse:\n\t    result \u003d \"Neither word found\"\n\t\n\treturn(result)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.alarmRight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.alwaysVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 91,
+      "width": 91
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "QJToLEpt",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.6593,
+          "width": 0.6593,
+          "y": 0.3407
+        },
+        "propConfig": {
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath} + \u0027/Status Folder/Healthy Running\u0027)"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": false,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath} + \"/Parameters.DeviceID\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-80)",
+            "borderStyle": "solid",
+            "borderWidth": 1.5
+          },
+          "textStyle": {
+            "color": "#000000",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.3297,
+          "width": 0.3297,
+          "x": 0.6703,
+          "y": 0.5055
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.alarmRight"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "IED03A",
+              "parentPath": "[default]High Voltage/International/Link Road Substation"
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.5495,
+          "width": 0.5495,
+          "x": 0.0549,
+          "y": 0.3956
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath} + \"/Status Folder/Service - Maintenance Mode\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#555555",
+          "path": "material/build",
+          "style": {
+            "classes": "",
+            "opacity": 0.5
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Symbol_0"
+        },
+        "position": {
+          "height": 0.3297,
+          "width": 0.3297,
+          "x": 0.1648
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.alarmRight"
+              },
+              "transforms": [
+                {
+                  "expression": "!{value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "IED03A",
+              "parentPath": "[default]High Voltage/International/Link Road Substation"
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "meta.visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.internalTransport"
+          },
+          "transforms": [
+            {
+              "expression": "{value}||{view.params.alwaysVisible}",
+              "type": "expression"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

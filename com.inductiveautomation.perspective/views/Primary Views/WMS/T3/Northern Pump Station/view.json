@@ -1,0 +1,886 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Pump"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.1709,
+          "y": 0.3671
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Pump 1",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTagPath, \u0027Popups/WMS/Flow Meter\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTagPath, \u0027Popups/WMS/Flow Meter\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName}, showCloseIcon \u003d False, draggable \u003d False)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Flow Analogue Value w Label"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.3212,
+          "y": 0.7202
+        },
+        "props": {
+          "params": {
+            "deviceName": "NPS Flow 1",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.0252,
+          "y": 0.359
+        },
+        "props": {
+          "text": "Duty Cycle:",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textDecoration": "underline"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.076,
+          "x": 0.0252,
+          "y": 0.469
+        },
+        "props": {
+          "text": "High Flow Duty 1 Pump:",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.076,
+          "x": 0.0252,
+          "y": 0.395
+        },
+        "props": {
+          "text": "Low Flow Duty 1 Pump:",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.0252,
+          "y": 0.432
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "Water Monitoring System/Domestic/Northern Pump Station/Low Flow Duty Cycle Pump"
+              },
+              "transforms": [
+                {
+                  "fallback": "",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "Pump 1"
+                    },
+                    {
+                      "input": 2,
+                      "output": "Pump 2"
+                    },
+                    {
+                      "input": 3,
+                      "output": "Pump 3"
+                    },
+                    {
+                      "input": 4,
+                      "output": "Pump 4"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Device/Mode/Auto"
+          },
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.0252,
+          "y": 0.506
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "Water Monitoring System/Domestic/Northern Pump Station/High Flow Duty Cycle Pump"
+              },
+              "transforms": [
+                {
+                  "fallback": "",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "Pump 5"
+                    },
+                    {
+                      "input": 2,
+                      "output": "Pump 6"
+                    },
+                    {
+                      "input": 3,
+                      "output": "Pump 7"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Device/Mode/Auto"
+          },
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Pump_0"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.286,
+          "y": 0.3671
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Pump 2",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pump_1"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.4017,
+          "y": 0.3671
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Pump 3",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pump_2"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.5173,
+          "y": 0.3671
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Pump 4",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pump_3"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.6329,
+          "y": 0.3671
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Pump 5",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pump_4"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.7485,
+          "y": 0.3671
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Pump 6",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pump_5"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.8642,
+          "y": 0.3671
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Pump 7",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTagPath, \u0027Popups/WMS/Flow Meter\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.deviceTagPath, \u0027Popups/WMS/Flow Meter\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName}, showCloseIcon \u003d False, draggable \u003d False)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Flow Analogue Value w Label_0"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.8622,
+          "y": 0.7872
+        },
+        "propConfig": {
+          "custom.deviceTagPath": {
+            "binding": {
+              "config": {
+                "expression": "{this.props.params.deviceParentPath}+ \u0027/\u0027 +{this.props.params.deviceName}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "deviceName": "NPS Flow 2",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0156,
+          "x": 0.9745,
+          "y": 0.1677
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_0"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0156,
+          "x": 0.8335,
+          "y": 0.8059
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_1"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3465,
+          "y": 0.6646
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_2"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0156,
+          "x": 0.9745,
+          "y": 0.2727
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Analogue"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.4474,
+          "y": 0.2115
+        },
+        "props": {
+          "params": {
+            "deviceName": "Suction Pressure",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "popupWindow": "Popups/WMS/ppuAnalogue"
+          },
+          "path": "Templates/WMS/Analogue"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.0125,
+          "y": 0.05
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/ppuPLC"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.0188,
+          "y": 0.1365
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS",
+            "DeviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Modbus Gateway"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.0672,
+          "x": 0.0125,
+          "y": 0.2231
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Gateway 1",
+            "DeviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus Gateway"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue_0"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.4474,
+          "y": 0.5795
+        },
+        "props": {
+          "params": {
+            "deviceName": "Discharge Pressure",
+            "deviceParentPath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "popupWindow": "Popups/WMS/ppuAnalogue"
+          },
+          "path": "Templates/WMS/Analogue"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Site Navigation Small"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832,
+          "y": -0.0002
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "Water Monitoring System/Domestic/Northern Pump Station",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0.0057,
+      "y": 0.0144
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [],
+                                                "x": 0.3677,
+                                                "y": 0.6894
+                                              }
+                                            ],
+                                            "x": 0.1224,
+                                            "y": 0.6894
+                                          },
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [
+                                                  {
+                                                    "connections": [],
+                                                    "x": 0.2048,
+                                                    "y": 0.3683
+                                                  },
+                                                  {
+                                                    "connections": [
+                                                      {
+                                                        "connections": [],
+                                                        "x": 0.3204,
+                                                        "y": 0.3671
+                                                      },
+                                                      {
+                                                        "connections": [
+                                                          {
+                                                            "connections": [],
+                                                            "x": 0.4361,
+                                                            "y": 0.3671
+                                                          },
+                                                          {
+                                                            "connections": [
+                                                              {
+                                                                "connections": [],
+                                                                "x": 0.5517,
+                                                                "y": 0.3683
+                                                              },
+                                                              {
+                                                                "connections": [
+                                                                  {
+                                                                    "connections": [],
+                                                                    "x": 0.6673,
+                                                                    "y": 0.3671
+                                                                  },
+                                                                  {
+                                                                    "connections": [
+                                                                      {
+                                                                        "connections": [],
+                                                                        "x": 0.7829,
+                                                                        "y": 0.3671
+                                                                      },
+                                                                      {
+                                                                        "connections": [
+                                                                          {
+                                                                            "connections": [],
+                                                                            "x": 0.8986,
+                                                                            "y": 0.3671
+                                                                          },
+                                                                          {
+                                                                            "connections": [],
+                                                                            "x": 0.9934,
+                                                                            "y": 0.2975
+                                                                          }
+                                                                        ],
+                                                                        "x": 0.8986,
+                                                                        "y": 0.2975
+                                                                      }
+                                                                    ],
+                                                                    "x": 0.7829,
+                                                                    "y": 0.2975
+                                                                  }
+                                                                ],
+                                                                "x": 0.6673,
+                                                                "y": 0.2975
+                                                              }
+                                                            ],
+                                                            "x": 0.5517,
+                                                            "y": 0.2975
+                                                          }
+                                                        ],
+                                                        "x": 0.4361,
+                                                        "y": 0.2975
+                                                      }
+                                                    ],
+                                                    "x": 0.3204,
+                                                    "y": 0.2975
+                                                  }
+                                                ],
+                                                "x": 0.2048,
+                                                "y": 0.2975
+                                              },
+                                              {
+                                                "connections": [
+                                                  {
+                                                    "connections": [],
+                                                    "x": 0.9934,
+                                                    "y": 0.1927
+                                                  }
+                                                ],
+                                                "x": 0.1224,
+                                                "y": 0.1927
+                                              }
+                                            ],
+                                            "x": 0.1224,
+                                            "y": 0.2975
+                                          }
+                                        ],
+                                        "x": 0.1224,
+                                        "y": 0.55
+                                      },
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [],
+                                            "x": 0.187,
+                                            "y": 0.4029
+                                          }
+                                        ],
+                                        "x": 0.1542,
+                                        "y": 0.4029
+                                      }
+                                    ],
+                                    "x": 0.1542,
+                                    "y": 0.55
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.3026,
+                                        "y": 0.4029
+                                      }
+                                    ],
+                                    "x": 0.2682,
+                                    "y": 0.4029
+                                  }
+                                ],
+                                "x": 0.2682,
+                                "y": 0.55
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.4182,
+                                    "y": 0.4029
+                                  }
+                                ],
+                                "x": 0.3838,
+                                "y": 0.4029
+                              }
+                            ],
+                            "x": 0.3838,
+                            "y": 0.55
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.5339,
+                                "y": 0.4029
+                              }
+                            ],
+                            "x": 0.4995,
+                            "y": 0.4029
+                          }
+                        ],
+                        "x": 0.4995,
+                        "y": 0.55
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.7651,
+                                "y": 0.4029
+                              }
+                            ],
+                            "x": 0.7307,
+                            "y": 0.4029
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.8807,
+                                    "y": 0.4029
+                                  }
+                                ],
+                                "x": 0.8463,
+                                "y": 0.4029
+                              },
+                              {
+                                "connections": [],
+                                "x": 0.8463,
+                                "y": 0.85
+                              }
+                            ],
+                            "x": 0.8463,
+                            "y": 0.55
+                          }
+                        ],
+                        "x": 0.7307,
+                        "y": 0.55
+                      }
+                    ],
+                    "x": 0.6151,
+                    "y": 0.55
+                  }
+                ],
+                "x": 0.6151,
+                "y": 0.4029
+              }
+            ],
+            "x": 0.6495,
+            "y": 0.4029
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

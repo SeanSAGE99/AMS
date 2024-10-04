@@ -1,0 +1,2569 @@
+{
+  "custom": {
+    "counter": 11,
+    "key": "False"
+  },
+  "events": {
+    "system": {
+      "onShutdown": {
+        "config": {
+          "script": "\ttagPaths\u003d [\u0027[default]Water Monitoring System/International/Test Pump Station/TestKey\u0027]\n\tsystem.tag.writeBlocking(tagPaths,[\"False\"])"
+        },
+        "enabled": false,
+        "scope": "G",
+        "type": "script"
+      },
+      "onStartup": [
+        {
+          "config": {
+            "script": "\timport time\n\t\n\tdef refreshBinding(key, sessionId, pageId):\n\t\timport time\n\t\tsystem.perspective.print(key, sessionId, pageId)\n\t\twhile key\u003d\u003d\"True\":\n\t\t\tsystem.perspective.print(\"script is running.\", sessionId, pageId)\n\t\t\t\n\t\t\t#refresh\n\t\t\tself.getChild(\"root\").getChild(\"Label_0\").refreshBinding(\"props.text\")\n\t\t\t\n\t\t\ttime.sleep(5)\n\t\t\t\n\t\t\t#currentValue \u003d self.custom.key\n\t\t\ttagPaths\u003d [\u0027[default]Water Monitoring System/International/Test Pump Station/TestKey\u0027]\n\t\t\tcurrentValue \u003d system.tag.readBlocking(tagPaths)[0].value\n\t\t\t\n\t\t\tkey\u003dcurrentValue\n\t\t\t\n\t\t\tsystem.perspective.print(currentValue , sessionId, pageId)\n\t\t\t\n\tsessionId \u003d self.session.props.id\n\tpageId \u003d self.page.props.pageId\n\t\n\tself.custom.key \u003d \"True\"\n\tsystem.util.invokeAsynchronous(refreshBinding , [self.custom.key, sessionId, pageId])\n\tsystem.perspective.print(\"async function has been called.\")"
+          },
+          "enabled": false,
+          "scope": "G",
+          "type": "script"
+        },
+        {
+          "config": {
+            "script": "\tself.session.custom.visibility.distributionBoards\u003d \u0027false\u0027"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      ]
+    }
+  },
+  "params": {},
+  "propConfig": {
+    "custom.counter": {
+      "persistent": true
+    },
+    "custom.key": {
+      "binding": {
+        "config": {
+          "bidirectional": true,
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[default]Water Monitoring System/International/Test Pump Station/TestKey"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CB"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.7377,
+          "y": 0.0148
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthToBusbarVisible": true,
+            "EarthTop": true,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.325,
+          "y": 0.2231
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Horizontal"
+        },
+        "position": {
+          "height": 0.0813,
+          "width": 0.0526,
+          "x": 0.7681,
+          "y": 0.1779
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthOnLeft": false,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block"
+        },
+        "position": {
+          "height": 0.0346,
+          "width": 0.0323,
+          "x": 0.7048,
+          "y": 0.0735
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0469,
+          "x": 0.8409,
+          "y": 0.3808
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch Block"
+        },
+        "position": {
+          "height": 0.0346,
+          "width": 0.0323,
+          "x": 0.891,
+          "y": 0.5152
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch Horizontal"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0521,
+          "x": 0.9081,
+          "y": 0.4164
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthOnLeft": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Voltage Transformer"
+        },
+        "position": {
+          "height": 0.1144,
+          "width": 0.0464,
+          "x": 0.9016,
+          "y": 0.6447
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Voltage Transformer 5",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Voltage Transformer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0651,
+          "x": 0.7657,
+          "y": 0.8173
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX with 3 Temp"
+        },
+        "position": {
+          "height": 0.0769,
+          "width": 0.0974,
+          "x": 0.8652,
+          "y": 0.8817
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX with 3 Temp"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX with Temp"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0974,
+          "x": 0.7641,
+          "y": 0.8899
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX with Temp"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "FIP"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.075,
+          "x": 0.2178,
+          "y": 0.3995
+        },
+        "props": {
+          "params": {
+            "DeviceName": "FIP 1",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Fire Indicator Panel/FIP"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan"
+        },
+        "position": {
+          "height": 0.0827,
+          "width": 0.0797,
+          "x": 0.3384,
+          "y": 0.4047
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Fan 1",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "direction": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "shownOnOverview": true
+          },
+          "path": "Templates/HV/Fans/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Battery Charger"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.2862,
+          "y": 0.3995
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Battery Charger A",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Battery Chargers/Battery Charger"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Arc Flash_0"
+        },
+        "position": {
+          "height": 0.0808,
+          "width": 0.0745,
+          "x": 0.2828,
+          "y": 0.4985
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Arc Flash Relay 10",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Arc Flash/Arc Flash"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "BBP"
+        },
+        "position": {
+          "height": 0.0433,
+          "width": 0.037,
+          "x": 0.4433,
+          "y": 0.4168
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Busbar Protection 1",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "reverseIsolatedStatus": true
+          },
+          "path": "Templates/HV/BBP"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.2901,
+          "y": 0.076
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS 1",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.2411,
+          "y": 0.0753
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS 2",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AlarmWlabel"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.3187,
+          "y": 0.5066
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Genset Earth Fault",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AlarmWlabel_0"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.3187,
+          "y": 0.5374
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Air Conditioning",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AlarmWlabel_1"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.3187,
+          "y": 0.571
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Sub Surge Arrester",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0769,
+          "width": 0.1109,
+          "x": 0.5049,
+          "y": 0.4134
+        },
+        "props": {
+          "alignVertical": "top",
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "old link rd ambient temp"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0529,
+          "width": 0.0427,
+          "x": 0.5143,
+          "y": 0.437
+        },
+        "props": {
+          "text": "Substation Ambient Temperature",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value"
+        },
+        "position": {
+          "height": 0.0356,
+          "width": 0.0536,
+          "x": 0.5768,
+          "y": 0.4994
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Temperature",
+            "tagParentPath": "[default]High Voltage/Domestic/Test Substation/PLC/Sub Ambient Temperature/Status Folder",
+            "tagQuality": "Good",
+            "unitsOverride": "",
+            "unitsWidth": "20px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AlarmWlabel_2"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.4966,
+          "y": 0.5396
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Sub Ambient Temperature",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel V1.1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "ambientTemperatureSymbol_0"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.0208,
+          "x": 0.5541,
+          "y": 0.4975
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "expression": "\u0027High Voltage/Domestic/Test Substation/PLC/Sub Ambient Temperature\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "",
+              "parentPath": ""
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "ambientTemperatureSymbol"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.0208,
+          "x": 0.5523,
+          "y": 0.4427
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "expression": "\u0027High Voltage/International/Link Road Substation/PLC/Sub Ambient Temperature\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "",
+              "parentPath": ""
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AlarmWlabel_3"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.4812,
+          "y": 0.3288
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Power Supply 1",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC_0"
+        },
+        "position": {
+          "height": 0.0827,
+          "width": 0.0542,
+          "x": 0.4173,
+          "y": 0.226
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status 2",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "AlarmWlabel_4"
+        },
+        "position": {
+          "height": 0.0192,
+          "width": 0.1568,
+          "x": 0.4804,
+          "y": 0.2308
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Remote IO 1",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/AlarmWlabel"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0672,
+          "x": 0.9181,
+          "y": 0.0345
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB Horizontal"
+        },
+        "position": {
+          "height": 0.0813,
+          "width": 0.0526,
+          "x": 0.8552,
+          "y": 0.1763
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "EarthOnLeft": true,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX static"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0651,
+          "x": 0.5432,
+          "y": 0.0596
+        },
+        "props": {
+          "params": {
+            "DeviceName": "TX01",
+            "Rating": "1.5kVA",
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/TX static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB static"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.6073,
+          "y": 0.0154
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "circuitNo": "5-111",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/CB static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Voltage Transformer static"
+        },
+        "position": {
+          "height": 0.1144,
+          "width": 0.0307,
+          "x": 0.5137,
+          "y": 0.0519
+        },
+        "props": {
+          "params": {
+            "CircuitNumber": "5-599",
+            "deviceID": 2,
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/Voltage Transformer static"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.15,
+          "x": 0.509,
+          "y": 0.0077
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "Static Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1229,
+          "x": 0.7111,
+          "y": 0.0067
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "CB Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1229,
+          "x": 0.8439,
+          "y": 0.0067
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "LVCB Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1396,
+          "x": 0.8309,
+          "y": 0.3567
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "SW Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1839,
+          "x": 0.7699,
+          "y": 0.7721
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "TX Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.0984,
+          "x": 0.8694,
+          "y": 0.6
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "VT Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.4083,
+          "x": 0.2471,
+          "y": 0.1827
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "PLC, Remote IO Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.4083,
+          "x": 0.246,
+          "y": 0.3596
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "Other HV Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_10"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.15,
+          "x": 0.2522,
+          "y": 0.0077
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "UPS Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.4083,
+          "x": 0.2474,
+          "y": 0.6288
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "Kiosk HV Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB_0"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0474,
+          "x": 0.5167,
+          "y": 0.6193
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": true,
+            "EarthTop": true,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_1"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0474,
+          "x": 0.462,
+          "y": 0.6193
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": true,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_2"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0474,
+          "x": 0.5818,
+          "y": 0.6193
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB03",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": true,
+            "EarthTop": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_3"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.0474,
+          "x": 0.6287,
+          "y": 0.6193
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB04",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "EarthToBusbarVisible": true,
+            "EarthTop": true,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Arc Flash_1"
+        },
+        "position": {
+          "height": 0.0808,
+          "width": 0.0745,
+          "x": 0.3682,
+          "y": 0.6645
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Arc Flash Relay",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Arc Flash/Arc Flash"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Battery Charger_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.2687,
+          "y": 0.6683
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Battery Charger",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Battery Chargers/Battery Charger"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX_0"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0651,
+          "x": 0.3312,
+          "y": 0.696
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC 1",
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX bay High Temp. Alarm"
+        },
+        "position": {
+          "height": 0.0269,
+          "width": 0.124,
+          "x": 0.376,
+          "y": 0.125
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "High Voltage/International/Substation 1/PLC/Fan12 Over Temp Trip"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "text": "Transformer Bay High Temperature Alarm",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1036,
+          "x": 0.3937,
+          "y": 0.0808
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "single bit alarm label",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Modbus TCP Device"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.2469,
+          "y": 0.2278
+        },
+        "props": {
+          "params": {
+            "DeviceName": "RTU Status",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus TCP Device"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Earth Optymised",
+          "visible": 1
+        },
+        "position": {
+          "height": 0.0433,
+          "rotate": {
+            "anchor": "50% 0%",
+            "angle": "-90deg"
+          },
+          "width": 0.0089,
+          "x": 0.7439,
+          "y": 0.0505
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.Earthed} \u003d true \u0026\u0026 {view.params.EarthTop} \u003d false) || {view.params.EarthToBusbarVisible} \u003d true \u0026\u0026 {view.custom.EarthToBusbar} \u003d true, 1, 0)"
+              },
+              "enabled": false,
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m12.315 8.3564-9.9588 0.0051",
+                  "name": "path11",
+                  "type": "path"
+                },
+                {
+                  "d": "m9.9585 10.765-5.0774 0.0098",
+                  "name": "path13",
+                  "type": "path"
+                },
+                {
+                  "d": "m8.565 13.173-2.2964 0.02092",
+                  "name": "path15",
+                  "type": "path"
+                },
+                {
+                  "d": "m7.4254 7.8751-0.0029-15.034",
+                  "name": "path17",
+                  "type": "path"
+                },
+                {
+                  "d": "m7.4225-7.1593-7.0987-12.066",
+                  "name": "path19",
+                  "type": "path"
+                }
+              ],
+              "fill": {
+                "paint": "none",
+                "rule": "evenodd"
+              },
+              "name": "g21",
+              "stroke": {
+                "linecap": "round",
+                "paint": "#008000"
+              },
+              "transform": "matrix(.8273 0 0 .6548 -.011416 12.75)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 10.583 22.49"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Genset"
+        },
+        "position": {
+          "height": 0.074,
+          "width": 0.0885,
+          "x": 0.7124,
+          "y": 0.4041
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/Test Substation/Genset PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/xLER Genset/Genset"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1396,
+          "x": 0.6786,
+          "y": 0.3567
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "AGL Generator Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "xLER Overview"
+        },
+        "position": {
+          "height": 0.2596,
+          "width": 0.1719,
+          "x": 0.6713,
+          "y": 0.5106
+        },
+        "props": {
+          "params": {
+            "deviceName": "Standby Genset",
+            "deviceParentPath": "High Voltage/Domestic/TEST Substation/Genset PLC"
+          },
+          "path": "Templates/HV/xLER Genset/xLER Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tap Changer"
+        },
+        "position": {
+          "height": 0.0356,
+          "width": 0.0839,
+          "x": 0.1292,
+          "y": 0.0491
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 1 Tap Changer",
+            "DeviceParentPath": "[default]High Voltage/Domestic/Test Substation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "reverseIsolatedStatus": true
+          },
+          "path": "Templates/HV/Tap Changer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.15,
+          "x": 0.0932,
+          "y": 0.0096
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "tap changer Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Switch_7"
+        },
+        "position": {
+          "height": 0.0596,
+          "width": 0.0667,
+          "x": 0.1761,
+          "y": 0.1471
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Switch A1_1",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Switch"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Modbus Gateway_3"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.0672,
+          "x": 0.0938,
+          "y": 0.1356
+        },
+        "props": {
+          "params": {
+            "DeviceName": "HV Gateway",
+            "DeviceParentPath": "High Voltage/Domestic/Test Substation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus Gateway"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.15,
+          "x": 0.0958,
+          "y": 0.1048
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "IEC61850 Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_3"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.0729,
+          "y": 0.4645
+        },
+        "props": {
+          "path": "material/pan_tool",
+          "style": {
+            "margin": 10
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_4"
+        },
+        "position": {
+          "height": 0.0298,
+          "width": 0.013,
+          "x": 0.0052,
+          "y": 0.4115
+        },
+        "propConfig": {
+          "props.path": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]High Voltage/Flasher"
+              },
+              "transforms": [
+                {
+                  "fallback": null,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "material/pan_tool"
+                    },
+                    {
+                      "input": false,
+                      "output": "material/autorenew"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fill": "#C0C0C000",
+            "margin": 10,
+            "stroke": "Var(--neutral-80)",
+            "strokeWidth": 2
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_6"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.05,
+          "y": 0.4644
+        },
+        "props": {
+          "path": "material/error_outline",
+          "style": {
+            "margin": 10
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_7"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.0979,
+          "y": 0.4634
+        },
+        "props": {
+          "path": "material/autorenew",
+          "style": {
+            "margin": 10
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_8"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.1166,
+          "y": 0.4634
+        },
+        "props": {
+          "path": "material/block",
+          "style": {
+            "margin": 10
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_16"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.15,
+          "x": 0.0276,
+          "y": 0.424
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "GE Distribution Board Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0193,
+          "y": 0.5106
+        },
+        "props": {
+          "params": {
+            "deviceName": "test_BPG_DBX1",
+            "deviceParentPath": "[default]International/T1/Pier B/Apron",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_0"
+        },
+        "position": {
+          "height": 0.0356,
+          "width": 0.0729,
+          "x": 0.1015,
+          "y": 0.5106
+        },
+        "props": {
+          "params": {
+            "deviceName": "test_BPG_DBX2",
+            "deviceParentPath": "[default]International/T1/Pier B/Apron",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_17"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.15,
+          "x": 0.0318,
+          "y": 0.5865
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "Siemens Distribution Board Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0276,
+          "y": 0.6462
+        },
+        "props": {
+          "params": {
+            "deviceName": "test_BPG_DBX7",
+            "deviceParentPath": "[default]International/T1/Pier B/Apron",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_18"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.15,
+          "x": 0.0213,
+          "y": 0.724
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "Kingfisher Aerobridge Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Aerobridge"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0198,
+          "y": 0.7725
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 30_test",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Aerobridge A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/Aerobridge"
+          },
+          "path": "Templates/Aerobridges/Aerobridge"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.1,
+          "y": 0.7725
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 30_test",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 30_test",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 31_test",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0833,
+          "x": 0.012,
+          "y": 0.8215
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 30_test",
+            "deviceParentPath": "[default]International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0833,
+          "x": 0.1036,
+          "y": 0.8196
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 30_test",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_19"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.4083,
+          "x": 0.251,
+          "y": 0.7788
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "WMS Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter"
+        },
+        "position": {
+          "height": 0.0413,
+          "width": 0.0979,
+          "x": 0.4108,
+          "y": 0.817
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter 5070-51_test",
+            "deviceParentPath": "[default]Water Monitoring System/International/Test Pump Station"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump"
+        },
+        "position": {
+          "height": 0.1144,
+          "width": 0.0792,
+          "x": 0.2933,
+          "y": 0.8109
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "deviceName": "SPS 4_test",
+            "deviceParentPath": "[default]Water Monitoring System/International/Test Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.sendMessage(\u0027alarmSymbolHandler\u0027, scope \u003d \"page\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0757,
+          "width": 0.1072,
+          "x": 0.0108,
+          "y": 0.0341
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "now(0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Analogue"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.1432,
+          "x": 0.5182,
+          "y": 0.8213
+        },
+        "props": {
+          "params": {
+            "AnalogueName": "Process Value",
+            "deviceName": "test_Recycled Water Colour Analyser",
+            "deviceParentPath": "[default]Water Monitoring System/International/Test Pump Station",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Analogue"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pit"
+        },
+        "position": {
+          "height": 0.1028,
+          "width": 0.0694,
+          "x": 0.3736,
+          "y": 0.8917
+        },
+        "props": {
+          "params": {
+            "deviceName": "Pit_test",
+            "deviceParentPath": "[default]Water Monitoring System/International/Test Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/WMS/Pit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tank with Sparkline_0"
+        },
+        "position": {
+          "height": 0.2,
+          "width": 0.1,
+          "x": 0.1825,
+          "y": 0.793
+        },
+        "props": {
+          "params": {
+            "DetailsAtBottom": true,
+            "IndicatorOnRight": true,
+            "LiquidColor": "var(--info)",
+            "SparklineWidth": 3,
+            "deviceName": "Wet Well 2_Test",
+            "deviceParentPath": "[default]Water Monitoring System/International/Test Pump Station"
+          },
+          "path": "Templates/WMS/Tank with Sparkline"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Motorised Valve_2"
+        },
+        "position": {
+          "height": 0.1235,
+          "width": 0.0819,
+          "x": 0.1114,
+          "y": 0.8611
+        },
+        "props": {
+          "params": {
+            "MotorLocation": "Up",
+            "deviceName": "Valve 2_test",
+            "deviceParentPath": "[default]Water Monitoring System/International/Test Pump Station"
+          },
+          "path": "Templates/WMS/Valve"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps"
+        },
+        "position": {
+          "height": 0.0814,
+          "width": 0.0482,
+          "x": 0.1992,
+          "y": 0.7069
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "",
+            "deviceName": "SPS 4_test",
+            "deviceParentPath": "[default]Water Monitoring System/International/Test Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_20240205"
+        },
+        "position": {
+          "height": 0.033,
+          "width": 0.0736,
+          "x": 0.7178,
+          "y": 0.3036
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTP_DBN03",
+            "deviceParentPath": "International/T1/Terminal B/Plant Room",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board_visibility test"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.1114,
+          "x": 0.7199,
+          "y": 0.2607
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.visibility.distributionBoards"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "label": {
+            "text": "DB Visibility"
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      },
+      {
+        "meta": {
+          "name": "Label_22"
+        },
+        "position": {
+          "height": 0.0301,
+          "width": 0.0531,
+          "x": 0.0305,
+          "y": 0.0145
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "key": "\u0027[default]International/Precinct/Waste Disposal Facility/PLC Status/Status Folder/\u0027",
+                  "key_1": "\u0027PLC Watchdog\u0027"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "expression": "tag({value}[\u0027key\u0027]+{value}[\u0027key_1\u0027])",
+                  "type": "expression"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Boolean Status with Alarm"
+        },
+        "position": {
+          "height": 0.0398,
+          "width": 0.1333,
+          "x": 0.2689,
+          "y": 0.9308
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPP PE Cell 3",
+            "deviceParentPath": "International/test"
+          },
+          "path": "Templates/Car Parks/Boolean Status with Alarm"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_20"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.4083,
+          "x": 0.2568,
+          "y": 0.9019
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--alm-diag-fill-acked",
+            "color": "#DB3939",
+            "fontWeight": "bold"
+          },
+          "text": "car park Templates",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Air Conditioner"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.1271,
+          "x": 0.4188,
+          "y": 0.9346
+        },
+        "props": {
+          "params": {
+            "deviceName": "Air Conditioner",
+            "deviceParentPath": "[default]International/test/P6 DRM12 Air Conditioner Units test",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Car Parks/ppuAir Conditioner"
+          },
+          "path": "Templates/Car Parks/Air Conditioner"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.1203,
+          "x": 0.266,
+          "y": 0.9645
+        },
+        "props": {
+          "params": {
+            "deviceName": "P6_DBX02-S",
+            "deviceParentPath": "[default]International/test",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Maintenance Status Command Set"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.1932,
+          "x": 0.4781,
+          "y": 0.9595
+        },
+        "props": {
+          "params": {
+            "label": "Maintenance Mode",
+            "onOffCommandPLC1": {
+              "tagParentPath": "[default]International/test/ER Light Maintenance Mode test/Control"
+            },
+            "onOffCommandPLC2": {
+              "tagParentPath": "[default]International/test/WR Light Maintenance Mode test/Control"
+            },
+            "singleCommandPLC1": {
+              "tagParentPath": "[default]International/test/Light Maintenance Mode Level 8-11 test/Control"
+            },
+            "singleCommandPLC2": {
+              "tagParentPath": "[default]International/test/Light Maintenance Mode Level 8-12 test/Control"
+            },
+            "statusTag": {
+              "tagName": "On",
+              "tagParentPath": "[default]International/test/ER Light Maintenance Mode test/Status"
+            }
+          },
+          "path": "Templates/Car Parks/Maintenance Status Command Set"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_3"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.1026,
+          "x": 0.376,
+          "y": 0.9606
+        },
+        "props": {
+          "params": {
+            "deviceName": "P6_DBX10-S",
+            "deviceParentPath": "[default]International/test",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_4"
+        },
+        "position": {
+          "height": 0.1087,
+          "width": 0.0635,
+          "x": 0.3306,
+          "y": 0.798
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Fan 1_test",
+            "DeviceParentPath": "[default]Water Monitoring System/International/Test Pump Station",
+            "StatusLabelVisible": false
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Roller Door"
+        },
+        "position": {
+          "height": 0.1144,
+          "width": 0.0802,
+          "x": 0.0057,
+          "y": 0.3125
+        },
+        "props": {
+          "params": {
+            "deviceName": "Test Roller Door 2",
+            "deviceParentPath": "[default]International/test",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Roller Doors/Roller Door"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pollution Gates"
+        },
+        "position": {
+          "height": 0.0827,
+          "width": 0.0708,
+          "x": 0.0849,
+          "y": 0.3451
+        },
+        "props": {
+          "params": {
+            "ZoomLevel": 17,
+            "deviceName": "Gate 1",
+            "deviceParentPath": "International/test/Gate F-J - W Pollution Control Test",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "mapView": false,
+            "popupWindow": "Popups/Others/ppuOpenCloseWithLimitSwitch"
+          },
+          "path": "Templates/Pollution Gates/Pollution Gates"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Compressor"
+        },
+        "position": {
+          "height": 0.1087,
+          "width": 0.0635,
+          "x": 0.113,
+          "y": 0.2529
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Compressor 1",
+            "DeviceParentPath": "International/test/Gate F-J - W Pollution Control Test",
+            "labelOverride": ""
+          },
+          "path": "Templates/WMS/Water Recycling Plant/Compressor"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Compressor 20240521"
+        },
+        "position": {
+          "height": 0.1087,
+          "width": 0.0635,
+          "x": 0.0198,
+          "y": 0.0895
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Air Compressor",
+            "DeviceParentPath": "Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Common Services"
+          },
+          "path": "Templates/WMS/Water Recycling Plant/Compressor 20240521"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator"
+        },
+        "position": {
+          "height": 0.0615,
+          "width": 0.0526,
+          "x": 0.1485,
+          "y": 0.6414
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Escalator 32-test",
+            "deviceParentPath": "International/test",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift"
+        },
+        "position": {
+          "height": 0.0452,
+          "width": 0.026,
+          "x": 0.1001,
+          "y": 0.6442
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Lift 33-test",
+            "deviceParentPath": "International/test",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way"
+        },
+        "position": {
+          "height": 0.1029,
+          "width": 0.0505,
+          "x": 0.0308,
+          "y": 0.6153
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Walkway 13-test",
+            "deviceParentPath": "International/test",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": true,
+            "instance2": true,
+            "instance3": true,
+            "instance4": true,
+            "instance5": true,
+            "instance6": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 301,
+      "y": 31
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "auto",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [],
+            "x": 0.8365,
+            "y": 0.2135
+          },
+          "start": "none",
+          "stroke": "",
+          "visible": true,
+          "width": 10
+        },
+        {
+          "appearance": "simple",
+          "end": "none",
+          "fill": "#A24646",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8635,
+                "y": 0.2066
+              }
+            ],
+            "x": 0.8108,
+            "y": 0.2066
+          },
+          "start": "none",
+          "stroke": "",
+          "visible": true,
+          "width": 5
+        },
+        {
+          "appearance": "auto",
+          "end": "none",
+          "fill": "#4D3BE7",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7492,
+                "y": 0.2231
+              }
+            ],
+            "x": 0.7492,
+            "y": 0.1151
+          },
+          "start": "none",
+          "stroke": "",
+          "visible": true,
+          "width": 5
+        },
+        {
+          "appearance": "auto",
+          "end": "none",
+          "fill": "#4D3BE7",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9301,
+                "y": 0.2423
+              }
+            ],
+            "x": 0.9301,
+            "y": 0.1343
+          },
+          "start": "none",
+          "stroke": "",
+          "visible": true,
+          "width": 5
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 131.66,
+      "width": 99.07
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2106,
+          "width": 0.5357,
+          "x": 0.1902,
+          "y": -0.0289
+        },
+        "props": {
+          "text": "ACS 2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.375,
+          "x": 0.3386,
+          "y": 0.6875
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/International/ACS2 Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_5"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.375,
+          "x": 0.6151,
+          "y": 0.1371
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW03",
+            "DeviceParentPath": "High Voltage/International/ACS2 Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_1"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.375,
+          "x": 0.0806,
+          "y": 0.1381
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW01",
+            "DeviceParentPath": "High Voltage/International/ACS2 Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/International/acs2-substation"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.7202,
+                        "y": 0.2697
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.9227,
+                        "y": 0.5393
+                      }
+                    ],
+                    "x": 0.7202,
+                    "y": 0.5393
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1877,
+                        "y": 0.2697
+                      },
+                      {
+                        "x": 0.0089,
+                        "y": 0.5393
+                      }
+                    ],
+                    "x": 0.1877,
+                    "y": 0.5393
+                  }
+                ],
+                "x": 0.4539,
+                "y": 0.5393
+              }
+            ],
+            "x": 0.4539,
+            "y": 0.7237
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1877,
+                "y": -0.0329
+              }
+            ],
+            "x": 0.1877,
+            "y": 0.1974
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7202,
+                "y": -0.0329
+              }
+            ],
+            "x": 0.7202,
+            "y": 0.1974
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

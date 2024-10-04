@@ -1,0 +1,90 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "sql_data",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "82069f377d8c864a839e2802122b28d222c5d1938483ca461b40456ab5e66326",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "tom",
+      "timestamp": "2024-06-07T05:10:48Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "bayNumber",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "terminal",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "meterReading",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "energyConsumption",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "aircraftCode",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "correlationID",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "eventDate",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "eventTime",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "eventType",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "remoteDBerror",
+        "sqlType": 6
+      },
+      {
+        "type": "Parameter",
+        "identifier": "remoteDBchecked",
+        "sqlType": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "custom": {},
+  "params": {
+    "key": "value"
+  },
+  "propConfig": {
+    "params.key": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 828,
+      "width": 2378
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "DBX Navigation"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "params": {
+            "area": "T1 Terminal B"
+          },
+          "path": "Primary Views/Diagnostics/Embedded/DBX Navigation",
+          "style": {
+            "margin": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Plant Room"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/T1/Terminal B/Plant Room"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/DBX Devices",
+                "title": "Plant Room",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card DBX"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Level 3"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/T1/Terminal B/Level 3"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/DBX Devices",
+                "title": "Level 3",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card DBX"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Departures"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/T1/Terminal B/Departures"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/DBX Devices",
+                "title": "Departures",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card DBX"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Arrivals"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/T1/Terminal B/Arrivals"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/DBX Devices",
+                "title": "Arrivals",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card DBX"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Basement"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]International/T1/Terminal B/Basement"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/DBX Devices",
+                "title": "Basement",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card DBX"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Central Services"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "International/Precinct/CSB"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/DBX Devices",
+                "title": "Central Services",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card DBX"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

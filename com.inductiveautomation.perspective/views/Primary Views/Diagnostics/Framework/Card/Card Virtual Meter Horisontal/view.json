@@ -1,0 +1,169 @@
+{
+  "custom": {
+    "instances": [
+      {
+        "deviceName": "International",
+        "deviceTagPath": "[default]High Voltage/International/Virtual Meters/International"
+      },
+      {
+        "deviceName": "International Chillers",
+        "deviceTagPath": "[default]High Voltage/International/Virtual Meters/International Chillers"
+      },
+      {
+        "deviceName": "International Essential",
+        "deviceTagPath": "[default]High Voltage/International/Virtual Meters/International Essential"
+      },
+      {
+        "deviceName": "International Non-Essential",
+        "deviceTagPath": "[default]High Voltage/International/Virtual Meters/International Non-Essential"
+      }
+    ]
+  },
+  "params": {
+    "params": {
+      "areaPath": "[default]High Voltage/International/Virtual Meters"
+    },
+    "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices",
+    "title": "International",
+    "useDefaultHeight": false,
+    "useDefaultWidth": false
+  },
+  "propConfig": {
+    "custom.instances": {
+      "binding": {
+        "config": {
+          "expression": "now(60000)"
+        },
+        "transforms": [
+          {
+            "code": "\tinstances \u003d []\n\tres \u003d system.tag.browse(self.params.params.areaPath, {\"tagType\":\"UdtInstance\", \"recursive\":False, \u0027typeId\u0027:\u0027Devices/Power Meters/Virtual Meter\u0027})\n\tfor result in res.getResults():\n\t\tinstances.append({\"deviceTagPath\":result[\"fullPath\"],\"deviceName\":result[\"name\"]})\n\treturn instances\n\t",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.params": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.path": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultHeight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultWidth": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 150,
+      "width": 1019
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params": {
+            "binding": {
+              "config": {
+                "path": "view.params.params"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.params.path"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewHeight": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultHeight"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewWidth": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultWidth"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Embedded"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Framework/Card/Card UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

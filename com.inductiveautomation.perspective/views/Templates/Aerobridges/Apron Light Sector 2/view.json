@@ -1,0 +1,261 @@
+{
+  "custom": {
+    "C1": null,
+    "C2": null,
+    "deviceLocation": "International",
+    "deviceTagPath": "International/T1/Pier B/Arrivals/Aerobridge 30_test/Light Mast A",
+    "tags": []
+  },
+  "params": {
+    "alwaysVisible": false,
+    "deviceName": "Aerobridge 30_test",
+    "deviceParentPath": "International/T1/Pier B/Arrivals",
+    "lightmastName": "Light Mast A"
+  },
+  "propConfig": {
+    "custom.C1": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.custom.deviceTagPath} + \u0027/Status/Contactor 1 On\u0027"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.C2": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "({view.custom.deviceTagPath} + \u0027/Status/Contactor 2 On\u0027)"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceLocation": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "transforms": [
+          {
+            "code": "\tword_to_search_1 \u003d \"International\"\n\tword_to_search_2 \u003d \"Domestic\"\n\t\n\tif word_to_search_1 in value:\n\t    result \u003d word_to_search_1\n\telif word_to_search_2 in value:\n\t    result \u003d word_to_search_2\n\telse:\n\t    result \u003d \"Neither word found\"\n\t\n\treturn(result)",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 + {view.params.deviceName} + \u0027/\u0027 + {view.params.lightmastName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.alwaysVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.lightmastName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 180,
+      "width": 180
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "PieChart"
+        },
+        "position": {
+          "height": 2.331,
+          "width": 3.7296,
+          "x": -1.8448,
+          "y": -0.1829
+        },
+        "propConfig": {
+          "props.colors[0]": {
+            "binding": {
+              "config": {
+                "expression": "//style\u003eopacity is changed to make off mode visible in light and dark mode\r\n//0: 100% on, 1\u00262: 50% on, 3: lights off\r\nbinEnc({view.custom.C2}, {view.custom.C1})"
+              },
+              "transforms": [
+                {
+                  "fallback": "#000000",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 0,
+                      "output": "#FBF16B"
+                    },
+                    {
+                      "input": 1,
+                      "output": "#4FD0B2"
+                    },
+                    {
+                      "input": 2,
+                      "output": "#4FD0B2"
+                    },
+                    {
+                      "input": 3,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.style.opacity": {
+            "binding": {
+              "config": {
+                "expression": "//to make off mode transparent, for light and dark mode usage\r\nbinEnc({view.custom.C2}, {view.custom.C1})"
+              },
+              "transforms": [
+                {
+                  "fallback": 0.5,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 3,
+                      "output": 0.1
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "colors": [
+            null,
+            "#FFFFFF03"
+          ],
+          "data": [
+            {
+              "count": 1,
+              "flavor": "Light"
+            },
+            {
+              "count": 5,
+              "flavor": "Transparent"
+            }
+          ],
+          "labels": {
+            "showName": false
+          },
+          "showLabels": false,
+          "showLegend": false,
+          "tooltipFormat": "{none}",
+          "valueFormat": {
+            "showPercentSymbol": false,
+            "showValueAsPercent": false
+          }
+        },
+        "type": "ia.chart.pie"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onContextMenu": {
+          "config": {
+            "draggable": true,
+            "id": "v3kvD-lZ",
+            "modal": false,
+            "overlayDismiss": false,
+            "resizable": true,
+            "showCloseIcon": true,
+            "type": "open",
+            "viewParams": {
+              "tags": "{view.custom.tags}"
+            },
+            "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+            "viewportBound": false
+          },
+          "scope": "C",
+          "type": "popup"
+        }
+      }
+    },
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "enabled": true
+      }
+    },
+    "propConfig": {
+      "meta.tooltip.text": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "expression",
+            "tagPath": "{view.custom.deviceTagPath}+\u0027/Parameters.Description\u0027"
+          },
+          "type": "tag"
+        }
+      },
+      "meta.visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.apronLights"
+          },
+          "transforms": [
+            {
+              "expression": "{value}||{view.params.alwaysVisible}",
+              "type": "expression"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

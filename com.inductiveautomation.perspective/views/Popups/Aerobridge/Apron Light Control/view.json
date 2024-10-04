@@ -1,0 +1,582 @@
+{
+  "custom": {
+    "deviceTagPath": "Domestic/Bay 49",
+    "siteName": "Apron",
+    "subArea": "Domestic T2 Pier B"
+  },
+  "params": {
+    "deviceName": "Bay 49",
+    "deviceParentPath": "Domestic",
+    "mast1Name": "Light Mast A",
+    "mast1ParentPath": "Domestic/T2/Pier B/Concourse/Aerobridge 49",
+    "mast2Name": "Light Mast A",
+    "mast2ParentPath": "Domestic/T2/Pier B/Concourse/Aerobridge 49",
+    "threeWayControl": true
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "mast1Name": "{view.params.mast1Name}",
+            "mast1ParentPath": "{view.params.mast1ParentPath}"
+          },
+          "tagPath": "{mast1ParentPath}/{mast1Name}/Parameters.Alarm_ParentDevice"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "mast1ParentPath": "{view.params.mast1ParentPath}"
+          },
+          "tagPath": "{mast1ParentPath}/Parameters.Alarm_Area"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mast1Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mast1ParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mast2Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mast2ParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.threeWayControl": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 285,
+      "width": 350
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn \u0027Apron Light Control - \u0027 + value",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "12pt",
+                "fontWeight": "bold",
+                "letterSpacing": "1px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "10pt",
+                "fontStyle": "italic",
+                "fontWeight": "lighter",
+                "letterSpacing": "1px",
+                "marginBottom": "5px",
+                "textAlign": "center",
+                "textTransform": "none"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Multiple Tag - AMS_1"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.tags[0].tagParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.mast1ParentPath} + \u0027/\u0027 + {view.params.mast1Name} + \u0027/Control\u0027"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.tags[1].tagParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.mast2ParentPath} + \u0027/\u0027 + {view.params.mast2Name} + \u0027/Control\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "buttonText": "Off",
+                "tags": [
+                  {
+                    "tagName": "Lights Off Command",
+                    "writeValue": true
+                  },
+                  {
+                    "tagName": "Lights Off Command",
+                    "writeValue": true
+                  }
+                ]
+              },
+              "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Multiple Tag - AMS",
+              "style": {
+                "marginBottom": 0,
+                "marginLeft": 10,
+                "marginRight": 15,
+                "marginTop": 0
+              },
+              "useDefaultViewHeight": true
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Multiple Tag - AMS_0"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.threeWayControl"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.tags[0].tagParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.mast1ParentPath} + \u0027/\u0027 + {view.params.mast1Name} + \u0027/Control\u0027"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.tags[1].tagParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.mast2ParentPath} + \u0027/\u0027 + {view.params.mast2Name} + \u0027/Control\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "buttonText": "50 %",
+                "tags": [
+                  {
+                    "tagName": "Lights 50pct Command",
+                    "writeValue": true
+                  },
+                  {
+                    "tagName": "Lights 50pct Command",
+                    "writeValue": true
+                  }
+                ]
+              },
+              "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Multiple Tag - AMS",
+              "style": {
+                "marginBottom": 0,
+                "marginLeft": 10,
+                "marginRight": 15,
+                "marginTop": 0
+              },
+              "useDefaultViewHeight": true
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Multiple Tag - AMS"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.buttonText": {
+                "binding": {
+                  "config": {
+                    "expression": "if ({view.params.threeWayControl}, \u0027100 %\u0027, \u0027ON\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.tags[0].tagParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.mast1ParentPath} + \u0027/\u0027 + {view.params.mast1Name} + \u0027/Control\u0027"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.tags[1].tagParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.mast2ParentPath} + \u0027/\u0027 + {view.params.mast2Name} + \u0027/Control\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "tags": [
+                  {
+                    "tagName": "Lights 100pct Command",
+                    "writeValue": true
+                  },
+                  {
+                    "tagName": "Lights 100pct Command",
+                    "writeValue": true
+                  }
+                ]
+              },
+              "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Multiple Tag - AMS",
+              "style": {
+                "marginBottom": 0,
+                "marginLeft": 10,
+                "marginRight": 15,
+                "marginTop": 0
+              },
+              "useDefaultViewHeight": true
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Body"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "center",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Info Icon"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#009BFF",
+          "path": "material/info",
+          "style": {
+            "classes": "Input/Icon",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "//light mast 1\r\ntag({view.params.mast1ParentPath} + \u0027/\u0027+{view.params.mast1Name} + \u0027/Parameters.Description\u0027) + \u0027 tag path: \u0027 + {view.params.mast1ParentPath}+\u0027/\u0027+{view.params.mast1Name}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "35px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "case (tag({view.params.mast1ParentPath} + \u0027/Parameters.Description\u0027),\r\n\r\n\u0027Kingfisher RTU\u0027,\r\n\u0027RTU Name: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.Gateway\u0027)\r\n+\u0027, RTU IP: \u0027+ tag({view.params.mast1ParentPath} + \u0027/RTU Status/Status Folder/HostIP\u0027)\r\n//+\u0027, Mode: \u0027+ tag ({view.custom.deviceTagPath}+\u0027/RTU Status/Status Folder/Status\u0027)\r\n,\r\n\r\n\u0027GE PLC\u0027,\r\n//Aerobridge and GP and PCA signals are from different GE PLCs, so each device should be checked seperately\r\n//check the opc instance\r\n\u0027GE OPC Instance: \u0027+ tag({view.params.mast1ParentPath} +\u0027/\u0027+ {view.params.mast1Name} + \u0027/Parameters.OPC Instance\u0027)\r\n//example: to read the IP address based on GE OPC Instance. in this example OPC instance is:AB-GE-BP-ABB10,opc item path to read IP:   nsu\u003dKEPServerEX;s\u003dChannel1.AB-GE-BP-ABB10._System._DeviceId\r\n+ \u0027, GE PLC IP: \u0027+runScript(\"system.opc.readValue(\u0027KEPServerEX/UA@OPSWAMSTST1.ops.aero.int\u0027, \u0027nsu\u003dKEPServerEX;s\u003d\u0027+\u0027\" +tag({view.params.mast1ParentPath}+\u0027/\u0027+ {view.params.mast1Name} + \u0027/Parameters.OPC Instance\u0027) + \"\u0027+\u0027._System._DeviceId\u0027)\")\r\n,\r\n\r\n\u0027Kingfisher RTU and GE PLC\u0027,\r\n//aerobridge and light signals are from GE PLC\r\n\u0027GE OPC Instance: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.GE OPC Instance\u0027)\r\n+\u0027, GE PLC IP: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.GE PLC IP Address\u0027)//+\u0027, Mode: \u0027+tag ({view.params.mast1ParentPath}+\u0027/PLC Status/Status Folder/Mode Desc\u0027)\r\n//GP and PCA signals are from KF RTU\r\n//\u0027RTU Name: \u0027+ tag({view.custom.deviceTagPath} + \u0027/Parameters.Gateway\u0027)\r\n//+\u0027, RTU IP: \u0027+ tag({view.custom.deviceTagPath} + \u0027/RTU Status/Status Folder/HostIP\u0027)\r\n//+\u0027, Mode: \u0027+tag ({view.custom.deviceTagPath}+\u0027/RTU Status/Status Folder/Status\u0027)\r\n,\r\n\r\n\u0027Siemens PLC\u0027,\r\n//lights are in Siemens PLC\r\n\u0027Siemens OPC Name: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.OPC Name\u0027)\r\n+ \u0027, Siemens PLC IP: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.IP Address\u0027)//+\u0027, Mode: \u0027+tag ({view.custom.deviceTagPath}+\u0027AMS Panel/PLC Status/Status Folder/Mode Desc\u0027)\r\n//+\u0027, Moxa Gateway IP: \u0027 + tag ({view.custom.deviceTagPath}+\u0027/DB Meter/Hostname\u0027)\r\n,\r\n\r\n\u0027Moxa-Siemens PLC\u0027,\r\n// used for Bay 71 to 73, lights are from Siemens\r\n\u0027Siemens OPC Name: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.Siemens OPC Name\u0027)\r\n+ \u0027, Siemens PLC IP: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.Siemens IP Address\u0027)\r\n,\r\n\r\n\u0027Moxa-GE PLC\u0027,\r\n// used for Bay 74 to 77, lights are from GE PLC\r\n\u0027GE OPC Instance: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.GE OPC Instance\u0027)\r\n+\u0027, GE PLC IP: \u0027+ tag({view.params.mast1ParentPath} + \u0027/Parameters.GE PLC IP Address\u0027)\r\n,\r\n\r\n//all other\r\n\u0027error in UDT: /Parameters.Description\u0027)\r\n\r\n"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "35px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "//light mast 2\r\ntag({view.params.mast2ParentPath} + \u0027/\u0027+{view.params.mast2Name} + \u0027/Parameters.Description\u0027) + \u0027 tag path: \u0027 + {view.params.mast2ParentPath}+\u0027/\u0027+{view.params.mast2Name}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_3"
+            },
+            "position": {
+              "basis": "35px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "case (tag({view.params.mast2ParentPath} + \u0027/Parameters.Description\u0027),\r\n\r\n\u0027Kingfisher RTU\u0027,\r\n\u0027RTU Name: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.Gateway\u0027)\r\n+\u0027, RTU IP: \u0027+ tag({view.params.mast2ParentPath} + \u0027/RTU Status/Status Folder/HostIP\u0027)\r\n//+\u0027, Mode: \u0027+ tag ({view.custom.deviceTagPath}+\u0027/RTU Status/Status Folder/Status\u0027)\r\n,\r\n\r\n\u0027GE PLC\u0027,\r\n//Aerobridge and GP and PCA signals are from different GE PLCs, so each device should be checked seperately\r\n//check the opc instance\r\n\u0027GE OPC Instance: \u0027+ tag({view.params.mast2ParentPath} +\u0027/\u0027+ {view.params.mast2Name} + \u0027/Parameters.OPC Instance\u0027)\r\n//example: to read the IP address based on GE OPC Instance. in this example OPC instance is:AB-GE-BP-ABB10,opc item path to read IP:   nsu\u003dKEPServerEX;s\u003dChannel1.AB-GE-BP-ABB10._System._DeviceId\r\n+ \u0027, GE PLC IP: \u0027+runScript(\"system.opc.readValue(\u0027KEPServerEX/UA@OPSWAMSTST1.ops.aero.int\u0027, \u0027nsu\u003dKEPServerEX;s\u003d\u0027+\u0027\" +tag({view.params.mast2ParentPath}+\u0027/\u0027+ {view.params.mast2Name} + \u0027/Parameters.OPC Instance\u0027) + \"\u0027+\u0027._System._DeviceId\u0027)\")\r\n,\r\n\r\n\u0027Kingfisher RTU and GE PLC\u0027,\r\n//aerobridge and light signals are from GE PLC\r\n\u0027GE OPC Instance: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.GE OPC Instance\u0027)\r\n+\u0027, GE PLC IP: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.GE PLC IP Address\u0027)//+\u0027, Mode: \u0027+tag ({view.params.mast2ParentPath}+\u0027/PLC Status/Status Folder/Mode Desc\u0027)\r\n//GP and PCA signals are from KF RTU\r\n//\u0027RTU Name: \u0027+ tag({view.custom.deviceTagPath} + \u0027/Parameters.Gateway\u0027)\r\n//+\u0027, RTU IP: \u0027+ tag({view.custom.deviceTagPath} + \u0027/RTU Status/Status Folder/HostIP\u0027)\r\n//+\u0027, Mode: \u0027+tag ({view.custom.deviceTagPath}+\u0027/RTU Status/Status Folder/Status\u0027)\r\n,\r\n\r\n\u0027Siemens PLC\u0027,\r\n//lights are in Siemens PLC\r\n\u0027Siemens OPC Name: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.OPC Name\u0027)\r\n+ \u0027, Siemens PLC IP: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.IP Address\u0027)//+\u0027, Mode: \u0027+tag ({view.custom.deviceTagPath}+\u0027AMS Panel/PLC Status/Status Folder/Mode Desc\u0027)\r\n//+\u0027, Moxa Gateway IP: \u0027 + tag ({view.custom.deviceTagPath}+\u0027/DB Meter/Hostname\u0027)\r\n,\r\n\r\n\u0027Moxa-Siemens PLC\u0027,\r\n// used for Bay 71 to 73, lights are from Siemens\r\n\u0027Siemens OPC Name: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.Siemens OPC Name\u0027)\r\n+ \u0027, Siemens PLC IP: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.Siemens IP Address\u0027)\r\n,\r\n\r\n\u0027Moxa-GE PLC\u0027,\r\n// used for Bay 74 to 77, lights are from GE PLC\r\n\u0027GE OPC Instance: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.GE OPC Instance\u0027)\r\n+\u0027, GE PLC IP: \u0027+ tag({view.params.mast2ParentPath} + \u0027/Parameters.GE PLC IP Address\u0027)\r\n,\r\n\r\n//any other instances:\r\n\u0027error in UDT: /Parameters.Description\u0027)\r\n\r\n"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Info"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

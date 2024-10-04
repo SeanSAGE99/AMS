@@ -1,0 +1,164 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 28,
+      "width": 28
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/wwtp/mtcompass/inlet"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Pump_01_opt_0"
+        },
+        "position": {
+          "height": 26,
+          "width": 26,
+          "x": 1,
+          "y": 1
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Alexandrina/Mt Compass/WWTP/System/Process Mode Desc"
+              },
+              "transforms": [
+                {
+                  "fallback": "Device/Mode/Invalid",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Auto",
+                      "output": "Device/Mode/Auto"
+                    },
+                    {
+                      "input": "Manual",
+                      "output": "Device/Mode/Manual"
+                    },
+                    {
+                      "input": "Off",
+                      "output": "Device/Mode/Off"
+                    }
+                  ],
+                  "outputType": "style-list",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "m35.755 41.415a14.628 14.628 0 0 1-14.628 14.628 14.628 14.628 0 0 1-14.628-14.628 14.628 14.628 0 0 1 14.628-14.628 14.628 14.628 0 0 1 14.628 14.628z",
+                      "name": "body",
+                      "style": {
+                        "stroke": "var(--neutral-90)",
+                        "strokeWidth": "3px",
+                        "vector-effect": "REMOVEnon-scaling-stroke"
+                      },
+                      "type": "path"
+                    },
+                    {
+                      "d": "m13.851 53.676v-12.223-12.223l10.585 6.1115 10.585 6.1114-10.585 6.1115z",
+                      "name": "direction",
+                      "style": {
+                        "stroke": "var(--neutral-90)",
+                        "strokeWidth": "1px",
+                        "vector-effect": "non-scaling-stroke"
+                      },
+                      "type": "circle"
+                    }
+                  ],
+                  "name": "group",
+                  "transform": "matrix(.80229 0 0 .80228 .17723 12.189)",
+                  "type": "group"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-4.1275 -32.415) rotate(0, 17.1,45.5)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#FFFFFF00",
+            "cursor": "pointer"
+          },
+          "viewBox": "0 0 26 26"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/wwtp/mtcompass/inlet"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "alarm"
+        },
+        "position": {
+          "height": 26,
+          "width": 26,
+          "x": 1,
+          "y": 1
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true,
+              "parentPath": "[default]Alexandrina/Mt Compass/WWTP"
+            },
+            "device": {
+              "enabled": false,
+              "name": "value",
+              "parentPath": "value"
+            }
+          },
+          "path": "Shared/Alarms/Symbol",
+          "style": {
+            "cursor": "pointer"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "#FFFFFF00",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

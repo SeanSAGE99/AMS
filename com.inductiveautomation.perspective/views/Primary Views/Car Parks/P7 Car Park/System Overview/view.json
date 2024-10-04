@@ -1,0 +1,1844 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "International/Precinct/P7 Car Park",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "P7 Overview"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/CarParks/International/P7 Overview.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Air Conditioner"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.1125,
+          "x": 0.7501,
+          "y": 0.3509
+        },
+        "props": {
+          "params": {
+            "deviceName": "Air Conditioner",
+            "deviceParentPath": "[default]International/Precinct/P7 Car Park/Level 1/P7 DRM11 Air Conditioner Units",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Car Parks/ppuAir Conditioner"
+          },
+          "path": "Templates/Car Parks/Air Conditioner"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan"
+        },
+        "position": {
+          "height": 0.0663,
+          "width": 0.0534,
+          "x": 0.3499,
+          "y": 0.3589
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Canopy ELUFT Blower Fan Alarms",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 8",
+            "StatusLabelVisible": false,
+            "labelOverride": "Canopy Blower Fan"
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_0"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3409,
+          "y": 0.4542
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 7",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_2"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3409,
+          "y": 0.5446
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 5",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_4"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3409,
+          "y": 0.6349
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 3",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_6"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3409,
+          "y": 0.7253
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 1",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_7"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3409,
+          "y": 0.7705
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_10"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3774,
+          "y": 0.4994
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 6",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_12"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3774,
+          "y": 0.5898
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 4",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_14"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3774,
+          "y": 0.6801
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 2",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_16"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.3774,
+          "y": 0.7705
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Dilution Air Fan 2",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L7"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.46
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX07-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 7",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L18"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.5052
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX06-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 6",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L19"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.5504
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX05-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 5",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L20"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.5956
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX04-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 4",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L21"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.6407
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX03-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 3",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L22"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.6859
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX02-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L23"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.7311
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX01-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L24"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5121,
+          "y": 0.7762
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX0G-E",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_13"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.7762
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Ground Level/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_1"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.601,
+          "y": 0.7705
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Toilet Exhaust Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_3"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.6343,
+          "y": 0.7705
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Toilet Exhaust Fan 2",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_5"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.6677,
+          "y": 0.7705
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Make Up Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_8"
+        },
+        "position": {
+          "height": 0.0442,
+          "width": 0.0356,
+          "x": 0.601,
+          "y": 0.6801
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Toilet Exhaust Fan 1",
+            "DeviceParentPath": "International/Precinct/P7 Car Park/Level 2",
+            "StatusLabelVisible": false,
+            "labelOverride": " "
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Street Lights DB"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4041,
+          "y": 0.8315
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBXGE-S",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Maintenance Status Command Set_0"
+        },
+        "position": {
+          "height": 0.0294,
+          "width": 0.1667,
+          "x": 0.7245,
+          "y": 0.8558
+        },
+        "props": {
+          "params": {
+            "label": "Lights Maintenance Mode",
+            "onOffCommandPLC1": {
+              "tagParentPath": "International/Precinct/P7 Car Park/Level 3/P7 Car Park East Riser PLC/Light Maintenance Mode/Control"
+            },
+            "onOffCommandPLC2": {
+              "tagParentPath": "International/Precinct/P7 Car Park/Level 3/P7 Car Park West Riser PLC/Light Maintenance Mode/Control"
+            },
+            "singleCommandPLC1": {
+              "tagParentPath": "not used"
+            },
+            "singleCommandPLC2": {
+              "tagParentPath": "not used"
+            },
+            "statusTag": {
+              "tagName": "On",
+              "tagParentPath": "International/Precinct/P7 Car Park/Level 3/P7 Car Park East Riser PLC/Light Maintenance Mode/Status"
+            }
+          },
+          "path": "Templates/Car Parks/Maintenance Status Command Set"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.6087,
+          "y": 0.3342
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 3",
+            "deviceParentPath": "International/Precinct/P7 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_0"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.6427,
+          "y": 0.3342
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 2",
+            "deviceParentPath": "International/Precinct/P7 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_1"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.6767,
+          "y": 0.3342
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 1",
+            "deviceParentPath": "International/Precinct/P7 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump"
+        },
+        "position": {
+          "height": 0.0882,
+          "width": 0.04816,
+          "x": 0.1123,
+          "y": 0.8212
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Electric Fire Pump 1",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Ground Level/Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump_0"
+        },
+        "position": {
+          "height": 0.0882,
+          "width": 0.04816,
+          "x": 0.2058,
+          "y": 0.8212
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Diesel Fire Pump 1",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Ground Level/Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way1"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7025,
+          "y": 0.6871
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 1",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way5"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7025,
+          "y": 0.6011
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 5",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way9"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7025,
+          "y": 0.5161
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 9",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 4",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way2"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7989,
+          "y": 0.6871
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 2",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": false,
+            "instance5": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way6"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7989,
+          "y": 0.6011
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 6",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": false,
+            "instance5": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way10"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7989,
+          "y": 0.5161
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 10",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 4",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": false,
+            "instance5": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way8"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7025,
+          "y": 0.5571
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 8",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 3",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": false,
+            "instance5": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way4"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7025,
+          "y": 0.6411
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 4",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": false,
+            "instance5": true
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way3"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7989,
+          "y": 0.6411
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 3",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": true,
+            "instance5": false
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Walk Way7"
+        },
+        "position": {
+          "height": 0.1923,
+          "width": 0.0956,
+          "x": 0.7989,
+          "y": 0.5571
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "Moving Walkway 7",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 3",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "instance1": false,
+            "instance2": false,
+            "instance3": false,
+            "instance4": true,
+            "instance5": false
+          },
+          "path": "Templates/Internal Transport/Walk Way"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.4041,
+          "y": 0.8642
+        },
+        "props": {
+          "text": "Street Lights",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_14"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.7311
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 1/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_15"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.46
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 7/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_16"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.5052
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 6/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_17"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.5504
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 5/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_18"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.5956
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 4/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_19"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.6407
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 3/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_20"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.6859
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 2/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_21"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.7762
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Ground Level/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_22"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.1101,
+          "y": 0.7311
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 1/CO Sensor 1/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_23"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.6859
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 2/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_24"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.6407
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 3/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_25"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.5956
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 4/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_26"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.5504
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 5/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_27"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.5052
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 6/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Label_28"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0977,
+          "x": 0.4138,
+          "y": 0.46
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag(replace({this.props.params.tagParentPath},\u0027/Status\u0027,\u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "showUnitsInValue": true,
+            "tagName": "Process Value",
+            "tagParentPath": "International/Precinct/P7 Car Park/Level 7/CO Sensor 2/Status",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "75px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value w Label",
+          "style": {
+            "classes": "UI/Pages/Background"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L25"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.7762
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX0G-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L26"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.7311
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX01-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L27"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.6859
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX02-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L28"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.6407
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX03-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 3",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L29"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.5956
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX04-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 4",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L30"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.5504
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX05-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 5",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L31"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.5052
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX06-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 6",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L8"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2085,
+          "y": 0.46
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P7_DBX07-W",
+            "deviceParentPath": "International/Precinct/P7 Car Park/Level 7",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.1364,
+          "y": 0.39
+        },
+        "props": {
+          "text": "West Riser",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.5274,
+          "y": 0.39
+        },
+        "props": {
+          "text": "East Riser",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

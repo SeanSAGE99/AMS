@@ -1,0 +1,628 @@
+{
+  "custom": {
+    "deviceTagPath": "Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone/Ozone System"
+  },
+  "params": {
+    "deviceName": "Ozone System",
+    "deviceParentPath": "Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Ozone"
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 297,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "Ozone System"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "Water Recycling Plant"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Symbol_Double"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "enabled": false,
+                          "name": "",
+                          "parentPath": ""
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_1"
+                },
+                "position": {
+                  "basis": "10%"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Alarm Summary/Priority Counts/Active"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "marginRight": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Ozone Generator",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Ozone Status\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "Ozone Generator",
+                    "showUnitsInValue": "",
+                    "tagName": "Ozone Generator Running",
+                    "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Oxygen Generator",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Ozone Status\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "Oxygen Generator",
+                    "showUnitsInValue": "",
+                    "tagName": "Oxygen Generator Running",
+                    "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Chiller Unit",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Ozone Status\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "Chiller Unit",
+                    "showUnitsInValue": "",
+                    "tagName": "Chiller Unit Running",
+                    "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Room Vent Fan",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Ozone Room Vent Fan/Status\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "Room Vent Fan",
+                    "showUnitsInValue": "",
+                    "tagName": "Running",
+                    "tagQuality": "Uncertain_LastKnownValue(\"Whatever was updating this value has stopped doing so.\")",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "alarms_expanded"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceName}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.deviceParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceParentPath}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "controlEnable": true,
+                "show": {
+                  "area": false,
+                  "device": false
+                }
+              },
+              "path": "Shared/Templates/Devices/Control/Common/Alarms",
+              "style": {
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "400px",
+          "grow": 1
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "classes": "UI/Popups/Background"
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "disabled": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Status",
+            "Alarms"
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Info Icon"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "props": {
+          "color": "#009BFF",
+          "path": "material/info",
+          "style": {
+            "classes": "Input/Icon"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.deviceTagPath"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "\u0027Tag path: \u0027 + {value}",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "auto"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Info"
+        },
+        "position": {
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

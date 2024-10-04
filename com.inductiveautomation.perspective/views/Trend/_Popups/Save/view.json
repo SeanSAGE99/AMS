@@ -1,0 +1,652 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 240,
+      "width": 420
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-20)",
+                    "fontSize": "12pt",
+                    "fontWeight": "bold",
+                    "letterSpacing": "1px",
+                    "textAlign": "center",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Save Trend Configuration"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-90)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "marginBottom": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "75px"
+            },
+            "props": {
+              "text": "Area:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.sendMessage(\u0027refresh-sites-savepopup\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "256px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "options": [
+                {
+                  "label": "All",
+                  "value": "%"
+                },
+                {
+                  "label": "General",
+                  "value": "General"
+                },
+                {
+                  "label": "High Voltage",
+                  "value": "High Voltage"
+                },
+                {
+                  "label": "International",
+                  "value": "International"
+                },
+                {
+                  "label": "Domestic",
+                  "value": "Domestic"
+                },
+                {
+                  "label": "Jet Base",
+                  "value": "Jet Base"
+                },
+                {
+                  "label": "Water Monitoring System",
+                  "value": "Water Monitoring System"
+                }
+              ],
+              "value": "High Voltage"
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginBottom": "5px",
+            "marginLeft": "5px",
+            "marginRight": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "75px"
+            },
+            "props": {
+              "text": "Site:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Dropdown"
+            },
+            "position": {
+              "basis": "256px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "{.../FlexContainer/Dropdown.props.value}"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "{value} !\u003d \u0027%\u0027 \u0026\u0026\r\n{value} !\u003d \u0027General\u0027",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "options": {
+                "$": [
+                  "ds",
+                  192,
+                  1717733443584
+                ],
+                "$columns": [
+                  {
+                    "data": [
+                      "",
+                      "11th Street Substation",
+                      "7th Street Substation",
+                      "ACS1 Substation",
+                      "ACS2 Substation",
+                      "ATSC Substation",
+                      "AZS RMU Substation",
+                      "AZS Substation",
+                      "Alpha Substation",
+                      "Bennett Substation",
+                      "Bravo Substation",
+                      "Brearley Substation",
+                      "Butler Substation",
+                      "CA Substation",
+                      "CSB Chiller 2",
+                      "CSB Genset PLC",
+                      "CSB MSB",
+                      "CT Substation",
+                      "DPS Substation",
+                      "Domestic 4 Substation",
+                      "ELER Substation",
+                      "Hargrave Substation",
+                      "ICP Substation",
+                      "IZS Substation",
+                      "Juliet Substation",
+                      "Keith Smith Substation",
+                      "Kyeemagh Substation",
+                      "LLER Substation",
+                      "LTCP Substation",
+                      "Light Aircraft Substation",
+                      "Link Road Substation",
+                      "Lords Road Substation",
+                      "NLER Substation",
+                      "North Pond MSB",
+                      "Ross Smith Substation",
+                      "SE Sector GSB",
+                      "SE Sector MSB East",
+                      "SE Sector MSB West",
+                      "SLER Substation",
+                      "Shiers Substation",
+                      "Substation 1",
+                      "Substation 10",
+                      "Substation 11",
+                      "Substation 12",
+                      "Substation 1A",
+                      "Substation 1B",
+                      "Substation 2",
+                      "Substation 21",
+                      "Substation 21",
+                      "Substation 21",
+                      "Substation 21 LV",
+                      "Substation 22",
+                      "Substation 22 Genset",
+                      "Substation 23",
+                      "Substation 3",
+                      "Substation 4",
+                      "Substation 5",
+                      "Substation 6",
+                      "Substation 7",
+                      "Substation 8",
+                      "Substation 9",
+                      "Substation A",
+                      "Substation C",
+                      "Substation U",
+                      "Substation V",
+                      "Substation W",
+                      "T1 Hotel Substation",
+                      "TAR Substation",
+                      "TLER Substation",
+                      "ULM Substation",
+                      "WLER Substation",
+                      "Wrigley Substation"
+                    ],
+                    "name": "Value",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      "No Site",
+                      "11th Street Substation",
+                      "7th Street Substation",
+                      "ACS1 Substation",
+                      "ACS2 Substation",
+                      "ATSC Substation",
+                      "AZS RMU Substation",
+                      "AZS Substation",
+                      "Alpha Substation",
+                      "Bennett Substation",
+                      "Bravo Substation",
+                      "Brearley Substation",
+                      "Butler Substation",
+                      "CA Substation",
+                      "CSB Chiller 2",
+                      "CSB Genset PLC",
+                      "CSB MSB",
+                      "CT Substation",
+                      "DPS Substation",
+                      "Domestic 4 Substation",
+                      "ELER Substation",
+                      "Hargrave Substation",
+                      "ICP Substation",
+                      "IZS Substation",
+                      "Juliet Substation",
+                      "Keith Smith Substation",
+                      "Kyeemagh Substation",
+                      "LLER Substation",
+                      "LTCP Substation",
+                      "Light Aircraft Substation",
+                      "Link Road Substation",
+                      "Lords Road Substation",
+                      "NLER Substation",
+                      "North Pond MSB",
+                      "Ross Smith Substation",
+                      "SE Sector GSB",
+                      "SE Sector MSB East",
+                      "SE Sector MSB West",
+                      "SLER Substation",
+                      "Shiers Substation",
+                      "Substation 1",
+                      "Substation 10",
+                      "Substation 11",
+                      "Substation 12",
+                      "Substation 1A",
+                      "Substation 1B",
+                      "Substation 2",
+                      "Substation 21",
+                      "Substation 21",
+                      "Substation 21",
+                      "Substation 21 LV",
+                      "Substation 22",
+                      "Substation 22 Genset",
+                      "Substation 23",
+                      "Substation 3",
+                      "Substation 4",
+                      "Substation 5",
+                      "Substation 6",
+                      "Substation 7",
+                      "Substation 8",
+                      "Substation 9",
+                      "Substation A",
+                      "Substation C",
+                      "Substation U",
+                      "Substation V",
+                      "Substation W",
+                      "T1 Hotel Substation",
+                      "TAR Substation",
+                      "TLER Substation",
+                      "ULM Substation",
+                      "WLER Substation",
+                      "Wrigley Substation"
+                    ],
+                    "name": "Label",
+                    "type": "String"
+                  }
+                ]
+              }
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "refresh-sites-savepopup",
+                  "pageScope": true,
+                  "script": "\tarea \u003d self.parent.parent.getChild(\"FlexContainer\").getChild(\"Dropdown\").props.value\n\theaders \u003d [\u0027Value\u0027, \u0027Label\u0027]\n\tdata \u003d []\n\tdata.append([\u0027\u0027, \u0027No Site\u0027])\n\t\t\n\tif area !\u003d \u0027General\u0027:\t\n\t\ttags \u003d system.tag.browse(area, filter\u003d{\u0027tagType\u0027:\u0027UdtInstance\u0027, \"recursive\":True, \u0027name\u0027:\u0027Site Details\u0027})\n\t\tif tags:\n\t\t\ttags \u003d [tag[\u0027fullPath\u0027] for tag in tags]\n\t\t\tpaths \u003d [\u0027{}/Parameters/Site_Name\u0027.format(tag) for tag in tags]\n\t\t\tvals \u003d system.tag.readBlocking(paths)\n\t\t\tvals \u003d [val.value for val in vals]\n\t\t\tvals \u003d sorted(vals)\n\t\n\t\t\tfor val in vals:\n\t\t\t\tdata.append([val, val])\n\t#\tdata.append([\u0027WWTP\u0027, \u0027WWTP\u0027])\n\tdatads \u003d system.dataset.toDataSet(headers, data)\n\tself.props.options \u003d datads\n\tself.props.value \u003d \u0027\u0027\n\t",
+                  "sessionScope": false,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginBottom": "5px",
+            "marginLeft": "5px",
+            "marginRight": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "75px"
+            },
+            "props": {
+              "text": "Name:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "TextField"
+            },
+            "position": {
+              "basis": "150px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "type": "ia.input.text-field"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginBottom": "5px",
+            "marginLeft": "5px",
+            "marginRight": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "75px"
+            },
+            "props": {
+              "text": "Save For:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Dropdown",
+              "tooltip": {
+                "text": "Requires Maintenance Login"
+              }
+            },
+            "position": {
+              "basis": "256px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "meta.tooltip.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "!hasRole(\u0027Maintenance\u0027,{session.props.auth.user.userName}, \u0027default\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "hasRole(\u0027Maintenance\u0027,{session.props.auth.user.userName}, \u0027lgits.local\u0027)"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "options": [
+                {
+                  "label": "Myself",
+                  "value": 0
+                },
+                {
+                  "label": "All Operators",
+                  "value": 1
+                }
+              ],
+              "value": 0
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "marginBottom": "5px",
+            "marginLeft": "5px",
+            "marginRight": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tarea \u003d self.parent.parent.getChild(\"FlexContainer\").getChild(\"Dropdown\").props.value\n\tsite \u003d self.parent.parent.getChild(\"FlexContainer_0\").getChild(\"Dropdown\").props.value\n\tname \u003d self.parent.parent.getChild(\"FlexContainer_1\").getChild(\"TextField\").props.text\n\tscope \u003d self.parent.parent.getChild(\"FlexContainer_2\").getChild(\"Dropdown\").props.value\n\t\n\tpayload \u003d {\u0027area\u0027:area, \u0027site\u0027:site, \u0027name\u0027:name, \u0027scope\u0027:scope}\n\t\n\tsystem.perspective.sendMessage(\u0027save-trend1\u0027, payload)\n\tsystem.perspective.print(payload)\n\tsystem.perspective.closePopup(\u0027trend_save_popup\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button",
+              "tooltip": {
+                "text": "Name cannot be blank"
+              }
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "meta.tooltip.enabled": {
+                "binding": {
+                  "config": {
+                    "path": ".../FlexContainer_1/TextField.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "{value} \u003d \u0027\u0027",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "path": ".../FlexContainer_1/TextField.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "{value} !\u003d \u0027\u0027",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              },
+              "text": "Save"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "draggable": true,
+                    "id": "trend_save_popup",
+                    "modal": false,
+                    "overlayDismiss": false,
+                    "resizable": true,
+                    "showCloseIcon": true,
+                    "type": "close",
+                    "viewPath": "",
+                    "viewportBound": false
+                  },
+                  "scope": "C",
+                  "type": "popup"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              },
+              "text": "Cancel"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_3"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027refresh-sites-savepopup\u0027)\n"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#EEECE8"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

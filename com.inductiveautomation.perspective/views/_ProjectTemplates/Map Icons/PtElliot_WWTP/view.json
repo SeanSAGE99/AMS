@@ -1,0 +1,144 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 28,
+      "width": 28
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/wwtp/PtElliot/Details"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "drawing"
+        },
+        "position": {
+          "height": 26,
+          "width": 26,
+          "x": 1,
+          "y": 1
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Alexandrina/Port Elliot/WWTP/PtElliot_WWTP/System/Mode/Aeration Cycle Active"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "fallback": "Device/Mode/Invalid",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "Device/Status/On"
+                    },
+                    {
+                      "input": false,
+                      "output": "Device/Status/Off"
+                    }
+                  ],
+                  "outputType": "style-list",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M 6.1237111,5.783505 H 21.123711 v 15 H 6.1237111 Z",
+                  "name": "rect31",
+                  "stroke": {
+                    "opacity": "1",
+                    "paint": "#2B2B2B",
+                    "width": "3px"
+                  },
+                  "style": {},
+                  "type": "path"
+                }
+              ],
+              "name": "layer1",
+              "transform": "translate(-5.9741016,-5.6338955)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "classes": "Device/Status/On"
+          },
+          "viewBox": "0 0 15.299219 15.299219"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/wwtp/PtElliot/Details"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "alarm"
+        },
+        "position": {
+          "height": 26,
+          "width": 26,
+          "x": 1,
+          "y": 1
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true,
+              "parentPath": "[default]Alexandrina/Port Elliot/WWTP/PtElliot_WWTP"
+            },
+            "device": {
+              "enabled": false,
+              "name": "value",
+              "parentPath": "value"
+            }
+          },
+          "path": "Shared/Alarms/Symbol",
+          "style": {
+            "cursor": "pointer"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "#FFFFFF00",
+        "cursor": "pointer"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

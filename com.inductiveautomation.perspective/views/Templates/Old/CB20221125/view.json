@@ -1,0 +1,1244 @@
+{
+  "custom": {
+    "ActiveAck": 0,
+    "ActiveUnack": 0,
+    "AlarmCount": 0,
+    "Closed": true,
+    "CurrentA": null,
+    "CurrentB": null,
+    "CurrentC": null,
+    "DeviceTagPath": "High Voltage/International/Substation 4/PLC/CB07",
+    "EarthToBusbar": null,
+    "Earthed": false,
+    "Open": false,
+    "RackedIn": true
+  },
+  "params": {
+    "CurrentVisible": false,
+    "DeviceName": "CB07",
+    "DeviceParentPath": "High Voltage/International/Substation 4/PLC",
+    "EarthToBusbarVisible": false,
+    "EarthTop": false,
+    "Rackable": true,
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.Closed": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Status Folder/CB Closed"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.CurrentA": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Current Phase A"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.CurrentB": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Current Phase B"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.CurrentC": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Current Phase C"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.EarthToBusbar": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Status Folder/ES Closed Busbar"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.Earthed": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Status Folder/ES Closed"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.Open": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Status Folder/CB Open"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.RackedIn": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Racked In"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.CurrentVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.EarthToBusbarVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.EarthTop": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Rackable": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 150,
+      "width": 90.24
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CB Local"
+        },
+        "position": {
+          "height": 0.1485,
+          "width": 0.2178,
+          "x": 0.2871,
+          "y": 0.5251
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "1": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{1}/Status Folder/Local Mode"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m 115.8491,268.25767 -5.65091,-0.87986 -6.0346,-2.45208 -6.034612,-2.45208 -5.81449,-3.77586 -5.81449,-3.77586 -35.31098,-35.5704 -35.31098,-35.5704 -2.42925,-5 -2.42925,-5 -0.01,-5.88398 -0.01,-5.88398 1.1888,-3.96786 1.1888,-3.96785 4.30021,-4.78287 4.30021,-4.78288 4.66111,-2.19097 4.6611,-2.19098 6.15601,-0.0355 6.15601,-0.0355 5.03005,2.16387 5.03005,2.16387 5.37966,5.44733 5.37967,5.44733 h 0.78416 0.78416 V 103.4593 51.637437 l 1.67629,-4.91965 1.6763,-4.919649 5.19237,-5.192375 5.19238,-5.192376 5.7832,-1.681222 5.7832,-1.681222 4.09813,0.601561 4.09813,0.601561 2.161812,0.607118 2.16182,0.607117 1.96091,-4.432962 1.96091,-4.432962 3.77616,-3.776157 3.77615,-3.776157 4.10112,-1.862489 4.10112,-1.86249 6.5,-0.01219 6.5,-0.01219 5,2.333311 5,2.333312 3.64381,4.042262 3.64381,4.042263 1.31892,3.64739 1.31891,3.64739 3.03727,-0.782733 3.03734,-0.782769 6,0.06647 6,0.06647 4.11647,2.135736 4.11647,2.135737 3.08244,2.593702 3.08244,2.593703 2.67772,5.473063 2.67772,5.473062 0.50105,8.787596 0.50104,8.787595 5.1684,-0.936805 5.16839,-0.936806 5.63749,1.638865 5.6375,1.638864 4.30605,3.284334 4.30605,3.284334 3.01038,5.887021 3.01039,5.887022 v 63.570028 63.57002 l -1.82007,6.41475 -1.82007,6.41474 -3.02524,6.20459 -3.02523,6.20459 -4.41289,5.62247 -4.41289,5.62247 -5.69888,4.47286 -5.69889,4.47286 -6.07744,2.99192 -6.07745,2.99192 -5.96547,1.68743 -5.96548,1.68744 -28,0.28418 -28,0.28417 -5.6509,-0.87985 z m 63.23209,-18.80981 6.58119,-1.71799 5.67706,-3.44066 5.67707,-3.44066 3.42912,-3.53371 3.42912,-3.53371 3.50369,-5.84331 3.5037,-5.8433 1.55893,-6.8541 L 214,208.38632 V 149.78406 91.181809 l -1.425,-2.755655 -1.42501,-2.755654 -2.62205,-1.194686 -2.62205,-1.194685 h -2.52987 -2.52987 L 197.92308,86.204206 195,89.127283 v 20.076927 20.07692 h -8.96638 -8.96638 L 176.78362,90.193715 176.5,51.1063 l -2.80576,-2.412585 -2.80577,-2.412586 h -3.52116 -3.52116 L 160.92308,49.204206 158,52.127283 v 38.576923 38.576924 h -9 -9 V 82.328182 35.375235 l -1.13856,-2.498861 -1.13855,-2.498862 -3.39952,-1.613177 -3.39952,-1.613177 -3.45883,1.141514 -3.45882,1.141514 -1.5031,2.145978 L 121,33.726141 v 47.777494 47.777495 h -8.96638 -8.96638 L 102.78362,90.193715 102.5,51.1063 99.694238,48.693715 96.888468,46.281129 h -3.52116 -3.52115 l -2.92308,2.923077 -2.92308,2.923077 v 73.796197 73.7962 l -21.30316,-21.21927 -21.30316,-21.21928 h -3.29684 -3.29684 l -3.52653,3.52654 -3.52654,3.52653 0.60369,3.72347 0.60368,3.72346 35.77285,35.61517 35.772852,35.61517 4.52424,2.59755 4.52425,2.59755 5.47575,1.47147 5.47576,1.47147 26,0.008 26,0.008 6.58119,-1.71798 z",
+                  "fill": {
+                    "paint": "#000000"
+                  },
+                  "name": "path99",
+                  "style": {},
+                  "type": "path"
+                }
+              ],
+              "name": "g15",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 240 280"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.1902,
+          "width": 0.4554,
+          "x": 0.5446,
+          "y": 0.2428
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.CurrentVisible"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "({view.custom.CurrentA}+{view.custom.CurrentB}+{view.custom.CurrentC})/3"
+              },
+              "transforms": [
+                {
+                  "formatType": "numeric",
+                  "formatValue": "##A",
+                  "type": "format"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.1902,
+          "width": 0.4257,
+          "x": 0.5446,
+          "y": 0.3765
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.1902,
+          "width": 0.4356,
+          "x": 0.5446,
+          "y": 0.5191
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "1": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{1}/Parameters.CircuitNumber"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontStyle": "italic"
+          },
+          "textStyle": {
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SC1"
+        },
+        "position": {
+          "height": 0.0891,
+          "width": 0.4059,
+          "x": 0.203,
+          "y": 0.2903
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "1": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{1}/Status Folder/Spring Charged"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m112.89 63.437 5.8226 3.3188 577.72 335.02v1.1062l-578.97 332.87-11.67 6.594 0.63819-341.12 0.6382-341.12zm6.1864 659.99 3.2537-1.9869 553.6-318.21v-1.8671l-552.4-320.27-6.4925-3.9978-0.60648 324.16-0.60647 324.16z",
+                  "name": "path99",
+                  "type": "path"
+                },
+                {
+                  "d": "m116.94 401.51c0.39418-177.28 0.86328-322.48 1.0424-322.66 0.17916-0.17916 2.8436 1.1841 5.9211 3.0294 3.0774 1.8453 128.38 74.523 278.45 161.51 150.07 86.983 272.72 158.55 272.57 159.04-0.25076 0.78718-553.6 319.38-557.24 320.83-1.2514 0.49974-1.3534-44.088-0.73608-321.75z",
+                  "fill": {
+                    "paint": "#666"
+                  },
+                  "name": "path273",
+                  "type": "path"
+                }
+              ],
+              "name": "g15",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 800 800"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t\twidth \u003d self.page.props.dimensions.viewport.width\n\t\tprint(width)\n\t\tif width \u003e 1260:\n\t\t\tsystem.perspective.openPopup(self.view.custom.DeviceTagPath, \u0027Popups/HV/HVCBs/ppuHVCB\u0027, {\u0027deviceParentPath\u0027 : self.view.params.DeviceParentPath, \u0027deviceName\u0027 : self.view.params.DeviceName}, showCloseIcon \u003d False, draggable \u003d True)\n\t\telse:\n\t\t\tsystem.perspective.openPopup(self.view.custom.DeviceTagPath, \u0027Popups/HV/HVCBs/ppuHVCB\u0027, {\u0027deviceParentPath\u0027 : self.view.params.DeviceParentPath, \u0027deviceName\u0027 : self.view.params.DeviceName}, showCloseIcon \u003d False, draggable \u003d False)\t\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "CB_0"
+        },
+        "position": {
+          "height": 0.4457,
+          "width": 0.1881,
+          "x": 0.1188,
+          "y": 0.2755
+        },
+        "propConfig": {
+          "props.elements[0].elements[0].elements[0].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].elements[1].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].elements[2].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].elements[3].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} !\u003d 0, 0, 1)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--success)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[0].type": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.Open} \u003d 1 \u0026\u0026 {view.custom.Closed} \u003d 0) , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].elements[0].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--qual-4)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].elements[1].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--qual-4)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].elements[2].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--qual-4)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[1].type": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Open} \u003d 0 \u0026\u0026 {view.custom.Closed} \u003d 1 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].elements[0].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--callToAction--disabled)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].elements[1].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--callToAction--disabled)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].elements[2].stroke.paint": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.AlarmCount} \u003d 0 , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "var(--warningSecondary)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "var(--callToAction--disabled)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[2].type": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Open} \u003d 0 \u0026\u0026 {view.custom.Closed} \u003d 0, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[0].elements[3].type": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Open} \u003d 1 \u0026\u0026 {view.custom.Closed} \u003d 1, 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.style.marginLeft": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.Rackable}!\u003d 0,{view.custom.RackedIn} , 2)"
+              },
+              "transforms": [
+                {
+                  "fallback": "0px",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 0,
+                      "output": "-10px"
+                    },
+                    {
+                      "input": 1,
+                      "output": "0px"
+                    },
+                    {
+                      "input": 2,
+                      "output": "0px"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "M 8.0233797,7.7328842 5.3356751,6.0238855",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 5.348556,7.7393246 8.0362606,6.0303259",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m 6.6990531,22.364074 -0.00376,-6.260393",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.545231px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 6.6953345,15.970567 2.6459996,6.9975501",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14758",
+                      "stroke": {
+                        "linecap": "round",
+                        "width": "0.546586px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30707",
+                  "transform": "translate(-0.18033219,-0.64404353)"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M 8.0233792,7.7328845 5.3356751,6.0238855",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 5.348556,7.7393246 8.0362602,6.0303256",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 6.6990395,22.364061 6.6974667,7.2394847",
+                      "fill": {
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30701",
+                  "transform": "translate(-0.180332,-0.6440435)"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M -3.0938728,4.8212516 -5.7815769,3.1122526",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m -5.768696,4.8276917 2.6877042,-1.708999",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1-0",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M -4.4182125,19.452428 -4.4197853,4.3278518",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3-4",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30696",
+                  "transform": "translate(10.93692,2.2675894)"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "M -3.0938728,4.8212516 -5.7815769,3.1122526",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-82-8",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "m -5.768696,4.8276917 2.6877042,-1.708999",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14752-7-8-1-0",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.439176px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M -4.4182125,19.452428 -4.4197853,4.3278518",
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "none",
+                        "rule": "evenodd"
+                      },
+                      "name": "path14756-3-4",
+                      "stroke": {
+                        "linecap": "round",
+                        "opacity": "1",
+                        "paint": "var(--warningSecondary)",
+                        "width": "0.547432px"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g30696",
+                  "transform": "translate(10.93692,2.2675894)"
+                }
+              ],
+              "name": "g30722",
+              "transform": "matrix(1.5212484,0,0,1.8467105,-3.1848551,-9.4026418)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "cursor": "pointer"
+          },
+          "viewBox": "0 0 9.260125 31.750588"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "CB Earth Optymised"
+        },
+        "position": {
+          "height": 0.3333,
+          "width": 0.2673,
+          "x": 0.2532,
+          "y": 0.6805
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.Earthed} \u003d true \u0026\u0026 {view.params.EarthTop} \u003d false) || {view.params.EarthToBusbarVisible} \u003d true \u0026\u0026 {view.custom.EarthToBusbar} \u003d true, 1, 0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m12.315 8.3564-9.9588 0.0051",
+                  "name": "path11",
+                  "type": "path"
+                },
+                {
+                  "d": "m9.9585 10.765-5.0774 0.0098",
+                  "name": "path13",
+                  "type": "path"
+                },
+                {
+                  "d": "m8.565 13.173-2.2964 0.02092",
+                  "name": "path15",
+                  "type": "path"
+                },
+                {
+                  "d": "m7.4254 7.8751-0.0029-15.034",
+                  "name": "path17",
+                  "type": "path"
+                },
+                {
+                  "d": "m7.4225-7.1593-7.0987-12.066",
+                  "name": "path19",
+                  "type": "path"
+                }
+              ],
+              "fill": {
+                "paint": "none",
+                "rule": "evenodd"
+              },
+              "name": "g21",
+              "stroke": {
+                "linecap": "round",
+                "paint": "#008000"
+              },
+              "transform": "matrix(.8273 0 0 .6548 -.011416 12.75)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 10.583 22.49"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.1307,
+          "width": 0.2178,
+          "x": 0.2992,
+          "y": 0.3873
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Earth Optymised Top"
+        },
+        "position": {
+          "height": 0.3863,
+          "width": 0.2673,
+          "x": 0.2501,
+          "y": -0.0338
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Earthed} \u003d true \u0026\u0026 {view.params.EarthTop} \u003d true, 1, 0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m 12.315,-12.749185 -9.9588,-0.0051",
+                  "name": "path11",
+                  "type": "path"
+                },
+                {
+                  "d": "m 9.9585,-15.157785 -5.0774,-0.0098",
+                  "name": "path13",
+                  "type": "path"
+                },
+                {
+                  "d": "m 8.565,-17.565785 -2.2964,-0.02092",
+                  "name": "path15",
+                  "type": "path"
+                },
+                {
+                  "d": "M 7.4254,-12.267885 7.4225,2.7661146",
+                  "name": "path17",
+                  "type": "path"
+                },
+                {
+                  "d": "M 7.4225,2.7665146 0.3238,14.832515",
+                  "name": "path19",
+                  "type": "path"
+                }
+              ],
+              "fill": {
+                "paint": "none",
+                "rule": "evenodd"
+              },
+              "name": "g21",
+              "stroke": {
+                "linecap": "round",
+                "paint": "#008000"
+              },
+              "transform": "matrix(0.8273,0,0,0.6548,-0.011416,12.75)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 10.583 22.49"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

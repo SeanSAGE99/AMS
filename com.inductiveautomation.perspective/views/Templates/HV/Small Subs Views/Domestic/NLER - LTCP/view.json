@@ -1,0 +1,251 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 176,
+      "width": 270
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CB Block"
+        },
+        "position": {
+          "height": 0.2093,
+          "width": 0.2331,
+          "x": 0.0226,
+          "y": 0.657
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/NLER Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.2093,
+          "width": 0.2331,
+          "x": 0.2707,
+          "y": 0.657
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/Domestic/NLER Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_1"
+        },
+        "position": {
+          "height": 0.2093,
+          "width": 0.2331,
+          "x": 0.5188,
+          "y": 0.657
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB03",
+            "DeviceParentPath": "High Voltage/Domestic/NLER Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_2"
+        },
+        "position": {
+          "height": 0.2093,
+          "width": 0.2331,
+          "x": 0.7669,
+          "y": 0.6585
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB04",
+            "DeviceParentPath": "High Voltage/Domestic/NLER Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.103,
+          "width": 0.3496,
+          "x": 0.3256,
+          "y": 0.0361
+        },
+        "props": {
+          "style": {
+            "classes": "Tag/Label"
+          },
+          "text": "NLER",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "normal",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/Domestic/nler-substation"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "view.params.CB2"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "view.params.CB3"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9774,
+                "y": 0.5058
+              },
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.0301,
+                            "y": 0.5058
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.0902,
+                            "y": 0.6919
+                          }
+                        ],
+                        "x": 0.0902,
+                        "y": 0.5058
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.3383,
+                        "y": 0.6977
+                      }
+                    ],
+                    "x": 0.3383,
+                    "y": 0.5058
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.5865,
+                    "y": 0.6977
+                  }
+                ],
+                "x": 0.5865,
+                "y": 0.5058
+              },
+              {
+                "connections": [],
+                "x": 0.8346,
+                "y": 0.6919
+              }
+            ],
+            "x": 0.8346,
+            "y": 0.5058
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8346,
+                "y": 1.0291
+              }
+            ],
+            "x": 0.8346,
+            "y": 0.8314
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": null,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,999 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "International Zone Substation"
+        },
+        "position": {
+          "height": 0.1341,
+          "width": 0.8156,
+          "x": 0.0928,
+          "y": 0.0097
+        },
+        "props": {
+          "params": {
+            "Pipes": {
+              "CB1-CB31": true,
+              "CB16": false,
+              "CB2": false,
+              "CB23": false,
+              "CB24": false,
+              "CB25": true,
+              "CB26": true,
+              "CB27": false,
+              "CB29": true,
+              "CB3": true,
+              "CB30": false,
+              "CB4": true,
+              "CB5": true,
+              "CB6": false,
+              "CB7": false,
+              "CB8": false,
+              "CB9": false
+            }
+          },
+          "path": "Templates/HV/Small Subs Views/International/International Zone Substation"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 2"
+        },
+        "position": {
+          "height": 0.1274,
+          "width": 0.1862,
+          "x": 0.7471,
+          "y": 0.7565
+        },
+        "props": {
+          "params": {
+            "CB1": false,
+            "CB2": false,
+            "CB3": false,
+            "CB6": true,
+            "CB7": true,
+            "CB9": true
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 2 - Ring"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 11"
+        },
+        "position": {
+          "height": 0.1266,
+          "width": 0.2071,
+          "x": 0.0822,
+          "y": 0.1942
+        },
+        "props": {
+          "params": {
+            "CB10": true,
+            "CB12": true,
+            "CB13": true,
+            "CB14": true,
+            "CB2": false,
+            "CB3": false,
+            "CB4": false
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 11"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 10"
+        },
+        "position": {
+          "height": 0.1338,
+          "width": 0.1169,
+          "x": 0.8675,
+          "y": 0.5718
+        },
+        "props": {
+          "params": {
+            "CB01": true,
+            "CB03": true,
+            "CB05": false,
+            "CB07": false
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 10 - Sub 1, Sub 2, Sub 5, Sub 1A"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 7"
+        },
+        "position": {
+          "height": 0.1266,
+          "width": 0.1662,
+          "x": 0.5419,
+          "y": 0.1949
+        },
+        "props": {
+          "params": {
+            "CB1": true,
+            "CB10": false,
+            "CB3": true,
+            "CB4": true,
+            "CB5": true,
+            "CB7": false,
+            "CB8": false
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 7"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 9"
+        },
+        "position": {
+          "height": 0.1338,
+          "width": 0.1453,
+          "x": 0.1332,
+          "y": 0.5717
+        },
+        "props": {
+          "params": {
+            "Pipes": {
+              "CB02": false,
+              "CB04": false,
+              "CB07": true,
+              "CB09": true
+            }
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 9"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0178,
+          "width": 0.0924,
+          "x": 0.0003,
+          "y": 0.0411
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "T1 Non - Ess Ring",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CSB 1A"
+        },
+        "position": {
+          "height": 0.1622,
+          "width": 0.2578,
+          "x": 0.7372,
+          "y": 0.1943
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/CSB 1A"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CSB 1B"
+        },
+        "position": {
+          "height": 0.113,
+          "width": 0.0644,
+          "x": 0.791,
+          "y": 0.408
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/International/CSB 1B"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 5"
+        },
+        "position": {
+          "height": 0.1338,
+          "width": 0.2222,
+          "x": 0.2968,
+          "y": 0.5715
+        },
+        "props": {
+          "params": {
+            "CB02": false,
+            "CB03": false,
+            "CB06": true,
+            "CB07": true,
+            "CB10": true,
+            "CB11": false
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 5 - Ring"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 8"
+        },
+        "position": {
+          "height": 0.1095,
+          "width": 0.1733,
+          "x": 0.5373,
+          "y": 0.5722
+        },
+        "props": {
+          "params": {
+            "CB02": false,
+            "CB04": false,
+            "CB07": true,
+            "CB09": true
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 8 - Ring"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation 4"
+        },
+        "position": {
+          "height": 0.1176,
+          "width": 0.1356,
+          "x": 0.1028,
+          "y": 0.7568
+        },
+        "props": {
+          "params": {
+            "CB02": false,
+            "CB04": false,
+            "CB07": true,
+            "CB09": true
+          },
+          "path": "Templates/HV/Small Subs Views/International/Substation 4"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Sub 12"
+        },
+        "position": {
+          "height": 0.1136,
+          "width": 0.0733,
+          "x": 0.3789,
+          "y": 0.1942
+        },
+        "props": {
+          "params": {
+            "CB02": true
+          },
+          "path": "Templates/HV/Small Subs Views/International/Sub 12 - Sub 5"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/t1-precinct-ring"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.002,
+          "y": 0.9536
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "T1 Precinct Ring",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/overview"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.002,
+          "y": 0.9156
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "T1 Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/t1-essential-ring"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.002,
+          "y": 0.8766
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "T1 Ess Ring",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/overview"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.002,
+          "y": 0.8386
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "HV Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1849,
+                        "y": 0.8673
+                      }
+                    ],
+                    "x": 0.1849,
+                    "y": 0.9319
+                  }
+                ],
+                "x": 0.7146,
+                "y": 0.9319
+              }
+            ],
+            "x": 0.7146,
+            "y": 0.1365
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2036,
+                        "y": 0.1365
+                      }
+                    ],
+                    "x": 0.2036,
+                    "y": 0.1759
+                  }
+                ],
+                "x": 0.2745,
+                "y": 0.1759
+              }
+            ],
+            "x": 0.2745,
+            "y": 0.201
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2354,
+                        "y": 0.1375
+                      }
+                    ],
+                    "x": 0.2354,
+                    "y": 0.1596
+                  }
+                ],
+                "x": 0.3891,
+                "y": 0.1596
+              }
+            ],
+            "x": 0.3891,
+            "y": 0.2
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6823,
+                        "y": 0.1375
+                      }
+                    ],
+                    "x": 0.6823,
+                    "y": 0.1596
+                  }
+                ],
+                "x": 0.5521,
+                "y": 0.1596
+              }
+            ],
+            "x": 0.5521,
+            "y": 0.201
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.8104,
+                        "y": 0.1365
+                      }
+                    ],
+                    "x": 0.8104,
+                    "y": 0.1759
+                  }
+                ],
+                "x": 0.9807,
+                "y": 0.1759
+              }
+            ],
+            "x": 0.9807,
+            "y": 0.2
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1948,
+                "y": 0.5779
+              }
+            ],
+            "x": 0.1948,
+            "y": 0.3135
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.3875,
+                                "y": 0.699
+                              }
+                            ],
+                            "x": 0.3875,
+                            "y": 0.774
+                          }
+                        ],
+                        "x": 0.2875,
+                        "y": 0.774
+                      }
+                    ],
+                    "x": 0.2875,
+                    "y": 0.4433
+                  }
+                ],
+                "x": 0.2547,
+                "y": 0.4433
+              }
+            ],
+            "x": 0.2547,
+            "y": 0.3144
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_9",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.4375,
+                        "y": 0.301
+                      }
+                    ],
+                    "x": 0.4375,
+                    "y": 0.3923
+                  }
+                ],
+                "x": 0.3073,
+                "y": 0.3923
+              }
+            ],
+            "x": 0.3073,
+            "y": 0.5769
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.6589,
+                                "y": 0.675
+                              }
+                            ],
+                            "x": 0.6589,
+                            "y": 0.7625
+                          }
+                        ],
+                        "x": 0.5281,
+                        "y": 0.7625
+                      }
+                    ],
+                    "x": 0.5281,
+                    "y": 0.4798
+                  }
+                ],
+                "x": 0.3276,
+                "y": 0.4798
+              }
+            ],
+            "x": 0.3276,
+            "y": 0.5779
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_10",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6193,
+                "y": 0.5779
+              }
+            ],
+            "x": 0.6193,
+            "y": 0.3154
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_11",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8209,
+                "y": 0.4163
+              }
+            ],
+            "x": 0.8209,
+            "y": 0.349
+          },
+          "start": "none",
+          "stroke": "var(--qual-9)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_13",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.8406,
+                        "y": 0.35
+                      }
+                    ],
+                    "x": 0.8406,
+                    "y": 0.3827
+                  }
+                ],
+                "x": 0.9036,
+                "y": 0.3827
+              }
+            ],
+            "x": 0.9036,
+            "y": 0.5779
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2245,
+                "y": 0.7625
+              }
+            ],
+            "x": 0.2245,
+            "y": 0.6981
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_18",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.1719,
+                                "y": 0.1375
+                              }
+                            ],
+                            "x": 0.1719,
+                            "y": 0.1596
+                          }
+                        ],
+                        "x": 0.0776,
+                        "y": 0.1596
+                      }
+                    ],
+                    "x": 0.0776,
+                    "y": 0.9699
+                  }
+                ],
+                "x": 0.8281,
+                "y": 0.9699
+              }
+            ],
+            "x": 0.8281,
+            "y": 0.8751
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8781,
+                "y": 0.7625
+              }
+            ],
+            "x": 0.8781,
+            "y": 0.699
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_14",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.5786,
+                                "y": 0.201
+                              }
+                            ],
+                            "x": 0.5786,
+                            "y": 0.1759
+                          }
+                        ],
+                        "x": 0.7307,
+                        "y": 0.1759
+                      }
+                    ],
+                    "x": 0.7307,
+                    "y": 0.7192
+                  }
+                ],
+                "x": 0.838,
+                "y": 0.7192
+              }
+            ],
+            "x": 0.838,
+            "y": 0.7625
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

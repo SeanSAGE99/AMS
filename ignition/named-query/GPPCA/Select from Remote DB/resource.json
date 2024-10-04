@@ -1,0 +1,41 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "ODSUAT",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "fe11d71b6cd71c69cbb7682ae1659e105ddccb830bdbdd6048835d64a725c892",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "tom",
+      "timestamp": "2024-06-24T23:51:08Z"
+    },
+    "syntaxProvider": "class com.adbs.syntax.OracleSyntaxProvider",
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "eventDate",
+        "sqlType": 7
+      }
+    ]
+  }
+}

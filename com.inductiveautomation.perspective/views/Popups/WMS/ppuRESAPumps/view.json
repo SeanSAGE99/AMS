@@ -1,0 +1,1936 @@
+{
+  "custom": {
+    "SCADAoverrideActivated": false,
+    "deviceTagPath": "International/Precinct/Runway End Safety Area/Pump Station",
+    "pens": [
+      {
+        "axis": "Temperature",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Tank Level",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "Temperature",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "Temperature",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#E78AC3",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#E78AC3",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      }
+    ],
+    "siteName": "RESA Storm Water Pump Station",
+    "subArea": "International Precinct"
+  },
+  "params": {
+    "Analogue1Name": "",
+    "Analogue2Name": "",
+    "Pump1Name": "Pump 1",
+    "Pump2Name": "Pump 2",
+    "Pump3Name": "Pump 3",
+    "Pump4Name": "",
+    "WellOrPit": "Pit Water Level",
+    "deviceName": "Pump Station",
+    "deviceParentPath": "International/Precinct/Runway End Safety Area"
+  },
+  "propConfig": {
+    "custom.SCADAoverrideActivated": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "International/Precinct/Runway End Safety Area/Pump Station/Pump Station/Status/SCADA Override Activated"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.pens": {
+      "persistent": true
+    },
+    "custom.pens[0].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/\u0027 + {view.params.WellOrPit} + \u0027/Status/Level\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.pens[1].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/\u0027 + {view.params.Analogue1Name} + \u0027/Status/Process Value\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.pens[1].name": {
+      "binding": {
+        "config": {
+          "path": "view.params.Analogue1Name"
+        },
+        "type": "property"
+      }
+    },
+    "custom.pens[2].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/\u0027 + {view.params.Analogue2Name} + \u0027/Status/Process Value\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.pens[2].name": {
+      "binding": {
+        "config": {
+          "path": "view.params.Analogue2Name"
+        },
+        "type": "property"
+      }
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "expression": "tag({view.custom.deviceTagPath} + \u0027/\u0027 +{view.params.Pump1Name} + \u0027/Parameters.Alarm_ParentDevice\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "expression": "tag({view.custom.deviceTagPath} + \u0027/\u0027 +{view.params.Pump1Name} + \u0027/Parameters.Alarm_Area\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.Analogue1Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Analogue2Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Pump1Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Pump2Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Pump3Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Pump4Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.WellOrPit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 563,
+      "width": 390
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "tag({view.custom.deviceTagPath} + \u0027/\u0027 +{view.params.Pump1Name} + \u0027/Parameters.Description\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "7pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Alarm Icon"
+                    },
+                    "position": {
+                      "height": 38,
+                      "width": 38,
+                      "x": 1,
+                      "y": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "deviceName": "",
+                          "deviceParentPath": "",
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Body\").getChild(\"details_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"trend_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"alarms_expanded\").position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Alarm Button"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Alarm Summary/Priority Counts/Active"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "marginBottom": 3,
+                    "marginRight": 5,
+                    "marginTop": 3,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "alarms_expanded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.deviceName": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.deviceParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceParentPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "controlEnable": true,
+                        "show": {
+                          "area": false,
+                          "device": false
+                        }
+                      },
+                      "path": "Shared/Templates/Devices/Control/Common/Alarms",
+                      "style": {
+                        "marginBottom": "5px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "300px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Alarms"
+            },
+            "position": {
+              "tabIndex": 3
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label_5"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "props": {
+                              "text": "AMS Selected Control Mode:",
+                              "textStyle": {
+                                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                                "fontWeight": "bold",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label_6"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "tag ({view.custom.deviceTagPath} + \u0027/Pump Station/Status/SCADA Override Activated\u0027)"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "fallback": null,
+                                      "inputType": "scalar",
+                                      "mappings": [
+                                        {
+                                          "input": true,
+                                          "output": "Override"
+                                        },
+                                        {
+                                          "input": false,
+                                          "output": "AUTO"
+                                        }
+                                      ],
+                                      "outputType": "scalar",
+                                      "type": "map"
+                                    }
+                                  ],
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "textStyle": {
+                                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                                "fontWeight": "bold",
+                                "textAlign": "center"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "basis": "183px"
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Single Tag"
+                            },
+                            "propConfig": {
+                              "props.params.tagParentPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.deviceTagPath} + \u0027/Pump Station/Control\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              },
+                              "props.params.writeEnable": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "direct",
+                                    "tagPath": "International/Precinct/Runway End Safety Area/Pump Station/Pump Station/Control/SCADA Override Command.CanWrite"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "expression": "{value}\u0026\u0026!{view.custom.SCADAoverrideActivated}",
+                                      "type": "expression"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.style.opacity": {
+                                "binding": {
+                                  "config": {
+                                    "expression": " if (tag ({view.custom.deviceTagPath} + \u0027/Pump Station/Status/SCADA Override Activated\u0027), 0.2, 1)"
+                                  },
+                                  "enabled": false,
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "buttonText": "Override",
+                                "tagName": "SCADA Override Command",
+                                "writeValue": true
+                              },
+                              "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag with Enable",
+                              "style": {
+                                "opacity": "1",
+                                "paddingRight": 15
+                              }
+                            },
+                            "type": "ia.display.view"
+                          },
+                          {
+                            "meta": {
+                              "name": "Single Tag_0"
+                            },
+                            "propConfig": {
+                              "props.params.tagParentPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.deviceTagPath} + \u0027/Pump Station/Control\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              },
+                              "props.params.writeEnable": {
+                                "binding": {
+                                  "config": {
+                                    "fallbackDelay": 2.5,
+                                    "mode": "direct",
+                                    "tagPath": "International/Precinct/Runway End Safety Area/Pump Station/Pump Station/Control/Auto Command.CanWrite"
+                                  },
+                                  "transforms": [
+                                    {
+                                      "expression": "{value}\u0026\u0026{view.custom.SCADAoverrideActivated}",
+                                      "type": "expression"
+                                    }
+                                  ],
+                                  "type": "tag"
+                                }
+                              },
+                              "props.style.opacity": {
+                                "binding": {
+                                  "config": {
+                                    "expression": " if (tag ({view.custom.deviceTagPath} + \u0027/Pump Station/Status/SCADA Override Activated\u0027), 1, 0.2)"
+                                  },
+                                  "enabled": false,
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "buttonText": "AUTO",
+                                "tagName": "Auto Command",
+                                "writeValue": true
+                              },
+                              "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag with Enable",
+                              "style": {
+                                "opacity": "1",
+                                "paddingRight": 15
+                              }
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer_0"
+                        },
+                        "position": {
+                          "basis": "200px"
+                        },
+                        "propConfig": {
+                          "custom.key": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "International/Precinct/Runway End Safety Area/Pump Station/Pump Station/Status/SCADA Override Activated"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "direction": "column"
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "61px"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "25px"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "RESA Pump"
+                    },
+                    "position": {
+                      "basis": "109px"
+                    },
+                    "propConfig": {
+                      "props.params.commandsEnable": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {},
+                            "tagPath": "[default]International/Precinct/Runway End Safety Area/Pump Station/Pump 1/Control/Start Command.canWrite"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value}\u0026\u0026{view.custom.SCADAoverrideActivated}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "PumpRight": false,
+                        "alwaysVisible": true,
+                        "deviceName": "Pump 1",
+                        "deviceParentPath": "International/Precinct/Runway End Safety Area/Pump Station",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "popupWindow": "Popups/WMS/ppuVSDPump"
+                      },
+                      "path": "Templates/WMS/RESA Pump"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "RESA Pump_0"
+                    },
+                    "position": {
+                      "basis": "109px"
+                    },
+                    "propConfig": {
+                      "props.params.commandsEnable": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {},
+                            "tagPath": "[default]International/Precinct/Runway End Safety Area/Pump Station/Pump 2/Control/Start Command.canWrite"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value}\u0026\u0026{view.custom.SCADAoverrideActivated}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "PumpRight": false,
+                        "alwaysVisible": false,
+                        "deviceName": "Pump 2",
+                        "deviceParentPath": "International/Precinct/Runway End Safety Area/Pump Station",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "popupWindow": "Popups/WMS/ppuVSDPump"
+                      },
+                      "path": "Templates/WMS/RESA Pump"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "RESA Pump_1"
+                    },
+                    "position": {
+                      "basis": "109px"
+                    },
+                    "propConfig": {
+                      "props.params.commandsEnable": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {},
+                            "tagPath": "[default]International/Precinct/Runway End Safety Area/Pump Station/Pump 3/Control/Start Command.canWrite"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value}\u0026\u0026{view.custom.SCADAoverrideActivated}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "PumpRight": false,
+                        "alwaysVisible": true,
+                        "deviceName": "Pump 3",
+                        "deviceParentPath": "International/Precinct/Runway End Safety Area/Pump Station",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "popupWindow": "Popups/WMS/ppuVSDPump"
+                      },
+                      "path": "Templates/WMS/RESA Pump"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_1"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Info Icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#009BFF",
+                  "path": "material/info",
+                  "style": {
+                    "classes": "Input/Icon",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "\u0027Tag path: \u0027 + {value}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "fontSize": "8pt",
+                        "fontWeight": "lighter",
+                        "marginLeft": "5px",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Info"
+                },
+                "position": {
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginTop": "5px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Value w Label"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \u0027/Water Level in mm/Status\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "Water Level in mm",
+                    "showUnitsInValue": true,
+                    "tagName": "Process Value",
+                    "tagQuality": "Good",
+                    "unitsWidth": "30px",
+                    "valueWidth": "100px"
+                  },
+                  "path": "Shared/Templates/Display/Analogue Value w Label",
+                  "style": {
+                    "marginLeft": 50,
+                    "marginRight": 50
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Tank with Sparkline"
+                },
+                "position": {
+                  "basis": "270px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.WellOrPit"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "DetailsAtBottom": false,
+                    "IndicatorOnRight": false,
+                    "LabelOverride": "",
+                    "LiquidColor": "fff",
+                    "MixerPresent": false,
+                    "MixerTagPath": "",
+                    "SparklineWidth": 2,
+                    "alarmSummaryOverride": ""
+                  },
+                  "path": "Templates/WMS/Tank with Sparkline",
+                  "style": {
+                    "marginLeft": 101,
+                    "marginRight": 101
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "80px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "isavailable (tag ({view.custom.deviceTagPath}+\u0027/Info\u0027))"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(isavailable (tag ({view.custom.deviceTagPath}+\u0027/Info\u0027)),tag ({view.custom.deviceTagPath}+\u0027/Info\u0027),\u0027\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "textStyle": {
+                    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                    "textAlign": "center",
+                    "whiteSpace": "pre-wrap"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Level"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Analogue"
+                },
+                "position": {
+                  "basis": "70px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.Analogue1Name} !\u003d \"\""
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Analogue1Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "AnalogueName": "Process Value",
+                    "popupWindow": ""
+                  },
+                  "path": "Templates/WMS/Analogue",
+                  "style": {
+                    "marginBottom": 30,
+                    "marginLeft": 25,
+                    "marginRight": 25,
+                    "marginTop": 30
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue_0"
+                },
+                "position": {
+                  "basis": "70px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.Analogue2Name} !\u003d \"\""
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Analogue2Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.params.deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "AnalogueName": "Process Value",
+                    "popupWindow": ""
+                  },
+                  "path": "Templates/WMS/Analogue",
+                  "style": {
+                    "marginBottom": 30,
+                    "marginLeft": 25,
+                    "marginRight": 25,
+                    "marginTop": 30
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Temperature"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "draggable": true,
+                        "id": "pwMGOKRj",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "type": "open",
+                        "viewParams": {
+                          "deviceName": "{view.params.deviceName}",
+                          "deviceParentPath": "{view.params.deviceParentPath}",
+                          "pens": "{view.custom.pens}"
+                        },
+                        "viewPath": "Popups/Trend Popup",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "40px"
+                },
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/show_chart"
+                    }
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+                  },
+                  "text": "Historical Trends"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "custom": {
+                  "tags": [
+                    {
+                      "aggregate": "Average"
+                    },
+                    {
+                      "aggregate": "Average"
+                    },
+                    {
+                      "aggregate": "Average"
+                    }
+                  ]
+                },
+                "meta": {
+                  "name": "TimeSeriesChart"
+                },
+                "position": {
+                  "basis": "400px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "custom.tags[0].alias": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Analogue1Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "custom.tags[0].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/\u0027 + {view.params.Analogue1Name} + \u0027/Status/Process Value\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.tags[1].alias": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Analogue2Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "custom.tags[1].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/\u0027 + {view.params.Analogue2Name} + \u0027/Status/Process Value\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.tags[2].alias": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(isAvailable(tag({this.custom.tags[2].path})),\"Tank Level\",\"\")"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.tags[2].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/\u0027 + {view.params.WellOrPit} + \u0027/Status/Level\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.series[0].data": {
+                    "binding": {
+                      "config": {
+                        "aggregate": "MinMax",
+                        "avoidScanClassValidation": true,
+                        "dateRange": {
+                          "mostRecent": "1",
+                          "mostRecentUnits": "HOUR"
+                        },
+                        "enableValueCache": true,
+                        "ignoreBadQuality": true,
+                        "polling": {
+                          "enabled": true,
+                          "rate": "1"
+                        },
+                        "preventInterpolation": false,
+                        "returnFormat": "Wide",
+                        "returnSize": {
+                          "numRows": "100",
+                          "type": "FIXED"
+                        },
+                        "tags": "{this.custom.tags}",
+                        "valueFormat": "DATASET"
+                      },
+                      "type": "tag-history"
+                    }
+                  }
+                },
+                "props": {
+                  "legend": {
+                    "visible": true
+                  },
+                  "plots": [
+                    {
+                      "axes": [
+                        {
+                          "alignment": "left",
+                          "grid": {
+                            "color": "",
+                            "dashArray": 0,
+                            "opacity": 0.9,
+                            "style": {
+                              "classes": ""
+                            },
+                            "visible": false
+                          },
+                          "label": {
+                            "font": {
+                              "color": "",
+                              "size": 10
+                            },
+                            "offset": 0,
+                            "style": {
+                              "classes": ""
+                            },
+                            "text": "Analogues",
+                            "visible": true
+                          },
+                          "max": 100,
+                          "min": 0,
+                          "name": "Analogues",
+                          "style": {
+                            "classes": ""
+                          },
+                          "tick": {
+                            "color": "",
+                            "count": "Auto",
+                            "label": {
+                              "font": {
+                                "color": "",
+                                "size": 10
+                              },
+                              "format": "Auto",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "style": {
+                              "classes": ""
+                            }
+                          },
+                          "width": 60
+                        }
+                      ],
+                      "markers": [],
+                      "relativeWeight": 1,
+                      "trends": [
+                        {
+                          "axis": "Analogues",
+                          "baselines": [],
+                          "breakLine": true,
+                          "columns": [
+                            {
+                              "color": "",
+                              "key": "Suction Temperature",
+                              "styles": {
+                                "highlighted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "muted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "normal": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "selected": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "color": "",
+                              "key": "Discharge Temperature",
+                              "styles": {
+                                "highlighted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "muted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "normal": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "selected": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "color": "",
+                              "key": "Tank Level",
+                              "styles": {
+                                "highlighted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "muted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "normal": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "selected": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "interpolation": "curveLinear",
+                          "radius": 2,
+                          "series": "Analogues",
+                          "stack": true,
+                          "type": "line",
+                          "visible": true
+                        }
+                      ]
+                    }
+                  ],
+                  "series": [
+                    {
+                      "name": "Analogues"
+                    }
+                  ]
+                },
+                "type": "ia.chart.timeseries"
+              }
+            ],
+            "meta": {
+              "name": "Trends"
+            },
+            "position": {
+              "tabIndex": 4
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "586px"
+        },
+        "propConfig": {
+          "props.tabs[1].disabled": {
+            "binding": {
+              "config": {
+                "expression": "if (isAvailable (tag ({view.custom.deviceTagPath} + \u0027/\u0027 + {view.params.WellOrPit} + \u0027/Status/Level\u0027)),\r\ntag ({view.custom.deviceTagPath} + \u0027/\u0027 + {view.params.WellOrPit} + \u0027/Status/Level.Enabled\u0027),\r\nfalse)"
+              },
+              "transforms": [
+                {
+                  "fallback": true,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": false
+                    },
+                    {
+                      "input": false,
+                      "output": true
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.tabs[2].disabled": {
+            "binding": {
+              "config": {
+                "expression": "if (({view.params.Analogue1Name} \u003d \"\") \u0026\u0026 ({view.params.Analogue2Name} \u003d \"\"), true, false)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.tabs[4].disabled": {
+            "binding": {
+              "config": {
+                "expression": "if (isAvailable (tag ({view.custom.deviceTagPath} + \u0027/\u0027 + {view.params.WellOrPit} + \u0027/Status/Level\u0027)) ||{view.params.Analogue1Name} !\u003d \"\" ||{view.params.Analogue2Name} !\u003d \"\", false, true)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "overflow": "hidden"
+          },
+          "tabSize": {
+            "width": 90
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Status",
+            {
+              "text": "Level"
+            },
+            {
+              "text": "Temperature"
+            },
+            "Alarms",
+            {
+              "text": "Trends"
+            }
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "overflow": "hidden"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

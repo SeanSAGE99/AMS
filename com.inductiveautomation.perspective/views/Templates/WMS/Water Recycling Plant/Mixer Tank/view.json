@@ -1,0 +1,268 @@
+{
+  "custom": {
+    "deviceTagPath": "Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Biological Reactor/Anoxic Tank 1 Mixer",
+    "tags": [
+      {
+        "tagName": "Fault",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Biological Reactor/Anoxic Tank 1 Mixer/Alarms"
+      },
+      {
+        "tagName": "Running",
+        "tagParentPath": "[default]Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Biological Reactor/Anoxic Tank 1 Mixer/Status"
+      }
+    ]
+  },
+  "params": {
+    "deviceName": "Anoxic Tank 1 Mixer",
+    "deviceParentPath": "Water Monitoring System/International/Water Recycling Plant/Water Recycling Plant Gateway/Biological Reactor"
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 120,
+      "width": 255
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "G9mUwKgk",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Mixer Tank"
+        },
+        "position": {
+          "height": 0.7333,
+          "width": 0.8392,
+          "y": 0.2667
+        },
+        "propConfig": {
+          "props.elements[0].elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "deviceTagPath": "{view.custom.deviceTagPath}"
+                },
+                "tagPath": "{deviceTagPath}/Status/Running"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": false,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          },
+          "props.elements[0].elements[2].fill.paint": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "deviceTagPath": "{view.custom.deviceTagPath}"
+                },
+                "tagPath": "{deviceTagPath}/Status/Running"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": false,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m39.178 62.877v86h214v-88h-214v2zm107 3h101v36.014c-15.627-0.16628-31.254-0.33229-46.881-0.49804-3.0337-8.9202-5.8232-17.93-9.2387-26.714-0.42014-0.9037-0.69621-2.0051-1.4876-2.6375-0.99681-0.70103-2.2847-0.29878-3.1815 0.38006-3.3266 2.4013-6.2385 5.3191-9.2028 8.1417-3.9853 3.9668-7.987 7.9361-11.614 12.238-0.42724 0.58206-0.96822 1.2475-0.97744 1.9799 0.15111 0.50521 0.0938 1.1799 0.37341 1.5777 0.73012 0.19581 1.4269 0.81489 2.1997 0.458 1.4139-0.46762 2.4337-1.6605 3.5697-2.5729 4.662-4.1191 9.0232-8.7364 13.503-12.935 0.78102-0.72394 1.5566-1.4539 2.3555-2.1582 2.676 7.5339 5.1242 15.146 7.6621 22.727h-98.182c-3.0735-9.2133-5.9289-18.503-9.3207-27.606-0.41219-0.91038-0.65415-2.1099-1.71-2.4724-1.0505-0.48831-2.2203 0.17194-3.0845 0.78776-3.8332 2.8649-7.2833 6.203-10.764 9.4773-3.4169 3.3394-6.8982 6.6434-9.922 10.351-0.75934 0.93073-1.4885 2.1648-0.95933 3.3803 0.16695 0.52317 0.81407 0.91365 1.3032 1.1069 1.5689 0.36726 2.832-0.89272 3.9815-1.7581 5.784-4.7309 10.677-10.433 16.384-15.249 0.58943-0.7928 0.62974 0.33866 0.85171 0.79118 2.3497 6.8846 4.6262 13.795 6.7909 20.74-1.5774 0.11136-3.1647 0.15512-4.7012 0.2168-13.048 0.37887-26.103 0.18636-39.154 0.23437-0.90736 0.27598-0.51516-0.7476-0.59414-1.3v-34.7h101zm-77.854 42.232c7.9128 0.084 15.826 0.16796 23.738 0.25195 3.173 9.4672 6.1895 18.988 9.5843 28.379 0.24612 0.62322 0.49644 1.3447 0.94176 1.8117 0.68486 0.17045 1.3725 0.53886 2.0481 0.14303 1.5556-0.80415 2.7427-2.1693 4.0704-3.291 5.8081-5.4614 11.502-11.059 16.838-16.986 0.82451-1.0719 2.0652-2.0754 2.1102-3.5188-0.24201-0.49432-0.0696-1.3639-0.64718-1.5513-0.66268-0.20746-1.3134-0.62175-2.0101-0.30546-1.523 0.59505-2.6385 1.8986-3.8894 2.9123-5.2675 4.722-10.068 9.9368-15.349 14.645-2.677-7.532-5.1246-15.142-7.6602-22.723h98.182c3.0715 9.2138 5.9273 18.503 9.3188 27.606 0.41218 0.91038 0.65415 2.1099 1.71 2.4724 1.0663 0.49336 2.2503-0.18679 3.1216-0.81511 3.8461-2.8781 7.3059-6.2319 10.799-9.5193 3.3948-3.3153 6.8457-6.6019 9.8519-10.282 0.75727-0.93167 1.4864-2.1654 0.9574-3.3803-0.17232-0.489-0.76273-0.83401-1.1709-1.1086-1.3517-0.33909-2.5402 0.51888-3.5452 1.3082-6.0811 4.8315-11.118 10.814-17.068 15.791-0.54609 0.67189-0.52148-0.64154-0.76795-0.97709-2.3338-6.8548-4.6067-13.731-6.759-20.645 1.5774-0.11135 3.1647-0.15511 4.7012-0.21679 13.048-0.37885 26.103-0.18638 39.154-0.23438 0.90736-0.27597 0.51516 0.7476 0.59414 1.3v34.7h-202v-36.014c7.7155 0.082 15.431 0.16406 23.146 0.2461z",
+                  "name": "path",
+                  "opacity": 0.5,
+                  "type": "path"
+                },
+                {
+                  "d": "m6.1701 40.908c-0.068327-0.073079-0.12423-8.1706-0.12423-17.994v-17.862h201.92v35.961l-2.4432-0.09086c-1.3438-0.04997-11.835-0.1743-23.314-0.27627-11.479-0.10198-20.916-0.23254-20.971-0.29014-0.055-0.0576-1.3717-3.9062-2.926-8.5524-3.685-11.015-6.1528-17.893-7.0367-19.611-0.52146-1.0137-1.1261-1.4261-2.0826-1.4205-0.42606 0.0025-1.0442 0.13672-1.3737 0.29828-0.84917 0.41636-3.2812 2.3911-5.919 4.806-3.1427 2.8771-11.833 11.675-14.098 14.271-2.136 2.4492-2.5518 3.1899-2.389 4.2556 0.16222 1.0618 0.29333 1.216 1.3033 1.5337l0.92362 0.29051 0.89839-0.43954c1.2796-0.62603 4.065-3.1331 11.783-10.606 3.719-3.6007 6.8504-6.5467 6.9586-6.5467 0.10822 0 0.39479 0.57767 0.63682 1.2837 0.8077 2.3562 7.0437 20.969 7.0437 21.024 0 0.0296-22.052 0.05381-49.003 0.05381h-49.003l-0.52195-1.6978c-2.1617-7.0316-8.4909-25.523-9.3321-27.264-0.64579-1.3369-1.8349-1.6749-3.373-0.95866-2.6982 1.2565-15.575 13.241-20.923 19.474-1.4645 1.7068-1.8468 2.4089-1.8468 3.3922 0 1.019 0.28399 1.5571 1.0199 1.9325 1.9302 0.9847 3.3643-0.06002 13.365-9.736 4.7863-4.6311 7.557-7.1727 7.8191-7.1727 0.21363 0 7.2326 21.305 7.0719 21.466-0.31781 0.31781-43.768 0.78777-44.059 0.47654z",
+                  "fill": {},
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": ".1659"
+                  },
+                  "transform": "translate(39.178 60.877)",
+                  "type": "path"
+                },
+                {
+                  "d": "m6.0459 65.014v-17.889l4.845 0.01036c7.9754 0.01704 41.854 0.41856 41.921 0.49683 0.03434 0.0399 1.6693 4.9175 3.6333 10.839 4.1046 12.376 6.1405 18.182 6.604 18.833 0.36602 0.51403 1.4388 0.8806 2.0952 0.71588 1.0324-0.25912 2.8094-1.8017 9.4701-8.221 4.1072-3.9584 9.8936-9.9553 12.209-12.654 1.503-1.7513 1.7775-2.3411 1.6318-3.5069-0.09623-0.77018-0.18662-0.94754-0.61601-1.2087-0.27678-0.16832-0.76326-0.35482-1.0811-0.41444-1.3891-0.26059-3.2631 1.2711-12.386 10.123-6.6056 6.4096-7.6824 7.4264-7.7649 7.3323-0.09727-0.11084-3.766-10.937-5.706-16.838l-1.8106-5.5076h97.95l3.1162 9.4829c2.9808 9.0708 5.7659 17.128 6.5505 18.95 0.20212 0.46932 0.54538 1.0204 0.7628 1.2247 0.56689 0.53257 1.7968 0.62249 2.7496 0.20102 3.1948-1.4132 20.857-18.351 22.506-21.583 0.20094-0.39389 0.32797-0.97263 0.32797-1.4942 0-0.74442-0.0695-0.92088-0.55342-1.4048-0.72827-0.72827-1.2742-0.84954-2.3285-0.5172-1.539 0.48511-4.2215 2.8098-12.646 10.959-2.1662 2.0954-4.564 4.3599-5.3286 5.0323l-1.3901 1.2226-1.0516-3.0446c-2.0993-6.0783-6.1003-18.507-5.9925-18.614 0.21563-0.21563 13.487-0.41435 27.676-0.4144l16.523-5.7e-5v35.778h-201.92z",
+                  "fill": {},
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": ".1659"
+                  },
+                  "transform": "translate(39.178 60.877)",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-39.178 -60.877)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 214 88"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2667,
+          "width": 0.8392
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "tag({view.custom.deviceTagPath}+\u0027/Parameters.DeviceName\u0027)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.3333,
+          "width": 0.1569,
+          "x": 0.8431,
+          "y": 0.2667
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "IED03A",
+              "parentPath": "[default]High Voltage/International/Link Road Substation"
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

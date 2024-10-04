@@ -1,0 +1,348 @@
+{
+  "custom": {
+    "ActiveAck": 0,
+    "ActiveUnack": 1,
+    "AlarmCount": 1,
+    "DeviceTagPath": "[default]High Voltage/International/Substation 1/PLC/PLC Status",
+    "PLCstatus": "Invalid",
+    "PingAlarm": false,
+    "WatchdogAlarm": null
+  },
+  "params": {
+    "DeviceName": "PLC Status",
+    "DeviceParentPath": "[default]High Voltage/International/Substation 1/PLC",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.PLCstatus": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Mode Desc"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.PingAlarm": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Alarms/Ping/Alarms.HasActive"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.WatchdogAlarm": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Alarms/PLC Watchdog Time/Alarms.HasActive"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 107,
+      "width": 129
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "VSD Name"
+        },
+        "position": {
+          "height": 0.1963,
+          "width": 0.9845,
+          "x": 0.0078,
+          "y": 0.808
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "enabled": false,
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Parameters.PLC Name"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "clamp(3pt, calc(0.3*(1.0vmin + 1.0vmax)), 18pt)",
+            "lineHeight": "1",
+            "overflowWrap": "normal",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.1963,
+          "width": 0.1624,
+          "x": 0.7099,
+          "y": 0.3551
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Status"
+        },
+        "position": {
+          "height": 0.1029,
+          "width": 0.9922,
+          "x": 0.0078,
+          "y": -0.0012
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Status Folder/Mode Desc"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "variablespeeddrive"
+        },
+        "position": {
+          "height": 0.7052,
+          "width": 0.3191,
+          "x": 0.345,
+          "y": 0.1028
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m346.98 1263.6-13.643-13.69v-1166.7l27.379-27.286h611.91l27.379 27.286v1166.7l-13.643 13.69-13.643 13.689h-612.1zm598.36-96.977v-56h-557.33v112h557.33zm0-583.33v-472.67h-557.33v945.33h557.33zm-346 76.525-12-6.7442-68.667-109.91c-37.767-60.449-69.669-112.75-70.893-116.22-2.0093-5.7-2.2368-17.371-2.3333-119.67l-0.1069-113.36 27.379-27.286h387.91l27.379 27.286-0.10694 113.36c-0.0965 102.3-0.32402 113.97-2.3333 119.67-1.2245 3.4738-33.126 55.777-70.893 116.23l-68.667 109.91-24.319 13.543-110.35-0.0646-12-6.7442zm170.89-149.57 63.111-101.05v-187.9h-333.33v187.95l60.124 96.357c33.068 52.996 61.583 98.616 63.365 101.38l3.2407 5.0195 80.38-0.70568zm-131.56 17.049v-27.333h56v54.667h-56zm-69.024-97.023-13.643-13.689v-110.67l27.379-27.286h166.58l27.379 27.286v110.76l-27.379 27.286h-166.67zm153.02-68.977v-28h-112v56h112z",
+                  "name": "path",
+                  "stroke": {
+                    "width": "1.3333"
+                  },
+                  "type": "path"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "m55.281 1110.6v-55.28h556.11v110.56h-556.11z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(333.33 56)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m55.281 527.23v-471.95h556.11v943.89h-556.11zm345.8 77.401 12.312-6.757 41.839-67.088c40.662-65.201 84.44-136.15 94.345-152.9l4.8796-8.2508 0.97188-232.46-27.302-27.444h-389.58l-27.302 27.444 0.48594 116.23 0.48593 116.23 11.427 18.977c10.793 17.925 59.674 96.855 108.02 174.42l21.805 34.985 23.765 13.284 111.54 0.0792 12.312-6.757z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(333.33 56)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m230.61 454.08-63.119-101.14v-187.09h331.68v187.09l-126.24 202.28h-79.208zm131.6 17.047v-28.053h-57.756v56.106h57.756zm68.86-96.086 13.648-13.577v-112.22l-27.155-27.297h-168.32l-27.297 27.155v112.22l27.155 27.297h168.32z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(333.33 56)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m278.05 305.28v-27.228h110.56v54.455h-110.56z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(333.33 56)",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": {
+                    "paint": "#fff"
+                  },
+                  "name": "group",
+                  "stroke": {
+                    "width": "84.74"
+                  },
+                  "type": "group"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-333.33 -56)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 666.67 1221.3"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -50,
+      "y": -26.9999942779541
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

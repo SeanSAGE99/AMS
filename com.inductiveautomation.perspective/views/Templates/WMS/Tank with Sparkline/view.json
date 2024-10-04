@@ -1,0 +1,993 @@
+{
+  "custom": {
+    "deviceTagPath": "[default]Water Monitoring System/International/North West Pump Station/Tank 1/Status//Tank 1",
+    "tags": []
+  },
+  "params": {
+    "DetailsAtBottom": true,
+    "IndicatorOnRight": false,
+    "LabelOverride": "",
+    "LiquidColor": "fff",
+    "MixerPresent": false,
+    "MixerTagPath": "",
+    "SparklineWidth": 4,
+    "alarmSummaryOverride": "",
+    "deviceName": "Tank 1",
+    "deviceParentPath": "[default]Water Monitoring System/International/North West Pump Station/Tank 1/Status/"
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DetailsAtBottom": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.IndicatorOnRight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.LabelOverride": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.LiquidColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.MixerPresent": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.MixerTagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.SparklineWidth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.alarmSummaryOverride": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 401,
+      "width": 310
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "aYFiDQd1",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Progress"
+        },
+        "position": {
+          "height": 0.3796,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.8065,
+          "x": 0.0977,
+          "y": 0.3088
+        },
+        "propConfig": {
+          "props.bar.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.LiquidColor"
+              },
+              "type": "property"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "path": "../MovingAnalogIndicator.props.processValue"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "bar": {},
+          "track": {
+            "color": "var(--neutral-50)"
+          }
+        },
+        "type": "ia.display.progress"
+      },
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "um5WYfB8",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "MovingAnalogIndicator"
+        },
+        "position": {
+          "height": 0.6857,
+          "width": 0.229,
+          "x": 0.6548,
+          "y": 0.1546
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.IndicatorOnRight"
+              },
+              "type": "property"
+            }
+          },
+          "props.desiredRangeColor": {
+            "binding": {
+              "config": {
+                "path": "view.params.LiquidColor"
+              },
+              "type": "property"
+            }
+          },
+          "props.processValue": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "{view.custom.deviceTagPath} + \u0027/Status/Level\u0027"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "desiredHigh": 100,
+          "desiredLow": 0,
+          "highAlarm": 100,
+          "highHighAlarm": null,
+          "highInterlock": null,
+          "lowAlarm": 0,
+          "lowInterlock": null,
+          "lowLowAlarm": null,
+          "reverseIndicator": true
+        },
+        "type": "ia.display.moving-analog-indicator"
+      },
+      {
+        "custom": {
+          "tag": [
+            {
+              "aggregate": "Average",
+              "alias": "value"
+            }
+          ]
+        },
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "um5WYfB8",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Sparkline",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "height": 0.5511,
+          "width": 0.5097,
+          "x": 0.245,
+          "y": 0.2232
+        },
+        "propConfig": {
+          "custom.tag[0].path": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "transforms": [
+                {
+                  "expression": "{value} + \u0027/Status/Level\u0027",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "meta.tooltip.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Last 8 hours: \" + dateFormat(dateArithmetic(now(0), -8, \"hours\"), \"yyyy-MM-dd HH:mm:ss\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.points": {
+            "binding": {
+              "config": {
+                "aggregate": "MinMax",
+                "avoidScanClassValidation": true,
+                "dateRange": {
+                  "mostRecent": "8",
+                  "mostRecentUnits": "HOUR"
+                },
+                "enableValueCache": true,
+                "ignoreBadQuality": false,
+                "polling": {
+                  "enabled": true,
+                  "rate": "900"
+                },
+                "preventInterpolation": false,
+                "returnFormat": "Wide",
+                "returnSize": {
+                  "numRows": "30",
+                  "type": "FIXED"
+                },
+                "tags": "{this.custom.tag}",
+                "valueFormat": "DATASET"
+              },
+              "type": "tag-history"
+            }
+          },
+          "props.width": {
+            "binding": {
+              "config": {
+                "path": "view.params.SparklineWidth"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "marker": {
+            "first": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            },
+            "high": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            },
+            "last": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            },
+            "low": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            }
+          },
+          "range": {
+            "high": 101,
+            "low": 0
+          }
+        },
+        "type": "ia.display.sparkline"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.0997,
+          "width": 0.1291,
+          "x": 0.871,
+          "y": 0.1596
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.IndicatorOnRight"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.alarmSummaryOverride} !\u003d \"\", {view.params.alarmSummaryOverride}, {view.custom.deviceTagPath})"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0798,
+          "width": 0.5322,
+          "x": 0.2324,
+          "y": 0.8155
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.DetailsAtBottom"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.LabelOverride} !\u003d \u0027\u0027, {view.params.LabelOverride}, tag({view.custom.deviceTagPath} + \u0027/\u0027 +  \u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value"
+        },
+        "position": {
+          "height": 0.1022,
+          "width": 0.4105,
+          "x": 0.2942,
+          "y": 0.8977
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.DetailsAtBottom"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.deviceTagPath} + \u0027/Status\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Level",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/International/North West Pump Station/Tank 1/Status/Tank 1/Status/Level.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "20px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "um5WYfB8",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "MovingAnalogIndicator_0"
+        },
+        "position": {
+          "height": 0.6857,
+          "width": 0.229,
+          "x": 0.1161,
+          "y": 0.1546
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.IndicatorOnRight"
+              },
+              "transforms": [
+                {
+                  "expression": "!{value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.desiredRangeColor": {
+            "binding": {
+              "config": {
+                "path": "view.params.LiquidColor"
+              },
+              "type": "property"
+            }
+          },
+          "props.processValue": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "{view.custom.deviceTagPath} + \u0027/Status/Level\u0027"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "desiredHigh": 100,
+          "desiredLow": 0,
+          "highAlarm": 100,
+          "highHighAlarm": null,
+          "highInterlock": null,
+          "lowAlarm": 0,
+          "lowInterlock": null,
+          "lowLowAlarm": null
+        },
+        "type": "ia.display.moving-analog-indicator"
+      },
+      {
+        "meta": {
+          "name": "Symbol_0"
+        },
+        "position": {
+          "height": 0.0997,
+          "width": 0.1291,
+          "y": 0.1596
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.IndicatorOnRight"
+              },
+              "transforms": [
+                {
+                  "expression": "!{value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.alarmSummaryOverride} !\u003d \"\", {view.params.alarmSummaryOverride}, {view.custom.deviceTagPath})"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_0"
+        },
+        "position": {
+          "height": 0.1022,
+          "width": 0.4105,
+          "x": 0.2942,
+          "y": 0.0823
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.DetailsAtBottom"
+              },
+              "transforms": [
+                {
+                  "expression": "!{value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.deviceTagPath} + \u0027/Status\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Level",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/International/North West Pump Station/Tank 1/Status/Tank 1/Status/Level.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "20px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0798,
+          "width": 0.5322,
+          "x": 0.2324
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.DetailsAtBottom"
+              },
+              "transforms": [
+                {
+                  "expression": "!{value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.LabelOverride} !\u003d \u0027\u0027, {view.params.LabelOverride}, tag({view.custom.deviceTagPath} + \u0027/\u0027 +  \u0027/Parameters.DeviceName\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Isolated"
+        },
+        "position": {
+          "height": 0.0997,
+          "width": 0.1291,
+          "y": 0.2625
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "tag({view.custom.deviceTagPath} + \u0027/Status/Isolated\u0027)\u0026\u0026!{view.params.IndicatorOnRight}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "m7 60v-53h106v106h-106zm100 0v-47h-94v94h94zm-75 0v-28h56v56h-56zm50 0v-22h-44v44h44z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "m13.144 60v-46.856h93.713v93.713h-93.713zm74.926 0v-28.069h-56.139l-0.0381 27.921c-0.02096 15.356-0.0063 28.005 0.03261 28.107 0.05638 0.1483 5.7561 0.17842 28.107 0.14852l28.037-0.03751z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            },
+            {
+              "d": "m38.094 60v-21.906h43.812v43.812h-43.812z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            }
+          ],
+          "viewBox": "0 0 120 120"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Isolated_0"
+        },
+        "position": {
+          "height": 0.0997,
+          "width": 0.1291,
+          "x": 0.871,
+          "y": 0.2619
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "tag({view.custom.deviceTagPath} + \u0027/Status/Isolated\u0027)\u0026\u0026{view.params.IndicatorOnRight}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "m7 60v-53h106v106h-106zm100 0v-47h-94v94h94zm-75 0v-28h56v56h-56zm50 0v-22h-44v44h44z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "m13.144 60v-46.856h93.713v93.713h-93.713zm74.926 0v-28.069h-56.139l-0.0381 27.921c-0.02096 15.356-0.0063 28.005 0.03261 28.107 0.05638 0.1483 5.7561 0.17842 28.107 0.14852l28.037-0.03751z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            },
+            {
+              "d": "m38.094 60v-21.906h43.812v43.812h-43.812z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            }
+          ],
+          "viewBox": "0 0 120 120"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Mixer"
+        },
+        "position": {
+          "height": 0.3217,
+          "width": 0.4413,
+          "x": 0.2781,
+          "y": 0.4662
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.MixerPresent"
+              },
+              "type": "property"
+            }
+          },
+          "props.elements[0].elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "deviceTagPath": "{view.params.MixerTagPath}"
+                },
+                "tagPath": "{deviceTagPath}/Status/Running"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": false,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          },
+          "props.elements[0].elements[2].fill.paint": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "deviceTagPath": "{view.params.MixerTagPath}"
+                },
+                "tagPath": "{deviceTagPath}/Status/Running"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": false,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m130.57 35.518c-0.95865 0.31411-1.1845 1.459-1.291 2.349-0.45855 5.408-0.43845 10.843-0.56171 16.267-0.40542 31.265-0.14866 62.533-0.3706 93.799-0.0475 6.3104-0.0714 12.621-0.21024 18.931-17.096-3.8147-34.101-8.0506-51.297-11.401-5.6657-1.0237-11.38-2.1242-17.161-2.0295-5.2384 0.0616-10.434 2.1284-14.285 5.6772-3.5006 3.205-5.5127 8.0924-4.8241 12.84 0.65728 5.1211 4.1532 9.5003 8.4885 12.116 3.1556 2.0369 6.9064 2.9952 10.643 3.0343 5.9832 0.09 11.904-1.0023 17.765-2.0815 14.198-2.732 28.244-6.3013 42.359-9.3352 3.8332-0.81872 7.6036-1.6809 11.495-2.355 0.95652 0.043 2.0601 0.35643 2.9007 0.47891 14.232 2.8797 28.47 6.3706 42.715 9.4598 7.3872 1.5429 14.798 3.1486 22.337 3.721 4.6728 0.32325 9.6519 0.073 13.772-2.396 2.8324-1.7136 5.2173-4.0837 7.3369-6.6037 1.5773-1.846 2.115-4.3157 2.078-6.6916 0.20598-4.5679-1.6584-9.1745-5.045-12.258-4.4565-4.1586-10.739-5.7882-16.717-5.7-4.5557 0.30605-9.0405 1.2446-13.529 2.0394-16.601 3.1739-33.061 7.0239-49.499 10.94-0.88299 0.19897-1.7635 0.40905-2.65 0.59231-0.38691-12.692-0.40065-25.393-0.49644-38.09-0.13679-26.803 0.0756-53.608-0.41576-80.408-0.12027-3.6816-0.0943-7.3812-0.52963-11.042-0.13266-0.78114-0.47168-1.668-1.3078-1.8964-0.53669-0.43126-1.0734-0.43138-1.6101-5.2e-5l-0.0894 0.04472zm-68.465 122.9c2.6048-0.037 5.1857 0.56252 7.6709 0.99651 13.214 2.5317 26.348 5.4658 39.458 8.4867 3.4773 0.81382 6.9528 1.636 10.414 2.5168-13.229 2.8433-26.398 5.9648-39.65 8.7079-5.8411 1.1498-11.682 2.3635-17.598 3.0615-5.1001 0.40711-10.39-1.4894-13.906-5.2461-2.0575-1.9807-3.5177-4.8456-3.0161-7.7596 0.64363-3.8699 3.7546-6.8272 7.1208-8.5426 2.927-1.5003 6.2279-2.1994 9.5062-2.221zm139.92 0.10938c3.142-0.0753 6.2579 0.79773 8.9538 2.3988 3.0928 1.7511 5.9226 4.6299 6.3631 8.3036 0.45098 3.5208-1.6009 6.8499-4.2564 8.9909-2.6487 2.1692-5.9016 3.7363-9.3694 3.8526-4.9481 0.23268-9.8559-0.6983-14.705-1.5663-11.428-2.1844-22.711-4.9764-34.067-7.4881-4.064-0.9133-8.1271-1.831-12.197-2.7162 13.28-2.8728 26.532-5.9826 39.788-8.8257 4.5533-0.96038 9.2774-1.9105 13.794-2.52 1.889-0.24362 3.7892-0.42526 5.6953-0.42968z",
+                  "name": "path",
+                  "opacity": 0.5,
+                  "type": "path"
+                },
+                {
+                  "d": "m18.057 146.81c-1.7529-0.24991-4.4344-1.1837-6.1047-2.1259-0.87685-0.4946-2.1438-1.4919-3.3007-2.598-1.5765-1.5074-2.0026-2.0477-2.6576-3.3695-1.7641-3.5602-1.0063-6.9077 2.313-10.217 2.6075-2.5999 6.0566-4.2403 10.242-4.8712 3.4983-0.52727 5.0572-0.3805 13.457 1.267 14.615 2.8667 47.303 10.179 46.529 10.408-0.67697 0.20072-35.574 7.8604-38.985 8.5571-9.2404 1.887-17.201 3.193-19.199 3.1497-0.57802-0.0125-1.6099-0.10249-2.293-0.19989z",
+                  "fill": {},
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": ".19138"
+                  },
+                  "transform": "translate(40.435 35.149)",
+                  "type": "path"
+                },
+                {
+                  "d": "m157.26 146.62c-4.8654-0.49473-13.741-2.2714-31.389-6.2831-6.4878-1.4748-14.118-3.1941-16.955-3.8206s-5.3104-1.2026-5.4952-1.2803c-0.30334-0.12754 9.0816-2.2785 32.438-7.4345 13.57-2.9956 19.626-4.0419 24.365-4.209 4.574-0.16136 6.9072 0.37707 10.411 2.4026 1.808 1.0452 4.3414 3.4814 5.1062 4.9102 1.0016 1.8713 1.3353 4.1038 0.89748 6.0048-0.96634 4.1958-6.1003 8.5586-11.347 9.6423-1.5757 0.32547-5.1966 0.35598-8.0319 0.0677z",
+                  "fill": {},
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": ".19138"
+                  },
+                  "transform": "translate(40.435 35.149)",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-40.435 -35.149)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 182.04 151.96"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

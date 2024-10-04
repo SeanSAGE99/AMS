@@ -1,0 +1,268 @@
+{
+  "custom": {
+    "areaPath": "High Voltage/International/Substation 1/PLC/Remote IO 1/Alarms",
+    "instances1": [],
+    "instances2": [],
+    "instances3": [
+      {
+        "deviceName": "Slot 1 Fault",
+        "deviceTagPath": "[default]High Voltage/International/Substation 1/PLC/Remote IO 1/Alarms/Slot 1 Fault",
+        "type": "Slot Fault"
+      },
+      {
+        "deviceName": "Slot 2 Fault",
+        "deviceTagPath": "[default]High Voltage/International/Substation 1/PLC/Remote IO 1/Alarms/Slot 2 Fault",
+        "type": "Slot Fault"
+      },
+      {
+        "deviceName": "Slot 3 Fault",
+        "deviceTagPath": "[default]High Voltage/International/Substation 1/PLC/Remote IO 1/Alarms/Slot 3 Fault",
+        "type": "Slot Fault"
+      }
+    ],
+    "instances4": [
+      {
+        "deviceName": "IM Fault",
+        "deviceTagPath": "[default]High Voltage/International/Substation 1/PLC/Remote IO 1/Alarms/IM Fault",
+        "type": "CM Fault"
+      }
+    ]
+  },
+  "params": {
+    "deviceName": "Remote IO 1",
+    "deviceParentPath": "High Voltage/International/Substation 1/PLC"
+  },
+  "propConfig": {
+    "custom.areaPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 + {view.params.deviceName} + \u0027/Alarms\u0027"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.instances1": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\t#check the instances of \"CPU\" in the areaPath\n\tinstances1 \u003d []\n\tres \u003d system.tag.browse(self.custom.areaPath, {\"recursive\":True, \u0027name\u0027: \u0027*CPU*\u0027 })\n\n\tfor result in res.getResults():\n\t    deviceTagPath \u003d result[\"fullPath\"]\n\t    \n\t    # Check if the instance is enabled.\n\t    modeTagEnabledPath \u003d \"{}.Enabled\".format(deviceTagPath)\n\t    modeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\n\t    if modeTagEnabled.value:\n\t        instances1.append({\"deviceTagPath\":result[\"fullPath\"],\"deviceName\":result[\"name\"],\"type\":\"CPU Fault\"})\n\t\n\treturn instances1",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.instances2": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\t#check the instances of \"CM\" in the areaPath\n\tinstances2 \u003d []\n\tres \u003d system.tag.browse(self.custom.areaPath, {\"recursive\":True, \u0027name\u0027: \u0027*CM*\u0027 })\n\n\tfor result in res.getResults():\n\t    deviceTagPath \u003d result[\"fullPath\"]\n\t    \n\t    # Check if the instance is enabled.\n\t    modeTagEnabledPath \u003d \"{}.Enabled\".format(deviceTagPath)\n\t    modeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\n\t    if modeTagEnabled.value:\n\t        instances2.append({\"deviceTagPath\":result[\"fullPath\"],\"deviceName\":result[\"name\"],\"type\":\"CM Fault\"})\n\t\n\treturn instances2",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.instances3": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\t#check the instances of \"Slot\" in the areaPath\n\tinstances3 \u003d []\n\tres \u003d system.tag.browse(self.custom.areaPath, {\"recursive\":True, \u0027name\u0027: \u0027*Slot*\u0027 })\n\n\tfor result in res.getResults():\n\t    deviceTagPath \u003d result[\"fullPath\"]\n\t    \n\t    # Check if the instance is enabled.\n\t    modeTagEnabledPath \u003d \"{}.Enabled\".format(deviceTagPath)\n\t    modeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\n\t    if modeTagEnabled.value:\n\t        instances3.append({\"deviceTagPath\":result[\"fullPath\"],\"deviceName\":result[\"name\"],\"type\":\"Slot Fault\"})\n\t\n\treturn instances3",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.instances4": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "\t#check the instances of \"IM\" in the areaPath\n\tinstances4 \u003d []\n\tres \u003d system.tag.browse(self.custom.areaPath, {\"recursive\":True, \u0027name\u0027: \u0027*IM*\u0027 })\n\n\tfor result in res.getResults():\n\t    deviceTagPath \u003d result[\"fullPath\"]\n\t    \n\t    # Check if the instance is enabled.\n\t    modeTagEnabledPath \u003d \"{}.Enabled\".format(deviceTagPath)\n\t    modeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\n\t    if modeTagEnabled.value:\n\t        instances4.append({\"deviceTagPath\":result[\"fullPath\"],\"deviceName\":result[\"name\"],\"type\":\"CM Fault\"})\n\t\n\treturn instances4",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 56,
+      "width": 370
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "27.66px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "//check Running tag to see if the pump should be shown\r\n(isAvailable(tag({view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}+\u0027/Alarms/CPU Fault\u0027)))"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances1"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {
+            "basis": "27.66px",
+            "grow": 0
+          },
+          "path": "Templates/PLC/CPU",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater_0"
+        },
+        "position": {
+          "basis": "27.38px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "//check Running tag to see if the pump should be shown\r\n(isAvailable(tag({view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}+\u0027/Alarms/CM Fault\u0027)))"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances2"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {
+            "basis": "27.38px",
+            "grow": 0
+          },
+          "path": "Templates/PLC/CM",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater_2"
+        },
+        "position": {
+          "basis": "27.38px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "//check Running tag to see if the pump should be shown\r\n(isAvailable(tag({view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}+\u0027/Alarms/IM Fault\u0027)))"
+              },
+              "type": "expr"
+            }
+          },
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances4"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {
+            "basis": "27.38px",
+            "grow": 0
+          },
+          "path": "Templates/PLC/IM",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater_1"
+        },
+        "position": {
+          "basis": "314.96px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances3"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {
+            "basis": "17.5px",
+            "grow": 0
+          },
+          "path": "Templates/PLC/IO",
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

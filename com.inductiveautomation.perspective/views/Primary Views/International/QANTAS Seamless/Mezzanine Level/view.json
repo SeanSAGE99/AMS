@@ -1,0 +1,292 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/Precinct/QANTAS Seamless Transfer"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/QANTAS Seamless/Ground Level"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.0703,
+          "x": 0.2638,
+          "y": 0.0415
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/International/QANTAS Seamless/Ground Level",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Ground Level",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/QANTAS Seamless/Mezzanine Level"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.0703,
+          "x": 0.4643,
+          "y": 0.0415
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/International/QANTAS Seamless/Mezzanine Level",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Mezzanine Level",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/QANTAS Seamless/Plant Level"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.0703,
+          "x": 0.6648,
+          "y": 0.0415
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/International/QANTAS Seamless/Plant Level",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Plant Level",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Mezzanine Level"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.077
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Mezzanine Level.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Lift_16"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.7599,
+          "y": 0.8058
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 60",
+            "deviceParentPath": "International/Precinct/QANTAS Seamless Transfer",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

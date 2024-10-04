@@ -1,0 +1,335 @@
+{
+  "custom": {
+    "ActiveAck": null,
+    "ActiveUnack": null,
+    "AlarmCount": null,
+    "DeviceTagPath": "High Voltage/Domestic/Test Substation/PLC/FIP 1",
+    "isolated": null,
+    "tags": [],
+    "vesdaIsolated": null
+  },
+  "params": {
+    "DeviceName": "FIP 1",
+    "DeviceParentPath": "High Voltage/Domestic/Test Substation/PLC",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.isolated": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Isolated"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.vesdaIsolated": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Vesda Isolated"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 85,
+      "width": 144
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.3294,
+          "width": 0.9996,
+          "x": -0.0043,
+          "y": 0.0592
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "FIP"
+        },
+        "position": {
+          "height": 0.5647,
+          "rotate": {
+            "anchor": "75% 25%"
+          },
+          "width": 0.3333,
+          "x": 0.3333,
+          "y": 0.2471
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "height": "20",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "20"
+                }
+              ],
+              "name": "group",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M3,3v14h14V3H3z M10.45,11.21c-0.06-0.34-0.05-0.64,0.06-0.96c0.41,0.91,1.61,1.23,1.48,2.39 c-0.14,1.26-1.58,1.77-2.54,0.99c0.57-0.18,1.05-0.78,1.15-1.22C10.7,11.99,10.52,11.62,10.45,11.21z M16,16h-2v-1h-1.33 c0.81-0.7,1.33-1.71,1.33-2.85c0-1.45-0.87-2.19-1.48-2.59C10.16,8.01,10.8,6,10.8,6C5.42,8.74,5.99,11.74,6,12.15 C6.03,13.1,6.63,14.21,7.53,15H6v1H4V4h12V16z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "type": "group"
+            }
+          ],
+          "fill": "Var(--neutral-80)",
+          "viewBox": "0 0 20 20"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.2471,
+          "width": 0.1458,
+          "x": 0.6506,
+          "y": 0.4604
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Isolated"
+        },
+        "position": {
+          "height": 0.2471,
+          "width": 0.1458,
+          "x": 0.2073,
+          "y": 0.4732
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.isolated}||{view.custom.vesdaIsolated}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "m7 60v-53h106v106h-106zm100 0v-47h-94v94h94zm-75 0v-28h56v56h-56zm50 0v-22h-44v44h44z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "m13.144 60v-46.856h93.713v93.713h-93.713zm74.926 0v-28.069h-56.139l-0.0381 27.921c-0.02096 15.356-0.0063 28.005 0.03261 28.107 0.05638 0.1483 5.7561 0.17842 28.107 0.14852l28.037-0.03751z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            },
+            {
+              "d": "m38.094 60v-21.906h43.812v43.812h-43.812z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            }
+          ],
+          "viewBox": "0 0 120 120"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -50,
+      "y": -26.9999942779541
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

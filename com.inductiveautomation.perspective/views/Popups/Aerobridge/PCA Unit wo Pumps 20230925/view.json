@@ -1,0 +1,2691 @@
+{
+  "custom": {
+    "controlPopupId": "International/T1/Pier B/Arrivals/Aerobridge 30/Preconditioning Air Unit ACmd",
+    "deviceDescription": "Preconditioned Air Unit",
+    "deviceId": "BPGAB30",
+    "deviceTagPath": "International/T1/Pier B/Arrivals/Aerobridge 30",
+    "deviceTypePath": "International/T1/Pier B/Arrivals/Aerobridge 30/Preconditioning Air Unit A",
+    "siteName": "Arrivals",
+    "subArea": "International T1 Pier B"
+  },
+  "params": {
+    "deviceName": "Aerobridge 30",
+    "deviceParentPath": "International/T1/Pier B/Arrivals",
+    "deviceType": "Preconditioning Air Unit A"
+  },
+  "propConfig": {
+    "custom.controlPopupId": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.deviceTypePath} + \"Cmd\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTypePath": "{view.custom.deviceTypePath}"
+          },
+          "tagPath": "{deviceTypePath}/Parameters.Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceId": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTypePath": "{view.custom.deviceTypePath}"
+          },
+          "tagPath": "{deviceTypePath}/Parameters.ID"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceTypePath": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.deviceTagPath}+\u0027/\u0027+{view.params.deviceType}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Alarm_ParentDevice"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Alarm_Area"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceType": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 658,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.deviceId}"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\t# Extracting the device name and device description\n\tdevice_name \u003d self.view.params.deviceName\n\tdevice_description \u003d self.view.custom.deviceDescription\n\tnew_name \u003d device_name.replace(\"Aerobridge\", \"AB\")\n\tnew_description \u003d device_description.replace(\"Preconditioned Air Unit\", \"\")\n\ttransformed_value \u003d new_name + new_description\n\tlabel \u003d \u0027Preconditioned Air Unit - \u0027 + transformed_value\n\treturn label",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "11.6pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "custom": {
+                      "key": "value"
+                    },
+                    "meta": {
+                      "name": "AlarmsIcon"
+                    },
+                    "position": {
+                      "height": 40,
+                      "width": 40
+                    },
+                    "propConfig": {
+                      "props.image.icon.path": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "1": "{view.custom.deviceTypePath}"
+                            },
+                            "tagPath": "{1}/Alarm Summary/Active Unack"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "if({value} \u003d 0, \u0027material/warning\u0027, \u0027\u0027)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "height": 38,
+                        "icon": {
+                          "color": "var(--neutral-60)"
+                        },
+                        "width": 38
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginRight": "10px",
+                        "overflow": "hidden"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "meta": {
+                      "name": "Alarm Icon"
+                    },
+                    "position": {
+                      "height": 38,
+                      "width": 38,
+                      "x": 1,
+                      "y": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTypePath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "deviceName": "",
+                          "deviceParentPath": "",
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Body\").getChild(\"details_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"trend_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"alarms_expanded\").position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Alarm Button"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTypePath": "{view.custom.deviceTypePath}"
+                        },
+                        "tagPath": "{deviceTypePath}/Alarm Summary/Active Unack"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "marginBottom": 3,
+                    "marginRight": 5,
+                    "marginTop": 3,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceId"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading3"
+                  },
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Heading"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "overflow": "hidden",
+                                "textAlign": "left"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer_0"
+                        },
+                        "position": {
+                          "basis": "50px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden",
+                            "textAlign": "left"
+                          },
+                          "text": "status"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "26px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../status_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "status_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1",
+                        "cursor": "pointer",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "Tag/Label"
+                              },
+                              "text": "Start Time"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Label_0"
+                                },
+                                "position": {
+                                  "grow": 1
+                                },
+                                "props": {
+                                  "style": {
+                                    "borderBottomStyle": "dashed",
+                                    "borderBottomWidth": 1
+                                  }
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Label_1"
+                                },
+                                "position": {
+                                  "grow": 1
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "FlexContainer"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "marginLeft": "10px",
+                                "marginRight": "5px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "meta": {
+                              "name": "Analogue Value"
+                            },
+                            "position": {
+                              "basis": "60px"
+                            },
+                            "propConfig": {
+                              "props.params.tagParentPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.deviceTypePath} + \u0027/PCA/Time\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "formatStringOverride": "",
+                                "overrideFontSizeInStyle": false,
+                                "showBox": true,
+                                "showUnitsInValue": true,
+                                "styleClasses": "",
+                                "tagName": "Start Time",
+                                "tagQuality": "Good",
+                                "unitsOverride": "",
+                                "unitsWidth": "20px"
+                              },
+                              "path": "Shared/Templates/Display/Analogue Value"
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Start Time"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({./Analogue Value.props.params.tagQuality}\u003d\"Good\", true, false)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "marginBottom": 0,
+                            "marginLeft": 5,
+                            "marginRight": 10,
+                            "marginTop": 5,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "Tag/Label"
+                              },
+                              "text": "Outlet Temperature"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Label_0"
+                                },
+                                "position": {
+                                  "grow": 1
+                                },
+                                "props": {
+                                  "style": {
+                                    "borderBottomStyle": "dashed",
+                                    "borderBottomWidth": 1
+                                  }
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Label_1"
+                                },
+                                "position": {
+                                  "grow": 1
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "FlexContainer"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "marginLeft": "10px",
+                                "marginRight": "5px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "meta": {
+                              "name": "Analogue Value"
+                            },
+                            "position": {
+                              "basis": "60px"
+                            },
+                            "propConfig": {
+                              "props.params.tagParentPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.deviceTypePath} + \u0027/Status\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "formatStringOverride": "",
+                                "overrideFontSizeInStyle": false,
+                                "showBox": true,
+                                "showUnitsInValue": true,
+                                "styleClasses": "",
+                                "tagName": "Temperature",
+                                "tagQuality": "Good",
+                                "unitsOverride": "",
+                                "unitsWidth": "20px"
+                              },
+                              "path": "Shared/Templates/Display/Analogue Value"
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Outlet Temperature"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({./Analogue Value.props.params.tagQuality}\u003d\"Good\", true, false)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "marginBottom": 0,
+                            "marginLeft": 5,
+                            "marginRight": 10,
+                            "marginTop": 5,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "Tag/Label"
+                              },
+                              "text": "Aircraft Code"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "children": [
+                              {
+                                "meta": {
+                                  "name": "Label_0"
+                                },
+                                "position": {
+                                  "grow": 1
+                                },
+                                "props": {
+                                  "style": {
+                                    "borderBottomStyle": "dashed",
+                                    "borderBottomWidth": 1
+                                  }
+                                },
+                                "type": "ia.display.label"
+                              },
+                              {
+                                "meta": {
+                                  "name": "Label_1"
+                                },
+                                "position": {
+                                  "grow": 1
+                                },
+                                "type": "ia.display.label"
+                              }
+                            ],
+                            "meta": {
+                              "name": "FlexContainer"
+                            },
+                            "position": {
+                              "grow": 1,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "direction": "column",
+                              "style": {
+                                "marginLeft": "10px",
+                                "marginRight": "5px"
+                              }
+                            },
+                            "type": "ia.container.flex"
+                          },
+                          {
+                            "meta": {
+                              "name": "String Value"
+                            },
+                            "position": {
+                              "basis": "60px"
+                            },
+                            "propConfig": {
+                              "props.params.tagParentPath": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.deviceTypePath} + \u0027/Status\u0027"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "params": {
+                                "styleClasses": "",
+                                "tagName": "Aircraft Code",
+                                "textAlign": "center"
+                              },
+                              "path": "Shared/Templates/Display/String Value"
+                            },
+                            "type": "ia.display.view"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Aircraft Code"
+                        },
+                        "position": {
+                          "basis": "44px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "marginBottom": 0,
+                            "marginLeft": 5,
+                            "marginRight": 10,
+                            "marginTop": 5,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Boolean Value w Label"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTypePath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "labelOverride": "",
+                            "tagName": "Enabled",
+                            "tagQuality": "Good"
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                          "style": {
+                            "marginBottom": 0,
+                            "marginLeft": 0,
+                            "marginRight": 0,
+                            "marginTop": 5
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Boolean Value w Label_0"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTypePath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "labelOverride": "",
+                            "tagName": "Running",
+                            "tagQuality": "Good"
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                          "style": {
+                            "marginBottom": 0,
+                            "marginLeft": 0,
+                            "marginRight": 0,
+                            "marginTop": 5
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Boolean Value w Label_1"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.params.tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.deviceTypePath"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \u0027/Status\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "params": {
+                            "labelOverride": "",
+                            "tagName": "Service Hose Extended",
+                            "tagQuality": "Good"
+                          },
+                          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                          "style": {
+                            "marginBottom": 0,
+                            "marginLeft": 0,
+                            "marginRight": 0,
+                            "marginTop": 5
+                          }
+                        },
+                        "type": "ia.display.view"
+                      }
+                    ],
+                    "meta": {
+                      "name": "status_expanded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignContent": "flex-start",
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label_1"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\tself.view.custom.showAlarms \u003d False"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "overflow": "hidden",
+                            "textAlign": "center",
+                            "textTransform": "uppercase"
+                          },
+                          "text": "Alarms"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "dom": {
+                                "onClick": {
+                                  "config": {
+                                    "script": "\ttagPath \u003d self.view.custom.deviceTagPath + \u0027/Alarm Reset CMD\u0027\n\tsystem.tag.writeBlocking([tagPath], [1])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "Button"
+                            },
+                            "position": {
+                              "basis": "80px"
+                            },
+                            "props": {
+                              "style": {
+                                "classes": "Input/Button/Body-normal Input/Button/Text",
+                                "marginBottom": "5px",
+                                "marginTop": "5px",
+                                "overflow": "hidden"
+                              },
+                              "text": "reset"
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "basis": "60px",
+                          "display": false,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "flex-end",
+                          "style": {
+                            "marginRight": 10,
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Icon"
+                        },
+                        "position": {
+                          "basis": "24px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "path": ".../alarms_expanded.position.display"
+                              },
+                              "transforms": [
+                                {
+                                  "fallback": null,
+                                  "inputType": "scalar",
+                                  "mappings": [
+                                    {
+                                      "input": false,
+                                      "output": "material/keyboard_arrow_up"
+                                    },
+                                    {
+                                      "input": true,
+                                      "output": "material/keyboard_arrow_down"
+                                    }
+                                  ],
+                                  "outputType": "scalar",
+                                  "type": "map"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "overflow": "hidden"
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      }
+                    ],
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tpanelName \u003d self.getChild(\"Heading\").props.text + \u0027_expanded\u0027\n\tpanelName \u003d panelName.lower()\n\t\n\tself.getSibling(panelName).position.display \u003d not self.getSibling(panelName).position.display"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "alarms_header"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "alarms_expanded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.deviceName": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.deviceType} + \u0027/Alarms\u0027"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.params.deviceParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "controlEnable": true,
+                        "show": {
+                          "area": false,
+                          "device": false
+                        }
+                      },
+                      "path": "Shared/Templates/Devices/Control/Common/Alarms",
+                      "style": {
+                        "marginBottom": "5px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "300px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Info Icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#009BFF",
+                  "path": "material/info",
+                  "style": {
+                    "classes": "Input/Icon",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "\u0027Tag path: \u0027 + {value}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "fontSize": "8pt",
+                        "fontWeight": "lighter",
+                        "marginLeft": "5px",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "basis": "18px"
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "\u0027PLC Type: \u0027 + tag({view.custom.deviceTagPath} + \u0027/Parameters.Description\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "fontSize": "8pt",
+                        "fontWeight": "lighter",
+                        "marginLeft": "5px",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "case (tag({view.custom.deviceTagPath} + \u0027/Parameters.Description\u0027),\r\n\r\n\u0027Kingfisher RTU\u0027,\r\n\u0027RTU Name: \u0027+ tag({view.custom.deviceTagPath} + \u0027/Parameters.Gateway\u0027)\r\n+\u0027, RTU IP: \u0027+ tag({view.custom.deviceTagPath} + \u0027/RTU Status/Status Folder/HostIP\u0027)\r\n+\u0027, Mode: \u0027+ tag ({view.custom.deviceTagPath}+\u0027/RTU Status/Status Folder/Status\u0027)\r\n,\r\n\r\n\u0027GE PLC\u0027,\r\n//Aerobridge and GP and PCA signals are from different GE PLCs, so each device should be checked seperately\r\n//check the opc instance\r\n\u0027GE OPC Instance: \u0027+ tag({view.custom.deviceTypePath} + \u0027/Parameters.OPC Instance\u0027)\r\n//example: to read the IP address based on GE OPC Instance. in this example OPC instance is:AB-GE-BP-ABB10,opc item path to read IP:   nsu\u003dKEPServerEX;s\u003dChannel1.AB-GE-BP-ABB10._System._DeviceId\r\n+ \u0027, GE PLC IP: \u0027+runScript(\"system.opc.readValue(\u0027KEPServerEX/UA@OPSWAMSTST1.ops.aero.int\u0027, \u0027nsu\u003dKEPServerEX;s\u003d\u0027+\u0027\" +tag({view.custom.deviceTypePath}+ \u0027/Parameters.OPC Instance\u0027) + \"\u0027+\u0027._System._DeviceId\u0027)\")\r\n,\r\n\r\n\u0027Kingfisher RTU and GE PLC\u0027,\r\n//GP and PCA signals are from KF RTU\r\n\u0027RTU Name: \u0027+ tag({view.custom.deviceTagPath} + \u0027/Parameters.Gateway\u0027)\r\n+\u0027, RTU IP: \u0027+ tag({view.custom.deviceTagPath} + \u0027/RTU Status/Status Folder/HostIP\u0027)\r\n+\u0027, Mode: \u0027+tag ({view.custom.deviceTagPath}+\u0027/RTU Status/Status Folder/Status\u0027)\r\n,\r\n\r\n\u0027Siemens PLC\u0027,\r\n\u0027Siemens PLC IP: \u0027+ tag({view.custom.deviceTagPath} + \u0027/Parameters.IP Address\u0027)+\u0027, Mode: \u0027+tag ({view.custom.deviceTagPath}+\u0027AMS Panel/PLC Status/Status Folder/Mode Desc\u0027)\r\n+\u0027, Moxa Gateway IP: \u0027 + tag ({view.custom.deviceTagPath}+\u0027/DB Meter/Hostname\u0027)\r\n,\r\n\r\n\u0027error in UDT: /Parameters.Description\u0027)\r\n\r\n"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "fontSize": "8pt",
+                        "fontWeight": "lighter",
+                        "marginLeft": "5px",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Info"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginTop": "5px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading3"
+                  },
+                  "text": "Input Metering Data"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "draggable": true,
+                        "id": "{/root/TabContainer/FlexContainer_0.custom.popupID}",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "type": "open",
+                        "viewParams": {
+                          "PMNumber": "{/root/TabContainer/FlexContainer_0.custom.PMNumber}",
+                          "deviceName": "{view.params.deviceType}",
+                          "deviceParentPath": "{view.custom.deviceTagPath}",
+                          "pens": "{/root/TabContainer/FlexContainer_0.custom.pens}"
+                        },
+                        "viewPath": "Popups/ppuDBTrendPopup",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "40px"
+                },
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/show_chart"
+                    }
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+                  },
+                  "text": "Historical Trends"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "FlexRepeater"
+                    },
+                    "position": {
+                      "basis": "25%"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "elementPosition": {
+                        "basis": "25%"
+                      },
+                      "instances": [
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": "value"
+                          },
+                          "labelOverride": "",
+                          "tagName": ""
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": "value"
+                          },
+                          "labelOverride": "",
+                          "tagName": "Current"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": "value"
+                          },
+                          "labelOverride": "",
+                          "tagName": "Phase"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": "value"
+                          },
+                          "labelOverride": "",
+                          "tagName": "Line"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": "value"
+                          },
+                          "labelOverride": "",
+                          "tagName": "Power"
+                        }
+                      ],
+                      "path": "Shared/Templates/Display/Label Only",
+                      "useDefaultViewHeight": false,
+                      "useDefaultViewWidth": false
+                    },
+                    "type": "ia.display.flex-repeater"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label Only"
+                        },
+                        "position": {
+                          "basis": "20%"
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "tagName": "Phase A"
+                          },
+                          "path": "Shared/Templates/Display/Label Only",
+                          "style": {
+                            "marginLeft": "20px"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "FlexRepeater"
+                        },
+                        "position": {
+                          "basis": "80%"
+                        },
+                        "propConfig": {
+                          "props.instances[0].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[1].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[2].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[3].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "direction": "column",
+                          "elementPosition": {
+                            "basis": "33%"
+                          },
+                          "elementStyle": {
+                            "margin": "1px"
+                          },
+                          "instances": [
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Current Phase A",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Phase A Voltage",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Line AB Voltage",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Active Power Phase A",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            }
+                          ],
+                          "path": "Shared/Templates/Display/Analogue Value",
+                          "useDefaultViewHeight": false,
+                          "useDefaultViewWidth": false
+                        },
+                        "type": "ia.display.flex-repeater"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "25%"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label Only"
+                        },
+                        "position": {
+                          "basis": "20%"
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "tagName": "Phase B"
+                          },
+                          "path": "Shared/Templates/Display/Label Only",
+                          "style": {
+                            "marginLeft": "20px"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "FlexRepeater"
+                        },
+                        "position": {
+                          "basis": "80%"
+                        },
+                        "propConfig": {
+                          "props.instances[0].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[1].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[2].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[3].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "direction": "column",
+                          "elementPosition": {
+                            "basis": "33%"
+                          },
+                          "elementStyle": {
+                            "margin": "1px"
+                          },
+                          "instances": [
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Current Phase B",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Phase B Voltage",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Line BC Voltage",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Active Power Phase B",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            }
+                          ],
+                          "path": "Shared/Templates/Display/Analogue Value",
+                          "useDefaultViewHeight": false,
+                          "useDefaultViewWidth": false
+                        },
+                        "type": "ia.display.flex-repeater"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_1"
+                    },
+                    "position": {
+                      "basis": "25%"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label Only"
+                        },
+                        "position": {
+                          "basis": "20%"
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "tagName": "Phase C"
+                          },
+                          "path": "Shared/Templates/Display/Label Only",
+                          "style": {
+                            "marginLeft": "20px"
+                          }
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "FlexRepeater"
+                        },
+                        "position": {
+                          "basis": "80%"
+                        },
+                        "propConfig": {
+                          "props.instances[0].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[1].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[2].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          },
+                          "props.instances[3].tagParentPath": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "direction": "column",
+                          "elementPosition": {
+                            "basis": "33%"
+                          },
+                          "elementStyle": {
+                            "margin": "1px"
+                          },
+                          "instances": [
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Current Phase C",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Phase C Voltage",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Line CA Voltage",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            },
+                            {
+                              "hideLabel": false,
+                              "instancePosition": {},
+                              "instanceStyle": {
+                                "classes": ""
+                              },
+                              "labelOverride": "",
+                              "showUnitsInValue": true,
+                              "tagName": "Active Power Phase C",
+                              "tagQuality": "Good",
+                              "unitsWidth": "20px",
+                              "valueWidth": "100px"
+                            }
+                          ],
+                          "path": "Shared/Templates/Display/Analogue Value",
+                          "useDefaultViewHeight": false,
+                          "useDefaultViewWidth": false
+                        },
+                        "type": "ia.display.flex-repeater"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_2"
+                    },
+                    "position": {
+                      "basis": "25%"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "50%",
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "FlexRepeater"
+                },
+                "position": {
+                  "basis": "50%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.instances[0].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[1].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[2].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[3].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[4].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTypePath}+\u0027/Input Meter\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "elementPosition": {
+                    "basis": "40px"
+                  },
+                  "elementStyle": {
+                    "margin": "1px"
+                  },
+                  "instances": [
+                    {
+                      "hideLabel": false,
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "showUnitsInValue": true,
+                      "tagName": "Reactive Power",
+                      "tagQuality": "Good",
+                      "unitsWidth": "35px",
+                      "valueWidth": "100px"
+                    },
+                    {
+                      "hideLabel": false,
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "showUnitsInValue": true,
+                      "tagName": "Apparent Power",
+                      "tagQuality": "Good",
+                      "unitsWidth": "35px",
+                      "valueWidth": "100px"
+                    },
+                    {
+                      "hideLabel": false,
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "showUnitsInValue": true,
+                      "tagName": "Active Energy",
+                      "tagQuality": "Good",
+                      "unitsWidth": "35px",
+                      "valueWidth": "150px"
+                    },
+                    {
+                      "hideLabel": false,
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "showUnitsInValue": true,
+                      "tagName": "Power Factor",
+                      "tagQuality": "Good",
+                      "unitsWidth": "35px",
+                      "valueWidth": "100px"
+                    },
+                    {
+                      "hideLabel": false,
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "",
+                      "showUnitsInValue": true,
+                      "tagName": "Frequency",
+                      "tagQuality": "Good",
+                      "unitsWidth": "35px",
+                      "valueWidth": "100px"
+                    }
+                  ],
+                  "path": "Shared/Templates/Display/Analogue Value w Label",
+                  "style": {
+                    "overflow": "hidden"
+                  },
+                  "useDefaultViewHeight": false,
+                  "useDefaultViewWidth": false
+                },
+                "type": "ia.display.flex-repeater"
+              }
+            ],
+            "custom": {
+              "PMNumber": "Input Meter",
+              "pens": [
+                {
+                  "axis": "Curr/Power",
+                  "data": {
+                    "aggregateMode": "default"
+                  },
+                  "display": {
+                    "breakLine": true,
+                    "interpolation": "curveLinear",
+                    "radius": 3,
+                    "styles": {
+                      "highlighted": {
+                        "fill": {
+                          "color": "#FC8D62",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#FC8D62",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      },
+                      "muted": {
+                        "fill": {
+                          "color": "#FC8D62",
+                          "opacity": 0.4
+                        },
+                        "stroke": {
+                          "color": "#FC8D62",
+                          "dashArray": 0,
+                          "opacity": 0.4,
+                          "width": 1
+                        }
+                      },
+                      "normal": {
+                        "fill": {
+                          "color": "#FC8D62",
+                          "opacity": 0.8
+                        },
+                        "stroke": {
+                          "color": "#FC8D62",
+                          "dashArray": 0,
+                          "opacity": 0.8,
+                          "width": 1
+                        }
+                      },
+                      "selected": {
+                        "fill": {
+                          "color": "#FC8D62",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#FC8D62",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      }
+                    },
+                    "type": "line"
+                  },
+                  "enabled": true,
+                  "name": "Current A",
+                  "plot": 0,
+                  "selectable": true,
+                  "visible": true
+                },
+                {
+                  "axis": "Curr/Power",
+                  "data": {
+                    "aggregateMode": "default"
+                  },
+                  "display": {
+                    "breakLine": true,
+                    "interpolation": "curveLinear",
+                    "radius": 3,
+                    "styles": {
+                      "highlighted": {
+                        "fill": {
+                          "color": "#8DA0CB",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#8DA0CB",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      },
+                      "muted": {
+                        "fill": {
+                          "color": "#8DA0CB",
+                          "opacity": 0.4
+                        },
+                        "stroke": {
+                          "color": "#8DA0CB",
+                          "dashArray": 0,
+                          "opacity": 0.4,
+                          "width": 1
+                        }
+                      },
+                      "normal": {
+                        "fill": {
+                          "color": "#8DA0CB",
+                          "opacity": 0.8
+                        },
+                        "stroke": {
+                          "color": "#8DA0CB",
+                          "dashArray": 0,
+                          "opacity": 0.8,
+                          "width": 1
+                        }
+                      },
+                      "selected": {
+                        "fill": {
+                          "color": "#8DA0CB",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#8DA0CB",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      }
+                    },
+                    "type": "line"
+                  },
+                  "enabled": true,
+                  "name": "Current B",
+                  "plot": 0,
+                  "selectable": true,
+                  "visible": true
+                },
+                {
+                  "axis": "Curr/Power",
+                  "data": {
+                    "aggregateMode": "default"
+                  },
+                  "display": {
+                    "breakLine": true,
+                    "interpolation": "curveLinear",
+                    "radius": 3,
+                    "styles": {
+                      "highlighted": {
+                        "fill": {
+                          "color": "#E78AC3",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#E78AC3",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      },
+                      "muted": {
+                        "fill": {
+                          "color": "#E78AC3",
+                          "opacity": 0.4
+                        },
+                        "stroke": {
+                          "color": "#E78AC3",
+                          "dashArray": 0,
+                          "opacity": 0.4,
+                          "width": 1
+                        }
+                      },
+                      "normal": {
+                        "fill": {
+                          "color": "#E78AC3",
+                          "opacity": 0.8
+                        },
+                        "stroke": {
+                          "color": "#E78AC3",
+                          "dashArray": 0,
+                          "opacity": 0.8,
+                          "width": 1
+                        }
+                      },
+                      "selected": {
+                        "fill": {
+                          "color": "#E78AC3",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#E78AC3",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      }
+                    },
+                    "type": "line"
+                  },
+                  "enabled": true,
+                  "name": "Current C",
+                  "plot": 0,
+                  "selectable": true,
+                  "visible": true
+                },
+                {
+                  "axis": "PF",
+                  "data": {
+                    "aggregateMode": "default"
+                  },
+                  "display": {
+                    "breakLine": true,
+                    "interpolation": "curveLinear",
+                    "radius": 3,
+                    "styles": {
+                      "highlighted": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      },
+                      "muted": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 0.4
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 0.4,
+                          "width": 1
+                        }
+                      },
+                      "normal": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 0.8
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 0.8,
+                          "width": 1
+                        }
+                      },
+                      "selected": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      }
+                    },
+                    "type": "line"
+                  },
+                  "enabled": true,
+                  "name": "Power Factor",
+                  "plot": 1,
+                  "selectable": true,
+                  "visible": true
+                },
+                {
+                  "axis": "Curr/Power",
+                  "data": {
+                    "aggregateMode": "default"
+                  },
+                  "display": {
+                    "breakLine": true,
+                    "interpolation": "curveLinear",
+                    "radius": 3,
+                    "styles": {
+                      "highlighted": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      },
+                      "muted": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 0.4
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 0.4,
+                          "width": 1
+                        }
+                      },
+                      "normal": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 0.8
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 0.8,
+                          "width": 1
+                        }
+                      },
+                      "selected": {
+                        "fill": {
+                          "color": "#A6D854",
+                          "opacity": 1
+                        },
+                        "stroke": {
+                          "color": "#A6D854",
+                          "dashArray": 0,
+                          "opacity": 1,
+                          "width": 1
+                        }
+                      }
+                    },
+                    "type": "line"
+                  },
+                  "enabled": true,
+                  "name": "active power",
+                  "plot": 0,
+                  "selectable": true,
+                  "visible": true
+                }
+              ]
+            },
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "propConfig": {
+              "custom.pens[0].data.source": {
+                "binding": {
+                  "config": {
+                    "expression": "{HistorySource} + {view.custom.deviceTypePath} + \u0027/\u0027+ {this.custom.PMNumber}+\u0027/Current Phase A\u0027"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "custom.pens[1].data.source": {
+                "binding": {
+                  "config": {
+                    "expression": "{HistorySource} + {view.custom.deviceTypePath} + \u0027/\u0027+ {this.custom.PMNumber}+\u0027/Current Phase B\u0027"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "custom.pens[2].data.source": {
+                "binding": {
+                  "config": {
+                    "expression": "{HistorySource} + {view.custom.deviceTypePath} + \u0027/\u0027+ {this.custom.PMNumber}+\u0027/Current Phase C\u0027"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "custom.pens[3].data.source": {
+                "binding": {
+                  "config": {
+                    "expression": "{HistorySource} + {view.custom.deviceTypePath} + \u0027/\u0027+ {this.custom.PMNumber}+\u0027/Power Factor\u0027"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "custom.pens[4].data.source": {
+                "binding": {
+                  "config": {
+                    "expression": "{HistorySource} + {view.custom.deviceTypePath} + \u0027/\u0027+ {this.custom.PMNumber}+\u0027/Active Power\u0027"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "custom.popupID": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceType}+{view.custom.deviceId}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Popups/ContentMargins",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "611px"
+        },
+        "propConfig": {
+          "props.tabs[1].disabled": {
+            "binding": {
+              "config": {
+                "expression": "!{view.custom.powerMeter1exist}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "overflow": "hidden"
+          },
+          "tabSize": {
+            "width": 120
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "PCA Unit",
+            "Input Metering"
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTypePath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "overflow": "hidden"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

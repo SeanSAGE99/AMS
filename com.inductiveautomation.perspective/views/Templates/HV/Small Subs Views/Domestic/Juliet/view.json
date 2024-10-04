@@ -1,0 +1,220 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 176,
+      "width": 209
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.2093,
+          "width": 0.3024,
+          "x": 0.3512,
+          "y": 0.657
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/Domestic/Juliet Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.103,
+          "width": 0.4537,
+          "x": 0.1069,
+          "y": 0.0361
+        },
+        "props": {
+          "style": {
+            "classes": "Tag/Label"
+          },
+          "text": "Juliet",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "normal",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Switch Block"
+        },
+        "position": {
+          "height": 0.2093,
+          "width": 0.3024,
+          "x": 0.0293,
+          "y": 0.657
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW01",
+            "DeviceParentPath": "High Voltage/Domestic/Juliet Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Switch Block_0"
+        },
+        "position": {
+          "height": 0.2093,
+          "width": 0.3024,
+          "x": 0.6732,
+          "y": 0.1512
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW03",
+            "DeviceParentPath": "High Voltage/Domestic/Juliet Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/Domestic/juliet-substation"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.039,
+                        "y": 0.5058
+                      },
+                      {
+                        "x": 0.1171,
+                        "y": 0.6977
+                      }
+                    ],
+                    "x": 0.1171,
+                    "y": 0.5058
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.439,
+                    "y": 0.6977
+                  }
+                ],
+                "x": 0.439,
+                "y": 0.5058
+              },
+              {
+                "x": 0.9854,
+                "y": 0.5058
+              },
+              {
+                "x": 0.761,
+                "y": 0.3198
+              }
+            ],
+            "x": 0.761,
+            "y": 0.5058
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.1171,
+                "y": 1.0291
+              }
+            ],
+            "x": 0.1171,
+            "y": 0.8314
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.761,
+                "y": -0.0349
+              }
+            ],
+            "x": 0.761,
+            "y": 0.1919
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

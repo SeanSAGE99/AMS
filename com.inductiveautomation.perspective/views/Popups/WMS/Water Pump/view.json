@@ -1,0 +1,1364 @@
+{
+  "custom": {
+    "deviceDescription": null,
+    "deviceTagPath": "Water Monitoring System/Jet Base/Northern Pump Station/Pump 1",
+    "pens": [
+      {
+        "axis": "Pump",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Pump VSD - Motor Current",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "Pump",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Pump VSD - Speed (RPM)",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "Pump",
+        "data": {
+          "aggregateMode": "default",
+          "source": "histprov:MSSQL:/drv:ignition-opswamstst1:default:/tag:Water Monitoring System/Domestic/Domestic Pipe Layout/NES204B/Status Folder/Net Flow Totaliser"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Pump VSD - Torque (Nm)",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      },
+      {
+        "axis": "Pump",
+        "data": {
+          "aggregateMode": "default",
+          "source": "histprov:MSSQL:/drv:ignition-opswamstst1:default:/tag:Water Monitoring System/Domestic/Domestic Pipe Layout/NES204B/Status Folder/Net Flow Totaliser"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#8DA0CB",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#8DA0CB",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "name": "Pump VSD - Power(kW)",
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      }
+    ],
+    "siteName": null,
+    "sitePath": "Water Monitoring System/Jet Base/Northern Pump Station",
+    "subArea": null
+  },
+  "params": {
+    "deviceName": "Pump 1",
+    "deviceParentPath": "Water Monitoring System/Jet Base/Northern Pump Station"
+  },
+  "propConfig": {
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.pens": {
+      "persistent": true
+    },
+    "custom.pens[0].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/Status Folder/Instantaneous Flow\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.pens[1].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/Status Folder/Net Flow Totaliser\u0027"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Site_Name"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.sitePath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Site_SubArea"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 500,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.deviceName} + \u0027 - \u0027 + {view.custom.deviceDescription}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Symbol_Double"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.device.name": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.device.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.sitePath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_1"
+                },
+                "position": {
+                  "basis": "10%"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Alarm Summary/Priority Counts/Active"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "marginRight": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "35px"
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2"
+                  },
+                  "text": "Analogue"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "FlexRepeater"
+                    },
+                    "position": {
+                      "basis": "100%"
+                    },
+                    "propConfig": {
+                      "props.instances[0].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[1].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[2].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[3].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[4].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[5].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[6].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status Folder\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "direction": "column",
+                      "elementPosition": {
+                        "basis": "70%"
+                      },
+                      "elementStyle": {
+                        "margin": "1px"
+                      },
+                      "instances": [
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "Pump Speed",
+                          "showUnitsInValue": true,
+                          "tagName": "Pump VSD - Main Actual Value",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - Main Actual Value.quality\u0027 not found.\")",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "Running Hours",
+                          "showUnitsInValue": true,
+                          "tagName": "Pump VSD - Running Hours",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - Running Hours.quality\u0027 not found.\")",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "Energy Consumption",
+                          "showUnitsInValue": true,
+                          "tagName": "Pump VSD - kWh Counter",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - kWh Counter.quality\u0027 not found.\")",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "Motor Current",
+                          "showUnitsInValue": true,
+                          "tagName": "Pump VSD - Motor Current",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - Motor Current.quality\u0027 not found.\")",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "Speed",
+                          "showUnitsInValue": true,
+                          "tagName": "Pump VSD - Speed (RPM)",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - Speed (RPM).quality\u0027 not found.\")",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "Torque",
+                          "showUnitsInValue": true,
+                          "tagName": "Pump VSD - Torque (Nm)",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - Torque (Nm).quality\u0027 not found.\")",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "Power",
+                          "showUnitsInValue": true,
+                          "tagName": "Pump VSD - Power (kW)",
+                          "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - Power (kW).quality\u0027 not found.\")",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        }
+                      ],
+                      "path": "Shared/Templates/Display/Analogue Value w Label",
+                      "style": {
+                        "overflow": "hidden"
+                      },
+                      "text": "Reset Totaliser",
+                      "useDefaultViewHeight": false,
+                      "useDefaultViewWidth": false
+                    },
+                    "type": "ia.display.flex-repeater"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "35px"
+                        },
+                        "props": {
+                          "style": {
+                            "classes": "UI/Text/Heading4"
+                          },
+                          "text": "Speed:"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "MovingAnalogIndicator"
+                        },
+                        "position": {
+                          "basis": "223px"
+                        },
+                        "propConfig": {
+                          "props.processValue": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "indirect",
+                                "references": {
+                                  "deviceTagPath": "{view.custom.deviceTagPath}"
+                                },
+                                "tagPath": "{deviceTagPath}/Status Folder/Pump VSD - Main Actual Value"
+                              },
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "defaultRangeColor": "var(--neutral-50)",
+                          "desiredHigh": "",
+                          "desiredLow": "",
+                          "highAlarm": "",
+                          "highHighAlarm": null,
+                          "highInterlock": null,
+                          "label": {
+                            "visible": true
+                          },
+                          "lowAlarm": "",
+                          "lowInterlock": null,
+                          "lowLowAlarm": null,
+                          "reverseIndicator": true
+                        },
+                        "type": "ia.display.moving-analog-indicator"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "90px"
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "240px"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Label_1"
+                },
+                "position": {
+                  "basis": "10%"
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2"
+                  },
+                  "text": "Status"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FlexRepeater_0"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.instances[0].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[1].tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "elementPosition": {
+                    "basis": "100%"
+                  },
+                  "instances": [
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "Pump VSD - In Operation",
+                      "tagName": "Pump VSD - In Operation (Pump Running)",
+                      "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - In Operation (Pump Running).quality\u0027 not found.\")"
+                    },
+                    {
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "labelOverride": "Pump VSD - Running on Ref Speed",
+                      "tagName": "Pump VSD - Running on Reference Speed",
+                      "tagQuality": "Bad_NotFound(\"Path \u0027[default]Water Monitoring System/Jet Base/Northern Pump Station/Pump 1/Status Folder/Pump VSD - Running on Reference Speed.quality\u0027 not found.\")"
+                    }
+                  ],
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": false,
+                  "useDefaultViewWidth": false
+                },
+                "type": "ia.display.flex-repeater"
+              }
+            ],
+            "meta": {
+              "name": "Analogues"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Popups/ContentMargins"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "draggable": true,
+                        "id": "pwMGOKRj",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "type": "open",
+                        "viewParams": {
+                          "deviceName": "{view.params.deviceName}",
+                          "deviceParentPath": "{view.params.deviceParentPath}",
+                          "pens": "{view.custom.pens}"
+                        },
+                        "viewPath": "Popups/Trend Popup",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "40px"
+                },
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/show_chart"
+                    }
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+                  },
+                  "text": "Historical Trends"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "custom": {
+                  "tags": [
+                    {
+                      "aggregate": "Average",
+                      "alias": "Motor Current"
+                    },
+                    {
+                      "aggregate": "Average",
+                      "alias": "Speed (RPM)"
+                    },
+                    {
+                      "aggregate": "Average",
+                      "alias": "Torque (Nm)"
+                    },
+                    {
+                      "aggregate": "Average",
+                      "alias": "Power (kW)"
+                    }
+                  ]
+                },
+                "meta": {
+                  "name": "TimeSeriesChart"
+                },
+                "position": {
+                  "basis": "400px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "custom.tags[0].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/Status Folder/Pump VSD - Motor Current\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.tags[1].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/Status Folder/Pump VSD - Speed (RPM)\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.tags[2].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/Status Folder/Pump VSD - Torque (Nm)\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "custom.tags[3].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/Status Folder/Pump VSD - Power (kW)\u0027"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.series[0].data": {
+                    "binding": {
+                      "config": {
+                        "aggregate": "MinMax",
+                        "avoidScanClassValidation": true,
+                        "dateRange": {
+                          "mostRecent": "1",
+                          "mostRecentUnits": "HOUR"
+                        },
+                        "enableValueCache": true,
+                        "ignoreBadQuality": false,
+                        "polling": {
+                          "enabled": true,
+                          "rate": "1"
+                        },
+                        "preventInterpolation": false,
+                        "returnFormat": "Wide",
+                        "returnSize": {
+                          "numRows": "100",
+                          "type": "FIXED"
+                        },
+                        "tags": "{this.custom.tags}",
+                        "valueFormat": "DATASET"
+                      },
+                      "type": "tag-history"
+                    }
+                  }
+                },
+                "props": {
+                  "legend": {
+                    "visible": true
+                  },
+                  "plots": [
+                    {
+                      "axes": [
+                        {
+                          "alignment": "left",
+                          "grid": {
+                            "color": "",
+                            "dashArray": 0,
+                            "opacity": 0.9,
+                            "style": {
+                              "classes": ""
+                            },
+                            "visible": false
+                          },
+                          "label": {
+                            "font": {
+                              "color": "",
+                              "size": 10
+                            },
+                            "offset": 0,
+                            "style": {
+                              "classes": ""
+                            },
+                            "text": "Instantaneous Flow",
+                            "visible": true
+                          },
+                          "max": "",
+                          "min": "",
+                          "name": "Flow",
+                          "style": {
+                            "classes": ""
+                          },
+                          "tick": {
+                            "color": "",
+                            "count": "Auto",
+                            "label": {
+                              "font": {
+                                "color": "",
+                                "size": 10
+                              },
+                              "format": "Auto",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "style": {
+                              "classes": ""
+                            }
+                          },
+                          "width": 60
+                        }
+                      ],
+                      "markers": [],
+                      "relativeWeight": 1,
+                      "trends": [
+                        {
+                          "axis": "Instantaneous Flow",
+                          "baselines": [],
+                          "breakLine": true,
+                          "columns": [],
+                          "interpolation": "curveLinear",
+                          "radius": 2,
+                          "series": "Flow",
+                          "stack": true,
+                          "type": "line",
+                          "visible": true
+                        }
+                      ]
+                    }
+                  ],
+                  "series": [
+                    {
+                      "name": "Pump"
+                    }
+                  ]
+                },
+                "type": "ia.chart.timeseries"
+              }
+            ],
+            "meta": {
+              "name": "Trends"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "alarms_expanded"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceName}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.deviceParentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.sitePath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "controlEnable": true,
+                "show": {
+                  "area": false,
+                  "device": false
+                }
+              },
+              "path": "Shared/Templates/Devices/Control/Common/Alarms",
+              "style": {
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "400px",
+          "grow": 1
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "classes": "UI/Popups/Background"
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Analogues",
+            "Trends",
+            "Alarms"
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

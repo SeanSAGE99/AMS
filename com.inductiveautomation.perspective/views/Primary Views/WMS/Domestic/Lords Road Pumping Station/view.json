@@ -1,0 +1,786 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Transfer Pump"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.0602,
+          "y": 0.5392
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Pump 1",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fire Pump 2"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.452,
+          "y": 0.5392
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Fire Pump 1",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.8378,
+          "y": 0.5012
+        },
+        "props": {
+          "text": "Diesel",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/WMS/Domestic/north-east-pumping-station"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0156,
+          "x": 0.0026,
+          "y": 0.7228
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/arrow_circle_down",
+          "style": {
+            "classes": "HoverPointer"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.0214,
+          "y": 0.7633
+        },
+        "props": {
+          "text": "To North East Pumping Station",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Transfer Pump_0"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.2982,
+          "y": 0.5392
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Pump 2",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fire Pump 3"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.6215,
+          "y": 0.5382
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Fire Pump 2",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fire Pump 4"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.8165,
+          "y": 0.5382
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Fire Pump 3",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.8884,
+          "y": 0.7583
+        },
+        "props": {
+          "text": "To Fire System",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_0"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0156,
+          "x": 0.9281,
+          "y": 0.7218
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/arrow_circle_down"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Tank with Sparkline"
+        },
+        "position": {
+          "height": 0.3085,
+          "width": 0.1292,
+          "x": 0.1,
+          "y": 0.1683
+        },
+        "props": {
+          "params": {
+            "DetailsAtBottom": false,
+            "IndicatorOnRight": true,
+            "LiquidColor": "#ACCBFC",
+            "SparklineWidth": 2.4,
+            "deviceName": "Tank 1",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station"
+          },
+          "path": "Templates/WMS/Tank with Sparkline"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tank with Sparkline_1"
+        },
+        "position": {
+          "height": 0.3085,
+          "width": 0.1292,
+          "x": 0.7165,
+          "y": 0.1683
+        },
+        "props": {
+          "params": {
+            "DetailsAtBottom": false,
+            "IndicatorOnRight": false,
+            "LiquidColor": "#ACCBFC",
+            "SparklineWidth": 2.4,
+            "deviceName": "Tank 2",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station"
+          },
+          "path": "Templates/WMS/Tank with Sparkline"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.0826,
+          "y": 0.7672
+        },
+        "props": {
+          "params": {
+            "deviceName": "Discharge Pressure",
+            "deviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "popupWindow": "Popups/WMS/ppuAnalogue"
+          },
+          "path": "Templates/WMS/Analogue"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Site Navigation Small"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832,
+          "y": -0.0002
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.919,
+          "y": 0.05
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/ppuPLC"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.9252,
+          "y": 0.1365
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS",
+            "DeviceParentPath": "Water Monitoring System/Domestic/Lords Road Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_5"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "{[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Alarm}||{[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Communications Alarm}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "text": "Eleventh Street Sewer Pump Station",
+              "textStyle": {
+                "fontSize": "clamp(5pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+                "fontWeight": "bold",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "alarm1"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Alarm"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "text": "Pump Station Alarm",
+              "textStyle": {
+                "color": "var(--error)",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "alarm2"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Communications Alarm"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "text": "Pump Station Communications Failed",
+              "textStyle": {
+                "color": "var(--error)",
+                "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Eleventh Street SPS FlexContainer"
+        },
+        "position": {
+          "height": 0.0923,
+          "width": 0.186,
+          "x": 0.4074,
+          "y": 0.82
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.1125,
+                                "y": 0.5736
+                              }
+                            ],
+                            "x": 0.1546,
+                            "y": 0.5736
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.0156,
+                            "y": 0.7371
+                          }
+                        ],
+                        "x": 0.1546,
+                        "y": 0.7371
+                      }
+                    ],
+                    "x": 0.3938,
+                    "y": 0.7371
+                  }
+                ],
+                "x": 0.3938,
+                "y": 0.5736
+              }
+            ],
+            "x": 0.3505,
+            "y": 0.5736
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.0766,
+                                "y": 0.5726
+                              }
+                            ],
+                            "x": 0.0453,
+                            "y": 0.5726
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.1354,
+                                "y": 0.2986
+                              }
+                            ],
+                            "x": 0.0453,
+                            "y": 0.2986
+                          }
+                        ],
+                        "x": 0.0453,
+                        "y": 0.4593
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.8109,
+                                "y": 0.2976
+                              }
+                            ],
+                            "x": 0.9015,
+                            "y": 0.2976
+                          }
+                        ],
+                        "x": 0.9015,
+                        "y": 0.4593
+                      }
+                    ],
+                    "x": 0.2859,
+                    "y": 0.4593
+                  }
+                ],
+                "x": 0.2859,
+                "y": 0.5736
+              }
+            ],
+            "x": 0.3146,
+            "y": 0.5736
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.674,
+                                "y": 0.5726
+                              }
+                            ],
+                            "x": 0.7165,
+                            "y": 0.5726
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.8688,
+                                    "y": 0.5726
+                                  }
+                                ],
+                                "x": 0.9114,
+                                "y": 0.5726
+                              },
+                              {
+                                "connections": [],
+                                "x": 0.9307,
+                                "y": 0.7371
+                              }
+                            ],
+                            "x": 0.9114,
+                            "y": 0.7371
+                          }
+                        ],
+                        "x": 0.7165,
+                        "y": 0.7371
+                      }
+                    ],
+                    "x": 0.5453,
+                    "y": 0.7371
+                  }
+                ],
+                "x": 0.5453,
+                "y": 0.5736
+              }
+            ],
+            "x": 0.5047,
+            "y": 0.5736
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_9",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.8109,
+                                "y": 0.3447
+                              }
+                            ],
+                            "x": 0.8514,
+                            "y": 0.3447
+                          }
+                        ],
+                        "x": 0.8514,
+                        "y": 0.4286
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.1354,
+                                        "y": 0.3447
+                                      }
+                                    ],
+                                    "x": 0.0951,
+                                    "y": 0.3447
+                                  }
+                                ],
+                                "x": 0.0951,
+                                "y": 0.4286
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.4682,
+                                    "y": 0.5736
+                                  }
+                                ],
+                                "x": 0.4395,
+                                "y": 0.5736
+                              }
+                            ],
+                            "x": 0.4395,
+                            "y": 0.4286
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.638,
+                                "y": 0.5726
+                              }
+                            ],
+                            "x": 0.6084,
+                            "y": 0.5726
+                          }
+                        ],
+                        "x": 0.6084,
+                        "y": 0.4286
+                      }
+                    ],
+                    "x": 0.8037,
+                    "y": 0.4286
+                  }
+                ],
+                "x": 0.8037,
+                "y": 0.5726
+              }
+            ],
+            "x": 0.8328,
+            "y": 0.5726
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

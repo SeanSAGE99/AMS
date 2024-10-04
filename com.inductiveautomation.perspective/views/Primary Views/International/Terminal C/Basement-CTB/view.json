@@ -1,0 +1,926 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Terminal C Basement"
+        },
+        "position": {
+          "height": 0.846,
+          "width": 1,
+          "y": 0.0945
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Terminal C Basement.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/T1/Terminal C/Basement"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.12,
+          "y": 0.9404
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTB_DBX02",
+            "deviceParentPath": "International/T1/Terminal C/Basement",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0235,
+          "y": 0.7794
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTB_DBX03",
+            "deviceParentPath": "International/T1/Terminal C/Basement",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.756,
+          "y": 0.9554
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTB_DBX04",
+            "deviceParentPath": "International/T1/Terminal C/Basement",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_3"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.6195,
+          "y": 0.9554
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTB_DBX05",
+            "deviceParentPath": "International/T1/Terminal C/Basement",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_4"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.8038,
+          "y": 0.2294
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTB_DBX06",
+            "deviceParentPath": "International/T1/Terminal C/Basement",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_5"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0782,
+          "y": 0.2293
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTB_DBX07",
+            "deviceParentPath": "International/T1/Terminal C/Basement",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.4707,
+          "y": 0.6716
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sump Pump 3",
+            "Pump1Name": "Sump Pump 3",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTB Sump Pump 3",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/CTB-RSC12",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_0"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.6782,
+          "y": 0.6556
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sump Pump 4A-4B",
+            "Pump1Name": "Sump Pump 4A",
+            "Pump2Name": "Sump Pump 4B",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTB Sump Pump 4",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/CTB-RSC12",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_1"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.3507,
+          "y": 0.8609
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sump Pump 5",
+            "Pump1Name": "Sump Pump 5",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTB Sump Pump 5",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/CTB-RSC13",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_2"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.4466,
+          "y": 0.8609
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sump Pump 6-7",
+            "Pump1Name": "Sump Pump 6",
+            "Pump2Name": "Sump Pump 7",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTB Sump Pump 6-7",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/CTB-RSC13",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_3"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.0076,
+          "y": 0.2726
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "LabelOverride": "",
+            "Pump1Name": "Sewer Pump 1",
+            "Pump2Name": "Sewer Pump 2",
+            "Pump3Name": "Sewer Pump 3",
+            "Pump4Name": "Sewer Pump 4",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "Pump Station",
+            "deviceName": "ITB SPS",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_4"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.2367,
+          "y": 0.6813
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sump Pump 2",
+            "Pump1Name": "Sump Pump 2",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTB Sump Pump 2",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/FAC1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_5"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.0001,
+          "y": 0.4409
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "LabelOverride": "Sump Pump 1",
+            "Pump1Name": "Sump Pump 1",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTB Sump Pump 1",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/FAC1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_6"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.2355,
+          "y": 0.1635
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "Service 1 Supply Temperature",
+            "Analogue2Name": "",
+            "LabelOverride": "",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "",
+            "deviceName": "CTB Hot Water Pumps 1-2",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/FAC1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_7"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.1552,
+          "y": 0.4798
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sewer Pump 3",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sewer Pump 3",
+            "deviceName": "CTB Sewer Pump 3",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/FAC1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_8"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.1912,
+          "y": 0.5693
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sewer Pump 4",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sewer Pump 4",
+            "deviceName": "CTB Sewer Pump 4",
+            "deviceParentPath": "International/T1/Terminal C/Basement/Hydraulics/FAC1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_14",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.2682,
+          "y": 0.8636
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 20",
+            "deviceParentPath": "International/T1/Terminal C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_15",
+          "visible": false
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.2969,
+          "y": 0.8346
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 21",
+            "deviceParentPath": "International/T1/Terminal C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_13"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.6011,
+          "y": 0.831
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 40",
+            "deviceParentPath": "International/T1/Terminal C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_12"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.6011,
+          "y": 0.869
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 41",
+            "deviceParentPath": "International/T1/Terminal C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0301,
+          "y": 0.1269
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal C/Basement/CTB_DBX07/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_0"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0863,
+          "y": 0.1269
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 7 Block 11",
+            "deviceParentPath": "International/T1/Terminal C/Basement/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_1"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.1426,
+          "y": 0.1269
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 7 Block 12",
+            "deviceParentPath": "International/T1/Terminal C/Basement/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_2"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0912,
+          "y": 0.5707
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 7 Block 1",
+            "deviceParentPath": "International/T1/Terminal C/Basement/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_3"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0318,
+          "y": 0.6781
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal C/Basement/CTB_DBX03/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_4"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0628,
+          "y": 0.8943
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal C/Basement/CTB_DBX02/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_5"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.8289,
+          "y": 0.8913
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 7 Block 1",
+            "deviceParentPath": "International/T1/Terminal C/Basement/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[5].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[6].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.hydraulics"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1896,
+                "y": 0.9462
+              }
+            ],
+            "x": 0.3312,
+            "y": 0.8039
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6229,
+                "y": 0.9606
+              }
+            ],
+            "x": 0.5151,
+            "y": 0.8145
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7594,
+                "y": 0.9615
+              }
+            ],
+            "x": 0.6745,
+            "y": 0.799
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8068,
+                "y": 0.2549
+              }
+            ],
+            "x": 0.6516,
+            "y": 0.4635
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1473,
+                "y": 0.2548
+              }
+            ],
+            "x": 0.2286,
+            "y": 0.4375
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0932,
+                "y": 0.7962
+              }
+            ],
+            "x": 0.2896,
+            "y": 0.826
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "Hyd_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0464,
+                "y": 0.4681
+              }
+            ],
+            "x": 0.2061,
+            "y": 0.4681
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

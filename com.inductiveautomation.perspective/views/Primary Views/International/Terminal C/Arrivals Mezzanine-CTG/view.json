@@ -1,0 +1,280 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Terminal C Arrivals Mezzanine"
+        },
+        "position": {
+          "height": 0.9615,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Terminal C Arrivals Mezzanine.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/T1/Terminal C/Arrivals Mezzanine"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_4"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0948,
+          "y": 0.6647
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTG_DBX02",
+            "deviceParentPath": "International/T1/Terminal C/Arrivals Mezzanine",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_3"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0948,
+          "y": 0.3428
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTG_DBX01",
+            "deviceParentPath": "International/T1/Terminal C/Arrivals Mezzanine",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_8"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.8323,
+          "y": 0.5034
+        },
+        "props": {
+          "params": {
+            "deviceName": "CTG_DBX14",
+            "deviceParentPath": "International/T1/Terminal C/Arrivals Mezzanine",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0381,
+          "y": 0.3087
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal C/Arrivals Mezzanine/CTG_DBX01/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_0"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0381,
+          "y": 0.6306
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal C/Arrivals Mezzanine/CTG_DBX02/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_1"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.9057,
+          "y": 0.4692
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal C/Arrivals Mezzanine/CTG_DBX14/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1636,
+                "y": 0.3606
+              }
+            ],
+            "x": 0.427,
+            "y": 0.1588
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1646,
+                "y": 0.6721
+              }
+            ],
+            "x": 0.4333,
+            "y": 0.2058
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8359,
+                "y": 0.5106
+              }
+            ],
+            "x": 0.5797,
+            "y": 0.1577
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

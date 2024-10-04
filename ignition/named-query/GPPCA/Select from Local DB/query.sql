@@ -1,0 +1,1 @@
+SELECT DATA_EVENT_TYPE as "Event Type", BAY_NUMBER as "Bay", Terminal as "Terminal", METER_READING as "Meter Readings", ENERGY_CONSUMPTION as "Energy Consumption", AIRCRAFT_CODE as "Aircraft Code", CORRELATION_ID as "Correlation ID", EVENT_DATE as "Date",EVENT_TIME as "Time" FROM GPPCA_SCADA_EVENT_stage where EVENT_DATE =  :eventDate

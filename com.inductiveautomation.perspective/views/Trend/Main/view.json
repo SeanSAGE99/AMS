@@ -1,0 +1,96 @@
+{
+  "custom": {},
+  "params": {
+    "areaFilter": "%",
+    "siteFilter": "%"
+  },
+  "propConfig": {
+    "custom.areaFilter": {
+      "persistent": true
+    },
+    "custom.siteFilter": {
+      "persistent": true
+    },
+    "params.areaFilter": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.siteFilter": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1129
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Main (BPS)"
+        },
+        "propConfig": {
+          "props.params.areaFilter": {
+            "binding": {
+              "config": {
+                "path": "view.params.areaFilter"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.siteFilter": {
+            "binding": {
+              "config": {
+                "path": "view.params.siteFilter"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Trend/Main (BPS)"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Main (BPL)"
+        },
+        "position": {
+          "size": "large"
+        },
+        "propConfig": {
+          "props.params.areaFilter": {
+            "binding": {
+              "config": {
+                "path": "view.params.areaFilter"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.siteFilter": {
+            "binding": {
+              "config": {
+                "path": "view.params.siteFilter"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Trend/Main (BPL)"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "breakpoint": 1260
+    },
+    "type": "ia.container.breakpt"
+  }
+}

@@ -1,0 +1,672 @@
+{
+  "custom": {
+    "ActiveAck": false,
+    "ActiveUnack": false,
+    "AlarmCount": 0,
+    "DeviceTagPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status",
+    "PLCstatus": "No Error",
+    "PingAlarm": false,
+    "PriamryPLCstatus": "Primary Active",
+    "SecondaryPLCstatus": "Secondary Backup",
+    "WatchdogAlarm": false,
+    "tags": [
+      {
+        "tagName": "Mode",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      },
+      {
+        "tagName": "PLC Watchdog",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      },
+      {
+        "tagName": "PLC Watchdog Timestamp",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      },
+      {
+        "tagName": "Primary PLC Active",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      },
+      {
+        "tagName": "Primary PLC Active for SCADA",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      },
+      {
+        "tagName": "Secondary PLC Active for SCADA",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      },
+      {
+        "tagName": "Standby PLC Active",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      },
+      {
+        "tagName": "Standby PLC Ready to be Active",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/PLC Status/Status Folder"
+      }
+    ]
+  },
+  "params": {
+    "DeviceName": "PLC Status",
+    "DeviceParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC",
+    "fontSize": "clamp(3pt, calc(0.3*(1.0vmin + 1.0vmax)), 6pt))"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.PLCstatus": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Mode Desc"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.PingAlarm": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Alarms/Ping/Alarms.HasActive"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.PriamryPLCstatus": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Primary PLC Status"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.SecondaryPLCstatus": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Secondary PLC Status"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.WatchdogAlarm": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Alarms/PLC Watchdog Failed/Alarms.HasActive"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 90,
+      "width": 150
+    },
+    "dropConfig": {
+      "udts": [
+        {
+          "action": "path",
+          "param": "DeviceParentPath",
+          "type": "PLC/S71500 PLC"
+        }
+      ]
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "PLC Name"
+        },
+        "position": {
+          "height": 0.1667,
+          "width": 0.9845,
+          "x": -0.0055,
+          "y": 0.655
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Parameters.PLC Name"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "clamp(3pt, calc(0.3*(1.0vmin + 1.0vmax)), 18pt)",
+            "margin": 1,
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "IP Address"
+        },
+        "position": {
+          "height": 0.1667,
+          "width": 0.9612,
+          "x": 0.0061,
+          "y": 0.8216
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "view.custom.PingAlarm"
+              },
+              "transforms": [
+                {
+                  "fallback": null,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": true,
+                      "output": "Alarms/Background/CriticalUnacked"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Parameters.IP Address"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "clamp(3pt, calc(0.3*(1.0vmin + 1.0vmax)), 18pt)",
+            "margin": 1,
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.2333,
+          "width": 0.1624,
+          "x": 0.4232,
+          "y": 0.2112
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "plc-board_opt"
+        },
+        "position": {
+          "height": 0.4667,
+          "width": 0.3191,
+          "x": 0.0971,
+          "y": 0.1657
+        },
+        "propConfig": {
+          "props.style.borderStyle": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.PriamryPLCstatus}\u003d\u0027Primary Active\u0027,\u0027ridge\u0027,\u0027hidden\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Status Folder/Mode Desc"
+              },
+              "transforms": [
+                {
+                  "fallback": "Device/Status/Abnormal",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "No Error",
+                      "output": "Device/Mode/Shape/Auto"
+                    },
+                    {
+                      "input": "Faulted",
+                      "output": "Device/Status/Faulted"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "fill": {
+                "paint": "Device/Mode/Auto"
+              },
+              "height": 60,
+              "name": "rect2",
+              "type": "group",
+              "width": 60,
+              "y": ".952"
+            },
+            {
+              "d": "m60.223 18.977c0.141 0.049 0.284 0.1 0.4 0.193 0.177 0.141 0.302 0.342 0.352 0.559 0.017 0.073 0.017 0.149 0.025 0.223v38c-0.017 0.149-0.035 0.3-0.099 0.434-0.098 0.203-0.266 0.37-0.467 0.467-0.181 0.087-0.238 0.077-0.434 0.099h-56c-0.196-0.022-0.253-0.012-0.434-0.099-0.267-0.129-0.474-0.386-0.541-0.679-0.017-0.072-0.017-0.148-0.025-0.222v-38c8e-3 -0.074 8e-3 -0.15 0.025-0.223 0.067-0.294 0.273-0.549 0.541-0.678 0.181-0.087 0.238-0.077 0.434-0.099h1v-11c0.017-0.149 0.035-0.3 0.099-0.434 0.098-0.204 0.266-0.371 0.467-0.467 0.181-0.087 0.238-0.077 0.434-0.099h52c0.074 8e-3 0.148 0.016 0.223 0.025 0.213 0.075 0.421 0.178 0.559 0.351 0.093 0.118 0.159 0.255 0.193 0.401 0.017 0.073 0.017 0.149 0.025 0.223v11h1l0.223 0.025zm-2.223 1.975h-53v36h54v-36h-1zm-16.206 31h-3.588c-0.617-8e-3 -1.188-0.529-1.206-1.182v-0.024-3.588c8e-3 -0.62 0.542-1.189 1.181-1.206h0.025 3.588 0.025c0.623 0.024 1.164 0.557 1.181 1.181v0.024 3.589c-8e-3 0.621-0.529 1.188-1.182 1.205-8e-3 1e-3 -0.016 1e-3 -0.024 1e-3zm12 0h-3.588c-0.617-8e-3 -1.188-0.529-1.206-1.182v-0.024-3.588c8e-3 -0.62 0.542-1.189 1.181-1.206h0.025 3.588 0.025c0.623 0.024 1.164 0.557 1.181 1.181v0.024 3.589c-8e-3 0.621-0.529 1.188-1.182 1.205-8e-3 1e-3 -0.016 1e-3 -0.024 1e-3zm-21.794-2h-22c-0.074-9e-3 -0.15-9e-3 -0.223-0.025-0.294-0.067-0.549-0.273-0.678-0.541-0.087-0.182-0.077-0.238-0.099-0.434v-20c0.022-0.196 0.012-0.253 0.099-0.434 0.129-0.269 0.385-0.474 0.678-0.541 0.073-0.017 0.149-0.017 0.223-0.025h22c0.074 8e-3 0.148 0.016 0.223 0.025 0.141 0.049 0.284 0.1 0.4 0.193 0.177 0.141 0.302 0.342 0.352 0.559 0.017 0.073 0.017 0.149 0.025 0.223v20c-0.025 0.224-0.08 0.45-0.218 0.623-0.094 0.118-0.213 0.213-0.348 0.278-0.181 0.087-0.238 0.077-0.434 0.099zm9-2h-2v2h2v-2zm12 0h-2v2h2v-2zm-22-18h-20v18h20v-18zm17 14h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.035 2e-3 0.044 2e-3 0.079 6e-3 0.465 0.055 0.862 0.469 0.881 0.954 1e-3 0.013 1e-3 0.026 1e-3 0.039v4c-0.01 0.503-0.416 0.957-0.922 0.997-0.034 2e-3 -0.043 2e-3 -0.078 3e-3zm-1-4h-2v2h2v-2zm7-2h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.035 2e-3 0.044 2e-3 0.079 6e-3 0.465 0.055 0.862 0.469 0.881 0.954 1e-3 0.013 1e-3 0.026 1e-3 0.039v4c-1e-3 0.035 0 0.043-3e-3 0.078-0.038 0.479-0.455 0.901-0.958 0.921-0.013 1e-3 -0.026 1e-3 -0.039 1e-3zm-12 0h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.491 0.028 0.919 0.431 0.958 0.92 3e-3 0.035 2e-3 0.044 3e-3 0.079v4c-1e-3 0.035 0 0.043-3e-3 0.078-0.038 0.479-0.455 0.901-0.958 0.921-0.013 1e-3 -0.026 1e-3 -0.039 1e-3zm-1-4h-2v2h2v-2zm12 0h-2v2h2v-2zm-5-2h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.035 2e-3 0.044 2e-3 0.079 6e-3 0.465 0.055 0.862 0.469 0.881 0.954 1e-3 0.013 1e-3 0.026 1e-3 0.039v4c-0.01 0.504-0.416 0.957-0.922 0.997-0.034 2e-3 -0.043 2e-3 -0.078 3e-3zm-1-4h-2v2h2v-2zm10-19h-50v10h4v-2.175h-1e-3c-1.016-0.373-1.818-1.324-1.97-2.407-0.131-0.935 0.21-1.922 0.888-2.577 0.548-0.528 1.292-0.834 2.064-0.841h0.019 0.019c1.11 0.01 2.178 0.679 2.668 1.666 0.405 0.814 0.412 1.814 0.016 2.635-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.023-0.375-1.828-1.336-1.973-2.426-0.125-0.932 0.219-1.918 0.903-2.57 0.546-0.521 1.292-0.822 2.051-0.829h0.038c1.108 0.01 2.177 0.678 2.668 1.666 0.406 0.815 0.412 1.814 0.016 2.635-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.023-0.375-1.828-1.336-1.973-2.426-0.125-0.932 0.219-1.918 0.903-2.57 0.546-0.521 1.292-0.822 2.051-0.829h0.019 0.019c1.108 0.01 2.177 0.678 2.668 1.666 0.406 0.815 0.412 1.814 0.016 2.635-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.017-0.373-1.819-1.324-1.971-2.407-0.13-0.929 0.205-1.91 0.876-2.565 0.548-0.535 1.304-0.846 2.076-0.853h0.038c1.115 0.01 2.189 0.686 2.676 1.682 0.398 0.811 0.401 1.805 8e-3 2.619-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.017-0.373-1.819-1.324-1.971-2.407-0.13-0.929 0.205-1.91 0.876-2.565 0.548-0.535 1.304-0.846 2.076-0.853h0.038c1.115 0.01 2.189 0.686 2.676 1.682 0.398 0.811 0.401 1.805 8e-3 2.619-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.017-0.373-1.819-1.324-1.971-2.407-0.13-0.929 0.205-1.91 0.876-2.565 0.548-0.535 1.304-0.846 2.076-0.853h0.038c1.115 0.01 2.189 0.686 2.676 1.682 0.398 0.811 0.401 1.805 8e-3 2.619-0.338 0.702-0.968 1.243-1.703 1.511v2.188h4v-10zm-37 4h-7e-3c-0.445 4e-3 -0.866 0.335-0.967 0.773-0.105 0.455 0.155 0.966 0.586 1.149 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.555-0.361-1.146-0.967-1.159h-0.013-7e-3zm8 0h-7e-3c-0.445 4e-3 -0.866 0.335-0.967 0.773-0.105 0.455 0.155 0.966 0.586 1.149 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.555-0.361-1.146-0.967-1.159h-0.013-7e-3zm24 0h-7e-3c-0.443 4e-3 -0.863 0.333-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.556-0.361-1.146-0.967-1.159h-0.013-7e-3zm-16 0h-7e-3c-0.443 4e-3 -0.863 0.333-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.556-0.361-1.146-0.967-1.159h-0.013-7e-3zm8 0h-7e-3c-0.443 4e-3 -0.863 0.333-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.556-0.361-1.146-0.967-1.159h-0.013-7e-3zm-32 0h-7e-3c-0.442 4e-3 -0.862 0.332-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-3e-3 0.94-0.341 1.018-0.832 0.089-0.555-0.361-1.146-0.967-1.159h-0.013-7e-3z",
+              "fill": {
+                "paint": "Var(--neutral-80)",
+                "rule": "nonzero"
+              },
+              "name": "path4",
+              "type": "path"
+            }
+          ],
+          "stroke-miterlimit": 1.414,
+          "style": {
+            "margin": 2
+          },
+          "viewBox": "0 0 64 65"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "plc-board_opt_0"
+        },
+        "position": {
+          "height": 0.4667,
+          "rotate": {
+            "anchor": "143% 50%"
+          },
+          "width": 0.3191,
+          "x": 0.6032,
+          "y": 0.1657
+        },
+        "propConfig": {
+          "props.style.borderStyle": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.SecondaryPLCstatus}\u003d\u0027Primary Active\u0027,\u0027dotted\u0027,\u0027hidden\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Status Folder/Mode Desc"
+              },
+              "transforms": [
+                {
+                  "fallback": "Device/Status/Abnormal",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "No Error",
+                      "output": "Device/Mode/Shape/Auto"
+                    },
+                    {
+                      "input": "Faulted",
+                      "output": "Device/Status/Faulted"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "fill": {
+                "paint": "Device/Mode/Auto"
+              },
+              "height": 60,
+              "name": "rect2",
+              "type": "group",
+              "width": 60,
+              "y": ".952"
+            },
+            {
+              "d": "m60.223 18.977c0.141 0.049 0.284 0.1 0.4 0.193 0.177 0.141 0.302 0.342 0.352 0.559 0.017 0.073 0.017 0.149 0.025 0.223v38c-0.017 0.149-0.035 0.3-0.099 0.434-0.098 0.203-0.266 0.37-0.467 0.467-0.181 0.087-0.238 0.077-0.434 0.099h-56c-0.196-0.022-0.253-0.012-0.434-0.099-0.267-0.129-0.474-0.386-0.541-0.679-0.017-0.072-0.017-0.148-0.025-0.222v-38c8e-3 -0.074 8e-3 -0.15 0.025-0.223 0.067-0.294 0.273-0.549 0.541-0.678 0.181-0.087 0.238-0.077 0.434-0.099h1v-11c0.017-0.149 0.035-0.3 0.099-0.434 0.098-0.204 0.266-0.371 0.467-0.467 0.181-0.087 0.238-0.077 0.434-0.099h52c0.074 8e-3 0.148 0.016 0.223 0.025 0.213 0.075 0.421 0.178 0.559 0.351 0.093 0.118 0.159 0.255 0.193 0.401 0.017 0.073 0.017 0.149 0.025 0.223v11h1l0.223 0.025zm-2.223 1.975h-53v36h54v-36h-1zm-16.206 31h-3.588c-0.617-8e-3 -1.188-0.529-1.206-1.182v-0.024-3.588c8e-3 -0.62 0.542-1.189 1.181-1.206h0.025 3.588 0.025c0.623 0.024 1.164 0.557 1.181 1.181v0.024 3.589c-8e-3 0.621-0.529 1.188-1.182 1.205-8e-3 1e-3 -0.016 1e-3 -0.024 1e-3zm12 0h-3.588c-0.617-8e-3 -1.188-0.529-1.206-1.182v-0.024-3.588c8e-3 -0.62 0.542-1.189 1.181-1.206h0.025 3.588 0.025c0.623 0.024 1.164 0.557 1.181 1.181v0.024 3.589c-8e-3 0.621-0.529 1.188-1.182 1.205-8e-3 1e-3 -0.016 1e-3 -0.024 1e-3zm-21.794-2h-22c-0.074-9e-3 -0.15-9e-3 -0.223-0.025-0.294-0.067-0.549-0.273-0.678-0.541-0.087-0.182-0.077-0.238-0.099-0.434v-20c0.022-0.196 0.012-0.253 0.099-0.434 0.129-0.269 0.385-0.474 0.678-0.541 0.073-0.017 0.149-0.017 0.223-0.025h22c0.074 8e-3 0.148 0.016 0.223 0.025 0.141 0.049 0.284 0.1 0.4 0.193 0.177 0.141 0.302 0.342 0.352 0.559 0.017 0.073 0.017 0.149 0.025 0.223v20c-0.025 0.224-0.08 0.45-0.218 0.623-0.094 0.118-0.213 0.213-0.348 0.278-0.181 0.087-0.238 0.077-0.434 0.099zm9-2h-2v2h2v-2zm12 0h-2v2h2v-2zm-22-18h-20v18h20v-18zm17 14h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.035 2e-3 0.044 2e-3 0.079 6e-3 0.465 0.055 0.862 0.469 0.881 0.954 1e-3 0.013 1e-3 0.026 1e-3 0.039v4c-0.01 0.503-0.416 0.957-0.922 0.997-0.034 2e-3 -0.043 2e-3 -0.078 3e-3zm-1-4h-2v2h2v-2zm7-2h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.035 2e-3 0.044 2e-3 0.079 6e-3 0.465 0.055 0.862 0.469 0.881 0.954 1e-3 0.013 1e-3 0.026 1e-3 0.039v4c-1e-3 0.035 0 0.043-3e-3 0.078-0.038 0.479-0.455 0.901-0.958 0.921-0.013 1e-3 -0.026 1e-3 -0.039 1e-3zm-12 0h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.491 0.028 0.919 0.431 0.958 0.92 3e-3 0.035 2e-3 0.044 3e-3 0.079v4c-1e-3 0.035 0 0.043-3e-3 0.078-0.038 0.479-0.455 0.901-0.958 0.921-0.013 1e-3 -0.026 1e-3 -0.039 1e-3zm-1-4h-2v2h2v-2zm12 0h-2v2h2v-2zm-5-2h-4c-0.035-1e-3 -0.044-1e-3 -0.078-3e-3 -0.48-0.038-0.901-0.455-0.921-0.958-1e-3 -0.013-1e-3 -0.026-1e-3 -0.039v-4c0.01-0.504 0.416-0.957 0.922-0.997 0.034-3e-3 0.043-3e-3 0.078-3e-3h4c0.013 0 0.026 0 0.039 1e-3 0.035 2e-3 0.044 2e-3 0.079 6e-3 0.465 0.055 0.862 0.469 0.881 0.954 1e-3 0.013 1e-3 0.026 1e-3 0.039v4c-0.01 0.504-0.416 0.957-0.922 0.997-0.034 2e-3 -0.043 2e-3 -0.078 3e-3zm-1-4h-2v2h2v-2zm10-19h-50v10h4v-2.175h-1e-3c-1.016-0.373-1.818-1.324-1.97-2.407-0.131-0.935 0.21-1.922 0.888-2.577 0.548-0.528 1.292-0.834 2.064-0.841h0.019 0.019c1.11 0.01 2.178 0.679 2.668 1.666 0.405 0.814 0.412 1.814 0.016 2.635-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.023-0.375-1.828-1.336-1.973-2.426-0.125-0.932 0.219-1.918 0.903-2.57 0.546-0.521 1.292-0.822 2.051-0.829h0.038c1.108 0.01 2.177 0.678 2.668 1.666 0.406 0.815 0.412 1.814 0.016 2.635-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.023-0.375-1.828-1.336-1.973-2.426-0.125-0.932 0.219-1.918 0.903-2.57 0.546-0.521 1.292-0.822 2.051-0.829h0.019 0.019c1.108 0.01 2.177 0.678 2.668 1.666 0.406 0.815 0.412 1.814 0.016 2.635-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.017-0.373-1.819-1.324-1.971-2.407-0.13-0.929 0.205-1.91 0.876-2.565 0.548-0.535 1.304-0.846 2.076-0.853h0.038c1.115 0.01 2.189 0.686 2.676 1.682 0.398 0.811 0.401 1.805 8e-3 2.619-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.017-0.373-1.819-1.324-1.971-2.407-0.13-0.929 0.205-1.91 0.876-2.565 0.548-0.535 1.304-0.846 2.076-0.853h0.038c1.115 0.01 2.189 0.686 2.676 1.682 0.398 0.811 0.401 1.805 8e-3 2.619-0.338 0.702-0.968 1.243-1.703 1.511v2.188h6v-2.175c-1.017-0.373-1.819-1.324-1.971-2.407-0.13-0.929 0.205-1.91 0.876-2.565 0.548-0.535 1.304-0.846 2.076-0.853h0.038c1.115 0.01 2.189 0.686 2.676 1.682 0.398 0.811 0.401 1.805 8e-3 2.619-0.338 0.702-0.968 1.243-1.703 1.511v2.188h4v-10zm-37 4h-7e-3c-0.445 4e-3 -0.866 0.335-0.967 0.773-0.105 0.455 0.155 0.966 0.586 1.149 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.555-0.361-1.146-0.967-1.159h-0.013-7e-3zm8 0h-7e-3c-0.445 4e-3 -0.866 0.335-0.967 0.773-0.105 0.455 0.155 0.966 0.586 1.149 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.555-0.361-1.146-0.967-1.159h-0.013-7e-3zm24 0h-7e-3c-0.443 4e-3 -0.863 0.333-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.556-0.361-1.146-0.967-1.159h-0.013-7e-3zm-16 0h-7e-3c-0.443 4e-3 -0.863 0.333-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.556-0.361-1.146-0.967-1.159h-0.013-7e-3zm8 0h-7e-3c-0.443 4e-3 -0.863 0.333-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-2e-3 0.94-0.341 1.018-0.832 0.089-0.556-0.361-1.146-0.967-1.159h-0.013-7e-3zm-32 0h-7e-3c-0.442 4e-3 -0.862 0.332-0.966 0.767-0.108 0.456 0.151 0.971 0.585 1.155 0.112 0.047 0.231 0.069 0.35 0.069h7e-3c0.467-3e-3 0.94-0.341 1.018-0.832 0.089-0.555-0.361-1.146-0.967-1.159h-0.013-7e-3z",
+              "fill": {
+                "paint": "Var(--neutral-80)",
+                "rule": "nonzero"
+              },
+              "name": "path4",
+              "type": "path"
+            }
+          ],
+          "stroke-miterlimit": 1.414,
+          "style": {
+            "margin": 2
+          },
+          "viewBox": "0 0 64 65"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Status_0"
+        },
+        "position": {
+          "height": 0.1222,
+          "width": 0.34,
+          "x": 0.6011,
+          "y": -0.0014
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Status Folder/Standby PLC Active"
+              },
+              "type": "tag"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Status Folder/Mode Desc"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "PLC Name_0"
+        },
+        "position": {
+          "height": 0.1667,
+          "width": 0.46,
+          "x": 0.0221,
+          "y": -0.0118
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.PriamryPLCstatus"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "clamp(3pt, calc(0.3*(1.0vmin + 1.0vmax)), 18pt)",
+            "margin": 2,
+            "textAlign": "center",
+            "whiteSpace": "pre-wrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "PLC Name_1"
+        },
+        "position": {
+          "height": 0.1667,
+          "width": 0.46,
+          "x": 0.5157,
+          "y": -0.0118
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.SecondaryPLCstatus"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "clamp(3pt, calc(0.3*(1.0vmin + 1.0vmax)), 18pt)",
+            "margin": 2,
+            "textAlign": "center",
+            "whiteSpace": "pre-wrap"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onContextMenu": {
+          "config": {
+            "draggable": true,
+            "id": "7PmVQDQL",
+            "modal": false,
+            "overlayDismiss": false,
+            "resizable": true,
+            "showCloseIcon": true,
+            "type": "open",
+            "viewParams": {
+              "tags": "{view.custom.tags}"
+            },
+            "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+            "viewportBound": false
+          },
+          "scope": "C",
+          "type": "popup"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.0067,
+      "y": 0.0182
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

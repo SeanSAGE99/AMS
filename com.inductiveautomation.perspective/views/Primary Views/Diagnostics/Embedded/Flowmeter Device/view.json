@@ -1,0 +1,688 @@
+{
+  "custom": {
+    "ActiveAck": false,
+    "ActiveUnack": true,
+    "deviceTagPath": "[default]Water Monitoring System/International/Flow Meters/NWS51"
+  },
+  "params": {
+    "deviceName": "Flow Meter 1",
+    "deviceTagPath": "[default]Water Monitoring System/International/Flow Meters/NWS51"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceTagPath"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceTagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 128,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath} +\u0027/Parameters.Alarm_ParentDevice\u0027) + \u0027 - \u0027 + tag({view.params.deviceTagPath} +\u0027/Parameters.DeviceName\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Name"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#D5D5D5",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Instantaneous Flow"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "basis": "95px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "if(isAvailable (tag({view.params.deviceTagPath}+\u0027/Status Folder/Instantaneous Flow\u0027)), 1, 0)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath}+\u0027/Status Folder/Instantaneous Flow\u0027)"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "numberFormat({value}, \u0027#,##0.00\u0027) + \u0027 \u0027+tag({view.params.deviceTagPath}+\u0027/Status Folder/Instantaneous Flow.EngUnit\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#AAAAAA",
+                "borderRadius": "4px",
+                "classes": "Framework/Card/Value",
+                "color": "#FFFFFF",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Instantaneous Flow"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "isAvailable (tag({view.params.deviceTagPath}+\u0027/Status Folder/Instantaneous Flow\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Total Usage"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "basis": "95px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "if(isAvailable (tag({view.params.deviceTagPath}+\u0027/Status Folder/Net Flow Totaliser\u0027)), 1, 0)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath}+\u0027/Status Folder/Net Flow Totaliser\u0027)"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "numberFormat({value}, \u0027#,##0.00\u0027) +\u0027 \u0027+ tag({view.params.deviceTagPath}+\u0027/Status Folder/Net Flow Totaliser.EngUnit\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#AAAAAA",
+                "borderRadius": "4px",
+                "classes": "Framework/Card/Value",
+                "color": "#FFFFFF",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Total Usage"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "isAvailable (tag({view.params.deviceTagPath}+\u0027/Status Folder/Net Flow Totaliser\u0027))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Alarm"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.ActiveAck}+{view.custom.ActiveUnack} \u003d 0, 1, 0)"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "var(--error)",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": 1,
+                          "output": "var(--callToAction--disabled)"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.ActiveAck}+{view.custom.ActiveUnack} \u003d 0, \u0027No\u0027, \u0027Yes\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderRadius": "4px",
+                "classes": "Framework/Card/Value",
+                "color": "#FFFFFF",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Alarm"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Description"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath} +\u0027/Parameters.FluidMedium\u0027) + \u0027 - \u0027 + tag({view.params.deviceTagPath} +\u0027/Parameters.Description\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.textStyle.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.props.text}!\u003d\"NA\", if({this.props.text}\u003e0,\"var(--error)\",\"var(--callToAction--disabled)\"), \"var(--callToAction--disabled)\")"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              },
+              "textStyle": {
+                "color": null
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Medium"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Meter Type"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath} +\u0027/Parameters.FlowMeterType\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.textStyle.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.props.text}!\u003d\"NA\", if({this.props.text}\u003e0,\"var(--error)\",\"var(--callToAction--disabled)\"), \"var(--callToAction--disabled)\")"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              },
+              "textStyle": {
+                "color": null
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "type"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "AMS Interface"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath} +\u0027/Parameters.FlowMeterAMSinterface\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.textStyle.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.props.text}!\u003d\"NA\", if({this.props.text}\u003e0,\"var(--error)\",\"var(--callToAction--disabled)\"), \"var(--callToAction--disabled)\")"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              },
+              "textStyle": {
+                "color": null
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "interface"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Reset Totaliser"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Single Tag"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.params.tagParentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceTagPath"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "{value} + \u0027/Command\u0027",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "buttonText": "Reset Totaliser",
+                "tagName": "Reset Totaliser Command",
+                "writeValue": true
+              },
+              "path": "Shared/Templates/Display/Alexandrina/Control/Buttons/Single Tag"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Reset Totaliser"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "//OLD: if(isAvailable (tag({view.params.deviceTagPath}+\u0027/Command/Reset Totaliser Command\u0027)), True, False)\r\n//check if the command tag is available\r\nif(isAvailable (tag({view.params.deviceTagPath}+\u0027/Command/Reset Totaliser Command\u0027)), \r\n//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, //check if one of following levels is authorized\r\ntag (\u0027Parameters/Security/1st Required Level for WMS Actions\u0027), tag (\u0027Parameters/Security/2nd Required Level for WMS Actions\u0027)),\r\nfalse), //fallback \r\nfalse)"
+              },
+              "type": "expr"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "this.meta.visible"
+              },
+              "enabled": false,
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Spacer"
+        },
+        "position": {
+          "basis": "5px",
+          "shrink": 0
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "enabled": true,
+        "style": {
+          "whiteSpace": "pre-line"
+        }
+      }
+    },
+    "propConfig": {
+      "meta.tooltip.text": {
+        "binding": {
+          "config": {
+            "expression": "\u0027Device tag path: \u0027 + \u0027\\n\u0027 +{view.custom.deviceTagPath}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

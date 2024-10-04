@@ -1,0 +1,1488 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 460
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0296,
+          "rotate": {
+            "anchor": "50% 25%"
+          },
+          "width": 0.5322,
+          "x": 0.2359,
+          "y": 0.0498
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1"
+          },
+          "text": "Floors",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/ct-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_47"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 3.5538,
+          "y": 0.8164
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "CT",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/ca-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_48"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.0239,
+          "y": 0.8167
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "CA",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/atsc-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_49"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.33,
+          "y": 0.8164
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "ATSC",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/juliet-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_50"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.6385,
+          "y": 0.8164
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Juliet",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/kyeemagh-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_51"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.9421,
+          "y": 0.8164
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Kyeemagh",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/hargrave-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_52"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 3.2505,
+          "y": 0.8164
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Hargrave",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/tar-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_53"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 3.8612,
+          "y": 0.8163
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "TAR",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/sler-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_54"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 1.7188,
+          "y": 0.8162
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "SLER",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/ller-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_55"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.332,
+          "y": 0.859
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "LLER",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-c"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_56"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 3.0946,
+          "y": 0.9492
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Sub C",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-w"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_59"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.7903,
+          "y": 0.9492
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Sub W",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-u"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_60"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.1808,
+          "y": 0.9492
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Sub U",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-v"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_61"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 2.4854,
+          "y": 0.9492
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Sub V",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-a"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_62"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 3.3975,
+          "y": 0.9492
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Sub A",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0296,
+          "rotate": {
+            "anchor": "50% 25%"
+          },
+          "width": 0.2935,
+          "x": 0.0504,
+          "y": 0.1304
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2"
+          },
+          "text": "Pier B",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+            "textDecoration": "underline"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0296,
+          "rotate": {
+            "anchor": "50% 25%"
+          },
+          "width": 0.2935,
+          "x": 0.3548,
+          "y": 0.1304
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2"
+          },
+          "text": "Main Terminal",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+            "textDecoration": "underline"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0296,
+          "rotate": {
+            "anchor": "50% 25%"
+          },
+          "width": 0.2935,
+          "x": 0.659,
+          "y": 0.1304
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2"
+          },
+          "text": "Pier A",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+            "textDecoration": "underline"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Pier A/Plantroom"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_63"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.6569,
+          "y": 0.2917
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Pier A/Plantroom-AP",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Plantroom",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Main Terminal/Departures"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_65"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.3527,
+          "y": 0.2917
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Main Terminal/Departures-T2",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Departures",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Pier A/Concourse"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_67"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.6569,
+          "y": 0.3747
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Pier A/Concourse-AP",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Concourse",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Main Terminal/Concourse"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_69"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.3527,
+          "y": 0.3747
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Main Terminal/Concourse-T2",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Concourse",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Pier B/Concourse"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_70"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.0483,
+          "y": 0.3747
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Pier B/Concourse-BP",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Concourse",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Pier A/Apron"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_72"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.6569,
+          "y": 0.4567
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Pier A/Apron-AP",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Apron",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Main Terminal/Arrivals"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_73"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.3527,
+          "y": 0.4567
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Main Terminal/Arrivals-T2",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Arrivals",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Pier B/Apron"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_74"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.0483,
+          "y": 0.4567
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Pier B/Apron-BP",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Apron",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0296,
+          "rotate": {
+            "anchor": "50% 25%"
+          },
+          "width": 0.8266,
+          "x": 0.0884,
+          "y": 0.5396
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2"
+          },
+          "text": "Services Screen Navigation",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+            "textDecoration": "underline"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0296,
+          "rotate": {
+            "anchor": "50% 25%"
+          },
+          "width": 0.0903,
+          "x": 0.0113,
+          "y": 0.6196
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading4"
+          },
+          "text": "(Use",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "right"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0652,
+          "x": 0.1067,
+          "y": 0.6196
+        },
+        "props": {
+          "color": "var(--neutral-60)",
+          "path": "material/toggle_off"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0296,
+          "rotate": {
+            "anchor": "50% 25%"
+          },
+          "width": 0.8124,
+          "x": 0.1764,
+          "y": 0.6196
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading4"
+          },
+          "text": "to display services on this screen)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.6*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/diagnostics/hydraulics-domestic"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_82"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.4536,
+          "y": 0.6997
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Hydraulics",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/diagnostics/aerobridges"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_83"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.0457,
+          "y": 0.6997
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Aerobridges",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Diagnostics/Internal Transport/Internal Transport Diagnostics-Domestic"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_84"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.4536,
+          "y": 0.7817
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Internal Transport",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/diagnostics/distribution-boards"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_85"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.0457,
+          "y": 0.7817
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Distribution Boards",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/substation-1"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_86"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.0457,
+          "y": 0.8637
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": false,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Pier A/Apron-AP",
+                      "output": true
+                    },
+                    {
+                      "input": "Primary Views/Domestic/Pier B/Apron-BP",
+                      "output": true
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Light Masts",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/Domestic/Main Terminal/Lounges"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_89"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.2935,
+          "x": 0.3527,
+          "y": 0.2097
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/Domestic/Main Terminal/Lounges-T2",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Lounges",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch_0"
+        },
+        "position": {
+          "height": 0.0346,
+          "width": 0.1699,
+          "x": 0.3298,
+          "y": 0.7803
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.visibility.distributionBoards"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch_1"
+        },
+        "position": {
+          "height": 0.0346,
+          "width": 0.1699,
+          "x": 0.3298,
+          "y": 0.6983
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.visibility.aerobridges"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch_2"
+        },
+        "position": {
+          "height": 0.0346,
+          "width": 0.1699,
+          "x": 0.3298,
+          "y": 0.8622
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": false,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/International/Pier B/Apron-BPG",
+                      "output": true
+                    },
+                    {
+                      "input": "Primary Views/International/Pier C/Apron-CPG",
+                      "output": true
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.visibility.apronLights"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch_3"
+        },
+        "position": {
+          "height": 0.0346,
+          "width": 0.1699,
+          "x": 0.7383,
+          "y": 0.6983
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.visibility.hydraulics"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch_4"
+        },
+        "position": {
+          "height": 0.0346,
+          "width": 0.1699,
+          "x": 0.7383,
+          "y": 0.7803
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.visibility.internalTransport"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

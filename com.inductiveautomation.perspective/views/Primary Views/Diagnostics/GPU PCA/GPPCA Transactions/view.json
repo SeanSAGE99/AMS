@@ -1,0 +1,1464 @@
+{
+  "custom": {
+    "date": "25-June-24"
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tdate \u003d system.date.now()\n\tself.getChild(\"root\").getChild(\"DBconfig\").getChild(\"Select Date\").getChild(\"DateTimeInput\").props.value \u003d date"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "areaFilter": "International",
+    "siteFilter": "BPG_DBX01"
+  },
+  "propConfig": {
+    "custom.date": {
+      "binding": {
+        "config": {
+          "path": "/root/DBconfig/Select Date/DateTimeInput.props.value"
+        },
+        "transforms": [
+          {
+            "code": "\tvalue \u003d system.date.format(value, \"dd-MMMM-yy\")\n\t\n\treturn value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.filterText": {
+      "persistent": true
+    },
+    "params.areaFilter": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filterText": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.siteFilter": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "24px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginBottom": "auto",
+                "marginTop": "auto",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "eventDate": "{view.custom.date}"
+                    },
+                    "queryPath": "GPPCA/Select from Remote DB",
+                    "returnFormat": "dataset"
+                  },
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "cells": {
+                "allowEditOn": "single-click"
+              },
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "No",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 30
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Event Type",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 50
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Bay",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 40
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Terminal",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 60
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Meter Readings",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 120
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Energy Consumption",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "left",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 120
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Aircraft Code",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 120
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "DD/MM/YYYY",
+                  "editable": false,
+                  "field": "Correlation ID",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 120
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YY",
+                  "editable": false,
+                  "field": "Date",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 60
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "HH:mm:ss",
+                  "editable": false,
+                  "field": "Time",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "nullFormat": {
+                    "includeNullStrings": false,
+                    "nullFormatValue": "",
+                    "strict": false
+                  },
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 60
+                }
+              ],
+              "filter": {
+                "enabled": true
+              }
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "refresh-table",
+                  "pageScope": true,
+                  "script": "\t# implement your handler here\n\tparameters \u003d {\u0027eventDate\u0027:self.view.custom.date}\n\tdata \u003d system.db.runNamedQuery(\u0027GPPCA/Select from Remote DB\u0027,parameters)\n\tself.props.data \u003d data\n\t",
+                  "sessionScope": false,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "table"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "DateTimeInput"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "formattedValue": "Jun 25, 2024 8:42 AM",
+                  "pickerType": "date",
+                  "value": {
+                    "$": [
+                      "ts",
+                      192,
+                      1719268942809
+                    ],
+                    "$ts": 1719268942809
+                  }
+                },
+                "type": "ia.input.date-time-input"
+              }
+            ],
+            "meta": {
+              "name": "Select Date"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-normal",
+                "overflow": "visible",
+                "paddingRight": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "props": {
+                      "text": "Enable GPPCA:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Digital Input"
+                    },
+                    "position": {
+                      "basis": "76px"
+                    },
+                    "props": {
+                      "params": {
+                        "tagName": "enableGPPCA",
+                        "tagParentPath": "[default]Parameters/GPPCA"
+                      },
+                      "path": "Shared/Templates/Display/Alexandrina/Control/Digital Input"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Enable GPPCA"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "props": {
+                      "text": "Download to CSV:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "custom": {
+                      "key": "test1"
+                    },
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\timport traceback\n\t\n\ttry:\n\t\n\t\ttime \u003d system.date.now()\n\t\ttime \u003d system.date.format(time, \"yyyy-MM-dd HHmmss\")\n\t\ttime \u003d str(time)\n\t\ttable \u003d self.parent.parent.parent.getSibling(\"table\").getChild(\"Table\").props.data\n\t\tcsv \u003d system.dataset.toCSV(dataset \u003d table, showHeaders \u003d True, forExport \u003d True)\n\t\tsystem.perspective.print(csv)\n\t\tfilename \u003d \u0027GPPCA transactions\u0027 + \u0027 \u0027 + time + \u0027.csv\u0027\n\t\tsystem.perspective.download(filename, csv)\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"GPPCA transactions downloaded to CSV file\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/On\u0027\n\t\t\n\texcept:\n\t\tsystem.perspective.print(traceback.format_exc())\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Cannot download GPPCA Transactions to CSV file\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/Faulted\u0027\n\t\t\n\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "FileDownload",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Download to CSV file"
+                      }
+                    },
+                    "position": {
+                      "basis": "76px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "image": {
+                        "height": 30,
+                        "icon": {
+                          "path": "material/cloud_download"
+                        },
+                        "width": 30
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginBottom": "3px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px",
+                        "marginTop": "3px"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "Download to CSV"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "184px"
+                    },
+                    "props": {
+                      "text": "Data Backfill"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "custom": {
+                      "fileName": "value"
+                    },
+                    "events": {
+                      "component": {
+                        "onFileReceived": {
+                          "config": {
+                            "script": "\t\n\timport csv\n\timport traceback\n\ttry:\n\t\t\n\t\tfile_name \u003d event.file.name\t\n\t\tfile_path \u003d \u0027D:\\\\GPPCA\\myExports\\\\\u0027 + file_name\n\t\tevent.file.copyTo(file_path)\n\t\tcontent \u003d event.file.getString() #filedata\n\t\t#system.perspective.print(content)\n\t\t\t\n\t\t # Check if this file has just been uploaded - to stop a double import (potential platform/browser bug)\n\t\tif file_name \u003c\u003e self.custom.fileName:\n\t\t\t# Call the import function on the table\n\t\t\t#\tself.parent.parent.getChild(\"Table\").importCSV(filename, filedata)\n\t\t\tself.custom.fileName \u003d file_name\n\t\t\n\t\t\t# start db transaction\n\t\t\ttxID \u003d system.db.beginTransaction(\u0027ODSPRD\u0027, timeout\u003d10000)\n\t\t\n\t\t\t# insert new records in the table\n\t\t\tquery \u003d \"INSERT INTO GPPCA_SCADA_EVENT_stage (DATA_EVENT_TYPE, BAY_NUMBER, TERMINAL, METER_READING, ENERGY_CONSUMPTION, AIRCRAFT_CODE, CORRELATION_ID, EVENT_DATE, EVENT_TIME) VALUES {values}\"\n\t\t\t\n\t\t\t# open selected csv file\n\t#\t\tcsvFile \u003d open(file_path, \u0027rU\u0027)\n\t\t\t#system.perspective.print(csvFile)\n\t\t\n\t\t\tcsvData \u003d csv.reader(open(file_path)) #opening csv file\n\t\t\t\t\t\n\t\t\theader \u003d csvData.next() #reading first cvs row\n\t\t\t\t\t\n\t\t\t# Create a dataset with the header and the rest of our CSV.\n\t\t\t\t\t\n\t\t\tdataset \u003d system.dataset.toDataSet(header, list(csvData)) #converting cvs to dataset\n\t\t\tpyDataset \u003d system.dataset.toPyDataSet(dataset)  #converting dataset to PyDataset\n\t\t\t\n\t\t\targs \u003d []\n\t\t\tvalues \u003d []\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\tfor row in pyDataset:\n\t\t\t\teventType \u003d row[\"Event Type\"]\n\t\t\t\tbay \u003d row[\"Bay\"]\n\t\t\t\tterminal \u003d row[\"Terminal\"]\n\t\t\t\tmeterReadings \u003d row[\"Meter Readings\"]\n\t\t\t\tenergyConsumption \u003d row[\"Energy Consumption\"]\n\t\t\t\taicraftCode \u003d row[\"Aricraft Code\"]\n\t\t\t\tcorrelationID\u003d row[\"Correlation ID\"]\n\t\t\t\tdate \u003d row[\"Date\"]\n\t\t\t\ttime \u003d row[\"Time\"]\n\t\t\t\t#insert data into sql table\n\t\t\t\tvalues.append(\"(?,?,?,?,?,?,?,?,?)\")\n\t\t\t\t#string \u003d str(date)\n\t\t\t\tdate1 \u003d  system.date.parse(date, \"dd-MMMM-yy\") # getting date format from string\n\t\t\t\tdate2 \u003d system.date.format(date1, \"dd-MMMM-yy\") #formating date for the Remote Database format\n\t\t\t\t\n\t\t\t\targs.extend([eventType, bay, terminal, meterReadings, energyConsumption, aicraftCode, correlationID, date2, time])\t\t\t\t\n\t\n\t\t\tsystem.perspective.print(args)\n\t\t\t\n\t\t\tsystem.db.runPrepUpdate(query.format(values\u003d\", \".join(values)), args, \u0027ODSPRD\u0027, tx\u003dtxID)\n\t\t\tsystem.db.commitTransaction(txID)\n\t\t\tsystem.db.closeTransaction(txID)\n\t\t\t\n\n\t\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"GPPCA Transactions uploaded from CSV file\"\n\t\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/On\u0027\n\t\t\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)\n\t\telse:\n\t\t\tself.custom.fileName \u003d \u0027\u0027\n\t\t\t\t\n\t\n\texcept Exception, e:\n\t\ttb \u003d traceback.format_exc()\n\t\tsystem.perspective.print(tb)\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Cannot upload GPPCA Transactions from CSV file\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/Faulted\u0027\n\t\t\t\n\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "FileUpload",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Upload from csv file"
+                      }
+                    },
+                    "position": {
+                      "basis": "76px"
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "fileUploadIcon": {
+                        "color": "var(--neutral-80)",
+                        "style": {
+                          "cursor": "pointer"
+                        },
+                        "text": "Upload"
+                      },
+                      "maxUploads": 1,
+                      "supportedFileTypes": [
+                        "csv"
+                      ]
+                    },
+                    "type": "ia.input.fileupload"
+                  }
+                ],
+                "meta": {
+                  "name": "Data Backfill"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Manual Operation"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-normal",
+                "overflow": "visible",
+                "paddingRight": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "38px"
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Form/Panel-normal"
+              },
+              "text": "Last Message:",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Result"
+            },
+            "position": {
+              "basis": "72px"
+            },
+            "propConfig": {
+              "props.text": {
+                "onChange": {
+                  "enabled": false,
+                  "script": "\t#system.perspective.sendMessage(\u0027refresh-table\u0027)"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Form/Panel-normal"
+              },
+              "textStyle": {
+                "classes": "Device/Status/Text/Faulted",
+                "fontStyle": "italic",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tshared.GPPCA.checkRemoteDatabase()"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Check Remote Database",
+              "tooltip": {
+                "enabled": true,
+                "text": "Execute GPPCA script for checking Database"
+              }
+            },
+            "position": {
+              "basis": "76px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "if(isNull({.../Table.props.selection.selectedRow}),\r\n\tFalse,\r\n\tif(hasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027),\r\n\t\t{.../Table.props.selection.data[0].username} \u003d \u0027SuperConf\u0027 || {.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName},\r\n\t\t{.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName}\r\n\t)\r\n)"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "height": 30,
+                "icon": {
+                  "path": "material/power"
+                },
+                "width": 30
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                "marginBottom": "3px",
+                "marginLeft": "5px",
+                "marginTop": "3px"
+              },
+              "text": ""
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "DBconfig"
+        },
+        "position": {
+          "basis": "300px",
+          "display": null,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)\n"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

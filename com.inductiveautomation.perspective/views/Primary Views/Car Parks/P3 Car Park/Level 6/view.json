@@ -1,0 +1,232 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "Domestic/Precinct/P3 Car Park/Level 6",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "P3 Level 6"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/CarParks/Domestic/P3 Level 6.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Lift_0"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.3234,
+          "y": 0.465
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Lift 110",
+            "deviceParentPath": "Domestic/Precinct/P3 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.3748,
+          "y": 0.41
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Lift 108",
+            "deviceParentPath": "Domestic/Precinct/P3 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_1"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.3748,
+          "y": 0.465
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Lift 109",
+            "deviceParentPath": "Domestic/Precinct/P3 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L6"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.7214,
+          "y": 0.4789
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P3_DBX06-N",
+            "deviceParentPath": "Domestic/Precinct/P3 Car Park/Level 6",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L16"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.7214,
+          "y": 0.5564
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P3_DBXSG-N",
+            "deviceParentPath": "Domestic/Precinct/P3 Car Park/Level 6",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.7368,
+          "y": 0.4532
+        },
+        "props": {
+          "text": "East Riser",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

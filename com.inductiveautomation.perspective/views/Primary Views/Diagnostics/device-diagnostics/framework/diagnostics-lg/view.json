@@ -1,0 +1,92 @@
+{
+  "custom": {
+    "refresh": 0,
+    "statistics": []
+  },
+  "params": {
+    "deviceName": ""
+  },
+  "propConfig": {
+    "custom.refresh": {
+      "binding": {
+        "config": {
+          "expression": "now(4000)"
+        },
+        "transforms": [
+          {
+            "code": "\t# this is used simply to refresh the binding for the statistics custom prop\n\t# this script should run once every 4 seconds\n\t\n\tself.refreshBinding(\u0027custom.statistics\u0027)\n\treturn 0",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.statistics": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceName"
+        },
+        "transforms": [
+          {
+            "code": "\tpercentiles \u003d {\u002775thPercentile\u0027:\u0027seventyFifthPercentile\u0027, \u002795thPercentile\u0027: \u0027ninetyFifthPercentile\u0027, \u002798thPercentile\u0027: \u0027ninetyEighthPercentile\u0027, \u002799thPercentile\u0027: \u0027ninetyNinthPercentile\u0027}\n\t\n\tdef get_diagnostic_info(node_id,server_name):\n\t\t# \u0027display_names_and_values\u0027 is used to store the sampling diagnostics for the\n\t\t# Aggregate or for a rate (depending on node_id passed in); this object is \n\t\t# returned at the end of this function\n\t\tdisplay_names_and_values \u003d {}\n\t\t\n\t\t# these two lists are used to store the relevant item paths and display names\n\t\t# for the metrics\n\t\titem_paths \u003d []\n\t\tdisplay_names \u003d []\n\t\t\n\t\t# we get the OPCBrowseElements for this node\n\t\tdiagnostic_objs \u003d system.opc.browseServer(server_name,node_id)\n\t\t\n\t\t# iterating through the OPCBrowseElements, we grab the non-ExecutionTimer item paths \n\t\t# and display names and store them in lists (ActualThroughput, IdealThroughput, etc); \n\t\t# the element type of the non-ExecutionTimer nodes is \u0027DATAVARIABLE\u0027, while the element \n\t\t# type of the ExecutionTimer node is \u0027OBJECT\u0027\n\t\tfor obj in diagnostic_objs:\n\t\t\tif str(obj.getElementType()) \u003d\u003d \u0027DATAVARIABLE\u0027:\n\t\t\t\titem_paths.append(obj.getNodeId())\n\t\t\t\tdisplay_names.append(obj.getDisplayName())\n\t\t\n\t\t# now, we form the path for the ExecutionTimer node (the ExecutionTimer path is slightly\n\t\t# different for the Aggregate, line 30 vs line 40), and we begin adding info to the\n\t\t# \u0027display_names_and_values\u0027 object, which will be returned from this function with\n\t\t# the sampling diagnostics for either the Aggregate or a certain rate\n\t\tif \u0027Aggregate\u0027 in node_id:\n\t\t\texecution_timer_path \u003d node_id + \u0027/ExecutionTimer\u0027\n\t\t\t# this \u0027aggregate\u0027 property lets the flex repeater instance know whether it is\n\t\t\t# displaying statistics for the Aggregate or for a rate (for example, this property\n\t\t\t# dictates whether the Load Factor chart appears or the Monitored Item Count appears\n\t\t\t# in an instance in the flex repeater)\n\t\t\tdisplay_names_and_values[\u0027aggregate\u0027] \u003d 1\n\t\t\t# adding a tagGroupRate of 0 for the Aggregate to make the sorting easier\n\t\t\tdisplay_names_and_values[\u0027tagGroupRate\u0027] \u003d 0\n\t\t\tdisplay_names_and_values[\u0027monitoredItemCount\u0027] \u003d system.opc.readValue(server_name,\u0027[%s][Diagnostics]/Sampling/MonitoredItemCount\u0027 % value).value\n\t\telse:\n\t\t\texecution_timer_path \u003d node_id + \u0027.ExecutionTimer\u0027\n\t\t\tdisplay_names_and_values[\u0027aggregate\u0027] \u003d 0\n\t\t\tnode_id_parts \u003d node_id.split(\u0027/\u0027)\n\t\t\t# the \u0027tagGroupRate\u0027 property is used to sort the instances in the flex repeater,\n\t\t\t# so we extract the rate from the node id, and then remove the \u0027@\u0027 and \u0027ms\u0027 from\n\t\t\t# the rate so that it can eventually be used for sorting in the binding on the\n\t\t\t# \u0027instances\u0027 property on the flex repeater on this view\n\t\t\tdisplay_names_and_values[\u0027tagGroupRate\u0027] \u003d node_id_parts[len(node_id_parts)-1].replace(\u0027@\u0027,\u0027\u0027).replace(\u0027ms\u0027,\u0027\u0027)\n\t\t\n\t\t# then, we get the ExecutionTimer item paths and display names (75thPercentile, 95thPercentile, etc)\n\t\texecution_timer_objs \u003d system.opc.browseServer(server_name,execution_timer_path)\n\t\t\n\t\tfor obj in execution_timer_objs:\n\t\t\tif str(obj.getElementType()) \u003d\u003d \u0027DATAVARIABLE\u0027:\n\t\t\t\titem_paths.append(obj.getNodeId())\n\t\t\t\tdisplay_name \u003d obj.getDisplayName()\n\t\t\t\t\n\t\t\t\t# this data will be stored on the view, and a key name is considered invalid\n\t\t\t\t# if it begins with a number; so, for the below percentile data, the display\n\t\t\t\t# name is changed as a workaround\n\t\t\t\tif display_name in [\u002775thPercentile\u0027,\u002795thPercentile\u0027,\u002798thPercentile\u0027,\u002799thPercentile\u0027]:\n\t\t\t\t\tdisplay_names.append(percentiles[display_name])\n\t\t\t\telse:\n\t\t\t\t\tdisplay_names.append(display_name)\n\n\t\t# we have all the item paths now, so we can read the values\n\t\tvalues \u003d system.opc.readValues(server_name,item_paths)\n\t\t\n\t\t# at this point, \u0027display_names_and_values\u0027 has some preliminary info, \u0027display_names\u0027\n\t\t# contains all of the metric names, and \u0027values\u0027 contains all of the values for the\n\t\t# metrics (in the same order as the names in \u0027display_names\u0027); so, we iterate through\n\t\t# the values, adding the metric name and the associated val to the \u0027display_names_and_values\u0027\n\t\t# object; then, \u0027display_names_and_values\u0027 is returned\n\t\tx \u003d 0\n\t\tfor val in values:\n\t\t\tdisplay_names_and_values[str(display_names[x])] \u003d val.value\n\t\t\tx \u003d x + 1\n\t\t\n\t\treturn display_names_and_values\n\t\n\t# this reads the sampling diagnostics data for a device and then\n\t# returns a list of objects that contains all of the metrics\n\t\n\t# for a device connection that has sampling diagnostics available,\n\t# one object in the returned list will contain the Aggregate\n\t# statistics, and each of the remaining objects will contain the\n\t# statistics for a certain rate (1000ms, 2000ms, etc)\n\t\n\tserver_name \u003d \u0027Ignition OPC UA Server\u0027\n\troot \u003d \u0027[%s][Diagnostics]/Sampling\u0027 % value\n\tdiagnostic_data \u003d []\n\t\n\tnode_ids \u003d []\n\tinitial_browse \u003d system.opc.browseServer(server_name,root)\n\t\n\t# if a device was selected but the length of the initial browse \n\t# is 0, then there are no sampling diagnostics available for\n\t# this device and a list with a single object is returned\n\tif value not in [\u0027\u0027,None] and len(initial_browse) \u003d\u003d 0:\n\t\treturn [{\u0027na\u0027:0}]\n\telse:\n\t\t# the initial_browse contains a path for the \u0027Aggregate\u0027 statistics,\n\t\t# a path for the \u0027Monitored Item Count\u0027, and a path for each of the\n\t\t# rates that are being used for this device; here are some node ids\n\t\t# from an example initial browse: \"ns\u003d1;s\u003d[test][Diagnostics]/Sampling/Aggregate\",\n\t\t# \"ns\u003d1;s\u003d[test][Diagnostics]/Sampling/@6000ms\", \"ns\u003d1;s\u003d[test][Diagnostics]/Sampling/@5000ms\",\n\t\t# and \"ns\u003d1;s\u003d[test][Diagnostics]/Sampling/MonitoredItemCount\"\n\n\t\tfor obj in initial_browse:\n\t\t\tif \u0027MonitoredItemCount\u0027 not in obj.getNodeId():\n\t\t\t\tnode_ids.append(obj.getNodeId())\n\t\t\n\t\t# after the above loop, node_ids should contain the path for the Aggregate\n\t\t# statistics and the paths for the rest of the rates; for each path, the\n\t\t# get_diagnostic_info() function will read the statistics from the opc\n\t\t# server, put the statistics into an object, and then return the object;\n\t\t# this object of statistics is then added to the diagnostic_data list\n\t\tfor node_id in node_ids:\n\t\t\tdata \u003d get_diagnostic_info(str(node_id),server_name)\n\t\t\tdiagnostic_data.append(data)\n\n\t\treturn diagnostic_data",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1000
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "statistics"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.statistics"
+              },
+              "transforms": [
+                {
+                  "code": "\t# iterating through the statistics custom prop, adding each object along with\n\t# empty instanceStyle and instancePosition props to the instances list\n\t\n\tinstances \u003d []\n\t\n\tfor obj in value:\n\t\tinstance \u003d {\"instanceStyle\": {\"classes\": \"\"},\"instancePosition\": {},\"info\": obj}\n\t\tinstances.append(instance)\n\t\n\t# sorting the instances based on the tag group rate, such that from top to bottom, the\n\t# order is fastest tag group -\u003e slowest tag group\n\tif len(value) \u003e 0:\n\t\tif \u0027na\u0027 not in value[0].keys():\n\t\t\treturn sorted(instances, key \u003d lambda i: int(i[\u0027info\u0027][\u0027tagGroupRate\u0027]))\n\t\telse:\n\t\t\treturn instances\n\telse:\n\t\treturn instances",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "path": "device-diagnostics/framework/statistic-row-lg",
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

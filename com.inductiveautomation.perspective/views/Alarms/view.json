@@ -1,0 +1,390 @@
+{
+  "custom": {
+    "show": "active"
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "#read current date and assign it to historical alarm with a span of 2 days\n\tEndDate \u003d system.date.now()\n\tStartDate \u003d system.date.addDays(EndDate, -2)\n\tself.getChild(\"root\").getChild(\"AlarmJournalTable\").props.dateRange.historical.endDate \u003d EndDate\n\tself.getChild(\"root\").getChild(\"AlarmJournalTable\").props.dateRange.historical.startDate \u003d StartDate"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "propConfig": {
+    "custom.show": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1009
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "key": {
+            "acked": {
+              "base": {
+                "backgroundColor": "#F3F6C6",
+                "classes": "",
+                "color": "#222222"
+              },
+              "priorities": {
+                "critical": {
+                  "classes": ""
+                },
+                "diagnostic": {
+                  "classes": ""
+                },
+                "high": {
+                  "classes": ""
+                },
+                "low": {
+                  "classes": ""
+                },
+                "medium": {
+                  "classes": ""
+                }
+              }
+            },
+            "active": {
+              "base": {
+                "backgroundColor": "#FDAFAF",
+                "classes": "",
+                "color": "#222222",
+                "fontWeight": "500"
+              },
+              "priorities": {
+                "critical": {
+                  "classes": ""
+                },
+                "diagnostic": {
+                  "classes": ""
+                },
+                "high": {
+                  "classes": ""
+                },
+                "low": {
+                  "classes": ""
+                },
+                "medium": {
+                  "classes": ""
+                }
+              }
+            },
+            "cleared": {
+              "base": {
+                "backgroundColor": "#BEDFFE",
+                "classes": "",
+                "color": "#222222",
+                "fontWeight": "500"
+              },
+              "priorities": {
+                "critical": {
+                  "classes": ""
+                },
+                "diagnostic": {
+                  "classes": ""
+                },
+                "high": {
+                  "classes": ""
+                },
+                "low": {
+                  "classes": ""
+                },
+                "medium": {
+                  "classes": ""
+                }
+              }
+            },
+            "system": {
+              "base": {
+                "backgroundColor": "#FFFFFF",
+                "classes": "",
+                "color": "#222222"
+              },
+              "priorities": {
+                "critical": {
+                  "classes": ""
+                },
+                "diagnostic": {
+                  "classes": ""
+                },
+                "high": {
+                  "classes": ""
+                },
+                "low": {
+                  "classes": ""
+                },
+                "medium": {
+                  "classes": ""
+                }
+              }
+            }
+          }
+        },
+        "meta": {
+          "name": "AlarmJournalTable"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.show} \u003d \u0027history\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.responsive": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.responsive"
+              },
+              "type": "property"
+            }
+          },
+          "props.rowStyles": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.rowStylesJournal"
+              },
+              "type": "property"
+            }
+          },
+          "props.sortOrder": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.activeSortOrder"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "columns": {
+            "displayPath": {
+              "enabled": true,
+              "strictWidth": true,
+              "width": 380
+            },
+            "eventId": {
+              "enabled": false
+            },
+            "eventState": {
+              "strictWidth": true
+            },
+            "eventTime": {
+              "strictWidth": true
+            },
+            "label": {
+              "enabled": true
+            },
+            "name": {
+              "enabled": true,
+              "strictWidth": true,
+              "width": 250
+            },
+            "priority": {
+              "strictWidth": true
+            },
+            "source": {
+              "enabled": false
+            },
+            "state": {
+              "strictWidth": true
+            }
+          },
+          "dateFormat": "ddd DD/MM/YYYY HH:mm:ss",
+          "dateRange": {
+            "historical": {
+              "endDate": {
+                "$": [
+                  "ts",
+                  192,
+                  1704947651771
+                ],
+                "$ts": 1704947651770
+              },
+              "startDate": {
+                "$": [
+                  "ts",
+                  192,
+                  1704947651772
+                ],
+                "$ts": 1704774851770
+              }
+            },
+            "mode": "historical"
+          },
+          "filter": {
+            "events": {
+              "acked": false,
+              "active": false,
+              "cleared": false
+            }
+          },
+          "pager": {
+            "enabled": false
+          }
+        },
+        "type": "ia.display.alarmjournaltable"
+      },
+      {
+        "meta": {
+          "name": "AlarmStatusTable"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.show} \u003d \u0027active\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.activeSortOrder": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.activeSortOrder"
+              },
+              "type": "property"
+            },
+            "persistent": true
+          },
+          "props.responsive": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.responsive"
+              },
+              "type": "property"
+            }
+          },
+          "props.rowStyles": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.rowStyles"
+              },
+              "type": "property"
+            }
+          },
+          "props.shelvingTimes": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.shelvingTimes"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "activeSortOrder": [
+            "state",
+            "priority",
+            "activeTime"
+          ],
+          "columns": {
+            "active": {
+              "activeTime": {
+                "sort": "descending"
+              },
+              "label": {
+                "enabled": true
+              },
+              "notes": {
+                "enabled": true
+              },
+              "source": {
+                "enabled": false
+              },
+              "state": {
+                "sort": "ascending"
+              }
+            }
+          },
+          "dateFormat": "ddd DD/MM/YYYY HH:mm:ss",
+          "pager": {
+            "enabled": false
+          },
+          "toolbar": {
+            "enableFilterResults": false
+          }
+        },
+        "type": "ia.display.alarmstatustable"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tif self.view.custom.show \u003d\u003d \u0027history\u0027:\n\t\tself.view.custom.show \u003d \u0027active\u0027\n\telse:\n\t\tself.view.custom.show \u003d \u0027history\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "34px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.show"
+              },
+              "transforms": [
+                {
+                  "fallback": null,
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "active",
+                      "output": "Show History"
+                    },
+                    {
+                      "input": "history",
+                      "output": "Show Active"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

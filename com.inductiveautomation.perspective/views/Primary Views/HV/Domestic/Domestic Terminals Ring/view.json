@@ -1,0 +1,406 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0207,
+          "width": 0.1551,
+          "x": 0.4227,
+          "y": 0.0349
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "Domestic Terminals Ring",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0207,
+          "width": 0.027,
+          "x": 0.0654,
+          "y": 0.2003
+        },
+        "props": {
+          "text": "Bravo FDR 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Alpha"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.0668,
+          "y": 0.2467
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/Domestic/Alpha"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Airport Zone Substation"
+        },
+        "position": {
+          "height": 0.3027,
+          "width": 0.7419,
+          "x": 0.1933,
+          "y": 0.1567
+        },
+        "props": {
+          "params": {
+            "CB14": false,
+            "CB17": false,
+            "CB18": true,
+            "CB19": true,
+            "CB31": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/Airport Zone Substation"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Shiers"
+        },
+        "position": {
+          "height": 0.1113,
+          "width": 0.4784,
+          "x": 0.4048,
+          "y": 0.5852
+        },
+        "props": {
+          "params": {
+            "CB10": false,
+            "CB12": false,
+            "CB14": false,
+            "CB15": true,
+            "CB16": false,
+            "CB18": true,
+            "CB19": false,
+            "CB3": false,
+            "CB4": false,
+            "CB5": false,
+            "CB6": false,
+            "CB7": false,
+            "CB9": false
+          },
+          "path": "Templates/HV/Small Subs Views/Domestic/Shiers"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "No 22"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1833,
+          "x": 0.2651,
+          "y": 0.8168
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/Domestic/No 22"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "No 21"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1833,
+          "x": 0.4516,
+          "y": 0.8168
+        },
+        "props": {
+          "path": "Templates/HV/Small Subs Views/Domestic/No 21"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/overview"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.0162,
+          "y": 0.0427
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "HV Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.3885,
+                                "y": 0.4531
+                              }
+                            ],
+                            "x": 0.3885,
+                            "y": 0.4743
+                          }
+                        ],
+                        "x": 0.1907,
+                        "y": 0.4743
+                      }
+                    ],
+                    "x": 0.1907,
+                    "y": 0.2233
+                  }
+                ],
+                "x": 0.1671,
+                "y": 0.2233
+              }
+            ],
+            "x": 0.1671,
+            "y": 0.2531
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "arrowOutward",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.0786,
+                "y": 0.2233
+              }
+            ],
+            "x": 0.0786,
+            "y": 0.2531
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7129,
+                "y": 0.5915
+              }
+            ],
+            "x": 0.7129,
+            "y": 0.4531
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.6796,
+                        "y": 0.4531
+                      }
+                    ],
+                    "x": 0.6796,
+                    "y": 0.4887
+                  }
+                ],
+                "x": 0.3957,
+                "y": 0.4887
+              }
+            ],
+            "x": 0.3957,
+            "y": 0.8233
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.8025,
+                        "y": 0.6906
+                      }
+                    ],
+                    "x": 0.8025,
+                    "y": 0.8031
+                  }
+                ],
+                "x": 0.5822,
+                "y": 0.8031
+              }
+            ],
+            "x": 0.5822,
+            "y": 0.8233
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.3661,
+                        "y": 0.9242
+                      }
+                    ],
+                    "x": 0.3661,
+                    "y": 0.9463
+                  }
+                ],
+                "x": 0.5228,
+                "y": 0.9463
+              }
+            ],
+            "x": 0.5228,
+            "y": 0.9242
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

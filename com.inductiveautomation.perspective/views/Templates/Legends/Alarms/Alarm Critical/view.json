@@ -1,0 +1,89 @@
+{
+  "custom": {
+    "allAcked": false
+  },
+  "params": {
+    "alarmSummary": {
+      "enabled": true,
+      "parentPath": "[default]Test/Alarms"
+    },
+    "device": {
+      "enabled": false,
+      "name": "value",
+      "parentPath": "value"
+    }
+  },
+  "propConfig": {
+    "custom.allAcked": {
+      "persistent": true
+    },
+    "params.alarmSummary": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.device": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 40
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "alarm-symbol-asm-25"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "height": 24,
+                  "name": "rect",
+                  "style": {
+                    "classes": "Alarms/Symbol/Critical"
+                  },
+                  "type": "rect",
+                  "width": 24,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "name": "text",
+                  "style": {
+                    "classes": "Alarms/Text/Critical"
+                  },
+                  "text": "C",
+                  "type": "text",
+                  "x": 7.278513,
+                  "y": 17.205189
+                }
+              ],
+              "name": "Critical",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 24 24"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

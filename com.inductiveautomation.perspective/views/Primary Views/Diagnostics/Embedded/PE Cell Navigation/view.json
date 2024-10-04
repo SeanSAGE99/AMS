@@ -1,0 +1,217 @@
+{
+  "custom": {},
+  "params": {
+    "Device": "PE Cell",
+    "area": "SYD"
+  },
+  "propConfig": {
+    "params.Device": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.area": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 2378
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.area"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "mode": "fixed",
+              "style": {
+                "classes": "UI/Text/Heading1",
+                "overflow": "hidden",
+                "textAlign": "left"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.Device}+\" Overview\""
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading4",
+                "textAlign": "left"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "400px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "page": "/Diagnostics/PE Cell/PE Cell Diagnostics"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_SYD",
+              "visible": false
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+                "marginBottom": 5,
+                "marginLeft": "auto",
+                "marginRight": 5,
+                "marginTop": 5
+              },
+              "text": "SYD"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "page": "/Diagnostics/PE Cell/PE Cell Diagnostics-International"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_Int",
+              "visible": false
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+                "margin": 5
+              },
+              "text": "International"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "page": "/Diagnostics/PE Cell/PE Cell Diagnostics-Domestic"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_Dom",
+              "visible": false
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+                "marginBottom": 5,
+                "marginLeft": 5,
+                "marginRight": "auto",
+                "marginTop": 5
+              },
+              "text": "Domestic"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "800px",
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "marginLeft": "0px",
+            "marginRight": "100px",
+            "overflow": "hidden"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

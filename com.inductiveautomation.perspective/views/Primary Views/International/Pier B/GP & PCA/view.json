@@ -1,0 +1,1532 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Pier B Arrivals"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.077
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Pier B Arrivals.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top - International"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/T1/Pier B/Arrivals"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.1074,
+          "y": 0.8117
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 8",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.0965,
+          "y": 0.8501
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 8",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.0965,
+          "y": 0.8876
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 8",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.0965,
+          "y": 0.9251
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 8",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.0965,
+          "y": 0.9626
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 8",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5001"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.2001,
+          "y": 0.6882
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 9",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.1892,
+          "y": 0.7266
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 9",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.1892,
+          "y": 0.7641
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 9",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.1892,
+          "y": 0.8016
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 9",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.1892,
+          "y": 0.8391
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 9",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_3"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2912,
+          "y": 0.7178
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 10",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_3"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2912,
+          "y": 0.6803
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 10",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_4"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2912,
+          "y": 0.6428
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 10",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_4"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2912,
+          "y": 0.6053
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 10",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5002"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.3021,
+          "y": 0.5669
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 10",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_5"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2798,
+          "y": 0.4764
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 24",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_5"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2798,
+          "y": 0.4389
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 24",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit B",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_6"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2798,
+          "y": 0.4014
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 24",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_6"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2798,
+          "y": 0.3639
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 24",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5003"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.2907,
+          "y": 0.3255
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 24",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5004"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.2698,
+          "y": 0.1774
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 25",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_7"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2589,
+          "y": 0.2158
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 25",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_7"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2589,
+          "y": 0.2533
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 25",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5005"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.4588,
+          "y": 0.1779
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 31",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_8"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.4479,
+          "y": 0.2163
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 31",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_8"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.4479,
+          "y": 0.2538
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 31",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5006"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.5406,
+          "y": 0.092
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 33",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_9"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5297,
+          "y": 0.1304
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 33",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_9"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5297,
+          "y": 0.1679
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 33",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5007"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.6334,
+          "y": 0.0421
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 35",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_10"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.6225,
+          "y": 0.0805
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 35",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_10"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.6225,
+          "y": 0.118
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 35",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5008"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.8328,
+          "y": 0.0794
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 37",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_11"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.8219,
+          "y": 0.1178
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 37",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_11"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.8219,
+          "y": 0.1553
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 37",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5009"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.8416,
+          "y": 0.2042
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 36",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_12"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.8307,
+          "y": 0.2426
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 36",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_12"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.8307,
+          "y": 0.2801
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 36",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5010"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.7714,
+          "y": 0.3156
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 34",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_13"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.7605,
+          "y": 0.354
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 34",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_13"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.7605,
+          "y": 0.3915
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 34",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5011"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.6915,
+          "y": 0.4157
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 32",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_14"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.6806,
+          "y": 0.4541
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 32",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_14"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.6806,
+          "y": 0.4916
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 32",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5012"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.6185,
+          "y": 0.5156
+        },
+        "props": {
+          "params": {
+            "deviceName": "DB Meter",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Aerobridge 30",
+            "fontSize": "clamp(4pt, calc(0.2*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Power Meters/PM5000 Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GP Unit_15"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.6076,
+          "y": 0.554
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 30",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Ground Power Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/GP Unit"
+          },
+          "path": "Templates/Aerobridges/GP Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PCA Unit_15"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.6076,
+          "y": 0.5915
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 30",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "deviceType": "Preconditioning Air Unit A",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Aerobridge/PCA Unit"
+          },
+          "path": "Templates/Aerobridges/PCA Unit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/Pier B/Arrivals"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0627,
+          "width": 0.0817,
+          "x": 0.0239,
+          "y": 0.0477
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Pier B - Arrivals"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.2787,
+          "y": 0.9592
+        },
+        "props": {
+          "text": 8,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3489,
+          "y": 0.8183
+        },
+        "props": {
+          "text": 9,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.4362,
+          "y": 0.6186
+        },
+        "props": {
+          "text": 10,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3971,
+          "y": 0.3325
+        },
+        "props": {
+          "text": 24,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3939,
+          "y": 0.2279
+        },
+        "props": {
+          "text": 25,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.5879,
+          "y": 0.3333
+        },
+        "props": {
+          "text": 31,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6588,
+          "y": 0.2487
+        },
+        "props": {
+          "text": 33,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6966,
+          "y": 0.1963
+        },
+        "props": {
+          "text": 35,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.7782,
+          "y": 0.1054
+        },
+        "props": {
+          "text": 37,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_17"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.7885,
+          "y": 0.1561
+        },
+        "props": {
+          "text": 36,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6937,
+          "y": 0.3
+        },
+        "props": {
+          "text": 34,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6243,
+          "y": 0.4095
+        },
+        "props": {
+          "text": 32,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.5623,
+          "y": 0.4973
+        },
+        "props": {
+          "text": 30,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[10].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[11].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[12].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[13].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[14].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[15].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[16].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[17].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[5].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[6].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[7].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[8].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[9].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

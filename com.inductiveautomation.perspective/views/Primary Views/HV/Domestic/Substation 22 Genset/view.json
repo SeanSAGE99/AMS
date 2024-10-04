@@ -1,0 +1,2353 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "High Voltage/Domestic/Substation 22 Genset"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CB04"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.4032,
+          "y": 0.1439
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB04",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX01"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.0046,
+          "y": 0.5039
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 1",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB01"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.0604,
+          "x": 0.014,
+          "y": 0.5879
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB01",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Medium"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.0927,
+          "y": 0.5979
+        },
+        "props": {
+          "params": {
+            "deviceName": "MtrLV002",
+            "deviceParentPath": "High Voltage/T1/Substation 12"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Horizontal"
+        },
+        "position": {
+          "height": 0.0813,
+          "width": 0.0526,
+          "x": 0.26,
+          "y": 0.8839
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "LVCB04",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthOnLeft": true,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.106,
+          "x": 0.3802,
+          "y": 0.0099
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1"
+          },
+          "text": "Substation 22 Genset",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center",
+            "textDecoration": "underline"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB01"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.0132,
+          "y": 0.3239
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB01",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Horizontal_0"
+        },
+        "position": {
+          "height": 0.0813,
+          "width": 0.0526,
+          "x": 0.4217,
+          "y": 0.7675
+        },
+        "props": {
+          "params": {
+            "CurrentVisible": false,
+            "DeviceName": "LVCB05",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthOnLeft": true,
+            "Rackable": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB Horizontal"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB06"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.0604,
+          "x": 0.2277,
+          "y": 0.5867
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB06",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB02"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.3377,
+          "y": 0.3239
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX02"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.3291,
+          "y": 0.5039
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 2",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB02"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.0604,
+          "x": 0.3385,
+          "y": 0.5869
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB02",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "LVCB03"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.0604,
+          "x": 0.5365,
+          "y": 0.5869
+        },
+        "props": {
+          "params": {
+            "DeviceName": "LVCB03",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/LVCB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "TX03"
+        },
+        "position": {
+          "height": 0.047,
+          "width": 0.065,
+          "x": 0.5266,
+          "y": 0.5039
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 3",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "TXDetail": "Chiller 5",
+            "TXDetailVisible": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB03"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.5357,
+          "y": 0.3239
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB03",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PM5000 Medium_0"
+        },
+        "position": {
+          "height": 0.1203,
+          "width": 0.115,
+          "x": 0.6673,
+          "y": 0.2937
+        },
+        "props": {
+          "params": {
+            "deviceName": "MtrLV002",
+            "deviceParentPath": "High Voltage/T1/Substation 12"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.0098
+        },
+        "props": {
+          "text": "ALARMS",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bolder"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.0358
+        },
+        "props": {
+          "text": "GENERATOR",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.0617
+        },
+        "props": {
+          "text": "Generator CB Closed",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.0829
+        },
+        "props": {
+          "text": "Starting Disabled / Genset Unavailable",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.104
+        },
+        "props": {
+          "text": "Generator Emergency Power FAULT",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.1242
+        },
+        "props": {
+          "text": "Generator Manual Mode",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.2069
+        },
+        "props": {
+          "text": "Reverse Power Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.1867
+        },
+        "props": {
+          "text": "Generator Load Test Mode",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.1665
+        },
+        "props": {
+          "text": "Generator Stop Mode",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_10"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.1454
+        },
+        "props": {
+          "text": "Generator Test Mode",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.3108
+        },
+        "props": {
+          "text": "Reverse Power Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.2896
+        },
+        "props": {
+          "text": "Reverse Power Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.2694
+        },
+        "props": {
+          "text": "Over Voltage Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.2492
+        },
+        "props": {
+          "text": "Under Voltage Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.2281
+        },
+        "props": {
+          "text": "Overload Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_16"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.3415
+        },
+        "props": {
+          "text": "MAINS",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_17"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.3675
+        },
+        "props": {
+          "text": "Mains CB Closed",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_18"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.4512
+        },
+        "props": {
+          "text": "Over Frequency Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_19"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.43
+        },
+        "props": {
+          "text": "Under Frequency Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_20"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.4088
+        },
+        "props": {
+          "text": "Over Voltage Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_21"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.116,
+          "x": 0.8773,
+          "y": 0.3887
+        },
+        "props": {
+          "text": "Under Voltage Protection Alarm",
+          "textStyle": {
+            "color": "var(--error)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_22"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.5019
+        },
+        "props": {
+          "text": "EQUIPMENT",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bolder"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_23"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.5279
+        },
+        "props": {
+          "text": "Engine",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_24"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.549
+        },
+        "props": {
+          "text": "Engine Speed",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_25"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.575
+        },
+        "props": {
+          "text": "Battery",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_26"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.5962
+        },
+        "props": {
+          "text": "Volts (V)",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_27"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.6221
+        },
+        "props": {
+          "text": "Genset Run Time",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_28"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.6433
+        },
+        "props": {
+          "text": "No of Starts",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_29"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.6644
+        },
+        "props": {
+          "text": "Run Time - Hours",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_30"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.9248
+        },
+        "props": {
+          "text": "Power Factor",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_31"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.9508
+        },
+        "props": {
+          "text": "Active Power (kW)",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_32"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.9719
+        },
+        "props": {
+          "text": "Reactive Power (kVar)",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_33"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.8517
+        },
+        "props": {
+          "text": "C Phase Volts",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_34"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.8777
+        },
+        "props": {
+          "text": "A Phase Amps",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_35"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.9037
+        },
+        "props": {
+          "text": "Frequency (Hz)",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_36"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.7835
+        },
+        "props": {
+          "text": "C-A Line Volts",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_37"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.8094
+        },
+        "props": {
+          "text": "A Phase Volts",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_38"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.8306
+        },
+        "props": {
+          "text": "B Phase Volts",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_39"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.7152
+        },
+        "props": {
+          "text": "GENERAL - MAINS",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bolder"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_40"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.7412
+        },
+        "props": {
+          "text": "A-B Line Volts",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_41"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.066,
+          "x": 0.8773,
+          "y": 0.7623
+        },
+        "props": {
+          "text": "B-C Line Volts",
+          "textStyle": {
+            "color": "var(--callToAction--disabled)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.549
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_0"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.596
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_1"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.643
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_2"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.6652
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_3"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.7412
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_4"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.7622
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_5"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.7832
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_6"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.8532
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_7"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.8312
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_8"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.8092
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_9"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.9732
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_10"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.9512
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_11"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.9262
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_12"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.9042
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value_13"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.0401,
+          "x": 0.9532,
+          "y": 0.8782
+        },
+        "props": {
+          "params": {
+            "formatStringOverride": "",
+            "overrideFontSizeInStyle": false,
+            "showBox": true,
+            "showUnitsInValue": true,
+            "styleClasses": "",
+            "tagName": "Current Phase A",
+            "tagParentPath": "High Voltage/T1/Substation 12/MtrLV001",
+            "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/T1/Substation 12/MtrLV001/Current Phase A.quality\u0027 not found.\")",
+            "unitsOverride": "",
+            "unitsWidth": "15px"
+          },
+          "path": "Shared/Templates/Display/Analogue Value"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB05"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.4692,
+          "y": 0.1439
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB05",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB06"
+        },
+        "position": {
+          "height": 0.144230769,
+          "width": 0.047,
+          "x": 0.6012,
+          "y": 0.1439
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB06",
+            "DeviceParentPath": "High Voltage/Domestic/Substation 22/PLC",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.7936,
+          "y": 0.0958
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "[default]High Voltage/International/Substation 1/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_44"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.046,
+          "x": 0.3038,
+          "y": 0.2736
+        },
+        "props": {
+          "text": "Essential Bus",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.2305,
+          "y": 0.5942
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-22"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0617,
+          "x": 0.7933,
+          "y": 0.942
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "Substation 22",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "id": "alarmbanner",
+                "type": "toggle",
+                "viewParams": {
+                  "siteTagPath": "{view.params.sitePath}"
+                }
+              },
+              "scope": "C",
+              "type": "dock"
+            }
+          }
+        },
+        "meta": {
+          "name": "Site Alarms"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0667,
+          "x": 0.7856,
+          "y": 0.0183
+        },
+        "propConfig": {
+          "props.image.icon.color": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "sitePath": "{view.params.sitePath}"
+                },
+                "tagPath": "{sitePath}/Alarm Summary/Highest Priority"
+              },
+              "transforms": [
+                {
+                  "expression": "if({value} \u003e 0,\r\n\t\"var(--dev-sym-faulted)\",\r\n\t\"\"\r\n)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "height": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)",
+            "icon": {
+              "path": "material/warning"
+            },
+            "width": "clamp(4pt, calc(0.8*(1.0vmin + 1.0vmax)), 24pt)"
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 5
+          },
+          "text": "Site Alarms",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-23"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "ButtonSub23"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0617,
+          "x": 0.5817,
+          "y": 0.0733
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "To Sub 23",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/substation-21"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "ButtonSub21"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0617,
+          "x": 0.3838,
+          "y": 0.0748
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "To Sub 21",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/Domestic/airport-zone-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "ButtonSubAZS"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0617,
+          "x": 0.4498,
+          "y": 0.0748
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "To Sub AZS",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Genset_0"
+        },
+        "position": {
+          "height": 0.0913,
+          "width": 0.1031,
+          "x": 0.1876,
+          "y": 0.4521
+        },
+        "props": {
+          "params": {
+            "deviceName": "Sub 22 Gen",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Static Symbols/Genset static"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.0051,
+                    "y": 0.3067
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.3495,
+                        "y": 0.3721
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.4151,
+                            "y": 0.2423
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.4813,
+                                "y": 0.2423
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.5474,
+                                    "y": 0.3721
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.613,
+                                        "y": 0.2423
+                                      },
+                                      {
+                                        "connections": [],
+                                        "x": 0.6481,
+                                        "y": 0.3067
+                                      }
+                                    ],
+                                    "x": 0.613,
+                                    "y": 0.3067
+                                  }
+                                ],
+                                "x": 0.5474,
+                                "y": 0.3067
+                              }
+                            ],
+                            "x": 0.4813,
+                            "y": 0.3067
+                          }
+                        ],
+                        "x": 0.4151,
+                        "y": 0.3067
+                      }
+                    ],
+                    "x": 0.3495,
+                    "y": 0.3067
+                  }
+                ],
+                "x": 0.025,
+                "y": 0.3067
+              }
+            ],
+            "x": 0.025,
+            "y": 0.3721
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.025,
+                "y": 0.5067
+              }
+            ],
+            "x": 0.025,
+            "y": 0.4221
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.025,
+                "y": 0.6346
+              }
+            ],
+            "x": 0.025,
+            "y": 0.55
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.2724,
+                    "y": 0.9125
+                  }
+                ],
+                "x": 0.025,
+                "y": 0.9125
+              }
+            ],
+            "x": 0.025,
+            "y": 0.6837
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.5474,
+                        "y": 0.6837
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.4615,
+                        "y": 0.7962
+                      }
+                    ],
+                    "x": 0.5474,
+                    "y": 0.7962
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.7824,
+                    "y": 0.9125
+                  }
+                ],
+                "x": 0.5474,
+                "y": 0.9125
+              }
+            ],
+            "x": 0.3,
+            "y": 0.9125
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2385,
+                        "y": 0.6837
+                      }
+                    ],
+                    "x": 0.2385,
+                    "y": 0.7962
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.3495,
+                    "y": 0.6837
+                  }
+                ],
+                "x": 0.3495,
+                "y": 0.7962
+              }
+            ],
+            "x": 0.4339,
+            "y": 0.7962
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2385,
+                "y": 0.5404
+              }
+            ],
+            "x": 0.2385,
+            "y": 0.6346
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3495,
+                "y": 0.5067
+              }
+            ],
+            "x": 0.3495,
+            "y": 0.4221
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3495,
+                "y": 0.6346
+              }
+            ],
+            "x": 0.3495,
+            "y": 0.55
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4151,
+                "y": 0.1077
+              }
+            ],
+            "x": 0.4151,
+            "y": 0.1923
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4813,
+                "y": 0.1077
+              }
+            ],
+            "x": 0.4813,
+            "y": 0.1923
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5474,
+                "y": 0.5067
+              }
+            ],
+            "x": 0.5474,
+            "y": 0.4221
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_13",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5474,
+                "y": 0.6346
+              }
+            ],
+            "x": 0.5474,
+            "y": 0.55
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_15",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.613,
+                "y": 0.1077
+              }
+            ],
+            "x": 0.613,
+            "y": 0.1923
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2385,
+                "y": 0.6087
+              }
+            ],
+            "x": 0.2021,
+            "y": 0.6087
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

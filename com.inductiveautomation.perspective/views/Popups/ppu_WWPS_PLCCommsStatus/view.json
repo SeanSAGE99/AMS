@@ -1,0 +1,1860 @@
+{
+  "custom": {
+    "PLCType": "Unknown",
+    "deviceTagPath": "Alexandrina/Mt Compass/WWPS/MCP02",
+    "showAlarms": false,
+    "siteName": null,
+    "siteType": "Unknown",
+    "subArea": null,
+    "templatePath": null,
+    "typeId": null
+  },
+  "params": {
+    "controlEnable": true,
+    "deviceName": "MCP02",
+    "deviceParentPath": "Alexandrina/Mt Compass/WWPS",
+    "popupHeight": 0,
+    "popupId": ""
+  },
+  "propConfig": {
+    "custom.PLCType": {
+      "binding": {
+        "config": {
+          "path": "view.custom.siteType"
+        },
+        "transforms": [
+          {
+            "fallback": "Unknown",
+            "inputType": "scalar",
+            "mappings": [
+              {
+                "input": "T1000",
+                "output": "FX1S"
+              },
+              {
+                "input": "T1200",
+                "output": "FX3G"
+              },
+              {
+                "input": "T2000",
+                "output": "ModiconE984"
+              }
+            ],
+            "outputType": "scalar",
+            "type": "map"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.alarmsActive": {
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\tsystem.perspective.sendMessage(\u0027refresh-alarms-list\u0027)"
+      },
+      "persistent": true
+    },
+    "custom.showAlarms": {
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Site_Name"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.siteType": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}.typeID"
+        },
+        "transforms": [
+          {
+            "fallback": "Unknown",
+            "inputType": "scalar",
+            "mappings": [
+              {
+                "input": "Alexandrina/WWPS/T1200",
+                "output": "T1200"
+              },
+              {
+                "input": "Alexandrina/WWPS/T1000",
+                "output": "T1000"
+              },
+              {
+                "input": "Alexandrina/WWPS/T2000",
+                "output": "T2000"
+              },
+              {
+                "input": "Alexandrina/WWPS/T1000_ALS",
+                "output": "T1000"
+              },
+              {
+                "input": "Alexandrina/WWPS/T2000_ALS",
+                "output": "T2000"
+              }
+            ],
+            "outputType": "scalar",
+            "type": "map"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Site_SubArea"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.templatePath": {
+      "persistent": true
+    },
+    "custom.typeId": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{1}.TypeId"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.controlEnable": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.popupHeight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.popupId": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 726,
+      "width": 380
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "12pt",
+                "fontWeight": "bold",
+                "letterSpacing": "1px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              },
+              "text": "Communication Status"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName} + \u0027 - \u0027 + {view.params.deviceName}"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "10pt",
+                "fontStyle": "italic",
+                "fontWeight": "lighter",
+                "letterSpacing": "1px",
+                "marginBottom": "5px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_6"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Comms\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "Site Comms Status",
+                    "tagName": "Combined Comms Status",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/Comms/Combined Comms Status.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Redlion\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "Koyo Click Ethernet PLC Comms Status",
+                    "tagName": "Koyo Click PLC Comms Status",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/RedLion/Koyo Click PLC Comms Status.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_0"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.PLCType"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027 PLC Comms Status\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Redlion\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/RedLion/Unknown PLC Comms Status.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_1"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "RedLion Comms Status",
+                    "tagName": "Online",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/MQTT Node Status/Online.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Value w Label"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Redlion\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "showUnitsInValue": true,
+                    "tagName": "RedLion Seconds Heartbeat",
+                    "tagQuality": "Good",
+                    "unitsWidth": "auto",
+                    "valueWidth": "150px"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+                  "style": {
+                    "marginLeft": "",
+                    "marginRight": "",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label Only"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "params": {
+                        "hideLabel": false,
+                        "labelOverride": "",
+                        "tagName": "Heartbeat Date Time"
+                      },
+                      "path": "Shared/Templates/Display/Label Only"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "borderBottomStyle": "dashed",
+                            "borderBottomWidth": 1
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "FlexContainer_0"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "1px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "marginRight": 5
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "150px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "deviceTagPath": "{view.custom.deviceTagPath}"
+                            },
+                            "tagPath": "{deviceTagPath}/RedLion/RedLion Seconds Heartbeat"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "dateFormat(dateArithmetic(toDate(\"1997-01-01 00:00:00\"), {value}, \u0027seconds\u0027), \u0027dd/MM/YYYY HH:mm:ss\u0027)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Tag/PVDisplayBox UI/Text/Size/Size2"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginLeft": 5,
+                    "marginRight": 5,
+                    "marginTop": 5,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading1",
+                    "marginTop": "5px"
+                  },
+                  "text": "Heartbeats"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_2"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Comms\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "Modem",
+                    "tagName": "Modem Ping",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/Comms/Modem Ping.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_3"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Comms/ALS\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "ALS (Koyo Click Ethernet) PLC",
+                    "tagName": "Heartbeat",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/Comms/ALS/Heartbeat.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_4"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.labelOverride": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.PLCType"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "\u0027Main (\u0027 + {value} + \u0027) PLC\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Comms/Main\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "tagName": "Heartbeat",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/Comms/Main/Heartbeat.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_5"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath} + \"/Comms/RIOS\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "RIOS (Koyo Click) PLC",
+                    "tagName": "Heartbeat",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]Alexandrina/Mt Compass/WWPS/MCP02/Comms/RIOS/Heartbeat.quality\u0027 not found.\")"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "30px",
+                      "shrink": 0
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading1",
+                        "marginLeft": "auto",
+                        "marginRight": "auto"
+                      },
+                      "text": "Ping Tests"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "draggable": false,
+                            "id": "zw9eTrs1",
+                            "modal": true,
+                            "overlayDismiss": true,
+                            "position": {
+                              "relativeLocation": "bottom-right"
+                            },
+                            "positionType": "relative",
+                            "resizable": false,
+                            "showCloseIcon": false,
+                            "type": "open",
+                            "viewPath": "_ProjectTemplates/Comms/Device Ping Info",
+                            "viewportBound": false
+                          },
+                          "scope": "C",
+                          "type": "popup"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Icon",
+                      "visible": false
+                    },
+                    "position": {
+                      "basis": "30px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#74CDFF",
+                      "path": "material/info",
+                      "style": {
+                        "cursor": "pointer",
+                        "paddingLeft": "10px"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Device Ping"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.ipAddress": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Parameters/IP Subnet"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027.254\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "label": "Modem"
+                  },
+                  "path": "_ProjectTemplates/Comms/Device Ping"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Device Ping_0"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.ipAddress": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Parameters/IP Subnet"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027.20\u0027\r\n\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "label": "RedLion"
+                  },
+                  "path": "_ProjectTemplates/Comms/Device Ping"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Device Ping_1"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.ipAddress": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Parameters/IP Subnet"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027.40\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "label": "ALS PLC"
+                  },
+                  "path": "_ProjectTemplates/Comms/Device Ping"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Comms"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Popups/ContentMargins",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "String Value w Label"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Crimson Software Version"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_0"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Hardware Model"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_1"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "IP Address"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_2"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "MAC Address"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_3"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "RedLion Battery Low"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_4"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Restart Info"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_5"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "SD Card Disk Free Kilobytes"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_6"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "SD Card Disk Free Percent"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_7"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "SD Card Disk Size Kilobytes"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_8"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Serial Number"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_9"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/System\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Tag List Version"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "RedLion"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading1",
+                    "marginTop": "5px"
+                  },
+                  "text": "MQTT Node Status"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Value w Label_1"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "showUnitsInValue": true,
+                    "tagName": "Birth Count",
+                    "tagQuality": "Good",
+                    "unitsWidth": "5px",
+                    "valueWidth": "70px"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+                  "style": {
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Value w Label_2"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "showUnitsInValue": true,
+                    "tagName": "Death Count",
+                    "tagQuality": "Good",
+                    "unitsWidth": "5px",
+                    "valueWidth": "70px"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+                  "style": {
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Offline DateTime"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_0"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Online DateTime"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Value w Label_3"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "controlEnable": true,
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "showUnitsInValue": true,
+                    "tagName": "Total Bytes Recvd",
+                    "tagQuality": "Good",
+                    "unitsWidth": "auto",
+                    "valueWidth": "150px"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+                  "style": {
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Value w Label_4"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "showUnitsInValue": true,
+                    "tagName": "Total Bytes Xmit",
+                    "tagQuality": "Good",
+                    "unitsWidth": "auto",
+                    "valueWidth": "150px"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+                  "style": {
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "String Value w Label_1"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "Status"
+                  },
+                  "path": "Shared/Templates/Display/String Value w Label",
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "17px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Boolean Value w Label_1"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "",
+                    "tagName": "Online"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "style": {
+                    "marginLeft": 0,
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label Only"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "params": {
+                        "hideLabel": false,
+                        "labelOverride": "",
+                        "tagName": "Reset Info"
+                      },
+                      "path": "Shared/Templates/Display/Label Only",
+                      "style": {
+                        "marginRight": "Auto"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "borderTopStyle": "dashed",
+                        "borderTopWidth": "1px",
+                        "marginBottom": "auto",
+                        "marginRight": 10,
+                        "marginTop": "auto"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\ttagPath \u003d self.view.custom.deviceTagPath + \u0027/MQTT Node Status/Reset Info CMD\u0027\n\tsystem.tag.writeBlocking(tagPath, 1)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Button",
+                      "tooltip": {
+                        "text": "Requires Maintenance Login"
+                      }
+                    },
+                    "position": {
+                      "basis": "80px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "meta.tooltip.enabled": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "deviceTagPath": "{view.custom.deviceTagPath}"
+                            },
+                            "tagPath": "{deviceTagPath}/MQTT Node Status/Reset Info CMD.canWrite"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "!{value}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      },
+                      "props.enabled": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "deviceTagPath": "{view.custom.deviceTagPath}"
+                            },
+                            "tagPath": "{deviceTagPath}/MQTT Node Status/Reset Info CMD.canWrite"
+                          },
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Text",
+                        "marginBottom": "5px",
+                        "marginTop": "5px"
+                      },
+                      "text": "Reset"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "50px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginLeft": "5px",
+                    "marginRight": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Analogue Value w Label_5"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+\"/MQTT Node Status\""
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "Sequence",
+                    "showUnitsInValue": true,
+                    "tagName": "Seq",
+                    "tagQuality": "Good",
+                    "unitsWidth": "5px",
+                    "valueWidth": "70px"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+                  "style": {
+                    "marginBottom": "10px",
+                    "marginLeft": "-5px",
+                    "marginRight": "-5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "MQTT"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Popups/ContentMargins",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "630px"
+        },
+        "props": {
+          "menuType": "modern",
+          "tabSize": {
+            "width": 130
+          },
+          "tabs": [
+            "Communications",
+            "MQTT Node",
+            "RedLion Data"
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.params.popupId)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

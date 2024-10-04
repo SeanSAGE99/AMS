@@ -1,0 +1,275 @@
+{
+  "custom": {
+    "DeviceTagPath": "High Voltage/International/Substation 1/PLC/Busbar Protection 1",
+    "deviceId": "01",
+    "isolated": true,
+    "tags": [
+      {
+        "tagName": "Isolated",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/Busbar Protection 1/Status Folder"
+      }
+    ]
+  },
+  "params": {
+    "DeviceName": "Busbar Protection 1",
+    "DeviceParentPath": "High Voltage/International/Substation 1/PLC",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+    "reverseIsolatedStatus": true
+  },
+  "propConfig": {
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceId": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Parameters.DeviceID"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.isolated": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Status Folder/Isolated"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.reverseIsolatedStatus": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 45,
+      "width": 71
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "l6Xk-8oC",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.58,
+          "width": 1,
+          "x": -0.0017,
+          "y": -0.0023
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\u0027BBP \u0027+{view.custom.deviceId}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.textStyle.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.4,
+          "width": 0.2537,
+          "x": 0.0141,
+          "y": 0.5993
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Isolated"
+        },
+        "position": {
+          "height": 0.4444,
+          "width": 0.2817,
+          "x": 0.7145,
+          "y": 0.5673
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.reverseIsolatedStatus} \u003d true, !{view.custom.isolated}, {view.custom.isolated})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "m7 60v-53h106v106h-106zm100 0v-47h-94v94h94zm-75 0v-28h56v56h-56zm50 0v-22h-44v44h44z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "m13.144 60v-46.856h93.713v93.713h-93.713zm74.926 0v-28.069h-56.139l-0.0381 27.921c-0.02096 15.356-0.0063 28.005 0.03261 28.107 0.05638 0.1483 5.7561 0.17842 28.107 0.14852l28.037-0.03751z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            },
+            {
+              "d": "m38.094 60v-21.906h43.812v43.812h-43.812z",
+              "fill": {
+                "opacity": 0,
+                "paint": ""
+              },
+              "name": "path",
+              "opacity": 1,
+              "stroke": {
+                "paint": "Var(--neutral-80)",
+                "width": 6
+              },
+              "type": "path"
+            }
+          ],
+          "viewBox": "0 0 120 120"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

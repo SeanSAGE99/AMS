@@ -1,0 +1,214 @@
+{
+  "custom": {},
+  "params": {
+    "CB01": true
+  },
+  "propConfig": {
+    "params.CB01": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 131.66,
+      "width": 129
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2106,
+          "width": 0.4834,
+          "x": 0.2669,
+          "y": 0.0181
+        },
+        "props": {
+          "text": "T1 Hotel",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.2852,
+          "x": 0.365,
+          "y": 0.6875
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB02",
+            "DeviceParentPath": "High Voltage/International/T1 Hotel Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_5"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.2852,
+          "x": 0.6752,
+          "y": 0.6919
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW03",
+            "DeviceParentPath": "High Voltage/International/T1 Hotel Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_1"
+        },
+        "position": {
+          "height": 0.1645,
+          "width": 0.2852,
+          "x": 0.0613,
+          "y": 0.6929
+        },
+        "props": {
+          "params": {
+            "DeviceName": "SW01",
+            "DeviceParentPath": "High Voltage/International/T1 Hotel Substation/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Switch Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/International/t1-hotel-substation"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "view.params.CB01"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "x": 0.9792,
+                    "y": 0.5393
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "x": 0.0068,
+                            "y": 0.5393
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.1427,
+                            "y": 0.7237
+                          }
+                        ],
+                        "x": 0.1427,
+                        "y": 0.5393
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.4492,
+                        "y": 0.7237
+                      }
+                    ],
+                    "x": 0.4492,
+                    "y": 0.5393
+                  }
+                ],
+                "x": 0.76,
+                "y": 0.5393
+              }
+            ],
+            "x": 0.76,
+            "y": 0.7237
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.76,
+                "y": 1.017
+              }
+            ],
+            "x": 0.76,
+            "y": 0.7899
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

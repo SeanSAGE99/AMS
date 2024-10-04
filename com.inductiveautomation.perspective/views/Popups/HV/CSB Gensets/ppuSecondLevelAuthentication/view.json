@@ -1,0 +1,295 @@
+{
+  "custom": {},
+  "params": {
+    "action": "Genset Startup Sequence",
+    "deviceTagPath": "High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Command"
+  },
+  "propConfig": {
+    "params.action": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceTagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.action"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "12pt",
+                "fontWeight": "bold",
+                "letterSpacing": "1px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "10pt",
+                "fontStyle": "italic",
+                "fontWeight": "lighter",
+                "letterSpacing": "1px",
+                "marginBottom": "5px",
+                "textAlign": "center",
+                "textTransform": "none"
+              },
+              "text": "Substation 1 - CSB Genset"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading2"
+              },
+              "text": "Authentication"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Status"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "propConfig": {
+              "props.textStyle.classes": {
+                "binding": {
+                  "config": {
+                    "expression": "if({parent.custom.authenticationOK} \u003d \"true\",\r\n\t\u0027Pipework/KeyStones/Connected\u0027,\r\n\t\u0027Pipework/KeyStones/Pigging\u0027\r\n)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label Only"
+                },
+                "position": {
+                  "basis": "320px"
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": false,
+                    "labelOverride": "",
+                    "tagName": "password:"
+                  },
+                  "path": "Shared/Templates/Display/Label Only"
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Password"
+                },
+                "position": {
+                  "basis": "400px"
+                },
+                "type": "ia.input.password-field"
+              }
+            ],
+            "meta": {
+              "name": "Password Group"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Popups/ContentMargins",
+                "overflow": "hidden",
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "custom": {
+              "key": "value"
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\n\tpassword \u003d self.getSibling(\u0027Password Group\u0027).getChild(\u0027Password\u0027).props.text\n\n\tif password \u003d\u003d \"1234\":\n\t\tself.parent.custom.authenticationOK \u003d \"true\"\n\t\tsystem.tag.writeBlocking(self.view.params.deviceTagPath, 1)\n\t\tself.getSibling(\"Status\").props.text \u003d \"Action Completed!\"\n\telse:\n\t \tself.parent.custom.authenticationOK \u003d \"false\"\n\t \tself.getSibling(\"Status\").props.text \u003d \"Authentication Failed!\"\n\n   \tself.getSibling(\u0027Password Group\u0027).getChild(\u0027Password\u0027).props.text \u003d \"\" \n   \tself.getSibling(\u0027Status\u0027).position.display \u003d \"true\""
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Authenticate"
+            },
+            "position": {
+              "basis": "40px"
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/login"
+                }
+              },
+              "primary": false,
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+                "margin": 10,
+                "marginBottom": 10,
+                "paddingLeft": "20px",
+                "paddingRight": "20px"
+              },
+              "text": "Apply"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "custom": {
+          "authenticationOK": "false"
+        },
+        "meta": {
+          "name": "Authentication"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "column",
+          "style": {
+            "classes": "UI/Popups/ContentMargins",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\"ppuSecondLevelAuthentication\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

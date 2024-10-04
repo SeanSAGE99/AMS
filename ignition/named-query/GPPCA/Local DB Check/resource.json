@@ -1,0 +1,40 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "sql_data",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "48d04c9b741f2ad1f2168c4cd6acfb96ba83c3a39905a785e8a0905cbe3bb465",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "tom",
+      "timestamp": "2024-06-07T05:10:59Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "eventDate",
+        "sqlType": 7
+      }
+    ]
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "custom": {
+    "deviceTagPath": "International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC North East/PE Cell 1",
+    "tags": [
+      {
+        "tagName": "PE Cell Freeze Fault",
+        "tagParentPath": "[default]International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC North East/PE Cell 1/Alarms"
+      },
+      {
+        "tagName": "On",
+        "tagParentPath": "[default]International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC North East/PE Cell 1/Status"
+      }
+    ]
+  },
+  "params": {
+    "deviceName": "PE Cell 1",
+    "deviceParentPath": "International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC North East"
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.deviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 41
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false,
+              "name": "IED03A",
+              "parentPath": "[default]High Voltage/International/Link Road Substation"
+            }
+          },
+          "path": "Shared/Alarms/Symbol",
+          "style": {
+            "marginBottom": 5,
+            "marginTop": 5
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "6_hbA6es",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Boolean Value w Label_0"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.labelOverride": {
+            "binding": {
+              "config": {
+                "expression": "tag ({view.custom.deviceTagPath} + \u0027/Parameters.DeviceName\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.deviceTagPath} + \u0027/Status\u0027"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "tagName": "On",
+            "tagQuality": "Good"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

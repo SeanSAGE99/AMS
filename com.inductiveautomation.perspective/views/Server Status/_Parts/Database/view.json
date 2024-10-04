@@ -1,0 +1,208 @@
+{
+  "custom": {},
+  "params": {
+    "databaseName": "sql_data"
+  },
+  "propConfig": {
+    "params.databaseName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 790,
+      "width": 748
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.databaseName"
+              },
+              "transforms": [
+                {
+                  "expression": "\u0027Database Connection Status - \u0027 + {value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "whiteSpace": "pre-wrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Boolean Value w Label"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.databaseName"
+              },
+              "transforms": [
+                {
+                  "expression": "\u0027[System]Gateway/Database/\u0027 + {value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "labelOverride": "",
+            "tagName": "Available",
+            "tagQuality": "Good"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.databaseName"
+              },
+              "transforms": [
+                {
+                  "expression": "\u0027[System]Gateway/Database/\u0027 + {value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "labelOverride": "Active Connections",
+            "tagName": "ActiveConnections"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_1"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.databaseName"
+              },
+              "transforms": [
+                {
+                  "expression": "\u0027[System]Gateway/Database/\u0027 + {value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "labelOverride": "Queries Per Second",
+            "tagName": "QueriesPerSecond"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue Value w Sparkline w Label_2"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.tagParentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.databaseName"
+              },
+              "transforms": [
+                {
+                  "expression": "\u0027[System]Gateway/Database/\u0027 + {value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "labelOverride": "Connection Saturation",
+            "tagName": "ConnectionSaturation"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Analogue Value w Sparkline w Label",
+          "style": {
+            "marginTop": "2px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Form/Panel-normal"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

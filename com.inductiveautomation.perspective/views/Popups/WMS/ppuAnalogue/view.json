@@ -1,0 +1,1049 @@
+{
+  "custom": {
+    "deviceDescription": "Discharge",
+    "deviceTagPath": "Water Monitoring System/International/North West Pump Station/Discharge Pressure",
+    "pens": [
+      {
+        "axis": "Analogue",
+        "data": {
+          "aggregateMode": "default"
+        },
+        "display": {
+          "breakLine": true,
+          "interpolation": "curveLinear",
+          "radius": 3,
+          "styles": {
+            "highlighted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            },
+            "muted": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.4
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.4,
+                "width": 1
+              }
+            },
+            "normal": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 0.8
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 0.8,
+                "width": 1
+              }
+            },
+            "selected": {
+              "fill": {
+                "color": "#FC8D62",
+                "opacity": 1
+              },
+              "stroke": {
+                "color": "#FC8D62",
+                "dashArray": 0,
+                "opacity": 1,
+                "width": 1
+              }
+            }
+          },
+          "type": "line"
+        },
+        "enabled": true,
+        "plot": 0,
+        "selectable": true,
+        "visible": true
+      }
+    ],
+    "siteName": "North West Pump Station",
+    "sitePath": "Water Monitoring System/International/North West Pump Station",
+    "subArea": "WMS International"
+  },
+  "params": {
+    "AnalogueName": "Pressure",
+    "deviceName": "Discharge Pressure",
+    "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+  },
+  "propConfig": {
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.pens": {
+      "persistent": true
+    },
+    "custom.pens[0].data.source": {
+      "binding": {
+        "config": {
+          "expression": "{HistorySource} + {view.custom.deviceTagPath} + \u0027/Status/\u0027 +{view.params.AnalogueName}"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\u0027[default]\u0027,\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.pens[0].name": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.DeviceName"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Alarm_ParentDevice"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.sitePath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters/Alarm_Area"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.AnalogueName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 540,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "8pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tnew_value \u003d value.replace(\"International \", \"\")\n\tdisplay_value \u003d new_value.replace(\"Domestic \", \"\")\n\treturn display_value",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Symbol_Double"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.device.name": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.device.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.sitePath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_1"
+                },
+                "position": {
+                  "basis": "10%"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Alarm Summary/Priority Counts/Active"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "marginRight": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "45px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading2"
+                      },
+                      "text": "Analogue"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "FlexRepeater"
+                    },
+                    "position": {
+                      "basis": "100%"
+                    },
+                    "propConfig": {
+                      "props.instances[0].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[0].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[0].labelOverride": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "deviceTagPath": "{view.custom.deviceTagPath}"
+                            },
+                            "tagPath": "{deviceTagPath}/Parameters.DeviceName"
+                          },
+                          "type": "tag"
+                        }
+                      },
+                      "props.instances[0].tagName": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.AnalogueName"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[0].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[1].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[1].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[1].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[2].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[2].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[2].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Status\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.instances[3].instanceStyle.display": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({this.props.instances[3].tagQuality}\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.instances[3].tagParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "{value} + \u0027/Set Points\u0027",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "direction": "column",
+                      "elementPosition": {
+                        "basis": "40px",
+                        "grow": 0
+                      },
+                      "elementStyle": {
+                        "margin": "1px"
+                      },
+                      "instances": [
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "showUnitsInValue": true,
+                          "tagQuality": "Good",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "showUnitsInValue": true,
+                          "tagName": "Pressure1",
+                          "tagQuality": "Bad_Disabled",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "showUnitsInValue": true,
+                          "tagName": "Pressure2",
+                          "tagQuality": "Bad_Disabled",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        },
+                        {
+                          "hideLabel": false,
+                          "instancePosition": {},
+                          "instanceStyle": {
+                            "classes": ""
+                          },
+                          "labelOverride": "",
+                          "showUnitsInValue": true,
+                          "tagName": "Pressure Set Point",
+                          "tagQuality": "Bad_Disabled",
+                          "unitsWidth": "40px",
+                          "valueWidth": "100px"
+                        }
+                      ],
+                      "path": "Shared/Templates/Display/Analogue Value w Label",
+                      "style": {
+                        "overflow": "hidden"
+                      },
+                      "useDefaultViewHeight": false,
+                      "useDefaultViewWidth": false
+                    },
+                    "type": "ia.display.flex-repeater"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "205px"
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Info Icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#009BFF",
+                  "path": "material/info",
+                  "style": {
+                    "classes": "Input/Icon",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "\u0027Tag path: \u0027 + {value}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "fontSize": "8pt",
+                        "fontWeight": "lighter",
+                        "marginLeft": "5px",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Info"
+                },
+                "position": {
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginTop": "5px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Analogues"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Popups/ContentMargins"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "draggable": true,
+                        "id": "pwMGOKRj",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": true,
+                        "showCloseIcon": true,
+                        "type": "open",
+                        "viewParams": {
+                          "deviceName": "{view.params.deviceName}",
+                          "deviceParentPath": "{view.params.deviceParentPath}",
+                          "pens": "{view.custom.pens}"
+                        },
+                        "viewPath": "Popups/Trend Popup",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button"
+                },
+                "position": {
+                  "basis": "40px"
+                },
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/show_chart"
+                    }
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+                  },
+                  "text": "Historical Trends"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "custom": {
+                  "tags": [
+                    {
+                      "aggregate": "Average"
+                    }
+                  ]
+                },
+                "meta": {
+                  "name": "TimeSeriesChart"
+                },
+                "position": {
+                  "basis": "400px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "custom.tags[0].alias": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Parameters.DeviceName"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.tags[0].path": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.custom.deviceTagPath}+ \u0027/Status/\u0027 + {view.params.AnalogueName}"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.series[0].data": {
+                    "binding": {
+                      "config": {
+                        "aggregate": "MinMax",
+                        "avoidScanClassValidation": true,
+                        "dateRange": {
+                          "mostRecent": "1",
+                          "mostRecentUnits": "HOUR"
+                        },
+                        "enableValueCache": true,
+                        "ignoreBadQuality": false,
+                        "polling": {
+                          "enabled": true,
+                          "rate": "1"
+                        },
+                        "preventInterpolation": false,
+                        "returnFormat": "Wide",
+                        "returnSize": {
+                          "numRows": "100",
+                          "type": "FIXED"
+                        },
+                        "tags": "{this.custom.tags}",
+                        "valueFormat": "DATASET"
+                      },
+                      "type": "tag-history"
+                    }
+                  }
+                },
+                "props": {
+                  "legend": {
+                    "visible": true
+                  },
+                  "plots": [
+                    {
+                      "axes": [
+                        {
+                          "alignment": "left",
+                          "grid": {
+                            "color": "",
+                            "dashArray": 0,
+                            "opacity": 0.9,
+                            "style": {
+                              "classes": ""
+                            },
+                            "visible": false
+                          },
+                          "label": {
+                            "font": {
+                              "color": "",
+                              "size": 10
+                            },
+                            "offset": 0,
+                            "style": {
+                              "classes": ""
+                            },
+                            "text": "Instantaneous Flow",
+                            "visible": true
+                          },
+                          "max": "",
+                          "min": "",
+                          "name": "Analogue",
+                          "style": {
+                            "classes": ""
+                          },
+                          "tick": {
+                            "color": "",
+                            "count": "Auto",
+                            "label": {
+                              "font": {
+                                "color": "",
+                                "size": 10
+                              },
+                              "format": "Auto",
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "style": {
+                              "classes": ""
+                            }
+                          },
+                          "width": 60
+                        }
+                      ],
+                      "markers": [],
+                      "relativeWeight": 1,
+                      "trends": [
+                        {
+                          "axis": "Instantaneous Flow",
+                          "baselines": [],
+                          "breakLine": true,
+                          "columns": [],
+                          "interpolation": "curveLinear",
+                          "radius": 2,
+                          "series": "Flow",
+                          "stack": true,
+                          "type": "line",
+                          "visible": true
+                        }
+                      ]
+                    }
+                  ],
+                  "series": [
+                    {
+                      "name": "Analogue"
+                    }
+                  ]
+                },
+                "type": "ia.chart.timeseries"
+              }
+            ],
+            "meta": {
+              "name": "Trends"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "alarms_expanded"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceName}"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.deviceParentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.sitePath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "controlEnable": true,
+                "show": {
+                  "area": false,
+                  "device": false
+                }
+              },
+              "path": "Shared/Templates/Devices/Control/Common/Alarms",
+              "style": {
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "400px",
+          "grow": 1
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "classes": "UI/Popups/Background"
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Analogues",
+            "Trends",
+            "Alarms"
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "custom": {
+    "ActiveAck": false,
+    "ActiveUnack": false,
+    "AlarmCount": 0,
+    "DeviceTagPath": "High Voltage/International/Link Road Substation/Switch A1_1",
+    "switchType": "Moxa",
+    "tags": [
+      {
+        "tagName": "Fault",
+        "tagParentPath": "[default]High Voltage/International/Link Road Substation/Switch A1_1/Alarms"
+      },
+      {
+        "tagName": "Offline",
+        "tagParentPath": "[default]High Voltage/International/Link Road Substation/Switch A1_1/Alarms"
+      },
+      {
+        "tagName": "Power Supply 1 Failure",
+        "tagParentPath": "[default]High Voltage/International/Link Road Substation/Switch A1_1/Alarms"
+      },
+      {
+        "tagName": "Power Supply 2 Failure",
+        "tagParentPath": "[default]High Voltage/International/Link Road Substation/Switch A1_1/Alarms"
+      }
+    ]
+  },
+  "params": {
+    "DeviceName": "Switch A1_1",
+    "DeviceParentPath": "High Voltage/International/Link Road Substation",
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.switchType": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "DeviceTagPath": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{DeviceTagPath}/Parameters.Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 62,
+      "width": 128
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.2858,
+          "width": 0.1641,
+          "x": 0.0713,
+          "y": 0.3197
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Status"
+        },
+        "position": {
+          "height": 0.2042,
+          "width": 0.9609,
+          "x": 0.0234,
+          "y": -0.0018
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.switchType}+ \u0027 \u0027+{view.params.DeviceName}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Status_0"
+        },
+        "position": {
+          "height": 0.1498,
+          "width": 0.9609,
+          "x": 0.0234,
+          "y": 0.7535
+        },
+        "propConfig": {
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceTagPath": "{view.custom.DeviceTagPath}"
+                },
+                "tagPath": "{DeviceTagPath}/Parameters.IP"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "9a1kq40R",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "SW_V3"
+        },
+        "position": {
+          "height": 0.4032,
+          "width": 0.5391,
+          "x": 0.2309,
+          "y": 0.2697
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs16",
+              "name": "defs16",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m -233.85363,107.9449 h 12.37848 V 97.900921 h -4.50116 v -3.524287 h -4.88797 v 3.524287 h -4.67694 V 107.9449 Z",
+                  "id": "path2",
+                  "name": "path2",
+                  "stroke": {
+                    "width": 3
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m -211.32084,107.9449 h 12.37848 V 97.900921 h -4.50116 v -3.52429 h -4.88797 v 3.52429 h -4.67694 V 107.9449 Z",
+                  "id": "path2-5",
+                  "name": "path2-5",
+                  "stroke": {
+                    "width": 3
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m -188.25888,107.9449 h 12.37848 V 97.900921 h -4.50116 v -3.524288 h -4.88797 v 3.524288 h -4.67694 V 107.9449 Z",
+                  "id": "path2-5-3",
+                  "name": "path2-5-3",
+                  "stroke": {
+                    "width": 3
+                  },
+                  "type": "path"
+                },
+                {
+                  "height": "28.858377",
+                  "id": "rect8",
+                  "name": "rect8",
+                  "ry": "4.9805927",
+                  "stroke": {
+                    "linecap": "round",
+                    "width": 3
+                  },
+                  "style": {
+                    "paintOrder": "markers fill stroke"
+                  },
+                  "type": "rect",
+                  "width": "77.398155",
+                  "x": "-244.33412",
+                  "y": "86.580803"
+                }
+              ],
+              "fill": {
+                "paint": "transparent"
+              },
+              "id": "g10",
+              "name": "g10",
+              "stroke": {
+                "linejoin": "round",
+                "paint": "Var(--neutral-80)",
+                "width": 5
+              },
+              "transform": "translate(245.5634,-85.352244)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 79.856706 31.315381"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -50,
+      "y": -26.9999942779541
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

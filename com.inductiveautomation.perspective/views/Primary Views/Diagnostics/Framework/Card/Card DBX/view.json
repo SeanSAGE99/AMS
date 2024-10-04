@@ -1,0 +1,515 @@
+{
+  "custom": {
+    "instances": [
+      {
+        "deviceName": "BPG_DBX00",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX00"
+      },
+      {
+        "deviceName": "BPG_DBX01",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX01"
+      },
+      {
+        "deviceName": "BPG_DBX02A",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX02A"
+      },
+      {
+        "deviceName": "BPG_DBX03",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX03"
+      },
+      {
+        "deviceName": "BPG_DBX04",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX04"
+      },
+      {
+        "deviceName": "BPG_DBX04A",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX04A"
+      },
+      {
+        "deviceName": "BPG_DBX05",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX05"
+      },
+      {
+        "deviceName": "BPG_DBX06",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX06"
+      },
+      {
+        "deviceName": "BPG_DBX06A",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX06A"
+      },
+      {
+        "deviceName": "BPG_DBX07",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX07"
+      },
+      {
+        "deviceName": "BPG_DBX09",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX09"
+      },
+      {
+        "deviceName": "BPG_DBX10",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX10"
+      },
+      {
+        "deviceName": "BPG_DBX11",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX11"
+      },
+      {
+        "deviceName": "BPG_DBX12",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX12"
+      },
+      {
+        "deviceName": "BPG_DBX13A",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX13A"
+      },
+      {
+        "deviceName": "BPG_DBX14",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX14"
+      },
+      {
+        "deviceName": "BPG_DBX15",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX15"
+      },
+      {
+        "deviceName": "BPG_DBX16",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX16"
+      },
+      {
+        "deviceName": "BPG_DBX51",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX51"
+      },
+      {
+        "deviceName": "BPG_DBX52",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX52"
+      },
+      {
+        "deviceName": "BPG_DBX100",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX100"
+      },
+      {
+        "deviceName": "BPG_DBX101",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX101"
+      },
+      {
+        "deviceName": "BPG_DBX102",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBX102"
+      },
+      {
+        "deviceName": "BPG_DBXT",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/BPG_DBXT"
+      },
+      {
+        "deviceName": "test_BPG_DBX1",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/test_BPG_DBX1"
+      },
+      {
+        "deviceName": "test_BPG_DBX2",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/test_BPG_DBX2"
+      },
+      {
+        "deviceName": "test_BPG_DBX7",
+        "deviceTagPath": "[default]International/T1/Pier B/Apron/test_BPG_DBX7"
+      }
+    ]
+  },
+  "params": {
+    "params": {
+      "areaPath": "International/T1/Pier B/Apron"
+    },
+    "path": "Primary Views/Diagnostics/Embedded/DBX Devices",
+    "title": "Arrivals",
+    "useDefaultHeight": false,
+    "useDefaultWidth": false
+  },
+  "propConfig": {
+    "custom.instances": {
+      "binding": {
+        "config": {
+          "expression": "now(60000)"
+        },
+        "transforms": [
+          {
+            "code": "\tinstances \u003d []\n\tres \u003d system.tag.browse(self.params.params.areaPath, {\"tagType\":\"UdtInstance\", \"recursive\":True, \u0027name\u0027:\u0027*DBX*\u0027})\n\tfor result in res.getResults():\n\t\tinstances.append({\"deviceTagPath\":result[\"fullPath\"],\"deviceName\":result[\"name\"]})\n\treturn instances\n\t",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.params": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.path": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultHeight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultWidth": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 339,
+      "width": 369
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights Off Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Off"
+            },
+            "position": {
+              "basis": "NaNpx",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Low Voltage\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "Off"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 25pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "25pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Low Voltage\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "25%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 50pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "50pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Low Voltage\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "50%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 75pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "75pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Low Voltage\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "75%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 100pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "100pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "//check if the user has got the required Security Level to enable the botton\r\ntry (\r\nisAuthorized (false, \u0027Authenticated/Roles/Administrator\u0027, \u0027Authenticated/Roles/Low Voltage\u0027),\r\nfalse) //fallback"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "100%"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-evenly",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params": {
+            "binding": {
+              "config": {
+                "path": "view.params.params"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.params.path"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewHeight": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultHeight"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewWidth": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultWidth"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Embedded"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Framework/Card/Card UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

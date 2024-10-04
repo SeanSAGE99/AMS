@@ -1,0 +1,361 @@
+{
+  "custom": {
+    "DeviceTagPath": "/TX01"
+  },
+  "params": {
+    "DeviceName": "TX01",
+    "Rating": "1.5kVA",
+    "StarDeltaVisible": true,
+    "TXDetail": "Chiller 5",
+    "TXDetailVisible": true,
+    "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Rating": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.StarDeltaVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.TXDetail": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.TXDetailVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 48,
+      "width": 125
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2853,
+          "width": 0.56,
+          "x": 0.4436,
+          "y": 0.0154
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.textStyle.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginBottom": 2,
+            "marginTop": 2
+          },
+          "textStyle": {
+            "textAlign": "left",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TX Optymised"
+        },
+        "position": {
+          "height": 0.9987,
+          "width": 0.264,
+          "x": 0.1762,
+          "y": 0.0219
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "cx": 4.3078,
+                      "cy": 10.153,
+                      "fill": {
+                        "opacity": ".76591",
+                        "paint": "\"var(--neutral-30)\""
+                      },
+                      "name": "path649-1-5",
+                      "r": 2.5,
+                      "style": {
+                        "paintOrder": "markers fill stroke"
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "cx": "4.4218",
+                      "cy": "7.1736",
+                      "fill": {
+                        "opacity": ".76591",
+                        "paint": "\"var(--neutral-30)\""
+                      },
+                      "name": "path649",
+                      "r": "2.5",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "var(--callToAction--disabled)",
+                        "width": ".26459"
+                      },
+                      "style": {
+                        "paintOrder": "markers fill stroke"
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "cx": "4.4219",
+                      "cy": "10.121",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path649-1",
+                      "r": "2.5",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "var(--callToAction--disabled)",
+                        "width": ".26459"
+                      },
+                      "style": {
+                        "paintOrder": "markers fill stroke"
+                      },
+                      "type": "circle"
+                    }
+                  ],
+                  "name": "g7392",
+                  "transform": "translate(-1.6213 -4.463)",
+                  "type": "group"
+                }
+              ],
+              "name": "layer2",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 5.5561 8.4668"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.2853,
+          "width": 0.56,
+          "x": 0.4436,
+          "y": 0.3593
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Rating"
+              },
+              "type": "property"
+            }
+          },
+          "props.textStyle.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginBottom": 2,
+            "marginTop": 2
+          },
+          "textStyle": {
+            "textAlign": "left",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.2853,
+          "width": 0.56,
+          "x": 0.4436,
+          "y": 0.6879
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.TXDetailVisible"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.TXDetail"
+              },
+              "type": "property"
+            }
+          },
+          "props.textStyle.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginBottom": 2,
+            "marginTop": 2
+          },
+          "textStyle": {
+            "textAlign": "left",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "delta"
+        },
+        "position": {
+          "height": 0.1708,
+          "width": 0.0672,
+          "x": 0.28,
+          "y": 0.1248
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.StarDeltaVisible"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m128.96 141.8c-0.15871-0.41358 5.7987-12.862 25.141-52.534 11.761-24.122 14.072-28.744 14.515-29.024 1.0422-0.65964 4.4968-0.64687 5.5768 0.02063 0.44838 0.27712 12.603 25.016 34.206 69.622 3.0628 6.3241 5.4959 11.688 5.4069 11.92-0.24168 0.62982-84.604 0.62568-84.845-4e-3zm67.063-10.258c0-0.0683-2.934-6.1523-6.52-13.52-14.969-30.754-21.383-43.813-21.658-44.095-0.17811-0.18242-2.5597 4.3168-6.0978 11.52-12.923 26.31-22.364 45.71-22.364 45.958 0 0.14393 12.744 0.26169 28.32 0.26169s28.32-0.0559 28.32-0.12422z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-128.96 -59.752)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 84.851 82.52"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "star_0"
+        },
+        "position": {
+          "height": 0.1438,
+          "width": 0.0496,
+          "x": 0.288,
+          "y": 0.7073
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "view.params.StarDeltaVisible"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m95.744 27.393c-1.5027 0.18622-2.955 1.0525-3.5781 2.4805-0.89555 2.0282-0.78026 4.3071-1.0003 6.4712-0.36848 7.7984-0.18899 15.61-0.2371 23.414-2.84e-4 1.175-5.69e-4 2.35-8.54e-4 3.525-7.6263 7.7308-15.501 15.229-22.748 23.324-1.1389 1.453-2.5521 2.794-3.1621 4.5762-0.45622 1.435-0.03782 3.0679 0.91797 4.1953 1.3898 1.1686 3.5189 1.4814 5.1135 0.52881 2.0608-1.204 3.7804-2.9007 5.5906-4.4397 6.6677-6.029 12.901-12.515 19.292-18.831 7.3021 7.2228 14.391 14.686 22.199 21.373 1.5172 1.1486 3.1343 2.656 5.1836 2.457 1.2729-0.15565 2.6732-0.68734 3.1729-1.9833 0.66689-1.2691 0.74288-2.8363 0.019-4.1013-1.0502-1.9026-2.6265-3.4479-4.0188-5.099-5.9796-6.5841-12.392-12.756-18.641-19.08-0.97286-0.97452-1.9457-1.949-2.9186-2.9236-0.0633-9.6173 0.20316-19.246-0.35013-28.853-0.19246-1.7739-0.25674-3.7065-1.2862-5.2311-0.80082-1.1102-2.1818-1.8316-3.5473-1.8025z",
+                  "fill": "var(--callToAction--disabled)",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-64.833 -27.392)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 62.186 69.093"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0.016,
+      "y": -0.125
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,804 @@
+{
+  "custom": {
+    "deviceTagPath": "International/Precinct/Giovanni Bridge/Giovanni Brunetti Bridge Retention Pit Pumps",
+    "siteName": "Giovanni Brunetti Bridge",
+    "subArea": "International"
+  },
+  "params": {
+    "Pump1Name": "Pump 1",
+    "Pump2Name": "Pump 2",
+    "Pump3Name": "Pump 3",
+    "Pump4Name": "Pump 4",
+    "WellOrPit": "Pit",
+    "deviceName": "Giovanni Brunetti Bridge Retention Pit Pumps",
+    "deviceParentPath": "International/Precinct/Giovanni Bridge"
+  },
+  "propConfig": {
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "expression": "tag({view.custom.deviceTagPath} + \u0027/\u0027 +{view.params.Pump1Name} + \u0027/Parameters.Alarm_ParentDevice\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "expression": "tag({view.custom.deviceTagPath} + \u0027/\u0027 +{view.params.Pump1Name} + \u0027/Parameters.Alarm_Area\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.Pump1Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Pump2Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Pump3Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Pump4Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.WellOrPit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 390,
+      "width": 412
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "tag({view.custom.deviceTagPath} + \u0027/\u0027 +{view.params.Pump1Name} + \u0027/Parameters.Description\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "overflow": "hidden",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "custom": {
+                      "key": "value"
+                    },
+                    "meta": {
+                      "name": "AlarmsIcon"
+                    },
+                    "position": {
+                      "height": 40,
+                      "width": 40
+                    },
+                    "propConfig": {
+                      "props.image.icon.path": {
+                        "binding": {
+                          "config": {
+                            "fallbackDelay": 2.5,
+                            "mode": "indirect",
+                            "references": {
+                              "1": "{view.custom.deviceTypePath}"
+                            },
+                            "tagPath": "{1}/Alarm Summary/Active Unack"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "if({value} \u003d 0, \u0027material/warning\u0027, \u0027\u0027)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "tag"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "height": 38,
+                        "icon": {
+                          "color": "var(--neutral-60)"
+                        },
+                        "width": 38
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginRight": "10px",
+                        "overflow": "hidden"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "meta": {
+                      "name": "Alarm Icon"
+                    },
+                    "position": {
+                      "height": 38,
+                      "width": 38,
+                      "x": 1,
+                      "y": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTypePath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "deviceName": "",
+                          "deviceParentPath": "",
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol",
+                      "style": {
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Body\").getChild(\"details_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"trend_expanded\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Body\").getChild(\"alarms_expanded\").position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Alarm Button"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTypePath": "{view.custom.deviceTypePath}"
+                        },
+                        "tagPath": "{deviceTypePath}/Alarm Summary/Active Unack"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "cursor": "pointer",
+                    "marginBottom": 3,
+                    "marginRight": 5,
+                    "marginTop": 3,
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.coord"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "alarms_expanded"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.deviceName": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.deviceParentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceParentPath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "controlEnable": true,
+                        "show": {
+                          "area": false,
+                          "device": false
+                        }
+                      },
+                      "path": "Shared/Templates/Devices/Control/Common/Alarms",
+                      "style": {
+                        "marginBottom": "5px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px"
+                      }
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "300px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FlexRepeater"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.instances[0].deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Pump1Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[0].deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[0].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({this.props.instances[0].deviceParentPath}+\u0027/\u0027+{this.props.instances[0].deviceName}+\u0027/Status/Running.Quality\u0027)\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[1].deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Pump2Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[1].deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[1].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({this.props.instances[1].deviceParentPath}+\u0027/\u0027+{this.props.instances[1].deviceName}+\u0027/Status/Running.Quality\u0027)\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[2].deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Pump3Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[2].deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[2].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({this.props.instances[2].deviceParentPath}+\u0027/\u0027+{this.props.instances[2].deviceName}+\u0027/Status/Running.Quality\u0027)\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.instances[3].deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.Pump4Name"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[3].deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[3].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({this.props.instances[3].deviceParentPath}+\u0027/\u0027+{this.props.instances[3].deviceName}+\u0027/Status/Running.Quality\u0027)\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "alignItems": "center",
+                  "instances": [
+                    {
+                      "PumpRight": false,
+                      "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "popupWindow": ""
+                    },
+                    {
+                      "PumpRight": false,
+                      "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "popupWindow": ""
+                    },
+                    {
+                      "PumpRight": false,
+                      "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "popupWindow": ""
+                    },
+                    {
+                      "PumpRight": false,
+                      "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      },
+                      "popupWindow": ""
+                    }
+                  ],
+                  "justify": "center",
+                  "path": "Templates/WMS/Simple Pump"
+                },
+                "type": "ia.display.flex-repeater"
+              },
+              {
+                "meta": {
+                  "name": "FlexRepeater_0"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.instances[0].deviceName": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.WellOrPit"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[0].deviceParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.instances[0].instanceStyle.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(tag({this.props.instances[0].deviceParentPath}+\u0027/\u0027+{this.props.instances[0].deviceName}+\u0027/Alarms/High Level Alarm.Quality\u0027)\u003d\"Good\", \u0027flex\u0027, \u0027none\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "alignItems": "center",
+                  "instances": [
+                    {
+                      "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                      "instancePosition": {},
+                      "instanceStyle": {
+                        "classes": ""
+                      }
+                    }
+                  ],
+                  "justify": "center",
+                  "path": "Templates/WMS/Pit"
+                },
+                "type": "ia.display.flex-repeater"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Info Icon"
+                },
+                "position": {
+                  "basis": "20px",
+                  "shrink": 0
+                },
+                "props": {
+                  "color": "#009BFF",
+                  "path": "material/info",
+                  "style": {
+                    "classes": "Input/Icon",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_2"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "\u0027Tag path: \u0027 + {value}",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "fontSize": "8pt",
+                        "fontWeight": "lighter",
+                        "marginLeft": "5px",
+                        "overflow": "hidden"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Info"
+                },
+                "position": {
+                  "display": false,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "marginTop": "5px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_2"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "586px"
+        },
+        "props": {
+          "menuType": "modern",
+          "style": {
+            "overflow": "hidden"
+          },
+          "tabSize": {
+            "width": 120
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Status",
+            "Alarms"
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "overflow": "hidden"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

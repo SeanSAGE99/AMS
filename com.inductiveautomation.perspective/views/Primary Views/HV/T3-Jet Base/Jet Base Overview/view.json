@@ -1,0 +1,600 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Substation S"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.8276,
+          "x": 0.0855,
+          "y": 0.0647
+        },
+        "props": {
+          "params": {
+            "CB13": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation S"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation V"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.1514,
+          "y": 0.2438
+        },
+        "props": {
+          "params": {
+            "CB01": true,
+            "CB02": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation V"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation W"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.3358,
+          "y": 0.2437
+        },
+        "props": {
+          "params": {
+            "CB01": true,
+            "CB02": true,
+            "CB04": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation W"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation T"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1833,
+          "x": 0.0896,
+          "y": 0.4233
+        },
+        "props": {
+          "params": {
+            "CB04": true,
+            "CB05": true,
+            "CB06": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation T"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation U"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1833,
+          "x": 0.3358,
+          "y": 0.4225
+        },
+        "props": {
+          "params": {
+            "CB04": true,
+            "CB05": true,
+            "CB06": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation U"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation N"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1833,
+          "x": 0.2169,
+          "y": 0.6025
+        },
+        "props": {
+          "params": {
+            "CB04": true,
+            "CB05": true,
+            "CB06": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation N"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation C"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.0619,
+          "y": 0.7818
+        },
+        "props": {
+          "params": {
+            "CB01": true,
+            "CB02": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation C"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation E"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1833,
+          "x": 0.2467,
+          "y": 0.7816
+        },
+        "props": {
+          "params": {
+            "CB04": true,
+            "CB05": true,
+            "CB06": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation E"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/overview"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0717,
+          "x": 0.0271,
+          "y": 0.9536
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "HV Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0,
+          "width": 0.1,
+          "x": 0.45,
+          "y": 0.04
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1",
+            "fontWeight": "bold"
+          },
+          "text": "T3 Jetbase Main Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Substation A"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.6924,
+          "y": 0.2437
+        },
+        "props": {
+          "params": {
+            "CB01": true,
+            "CB02": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation A - Overview"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Substation B"
+        },
+        "position": {
+          "height": 0.1138,
+          "width": 0.1216,
+          "x": 0.5295,
+          "y": 0.2437
+        },
+        "props": {
+          "params": {
+            "CB04": true,
+            "CB05": true,
+            "CB06": true
+          },
+          "path": "Templates/HV/Small Subs Views/Jet Base/Substation B"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3771,
+                "y": 0.25
+              }
+            ],
+            "x": 0.3771,
+            "y": 0.1721
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.163,
+                        "y": 0.8885
+                      }
+                    ],
+                    "x": 0.163,
+                    "y": 0.9308
+                  }
+                ],
+                "x": 0.8672,
+                "y": 0.9308
+              }
+            ],
+            "x": 0.8672,
+            "y": 0.1782
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1926,
+                        "y": 0.251
+                      }
+                    ],
+                    "x": 0.1926,
+                    "y": 0.2116
+                  }
+                ],
+                "x": 0.3478,
+                "y": 0.2116
+              }
+            ],
+            "x": 0.3478,
+            "y": 0.25
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.4963,
+                        "y": 0.4288
+                      }
+                    ],
+                    "x": 0.4963,
+                    "y": 0.3884
+                  }
+                ],
+                "x": 0.1636,
+                "y": 0.3884
+              }
+            ],
+            "x": 0.1636,
+            "y": 0.351
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3776,
+                "y": 0.6087
+              }
+            ],
+            "x": 0.3776,
+            "y": 0.5298
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.3478,
+                        "y": 0.5298
+                      }
+                    ],
+                    "x": 0.3478,
+                    "y": 0.5712
+                  }
+                ],
+                "x": 0.1907,
+                "y": 0.5712
+              }
+            ],
+            "x": 0.1907,
+            "y": 0.5308
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2886,
+                "y": 0.7885
+              }
+            ],
+            "x": 0.2886,
+            "y": 0.7096
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_9",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.074,
+                        "y": 0.7885
+                      }
+                    ],
+                    "x": 0.074,
+                    "y": 0.7491
+                  }
+                ],
+                "x": 0.2588,
+                "y": 0.7491
+              }
+            ],
+            "x": 0.2588,
+            "y": 0.7885
+          },
+          "start": "none",
+          "stroke": "var(--dev-txtbg-running)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_10",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.7042,
+                        "y": 0.351
+                      }
+                    ],
+                    "x": 0.7042,
+                    "y": 0.3993
+                  }
+                ],
+                "x": 0.6356,
+                "y": 0.3993
+              }
+            ],
+            "x": 0.6356,
+            "y": 0.351
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5385,
+                "y": 0.2654
+              }
+            ],
+            "x": 0.5385,
+            "y": 0.1721
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7933,
+                "y": 0.2654
+              }
+            ],
+            "x": 0.7933,
+            "y": 0.1721
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

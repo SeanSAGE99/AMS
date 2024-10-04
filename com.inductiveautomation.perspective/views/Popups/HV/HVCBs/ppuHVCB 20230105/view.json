@@ -1,0 +1,1359 @@
+{
+  "custom": {
+    "commandTagExist": true,
+    "controlEnable": null,
+    "controlPopupId": "High Voltage/Domestic/Test Substation/PLC/CB01Cmd",
+    "deviceDescription": "High Voltage CB",
+    "deviceTagPath": "High Voltage/Domestic/Test Substation/PLC/CB01",
+    "siteName": "Test Substation",
+    "sitePath": "High Voltage/Domestic/Test Substation",
+    "subArea": "Domestic"
+  },
+  "params": {
+    "deviceName": "CB01",
+    "deviceParentPath": "High Voltage/Domestic/Test Substation/PLC"
+  },
+  "propConfig": {
+    "custom.commandTagExist": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}+ \u0027/Command/Close Command.Enabled\u0027"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.controlEnable": {
+      "binding": {
+        "config": {
+          "path": "/root/TabContainer/Commands/Authentication.custom.controlEnable"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.controlPopupId": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.deviceTagPath} + \"Cmd\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+ \u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.siteName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "sitePath": "{view.custom.sitePath}"
+          },
+          "tagPath": "{sitePath}/Site Details/Parameters.Site_Name"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.sitePath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}"
+        },
+        "transforms": [
+          {
+            "expression": "replace({value},\"/PLC\",\"\")",
+            "type": "expression"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.subArea": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "sitePath": "{view.custom.sitePath}"
+          },
+          "tagPath": "{sitePath}/Site Details/Parameters/Site_SubArea"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 500,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label_1"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.params.deviceName} + \u0027 - \u0027 + {view.custom.deviceDescription}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "12pt",
+                        "fontWeight": "bold",
+                        "letterSpacing": "1px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{view.custom.subArea} + \u0027 - \u0027 + {view.custom.siteName}"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-20)",
+                        "fontSize": "10pt",
+                        "fontStyle": "italic",
+                        "fontWeight": "lighter",
+                        "letterSpacing": "1px",
+                        "marginBottom": "5px",
+                        "textAlign": "center",
+                        "textTransform": "uppercase"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Symbol_Double"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "props.params.alarmSummary.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.deviceTagPath"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.device.name": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.deviceName"
+                          },
+                          "type": "property"
+                        }
+                      },
+                      "props.params.device.parentPath": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.sitePath"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "params": {
+                        "alarmSummary": {
+                          "enabled": true
+                        },
+                        "device": {
+                          "enabled": false
+                        }
+                      },
+                      "path": "Shared/Alarms/Symbol"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_1"
+                },
+                "position": {
+                  "basis": "10%"
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "deviceTagPath": "{view.custom.deviceTagPath}"
+                        },
+                        "tagPath": "{deviceTagPath}/Alarm Summary/Active Unack"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "marginRight": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.key": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Local Mode",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "",
+                    "showUnitsInValue": "",
+                    "tagName": "Local Mode",
+                    "tagQuality": "Good",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "CB Closed"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "",
+                    "tagName": "CB Closed",
+                    "tagQuality": "Good"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "CB Open"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "labelOverride": "",
+                    "tagName": "CB Open",
+                    "tagQuality": "Good"
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Racked In"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "",
+                    "showUnitsInValue": "",
+                    "tagName": "Racked In",
+                    "tagQuality": "Good",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "ES Closed"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "",
+                    "showUnitsInValue": "",
+                    "tagName": "ES Closed",
+                    "tagQuality": "Good",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Isolated_LVCB"
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "",
+                    "showUnitsInValue": "",
+                    "tagName": "Isolated",
+                    "tagQuality": "Bad_NotFound(\"Path \u0027[default]High Voltage/Domestic/Test Substation/PLC/CB01/Status Folder/Isolated.quality\u0027 not found.\")",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "meta": {
+                  "name": "Spring Charged",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "basis": "32px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.params.tagQuality}\u003d\"Good\", true, false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.tagParentPath": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.deviceTagPath"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value} + \u0027/Status Folder\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "hideLabel": "",
+                    "labelOverride": "",
+                    "showUnitsInValue": "",
+                    "tagName": "Spring Charged",
+                    "tagQuality": "Good",
+                    "unitsWidth": "",
+                    "valueWidth": ""
+                  },
+                  "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label",
+                  "useDefaultViewHeight": true
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Status"
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "alarms_expanded"
+            },
+            "position": {
+              "tabIndex": 1
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.deviceName} + \u0027/Alarms\u0027"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.params.deviceParentPath": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.custom.sitePath} + \u0027/PLC\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "controlEnable": true,
+                "show": {
+                  "area": false,
+                  "device": false
+                }
+              },
+              "path": "Shared/Templates/Devices/Control/Common/Alarms",
+              "style": {
+                "marginBottom": "5px",
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "32px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Text/Heading2"
+                      },
+                      "text": "Authentication"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "basis": "32px",
+                      "display": "true"
+                    },
+                    "propConfig": {
+                      "props.textStyle.classes": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({parent.custom.authenticationOK} \u003d \"true\",\r\n\t\u0027Pipework/KeyStones/Connected\u0027,\r\n\t\u0027Pipework/KeyStones/Pigging\u0027\r\n)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label Only"
+                        },
+                        "position": {
+                          "basis": "320px"
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "tagName": "username:"
+                          },
+                          "path": "Shared/Templates/Display/Label Only"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Username"
+                        },
+                        "position": {
+                          "basis": "300px"
+                        },
+                        "props": {
+                          "style": {
+                            "marginRight": "30px"
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Username Group"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Popups/ContentMargins",
+                        "overflow": "hidden",
+                        "padding": 5
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label Only"
+                        },
+                        "position": {
+                          "basis": "320px"
+                        },
+                        "props": {
+                          "params": {
+                            "hideLabel": false,
+                            "labelOverride": "",
+                            "tagName": "password:"
+                          },
+                          "path": "Shared/Templates/Display/Label Only"
+                        },
+                        "type": "ia.display.view"
+                      },
+                      {
+                        "meta": {
+                          "name": "Password"
+                        },
+                        "position": {
+                          "basis": "400px"
+                        },
+                        "type": "ia.input.password-field"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Password Group"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "UI/Popups/ContentMargins",
+                        "overflow": "hidden",
+                        "padding": 5
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "custom": {
+                      "key": "value"
+                    },
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tusername \u003d self.getSibling(\u0027Username Group\u0027).getChild(\u0027Username\u0027).props.text\n\tpassword \u003d self.getSibling(\u0027Password Group\u0027).getChild(\u0027Password\u0027).props.text\n\t\n\tvalid \u003d system.security.validateUser(username, password)\n\tif valid:\n\t   self.parent.custom.authenticationOK \u003d \"true\"\n\t   self.getSibling(\"Status\").props.text \u003d \"Authentication Successful\" \n\telse:\n\t \tself.parent.custom.authenticationOK \u003d \"false\"\n\t \tself.getSibling(\"Status\").props.text \u003d \"Authentication Failed!\"\n\n  \tself.getSibling(\u0027Username Group\u0027).getChild(\u0027Username\u0027).props.text \u003d \"\"\n   \tself.getSibling(\u0027Password Group\u0027).getChild(\u0027Password\u0027).props.text \u003d \"\" \n   \tself.getSibling(\u0027Status\u0027).position.display \u003d \"true\""
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Authenticate"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "image": {
+                        "icon": {
+                          "path": "material/login"
+                        }
+                      },
+                      "primary": false,
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+                        "margin": 2,
+                        "marginBottom": 10,
+                        "paddingLeft": "20px",
+                        "paddingRight": "20px"
+                      },
+                      "text": "Login"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "custom": {
+                  "authenticationOK": false
+                },
+                "meta": {
+                  "name": "Authentication"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2"
+                  },
+                  "text": "CB Control"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Open Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Open Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)\t\t"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Open"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Authentication.custom.authenticationOK"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.enabled} \u003d \"true\",\r\n\t\u0027Input/Button/Body-normal Input/Button/Colour/Normal\u0027,\r\n\t\u0027UI/Icon/Button-faded\u0027\r\n)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "primary": false,
+                          "style": {
+                            "margin": "5px"
+                          },
+                          "text": "Open"
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Delayed Open Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Delayed Open Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)\t\t"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Open with Delay"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Authentication.custom.authenticationOK"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.enabled} \u003d \"true\",\r\n\t\u0027Input/Button/Body-normal Input/Button/Colour/Normal\u0027,\r\n\t\u0027UI/Icon/Button-faded\u0027\r\n)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "primary": false,
+                          "style": {
+                            "margin": "5px"
+                          },
+                          "text": "Open - Delay"
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Open Group"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Close Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Close Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)\t"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Close"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Authentication.custom.authenticationOK"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.enabled} \u003d \"true\",\r\n\t\u0027Input/Button/Body-normal Input/Button/Colour/Normal\u0027,\r\n\t\u0027UI/Icon/Button-faded\u0027\r\n)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "primary": false,
+                          "style": {
+                            "margin": "5px"
+                          },
+                          "text": "Close"
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Delayed Close Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.deviceParentPath, \u0027deviceName\u0027 : self.view.params.deviceName, \u0027command\u0027 : \u0027Delayed Close Command\u0027, \u0027onConfirm_WriteValue\u0027 : 1}, showCloseIcon \u003d False, draggable \u003d False)\t"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "Close with Delay"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "..../Authentication.custom.authenticationOK"
+                              },
+                              "type": "property"
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "config": {
+                                "expression": "if({this.props.enabled} \u003d \"true\",\r\n\t\u0027Input/Button/Body-normal Input/Button/Colour/Normal\u0027,\r\n\t\u0027UI/Icon/Button-faded\u0027\r\n)"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "primary": false,
+                          "style": {
+                            "margin": "5px"
+                          },
+                          "text": "Close - Delay"
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Close Group"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Command buttons"
+                },
+                "position": {
+                  "basis": "140px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Popups/ContentMargins"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Commands"
+            },
+            "position": {
+              "tabIndex": 2
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "TabContainer"
+        },
+        "position": {
+          "basis": "400px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.tabs[2].disabled": {
+            "binding": {
+              "config": {
+                "expression": "!{view.custom.commandTagExist}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "currentTabIndex": 2,
+          "menuType": "modern",
+          "style": {
+            "classes": "UI/Popups/Background"
+          },
+          "tabStyle": {
+            "active": {
+              "fontSize": 12
+            },
+            "disabled": {
+              "fontSize": 12
+            },
+            "inactive": {
+              "fontSize": 12
+            }
+          },
+          "tabs": [
+            "Status",
+            "Alarms",
+            {
+              "text": "Commands"
+            }
+          ]
+        },
+        "type": "ia.container.tab"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.getSibling(\"Info\").position.display \u003d not self.getSibling(\"Info\").position.display"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Info Icon"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "// Check user roles\r\ntry(hasRole(\u0027Administrator\u0027, {session.props.auth.user.userName}, \u0027default\u0027), false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "color": "#009BFF",
+          "path": "material/info",
+          "style": {
+            "classes": "Input/Icon"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_2"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.deviceTagPath"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "\u0027Tag path: \u0027 + {value}",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "8pt",
+                "fontWeight": "lighter",
+                "marginLeft": "5px",
+                "overflow": "auto"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Info"
+        },
+        "position": {
+          "display": false,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(self.view.custom.deviceTagPath)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "30px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

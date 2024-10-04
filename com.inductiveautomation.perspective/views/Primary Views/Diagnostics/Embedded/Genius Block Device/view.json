@@ -1,0 +1,467 @@
+{
+  "custom": {
+    "ActiveAlarm": false,
+    "Name": "BTP-ZP3",
+    "deviceDescription": "FAC1 Genius Block Fault",
+    "deviceParentPath": "[default]International/T1/Terminal B/Plant Room/AMS Panel",
+    "deviceTagPath": "[default]International/T1/Terminal B/Plant Room/AMS Panel/FAC1 Genius Block Fault-LAN 1 Block 16"
+  },
+  "params": {
+    "deviceName": "FAC1 Genius Block Fault-LAN 1 Block 16",
+    "deviceTagPath": "[default]International/T1/Terminal B/Plant Room/AMS Panel/FAC1 Genius Block Fault-LAN 1 Block 16"
+  },
+  "propConfig": {
+    "custom.ActiveAlarm": {
+      "binding": {
+        "config": {
+          "expression": "tag({view.params.deviceTagPath} + \u0027/Alarms/\u0027 + {view.custom.deviceDescription} + \u0027.EventValue\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.Name": {
+      "binding": {
+        "config": {
+          "expression": "tag({view.params.deviceTagPath} + \u0027/Alarms/\u0027 + {view.custom.deviceDescription} + \u0027.Label\u0027)"
+        },
+        "transforms": [
+          {
+            "code": "\tsubstring \u003d value.split(\u0027[\u0027)[1]\n\tnew_value \u003d substring.split(\u0027]\u0027)[0]\n\treturn new_value",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "expression": "tag ({view.custom.deviceTagPath} + \u0027.Name\u0027)"
+        },
+        "transforms": [
+          {
+            "code": "\tsubstring \u003d value.split(\u0027-\u0027)[0]\n\treturn substring",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceParentPath": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceTagPath"
+        },
+        "transforms": [
+          {
+            "expression": "//take device name out of the path\r\nreplace({value},concat(\"/\",{view.params.deviceName}),\u0027\u0027)",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceTagPath"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceTagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 114,
+      "width": 300
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.Name"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Name"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "borderBottomColor": "#D5D5D5",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Alarm"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.ActiveAlarm}, 0, 1)"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "var(--error)",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": 1,
+                          "output": "var(--callToAction--disabled)"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.ActiveAlarm}, \u0027Yes\u0027, \u0027No\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderRadius": "4px",
+                "classes": "Framework/Card/Value",
+                "color": "#FFFFFF",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Alarm"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "PLC Name"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag ({view.custom.deviceTagPath} + \u0027.Name\u0027)"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tsubstring \u003d value.split(\u0027 Genius\u0027)[0]\n\treturn substring",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.textStyle.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.props.text}\u003d\"Running\", \"var(--success)\", \"var(--callToAction--disabled)\")"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              },
+              "textStyle": {
+                "color": "var(--callToAction--disabled)"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "PLC Name"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "Block Number"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath} + \u0027/Alarms/\u0027 + {view.custom.deviceDescription} + \u0027.Label\u0027)"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tsubstring \u003d value.split(\u0027Block: \u0027)[1]\n\tnew_value \u003d substring.split(\u0027 Genius\u0027)[0]\n\treturn new_value",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.textStyle.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.props.text}\u003d\"Extended\", \"var(--success)\", \"var(--callToAction--disabled)\")"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Block Number"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Label"
+              },
+              "text": "LAN Number"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "tag({view.params.deviceTagPath} + \u0027/Alarms/\u0027 + {view.custom.deviceDescription} + \u0027.Label\u0027)"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tsubstring \u003d value.split(\u0027LAN: \u0027)[1]\n\tnew_value \u003d substring.split(\u0027, Block\u0027)[0]\n\treturn new_value",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Framework/Card/Value"
+              },
+              "textStyle": {
+                "color": "var(--callToAction--disabled)"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "LAN Number"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Row"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Spacer"
+        },
+        "position": {
+          "basis": "7px",
+          "shrink": 0
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "enabled": true,
+        "style": {
+          "whiteSpace": "pre-line"
+        }
+      }
+    },
+    "propConfig": {
+      "meta.tooltip.text": {
+        "binding": {
+          "config": {
+            "expression": "\u0027Device tag path: \u0027 + \u0027\\n\u0027 +{view.custom.deviceTagPath}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

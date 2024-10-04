@@ -1,0 +1,448 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Terminal B Arrivals Mezzanine"
+        },
+        "position": {
+          "height": 0.8075,
+          "width": 1,
+          "y": 0.1155
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Terminal B Arrivals Mezzanine.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/T1/Terminal B/Arrivals Mezzanine"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX31"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4993,
+          "y": 0.0567
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTG_DBX31",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX04"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.1376,
+          "y": 0.075
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTG_DBX04",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX21"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.1376,
+          "y": 0.043
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTG_DBX21",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX32"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.3816,
+          "y": 0.055
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTG_DBX32",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX22"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.8783,
+          "y": 0.6197
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTG_DBX22",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX07"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.878,
+          "y": 0.3336
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTG_DBX07",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_0"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.267,
+          "y": 0.0449
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine/BTG_DBX32/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_1"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.7012,
+          "y": 0.0074
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Terminal B/Arrivals Mezzanine/BTG_DBX31/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[5].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[6].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2068,
+                "y": 0.101
+              }
+            ],
+            "x": 0.3422,
+            "y": 0.4193
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4182,
+                "y": 0.0827
+              }
+            ],
+            "x": 0.452,
+            "y": 0.276
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.9146,
+                "y": 0.625
+              }
+            ],
+            "x": 0.7812,
+            "y": 0.398
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5688,
+                "y": 0.0827
+              }
+            ],
+            "x": 0.6047,
+            "y": 0.2212
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8813,
+                "y": 0.3519
+              }
+            ],
+            "x": 0.6094,
+            "y": 0.2731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3037,
+                "y": 0.0914
+              }
+            ],
+            "x": 0.4453,
+            "y": 0.276
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7213,
+                "y": 0.0837
+              }
+            ],
+            "x": 0.6094,
+            "y": 0.2212
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

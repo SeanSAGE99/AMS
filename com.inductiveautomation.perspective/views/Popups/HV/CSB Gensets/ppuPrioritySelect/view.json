@@ -1,0 +1,531 @@
+{
+  "custom": {
+    "action": "Genset Startup Sequence",
+    "deviceTagPath": "High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Command/Set Genset Priorities Command"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.action": {
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 404,
+      "width": 362
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.action"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "12pt",
+                "fontWeight": "bold",
+                "letterSpacing": "1px",
+                "textAlign": "center",
+                "textTransform": "uppercase"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "color": "var(--neutral-20)",
+                "fontSize": "10pt",
+                "fontStyle": "italic",
+                "fontWeight": "lighter",
+                "letterSpacing": "1px",
+                "marginBottom": "5px",
+                "textAlign": "center",
+                "textTransform": "none"
+              },
+              "text": "Substation 1 - CSB Genset"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-80)",
+            "borderBottomColor": "var(--neutral-100)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "36px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "65px",
+              "grow": 1
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "text": "Current Order",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "basis": "65px",
+              "grow": 1
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "text": "New Order",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "440px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Genset 1",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Analogue Value"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "formatStringOverride": "",
+                "overrideFontSizeInStyle": false,
+                "showBox": true,
+                "showUnitsInValue": true,
+                "styleClasses": "",
+                "tagName": "Genset 1 Priority Feedback",
+                "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Status",
+                "tagQuality": "Good",
+                "unitsOverride": "",
+                "unitsWidth": "0px"
+              },
+              "path": "Shared/Templates/Display/Analogue Value",
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 25,
+                "marginRight": 25,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Analogue Setpoint"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "actEngMax": 100,
+                "actEngMin": 0,
+                "controlEnable": true,
+                "showUnitsInValue": true,
+                "styleClasses": "",
+                "tagName": "Genset 1 Priority Command",
+                "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Command",
+                "tagQuality": "Good",
+                "unitsOverride": "",
+                "unitsWidth": "0px",
+                "useDeviceRanges": false
+              },
+              "path": "Shared/Templates/Display/Analogue Setpoint",
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 25,
+                "marginRight": 25,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "440px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Genset 2",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Analogue Value"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "formatStringOverride": "",
+                "overrideFontSizeInStyle": false,
+                "showBox": true,
+                "showUnitsInValue": true,
+                "styleClasses": "",
+                "tagName": "Genset 2 Priority Feedback",
+                "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Status",
+                "tagQuality": "Good",
+                "unitsOverride": "",
+                "unitsWidth": "0px"
+              },
+              "path": "Shared/Templates/Display/Analogue Value",
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 25,
+                "marginRight": 25,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Analogue Setpoint"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "actEngMax": 100,
+                "actEngMin": 0,
+                "controlEnable": true,
+                "showUnitsInValue": true,
+                "styleClasses": "",
+                "tagName": "Genset 2 Priority Command",
+                "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Command",
+                "tagQuality": "Good",
+                "unitsOverride": "",
+                "unitsWidth": "0px",
+                "useDeviceRanges": false
+              },
+              "path": "Shared/Templates/Display/Analogue Setpoint",
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 25,
+                "marginRight": 25,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "440px",
+              "grow": 1
+            },
+            "props": {
+              "text": "Genset 3",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Analogue Value"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "formatStringOverride": "",
+                "overrideFontSizeInStyle": false,
+                "showBox": true,
+                "showUnitsInValue": true,
+                "styleClasses": "",
+                "tagName": "Genset 3 Priority Feedback",
+                "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Status",
+                "tagQuality": "Good",
+                "unitsOverride": "",
+                "unitsWidth": "0px"
+              },
+              "path": "Shared/Templates/Display/Analogue Value",
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 25,
+                "marginRight": 25,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Analogue Setpoint"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "actEngMax": 100,
+                "actEngMin": 0,
+                "controlEnable": true,
+                "showUnitsInValue": true,
+                "styleClasses": "",
+                "tagName": "Genset 3 Priority Command",
+                "tagParentPath": "[default]High Voltage/International/Substation 1/CSB Genset PLC/Master/Startup Sequence/Command",
+                "tagQuality": "Good",
+                "unitsOverride": "",
+                "unitsWidth": "0px",
+                "useDeviceRanges": false
+              },
+              "path": "Shared/Templates/Display/Analogue Setpoint",
+              "style": {
+                "marginBottom": 15,
+                "marginLeft": 25,
+                "marginRight": 25,
+                "marginTop": 15
+              }
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tprint(width)\n\tif width \u003e 1260:\n\t\tsystem.perspective.togglePopup(\"ppuSecondLevelAuthentication\", \u0027Popups/HV/CSB Gensets/ppuSecondLevelAuthentication\u0027, {\u0027deviceTagPath\u0027 : self.view.custom.deviceTagPath, \u0027action\u0027 : self.view.custom.action}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.togglePopup(\"ppuSecondLevelAuthentication\", \u0027Popups/HV/CSB Gensets/ppuSecondLevelAuthentication\u0027, {\u0027deviceTagPath\u0027 : self.view.custom.deviceTagPath, \u0027action\u0027 : self.view.custom.action}, showCloseIcon \u003d False, draggable \u003d False)\n\t\n\tsystem.perspective.closePopup(\"CsbPrioritySelect\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "basis": "35px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "width": 22
+          },
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal",
+            "margin": 2,
+            "marginBottom": 10,
+            "marginLeft": 70,
+            "marginRight": 70,
+            "paddingLeft": "20px",
+            "paddingRight": "20px"
+          },
+          "text": "Apply"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "250px",
+          "grow": 1
+        },
+        "props": {
+          "text": "Note: Gensets are started in the order entered, from 1 - 3. If 0 is entered, that Genset is not started.",
+          "textStyle": {
+            "fontSize": 14,
+            "fontStyle": "italic",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\"CsbPrioritySelect\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/close"
+            }
+          },
+          "style": {
+            "borderBottomLeftRadius": 0,
+            "borderBottomRightRadius": 0,
+            "borderBottomStyle": "none",
+            "borderLeftStyle": "none",
+            "borderRightStyle": "none",
+            "borderTopLeftRadius": 0,
+            "borderTopRightRadius": 0,
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

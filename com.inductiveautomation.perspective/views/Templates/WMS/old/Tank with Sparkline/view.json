@@ -1,0 +1,209 @@
+{
+  "custom": {},
+  "params": {
+    "LiquidColor": "fff",
+    "SparklineWidth": 5
+  },
+  "propConfig": {
+    "params.LiquidColor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.SparklineWidth": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 267,
+      "width": 193
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Progress"
+        },
+        "position": {
+          "height": 0.5618,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 1.2953,
+          "x": -0.2472,
+          "y": 0.2517
+        },
+        "propConfig": {
+          "props.bar.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.LiquidColor"
+              },
+              "type": "property"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "path": "../MovingAnalogIndicator.props.processValue"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "bar": {},
+          "track": {
+            "color": "var(--neutral-50)"
+          }
+        },
+        "type": "ia.display.progress"
+      },
+      {
+        "meta": {
+          "name": "MovingAnalogIndicator"
+        },
+        "position": {
+          "height": 0.8352,
+          "width": 0.3679,
+          "x": 0.6425,
+          "y": 0.1161
+        },
+        "props": {
+          "desiredHigh": 65,
+          "desiredLow": 40,
+          "highAlarm": 90,
+          "highHighAlarm": null,
+          "highInterlock": null,
+          "lowAlarm": 10,
+          "lowInterlock": null,
+          "lowLowAlarm": null,
+          "reverseIndicator": true
+        },
+        "type": "ia.display.moving-analog-indicator"
+      },
+      {
+        "meta": {
+          "name": "Sparkline"
+        },
+        "position": {
+          "height": 0.7715,
+          "width": 0.7979,
+          "x": -0.0001,
+          "y": 0.1499
+        },
+        "propConfig": {
+          "props.width": {
+            "binding": {
+              "config": {
+                "path": "view.params.SparklineWidth"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "marker": {
+            "first": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            },
+            "high": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            },
+            "last": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            },
+            "low": {
+              "fill": {
+                "opacity": 0
+              },
+              "stroke": {
+                "opacity": 0
+              }
+            }
+          },
+          "points": [
+            59,
+            80,
+            80,
+            100,
+            68,
+            62,
+            87,
+            72,
+            42,
+            0,
+            58,
+            53,
+            57,
+            51,
+            42,
+            32,
+            37,
+            30,
+            24,
+            38,
+            57,
+            29,
+            18,
+            32,
+            38
+          ]
+        },
+        "type": "ia.display.sparkline"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.1498,
+          "width": 0.2073,
+          "x": 0.7927
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true,
+              "parentPath": "[default]Test/Alarms"
+            },
+            "device": {
+              "enabled": false,
+              "name": "value",
+              "parentPath": "value"
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

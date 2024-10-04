@@ -1,0 +1,142 @@
+{
+  "custom": {},
+  "params": {
+    "DeviceParentPath": "[default]Test/",
+    "stationNumber": 2
+  },
+  "propConfig": {
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.stationNumber": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 398,
+      "width": 399
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "meta.name": {
+            "binding": {
+              "config": {
+                "expression": "concat(\"Station \",{view.params.stationNumber})"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "concat(\"Station \", {view.params.stationNumber})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "24px",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Alarm Banner"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceParentPath": "{view.params.DeviceParentPath}",
+                  "stationNumber": "{view.params.stationNumber}"
+                },
+                "tagPath": "{DeviceParentPath}Station{stationNumber}/pump_fault"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--error)",
+            "textAlign": "center"
+          },
+          "text": "Pump Faulted"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Vessel"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.value.value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "DeviceParentPath": "{view.params.DeviceParentPath}",
+                  "stationNumber": "{view.params.stationNumber}"
+                },
+                "tagPath": "{DeviceParentPath}Station{stationNumber}/tank_capacity"
+              },
+              "transforms": [
+                {
+                  "formatType": "numeric",
+                  "formatValue": "##.##",
+                  "type": "format"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "appearance": "p\u0026id",
+          "label": {
+            "text": ""
+          },
+          "value": {
+            "displayValueAsPercent": false,
+            "style": {
+              "classes": "Text/Data",
+              "fontSize": "18px"
+            }
+          }
+        },
+        "type": "ia.symbol.vessel"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

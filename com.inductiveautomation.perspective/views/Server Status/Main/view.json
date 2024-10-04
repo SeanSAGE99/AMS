@@ -1,0 +1,163 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1"
+          },
+          "text": "Server Status"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Graphs"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "path": "Server Status/_Parts/Graphs"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Server Hardware"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "Server Status/_Parts/Server Hardware"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Database"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "params": {
+                        "databaseName": "sql_data"
+                      },
+                      "path": "Server Status/_Parts/Database"
+                    },
+                    "type": "ia.display.view"
+                  },
+                  {
+                    "meta": {
+                      "name": "Database_0"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "params": {
+                        "databaseName": "MSSQL"
+                      },
+                      "path": "Server Status/_Parts/Database"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Redundancy"
+                },
+                "position": {
+                  "basis": "320px"
+                },
+                "props": {
+                  "path": "Server Status/_Parts/Redundancy"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 0.5,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,634 @@
+{
+  "custom": {
+    "ActiveAck": false,
+    "ActiveUnack": false,
+    "AlarmCount": 0,
+    "Closed": true,
+    "DeviceTagPath": "High Voltage/International/Substation 1/PLC/CB01",
+    "Open": false,
+    "tags": [
+      {
+        "tagName": "Differential Relay Fail",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Differential Trip",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Fail",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "General Alarm",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Overcurrent Earth Fault Trip",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Overcurrent Relay Fail Alarm",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Spring Charged Failed",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Trip Circuit 2 Supervision Alarm",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Trip Circuit Supervision Alarm",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Alarms"
+      },
+      {
+        "tagName": "Close Command",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Command"
+      },
+      {
+        "tagName": "Delayed Close Command",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Command"
+      },
+      {
+        "tagName": "Delayed Open Command",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Command"
+      },
+      {
+        "tagName": "Open Command",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Command"
+      },
+      {
+        "tagName": "CB Closed",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder"
+      },
+      {
+        "tagName": "CB Open",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder"
+      },
+      {
+        "tagName": "ES Closed",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder"
+      },
+      {
+        "tagName": "Genset Close Command",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder/Genset Interface"
+      },
+      {
+        "tagName": "Genset Open Command",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder/Genset Interface"
+      },
+      {
+        "tagName": "Local Mode",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder"
+      },
+      {
+        "tagName": "Racked In",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder"
+      },
+      {
+        "tagName": "Spring Charged",
+        "tagParentPath": "[default]High Voltage/International/Substation 1/PLC/CB01/Status Folder"
+      }
+    ]
+  },
+  "params": {
+    "DeviceName": "CB01",
+    "DeviceParentPath": "High Voltage/International/Substation 1/PLC",
+    "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+  },
+  "propConfig": {
+    "custom.ActiveAck": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Ack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.ActiveUnack": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Alarm Summary/Active Unack"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.AlarmCount": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ActiveAck}+{view.custom.ActiveUnack}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.Closed": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Status Folder/CB Closed"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.DeviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.DeviceParentPath}+\u0027/\u0027+{view.params.DeviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.Open": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.custom.DeviceTagPath}"
+          },
+          "tagPath": "{1}/Status Folder/CB Open"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tags": {
+      "binding": {
+        "config": {
+          "expression": "now()"
+        },
+        "transforms": [
+          {
+            "code": "    tags \u003d []\n    res \u003d system.tag.browse(self.custom.DeviceTagPath, {\"recursive\": True})    \n    \n    for tag in res:\n        if not tag.get(\u0027hasChildren\u0027) and tag[\u0027valueSource\u0027] !\u003d \u0027expr\u0027:\n            # Get the full path of the tag\n            tagPath \u003d str(tag[\u0027fullPath\u0027])\n            # Extract tag name and parent path\n            last_slash_index \u003d tagPath.rfind(\u0027/\u0027)  # find the last occurrence of \u0027/\u0027\n            tagName \u003d tagPath[last_slash_index + 1:]  # tag name is the substring after the last \u0027/\u0027\n            tagParentPath \u003d tagPath[:last_slash_index]  # tag parent path is the substring before the last \u0027/\u0027\n            # Check if the tag is enabled\n            enabledPath \u003d \"{}.Enabled\".format(tagPath)\n            enabledTag \u003d system.tag.read(enabledPath)\n            if enabledTag.value:\n        \t    tags.append({\u0027tagName\u0027: tagName, \u0027tagParentPath\u0027: tagParentPath})\n    \n    return tags",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.DeviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.DeviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 36,
+      "width": 62
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.7778,
+          "rotate": {
+            "anchor": "75% 50%"
+          },
+          "width": 0.4032,
+          "x": 0.5881,
+          "y": 0.1111
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "transforms": [
+                {
+                  "expression": "replace(substring({value}, 2),\"\",\"\")",
+                  "type": "expression"
+                },
+                {
+                  "expression": "replace((replace({value},\"D\",\"\")),\"B\",\"\")",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.textStyle.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Tag/Label"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "nGDeQSnm",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewParams": {
+                  "tags": "{view.custom.tags}"
+                },
+                "viewPath": "Shared/Popups/ppu_MultipleTagInfo",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "CB Block"
+        },
+        "position": {
+          "height": 1,
+          "width": 0.5806,
+          "x": 0.0003
+        },
+        "propConfig": {
+          "props.elements[0].type": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.Open} \u003d 0 \u0026\u0026 {view.custom.Closed} \u003d 0) || ({view.custom.Open} \u003d 1 \u0026\u0026 {view.custom.Closed} \u003d 1) , 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[1].type": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.Open} \u003d 0 \u0026\u0026 {view.custom.Closed} \u003d 1), 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.elements[2].type": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.custom.Open} \u003d 1 \u0026\u0026 {view.custom.Closed} \u003d 0), 1, 0)"
+              },
+              "transforms": [
+                {
+                  "fallback": "path",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 1,
+                      "output": "group"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "#FFFFFF"
+                      },
+                      "height": "172.62114",
+                      "name": "rect2615",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "round",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": "10.04933"
+                      },
+                      "style": {
+                        "paintOrder": "markers stroke fill"
+                      },
+                      "type": "rect",
+                      "width": "172.1284",
+                      "x": "-8.2647791",
+                      "y": "-9.9473591"
+                    },
+                    {
+                      "d": "M -8.26478,-9.9473583 163.86363,162.67378",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path3220",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "butt",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": 5
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 163.86363,-9.9473583 -8.26478,162.67378",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path3222",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "butt",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": "5"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g3326",
+                  "transform": "matrix(0.19832243,0,0,0.19777026,2.49439,2.789224)",
+                  "type": "group"
+                }
+              ],
+              "name": "g730"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "var(--qual-4)"
+                      },
+                      "height": "172.62114",
+                      "name": "rect2615",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "round",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": "10.04933"
+                      },
+                      "style": {
+                        "paintOrder": "markers stroke fill"
+                      },
+                      "type": "rect",
+                      "width": "172.1284",
+                      "x": "-8.2647791",
+                      "y": "-9.9473591"
+                    },
+                    {
+                      "d": "M -8.26478,-9.9473583 163.86363,162.67378",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path3220",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "butt",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": 5
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 163.86363,-9.9473583 -8.26478,162.67378",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path3222",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "butt",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": "5"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g3326",
+                  "transform": "matrix(0.19832243,0,0,0.19777026,2.49439,2.789224)",
+                  "type": "group"
+                }
+              ],
+              "name": "g730"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "opacity": "1",
+                        "paint": "var(--success)"
+                      },
+                      "height": "172.62114",
+                      "name": "rect2615",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "round",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": "10.04933"
+                      },
+                      "style": {
+                        "paintOrder": "markers stroke fill"
+                      },
+                      "type": "rect",
+                      "width": "172.1284",
+                      "x": "-8.2647791",
+                      "y": "-9.9473591"
+                    },
+                    {
+                      "d": "M -8.26478,-9.9473583 163.86363,162.67378",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path3220",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "butt",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": 5
+                      },
+                      "style": {},
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 163.86363,-9.9473583 -8.26478,162.67378",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path3222",
+                      "stroke": {
+                        "dasharray": "none",
+                        "linecap": "butt",
+                        "miterlimit": "4",
+                        "opacity": "1",
+                        "paint": "#000000",
+                        "width": "5"
+                      },
+                      "style": {},
+                      "type": "path"
+                    }
+                  ],
+                  "name": "g3326",
+                  "transform": "matrix(0.19832243,0,0,0.19777026,2.49439,2.789224)",
+                  "type": "group"
+                }
+              ],
+              "name": "g730"
+            }
+          ],
+          "viewBox": "0 0 36 36"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 1,
+          "width": 1,
+          "x": -0.206,
+          "y": -0.0111
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.DeviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.DeviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": true
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

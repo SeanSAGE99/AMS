@@ -1,0 +1,3046 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/Precinct/QANTAS Seamless Transfer"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/QANTAS Seamless/Ground Level"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.0703,
+          "x": 0.2638,
+          "y": 0.0415
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/International/QANTAS Seamless/Ground Level",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Ground Level",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/QANTAS Seamless/Mezzanine Level"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.0703,
+          "x": 0.4643,
+          "y": 0.0415
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/International/QANTAS Seamless/Mezzanine Level",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Mezzanine Level",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/QANTAS Seamless/Plant Level"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 0.0315,
+          "width": 0.0703,
+          "x": 0.6648,
+          "y": 0.0415
+        },
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "page.props.primaryView"
+              },
+              "transforms": [
+                {
+                  "fallback": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Primary Views/International/QANTAS Seamless/Plant Level",
+                      "output": "Input/Button/Colour/Normal Input/Button/Text"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {},
+          "text": "Plant Level",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Plant Level"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.077
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "d": "m252.96 189.51-2e-3 147.58h32.795l-3e-3 596.21v62.96l419.77 2e-3 1e-3 -167.03 1e-3 -115-137.74-1e-3 1e-3 -242.68h131.18l2e-3 -282.03m-333.48-2e-3h-112.53m446.01 2e-3 -333.48-2e-3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m287.39 192.24h78.096l330.74 2e-3 -2e-3 276.57h-135.77l-2e-3 248.14 142.33 1e-3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m702.78 829.23-1e-3 164.3m2e-3 -276.57-1e-3 112.27",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m469.56 993.53h-32.986m266.21 2e-3 -233.22-2e-3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m288.48 396.12v-61.763l-32.794-1e-3v-108.22",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m560.46 993.53 1e-3 -164.3 3e-3 -636.98h-5.466m-3e-3 636.98-1e-3 164.3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m554.99 192.25-3e-3 636.98m-1e-3 164.3h5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m293.95 396.12v-61.763h-5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m261.15 334.35 1e-3 -108.22",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m287.39 226.13h5.465l1e-3 -33.888",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m261.15 305.39v-5.466h-5.466v5.466h5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m261.15 237.61v-5.465h-5.466v5.465h5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m261.15 305.39-5.466-5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m261.15 299.92-5.466 5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m261.15 237.61-5.466-5.465",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m261.15 232.14-5.466 5.465",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m252.95 303.14h-0.546v-0.984h0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m252.96 235.37h-0.546v-0.983h0.546",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m255.69 303.14h-2.734",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m252.95 302.16h2.734",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m252.96 235.37h2.733",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m255.69 234.39h-2.733",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "dasharray": "2.16, 2.16",
+                            "width": ".24"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m293.95 366.06v-5.466h-5.466v5.466h5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m293.95 366.06-5.466-5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m293.95 360.59-5.466 5.466",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m285.75 363.82h-0.546v-0.984h0.546",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m288.48 363.82h-2.733",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "2.16, 2.16",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m285.75 362.83h2.733",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "2.16, 2.16",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "elements": [
+                                {
+                                  "d": "m292.86 208.1v-5.466h-5.465v5.465l5.465 1e-3",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m292.86 208.1-5.465-5.466",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m292.86 202.63-5.465 5.465",
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "stroke": {
+                                "width": ".24"
+                              },
+                              "type": "group"
+                            },
+                            {
+                              "d": "m287.39 226.14v-34.435h-32.248l-1e-3 34.434 32.249 1e-3",
+                              "name": "path",
+                              "stroke": {
+                                "linejoin": "round",
+                                "width": "1.08"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m285.2 223.95v-30.061h-27.875v30.061h27.875",
+                              "name": "path",
+                              "stroke": {
+                                "linejoin": "round",
+                                "width": "1.08"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "elements": [
+                                {
+                                  "d": "m555.54 961.28v-4.373h4.373v4.373h-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 891.32v-4.373h4.373v4.373h-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 821.36v-4.372h4.372v4.372h-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 751.39v-4.372h4.373v4.373l-4.373-1e-3",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 562.28v-4.372h4.373v4.372h-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 562.28-4.373-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 562.28 4.373-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 693.46v-4.372h-4.373v4.372h4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 627.87v-4.372h-4.372v4.372h4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 496.69v-4.373h-4.373v4.373h4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 431.1v-4.373h4.372v4.373h-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 365.51v-4.373h4.373v4.373h-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 299.92v-4.373h4.373v4.373h-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 234.33v-4.373h-4.372v4.373h4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 299.92-4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 299.92 4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 234.33 4.372-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 234.33-4.372-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 431.1-4.372-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 431.1 4.372-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 365.51 4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 365.51-4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 496.69 4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 496.69-4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 693.46 4.373-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 693.46-4.373-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 627.87 4.372-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 627.87-4.372-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 821.36 4.372-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 821.36-4.372-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 751.39 4.373-4.372",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 751.39-4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 961.28 4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m555.54 891.32 4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 891.32-4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m559.91 961.28-4.373-4.373",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m287 851.63-1e-3 81.665v56.729",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m291.98 995h138.39",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m697.32 993.53v-164.3l1e-3 -112.27",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m698.41 993.53 1e-3 -164.3v-112.27",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m698.96 461.71h19.677l1e-3 -262.36-19.677-1e-3",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m285.75 996.26h-86.359m0-62.96 3e-3 -602.77m-3e-3 665.73v-62.96m3e-3 -602.77h-21.863l1e-3 -173.81h78.707v32.795",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m247.19 156.72v-112.84",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m214.38 156.72 1e-3 -112.84",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.6 396.12 1e-3 -203.87",
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "stroke": {
+                                "width": ".24"
+                              },
+                              "type": "group"
+                            }
+                          ],
+                          "name": "group",
+                          "type": "group"
+                        }
+                      ],
+                      "name": "group",
+                      "stroke": {
+                        "paint": "#000"
+                      },
+                      "type": "group"
+                    },
+                    {
+                      "elements": [
+                        {
+                          "d": "m402.28 926.97 3.361 1.941 0.301 1.813 1.421-2.46 0.301 1.813 3.361 1.941",
+                          "name": "path",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m402.83 948.44v8.647h-0.555v-8.647h0.555",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 948.44v8.647h0.555v-8.647h-0.555",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m411.02 933.3v4.208m0-5.492v1.284m0 4.208h-0.555v-5.812",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m402.28 933.3v5.847m0-12.179v6.332m0 5.847h0.555v-11.859",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m411.02 948.44v-10.93",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m402.28 948.44v-9.291",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 948.44h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 937.51h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 956.15h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 954.71h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 954.21h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 953.27h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 952.77h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 951.82h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 951.32-7.635-1e-3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 950.38h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 949.88h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 936.66h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m402.83 936.22h7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 935.17h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 934.72h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 933.67h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 933.22h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 932.17h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m410.46 931.72h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m408.69 930.67h-5.864",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m405.68 929.17h-2.85",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m405.33 928.73h-2.496",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m403.5 927.68h-0.673",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m407.92 930.23h-1.7",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m405.86 930.23h-3.025",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m406.83 929.17h0.678",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m407.09 928.73h0.348",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m406.65 948.44 1.949 1.949",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m406.65 948.44-1.949 1.949",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m406.65 948.44v7.718",
+                          "name": "path",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m406.65 930.85 1.95 1.949",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m406.65 930.85-1.949 1.949",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m406.65 933.3v4.208m0-6.657v2.449",
+                          "name": "path",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        }
+                      ],
+                      "name": "group",
+                      "stroke": {
+                        "paint": "#b2b2b2"
+                      },
+                      "type": "group"
+                    },
+                    {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "d": "m366.09 527.96 53.837 1e-3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m421.3 527.97h13.118",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m366.09 526.6h68.322",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m365.41 527.28h69.006",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m434.42 526.6v1.367",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m364.73 540.21v54.745h56.57l1e-3 -66.988",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m366.09 540.21-1e-3 53.378h53.838v-65.621",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m365.41 540.21v54.061h0.076l55.128 1e-3 1e-3 -66.989",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m365.49 540.21h-0.076m0.684 0h-0.608",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m365.41 540.21h-0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m364.73 454.66-1e-3 59.697",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m366.09 454.66v59.697",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m365.41 454.66-1e-3 59.697",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m365.49 454.66h-0.758m1.366 0h-0.608",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m365.49 514.36h-0.076m0.684 0h-0.608",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m365.41 514.36h-0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m364.73 525.51v3.552",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m366.09 525.51v1.093",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m366.09 527.96v1.093",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m365.41 525.51v3.552",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m365.49 525.51h-0.076m0.684 0h-0.608",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m365.41 525.51h-0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m365.49 529.06h-0.076m0.684 0h-0.608",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m365.41 529.06h-0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m434.41 921.32h-22.301m0 11.973v28.911m0-40.884v11.973m0 28.911h2.46",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m434.41 922.69h-20.934m0 10.606-1e-3 27.545m1e-3 -38.151v10.606m-1e-3 27.545h1.094",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m434.41 922.01h-21.618m0 11.289v28.228m0-39.517v11.289",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m412.8 961.53h1.777",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m434.41 922.69v-1.367",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m414.57 960.84v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m414.57 961.53v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m425.72 962.21h3.717",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m425.72 960.84h3.717",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m425.72 961.53h4.208",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m425.72 960.84v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m425.72 961.53v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m431.41 934.72v26.126",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m432.77 934.72v26.126",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m432.09 934.72-1e-3 26.618",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m432.77 934.72h-1.367",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 960.84h-0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m431.41 960.84h-1.967",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m429.44 962.21-1e-3 2.46h3.881",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 961.83h-2.897v1.858h2.897",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m433.43 961.34h-3.499v2.842h3.498",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m305.86 977.68h-2.514m0-44.379v-46.134m0 90.513v-44.379",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m305.86 978.88h-3.717m0-45.581 1e-3 -46.134m-1e-3 91.715v-45.581",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m305.86 978.28h-3.116m1e-3 -44.98v-46.134m-1e-3 91.114 1e-3 -44.98",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m305.86 978.88v-0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m305.86 978.28v-0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m302.14 887.16h0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m302.74 887.16h0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m303.34 865.96v-20.552",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m302.14 865.96v-19.459",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m302.74 865.96v-20.005",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m302.14 865.96h0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m302.74 865.96h0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m436.05 888.26v31.701h14.212m0 13.339-1e-3 30.278m1e-3 -43.617v13.339m-1e-3 30.278h-14.211v16.288",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m436.6 888.04v31.373l14.211 1e-3m0 13.885v30.824m0-44.709v13.885m0 30.824h-14.211v16.288",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m436.33 888.15v31.538h14.211m0 13.612v30.551m0-44.163v13.612m0 30.551h-14.212v16.288",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m435.51 980.41v14.758h-5.137",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m436.6 980.41-1e-3 15.851h-6.231",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m436.05 980.14v15.577h-5.684",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m430.37 996.26 1e-3 -1.093",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m432.72 980.41h2.787",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m432.72 979.86h0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.54 979.86h2.514",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m432.72 980.14h3.607",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m432.72 979.86v0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 977.68h-106.25",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 978.88-106.25-1e-3",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m433.43 978.28-106.36-1e-3",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m327.07 978.88v-0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m327.07 978.28v-0.601",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.54 979.86v-18.802h14.211v-38.589h-13.118m0-30.024v-4.191m0 34.215v-30.024m0-4.191h1.421",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 979.86v-0.984",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 977.68v-13.008",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 963.68v-1.858",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 960.84h14.211l1e-3 -27.545v-10.606h-13.118m0-30.499v-4.154m0 34.653v-30.499m0-4.154h2.186",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m433.43 980.14 1e-3 -19.185h14.211v-38.369h-13.118m0-30.262v-4.173m0 34.435v-30.262",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m434.52 888.15h1.804",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m291.98 995.17h-5.137v-5.138",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m291.98 996.26h-6.231l1e-3 -6.231",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m291.98 995.71h-5.684v-5.684",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m291.98 996.26v-1.093",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m285.74 990.03h1.093",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m430.37 996.26 1e-3 -1.094h-138.39v1.093l138.39 1e-3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m285.74 933.3v-81.661m0 138.39v-56.731m0-81.661h1.093l-1e-3 81.661v56.731h-1.092",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m339.64 399.4v53.893",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m341.01 399.4v53.893",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m340.32 399.29v54.685",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m324.23 399.4-1e-3 38.534h-35.199",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m325.43 399.4v39.736h-36.402",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m324.83 399.29v39.244h-35.91",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m433.54 453.29 1e-3 -54.111m-68.056 0h-76.678m144.73 0h-68.056m-76.678 0v54.111",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.32 453.29v-53.892m-67.837 0h-24.48m92.317 0h-67.837",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m339.64 399.4h-14.211",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m324.23 399.4h-35.2v38.534",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m289.03 439.14v14.157",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m433.43 453.98v-54.685m-67.946-1e-3h-76.568m144.51 1e-3 -67.946-1e-3m-76.568 0-1e-3 54.685",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m436.06 396.67v56.625",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m436.06 453.51-1e-3 221.14",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m436.6 396.12-2e-3 278.75",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m436.33 396.39-1e-3 278.37",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m304.99 454.66h60.499l68.93 1e-3",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m304.99 453.29h34.653",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m341.01 453.29h92.317",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m433.54 453.29h0.875",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m304.99 453.98h60.499l69.039 1e-3",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m304.99 453.29v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m304.99 453.98v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m436.06 674.66h-1.422l2e-3 -221.14h1.421",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m436.6 674.87h-2.186l1e-3 -220.22",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m434.42 453.29h1.64",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m436.33 674.76h-1.804l1e-3 -221.36h1.804",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m303.34 845.4h-15.413",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m287.71 845.4h-1.421",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m285.74 845.4v6.232",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m302.14 846.5h-15.305v5.139",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m302.74 845.95-16.453-1e-3v5.686",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m286.84 851.64h-1.093",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m286.29 845.4 2e-3 -391.9",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m286.29 453.29v-56.626l79.192 1e-3h70.57",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m285.74 845.4 3e-3 -449.28h79.738l71.117 1e-3",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m286.02 845.95 2e-3 -449.56h79.465l70.843 1e-3",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m287.93 454.66h5.903",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m287.93 453.29h0.874",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m289.03 453.29h4.81",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m287.82 453.98h6.013",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m293.84 453.29v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m293.84 453.98v0.683",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m286.29 453.51h1.421l-2e-3 391.9",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m286.29 453.29h1.64",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m287.93 454.66-2e-3 390.75",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".84"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m286.02 453.4h1.803l-2e-3 392.55",
+                          "name": "path",
+                          "stroke": {
+                            "dasharray": "9, 4.44, 2.16, 4.44",
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "elements": [
+                                {
+                                  "d": "m394.84 933.73v-0.434m0-104.07 1e-3 -212.55m-1e-3 227.23v-14.678m0 74.716v-60.038m0 89.394v-29.356m-29.356-287.27-50.99-1e-3m80.347 1e-3h-29.357m-50.99-1e-3 -2e-3 316.62v0.434h80.348",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m315.59 617.77-2e-3 314.87h49.899",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m365.49 932.64h28.262m1e-3 -103.41 1e-3 -211.46m-1e-3 225.59v-14.131m0 75.809v-61.678m-1e-3 89.282 1e-3 -27.604m-28.263-287.27-49.897-1e-3m78.161 1e-3h-28.264",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.6 674.87-1e-3 154.35v58.813",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 674.87-1e-3 154.35v58.813",
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "stroke": {
+                                "width": ".24"
+                              },
+                              "type": "group"
+                            },
+                            {
+                              "elements": [
+                                {
+                                  "d": "m436.6 888.04v-0.273h-0.984v0.273h0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 871.92v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.6 871.64v-0.274h-0.984v0.274h0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 855.52v-0.274h0.984v0.274h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 855.24v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 839.12v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 838.85v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 822.72v-0.273h0.983v0.273h-0.983",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 822.45v-0.273h0.983v0.273h-0.983",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 806.33v-0.273h0.983v0.273h-0.983",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 806.05v-0.274h0.983v0.274h-0.983",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 789.93v-0.274h0.984v0.274h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 789.66v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 773.53v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 773.26v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 757.13v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 756.86v-0.274h0.984v0.274h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 740.74v-0.274h0.984v0.274h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 740.46v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 724.34v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 724.07v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 707.94v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 707.67v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 691.54v-0.273h0.984v0.273h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 691.27v-0.274h0.984v0.274h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m435.62 675.15v-0.274h0.984v0.274h-0.984",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 675.15v15.85",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 691.54v15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 707.94v15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 740.19v-15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 756.59v-15.85",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 772.98v-15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 773.53v15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 805.78v-15.85",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 806.33-1e-3 15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 822.72v15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 848.79v-9.667m0 15.851v-6.184",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 871.37v-15.85",
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m436.11 887.77v-15.851",
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "stroke": {
+                                "linejoin": "round",
+                                "width": ".84"
+                              },
+                              "type": "group"
+                            },
+                            {
+                              "d": "m434.42 674.87-1e-3 154.35v58.813",
+                              "name": "path",
+                              "stroke": {
+                                "width": ".24"
+                              },
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "type": "group"
+                        }
+                      ],
+                      "name": "group",
+                      "stroke": {
+                        "paint": "#000"
+                      },
+                      "type": "group"
+                    },
+                    {
+                      "elements": [
+                        {
+                          "d": "m364.76 545.86h-60.293l-1e-3 285.33",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m304.47 831.19h10.011l-1e-3 102.1v16.831",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m314.48 950.13h85.339v12.08h25.908v10.912l-36.818 0.028-9e-3 -12.134-85.351 0.066",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m303.54 933.3v-91.173m0 118.96v-27.783m0-91.173h-10.011",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m293.53 842.12 2e-3 -387.26",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m293.54 454.87h10.932",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m304.47 454.87-1e-3 81.155 50.455 1e-3v-22.438h9.838",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m364.76 513.58v32.276",
+                          "name": "path",
+                          "type": "path"
+                        }
+                      ],
+                      "name": "group",
+                      "stroke": {
+                        "paint": "#b2b2b2",
+                        "width": ".24"
+                      },
+                      "type": "group"
+                    },
+                    {
+                      "elements": [
+                        {
+                          "d": "m294.73 453.47h-0.446v-10.258h0.446v10.258",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m293.84 453.47h0.446v1.004h-0.446v-1.004",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m304.54 453.47h0.446v1.004h-0.446v-1.004",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m304.54 453.47c0-2.721-1.081-5.33-3.005-7.253-1.923-1.924-4.533-3.005-7.253-3.005",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 529.95v-0.446h10.258v0.446h-10.258",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 529.06v0.446m-0.426 0h-0.577m1.003 0h-0.426m-0.577 0v-0.446h1.003",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 539.76v0.446m-0.426 0h-0.577m1.003 0h-0.426m-0.577 0v-0.446h1.003",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 539.76c2.721 0 5.33-1.081 7.254-3.005 1.923-1.924 3.004-4.533 3.004-7.254",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 525.06v-0.446h10.258v0.446h-10.258",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 525.06v0.446m-0.426 0h-0.577m1.003 0h-0.426m-0.577 0v-0.446h1.003",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 514.36v0.446m-0.426 0h-0.577m1.003 0h-0.426m-0.577 0v-0.446h1.003",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m365.91 514.8c2.721 0 5.33 1.081 7.254 3.005 1.923 1.924 3.004 4.533 3.004 7.254",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m415.46 961.02h-0.446v-10.258h0.446v10.258",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m414.57 961.02h0.446v1.004h-0.446v-1.004",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m425.28 961.02h0.446v1.004h-0.446v-1.004",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m425.28 961.02c0-2.72-1.081-5.329-3.005-7.253-1.923-1.924-4.533-3.005-7.253-3.005",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m326.71 967.5h-0.471v10.247h0.471v-10.247",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m306.22 967.5h0.471v10.248h-0.471v-10.248",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m305.86 977.75h0.354v1.06h-0.354v-1.06",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m326.71 977.75h0.353v1.06h-0.353v-1.06",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m316.46 977.75c0-2.718 1.08-5.324 3.002-7.246 1.921-1.922 4.528-3.001 7.246-3.001",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m316.46 977.75c0-2.718-1.079-5.324-3.001-7.246s-4.528-3.002-7.246-3.002",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m313.52 886.81v-0.471h-10.247v0.471h10.247",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m313.52 866.32v0.472h-10.248v-0.472h10.248",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m303.27 865.96v0.353h-1.06v-0.353h1.06",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m303.27 886.81v0.354h-1.06v-0.354h1.06",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m303.27 876.56c2.718 0 5.324 1.08 7.246 3.001 1.922 1.922 3.001 4.529 3.001 7.246",
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "m303.27 876.56c2.718 0 5.324-1.08 7.246-3.001 1.922-1.922 3.002-4.529 3.002-7.247",
+                          "name": "path",
+                          "type": "path"
+                        }
+                      ],
+                      "name": "group",
+                      "stroke": {
+                        "paint": "#000",
+                        "width": ".24"
+                      },
+                      "type": "group"
+                    },
+                    {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "d": "m339.09 433.63v18.35",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m338.66 433.38v18.602",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m326.41 426.31v13.045",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.98 426.06v13.298",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m338.33 452.74h-30.608",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.66 452.31h30.663",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.66 440.12h17.982",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.72 439.68h17.927",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.45 453.07h-0.437",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.01 453.07v-0.109",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.45 453.07v-0.055",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.45 439.35v0.055",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.45 439.35h-0.437",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.01 439.35v0.109",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m338.66 451.98c0 0.181-0.147 0.328-0.328 0.328",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.98 439.35c0 0.181-0.146 0.328-0.328 0.328",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m339.09 451.98c0 0.423-0.342 0.765-0.765 0.765",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.65 440.12c0.423 0 0.766-0.342 0.766-0.765",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.45 453.02c0-0.15 0.123-0.273 0.274-0.273",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.45 439.41c0 0.151 0.123 0.273 0.274 0.273",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.66 440.12c-0.362 0-0.656-0.293-0.656-0.656",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m307.01 452.96c0-0.362 0.294-0.656 0.656-0.656",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m325.43 425.74 6.094 3.519 0.301 1.814 1.421-2.461",
+                          "name": "path",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m333.24 428.61 0.301 1.814 6.094 3.519",
+                          "name": "path",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m310.29 446.21 1.949-1.95",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m310.29 446.21 1.949 1.949",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m310.29 446.21h18.966",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m339.64 438.53h-0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m339.64 435.64h-0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m337.55 432.74h-11.139",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.43 426.95h0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m324.77 439.14v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m321.88 439.14v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m318.98 439.14v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m316.08 439.14v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m313.18 439.14v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m310.29 439.14v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.43 429.84h0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m332.53 429.84h0.915",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m338.66 438.53h-12.243",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m338.66 435.64h-12.243",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.98 438.53h-0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.98 435.64h-0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m325.98 432.74h-0.546",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m326.41 429.84h5.207",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m326.41 426.95h1.104",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m332.53 442.93v-13.09",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m324.77 452.74v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m321.88 452.74v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m318.98 452.74v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m316.08 452.74v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m313.18 452.74v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m310.29 452.74v0.547",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m310.29 440.12v12.189",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m313.18 440.12v12.189",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m316.08 440.12v12.189",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m318.98 440.12v12.189",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m321.88 440.12v12.189",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m324.77 440.12v12.189",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m332.53 442.93c0 1.812-1.468 3.28-3.279 3.28",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m447.53 935.26h-1.421v7.185",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m447.53 934.72h-1.976v7.411",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m437.92 937.72v-3.004h-5.147",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m437.37 937.4v-2.136h-4.592",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "m437.37 937.4 3.361 1.941 0.301 1.814 1.421-2.461 0.3 1.814 3.362 1.941",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m445.56 941.87h-0.445",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m445.56 938.09h-6.993",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m437.92 937.58h7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m445.56 936.66h-7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m437.92 936.15h7.635",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m446.11 937.21h-0.555",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m437.92 937.21h-0.555",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m445.56 940.95h-2.035",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m441.14 940.95h-0.15",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m445.56 940.44h-2.818",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m441.44 940.44h-0.531",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m445.56 939.52h-2.97",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m441.97 939.52h-1.213",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m445.56 939.01h-3.055",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "m442.27 939.01h-2.114",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "group"
+                        },
+                        {
+                          "d": "m441.74 934.82 1.949 1.949",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m441.74 934.82-1.949 1.949",
+                          "name": "path",
+                          "stroke": {
+                            "linejoin": "round",
+                            "width": ".6"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m441.74 934.82v5.1",
+                          "name": "path",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "m432.77 934.72v-12.023h14.758m0 10.606v1.417m0-12.023v10.606m0 1.417h-14.758",
+                          "name": "path",
+                          "stroke": {
+                            "width": ".24"
+                          },
+                          "type": "path"
+                        }
+                      ],
+                      "name": "group",
+                      "stroke": {
+                        "paint": "#b2b2b2"
+                      },
+                      "type": "group"
+                    }
+                  ],
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "name": "group",
+                  "stroke": {
+                    "miterlimit": "10"
+                  },
+                  "type": "group"
+                }
+              ],
+              "name": "group",
+              "transform": "matrix(0 -1.3333 -1.3333 0 1328.9 958.34)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 1270.4 721.8"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Lift_16"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.7784,
+          "y": 0.8047
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 60",
+            "deviceParentPath": "International/Precinct/QANTAS Seamless Transfer",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GE PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.8932,
+          "y": 0.1115
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "International/Precinct/QANTAS Seamless Transfer/Level 3 Plant/QST-RSC01 AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/GE PLC"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

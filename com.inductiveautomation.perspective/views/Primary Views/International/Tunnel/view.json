@@ -1,0 +1,813 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Tunnel"
+        },
+        "position": {
+          "height": 0.9615,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Tunnel.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "[default]International/T1/Tunnel"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.0775,
+          "y": 0.6137
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTT_DBX01",
+            "deviceParentPath": "[default]International/T1/Tunnel",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.214,
+          "y": 0.4527
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTT_DBX02",
+            "deviceParentPath": "[default]International/T1/Tunnel",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.352,
+          "y": 0.7487
+        },
+        "props": {
+          "params": {
+            "deviceName": "BTT_DBX03",
+            "deviceParentPath": "[default]International/T1/Tunnel",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_5"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.593,
+          "y": 0.5939
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "CTT Sump Pump 3A-3B",
+            "Pump1Name": "Sump Pump 3A",
+            "Pump2Name": "Sump Pump 3B",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTT Sump Pump 3",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_6"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.6377,
+          "y": 0.6528
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "CTT Sump Pump 4",
+            "Pump1Name": "Sump Pump 4",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTT Sump Pump 4",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_7"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.5436,
+          "y": 0.5595
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "CTT Sump Pump 2",
+            "Pump1Name": "Sump Pump 2",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTT Sump Pump 2",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_8"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.4964,
+          "y": 0.5171
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "CTT Sump Pump 1",
+            "Pump1Name": "Sump Pump 1",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CTT Sump Pump 1",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_9"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.4989,
+          "y": 0.416
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 6",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 6",
+            "deviceName": "BTT Sump Pump 6",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_10"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.439,
+          "y": 0.416
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 7",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 7",
+            "deviceName": "BTT Sump Pump 7",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_11"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.4125,
+          "y": 0.2692
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 8",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 8",
+            "deviceName": "BTT Sump Pump 8",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_12"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.3696,
+          "y": 0.5125
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 5",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 5",
+            "deviceName": "BTT Sump Pump 5",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_13"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.4356,
+          "y": 0.5163
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 11",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 11",
+            "deviceName": "BTT Sump Pump 11",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_14"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.3161,
+          "y": 0.5384
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 4",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 4",
+            "deviceName": "BTT Sump Pump 4",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_15"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.2588,
+          "y": 0.5951
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 3",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 3",
+            "deviceName": "BTT Sump Pump 3",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_16"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.2073,
+          "y": 0.6547
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 2",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 2",
+            "deviceName": "BTT Sump Pump 2",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_17"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.1505,
+          "y": 0.7336
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 1",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 1",
+            "deviceName": "BTT Sump Pump 1",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_18"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.3417,
+          "y": 0.0903
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 10",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 10",
+            "deviceName": "BTT Sump Pump 10",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_19"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.5891,
+          "y": 0.0173
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump 9",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump 9",
+            "deviceName": "BTT Sump Pump 9",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_20"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.2318,
+          "y": 0.2115
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump NA",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump NA",
+            "deviceName": "BTT Sump Pump NA",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_21"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.66,
+          "y": 0.2163
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "BTT Sump Pump SA",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sump Pump SA",
+            "deviceName": "BTT Sump Pump SA",
+            "deviceParentPath": "International/T1/Tunnel/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.7781,
+          "y": 0.4318
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 7 Block 3",
+            "deviceParentPath": "International/T1/Tunnel/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_0"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.1619,
+          "y": 0.315
+        },
+        "props": {
+          "params": {
+            "deviceName": "AMS1 Genius Block Fault-LAN 3 Block 1",
+            "deviceParentPath": "International/T1/Tunnel/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1141,
+                "y": 0.6413
+              }
+            ],
+            "x": 0.1677,
+            "y": 0.7721
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2495,
+                "y": 0.4789
+              }
+            ],
+            "x": 0.2532,
+            "y": 0.6644
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.389,
+                "y": 0.7539
+              }
+            ],
+            "x": 0.4833,
+            "y": 0.5702
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1989,
+                "y": 0.3635
+              }
+            ],
+            "x": 0.4479,
+            "y": 0.5202
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7979,
+                "y": 0.4808
+              }
+            ],
+            "x": 0.6453,
+            "y": 0.6394
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "custom": {
+    "ValveMoving": false,
+    "deviceTagPath": "Water Monitoring System/Domestic/North East Pump Station/Valve 1"
+  },
+  "params": {
+    "MotorLocation": "Right",
+    "deviceName": "Valve 1",
+    "deviceParentPath": "Water Monitoring System/Domestic/North East Pump Station"
+  },
+  "propConfig": {
+    "custom.ValveMoving": {
+      "binding": {
+        "config": {
+          "expression": "!(tag({view.custom.deviceTagPath} + \u0027/Status/Closed\u0027)||tag({view.custom.deviceTagPath} + \u0027/Status/Open\u0027))"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath}+\u0027/\u0027+{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.MotorLocation": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 214,
+      "width": 262
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Motorised valve"
+        },
+        "position": {
+          "height": 0.5327,
+          "rotate": {},
+          "width": 0.5458,
+          "y": 0.0888
+        },
+        "propConfig": {
+          "position.rotate.angle": {
+            "binding": {
+              "config": {
+                "path": "view.params.MotorLocation"
+              },
+              "transforms": [
+                {
+                  "fallback": "0deg",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "Right",
+                      "output": "0deg"
+                    },
+                    {
+                      "input": "Down",
+                      "output": "90deg"
+                    },
+                    {
+                      "input": "Left",
+                      "output": "180deg"
+                    },
+                    {
+                      "input": "Up",
+                      "output": "270deg"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.elements[0].elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "expression": "binEnc(tag({view.custom.deviceTagPath}+\u0027/Status/Open\u0027),tag({view.custom.deviceTagPath}+\u0027/Status/Closed\u0027))"
+              },
+              "transforms": [
+                {
+                  "fallback": "#AAAAAA",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": 0,
+                      "output": "#AAAAAA"
+                    },
+                    {
+                      "input": 1,
+                      "output": "#FFFFFF"
+                    },
+                    {
+                      "input": 2,
+                      "output": "#AAAAAA"
+                    },
+                    {
+                      "input": 3,
+                      "output": "#AAAAAA"
+                    }
+                  ],
+                  "outputType": "color",
+                  "type": "map"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m155.73 59.655h-46.641v27.359c-20.048-0.02655-40.097 0.07902-60.145-0.14062 9.0804-18.39 18.301-36.709 27.463-55.059-18.592 0.03044-37.186-0.08521-55.778 0.12974-1.7306 0.01202-3.468 0.02357-5.1603 0.43305-0.92197-0.04648-0.93004 0.3851-0.46541 1.0639 2.9378 6.2986 6.122 12.483 9.1898 18.716 6.1716 12.371 12.357 24.735 18.538 37.102-8.9322 17.913-17.956 35.778-26.775 53.744-0.4579 0.98913-0.91669 1.9778-1.375 2.9668 1.6273 0.30275 3.2548 0.62842 4.9193 0.57245 17.208 0.23423 34.419 0.12172 51.629 0.15021h5.2781c-9.1616-18.35-18.384-36.67-27.463-55.061 20.047-0.21547 40.096-0.11315 60.145-0.13867v27.84h48.641v-59.68h-2zm-2.4805 29.84v25.359h-39.68v-50.721c13.227 1e-6 26.453 0 39.68 0v25.361zm-5.1992-13.52h-28.4v6.8711c4.0338 0.01542 8.0677 0.03245 12.102 0.04687-2.3131 1.05-4.7639 1.9058-6.8302 3.4122-1.1941 0.83089-1.5726 2.3469-1.4198 3.7284-3e-3 1.6597 1.3724 2.8575 2.7854 3.4711 1.6708 0.80578 3.4133 1.4497 5.1364 2.1325-3.9245 0.0072-7.849 0.01378-11.773 0.02148v6.875h30.4v-6.6152c-5.2076-2.0853-10.42-4.1582-15.621-6.2598 5.1843-2.293 10.401-4.5109 15.602-6.7676 0.0112-2.3053 0.0193-4.6107 0.0254-6.916h-2.0059zm-81.842-33.68c-6.9637 13.971-13.966 27.958-21.061 41.83-8.0119-15.929-15.969-31.884-23.943-47.832 15.967 0.02184 31.934-0.06866 47.9 0.13281-0.96549 1.9564-1.931 3.9128-2.8965 5.8691zm-2.1719 99.834c-14.24 0.0187-28.481-0.0823-42.721-0.13868 7.964-15.927 15.929-31.855 23.895-47.781 7.9488 15.954 16.014 31.85 23.783 47.893-1.6523 9e-3 -3.3047 0.0182-4.957 0.0273z",
+                  "name": "path",
+                  "stroke": {
+                    "width": ".48"
+                  },
+                  "type": "path"
+                },
+                {
+                  "elements": [
+                    {
+                      "d": "m18.673 28.312-11.813-23.63h47.45l-2.2871 4.7363c-2.6352 5.457-20.904 41.662-21.283 42.179-0.20818 0.28379-2.3461-3.8418-12.066-23.285z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(14.585 31.811)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m19.544 110.13c-6.8568-0.0319-12.467-0.10642-12.467-0.16554 0-0.0591 5.3038-10.715 11.786-23.679l11.786-23.572 6.9751 13.936c3.8363 7.6649 9.1592 18.37 11.829 23.79l4.8535 9.8537-11.148-0.0526c-6.1314-0.0289-16.758-0.0787-23.615-0.11066z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(14.585 31.811)",
+                      "type": "path"
+                    },
+                    {
+                      "d": "m99.19 57.598v-25.26h39.415v50.521h-39.415zm36.366 9.8396v-3.4438l-7.6012-3.0341c-4.1806-1.6687-7.5656-3.0916-7.5222-3.1619 0.0435-0.07032 3.4634-1.5894 7.5998-3.3758l7.5208-3.248 2e-3 -7.0773h-30.487v6.9684l4.6274 0.01614c2.5451 0.0089 5.0531 0.08237 5.5733 0.16332l0.94588 0.14718-1.9258 0.82919c-2.4193 1.0417-4.431 2.338-4.9244 3.1733-0.20906 0.35391-0.44064 1.0851-0.51462 1.6248-0.38449 2.8052 0.68801 3.9691 5.4731 5.9398l1.7421 0.71747-10.997 0.019v7.1861h30.487z",
+                      "name": "path",
+                      "opacity": ".96154",
+                      "transform": "translate(14.585 31.811)",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": {},
+                  "name": "group",
+                  "stroke": {
+                    "width": "11.183"
+                  },
+                  "type": "group"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-14.585 -31.811)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 143.15 114.89"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Symbol"
+        },
+        "position": {
+          "height": 0.1869,
+          "width": 0.1527,
+          "x": 0.4122
+        },
+        "propConfig": {
+          "props.params.alarmSummary.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.custom.deviceTagPath"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.name": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.device.parentPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceParentPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "alarmSummary": {
+              "enabled": true
+            },
+            "device": {
+              "enabled": false
+            }
+          },
+          "path": "Shared/Alarms/Symbol"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.1495,
+          "width": 0.4351,
+          "x": 0.0553,
+          "y": 0.6963
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.MotorLocation} \u003d \"Up\", true,false)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "{view.custom.deviceTagPath} + \u0027/Parameters.DeviceName\u0027"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.1495,
+          "width": 0.4351,
+          "x": 0.5649,
+          "y": 0.2804
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.MotorLocation} \u003d \"Right\", true,false)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "{view.custom.deviceTagPath} + \u0027/Parameters.DeviceName\u0027"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.1495,
+          "width": 0.4351,
+          "x": 0.0553,
+          "y": 0.8505
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.MotorLocation} \u003d \"Up\" \u0026\u0026 ({view.custom.ValveMoving} \u0026\u0026 !tag({view.custom.deviceTagPath} + \u0027/Alarms/Fault\u0027)), true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Moving",
+          "textStyle": {
+            "color": "var(--success)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.1495,
+          "width": 0.4351,
+          "x": 0.5649,
+          "y": 0.4346
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.MotorLocation} \u003d \"Right\" \u0026\u0026 ({view.custom.ValveMoving} \u0026\u0026 !tag({view.custom.deviceTagPath} + \u0027/Alarms/Fault\u0027)), true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Moving",
+          "textStyle": {
+            "color": "var(--success)",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

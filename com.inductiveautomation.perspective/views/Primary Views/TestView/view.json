@@ -1,0 +1,456 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "TestSub"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    },
+    "dropConfig": {
+      "dataTypes": [
+        {}
+      ],
+      "udts": [
+        {
+          "action": "path",
+          "param": "",
+          "type": "Devices/Distribution Boards/Siemens DB"
+        }
+      ]
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "PM5000 Medium"
+        },
+        "position": {
+          "height": 114.06,
+          "width": 180.1,
+          "x": -485.95,
+          "y": 802.13
+        },
+        "props": {
+          "params": {
+            "deviceName": "MtrLV001",
+            "deviceParentPath": "High Voltage/T1/Substation 12"
+          },
+          "path": "Templates/Power Meters/PM5000 Medium"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board"
+        },
+        "position": {
+          "height": 33.45,
+          "width": 139.97,
+          "x": 235.01,
+          "y": 201.63
+        },
+        "props": {
+          "params": {
+            "deviceName": "BP2_DBX07",
+            "deviceParentPath": "International/T1/Pier B/Departures"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_0"
+        },
+        "position": {
+          "height": 33.45,
+          "rotate": {
+            "anchor": "245% 100%"
+          },
+          "width": 139.97,
+          "x": 399.938,
+          "y": 95.219
+        },
+        "props": {
+          "params": {
+            "deviceName": "BP2_DBX07",
+            "deviceParentPath": "International/T1/Pier B/Departures",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Site Navigation"
+        },
+        "position": {
+          "height": 38.36,
+          "width": 1920,
+          "x": 4.99,
+          "y": 4.91
+        },
+        "propConfig": {
+          "props.params.sitePath": {
+            "binding": {
+              "config": {
+                "path": "view.params.sitePath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "Navigation/Site Navigation",
+          "style": {
+            "margin": 4,
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "height": 85,
+          "width": 129,
+          "x": 326,
+          "y": 310
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "[default]High Voltage/International/Substation 1/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC (1)"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "height": 85,
+          "width": 129,
+          "x": 157,
+          "y": 378
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "[default]High Voltage/International/Substation 1/PLC",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB (1)"
+        },
+        "position": {
+          "height": 150,
+          "width": 90.24,
+          "x": 470,
+          "y": 528
+        },
+        "props": {
+          "params": {
+            "DeviceName": "NECB",
+            "DeviceParentPath": "High Voltage/International/Substation 1/CBS Genset PLC/Genset 1",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB (1)"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_1"
+        },
+        "position": {
+          "height": 33.45,
+          "width": 139.97,
+          "x": 529,
+          "y": 202.0625
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX52",
+            "deviceParentPath": "[default]International/T1/Pier B/Apron"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "height": 34,
+          "width": 140,
+          "x": 164,
+          "y": 289
+        },
+        "props": {
+          "params": {
+            "deviceName": "DBX_Test01",
+            "deviceParentPath": "[default]TestSub",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 991,
+          "y": 497
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "isBadOrError({[default]High Voltage/International/Substation 4/MTR001/Active Power})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.sendMessage(\u0027alarmSymbolHandler\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 67,
+          "y": 208
+        },
+        "props": {
+          "text": "test"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Pumps"
+        },
+        "position": {
+          "height": 180,
+          "width": 180,
+          "x": 955,
+          "y": 220
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "LabelOverride": "",
+            "Pump1Name": "Pump 7",
+            "Pump2Name": "Pump 8",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "alwaysVisible": false,
+            "combinedPump": "",
+            "deviceName": "BPP-RSC02 Hot Water Pumps",
+            "deviceParentPath": "International/T1/Pier B/Plant Room/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_5"
+        },
+        "position": {
+          "height": 180,
+          "width": 180,
+          "x": 1240,
+          "y": 208
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "Suction Temperature",
+            "Analogue2Name": "Discharge Temperature",
+            "LabelOverride": "",
+            "Pump1Name": "Pump 7",
+            "Pump2Name": "Pump 8",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "alwaysVisible": false,
+            "combinedPump": "",
+            "deviceName": "BPP-RSC02 Hot Water Pumps",
+            "deviceParentPath": "International/T1/Pier B/Plant Room/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genset_1"
+        },
+        "position": {
+          "height": 73,
+          "width": 108,
+          "x": 749.73,
+          "y": 347.59
+        },
+        "props": {
+          "params": {
+            "deviceName": "Juliet Genset_test",
+            "deviceParentPath": "International/Precinct/South West",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/HV/Genset/ppuGEKohlerGenset"
+          },
+          "path": "Templates/HV/Genset/Genset"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tactiveAlarms \u003d system.alarm.queryStatus(state\u003d[\"ClearUnacked\",\"ActiveUnacked\"])\n\tfor alarm in activeAlarms:\n\t\teventID \u003d \"%s\" % (alarm.getId())\n\t\tsystem.alarm.acknowledge([eventID], None, self.session.props.auth.user.userName)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 62,
+          "rotate": {
+            "anchor": "50% 39%"
+          },
+          "width": 112,
+          "x": 729.969,
+          "y": 128.79950228881836
+        },
+        "props": {
+          "text": "Ackn All Alarms"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 34,
+          "rotate": {
+            "anchor": "164% 50%"
+          },
+          "width": 80,
+          "x": 588.9625091552734,
+          "y": 293
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "path": "session.custom.visibility.distributionBoards"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch"
+        },
+        "position": {
+          "height": 36,
+          "width": 96,
+          "x": 609,
+          "y": 385
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "session.custom.visibility.distributionBoards"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,766 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Flow Analogue Value w Label"
+        },
+        "position": {
+          "height": 0.03,
+          "width": 0.1329,
+          "x": 0.5932,
+          "y": 0.1625
+        },
+        "props": {
+          "params": {
+            "hideLabel": false,
+            "labelOverride": "Air Temperature (°C)",
+            "showUnitsInValue": true,
+            "tagName": "Temperature",
+            "tagParentPath": "Water Monitoring System/International/Flow Meters/NWS7/Air Temperature/Status Folder",
+            "tagQuality": "Good",
+            "unitsWidth": "25px",
+            "valueWidth": "100px"
+          },
+          "path": "Shared/Templates/Display/Flow Analogue Value w Label",
+          "style": {
+            "borderStyle": "inset",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Control Valve"
+        },
+        "position": {
+          "height": 0.025,
+          "rotate": {
+            "angle": "155deg"
+          },
+          "width": 0.0171,
+          "x": 0.7673,
+          "y": 0.2603
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "m8.7303 413.44c-1.4706-3.0838-2.1688-3.5606-5.2141-3.5606h-3.5162v-107.5c0-59.125 0.1155-107.5 0.25666-107.5 0.14117 0 57.516 22.906 127.5 50.903l127.24 50.903v-178.81h-95v-9.369c0-30.827 12.653-59.9 35.39-81.316 26.422-24.888 62.909-33.385 97.086-22.609 16.188 5.1038 29.929 13.796 42.486 26.875 11.882 12.377 19.034 24.044 24.849 40.535 3.9699 11.259 5.2181 17.892 6.0246 32.014l0.66419 11.63-6.5 0.61329c-3.575 0.33731-13.925 0.61747-23 0.62257-9.075 5e-3 -27.638 0.30535-41.25 0.66723l-24.75 0.65796v178.49l127.24-50.903c69.984-27.996 127.36-50.903 127.5-50.903 0.14116 0 0.25666 48.375 0.25666 107.5v107.5h-3.5162c-3.0453 0-3.7436 0.47681-5.2141 3.5606-1.1018 2.3106-2.2371 3.4096-3.2338 3.1304-0.84473-0.23665-56.886-22.637-124.54-49.777-80.513-32.302-124.21-49.347-126.5-49.347s-45.987 17.046-126.5 49.347c-67.65 27.141-123.69 49.541-124.54 49.777-0.99668 0.27922-2.132-0.81976-3.2338-3.1304zm109.56-55.5c138.17-55.346 124.69-49.71 121.71-50.86-1.375-0.53109-51.325-20.559-111-44.506s-109.74-43.849-111.25-44.226l-2.75-0.68469v90.608c0 49.835 0.24403 90.608 0.54229 90.608 0.29827 0 46.536-18.423 102.75-40.94zm392.71-49.56c0-59.642-0.34083-90.5-0.9996-90.5-1.2312 0-224.21 89.035-225.25 89.941-0.62009 0.54094 223.19 90.874 225.5 91.013 0.4125 0.0249 0.75-40.68 0.75-90.455zm-183.66-207.16 23.845-0.66715-0.6691-5.5876c-0.91386-7.6316-6.8782-25.242-11.117-32.824-9.0559-16.199-23.72-30.126-39.904-37.899-12.273-5.8944-18.897-7.5076-33.26-8.1006-10.283-0.42454-13.78-0.15471-21.694 1.6739-28.081 6.489-52.818 28.29-63.103 55.615-3.1526 8.3756-6.4274 21.787-6.4368 26.36l-7e-3 3.4134 64.25-0.65865c35.338-0.36226 74.98-0.95887 88.095-1.3258z",
+              "name": "path",
+              "opacity": 0.5,
+              "type": "path"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m263.76 659.49c-0.46098-23.85-0.6634-64.274-0.44981-89.831l0.38835-46.468 111.82 44.62c61.499 24.541 111.82 44.914 111.83 45.274 6e-3 0.35972-1.5143 1.2598-3.3781 2.0002-1.8638 0.74039-49.136 19.673-105.05 42.073-55.913 22.4-104.51 41.845-107.99 43.211l-6.3276 2.4844z",
+                  "name": "path",
+                  "opacity": ".96154",
+                  "type": "path"
+                },
+                {
+                  "d": "m741.2 696.62c-86.877-34.553-203.43-81.963-204.75-83.287-0.893-0.893 64.005-27.352 168.9-68.861 28.06-11.104 51.349-19.857 51.755-19.452 1.1126 1.1118 1.563 172.27 0.46101 175.19-0.9258 2.4531-1.4464 2.3388-16.359-3.5925z",
+                  "name": "path",
+                  "opacity": ".96154",
+                  "type": "path"
+                },
+                {
+                  "d": "m423.28 405.77c0-5.0607 6.5944-26.926 10.512-34.854 10.96-22.181 33.472-40.666 56.929-46.744 8.7737-2.2735 29.267-2.5658 38.78-0.55323 20.147 4.2624 42.038 20.294 54.914 40.217 4.8208 7.4586 11.78 26.081 13.301 35.594l0.79981 5.0017-7.8297 0.7737c-4.3064 0.42554-43.734 1.1516-87.618 1.6135-71.217 0.74959-79.788 0.63695-79.788-1.0485z",
+                  "name": "path",
+                  "opacity": ".96154",
+                  "type": "path"
+                }
+              ],
+              "fill": {
+                "paint": "var(--callToAction--disabled)"
+              },
+              "name": "group",
+              "stroke": {
+                "width": "63.279"
+              },
+              "transform": "translate(-248 -305.12)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 525.99 416.62"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/WMS/International/international-pipe-layout"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.056,
+          "x": 0.1217,
+          "y": 0.4434
+        },
+        "props": {
+          "text": "POTABLE SUPPLY",
+          "textStyle": {
+            "classes": "HoverPointer",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.056,
+          "x": 0.824,
+          "y": 0.791
+        },
+        "props": {
+          "text": "PIER C SERVICE TUNNEL",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_2"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.8176,
+          "y": 0.2305
+        },
+        "props": {
+          "color": "var(--neutral-100)",
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_10"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.056,
+          "x": 0.824,
+          "y": 0.3864
+        },
+        "props": {
+          "text": "PIER B SERVICE TUNNEL",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.8356,
+          "y": 0.23
+        },
+        "props": {
+          "text": "to NES",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.2008,
+          "width": 0.056,
+          "x": 0.4092,
+          "y": 0.3585
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "var(--neutral-10)",
+            "borderStyle": "solid",
+            "borderWidth": 2
+          },
+          "text": "T1 TERMINAL Penthouse Tanks 104-107A",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/WMS/International/International Term. Geo Layout"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0517,
+          "x": 0.0045,
+          "y": 0.009
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "T1 Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.1208,
+          "y": 0.4928
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS4A",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_3"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "308deg"
+          },
+          "width": 0.0156,
+          "x": 0.2183,
+          "y": 0.4458
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_1"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.4672,
+          "y": 0.2888
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter A",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters/NWS7/NWS7"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_2"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.388,
+          "y": 0.5702
+        },
+        "props": {
+          "params": {
+            "deviceName": "NWS6",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_4"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0156,
+          "x": 0.4707,
+          "y": 0.3743
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_5"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "322deg"
+          },
+          "width": 0.0156,
+          "x": 0.4859,
+          "y": 0.5357
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_3"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.7054,
+          "y": 0.331
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter A",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters/NWS11"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_4"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.7054,
+          "y": 0.4031
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter B",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters/NWS11"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_6"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6591,
+          "y": 0.4137
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_7"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6576,
+          "y": 0.3415
+        },
+        "props": {
+          "color": "var(--neutral-40)",
+          "path": "material/insert_link"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Flow Direction_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.0167,
+          "x": 0.3468,
+          "y": 0.4436
+        },
+        "props": {
+          "params": {
+            "Multiplier": 180,
+            "StartAngle": 180,
+            "deviceName": "NWS6",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Direction"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Direction_5"
+        },
+        "position": {
+          "height": 0.028,
+          "width": 0.015,
+          "x": 0.5809,
+          "y": 0.3766
+        },
+        "props": {
+          "params": {
+            "Multiplier": 180,
+            "StartAngle": 180,
+            "deviceName": "NWS6",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Direction"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Direction_6"
+        },
+        "position": {
+          "height": 0.0308,
+          "rotate": {
+            "angle": "13deg"
+          },
+          "width": 0.0167,
+          "x": 0.6606,
+          "y": 0.6796
+        },
+        "props": {
+          "params": {
+            "Multiplier": 180,
+            "StartAngle": 195,
+            "deviceName": "NWS6",
+            "deviceParentPath": "Water Monitoring System/International/Flow Meters"
+          },
+          "path": "Templates/WMS/Flow Direction"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Site Navigation Small"
+        },
+        "position": {
+          "height": 0.0769,
+          "width": 0.6125,
+          "x": 0.3832,
+          "y": -0.0002
+        },
+        "props": {
+          "params": {
+            "SiteArea": "NWS International",
+            "SiteName": "International Terminal Pipe Layout",
+            "alarmsVisible": false,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "trendsVisible": false
+          },
+          "path": "Navigation/Site Navigation Small Pipe"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4638,
+                "y": 0.5266
+              },
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.705,
+                    "y": 0.7236
+                  }
+                ],
+                "x": 0.7761,
+                "y": 0.8626
+              }
+            ],
+            "x": 0.7823,
+            "y": 0.7891
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.4638,
+                    "y": 0.3907
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.7818,
+                    "y": 0.2621
+                  }
+                ],
+                "x": 0.6204,
+                "y": 0.3907
+              }
+            ],
+            "x": 0.7818,
+            "y": 0.5231
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2264,
+                "y": 0.46
+              }
+            ],
+            "x": 0.2097,
+            "y": 0.4984
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4784,
+                "y": 0.3911
+              }
+            ],
+            "x": 0.4784,
+            "y": 0.3366
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4925,
+                "y": 0.5531
+              }
+            ],
+            "x": 0.4754,
+            "y": 0.5779
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4099,
+                "y": 0.459
+              }
+            ],
+            "x": 0.1823,
+            "y": 0.459
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6669,
+                "y": 0.356
+              }
+            ],
+            "x": 0.7063,
+            "y": 0.356
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6669,
+                "y": 0.4281
+              }
+            ],
+            "x": 0.7057,
+            "y": 0.4281
+          },
+          "start": "none",
+          "stroke": "var(--neutral-40)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "ODSUAT",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "f0a7ffaa092c02acaf2fed13ff9a1a4638f38bc9bbf3e89aef104fc685052d8b",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "tom",
+      "timestamp": "2024-06-07T05:11:01Z"
+    },
+    "syntaxProvider": "class com.adbs.syntax.OracleSyntaxProvider",
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "eventType",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "correlationID",
+        "sqlType": 7
+      }
+    ]
+  }
+}

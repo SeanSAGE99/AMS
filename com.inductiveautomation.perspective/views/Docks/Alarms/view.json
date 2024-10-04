@@ -1,0 +1,199 @@
+{
+  "custom": {},
+  "params": {
+    "siteTagPath": "TestSub"
+  },
+  "propConfig": {
+    "params.siteTagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "marginRight": 70
+              },
+              "text": "Alarms"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "display": false,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.siteTagPath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "id": "alarmbanner",
+                    "type": "close"
+                  },
+                  "scope": "C",
+                  "type": "dock"
+                }
+              }
+            },
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "props": {
+              "color": "var(--neutral-90)",
+              "path": "material/close",
+              "style": {
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading2"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "AlarmStatusTable"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.activeSortOrder": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.activeSortOrder"
+              },
+              "type": "property"
+            },
+            "persistent": true
+          },
+          "props.filters.active.conditions.source": {
+            "binding": {
+              "config": {
+                "expression": "\u0027*\u0027 + {view.params.siteTagPath} + \u0027*\u0027"
+              },
+              "type": "expr"
+            }
+          },
+          "props.responsive": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.responsive"
+              },
+              "type": "property"
+            }
+          },
+          "props.rowStyles": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.rowStyles"
+              },
+              "type": "property"
+            }
+          },
+          "props.shelvingTimes": {
+            "binding": {
+              "config": {
+                "path": "session.custom.alarms.shelvingTimes"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "activeSortOrder": [
+            "state",
+            "priority",
+            "activeTime"
+          ],
+          "columns": {
+            "active": {
+              "activeTime": {
+                "sort": "descending"
+              },
+              "label": {
+                "enabled": true
+              },
+              "source": {
+                "enabled": false
+              }
+            }
+          },
+          "dateFormat": "DD/MM/YYYY HH:mm:ss",
+          "filters": {
+            "active": {
+              "conditions": {
+                "provider": "default"
+              }
+            }
+          },
+          "pager": {
+            "enabled": false
+          },
+          "toolbar": {
+            "enableFilterResults": false
+          }
+        },
+        "type": "ia.display.alarmstatustable"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 828,
+      "width": 2378
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Simple Navigation"
+        },
+        "position": {
+          "basis": "40px"
+        },
+        "props": {
+          "params": {
+            "Device": "Energy Monitoring Domestic Overview",
+            "area": "SYD"
+          },
+          "path": "Primary Views/Diagnostics/Embedded/Simple Navigation",
+          "style": {
+            "margin": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Card Virtual Meter Horisontal"
+            },
+            "position": {
+              "basis": "200px"
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]High Voltage/Domestic/Virtual Meters"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices Horizontal",
+                "title": "Domestic",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Virtual Meter Horisontal",
+              "useDefaultViewHeight": true,
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "Domestic"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "alignContent": "space-around",
+          "alignItems": "center",
+          "direction": "column",
+          "justify": "flex-end",
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Sub 21"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]High Voltage/Domestic/Substation 21/Virtual Meters"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices",
+                "title": "Substation 21",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Virtual Meter",
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Sub 22"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]High Voltage/Domestic/Substation 22/Virtual Meters"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices",
+                "title": "Substation 22",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Virtual Meter",
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Sub 23"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]High Voltage/Domestic/Substation 23/Virtual Meters"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices",
+                "title": "Substation 23",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Virtual Meter",
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 3
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "flex-start",
+          "justify": "space-between",
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Sub U"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]High Voltage/Domestic/Substation U/Virtual Meters"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices",
+                "title": "Substation U",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Virtual Meter",
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Sub V"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]High Voltage/Domestic/Substation V/Virtual Meters"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices",
+                "title": "Substation V",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Virtual Meter",
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Sub W"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "params": {
+                  "areaPath": "[default]High Voltage/Domestic/Substation W/Virtual Meters"
+                },
+                "path": "Primary Views/Diagnostics/Embedded/Virtual Meter Devices",
+                "title": "Substation W",
+                "useDefaultHeight": false,
+                "useDefaultWidth": false
+              },
+              "path": "Primary Views/Diagnostics/Framework/Card/Card Virtual Meter",
+              "useDefaultViewWidth": true
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 3
+        },
+        "props": {
+          "alignContent": "space-between",
+          "alignItems": "flex-start"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "alignItems": "center",
+      "direction": "column",
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

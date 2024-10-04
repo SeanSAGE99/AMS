@@ -1,0 +1,1428 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\tself.getChild(\"root\").refresh()"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 1136
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tself.parent.refresh()"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "34px"
+        },
+        "props": {
+          "style": {
+            "classes": "Buttons/Body Buttons/Text Tables/Row"
+          },
+          "text": "Refresh"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1
+        },
+        "props": {
+          "elementStyle": {
+            "borderBottomStyle": "dashed",
+            "borderBottomWidth": "1px",
+            "borderTopStyle": "none",
+            "borderTopWidth": "1px",
+            "marginBottom": "5px",
+            "paddingBottom": "5px"
+          },
+          "instances": [
+            {
+              "projectName": "AMS",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/AMS/com.inductiveautomation.perspective/style-classes/Flash",
+              "styleName": "Flash",
+              "styleParentPath": ""
+            },
+            {
+              "projectName": "AMS",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/AMS/com.inductiveautomation.perspective/style-classes/HoverPointer",
+              "styleName": "HoverPointer",
+              "styleParentPath": ""
+            },
+            {
+              "projectName": "AMS",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/AMS/com.inductiveautomation.perspective/style-classes/Text/Data",
+              "styleName": "Data",
+              "styleParentPath": "Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/Critical",
+              "styleName": "Critical",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/CriticalUnacked",
+              "styleName": "CriticalUnacked",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/Diagnostic",
+              "styleName": "Diagnostic",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/DiagnosticUnacked",
+              "styleName": "DiagnosticUnacked",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/High",
+              "styleName": "High",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/HighUnacked",
+              "styleName": "HighUnacked",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/Low",
+              "styleName": "Low",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/LowUnacked",
+              "styleName": "LowUnacked",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/Medium",
+              "styleName": "Medium",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/ASTRowStyles/MediumUnacked",
+              "styleName": "MediumUnacked",
+              "styleParentPath": "Alarms/ASTRowStyles"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/Critical",
+              "styleName": "Critical",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/CriticalUnacked",
+              "styleName": "CriticalUnacked",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/High",
+              "styleName": "High",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/HighUnacked",
+              "styleName": "HighUnacked",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/Low",
+              "styleName": "Low",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/LowUnacked",
+              "styleName": "LowUnacked",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/Medium",
+              "styleName": "Medium",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Background/MediumUnacked",
+              "styleName": "MediumUnacked",
+              "styleParentPath": "Alarms/Background"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Border/Critical",
+              "styleName": "Critical",
+              "styleParentPath": "Alarms/Border"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Border/High",
+              "styleName": "High",
+              "styleParentPath": "Alarms/Border"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Border/Low",
+              "styleName": "Low",
+              "styleParentPath": "Alarms/Border"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Border/Medium",
+              "styleName": "Medium",
+              "styleParentPath": "Alarms/Border"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/Critical",
+              "styleName": "Critical",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/CriticalUnacked",
+              "styleName": "CriticalUnacked",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/High",
+              "styleName": "High",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/HighUnacked",
+              "styleName": "HighUnacked",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/Low",
+              "styleName": "Low",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/LowUnacked",
+              "styleName": "LowUnacked",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/Medium",
+              "styleName": "Medium",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Symbol/MediumUnacked",
+              "styleName": "MediumUnacked",
+              "styleParentPath": "Alarms/Symbol"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Text/Critical",
+              "styleName": "Critical",
+              "styleParentPath": "Alarms/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Text/High",
+              "styleName": "High",
+              "styleParentPath": "Alarms/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Text/Low",
+              "styleName": "Low",
+              "styleParentPath": "Alarms/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alarms/Text/Medium",
+              "styleName": "Medium",
+              "styleParentPath": "Alarms/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/alertButton",
+              "styleName": "alertButton",
+              "styleParentPath": "Alerts"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/alertButtonSecondary",
+              "styleName": "alertButtonSecondary",
+              "styleParentPath": "Alerts"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/alertClose",
+              "styleName": "alertClose",
+              "styleParentPath": "Alerts"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/alertMessage",
+              "styleName": "alertMessage",
+              "styleParentPath": "Alerts"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/alertTitle",
+              "styleName": "alertTitle",
+              "styleParentPath": "Alerts"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/error",
+              "styleName": "error",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/errorBtn1",
+              "styleName": "errorBtn1",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/errorBtn2",
+              "styleName": "errorBtn2",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/info",
+              "styleName": "info",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/infoBtn1",
+              "styleName": "infoBtn1",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/infoBtn2",
+              "styleName": "infoBtn2",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/success",
+              "styleName": "success",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/successBtn1",
+              "styleName": "successBtn1",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/successBtn2",
+              "styleName": "successBtn2",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/warning",
+              "styleName": "warning",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/warningBtn1",
+              "styleName": "warningBtn1",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Alerts/states/warningBtn2",
+              "styleName": "warningBtn2",
+              "styleParentPath": "Alerts/states"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/AMS/Button/Button-normal",
+              "styleName": "Button-normal",
+              "styleParentPath": "AMS/Button"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Duty/Text/Duty",
+              "styleName": "Duty",
+              "styleParentPath": "Device/Duty/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Duty/Text/Standby",
+              "styleName": "Standby",
+              "styleParentPath": "Device/Duty/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Auto",
+              "styleName": "Auto",
+              "styleParentPath": "Device/Mode"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Invalid",
+              "styleName": "Invalid",
+              "styleParentPath": "Device/Mode"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Maintenance",
+              "styleName": "Maintenance",
+              "styleParentPath": "Device/Mode"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Manual",
+              "styleName": "Manual",
+              "styleParentPath": "Device/Mode"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Manual-Icon",
+              "styleName": "Manual-Icon",
+              "styleParentPath": "Device/Mode"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Off",
+              "styleName": "Off",
+              "styleParentPath": "Device/Mode"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Shape/Auto",
+              "styleName": "Auto",
+              "styleParentPath": "Device/Mode/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Mode/Shape/Manual",
+              "styleName": "Manual",
+              "styleParentPath": "Device/Mode/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Abnormal",
+              "styleName": "Abnormal",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Border/Faulted",
+              "styleName": "Faulted",
+              "styleParentPath": "Device/Status/Border"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Border/Faulted_SingleFlash",
+              "styleName": "Faulted_SingleFlash",
+              "styleParentPath": "Device/Status/Border"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Border/Normal",
+              "styleName": "Normal",
+              "styleParentPath": "Device/Status/Border"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Faulted",
+              "styleName": "Faulted",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Faulted_NonFlashing",
+              "styleName": "Faulted_NonFlashing",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/FOI",
+              "styleName": "FOI",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Invalid",
+              "styleName": "Invalid",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Off",
+              "styleName": "Off",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/On",
+              "styleName": "On",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Paused",
+              "styleName": "Paused",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/Faulted",
+              "styleName": "Faulted",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/Faulted_Stroke",
+              "styleName": "Faulted_Stroke",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/FOI",
+              "styleName": "FOI",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/Invalid",
+              "styleName": "Invalid",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/Off",
+              "styleName": "Off",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/On",
+              "styleName": "On",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Shape/Paused",
+              "styleName": "Paused",
+              "styleParentPath": "Device/Status/Shape"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Static",
+              "styleName": "Static",
+              "styleParentPath": "Device/Status"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/Abnormal",
+              "styleName": "Abnormal",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/Faulted",
+              "styleName": "Faulted",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/Faulted_Stroke",
+              "styleName": "Faulted_Stroke",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/FOI",
+              "styleName": "FOI",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/Invalid",
+              "styleName": "Invalid",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/Off",
+              "styleName": "Off",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/On",
+              "styleName": "On",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Device/Status/Text/Paused",
+              "styleName": "Paused",
+              "styleParentPath": "Device/Status/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/device-diagnostics/font",
+              "styleName": "font",
+              "styleParentPath": "device-diagnostics"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/device-diagnostics/header",
+              "styleName": "header",
+              "styleParentPath": "device-diagnostics"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/device-diagnostics/icon",
+              "styleName": "icon",
+              "styleParentPath": "device-diagnostics"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/device-diagnostics/main-section",
+              "styleName": "main-section",
+              "styleParentPath": "device-diagnostics"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/device-diagnostics/section",
+              "styleName": "section",
+              "styleParentPath": "device-diagnostics"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Bold_Text",
+              "styleName": "Bold_Text",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Card",
+              "styleName": "Card",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Embedded",
+              "styleName": "Embedded",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Item",
+              "styleName": "Item",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Item_Border",
+              "styleName": "Item_Border",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Label",
+              "styleName": "Label",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Row",
+              "styleName": "Row",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Title",
+              "styleName": "Title",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Framework/Card/Value",
+              "styleName": "Value",
+              "styleParentPath": "Framework/Card"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Heading-DELETE",
+              "styleName": "Heading-DELETE",
+              "styleParentPath": ""
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Input/Button/Body-normal",
+              "styleName": "Body-normal",
+              "styleParentPath": "Input/Button"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Input/Button/Colour/Normal",
+              "styleName": "Normal",
+              "styleParentPath": "Input/Button/Colour"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Input/Button/Colour/Selected",
+              "styleName": "Selected",
+              "styleParentPath": "Input/Button/Colour"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Input/Button/Text",
+              "styleName": "Text",
+              "styleParentPath": "Input/Button"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Input/Icon",
+              "styleName": "Icon",
+              "styleParentPath": "Input"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Acid/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Acid"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Acid/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Acid"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Acid/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Acid"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Acid/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Acid"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Caustic/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Caustic"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Caustic/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Caustic"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Caustic/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Caustic"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Caustic/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Caustic"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/CIP/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/CIP"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/CIP/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/CIP"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/CIP/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/CIP"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/CIP/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/CIP"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Clean/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Clean"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Clean/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Clean"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Clean/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Clean"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Clean/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Clean"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Empty/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Empty"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Empty/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Empty"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Empty/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Empty"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Empty/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Empty"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Gas/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Gas"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Gas/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Gas"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Gas/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Gas"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Gas/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Gas"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/KeyStones/Connected",
+              "styleName": "Connected",
+              "styleParentPath": "Pipework/KeyStones"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/KeyStones/Disconnected",
+              "styleName": "Disconnected",
+              "styleParentPath": "Pipework/KeyStones"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/KeyStones/Pigging",
+              "styleName": "Pigging",
+              "styleParentPath": "Pipework/KeyStones"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/KeyStones/Required",
+              "styleName": "Required",
+              "styleParentPath": "Pipework/KeyStones"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/KeyStones/WineTransfer",
+              "styleName": "WineTransfer",
+              "styleParentPath": "Pipework/KeyStones"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/LabelBorders/Bottom",
+              "styleName": "Bottom",
+              "styleParentPath": "Pipework/LabelBorders"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/LabelBorders/Left",
+              "styleName": "Left",
+              "styleParentPath": "Pipework/LabelBorders"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/LabelBorders/Right",
+              "styleName": "Right",
+              "styleParentPath": "Pipework/LabelBorders"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/LabelBorders/Top",
+              "styleName": "Top",
+              "styleParentPath": "Pipework/LabelBorders"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/None/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/None"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/None/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/None"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/None/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/None"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/None/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/None"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Oil/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Oil"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Oil/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Oil"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Oil/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Oil"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Oil/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Oil"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Product/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Product"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Product/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Product"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Product/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Product"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Product/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Product"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Water/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Water"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Water/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Water"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Water/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Water"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Water/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Water"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Wine/Off",
+              "styleName": "Off",
+              "styleParentPath": "Pipework/Wine"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Wine/Off-trans",
+              "styleName": "Off-trans",
+              "styleParentPath": "Pipework/Wine"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Wine/On",
+              "styleName": "On",
+              "styleParentPath": "Pipework/Wine"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Pipework/Wine/On-trans",
+              "styleName": "On-trans",
+              "styleParentPath": "Pipework/Wine"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Prompt-DELETE",
+              "styleName": "Prompt-DELETE",
+              "styleParentPath": ""
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Table/Highlighted",
+              "styleName": "Highlighted",
+              "styleParentPath": "Table"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Table/ItemLabelSub",
+              "styleName": "ItemLabelSub",
+              "styleParentPath": "Table"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/Label",
+              "styleName": "Label",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/PVDisplayBox",
+              "styleName": "PVDisplayBox",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/PVDisplayBox_UnitsInBox",
+              "styleName": "PVDisplayBox_UnitsInBox",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/SPDisplayBox",
+              "styleName": "SPDisplayBox",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/SPDisplayBox_UnitsInBox",
+              "styleName": "SPDisplayBox_UnitsInBox",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/StatusGeneral",
+              "styleName": "StatusGeneral",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/Units",
+              "styleName": "Units",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/Units_InBox",
+              "styleName": "Units_InBox",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/Units_InBox_SP",
+              "styleName": "Units_InBox_SP",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/Value",
+              "styleName": "Value",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Tag/Value_InBox",
+              "styleName": "Value_InBox",
+              "styleParentPath": "Tag"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Container/Emphasis/L1",
+              "styleName": "L1",
+              "styleParentPath": "UI/Container/Emphasis"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Container/Emphasis/L2",
+              "styleName": "L2",
+              "styleParentPath": "UI/Container/Emphasis"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Container/Emphasis/L3",
+              "styleName": "L3",
+              "styleParentPath": "UI/Container/Emphasis"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Form/Emphasis-abnormal",
+              "styleName": "Emphasis-abnormal",
+              "styleParentPath": "UI/Form"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Form/Emphasis-normal",
+              "styleName": "Emphasis-normal",
+              "styleParentPath": "UI/Form"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Form/Panel-no-shadow",
+              "styleName": "Panel-no-shadow",
+              "styleParentPath": "UI/Form"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Form/Panel-normal",
+              "styleName": "Panel-normal",
+              "styleParentPath": "UI/Form"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Form/Panel-selected",
+              "styleName": "Panel-selected",
+              "styleParentPath": "UI/Form"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Icon/Button-faded",
+              "styleName": "Button-faded",
+              "styleParentPath": "UI/Icon"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Icon/Selected",
+              "styleName": "Selected",
+              "styleParentPath": "UI/Icon"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Icon/Spacing-left",
+              "styleName": "Spacing-left",
+              "styleParentPath": "UI/Icon"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Icon/Spacing-right",
+              "styleName": "Spacing-right",
+              "styleParentPath": "UI/Icon"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Menu/Item-not-selected",
+              "styleName": "Item-not-selected",
+              "styleParentPath": "UI/Menu"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Menu/Item-selected",
+              "styleName": "Item-selected",
+              "styleParentPath": "UI/Menu"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Menu/Item-selected-full",
+              "styleName": "Item-selected-full",
+              "styleParentPath": "UI/Menu"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Pages/Background",
+              "styleName": "Background",
+              "styleParentPath": "UI/Pages"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Pages/Background-text",
+              "styleName": "Background-text",
+              "styleParentPath": "UI/Pages"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Popups/Background",
+              "styleName": "Background",
+              "styleParentPath": "UI/Popups"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Popups/ContentMargins",
+              "styleName": "ContentMargins",
+              "styleParentPath": "UI/Popups"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Alarm",
+              "styleName": "Alarm",
+              "styleParentPath": "UI/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Heading1",
+              "styleName": "Heading1",
+              "styleParentPath": "UI/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Heading2",
+              "styleName": "Heading2",
+              "styleParentPath": "UI/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Heading3",
+              "styleName": "Heading3",
+              "styleParentPath": "UI/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Heading4",
+              "styleName": "Heading4",
+              "styleParentPath": "UI/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Hyperlink",
+              "styleName": "Hyperlink",
+              "styleParentPath": "UI/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Size/Size0",
+              "styleName": "Size0",
+              "styleParentPath": "UI/Text/Size"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Size/Size1",
+              "styleName": "Size1",
+              "styleParentPath": "UI/Text/Size"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Size/Size2",
+              "styleName": "Size2",
+              "styleParentPath": "UI/Text/Size"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Size/Size3",
+              "styleName": "Size3",
+              "styleParentPath": "UI/Text/Size"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Size/Size4",
+              "styleName": "Size4",
+              "styleParentPath": "UI/Text/Size"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/UI/Text/Tooltip",
+              "styleName": "Tooltip",
+              "styleParentPath": "UI/Text"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Utilities/m-b-16",
+              "styleName": "m-b-16",
+              "styleParentPath": "Utilities"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Utilities/m-r-16",
+              "styleName": "m-r-16",
+              "styleParentPath": "Utilities"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Utilities/m-r-8",
+              "styleName": "m-r-8",
+              "styleParentPath": "Utilities"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Utilities/p-16",
+              "styleName": "p-16",
+              "styleParentPath": "Utilities"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Utilities/p-8",
+              "styleName": "p-8",
+              "styleParentPath": "Utilities"
+            },
+            {
+              "projectName": "global",
+              "styleFullPath": "C:/Program Files/Inductive Automation/Ignition/data/projects/global/com.inductiveautomation.perspective/style-classes/Utilities/p-rl-8",
+              "styleName": "p-rl-8",
+              "styleParentPath": "Utilities"
+            }
+          ],
+          "path": "_Dev/Perspective Styles Extractor/PerspectiveStyleRow",
+          "wrap": "wrap"
+        },
+        "type": "ia.display.flex-repeater"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--page-background)"
+      },
+      "wrap": "wrap"
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "refresh",
+          "params": [],
+          "script": "\tdef findFolderStyles(projectName, folderPath):\n\t\timport os\n\t\timport sys\n\t\tstyles \u003d []\n\t\tfor root, subdirs, files in os.walk(folderPath):\n\t\t\troot \u003d root.replace(\u0027\\\\\u0027, \u0027/\u0027)\n\t\t\tif \u0027resource.json\u0027 in files:\n\t\t\t\tstyles.append({\u0027projectName\u0027:projectName,\n\t\t\t\t\t\t\t   \u0027styleFullPath\u0027:str(root), # this is the full directory path to the style in Windows\n\t\t\t\t\t\t\t   \u0027styleParentPath\u0027:\u0027/\u0027.join(root.replace(folderPath,\u0027\u0027).split(\u0027/\u0027)[:-1]),  # gets the Perspective Style path used in Ignition, excluding the style name itself \n\t\t\t\t\t\t\t   \u0027styleName\u0027:str(root.split(\u0027/\u0027)[-1])\n\t\t\t\t\t\t\t   })\n\t\treturn styles\n\t\n\tdef findProjectStyles(projectName):\n\t\tfrom com.inductiveautomation.ignition.gateway import IgnitionGateway\n\t\tcontext \u003d IgnitionGateway.get()\n\t\tprojectParentFolder \u003d str(context.systemManager.dataDir.absoluteFile).replace(\u0027\\\\\u0027,\u0027/\u0027) + \u0027/projects/\u0027\n\t\tstyleClassesRelPath \u003d \"/com.inductiveautomation.perspective/style-classes/\"\n\t\t\n\t\tstyleClassFullPath \u003d \u0027%s%s%s\u0027 % (projectParentFolder, projectName, styleClassesRelPath)\n\t\t\n\t\treturn findFolderStyles(projectName, styleClassFullPath)\n\t\n\tdef findRelevantProjectStyles():\n\t\tfrom com.inductiveautomation.ignition.gateway import IgnitionGateway\n\t\tcontext \u003d IgnitionGateway.get()\n\t\tprojectMgr \u003d context.projectManager\n\t\tprojectMfst \u003d projectMgr.projectManifests\n\t\tprojectName \u003d system.project.getProjectName()\n\t\t\n\t\tstyles \u003d []\n\t\t# get the Perspective Styles defined in the current project\n\t\tstyles.extend(findProjectStyles(projectName))\n\t\t\n\t\twhile projectMfst[projectName].getParent() !\u003d \u0027\u0027:\n\t\t\t# get the parent project\n\t\t\tprojectName \u003d projectMfst[projectName].getParent()\n\t\t\t# get the Perspective Styles defined in the parent project \n\t\t\tstyles.extend(findProjectStyles(projectName))\n\t\treturn styles\n\t\n\tstyles \u003d findRelevantProjectStyles()\n\tudtInstances \u003d styles\n\tself.getChild(\"FlexRepeater\").props.instances \u003d udtInstances"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.flex"
+  }
+}

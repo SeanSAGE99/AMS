@@ -1,0 +1,235 @@
+{
+  "custom": {},
+  "params": {
+    "deviceName": "Slot 1 Fault",
+    "deviceTagPath": "[default]High Voltage/International/Substation 1/PLC/Remote IO 1/Alarms/Slot 1 Fault",
+    "fontSize": "clamp(4pt, calc(0.3*(1.0vmin + 1.0vmax)), 18pt)"
+  },
+  "propConfig": {
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceTagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 194,
+      "width": 62
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "IO"
+        },
+        "position": {
+          "height": 1,
+          "width": 1
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m2.7829 197.12-1.4495-1.543v-146.01l1.543-1.4495c1.5338-1.4409 1.7102-1.4495 29.618-1.4495h28.075l1.3817 1.7566c1.3786 1.7526 1.3817 1.9199 1.3817 74.243 0 72.324-0.0031 72.491-1.3817 74.243l-1.3817 1.7566h-56.337zm57.86-1.7465c0.4634-0.86587 0.69012-24.753 0.69012-72.71 0-47.957-0.22672-71.845-0.69012-72.71-0.66519-1.2429-1.6841-1.2895-28.2-1.2895-20.508 0-27.714 0.20363-28.31 0.8-1.1611 1.1611-1.1611 145.24 0 146.4 0.59637 0.59637 7.8022 0.8 28.31 0.8 26.516 0 27.535-0.0466 28.2-1.2895zm-57.674-151.68-1.6364-1.6364v-35.455l3.2727-3.2727h26.999c18.367 0 27.518 0.23664 28.623 0.74018 2.8588 1.3026 3.1049 2.9659 3.1049 20.988v16.999l-3.2727 3.2727h-55.455zm57.144-1.467c1.1192-1.0129 1.2192-2.4706 1.2192-17.781 0-14.583-0.13856-16.831-1.1033-17.897-1.0341-1.1427-2.7881-1.2192-27.952-1.2192-23.519 0-26.979 0.12992-27.897 1.0476-1.5714 1.5714-1.5714 34.333 0 35.905 0.91755 0.91755 4.3668 1.0476 27.781 1.0476 23.94 0 26.861-0.11528 27.952-1.1033z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-1.3333 -3.3333)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 62 195.33"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.1649,
+          "width": 0.9032,
+          "x": 0.0484,
+          "y": 0.041
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "tag({view.params.deviceTagPath} + \u0027.Module\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.textStyle.fontSize": {
+            "binding": {
+              "config": {
+                "path": "view.params.fontSize"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "alarm-symbol-asm-25"
+        },
+        "position": {
+          "height": 0.2577,
+          "width": 0.8065,
+          "x": 0.0968,
+          "y": 0.2631
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "tag({view.params.deviceTagPath})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "height": 24,
+                  "name": "rect",
+                  "style": {
+                    "classes": "Alarms/Symbol/CriticalUnacked"
+                  },
+                  "type": "rect",
+                  "width": 24,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "name": "text",
+                  "style": {
+                    "classes": "Alarms/Text/Critical"
+                  },
+                  "text": "C",
+                  "type": "text",
+                  "x": 7.278513,
+                  "y": 17.205189
+                }
+              ],
+              "name": "Critical",
+              "type": "circle"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m25.905-11.386-8.4616-4.8853 8.4616-4.8853z",
+                  "name": "path",
+                  "style": {
+                    "classes": "Alarms/Symbol/HighUnacked"
+                  },
+                  "transform": "matrix(0 2.2791 -2.2791 0 -25.083 -37.148)",
+                  "type": "path"
+                },
+                {
+                  "name": "text",
+                  "style": {
+                    "classes": "Alarms/Text/High"
+                  },
+                  "text": "H",
+                  "type": "text",
+                  "x": 7.278513,
+                  "y": 19.915773
+                }
+              ],
+              "name": "High",
+              "type": "circle"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m25.905-11.386-8.4616-4.8853 8.4616-4.8853z",
+                  "name": "path",
+                  "style": {
+                    "classes": "Alarms/Symbol/MediumUnacked"
+                  },
+                  "transform": "matrix(0 -2.2791 -2.2791 0 -25.083 61.148)",
+                  "type": "path"
+                },
+                {
+                  "name": "text",
+                  "style": {
+                    "classes": "Alarms/Text/Medium",
+                    "fontSize": "9pt",
+                    "fontWeight": "bold"
+                  },
+                  "text": "M",
+                  "type": "text",
+                  "x": 6.478513,
+                  "y": 12.540773
+                }
+              ],
+              "name": "Medium",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "height": "15.971",
+                  "name": "rect",
+                  "style": {
+                    "classes": "Alarms/Symbol/LowUnacked"
+                  },
+                  "transform": "rotate(45)",
+                  "type": "rect",
+                  "width": "15.971",
+                  "x": "8.9853",
+                  "y": "-7.9853"
+                },
+                {
+                  "name": "text",
+                  "style": {
+                    "classes": "Alarms/Text/Low"
+                  },
+                  "text": "L",
+                  "type": "text",
+                  "x": 7.478513,
+                  "y": 16.805189
+                }
+              ],
+              "name": "Low",
+              "type": "circle"
+            }
+          ],
+          "viewBox": "0 0 24 24"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

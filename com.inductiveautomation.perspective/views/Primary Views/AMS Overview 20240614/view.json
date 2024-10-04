@@ -1,0 +1,2342 @@
+{
+  "custom": {
+    "offlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "urlTemplateParams": {}
+      }
+    ],
+    "onlineStreet": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlTemplateParams": {}
+      }
+    ],
+    "satellite": [
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      },
+      {
+        "WMS": {
+          "format": "image/jpeg",
+          "layers": "",
+          "styles": "",
+          "transparent": false,
+          "uppercase": false,
+          "version": "1.1.1"
+        },
+        "options": {
+          "attribution": "",
+          "crossOrigin": false,
+          "detectRetina": false,
+          "errorTileUrl": "",
+          "opacity": 1,
+          "subdomains": [
+            "a",
+            "b",
+            "c"
+          ],
+          "tileSize": {
+            "height": 256,
+            "width": 256
+          },
+          "tms": false,
+          "update": {
+            "interval": 200,
+            "whenIdle": false,
+            "whenZooming": true
+          },
+          "zIndex": 1,
+          "zoom": {
+            "max": 18,
+            "min": 0,
+            "native": {
+              "max": null,
+              "min": null
+            },
+            "offset": 0,
+            "reverse": false
+          }
+        },
+        "url": "https://maps4.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{z}/{y}/{x}",
+        "urlTemplateParams": {}
+      }
+    ],
+    "selectedMap": "offlineStreet"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.offlineStreet": {
+      "persistent": true
+    },
+    "custom.offlineStreet[0].url": {
+      "binding": {
+        "config": {
+          "expression": "{session.props.gateway.address} + \u0027/main/tiles/{z}/{x}/{y}.png\u0027"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.onlineStreet": {
+      "persistent": true
+    },
+    "custom.satellite": {
+      "persistent": true
+    },
+    "custom.selectedMap": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "custom": {
+              "AreaTooltip": "value",
+              "zoom": 18
+            },
+            "events": {
+              "component": {
+                "onZoom": {
+                  "config": {
+                    "script": "\tself.custom.zoom \u003d event.zoom"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Map_0",
+              "tooltip": {
+                "style": {
+                  "opacity": "1"
+                }
+              }
+            },
+            "position": {
+              "height": "100%",
+              "width": "100%"
+            },
+            "propConfig": {
+              "custom.scale": {
+                "binding": {
+                  "config": {
+                    "expression": "22/(22+16*({this.custom.zoom}-11))"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.layers.raster.tile": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.selectedMap"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "{view.custom.offlineStreet}",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "satellite",
+                          "output": "{view.custom.satellite}"
+                        },
+                        {
+                          "input": "onlineStreet",
+                          "output": "{view.custom.onlineStreet}"
+                        },
+                        {
+                          "input": "offlineStreet",
+                          "output": "{view.custom.offlineStreet}"
+                        }
+                      ],
+                      "outputType": "expression",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[0].params.zoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[18].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[19].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[1].params.zoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[20].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[21].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[22].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[23].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[24].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[25].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[26].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[27].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[28].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[29].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[2].params.zoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[30].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[31].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[32].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[33].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[34].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[35].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[36].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[37].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[38].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.ui.view[39].params.ZoomLevel": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.zoom"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.layers.vector.polyline[0].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[1].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[2].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[3].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[4].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[5].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[6].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[7].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[8].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              },
+              "props.layers.vector.polyline[9].stroke.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "tag (\u0027[default]International/Pollution Gate Visibility\u0027)*{this.custom.zoom}"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": null,
+                      "inputType": "range",
+                      "mappings": [
+                        {
+                          "input": {
+                            "max": 15,
+                            "min": 0
+                          },
+                          "output": 0
+                        },
+                        {
+                          "input": {
+                            "max": 19,
+                            "min": 15.1
+                          },
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "init": {
+                "center": {
+                  "lat": -33.936,
+                  "lng": 151.173
+                },
+                "zoom": 16
+              },
+              "layers": {
+                "raster": {},
+                "ui": {
+                  "view": [
+                    {
+                      "lat": -33.937,
+                      "lng": 151.169,
+                      "params": {
+                        "navigationLabel": "Pier B Overview",
+                        "navigationPage": "/International/International Pier B Overview"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9448,
+                      "lng": 151.1697,
+                      "params": {
+                        "navigationLabel": "South West Sector",
+                        "navigationPage": "/International/South West Sector"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9275,
+                      "lng": 151.1758,
+                      "params": {
+                        "navigationLabel": "Northern Pond",
+                        "navigationPage": "/Domestic/Northern Pond"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9345,
+                      "lng": 151.1802,
+                      "params": {
+                        "navigationLabel": "Dom 2, 3, 3A and 3B",
+                        "navigationPage": "/Domestic/North East Apron",
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.935,
+                      "lng": 151.186,
+                      "params": {
+                        "navigationLabel": "Dom 4, 5 and 6",
+                        "navigationPage": "/Domestic/Dom 4, 5, 6",
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.931,
+                      "lng": 151.1677,
+                      "params": {
+                        "navigationLabel": "Bay 1 and Northern Apron",
+                        "navigationPage": "/International/Bay 1",
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.939,
+                      "lng": 151.1655,
+                      "params": {
+                        "navigationLabel": "Pier C Overview",
+                        "navigationPage": "/International/International Pier C Overview",
+                        "zoomLevel": 18
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9345,
+                      "lng": 151.1632,
+                      "params": {
+                        "navigationLabel": "South Area",
+                        "navigationPage": "/International/South Area Map",
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.932,
+                      "lng": 151.179,
+                      "params": {
+                        "navigationLabel": "Dom 1",
+                        "navigationPage": "/Domestic/Dom 1",
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.94232,
+                      "lng": 151.16245,
+                      "params": {
+                        "navigationLabel": "Waste Disposal",
+                        "navigationPage": "/International/T1 Waste Disposal Facility",
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9431,
+                      "lng": 151.1618,
+                      "params": {
+                        "navigationLabel": "RESA",
+                        "navigationPage": "/International/RESA Surface",
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.935,
+                      "lng": 151.1647,
+                      "params": {
+                        "navigationLabel": "P7 Car Park",
+                        "navigationPage": "/International/Car Parks/P7 Car Park/System Overview",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9339,
+                      "lng": 151.165,
+                      "params": {
+                        "navigationLabel": "P6 Car Park",
+                        "navigationPage": "/International/Car Parks/P6 Car Park/System Overview",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9337,
+                      "lng": 151.184,
+                      "params": {
+                        "navigationLabel": "P3 Car Park",
+                        "navigationPage": "/Domestic/Car Parks/P3 Car Park/System Overview",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9335,
+                      "lng": 151.1828,
+                      "params": {
+                        "navigationLabel": "P2 Car Park",
+                        "navigationPage": "/Domestic/Car Parks/P2 Car Park/System Overview",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9335,
+                      "lng": 151.1637,
+                      "params": {
+                        "navigationLabel": "Charles ULM Building",
+                        "navigationPage": "/International/Charles ULM Building",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9351,
+                      "lng": 151.1654,
+                      "params": {
+                        "navigationLabel": "Nigel Love Building",
+                        "navigationPage": "/International/Nigel Love Building",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9325,
+                      "lng": 151.183,
+                      "params": {
+                        "navigationLabel": "Qantas Domestic Carpark",
+                        "navigationPage": "/Car Parks/Qantas Domestic Carpark/System Overview",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9307,
+                      "lng": 151.1683,
+                      "params": {
+                        "LabelName": "Gate C"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9332,
+                      "lng": 151.1688,
+                      "params": {
+                        "LabelName": "Gate A"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9356,
+                      "lng": 151.1691,
+                      "params": {
+                        "LabelName": "Gates D \u0026 E"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9359,
+                      "lng": 151.171,
+                      "params": {
+                        "LabelName": "Gate B"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.938,
+                      "lng": 151.17,
+                      "params": {
+                        "LabelName": "Gate J"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9391,
+                      "lng": 151.1682,
+                      "params": {
+                        "LabelName": "Gate I"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.939,
+                      "lng": 151.16655,
+                      "params": {
+                        "LabelName": "Gate H"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9409,
+                      "lng": 151.1645,
+                      "params": {
+                        "LabelName": "Gate G"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9391,
+                      "lng": 151.1642,
+                      "params": {
+                        "LabelName": "Gate F"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9443,
+                      "lng": 151.1697,
+                      "params": {
+                        "LabelName": "Gates K \u0026 L"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Label",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.929372,
+                      "lng": 151.16965,
+                      "params": {
+                        "deviceName": "Gate 1",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Northern Pollution Gates/Gate A-B - N1 Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.929372,
+                      "lng": 151.1687,
+                      "params": {
+                        "deviceName": "Gate 2",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Northern Pollution Gates/Gate A-B - N1 Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9284,
+                      "lng": 151.1683,
+                      "params": {
+                        "deviceName": "Gate 1",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Northern Pollution Gates/Gate C - Apron 1A",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.934422,
+                      "lng": 151.162237,
+                      "params": {
+                        "deviceName": "Gate 1",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Northern Pollution Gates/Gate D-E - N3 Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9349,
+                      "lng": 151.1624,
+                      "params": {
+                        "deviceName": "Gate 2",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Northern Pollution Gates/Gate D-E - N3 Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.939428,
+                      "lng": 151.162527,
+                      "params": {
+                        "deviceName": "Gate 1",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Western Pollution Gates/Gate F-J - W Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.94043,
+                      "lng": 151.162257,
+                      "params": {
+                        "deviceName": "Gate 2",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Western Pollution Gates/Gate F-J - W Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9411,
+                      "lng": 151.1622,
+                      "params": {
+                        "deviceName": "Gate 3",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Western Pollution Gates/Gate F-J - W Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.941558,
+                      "lng": 151.161997,
+                      "params": {
+                        "deviceName": "Gate 4",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Western Pollution Gates/Gate F-J - W Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.942,
+                      "lng": 151.1619,
+                      "params": {
+                        "deviceName": "Gate 5",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/Western Pollution Gates/Gate F-J - W Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9461,
+                      "lng": 151.16535,
+                      "params": {
+                        "deviceName": "Gate 1",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/South Western Pollution Gates/Gate K-L - SW Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9465,
+                      "lng": 151.1663,
+                      "params": {
+                        "deviceName": "Gate 2",
+                        "deviceParentPath": "International/Precinct/Pollution Control Gates/South Western Pollution Gates/Gate K-L - SW Pollution Control",
+                        "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+                        "mapView": true,
+                        "popupWindow": ""
+                      },
+                      "path": "Templates/Pollution Gates/Pollution Gates",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9335,
+                      "lng": 151.1779,
+                      "params": {
+                        "navigationLabel": "T2 Loading Dock",
+                        "navigationPage": "/Domestic/T2 Loading Dock",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.933,
+                      "lng": 151.1648,
+                      "params": {
+                        "navigationLabel": "Central Services Building",
+                        "navigationPage": "/International/Central Services Building/CSB",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.9342,
+                      "lng": 151.1665,
+                      "params": {
+                        "navigationLabel": "QANTAS Seamless Transfer",
+                        "navigationPage": "/International/QANTAS Seamless/Ground Level",
+                        "visible": true,
+                        "zoomLevel": 13
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -33.942,
+                      "lng": 151.182,
+                      "params": {
+                        "navigationLabel": "South East Sector",
+                        "navigationPage": "/Domestic/South East Sector",
+                        "zoomLevel": 18
+                      },
+                      "path": "_ProjectTemplates/Map Icons/Map_Navigation",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.52208844,
+                      "lng": 138.6725585,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_HillSt",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.533627488,
+                      "lng": 138.684303362,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_HorseshoeBay",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53064904,
+                      "lng": 138.6878647,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_HusseySt",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.535548107,
+                      "lng": 138.670066696,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_LadyEmmaCt",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.53170376,
+                      "lng": 138.6782535,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_LakalaRes",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.535814301,
+                      "lng": 138.678022334,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_MerrilliCl",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.534108,
+                      "lng": 138.6833717,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "PtElliot_PS_SLSC",
+                        "subArea": "Port Elliot"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    }
+                  ]
+                },
+                "vector": {
+                  "polyline": [
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "Gate C",
+                          "points": [
+                            {
+                              "lat": -33.92966,
+                              "lng": 151.16702
+                            },
+                            {
+                              "lat": -33.932,
+                              "lng": 151.16763
+                            },
+                            {
+                              "lat": -33.9321,
+                              "lng": 151.16865
+                            },
+                            {
+                              "lat": -33.9319,
+                              "lng": 151.16957
+                            },
+                            {
+                              "lat": -33.9298,
+                              "lng": 151.16908
+                            },
+                            {
+                              "lat": -33.92917,
+                              "lng": 151.16855
+                            },
+                            {
+                              "lat": -33.92928,
+                              "lng": 151.16785
+                            },
+                            {
+                              "lat": -33.9295,
+                              "lng": 151.16785
+                            },
+                            {
+                              "lat": -33.92966,
+                              "lng": 151.16702
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "Gate A",
+                          "points": [
+                            {
+                              "lat": -33.93202,
+                              "lng": 151.167635
+                            },
+                            {
+                              "lat": -33.9323,
+                              "lng": 151.16771
+                            },
+                            {
+                              "lat": -33.9342,
+                              "lng": 151.16718
+                            },
+                            {
+                              "lat": -33.9348,
+                              "lng": 151.16735
+                            },
+                            {
+                              "lat": -33.93427,
+                              "lng": 151.17033
+                            },
+                            {
+                              "lat": -33.9338,
+                              "lng": 151.1702
+                            },
+                            {
+                              "lat": -33.9336,
+                              "lng": 151.1704
+                            },
+                            {
+                              "lat": -33.9331,
+                              "lng": 151.16996
+                            },
+                            {
+                              "lat": -33.93192,
+                              "lng": 151.16958
+                            },
+                            {
+                              "lat": -33.932121,
+                              "lng": 151.16866
+                            },
+                            {
+                              "lat": -33.93202,
+                              "lng": 151.167635
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.93482,
+                              "lng": 151.16735
+                            },
+                            {
+                              "lat": -33.936,
+                              "lng": 151.16767
+                            },
+                            {
+                              "lat": -33.93657,
+                              "lng": 151.16827
+                            },
+                            {
+                              "lat": -33.93675,
+                              "lng": 151.1687
+                            },
+                            {
+                              "lat": -33.9365,
+                              "lng": 151.17008
+                            },
+                            {
+                              "lat": -33.9368,
+                              "lng": 151.17015
+                            },
+                            {
+                              "lat": -33.9367,
+                              "lng": 151.17076
+                            },
+                            {
+                              "lat": -33.93432,
+                              "lng": 151.17013
+                            },
+                            {
+                              "lat": -33.93482,
+                              "lng": 151.16735
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.93635,
+                              "lng": 151.17069
+                            },
+                            {
+                              "lat": -33.9362,
+                              "lng": 151.1715
+                            },
+                            {
+                              "lat": -33.9355,
+                              "lng": 151.17134
+                            },
+                            {
+                              "lat": -33.93567,
+                              "lng": 151.17051
+                            },
+                            {
+                              "lat": -33.93635,
+                              "lng": 151.17069
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.93682,
+                              "lng": 151.17013
+                            },
+                            {
+                              "lat": -33.9367,
+                              "lng": 151.170106
+                            },
+                            {
+                              "lat": -33.9368,
+                              "lng": 151.1696
+                            },
+                            {
+                              "lat": -33.93693,
+                              "lng": 151.1695
+                            },
+                            {
+                              "lat": -33.93699,
+                              "lng": 151.16915
+                            },
+                            {
+                              "lat": -33.93701,
+                              "lng": 151.169155
+                            },
+                            {
+                              "lat": -33.93739,
+                              "lng": 151.16886
+                            },
+                            {
+                              "lat": -33.93749,
+                              "lng": 151.16889
+                            },
+                            {
+                              "lat": -33.93746,
+                              "lng": 151.16901
+                            },
+                            {
+                              "lat": -33.93759,
+                              "lng": 151.16906
+                            },
+                            {
+                              "lat": -33.93763,
+                              "lng": 151.16889
+                            },
+                            {
+                              "lat": -33.93897,
+                              "lng": 151.16935
+                            },
+                            {
+                              "lat": -33.93899,
+                              "lng": 151.16926
+                            },
+                            {
+                              "lat": -33.9395,
+                              "lng": 151.16942
+                            },
+                            {
+                              "lat": -33.93906,
+                              "lng": 151.17135
+                            },
+                            {
+                              "lat": -33.93768,
+                              "lng": 151.17099
+                            },
+                            {
+                              "lat": -33.93674,
+                              "lng": 151.1706
+                            },
+                            {
+                              "lat": -33.93682,
+                              "lng": 151.17013
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.93953,
+                              "lng": 151.1693
+                            },
+                            {
+                              "lat": -33.93902,
+                              "lng": 151.16916
+                            },
+                            {
+                              "lat": -33.93903,
+                              "lng": 151.16908
+                            },
+                            {
+                              "lat": -33.93825,
+                              "lng": 151.16881
+                            },
+                            {
+                              "lat": -33.93867,
+                              "lng": 151.167
+                            },
+                            {
+                              "lat": -33.9397,
+                              "lng": 151.16735
+                            },
+                            {
+                              "lat": -33.94,
+                              "lng": 151.16796
+                            },
+                            {
+                              "lat": -33.93953,
+                              "lng": 151.1693
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.93823,
+                              "lng": 151.1688
+                            },
+                            {
+                              "lat": -33.93719,
+                              "lng": 151.16845
+                            },
+                            {
+                              "lat": -33.9374,
+                              "lng": 151.16651
+                            },
+                            {
+                              "lat": -33.93779,
+                              "lng": 151.16633
+                            },
+                            {
+                              "lat": -33.93805,
+                              "lng": 151.16586
+                            },
+                            {
+                              "lat": -33.93823,
+                              "lng": 151.16578
+                            },
+                            {
+                              "lat": -33.93967,
+                              "lng": 151.16627
+                            },
+                            {
+                              "lat": -33.9398,
+                              "lng": 151.16649
+                            },
+                            {
+                              "lat": -33.93989,
+                              "lng": 151.16642
+                            },
+                            {
+                              "lat": -33.9397,
+                              "lng": 151.1661
+                            },
+                            {
+                              "lat": -33.93986,
+                              "lng": 151.1655
+                            },
+                            {
+                              "lat": -33.94131,
+                              "lng": 151.166
+                            },
+                            {
+                              "lat": -33.9408,
+                              "lng": 151.1682
+                            },
+                            {
+                              "lat": -33.9405,
+                              "lng": 151.1684
+                            },
+                            {
+                              "lat": -33.9402,
+                              "lng": 151.1683
+                            },
+                            {
+                              "lat": -33.93972,
+                              "lng": 151.16732
+                            },
+                            {
+                              "lat": -33.93866,
+                              "lng": 151.16696
+                            },
+                            {
+                              "lat": -33.93823,
+                              "lng": 151.1688
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.93987,
+                              "lng": 151.16548
+                            },
+                            {
+                              "lat": -33.94038,
+                              "lng": 151.16328
+                            },
+                            {
+                              "lat": -33.941,
+                              "lng": 151.1631
+                            },
+                            {
+                              "lat": -33.94195,
+                              "lng": 151.16337
+                            },
+                            {
+                              "lat": -33.941315,
+                              "lng": 151.16598
+                            },
+                            {
+                              "lat": -33.93987,
+                              "lng": 151.16548
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.94036,
+                              "lng": 151.16328
+                            },
+                            {
+                              "lat": -33.93815,
+                              "lng": 151.16312
+                            },
+                            {
+                              "lat": -33.93799,
+                              "lng": 151.16441
+                            },
+                            {
+                              "lat": -33.9378,
+                              "lng": 151.16474
+                            },
+                            {
+                              "lat": -33.9383,
+                              "lng": 151.16516
+                            },
+                            {
+                              "lat": -33.93839,
+                              "lng": 151.16543
+                            },
+                            {
+                              "lat": -33.9387,
+                              "lng": 151.16554
+                            },
+                            {
+                              "lat": -33.94006,
+                              "lng": 151.16459
+                            },
+                            {
+                              "lat": -33.94036,
+                              "lng": 151.16328
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    },
+                    {
+                      "event": {
+                        "stopPropagation": false
+                      },
+                      "fill": {
+                        "color": "",
+                        "enabled": true,
+                        "opacity": 1,
+                        "rule": "nonzero"
+                      },
+                      "noClip": false,
+                      "polylines": [
+                        {
+                          "name": "",
+                          "points": [
+                            {
+                              "lat": -33.94488,
+                              "lng": 151.17293
+                            },
+                            {
+                              "lat": -33.94526,
+                              "lng": 151.1713
+                            },
+                            {
+                              "lat": -33.94555,
+                              "lng": 151.17139
+                            },
+                            {
+                              "lat": -33.94644,
+                              "lng": 151.16767
+                            },
+                            {
+                              "lat": -33.94589,
+                              "lng": 151.16629
+                            },
+                            {
+                              "lat": -33.9455,
+                              "lng": 151.167
+                            },
+                            {
+                              "lat": -33.94521,
+                              "lng": 151.16689
+                            },
+                            {
+                              "lat": -33.94537,
+                              "lng": 151.1662
+                            },
+                            {
+                              "lat": -33.94498,
+                              "lng": 151.16605
+                            },
+                            {
+                              "lat": -33.9448,
+                              "lng": 151.16676
+                            },
+                            {
+                              "lat": -33.94452,
+                              "lng": 151.16667
+                            },
+                            {
+                              "lat": -33.9432,
+                              "lng": 151.1724
+                            },
+                            {
+                              "lat": -33.94488,
+                              "lng": 151.17293
+                            }
+                          ],
+                          "properties": {}
+                        }
+                      ],
+                      "smoothFactor": 1,
+                      "stroke": {
+                        "color": "#555555",
+                        "dashArray": "",
+                        "dashOffset": "",
+                        "enabled": true,
+                        "lineCap": "round",
+                        "lineJoin": "round",
+                        "weight": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              "location": {
+                "enabled": true
+              },
+              "style": {
+                "background-image": "} .leaflet-container{ background: #2b2b2b;}{"
+              }
+            },
+            "type": "ia.display.map"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.selectedMap \u003d \u0027satellite\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "height": 34,
+              "width": 146,
+              "x": 25,
+              "y": 99
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Live Satellite"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.selectedMap \u003d \u0027onlineStreet\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "height": 34,
+              "width": 146,
+              "x": 25,
+              "y": 143
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Live Street"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.selectedMap \u003d \u0027offlineStreet\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_1"
+            },
+            "position": {
+              "height": 34,
+              "width": 146,
+              "x": 25,
+              "y": 187
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Offline Street"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t# Import the system module to access tag functions\n\tfrom system.tag import write\n\t\n\t# Define the path to your memory tag\n\ttag_path \u003d \"[default]International/Pollution Gate Visibility\"\n\t\n\t# Read the current value of the tag\n\tcurrent_value \u003d system.tag.read(tag_path).value\n\t\n\t# Toggle the value of the tag\n\tnew_value \u003d not current_value\n\t\n\t# Write the new value back to the tag\n\twrite(tag_path, new_value)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_3"
+            },
+            "position": {
+              "height": 46,
+              "width": 146,
+              "x": 25,
+              "y": 230
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]International/Pollution Gate Visibility"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "if ({value}, \u0027Pollution Gate Visibility Off\u0027, \u0027Pollution Gate Visibility On\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "textStyle": {
+                "fontSize": ""
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.coord"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -70,
+      "y": 100
+    },
+    "type": "ia.container.flex"
+  }
+}

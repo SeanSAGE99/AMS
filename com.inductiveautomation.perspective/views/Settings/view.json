@@ -1,0 +1,136 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 966
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "page": "/system/audit-log"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "34px"
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Audit Log"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "page": "/system/serverstatus"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_0"
+            },
+            "position": {
+              "basis": "34px"
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Server Performance"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\timport traceback\n\t\n\ttry:\n\t\tdump \u003d system.util.threadDump()\n\t\t\n\t\ttimestamp \u003d system.date.format(system.date.now(), \u0027yyyy-MM-dd HHmmss\u0027)\n\t\tfilename \u003d \u0027dump_{}.log\u0027.format(timestamp)\n\t\tsystem.file.writeFile(\u0027c:/temp/{}\u0027.format(filename), dump)\n\texcept:\n\t\tsystem.perspective.print(traceback.format_exc())"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_1"
+            },
+            "position": {
+              "basis": "34px"
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Thread Dump to c:\\temp\\dump.log"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "page": "/alarms/rosteredit"
+                  },
+                  "scope": "C",
+                  "type": "nav"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_2"
+            },
+            "position": {
+              "basis": "34px"
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Text"
+              },
+              "text": "Alarm Settings/Roster"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "300px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

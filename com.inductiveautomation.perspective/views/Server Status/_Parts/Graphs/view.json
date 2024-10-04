@@ -1,0 +1,761 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Performance/CPU Usage"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "\u0027CPU Utilisation - \u0027 + numberFormat({value}, \u0027#0.0\u0027) + \u0027%\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Gauge"
+                },
+                "position": {
+                  "basis": "175px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.outerAxis.ranges[0].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[0].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[0].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.outerAxis.ranges[1].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[1].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[1].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.outerAxis.ranges[2].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[2].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[2].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Performance/CPU Usage"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "animate": true,
+                  "backgroundColor": "",
+                  "endAngle": 405,
+                  "innerAxis": {
+                    "data": "value",
+                    "maxValue": 1,
+                    "percentRadius": 85,
+                    "show": false,
+                    "tickMarks": {
+                      "thickness": 0
+                    },
+                    "width": 1
+                  },
+                  "outerAxis": {
+                    "data": "value",
+                    "percentRadius": 100,
+                    "ranges": [
+                      {
+                        "color": "#77D87A",
+                        "end": 70,
+                        "start": 0
+                      },
+                      {
+                        "color": "#EDED5F",
+                        "end": 90,
+                        "start": 70
+                      },
+                      {
+                        "color": "#FF1616",
+                        "end": 100,
+                        "start": 90
+                      }
+                    ],
+                    "show": true,
+                    "tickMarks": {
+                      "thickness": 0
+                    },
+                    "width": 1
+                  },
+                  "startAngle": 135,
+                  "style": {
+                    "classes": []
+                  }
+                },
+                "type": "ia.chart.gauge"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Performance/RAM Utilisation"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "\u0027RAM Utilisation - \u0027 + numberFormat({value}, \u0027#0.0\u0027) + \u0027%\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Gauge"
+                },
+                "position": {
+                  "basis": "175px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.outerAxis.ranges[0].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[0].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[0].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.outerAxis.ranges[1].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[1].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[1].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.outerAxis.ranges[2].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[2].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[2].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Performance/RAM Utilisation"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "animate": true,
+                  "backgroundColor": "",
+                  "endAngle": 405,
+                  "innerAxis": {
+                    "data": "value",
+                    "maxValue": 1,
+                    "percentRadius": 85,
+                    "show": false,
+                    "tickMarks": {
+                      "thickness": 0
+                    },
+                    "width": 1
+                  },
+                  "outerAxis": {
+                    "data": "value",
+                    "percentRadius": 100,
+                    "ranges": [
+                      {
+                        "color": "#77D87A",
+                        "end": 70,
+                        "start": 0
+                      },
+                      {
+                        "color": "#EDED5F",
+                        "end": 90,
+                        "start": 70
+                      },
+                      {
+                        "color": "#FF1616",
+                        "end": 100,
+                        "start": 90
+                      }
+                    ],
+                    "show": true,
+                    "tickMarks": {
+                      "thickness": 0
+                    },
+                    "width": 1
+                  },
+                  "startAngle": 135,
+                  "style": {
+                    "classes": []
+                  }
+                },
+                "type": "ia.chart.gauge"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Performance/Disk Utilisation"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "\u0027Disk Utilisation - \u0027 + numberFormat({value}, \u0027#0.0\u0027) + \u0027%\u0027",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "classes": "UI/Text/Heading2"
+                  }
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Gauge"
+                },
+                "position": {
+                  "basis": "175px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.outerAxis.ranges[0].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[0].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[0].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.outerAxis.ranges[1].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[1].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[1].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.outerAxis.ranges[2].width": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.value} \u003e\u003d {this.props.outerAxis.ranges[2].start}  \u0026\u0026 {this.props.value} \u003c {this.props.outerAxis.ranges[2].end},\r\n\t16,\r\n\t8\r\n) "
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]System/Performance/Disk Utilisation"
+                      },
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "animate": true,
+                  "backgroundColor": "",
+                  "endAngle": 405,
+                  "innerAxis": {
+                    "data": "value",
+                    "maxValue": 1,
+                    "percentRadius": 85,
+                    "show": false,
+                    "tickMarks": {
+                      "thickness": 0
+                    },
+                    "width": 1
+                  },
+                  "outerAxis": {
+                    "data": "value",
+                    "percentRadius": 100,
+                    "ranges": [
+                      {
+                        "color": "#77D87A",
+                        "end": 70,
+                        "start": 0
+                      },
+                      {
+                        "color": "#EDED5F",
+                        "end": 90,
+                        "start": 70
+                      },
+                      {
+                        "color": "#FF1616",
+                        "end": 100,
+                        "start": 90
+                      }
+                    ],
+                    "show": true,
+                    "tickMarks": {
+                      "thickness": 0
+                    },
+                    "width": 1
+                  },
+                  "startAngle": 135,
+                  "style": {
+                    "classes": []
+                  }
+                },
+                "type": "ia.chart.gauge"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_1"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "300px",
+          "shrink": 0
+        },
+        "props": {
+          "justify": "center",
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "PowerChart"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "axes": [
+            {
+              "color": "#757A7F",
+              "dataFormat": "0,0.##",
+              "label": {
+                "font": {
+                  "color": "#757A7F",
+                  "size": 10
+                },
+                "offset": 0,
+                "style": {
+                  "classes": ""
+                },
+                "text": ""
+              },
+              "name": "Default",
+              "position": "left",
+              "range": {
+                "auto": false,
+                "max": 1,
+                "min": 0
+              },
+              "style": {
+                "classes": ""
+              },
+              "tick": {
+                "color": "#757A7F",
+                "label": {
+                  "font": {
+                    "color": "#757A7F",
+                    "size": 10
+                  },
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "style": {
+                  "classes": ""
+                }
+              },
+              "width": 60
+            }
+          ],
+          "config": {
+            "rangeEndDate": {
+              "$": [
+                "ts",
+                0,
+                1717373472046
+              ],
+              "$ts": 1717373375751
+            },
+            "rangeStartDate": {
+              "$": [
+                "ts",
+                0,
+                1717373472046
+              ],
+              "$ts": 1717344671751
+            }
+          },
+          "interaction": {
+            "chartZoomLevel": 1,
+            "rangeZoomLevel": 1
+          },
+          "pens": [
+            {
+              "axis": "",
+              "data": {
+                "aggregateMode": "default",
+                "source": "histprov:MSSQL:/drv:amsprd1:system:/tag:gateway/performance/cpu usage"
+              },
+              "display": {
+                "breakLine": true,
+                "interpolation": "curveLinear",
+                "radius": 3,
+                "styles": {
+                  "highlighted": {
+                    "fill": {
+                      "color": "#63BEA2",
+                      "opacity": 1
+                    },
+                    "stroke": {
+                      "color": "#63BEA2",
+                      "dashArray": 0,
+                      "opacity": 1,
+                      "width": 1
+                    }
+                  },
+                  "muted": {
+                    "fill": {
+                      "color": "#63BEA2",
+                      "opacity": 0.4
+                    },
+                    "stroke": {
+                      "color": "#63BEA2",
+                      "dashArray": 0,
+                      "opacity": 0.4,
+                      "width": 1
+                    }
+                  },
+                  "normal": {
+                    "fill": {
+                      "color": "#63BEA2",
+                      "opacity": 0.8
+                    },
+                    "stroke": {
+                      "color": "#63BEA2",
+                      "dashArray": 0,
+                      "opacity": 0.8,
+                      "width": 1
+                    }
+                  },
+                  "selected": {
+                    "fill": {
+                      "color": "#63BEA2",
+                      "opacity": 1
+                    },
+                    "stroke": {
+                      "color": "#63BEA2",
+                      "dashArray": 0,
+                      "opacity": 1,
+                      "width": 1
+                    }
+                  }
+                },
+                "type": "line"
+              },
+              "enabled": true,
+              "name": "cpu usage",
+              "plot": 0,
+              "selectable": true,
+              "visible": true
+            },
+            {
+              "axis": "",
+              "data": {
+                "aggregateMode": "default",
+                "source": "histprov:MSSQL:/drv:amsprd1:system:/tag:gateway/performance/disk utilization"
+              },
+              "display": {
+                "breakLine": true,
+                "interpolation": "curveLinear",
+                "radius": 3,
+                "styles": {
+                  "highlighted": {
+                    "fill": {
+                      "color": "#FC8D62",
+                      "opacity": 1
+                    },
+                    "stroke": {
+                      "color": "#FC8D62",
+                      "dashArray": 0,
+                      "opacity": 1,
+                      "width": 1
+                    }
+                  },
+                  "muted": {
+                    "fill": {
+                      "color": "#FC8D62",
+                      "opacity": 0.4
+                    },
+                    "stroke": {
+                      "color": "#FC8D62",
+                      "dashArray": 0,
+                      "opacity": 0.4,
+                      "width": 1
+                    }
+                  },
+                  "normal": {
+                    "fill": {
+                      "color": "#FC8D62",
+                      "opacity": 0.8
+                    },
+                    "stroke": {
+                      "color": "#FC8D62",
+                      "dashArray": 0,
+                      "opacity": 0.8,
+                      "width": 1
+                    }
+                  },
+                  "selected": {
+                    "fill": {
+                      "color": "#FC8D62",
+                      "opacity": 1
+                    },
+                    "stroke": {
+                      "color": "#FC8D62",
+                      "dashArray": 0,
+                      "opacity": 1,
+                      "width": 1
+                    }
+                  }
+                },
+                "type": "line"
+              },
+              "enabled": true,
+              "name": "disk utilization",
+              "plot": 0,
+              "selectable": true,
+              "visible": true
+            },
+            {
+              "axis": "",
+              "data": {
+                "aggregateMode": "default",
+                "source": "histprov:MSSQL:/drv:amsprd1:system:/tag:gateway/performance/memory utilization"
+              },
+              "display": {
+                "breakLine": true,
+                "interpolation": "curveLinear",
+                "radius": 3,
+                "styles": {
+                  "highlighted": {
+                    "fill": {
+                      "color": "#8DA0CB",
+                      "opacity": 1
+                    },
+                    "stroke": {
+                      "color": "#8DA0CB",
+                      "dashArray": 0,
+                      "opacity": 1,
+                      "width": 1
+                    }
+                  },
+                  "muted": {
+                    "fill": {
+                      "color": "#8DA0CB",
+                      "opacity": 0.4
+                    },
+                    "stroke": {
+                      "color": "#8DA0CB",
+                      "dashArray": 0,
+                      "opacity": 0.4,
+                      "width": 1
+                    }
+                  },
+                  "normal": {
+                    "fill": {
+                      "color": "#8DA0CB",
+                      "opacity": 0.8
+                    },
+                    "stroke": {
+                      "color": "#8DA0CB",
+                      "dashArray": 0,
+                      "opacity": 0.8,
+                      "width": 1
+                    }
+                  },
+                  "selected": {
+                    "fill": {
+                      "color": "#8DA0CB",
+                      "opacity": 1
+                    },
+                    "stroke": {
+                      "color": "#8DA0CB",
+                      "dashArray": 0,
+                      "opacity": 1,
+                      "width": 1
+                    }
+                  }
+                },
+                "type": "line"
+              },
+              "enabled": true,
+              "name": "memory utilization",
+              "plot": 0,
+              "selectable": true,
+              "visible": true
+            }
+          ],
+          "plots": [
+            {
+              "color": "var(--neutral-20)",
+              "markers": [],
+              "relativeWeight": 1,
+              "style": {
+                "classes": ""
+              }
+            }
+          ],
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.chart.powerchart"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Form/Panel-normal"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

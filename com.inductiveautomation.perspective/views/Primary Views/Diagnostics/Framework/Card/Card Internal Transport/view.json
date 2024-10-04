@@ -1,0 +1,468 @@
+{
+  "custom": {
+    "instances": [
+      {
+        "deviceName": "Lift 1",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 1",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 7",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 7",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 11",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 11",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 16",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 16",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 17",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 17",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 30",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 30",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 31",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 31",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 32",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 32",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Lift 42",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Lift 42",
+        "type": "Lift"
+      },
+      {
+        "deviceName": "Escalator 1",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 1",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 2",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 2",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 18",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 18",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 20",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 20",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 21",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 21",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 22",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 22",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 23",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 23",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 24",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 24",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 26",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 26",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 27",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 27",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 28",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 28",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Escalator 33",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Escalator 33",
+        "type": "Escalator"
+      },
+      {
+        "deviceName": "Walk Way 13",
+        "deviceTagPath": "[default]International/T1/Pier B/Internal Transportation/Walk Way 13",
+        "type": "Walk Way"
+      }
+    ]
+  },
+  "params": {
+    "params": {
+      "areaPath": "[default]International/T1/Pier B/Internal Transportation"
+    },
+    "path": "Primary Views/Diagnostics/Embedded/Internal Transport Devices",
+    "title": "Apron",
+    "useDefaultHeight": false,
+    "useDefaultWidth": false
+  },
+  "propConfig": {
+    "custom.instances": {
+      "binding": {
+        "config": {
+          "expression": "now(60000)"
+        },
+        "transforms": [
+          {
+            "code": "    # Check the instances of \"lift\", \"escalator\", and \"walkway\" UDT instances in the areaPath\n    instances \u003d []\n    udt_names \u003d [\"Lift\", \"Escalator\", \"Walk Way\"]\n\n    for udt_name in udt_names:\n        res \u003d system.tag.browse(self.params.params.areaPath, {\"tagType\": \"UdtInstance\", \"recursive\": True, \"name\": \"*\" + udt_name + \"*\"})\n\n        for result in res.getResults():\n            deviceTagPath \u003d result[\"fullPath\"]\n            instances.append({\"deviceTagPath\": result[\"fullPath\"], \"deviceName\": result[\"name\"], \"type\": udt_name})\n\n    return instances",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.params": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.path": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultHeight": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.useDefaultWidth": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 339,
+      "width": 369
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "20px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.title"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Title"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights Off Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Off"
+            },
+            "position": {
+              "basis": "NaNpx",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "Off"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 25pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "25pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "25%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 50pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "50pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "50%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 75pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "75pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "75%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Lights Control/Lights 100pct Cmd\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "100pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "100%"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer",
+          "visible": false
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-evenly",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params": {
+            "binding": {
+              "config": {
+                "path": "view.params.params"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.instances"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "path": "view.params.path"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewHeight": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultHeight"
+              },
+              "type": "property"
+            }
+          },
+          "props.useDefaultViewWidth": {
+            "binding": {
+              "config": {
+                "path": "view.params.useDefaultWidth"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Embedded"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "Framework/Card/Card UI/Popups/Background"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

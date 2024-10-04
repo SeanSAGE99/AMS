@@ -1,0 +1,276 @@
+{
+  "custom": {
+    "deviceDescription": "RED615 Incomer",
+    "deviceTagPath": "Test/IED02A",
+    "sitePath": "Test"
+  },
+  "params": {
+    "deviceName": "IED02A",
+    "deviceParentPath": "Test"
+  },
+  "propConfig": {
+    "custom.deviceDescription": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "deviceTagPath": "{view.custom.deviceTagPath}"
+          },
+          "tagPath": "{deviceTagPath}/Parameters.Description"
+        },
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.deviceTagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.deviceParentPath} + \u0027/\u0027 +\r\n{view.params.deviceName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.sitePath": {
+      "binding": {
+        "config": {
+          "path": "view.params.deviceParentPath"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.deviceParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 50,
+      "width": 140
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "path": "material/open_in_new",
+              "style": {
+                "marginLeft": 5,
+                "marginRight": 0
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "20%"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.deviceDescription"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading2",
+                "fontWeight": "lighter"
+              },
+              "textStyle": {
+                "fontSize": 8
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "alignVertical": "bottom",
+              "style": {
+                "classes": "UI/Text/Heading2",
+                "fontWeight": "bold",
+                "marginLeft": "0px",
+                "marginTop": "5px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "80%",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Symbol_Double"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.alarmSummary.parentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.deviceTagPath"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.device.name": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.params.device.parentPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.sitePath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "alarmSummary": {
+                  "enabled": true
+                },
+                "device": {
+                  "enabled": false
+                }
+              },
+              "path": "Shared/Alarms/Symbol"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "basis": "20%",
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "deviceTagPath": "{view.custom.deviceTagPath}"
+                },
+                "tagPath": "{deviceTagPath}/Alarm Summary/Active Unack"
+              },
+              "transforms": [
+                {
+                  "code": "\n\tif \tvalue \u003e 0:\n\t\tvalue \u003d 1\n\telse:\n\t\tvalue \u003d 0\n\t\t\n\treturn value\n",
+                  "type": "script"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "draggable": true,
+            "id": "{view.custom.deviceTagPath}",
+            "modal": false,
+            "overlayDismiss": false,
+            "resizable": false,
+            "showCloseIcon": false,
+            "type": "open",
+            "viewParams": {
+              "deviceName": "{view.params.deviceName}",
+              "deviceParentPath": "{view.params.deviceParentPath}"
+            },
+            "viewPath": "Popups/HV/IEDs/RED 615 Incomer",
+            "viewportBound": false
+          },
+          "scope": "C",
+          "type": "popup"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "borderBottomLeftRadius": 3,
+        "borderBottomRightRadius": 3,
+        "borderTopLeftRadius": 3,
+        "borderTopRightRadius": 3,
+        "classes": "Input/Button/Body-normal Input/Button/Text UI/Form/Panel-normal"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

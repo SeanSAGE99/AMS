@@ -1,0 +1,261 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 201,
+      "width": 339
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "CB Block"
+        },
+        "position": {
+          "height": 0.1827,
+          "width": 0.1851,
+          "x": 0.0179,
+          "y": 0.5736
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB28",
+            "DeviceParentPath": "High Voltage/Domestic/AZS RMU Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_0"
+        },
+        "position": {
+          "height": 0.1827,
+          "width": 0.1851,
+          "x": 0.2149,
+          "y": 0.5736
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB29",
+            "DeviceParentPath": "High Voltage/Domestic/AZS RMU Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_1"
+        },
+        "position": {
+          "height": 0.1827,
+          "width": 0.1851,
+          "x": 0.4119,
+          "y": 0.5736
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB30",
+            "DeviceParentPath": "High Voltage/Domestic/AZS RMU Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB Block_2"
+        },
+        "position": {
+          "height": 0.1827,
+          "width": 0.1851,
+          "x": 0.609,
+          "y": 0.5736
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB31",
+            "DeviceParentPath": "High Voltage/Domestic/AZS RMU Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0899,
+          "width": 0.3776,
+          "x": 0.3118,
+          "y": 0.0315
+        },
+        "props": {
+          "style": {
+            "classes": "Tag/Label"
+          },
+          "text": "AZS Indoor RMU",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "normal",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CB Block_3"
+        },
+        "position": {
+          "height": 0.1827,
+          "width": 0.1851,
+          "x": 0.806,
+          "y": 0.5736
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB32",
+            "DeviceParentPath": "High Voltage/Domestic/AZS RMU Substation/PLC",
+            "fontSize": "clamp(3pt, calc(0.4*(1.0vmin + 1.0vmax)), 10pt)"
+          },
+          "path": "Templates/HV/CB Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "page": "/HV/Domestic/azs-rmu-substation"
+          },
+          "scope": "C",
+          "type": "nav"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "x": 0.997,
+                    "y": 0.4416
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.0239,
+                                    "y": 0.4416
+                                  },
+                                  {
+                                    "x": 0.0716,
+                                    "y": 0.6091
+                                  }
+                                ],
+                                "x": 0.0716,
+                                "y": 0.4416
+                              },
+                              {
+                                "connections": [],
+                                "x": 0.2687,
+                                "y": 0.6091
+                              }
+                            ],
+                            "x": 0.2687,
+                            "y": 0.4416
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.4657,
+                            "y": 0.6091
+                          }
+                        ],
+                        "x": 0.4657,
+                        "y": 0.4416
+                      },
+                      {
+                        "x": 0.6627,
+                        "y": 0.6091
+                      }
+                    ],
+                    "x": 0.6627,
+                    "y": 0.4416
+                  }
+                ],
+                "x": 0.8597,
+                "y": 0.4416
+              }
+            ],
+            "x": 0.8597,
+            "y": 0.6091
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.6627,
+                "y": 1.0253
+              }
+            ],
+            "x": 0.6627,
+            "y": 0.7209
+          },
+          "start": "none",
+          "stroke": "var(--qual-9)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "borderColor": "#AAAAAA",
+        "borderStyle": "dotted",
+        "borderWidth": 2,
+        "classes": "HoverPointer UI/Popups/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

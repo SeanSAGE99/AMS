@@ -1,0 +1,961 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.526,
+          "width": 0.2849,
+          "x": 0.5569,
+          "y": 0.1701
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": 9999,
+            "borderBottomRightRadius": 9999,
+            "borderColor": "#555555",
+            "borderStyle": "dotted",
+            "borderTopLeftRadius": 9999,
+            "borderTopRightRadius": 9999,
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.8067,
+          "width": 0.2891,
+          "x": 0.1433,
+          "y": 0.0802
+        },
+        "props": {
+          "style": {
+            "borderColor": "#555555",
+            "borderStyle": "dotted",
+            "borderWidth": 2
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Site Navigation Small"
+        },
+        "position": {
+          "height": 0.0433,
+          "width": 0.6151,
+          "x": 0.3806,
+          "y": -0.0002
+        },
+        "props": {
+          "params": {
+            "SiteArea": "International",
+            "SiteName": "T1 Waste Disposal Facility",
+            "alarmsVisible": false,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "trendsVisible": false
+          },
+          "path": "Navigation/Site Navigation Small Pipe"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Penstock"
+        },
+        "position": {
+          "height": 0.0827,
+          "width": 0.0708,
+          "x": 0.2033,
+          "y": 0.1327
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Macerator Pit Penstock 1",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/WMS/Penstock"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Penstock_0"
+        },
+        "position": {
+          "height": 0.0827,
+          "width": 0.0708,
+          "x": 0.2017,
+          "y": 0.6536
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Macerator Pit Penstock 2",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/WMS/Penstock"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump"
+        },
+        "position": {
+          "height": 0.126,
+          "width": 0.0688,
+          "x": 0.3132,
+          "y": 0.1178
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Macerator 1",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump_0"
+        },
+        "position": {
+          "height": 0.126,
+          "width": 0.0688,
+          "x": 0.3116,
+          "y": 0.6388
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Macerator 2",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump_1"
+        },
+        "position": {
+          "height": 0.126,
+          "width": 0.0688,
+          "x": 0.7261,
+          "y": 0.2401
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Pump 1",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump_2"
+        },
+        "position": {
+          "height": 0.126,
+          "width": 0.0688,
+          "x": 0.7266,
+          "y": 0.514
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Pump 2",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tank with Sparkline"
+        },
+        "position": {
+          "height": 0.3856,
+          "width": 0.1615,
+          "x": 0.2184,
+          "y": 0.2122
+        },
+        "props": {
+          "params": {
+            "DetailsAtBottom": true,
+            "IndicatorOnRight": false,
+            "LabelOverride": "",
+            "LiquidColor": "fff",
+            "MixerPresent": false,
+            "MixerTagPath": "",
+            "SparklineWidth": 3,
+            "alarmSummaryOverride": "",
+            "deviceName": "Macerator Pit Level",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps"
+          },
+          "path": "Templates/WMS/Tank with Sparkline"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tank with Sparkline_0"
+        },
+        "position": {
+          "height": 0.3856,
+          "width": 0.1615,
+          "x": 0.5798,
+          "y": 0.2122
+        },
+        "props": {
+          "params": {
+            "DetailsAtBottom": true,
+            "IndicatorOnRight": false,
+            "LabelOverride": "",
+            "LiquidColor": "fff",
+            "MixerPresent": false,
+            "MixerTagPath": "",
+            "SparklineWidth": 3,
+            "alarmSummaryOverride": "",
+            "deviceName": "Wet Well",
+            "deviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps"
+          },
+          "path": "Templates/WMS/Tank with Sparkline"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fan_0"
+        },
+        "position": {
+          "height": 0.1087,
+          "width": 0.0635,
+          "x": 0.1593,
+          "y": 0.3737
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Ventilation Fan",
+            "DeviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "StatusLabelVisible": false
+          },
+          "path": "Templates/HV/CSB Genset/Fan"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Truck_2"
+        },
+        "position": {
+          "height": 0.0769,
+          "width": 0.0839,
+          "x": 0.1633,
+          "y": 0.7774
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Truck Position/DischargePit"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m137.83 323.54c-10.995-3.5177-20.045-11.966-24.459-22.832l-2.3444-5.7714-28.803-0.5c-28.422-0.49339-28.86-0.5329-33.151-2.9892-2.6785-1.5334-5.3663-4.2213-7-7l-2.6519-4.5108v-93.5c0-72.476 0.28412-94.435 1.2636-97.657 1.8885-6.2132 7.1288-13.294 12.605-17.032 9.8089-6.6957 2.8374-6.3787 133.71-6.0803l118.43 0.27 4.6757 2.1609c10.37 4.7925 17.819 15.232 19.573 27.432l0.77751 5.407 71.975 1 4.1209 2.5c5.2104 3.161 77.91 84.902 80.49 90.5 1.6904 3.6679 1.8448 7.2379 1.8598 43 0.01 23.813-0.38581 40.448-1.0165 42.719-2.3184 8.3479-10.178 13.721-20.128 13.759-5.67 0.022-5.673 0.0236-6.8644 3.772-2.7478 8.6451-11.603 19.039-19.614 23.022-10.069 5.0063-22.922 5.4742-33.849 1.2323-8.2918-3.2187-17.063-12.085-21.027-21.254l-2.918-6.75h-193.54l-2.9259 6.453c-3.2903 7.2566-10.475 15.514-16.644 19.129-9.4361 5.5299-22.01 6.8906-32.541 3.5214zm18.197-13.535c4.9522-0.83171 12.109-5.784 15.277-10.572 11.157-16.859-0.94031-39.197-21.228-39.197-7.6569 0-13.482 2.6113-18.83 8.4405-12.988 14.158-5.0596 38.005 13.858 41.68 2.3737 0.46112 4.9908 0.707 5.8158 0.5464s3.1228-0.56455 5.1062-0.89767zm277.39-1.5648c19.727-8.6426 19.498-37.255-0.37028-46.23-16.362-7.391-35.33 5.0787-35.33 23.226 0 18.606 18.512 30.534 35.7 23.004zm-322.03-32.754c1.0953-5.9044 6.4576-15.015 11.454-19.461 2.5151-2.2378 7.4979-5.4684 11.073-7.1791 5.9346-2.8398 7.3699-3.1104 16.5-3.1104 8.7712 0 10.707 0.33127 15.753 2.6959 10.586 4.9609 19.83 15.779 22.697 26.562l1.1318 4.2575 125.42-0.515v-51l-261.5-0.50743v24.069c0 14.679 0.40385 24.824 1.0352 26.004 0.98472 1.84 2.3685 1.9343 28.389 1.9343h27.354zm273.71-2.8549c5.2502-16.017 20.964-27.412 37.761-27.384 10.76 0.0178 18.932 3.2827 27.448 10.966 4.9585 4.4742 8.0181 9.3414 10.491 16.689 1.9381 5.7581 2.0172 5.8376 6.1141 6.1447 7.2922 0.54659 7.0028 2.1132 7.0028-37.898v-35.842l-100.65-0.57031-4.2542-2.8161c-7.4436-4.9274-8.0533-7.5154-8.0533-34.184 0-26.666 0.6099-29.256 8.0511-34.184 4.2295-2.8012 4.3519-2.8179 23.078-3.144 10.355-0.18036 18.805-0.63036 18.779-1-0.0259-0.36965-2.7343-3.5971-6.0187-7.1721l-5.9715-6.5h-68.463l-0.5117 163.53 53.194-0.53269zm-69.683-119.4c0-58.432-3e-3 -58.505-2.2224-63.009-3.0178-6.1224-8.641-9.6671-16.62-10.477-3.3865-0.34374-56.107-0.48759-117.16-0.31966-110.02 0.30263-111.03 0.32354-114.95 2.3757-2.1707 1.1387-5.3207 3.7677-7 5.8422l-3.0533 3.7718-0.27271 60.411-0.2727 60.411 261.55-0.50744zm148.33 36.106c-0.18333-0.49142-8.8833-10.591-19.333-22.443l-19-21.55-49 0.3866-0.27097 20.974c-0.14903 11.536-0.0507 21.548 0.21861 22.25 0.38661 1.0075 9.6639 1.2758 44.104 1.2758 25.193 0 43.474-0.3774 43.281-0.8935z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-39.42 -65.541)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 449.47 259.83"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.117,
+          "x": 0.1492,
+          "y": 0.8978
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Truck Position/DischargePit"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "text": "Truck at Discharge Pit",
+          "textStyle": {
+            "fontSize": "clamp(5pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Truck_3"
+        },
+        "position": {
+          "height": 0.0769,
+          "rotate": {
+            "anchor": "75% 50%"
+          },
+          "width": 0.0839,
+          "x": 0.0281,
+          "y": 0.7774
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Truck Position/EntryLoop"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m137.83 323.54c-10.995-3.5177-20.045-11.966-24.459-22.832l-2.3444-5.7714-28.803-0.5c-28.422-0.49339-28.86-0.5329-33.151-2.9892-2.6785-1.5334-5.3663-4.2213-7-7l-2.6519-4.5108v-93.5c0-72.476 0.28412-94.435 1.2636-97.657 1.8885-6.2132 7.1288-13.294 12.605-17.032 9.8089-6.6957 2.8374-6.3787 133.71-6.0803l118.43 0.27 4.6757 2.1609c10.37 4.7925 17.819 15.232 19.573 27.432l0.77751 5.407 71.975 1 4.1209 2.5c5.2104 3.161 77.91 84.902 80.49 90.5 1.6904 3.6679 1.8448 7.2379 1.8598 43 0.01 23.813-0.38581 40.448-1.0165 42.719-2.3184 8.3479-10.178 13.721-20.128 13.759-5.67 0.022-5.673 0.0236-6.8644 3.772-2.7478 8.6451-11.603 19.039-19.614 23.022-10.069 5.0063-22.922 5.4742-33.849 1.2323-8.2918-3.2187-17.063-12.085-21.027-21.254l-2.918-6.75h-193.54l-2.9259 6.453c-3.2903 7.2566-10.475 15.514-16.644 19.129-9.4361 5.5299-22.01 6.8906-32.541 3.5214zm18.197-13.535c4.9522-0.83171 12.109-5.784 15.277-10.572 11.157-16.859-0.94031-39.197-21.228-39.197-7.6569 0-13.482 2.6113-18.83 8.4405-12.988 14.158-5.0596 38.005 13.858 41.68 2.3737 0.46112 4.9908 0.707 5.8158 0.5464s3.1228-0.56455 5.1062-0.89767zm277.39-1.5648c19.727-8.6426 19.498-37.255-0.37028-46.23-16.362-7.391-35.33 5.0787-35.33 23.226 0 18.606 18.512 30.534 35.7 23.004zm-322.03-32.754c1.0953-5.9044 6.4576-15.015 11.454-19.461 2.5151-2.2378 7.4979-5.4684 11.073-7.1791 5.9346-2.8398 7.3699-3.1104 16.5-3.1104 8.7712 0 10.707 0.33127 15.753 2.6959 10.586 4.9609 19.83 15.779 22.697 26.562l1.1318 4.2575 125.42-0.515v-51l-261.5-0.50743v24.069c0 14.679 0.40385 24.824 1.0352 26.004 0.98472 1.84 2.3685 1.9343 28.389 1.9343h27.354zm273.71-2.8549c5.2502-16.017 20.964-27.412 37.761-27.384 10.76 0.0178 18.932 3.2827 27.448 10.966 4.9585 4.4742 8.0181 9.3414 10.491 16.689 1.9381 5.7581 2.0172 5.8376 6.1141 6.1447 7.2922 0.54659 7.0028 2.1132 7.0028-37.898v-35.842l-100.65-0.57031-4.2542-2.8161c-7.4436-4.9274-8.0533-7.5154-8.0533-34.184 0-26.666 0.6099-29.256 8.0511-34.184 4.2295-2.8012 4.3519-2.8179 23.078-3.144 10.355-0.18036 18.805-0.63036 18.779-1-0.0259-0.36965-2.7343-3.5971-6.0187-7.1721l-5.9715-6.5h-68.463l-0.5117 163.53 53.194-0.53269zm-69.683-119.4c0-58.432-3e-3 -58.505-2.2224-63.009-3.0178-6.1224-8.641-9.6671-16.62-10.477-3.3865-0.34374-56.107-0.48759-117.16-0.31966-110.02 0.30263-111.03 0.32354-114.95 2.3757-2.1707 1.1387-5.3207 3.7677-7 5.8422l-3.0533 3.7718-0.27271 60.411-0.2727 60.411 261.55-0.50744zm148.33 36.106c-0.18333-0.49142-8.8833-10.591-19.333-22.443l-19-21.55-49 0.3866-0.27097 20.974c-0.14903 11.536-0.0507 21.548 0.21861 22.25 0.38661 1.0075 9.6639 1.2758 44.104 1.2758 25.193 0 43.474-0.3774 43.281-0.8935z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-39.42 -65.541)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 449.47 259.83"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.117,
+          "x": 0.01,
+          "y": 0.8978
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Truck Position/EntryLoop"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "text": "Truck at Entry Loop",
+          "textStyle": {
+            "fontSize": "clamp(5pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.117,
+          "x": 0.4304,
+          "y": 0.8978
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Truck Position/ExitLoop"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "text": "Truck at Exit Loop",
+          "textStyle": {
+            "fontSize": "clamp(5pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Truck_4"
+        },
+        "position": {
+          "height": 0.0769,
+          "width": 0.0839,
+          "x": 0.4456,
+          "y": 0.7774
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Truck Position/ExitLoop"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m137.83 323.54c-10.995-3.5177-20.045-11.966-24.459-22.832l-2.3444-5.7714-28.803-0.5c-28.422-0.49339-28.86-0.5329-33.151-2.9892-2.6785-1.5334-5.3663-4.2213-7-7l-2.6519-4.5108v-93.5c0-72.476 0.28412-94.435 1.2636-97.657 1.8885-6.2132 7.1288-13.294 12.605-17.032 9.8089-6.6957 2.8374-6.3787 133.71-6.0803l118.43 0.27 4.6757 2.1609c10.37 4.7925 17.819 15.232 19.573 27.432l0.77751 5.407 71.975 1 4.1209 2.5c5.2104 3.161 77.91 84.902 80.49 90.5 1.6904 3.6679 1.8448 7.2379 1.8598 43 0.01 23.813-0.38581 40.448-1.0165 42.719-2.3184 8.3479-10.178 13.721-20.128 13.759-5.67 0.022-5.673 0.0236-6.8644 3.772-2.7478 8.6451-11.603 19.039-19.614 23.022-10.069 5.0063-22.922 5.4742-33.849 1.2323-8.2918-3.2187-17.063-12.085-21.027-21.254l-2.918-6.75h-193.54l-2.9259 6.453c-3.2903 7.2566-10.475 15.514-16.644 19.129-9.4361 5.5299-22.01 6.8906-32.541 3.5214zm18.197-13.535c4.9522-0.83171 12.109-5.784 15.277-10.572 11.157-16.859-0.94031-39.197-21.228-39.197-7.6569 0-13.482 2.6113-18.83 8.4405-12.988 14.158-5.0596 38.005 13.858 41.68 2.3737 0.46112 4.9908 0.707 5.8158 0.5464s3.1228-0.56455 5.1062-0.89767zm277.39-1.5648c19.727-8.6426 19.498-37.255-0.37028-46.23-16.362-7.391-35.33 5.0787-35.33 23.226 0 18.606 18.512 30.534 35.7 23.004zm-322.03-32.754c1.0953-5.9044 6.4576-15.015 11.454-19.461 2.5151-2.2378 7.4979-5.4684 11.073-7.1791 5.9346-2.8398 7.3699-3.1104 16.5-3.1104 8.7712 0 10.707 0.33127 15.753 2.6959 10.586 4.9609 19.83 15.779 22.697 26.562l1.1318 4.2575 125.42-0.515v-51l-261.5-0.50743v24.069c0 14.679 0.40385 24.824 1.0352 26.004 0.98472 1.84 2.3685 1.9343 28.389 1.9343h27.354zm273.71-2.8549c5.2502-16.017 20.964-27.412 37.761-27.384 10.76 0.0178 18.932 3.2827 27.448 10.966 4.9585 4.4742 8.0181 9.3414 10.491 16.689 1.9381 5.7581 2.0172 5.8376 6.1141 6.1447 7.2922 0.54659 7.0028 2.1132 7.0028-37.898v-35.842l-100.65-0.57031-4.2542-2.8161c-7.4436-4.9274-8.0533-7.5154-8.0533-34.184 0-26.666 0.6099-29.256 8.0511-34.184 4.2295-2.8012 4.3519-2.8179 23.078-3.144 10.355-0.18036 18.805-0.63036 18.779-1-0.0259-0.36965-2.7343-3.5971-6.0187-7.1721l-5.9715-6.5h-68.463l-0.5117 163.53 53.194-0.53269zm-69.683-119.4c0-58.432-3e-3 -58.505-2.2224-63.009-3.0178-6.1224-8.641-9.6671-16.62-10.477-3.3865-0.34374-56.107-0.48759-117.16-0.31966-110.02 0.30263-111.03 0.32354-114.95 2.3757-2.1707 1.1387-5.3207 3.7677-7 5.8422l-3.0533 3.7718-0.27271 60.411-0.2727 60.411 261.55-0.50744zm148.33 36.106c-0.18333-0.49142-8.8833-10.591-19.333-22.443l-19-21.55-49 0.3866-0.27097 20.974c-0.14903 11.536-0.0507 21.548 0.21861 22.25 0.38661 1.0075 9.6639 1.2758 44.104 1.2758 25.193 0 43.474-0.3774 43.281-0.8935z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "transform": "translate(-39.42 -65.541)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 449.47 259.83"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.117,
+          "x": 0.6314,
+          "y": 0.0957
+        },
+        "props": {
+          "text": "Wet Well, Pumps and Valve Chamber",
+          "textStyle": {
+            "fontSize": "clamp(5pt, calc(0.5*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "PLC_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.0521,
+          "y": 0.2298
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "[default]International/Precinct/Waste Disposal Facility",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.0584,
+          "y": 0.3163
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS",
+            "DeviceParentPath": "[default]International/Precinct/Waste Disposal Facility",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 1"
+        },
+        "position": {
+          "height": 0.0002,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0,
+          "x": 0.0002,
+          "y": 0.0006
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 9",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Boolean Value w Label_0"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1271,
+          "x": 0.2933,
+          "y": 0.826
+        },
+        "props": {
+          "params": {
+            "labelOverride": "Building Lights",
+            "tagName": "Contactor1On",
+            "tagParentPath": "[default]International/Precinct/Waste Disposal Facility/Building Lights",
+            "tagQuality": "Good"
+          },
+          "path": "Shared/Templates/Display/Alexandrina/Boolean Value w Label"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Modbus TCP Device"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.051,
+          "y": 0.1057
+        },
+        "props": {
+          "params": {
+            "DeviceName": "RTU Status",
+            "DeviceParentPath": "International/Precinct/Waste Disposal Facility/Waste Disposal Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus TCP Device"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.7474,
+          "y": 0.3661
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Waste Disposal Pumps/Other Pump Status/Pump 1 VFD Off"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "text": "Off",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.748,
+          "y": 0.6399
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Precinct/Waste Disposal Facility/Waste Disposal Pumps/Other Pump Status/Pump 2 VFD Off"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "text": "Off",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2629,
+                "y": 0.1615
+              }
+            ],
+            "x": 0.3244,
+            "y": 0.1615
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "visible": true,
+          "width": 5
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2609,
+                "y": 0.6808
+              }
+            ],
+            "x": 0.3234,
+            "y": 0.6808
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "visible": true,
+          "width": 5
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.1753,
+                    "y": 0.1608
+                  }
+                ],
+                "x": 0.1974,
+                "y": 0.1608
+              }
+            ],
+            "x": 0.2144,
+            "y": 0.1608
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "width": 5
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.1806,
+                    "y": 0.7774
+                  }
+                ],
+                "x": 0.1806,
+                "y": 0.6808
+              }
+            ],
+            "x": 0.2129,
+            "y": 0.6808
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "width": 5
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [],
+            "x": 0.0813,
+            "y": 0.65
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "visible": true,
+          "width": 10
+        },
+        {
+          "appearance": "auto",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [],
+            "x": 0.0635,
+            "y": 0.5462
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "visible": true,
+          "width": 10
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_18",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.719,
+                            "y": 0.2827
+                          }
+                        ],
+                        "x": 0.8042,
+                        "y": 0.2827
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.971,
+                        "y": 0.4202
+                      }
+                    ],
+                    "x": 0.879,
+                    "y": 0.4202
+                  }
+                ],
+                "x": 0.8042,
+                "y": 0.5569
+              }
+            ],
+            "x": 0.719,
+            "y": 0.5569
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "width": 5
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_19",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.3692,
+                            "y": 0.1608
+                          }
+                        ],
+                        "x": 0.4035,
+                        "y": 0.1608
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.5798,
+                        "y": 0.405
+                      }
+                    ],
+                    "x": 0.499,
+                    "y": 0.405
+                  }
+                ],
+                "x": 0.4035,
+                "y": 0.6808
+              }
+            ],
+            "x": 0.3692,
+            "y": 0.6808
+          },
+          "start": "none",
+          "stroke": "var(--neutral-50)",
+          "width": 5
+        },
+        {
+          "appearance": "auto",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [],
+            "x": 0.3052,
+            "y": 0.1923
+          },
+          "start": "none",
+          "stroke": "",
+          "visible": true,
+          "width": 10
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

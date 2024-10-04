@@ -1,0 +1,174 @@
+{
+  "custom": {
+    "controlPopupId": "High Voltage/International/Substation 1/CSB Genset PLC/PrioritiesCmd",
+    "fullPath": "High Voltage/International/Substation 1/CSB Genset PLC/Priorities/Command/Priority Load 1 Command",
+    "fullTagParentPath": "High Voltage/International/Substation 1/CSB Genset PLC/Priorities/Command",
+    "tagPath": "High Voltage/International/Substation 1/CSB Genset PLC/Priorities"
+  },
+  "params": {
+    "buttonText": "ON",
+    "command": "Priority Load 1 Command",
+    "messageOverride": "",
+    "tagName": "Priorities",
+    "tagParentPath": "High Voltage/International/Substation 1/CSB Genset PLC",
+    "writeValue": 1
+  },
+  "propConfig": {
+    "custom.controlPopupId": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.tagParentPath} + \"/\" + {view.params.tagName} + \"Cmd\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.fullPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.tagPath} + \"/Command/\" + {view.params.command}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.fullTagParentPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.tagPath} + \"/Command\""
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tagPath": {
+      "binding": {
+        "config": {
+          "expression": "{view.params.tagParentPath} + \u0027/\u0027 + {view.params.tagName}"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "params.buttonText": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.command": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.messageOverride": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagParentPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.writeValue": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 36,
+      "width": 100
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\twidth \u003d self.page.props.dimensions.viewport.width\n\tif width \u003e 1260:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.tagParentPath, \u0027deviceName\u0027 : self.view.params.tagName, \u0027command\u0027 : self.view.params.command, \u0027onConfirm_WriteValue\u0027 : self.view.params.writeValue, \u0027messageOverride\u0027 : self.view.params.messageOverride}, showCloseIcon \u003d False, draggable \u003d True)\n\telse:\n\t\tsystem.perspective.openPopup(self.view.custom.controlPopupId, \u0027Popups/HV/ppuConfirmAction\u0027, {\u0027deviceParentPath\u0027 : self.view.params.tagParentPath, \u0027deviceName\u0027 : self.view.params.tagName, \u0027command\u0027 : self.view.params.command, \u0027onConfirm_WriteValue\u0027 : self.view.params.writeValue, \u0027messageOverride\u0027 : self.view.params.messageOverride}, showCloseIcon \u003d False, draggable \u003d False)\t\n\t\n\t\n\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          },
+          "dom": {
+            "onContextMenu": {
+              "config": {
+                "draggable": true,
+                "id": "f90r4MRH{view.custom.tagPath}",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "title": "Tag Info",
+                "type": "open",
+                "viewParams": {
+                  "tagName": "{view.params.command}",
+                  "tagParentPath": "{view.custom.fullTagParentPath}"
+                },
+                "viewPath": "Shared/Popups/ppu_TagInfo",
+                "viewportBound": true
+              },
+              "preventDefault": true,
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "fullPath": "{view.custom.fullPath}"
+                },
+                "tagPath": "{fullPath}.canWrite"
+              },
+              "type": "tag"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.buttonText"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "primary": false,
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Text"
+          },
+          "textStyle": {
+            "whiteSpace": "pre-wrap"
+          }
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "center",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

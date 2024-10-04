@@ -1,0 +1,50 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "sql_data",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "7437ff8f5342629bc66e7486aba53cb46cf3be05f42295220535712cabfccfda",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2022-11-14T05:30:48Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "area",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "site",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "username",
+        "sqlType": 7
+      }
+    ]
+  }
+}

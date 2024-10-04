@@ -1,0 +1,1489 @@
+{
+  "custom": {},
+  "params": {
+    "sitePath": "Water Monitoring System/International/North West Pump Station"
+  },
+  "propConfig": {
+    "params.sitePath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Domestic Pump"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.2601,
+          "y": 0.536
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Pump 3",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fire Pump"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.5206,
+          "y": 0.536
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Fire Pump 3",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.0451,
+          "y": 0.0681
+        },
+        "props": {
+          "text": "To Demand",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.046,
+          "x": 0.8865,
+          "y": 0.0267
+        },
+        "props": {
+          "text": "From Tempe Tower",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.0202,
+          "y": 0.3099
+        },
+        "props": {
+          "text": "Normally Closed",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.0997,
+          "y": 0.4172
+        },
+        "props": {
+          "text": "Normally Open",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.0667,
+          "y": 0.3099
+        },
+        "props": {
+          "text": "Normally Open",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Domestic Pump_0"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.3471,
+          "y": 0.536
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Pump 2",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Domestic Pump_1"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.4341,
+          "y": 0.536
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Pump 1",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuVSDPump"
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fire Pump_0"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.6071,
+          "y": 0.536
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Fire Pump 2",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Fire Pump_1"
+        },
+        "position": {
+          "height": 0.1019,
+          "width": 0.0688,
+          "x": 0.6941,
+          "y": 0.536
+        },
+        "props": {
+          "params": {
+            "PumpRight": true,
+            "alwaysVisible": true,
+            "deviceName": "Fire Pump 1",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.0023,
+          "y": 0.5765
+        },
+        "props": {
+          "text": "To Demand",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_5"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0156,
+          "x": 0.0297,
+          "y": 0.109
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_6"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0156,
+          "x": 0.0602,
+          "y": 0.1744
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_7"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0156,
+          "x": 0.0316,
+          "y": 0.3806
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_8"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0156,
+          "x": 0.0137,
+          "y": 0.4604
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_9"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0156,
+          "x": 0.1563,
+          "y": 0.3899
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.056,
+          "x": 0.3966,
+          "y": 0.3471
+        },
+        "props": {
+          "text": "Domestic Pumps",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_10"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0156,
+          "x": 0.2531,
+          "y": 0.3603
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.056,
+          "x": 0.658,
+          "y": 0.3472
+        },
+        "props": {
+          "text": "Fire Pumps",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_11"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0156,
+          "x": 0.4928,
+          "y": 0.1101
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_12"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.9233,
+          "y": 0.5061
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_13"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0156,
+          "x": 0.879,
+          "y": 0.5062
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_14"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0156,
+          "x": 0.906,
+          "y": 0.3145
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_15"
+        },
+        "position": {
+          "height": 0.0288,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0156,
+          "x": 0.896,
+          "y": 0.079
+        },
+        "props": {
+          "path": "material/arrow_right_alt"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.036,
+          "x": 0.1743,
+          "y": 0.5765
+        },
+        "props": {
+          "text": "Suction",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_16"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.176,
+          "x": 0.2338,
+          "y": 0.1915
+        },
+        "props": {
+          "text": "Opened at 23:00 - water pumped direct from Tempe Tower",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_18"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.089,
+          "x": 0.0138,
+          "y": 0.6335
+        },
+        "props": {
+          "text": "Delivery Pipe Lines",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center",
+            "textDecoration": "underline"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Tank with Sparkline_0"
+        },
+        "position": {
+          "height": 0.2699,
+          "width": 0.1131,
+          "x": 0.7968,
+          "y": 0.652
+        },
+        "props": {
+          "params": {
+            "DetailsAtBottom": true,
+            "IndicatorOnRight": true,
+            "LabelOverride": "Reservoir 1",
+            "LiquidColor": "#ACCBFC",
+            "MixerPresent": false,
+            "MixerTagPath": "",
+            "SparklineWidth": 2.1,
+            "alarmSummaryOverride": "",
+            "deviceName": "Tank 1",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+          },
+          "path": "Templates/WMS/Tank with Sparkline"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tank with Sparkline_2"
+        },
+        "position": {
+          "height": 0.2699,
+          "width": 0.1131,
+          "x": 0.8828,
+          "y": 0.652
+        },
+        "props": {
+          "params": {
+            "DetailsAtBottom": true,
+            "IndicatorOnRight": true,
+            "LabelOverride": "Reservoir 2",
+            "LiquidColor": "#ACCBFC",
+            "MixerPresent": false,
+            "MixerTagPath": "",
+            "SparklineWidth": 2.1,
+            "alarmSummaryOverride": "",
+            "deviceName": "Tank 2",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+          },
+          "path": "Templates/WMS/Tank with Sparkline"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_22"
+        },
+        "position": {
+          "height": 0.0208,
+          "width": 0.176,
+          "x": 0.2338,
+          "y": 0.2135
+        },
+        "props": {
+          "text": "Closed at 03:00 - water pumped from Reservoirs",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Valve"
+        },
+        "position": {
+          "height": 0.1235,
+          "width": 0.0819,
+          "x": 0.1489,
+          "y": 0.1581
+        },
+        "props": {
+          "params": {
+            "MotorLocation": "Right",
+            "deviceName": "Valve 1",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+          },
+          "path": "Templates/WMS/Valve"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Site Navigation Small"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832,
+          "y": -0.0002
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "Water Monitoring System/International/North West Pump Station",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "HV_2"
+        },
+        "position": {
+          "height": 0.0448,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0347,
+          "x": 0.0042,
+          "y": 0.2475
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs310",
+              "name": "defs310",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 279.65642,725.77722 c -1.19748,-2.72066 -2.04125,-3.30055 -5.18047,-3.56037 l -3.75,-0.31036 V 614.35987 c 0,-101.59579 0.0959,-107.50985 1.7323,-106.88188 0.95276,0.36561 13.66526,5.56123 28.25,11.54582 14.58473,5.98459 69.47237,28.48901 121.97253,50.00982 52.50016,21.52081 95.81266,39.34989 96.25,39.62018 0.43734,0.2703 0.79517,-53.08511 0.79517,-118.56757 V 371.02722 h -56 -56 v -7.5 -7.5 h 119 119 v 7.5 7.5 h -55 -55 v 118.94897 118.94898 l 3.25,-1.35138 c 1.7875,-0.74326 48.475,-19.88446 103.75,-42.53601 55.275,-22.65155 109.275,-44.79337 120,-49.20404 10.725,-4.41068 20.0625,-8.24466 20.75,-8.51996 0.99536,-0.39857 1.25,21.42057 1.25,107.10645 v 107.60699 h -3.51618 c -3.03391,0 -3.7451,0.48005 -5.18521,3.5 -0.91797,1.925 -2.01536,3.5 -2.43865,3.5 -0.42329,0 -55.63403,-22.5 -122.69053,-50 -67.05651,-27.5 -122.43605,-50 -123.06565,-50 -0.6296,0 -56.00836,22.5 -123.06391,50 -67.05556,27.5 -122.31513,50 -122.79906,50 -0.48393,0 -1.52359,-1.4625 -2.31034,-3.25 z m 91.56953,-49.28421 c 129.78117,-53.28541 135.6283,-55.73852 134.79403,-56.55156 -1.32774,-1.29399 -217.41155,-89.91423 -219.23894,-89.91423 -0.73235,0 -1.05509,27.70327 -1.05509,90.56739 V 711.162 l 2.25,-0.70605 c 1.2375,-0.38832 38.7,-15.67165 83.25,-33.96294 z m 398.5,-56.41476 v -90.94898 l -3.25,1.34496 c -1.7875,0.73972 -35.875,14.71326 -75.75,31.0523 -107.90947,44.21662 -140.41072,57.6692 -141.31688,58.49238 -0.44929,0.40814 2.25071,1.96626 6,3.46248 3.74928,1.49622 25.94188,10.62803 49.31688,20.2929 67.10344,27.74529 163.42677,67.15909 164.25,67.20819 0.4125,0.0246 0.75,-40.8823 0.75,-90.90423 z",
+                  "fill": {
+                    "paint": "var(--callToAction--disabled)"
+                  },
+                  "id": "path424",
+                  "name": "path424",
+                  "type": "path"
+                },
+                {
+                  "d": "m 15.796733,264.84006 c 0,-58.44542 0.319784,-89.68217 0.918114,-89.68217 1.97848,0 195.152653,78.83514 213.679803,87.20357 l 4.12967,1.86531 -5.5235,2.48025 c -6.73661,3.02498 -125.51104,52.02285 -172.318424,71.08631 -18.654084,7.59734 -35.484574,14.46933 -37.401089,15.27111 l -3.484574,1.45778 z",
+                  "fill": {
+                    "opacity": "0.956863",
+                    "paint": "#AAAAAA"
+                  },
+                  "id": "path844",
+                  "name": "path844",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": "0.930683"
+                  },
+                  "style": {
+                    "opacity": "0.4"
+                  },
+                  "transform": "translate(270.72595,356.02722)",
+                  "type": "path"
+                },
+                {
+                  "d": "M 479.47731,346.84126 C 437.94564,329.98968 284.59477,266.82955 282.0937,265.54552 l -2.7121,-1.39239 6.42898,-2.75825 c 5.90588,-2.53382 119.32593,-49.2138 184.42961,-75.90519 15.10687,-6.19356 27.75588,-11.26101 28.1089,-11.26101 0.72912,0 0.64278,59.96421 -0.18943,131.56494 l -0.56256,48.39978 z",
+                  "fill": {
+                    "opacity": "0.956863",
+                    "paint": "#AAAAAA"
+                  },
+                  "id": "path846",
+                  "name": "path846",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": "0.930683"
+                  },
+                  "style": {
+                    "opacity": "0.4"
+                  },
+                  "transform": "translate(270.72595,356.02722)",
+                  "type": "path"
+                }
+              ],
+              "id": "g312",
+              "name": "g312",
+              "transform": "translate(-270.72595,-356.02722)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 514 373"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "HV_3"
+        },
+        "position": {
+          "height": 0.0448,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0347,
+          "x": 0.0507,
+          "y": 0.2475
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs310",
+              "name": "defs310",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 279.65642,725.77722 c -1.19748,-2.72066 -2.04125,-3.30055 -5.18047,-3.56037 l -3.75,-0.31036 V 614.35987 c 0,-101.59579 0.0959,-107.50985 1.7323,-106.88188 0.95276,0.36561 13.66526,5.56123 28.25,11.54582 14.58473,5.98459 69.47237,28.48901 121.97253,50.00982 52.50016,21.52081 95.81266,39.34989 96.25,39.62018 0.43734,0.2703 0.79517,-53.08511 0.79517,-118.56757 V 371.02722 h -56 -56 v -7.5 -7.5 h 119 119 v 7.5 7.5 h -55 -55 v 118.94897 118.94898 l 3.25,-1.35138 c 1.7875,-0.74326 48.475,-19.88446 103.75,-42.53601 55.275,-22.65155 109.275,-44.79337 120,-49.20404 10.725,-4.41068 20.0625,-8.24466 20.75,-8.51996 0.99536,-0.39857 1.25,21.42057 1.25,107.10645 v 107.60699 h -3.51618 c -3.03391,0 -3.7451,0.48005 -5.18521,3.5 -0.91797,1.925 -2.01536,3.5 -2.43865,3.5 -0.42329,0 -55.63403,-22.5 -122.69053,-50 -67.05651,-27.5 -122.43605,-50 -123.06565,-50 -0.6296,0 -56.00836,22.5 -123.06391,50 -67.05556,27.5 -122.31513,50 -122.79906,50 -0.48393,0 -1.52359,-1.4625 -2.31034,-3.25 z m 91.56953,-49.28421 c 129.78117,-53.28541 135.6283,-55.73852 134.79403,-56.55156 -1.32774,-1.29399 -217.41155,-89.91423 -219.23894,-89.91423 -0.73235,0 -1.05509,27.70327 -1.05509,90.56739 V 711.162 l 2.25,-0.70605 c 1.2375,-0.38832 38.7,-15.67165 83.25,-33.96294 z m 398.5,-56.41476 v -90.94898 l -3.25,1.34496 c -1.7875,0.73972 -35.875,14.71326 -75.75,31.0523 -107.90947,44.21662 -140.41072,57.6692 -141.31688,58.49238 -0.44929,0.40814 2.25071,1.96626 6,3.46248 3.74928,1.49622 25.94188,10.62803 49.31688,20.2929 67.10344,27.74529 163.42677,67.15909 164.25,67.20819 0.4125,0.0246 0.75,-40.8823 0.75,-90.90423 z",
+                  "fill": {
+                    "paint": "var(--callToAction--disabled)"
+                  },
+                  "id": "path424",
+                  "name": "path424",
+                  "type": "path"
+                },
+                {
+                  "d": "m 15.796733,264.84006 c 0,-58.44542 0.319784,-89.68217 0.918114,-89.68217 1.97848,0 195.152653,78.83514 213.679803,87.20357 l 4.12967,1.86531 -5.5235,2.48025 c -6.73661,3.02498 -125.51104,52.02285 -172.318424,71.08631 -18.654084,7.59734 -35.484574,14.46933 -37.401089,15.27111 l -3.484574,1.45778 z",
+                  "fill": {
+                    "opacity": "0.956863",
+                    "paint": "#FFFFFF"
+                  },
+                  "id": "path844",
+                  "name": "path844",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": "0.930683"
+                  },
+                  "style": {
+                    "opacity": "0.4"
+                  },
+                  "transform": "translate(270.72595,356.02722)",
+                  "type": "path"
+                },
+                {
+                  "d": "M 479.47731,346.84126 C 437.94564,329.98968 284.59477,266.82955 282.0937,265.54552 l -2.7121,-1.39239 6.42898,-2.75825 c 5.90588,-2.53382 119.32593,-49.2138 184.42961,-75.90519 15.10687,-6.19356 27.75588,-11.26101 28.1089,-11.26101 0.72912,0 0.64278,59.96421 -0.18943,131.56494 l -0.56256,48.39978 z",
+                  "fill": {
+                    "opacity": "0.956863",
+                    "paint": "#FFFFFF"
+                  },
+                  "id": "path846",
+                  "name": "path846",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": "0.930683"
+                  },
+                  "style": {
+                    "opacity": "0.4"
+                  },
+                  "transform": "translate(270.72595,356.02722)",
+                  "type": "path"
+                }
+              ],
+              "id": "g312",
+              "name": "g312",
+              "transform": "translate(-270.72595,-356.02722)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 514 373"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "HV_4"
+        },
+        "position": {
+          "height": 0.0448,
+          "width": 0.0347,
+          "x": 0.0956,
+          "y": 0.3537
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs310",
+              "name": "defs310",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 279.65642,725.77722 c -1.19748,-2.72066 -2.04125,-3.30055 -5.18047,-3.56037 l -3.75,-0.31036 V 614.35987 c 0,-101.59579 0.0959,-107.50985 1.7323,-106.88188 0.95276,0.36561 13.66526,5.56123 28.25,11.54582 14.58473,5.98459 69.47237,28.48901 121.97253,50.00982 52.50016,21.52081 95.81266,39.34989 96.25,39.62018 0.43734,0.2703 0.79517,-53.08511 0.79517,-118.56757 V 371.02722 h -56 -56 v -7.5 -7.5 h 119 119 v 7.5 7.5 h -55 -55 v 118.94897 118.94898 l 3.25,-1.35138 c 1.7875,-0.74326 48.475,-19.88446 103.75,-42.53601 55.275,-22.65155 109.275,-44.79337 120,-49.20404 10.725,-4.41068 20.0625,-8.24466 20.75,-8.51996 0.99536,-0.39857 1.25,21.42057 1.25,107.10645 v 107.60699 h -3.51618 c -3.03391,0 -3.7451,0.48005 -5.18521,3.5 -0.91797,1.925 -2.01536,3.5 -2.43865,3.5 -0.42329,0 -55.63403,-22.5 -122.69053,-50 -67.05651,-27.5 -122.43605,-50 -123.06565,-50 -0.6296,0 -56.00836,22.5 -123.06391,50 -67.05556,27.5 -122.31513,50 -122.79906,50 -0.48393,0 -1.52359,-1.4625 -2.31034,-3.25 z m 91.56953,-49.28421 c 129.78117,-53.28541 135.6283,-55.73852 134.79403,-56.55156 -1.32774,-1.29399 -217.41155,-89.91423 -219.23894,-89.91423 -0.73235,0 -1.05509,27.70327 -1.05509,90.56739 V 711.162 l 2.25,-0.70605 c 1.2375,-0.38832 38.7,-15.67165 83.25,-33.96294 z m 398.5,-56.41476 v -90.94898 l -3.25,1.34496 c -1.7875,0.73972 -35.875,14.71326 -75.75,31.0523 -107.90947,44.21662 -140.41072,57.6692 -141.31688,58.49238 -0.44929,0.40814 2.25071,1.96626 6,3.46248 3.74928,1.49622 25.94188,10.62803 49.31688,20.2929 67.10344,27.74529 163.42677,67.15909 164.25,67.20819 0.4125,0.0246 0.75,-40.8823 0.75,-90.90423 z",
+                  "fill": {
+                    "paint": "var(--callToAction--disabled)"
+                  },
+                  "id": "path424",
+                  "name": "path424",
+                  "type": "path"
+                },
+                {
+                  "d": "m 15.796733,264.84006 c 0,-58.44542 0.319784,-89.68217 0.918114,-89.68217 1.97848,0 195.152653,78.83514 213.679803,87.20357 l 4.12967,1.86531 -5.5235,2.48025 c -6.73661,3.02498 -125.51104,52.02285 -172.318424,71.08631 -18.654084,7.59734 -35.484574,14.46933 -37.401089,15.27111 l -3.484574,1.45778 z",
+                  "fill": {
+                    "opacity": "0.956863",
+                    "paint": "#FFFFFF"
+                  },
+                  "id": "path844",
+                  "name": "path844",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": "0.930683"
+                  },
+                  "style": {
+                    "opacity": "0.4"
+                  },
+                  "transform": "translate(270.72595,356.02722)",
+                  "type": "path"
+                },
+                {
+                  "d": "M 479.47731,346.84126 C 437.94564,329.98968 284.59477,266.82955 282.0937,265.54552 l -2.7121,-1.39239 6.42898,-2.75825 c 5.90588,-2.53382 119.32593,-49.2138 184.42961,-75.90519 15.10687,-6.19356 27.75588,-11.26101 28.1089,-11.26101 0.72912,0 0.64278,59.96421 -0.18943,131.56494 l -0.56256,48.39978 z",
+                  "fill": {
+                    "opacity": "0.956863",
+                    "paint": "#FFFFFF"
+                  },
+                  "id": "path846",
+                  "name": "path846",
+                  "stroke": {
+                    "paint": "#b2b2b2",
+                    "width": "0.930683"
+                  },
+                  "style": {
+                    "opacity": "0.4"
+                  },
+                  "transform": "translate(270.72595,356.02722)",
+                  "type": "path"
+                }
+              ],
+              "id": "g312",
+              "name": "g312",
+              "transform": "translate(-270.72595,-356.02722)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 514 373"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.0123,
+          "y": 0.7474
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter NWS1A",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Flow Meter_0"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.0123,
+          "y": 0.8196
+        },
+        "props": {
+          "params": {
+            "deviceName": "Flow Meter NWS1B",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station"
+          },
+          "path": "Templates/WMS/Flow Meter"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.0123,
+          "y": 0.6753
+        },
+        "props": {
+          "params": {
+            "deviceName": "Discharge Pressure",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "popupWindow": "Popups/WMS/ppuAnalogue"
+          },
+          "path": "Templates/WMS/Analogue"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Analogue_0"
+        },
+        "position": {
+          "height": 0.05,
+          "width": 0.0922,
+          "x": 0.8012,
+          "y": 0.2869
+        },
+        "props": {
+          "params": {
+            "deviceName": "Suction Pressure",
+            "deviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "popupWindow": "Popups/WMS/ppuAnalogue"
+          },
+          "path": "Templates/WMS/Analogue"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0672,
+          "x": 0.9188,
+          "y": 0.0499
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC Status",
+            "DeviceParentPath": "Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/ppuPLC"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.925,
+          "y": 0.1364
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS",
+            "DeviceParentPath": "[default]Water Monitoring System/International/North West Pump Station",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1589,
+                        "y": 0.1808
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.9088,
+                            "y": 0.0575
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.9545,
+                                    "y": 0.7038
+                                  }
+                                ],
+                                "x": 0.9545,
+                                "y": 0.5308
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.8675,
+                                    "y": 0.7038
+                                  }
+                                ],
+                                "x": 0.8675,
+                                "y": 0.5308
+                              }
+                            ],
+                            "x": 0.9088,
+                            "y": 0.5308
+                          }
+                        ],
+                        "x": 0.9088,
+                        "y": 0.1341
+                      }
+                    ],
+                    "x": 0.1589,
+                    "y": 0.1341
+                  }
+                ],
+                "x": 0.0167,
+                "y": 0.1341
+              }
+            ],
+            "x": 0.0167,
+            "y": 0.2385
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.0969,
+                    "y": 0.3843
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.0167,
+                        "y": 0.299
+                      },
+                      {
+                        "connections": [],
+                        "x": 0.0167,
+                        "y": 0.5712
+                      }
+                    ],
+                    "x": 0.0167,
+                    "y": 0.3843
+                  }
+                ],
+                "x": 0.063,
+                "y": 0.3843
+              }
+            ],
+            "x": 0.063,
+            "y": 0.299
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [
+                          {
+                            "connections": [
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.7104,
+                                    "y": 0.5702
+                                  }
+                                ],
+                                "x": 0.6941,
+                                "y": 0.5702
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.6234,
+                                        "y": 0.5702
+                                      }
+                                    ],
+                                    "x": 0.6071,
+                                    "y": 0.5702
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [],
+                                            "x": 0.537,
+                                            "y": 0.5702
+                                          }
+                                        ],
+                                        "x": 0.5206,
+                                        "y": 0.5702
+                                      },
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [],
+                                                "x": 0.4505,
+                                                "y": 0.5702
+                                              }
+                                            ],
+                                            "x": 0.4341,
+                                            "y": 0.5702
+                                          },
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [
+                                                  {
+                                                    "connections": [],
+                                                    "x": 0.3635,
+                                                    "y": 0.5702
+                                                  }
+                                                ],
+                                                "x": 0.3471,
+                                                "y": 0.5702
+                                              },
+                                              {
+                                                "connections": [
+                                                  {
+                                                    "connections": [
+                                                      {
+                                                        "connections": [],
+                                                        "x": 0.2766,
+                                                        "y": 0.5702
+                                                      }
+                                                    ],
+                                                    "x": 0.2601,
+                                                    "y": 0.5702
+                                                  },
+                                                  {
+                                                    "connections": [
+                                                      {
+                                                        "connections": [
+                                                          {
+                                                            "connections": [
+                                                              {
+                                                                "connections": [
+                                                                  {
+                                                                    "connections": [],
+                                                                    "x": 0.1286,
+                                                                    "y": 0.3843
+                                                                  },
+                                                                  {
+                                                                    "connections": [
+                                                                      {
+                                                                        "connections": [
+                                                                          {
+                                                                            "connections": [],
+                                                                            "x": 0.312,
+                                                                            "y": 0.5702
+                                                                          }
+                                                                        ],
+                                                                        "x": 0.3288,
+                                                                        "y": 0.5702
+                                                                      },
+                                                                      {
+                                                                        "connections": [
+                                                                          {
+                                                                            "connections": [
+                                                                              {
+                                                                                "connections": [],
+                                                                                "x": 0.3995,
+                                                                                "y": 0.5702
+                                                                              }
+                                                                            ],
+                                                                            "x": 0.4158,
+                                                                            "y": 0.5702
+                                                                          },
+                                                                          {
+                                                                            "connections": [
+                                                                              {
+                                                                                "connections": [
+                                                                                  {
+                                                                                    "connections": [],
+                                                                                    "x": 0.4865,
+                                                                                    "y": 0.5702
+                                                                                  }
+                                                                                ],
+                                                                                "x": 0.5028,
+                                                                                "y": 0.5702
+                                                                              },
+                                                                              {
+                                                                                "connections": [
+                                                                                  {
+                                                                                    "connections": [
+                                                                                      {
+                                                                                        "connections": [],
+                                                                                        "x": 0.5729,
+                                                                                        "y": 0.5702
+                                                                                      }
+                                                                                    ],
+                                                                                    "x": 0.5893,
+                                                                                    "y": 0.5702
+                                                                                  },
+                                                                                  {
+                                                                                    "connections": [
+                                                                                      {
+                                                                                        "connections": [
+                                                                                          {
+                                                                                            "connections": [],
+                                                                                            "x": 0.6594,
+                                                                                            "y": 0.5702
+                                                                                          }
+                                                                                        ],
+                                                                                        "x": 0.6758,
+                                                                                        "y": 0.5702
+                                                                                      },
+                                                                                      {
+                                                                                        "connections": [
+                                                                                          {
+                                                                                            "connections": [
+                                                                                              {
+                                                                                                "connections": [],
+                                                                                                "x": 0.7464,
+                                                                                                "y": 0.5702
+                                                                                              }
+                                                                                            ],
+                                                                                            "x": 0.7628,
+                                                                                            "y": 0.5702
+                                                                                          },
+                                                                                          {
+                                                                                            "connections": [
+                                                                                              {
+                                                                                                "connections": [],
+                                                                                                "x": 0.8391,
+                                                                                                "y": 0.7038
+                                                                                              }
+                                                                                            ],
+                                                                                            "x": 0.8391,
+                                                                                            "y": 0.3843
+                                                                                          }
+                                                                                        ],
+                                                                                        "x": 0.7628,
+                                                                                        "y": 0.3843
+                                                                                      }
+                                                                                    ],
+                                                                                    "x": 0.6758,
+                                                                                    "y": 0.3843
+                                                                                  }
+                                                                                ],
+                                                                                "x": 0.5893,
+                                                                                "y": 0.3843
+                                                                              }
+                                                                            ],
+                                                                            "x": 0.5028,
+                                                                            "y": 0.3843
+                                                                          }
+                                                                        ],
+                                                                        "x": 0.4158,
+                                                                        "y": 0.3843
+                                                                      }
+                                                                    ],
+                                                                    "x": 0.3288,
+                                                                    "y": 0.3843
+                                                                  }
+                                                                ],
+                                                                "x": 0.2266,
+                                                                "y": 0.3843
+                                                              },
+                                                              {
+                                                                "connections": [
+                                                                  {
+                                                                    "connections": [],
+                                                                    "x": 0.1589,
+                                                                    "y": 0.223
+                                                                  }
+                                                                ],
+                                                                "x": 0.1589,
+                                                                "y": 0.5702
+                                                              }
+                                                            ],
+                                                            "x": 0.2266,
+                                                            "y": 0.5702
+                                                          }
+                                                        ],
+                                                        "x": 0.2381,
+                                                        "y": 0.5702
+                                                      }
+                                                    ],
+                                                    "x": 0.2381,
+                                                    "y": 0.7784
+                                                  }
+                                                ],
+                                                "x": 0.2601,
+                                                "y": 0.7784
+                                              }
+                                            ],
+                                            "x": 0.3471,
+                                            "y": 0.7784
+                                          }
+                                        ],
+                                        "x": 0.4341,
+                                        "y": 0.7784
+                                      }
+                                    ],
+                                    "x": 0.5206,
+                                    "y": 0.7784
+                                  }
+                                ],
+                                "x": 0.6071,
+                                "y": 0.7784
+                              }
+                            ],
+                            "x": 0.6941,
+                            "y": 0.7784
+                          },
+                          {
+                            "connections": [],
+                            "x": 0.8298,
+                            "y": 0.7784
+                          }
+                        ],
+                        "x": 0.7964,
+                        "y": 0.7784
+                      }
+                    ],
+                    "x": 0.7964,
+                    "y": 0.9768
+                  }
+                ],
+                "x": 0.9233,
+                "y": 0.9768
+              }
+            ],
+            "x": 0.9233,
+            "y": 0.8616
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.063,
+                "y": 0.0989
+              }
+            ],
+            "x": 0.063,
+            "y": 0.2385
+          },
+          "start": "none",
+          "stroke": "#ACCBFC",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

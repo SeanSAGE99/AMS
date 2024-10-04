@@ -1,0 +1,89 @@
+{
+  "custom": {
+    "allAcked": false
+  },
+  "params": {
+    "alarmSummary": {
+      "enabled": true,
+      "parentPath": "[default]Test/Alarms"
+    },
+    "device": {
+      "enabled": false,
+      "name": "value",
+      "parentPath": "value"
+    }
+  },
+  "propConfig": {
+    "custom.allAcked": {
+      "persistent": true
+    },
+    "params.alarmSummary": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.device": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 40,
+      "width": 40
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "alarm-symbol-asm-25"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "m25.905-11.386-8.4616-4.8853 8.4616-4.8853z",
+                  "name": "path",
+                  "style": {
+                    "classes": "Alarms/Symbol/Medium"
+                  },
+                  "transform": "matrix(0 -2.2791 -2.2791 0 -25.083 61.148)",
+                  "type": "path"
+                },
+                {
+                  "name": "text",
+                  "style": {
+                    "classes": "Alarms/Text/Medium",
+                    "fontSize": "9pt",
+                    "fontWeight": "bold"
+                  },
+                  "text": "M",
+                  "type": "text",
+                  "x": 6.478513,
+                  "y": 12.540773
+                }
+              ],
+              "name": "Medium",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 24 24"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

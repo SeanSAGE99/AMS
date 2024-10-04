@@ -1,0 +1,1136 @@
+{
+  "custom": {},
+  "params": {
+    "areaFilter": "%",
+    "siteFilter": "%"
+  },
+  "propConfig": {
+    "custom.filterText": {
+      "persistent": true
+    },
+    "params.areaFilter": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filterText": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.siteFilter": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 517
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.areaFilter} !\u003d \u0027%\u0027,\r\n\t {view.params.areaFilter}+ \u0027 \u0027,\r\n\t \u0027\u0027\r\n) + \r\nif({view.params.siteFilter} !\u003d \u0027%\u0027,\r\n\t{view.params.siteFilter} + \u0027 Trends\u0027,\r\n\t\u0027Trends\u0027\r\n)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Text/Heading1",
+                "marginLeft": 30,
+                "marginRight": 0,
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "id": "trenddock",
+                    "type": "close"
+                  },
+                  "scope": "C",
+                  "type": "dock"
+                }
+              }
+            },
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "color": "var(--neutral-90)",
+              "path": "material/close",
+              "style": {
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold",
+                    "marginLeft": "5px"
+                  },
+                  "text": "Loaded Trend: "
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "props": {
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-no-shadow"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "text": "Area"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.areaFilter"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "if({value} \u003d \u0027%\u0027,\r\n\t\u0027No Filter Selected\u0027,\r\n\t{value}\r\n)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "borderStyle": "solid",
+                        "borderWidth": "1px",
+                        "paddingLeft": "5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "50px"
+                    },
+                    "props": {
+                      "text": "Site"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.params.siteFilter"
+                          },
+                          "transforms": [
+                            {
+                              "expression": "if({value} \u003d \u0027%\u0027,\r\n\t\u0027No Filter Selected\u0027,\r\n\t{value}\r\n)",
+                              "type": "expression"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "borderStyle": "solid",
+                        "borderWidth": "1px",
+                        "paddingLeft": "5px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "ToggleSwitch"
+                },
+                "position": {
+                  "basis": "36px"
+                },
+                "props": {
+                  "label": {
+                    "text": "Include trends from all operators"
+                  }
+                },
+                "type": "ia.input.toggle-switch"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onSelect": {
+                  "config": {
+                    "script": "\tsystem.perspective.sendMessage(\u0027refresh-list\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "FlexContainer_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-normal",
+                "paddingRight": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\timport traceback\n\t\t\t\n\ttry:\n\t\tid \u003d self.parent.parent.getChild(\"Table\").props.selection.data[0].id\n\t\tparams \u003d {\u0027id\u0027:id} \n\t\t\n\t\tquery \u003d system.dataset.toPyDataSet(system.db.runNamedQuery(\u0027trends/loadTrend\u0027, params))\n\t\tconfigName \u003d query[0][\u0027area\u0027] + \u0027 \u0027  + query[0][\u0027site\u0027] + \u0027 \u0027 + query[0][\u0027trendname\u0027]\n\t\t\n\t\tpowerChartJSON \u003d system.util.jsonDecode(query[0][\u0027powerChartPropsJSON\u0027])\n\t\t\n\t\tchartProps \u003d [\u0027config\u0027, \u0027interaction\u0027, \u0027axes\u0027, \u0027pens\u0027, \u0027plots\u0027, \u0027dataColumns\u0027, \u0027title\u0027, \u0027timeAxis\u0027, \u0027legend\u0027, \u0027style\u0027]\t \n\t\t\n\t\t# explicitly assign only properties that are needed for chart\n\t\tnewProps \u003d {}\n\t\tfor prop in chartProps:\n\t\t\tnewProps[prop] \u003d powerChartJSON[prop]\n\t\t\t\t\n#\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props \u003d newProps\n\t\tself.parent.parent.getChild(\"FlexContainer\").getChild(\"Label\").props.text \u003d configName\n\t\t\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.config \u003d newProps[\u0027config\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.interaction \u003d newProps[\u0027interaction\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.axes \u003d newProps[\u0027axes\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.pens \u003d newProps[\u0027pens\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.dataColumns\u003d newProps[\u0027dataColumns\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.title \u003d newProps[\u0027title\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.timeAxis \u003d newProps[\u0027timeAxis\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.legend\u003d newProps[\u0027legend\u0027]\n\t\tself.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props.style \u003d newProps[\u0027style\u0027]\n\texcept:\n\t\tsystem.perspective.print(traceback.format_exc())\n\t\t\n\t\t\n\t\t"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button_4",
+                  "tooltip": {
+                    "enabled": true,
+                    "text": "Load Selected Trend"
+                  }
+                },
+                "position": {
+                  "basis": "124px",
+                  "shrink": 0
+                },
+                "props": {
+                  "image": {
+                    "height": 30,
+                    "width": 30
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                    "marginBottom": "3px",
+                    "marginLeft": "5px",
+                    "marginRight": "40px",
+                    "marginTop": "3px"
+                  },
+                  "text": "Load Trend"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "draggable": true,
+                        "id": "trend_save_popup",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": false,
+                        "showCloseIcon": true,
+                        "title": "Save...",
+                        "type": "open",
+                        "viewPath": "Trend/_Popups/Save Small View",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button_0",
+                  "tooltip": {
+                    "enabled": true,
+                    "text": "Save Trend"
+                  }
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "image": {
+                    "height": 30,
+                    "icon": {
+                      "path": "material/save"
+                    },
+                    "width": 30
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                    "marginBottom": "3px",
+                    "marginLeft": "5px",
+                    "marginTop": "3px"
+                  },
+                  "text": ""
+                },
+                "scripts": {
+                  "customMethods": [],
+                  "extensionFunctions": null,
+                  "messageHandlers": [
+                    {
+                      "messageType": "save-trend-small-view",
+                      "pageScope": true,
+                      "script": "\timport traceback\n\ttry:\n\t\tdef sanitise_tree(element):\n\t\t\t\tif hasattr(element, \u0027__iter__\u0027):\n\t\t\t\t\tif hasattr(element, \u0027keys\u0027):\n\t\t\t\t\t\treturn dict(zip(element.keys(), (sanitise_tree(element[k] for k in element.keys()))))\n\t\t\t\t\telse:\n\t\t\t\t\t\treturn list(sanitise_tree(x) for x in element)\n\t\t\t\treturn element\n\t\t\n\t\tarea \u003d payload[\u0027area\u0027]\n\t\tsite \u003d payload[\u0027site\u0027]\n\t\tname \u003d payload[\u0027name\u0027]\n\t\tscope \u003d payload[\u0027scope\u0027]\n\t\t\n\t\tif scope \u003d\u003d 1:\n\t\t\tusername \u003d \u0027SuperConf\u0027\n\t\telse:\n\t\t\tusername \u003d self.session.props.auth.user.userName\n\t\t\n\t\tchart_props \u003d self.parent.parent.parent.getChild(\"powerChart\").getChild(\"PowerChart\").props\n\t\tchart_props_sanitised \u003d sanitise_tree(chart_props)\n\t\tchart_props_json \u003d system.util.jsonEncode(chart_props_sanitised)\n\t\t\n\t\tparams \u003d {\u0027area\u0027:area, \u0027site\u0027:site, \u0027trendname\u0027:name, \u0027username\u0027:username, \u0027powerChartPropsJSON\u0027:chart_props_json}\n\t\tresult \u003d system.db.runNamedQuery(\u0027trends/saveTrend\u0027, params)\n\t\tsystem.perspective.print(result)\n\t\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)\n\texcept Exception, e:\n\t\ttb \u003d traceback.format_exc()\n\t\tsystem.perspective.print(tb)",
+                      "sessionScope": false,
+                      "viewScope": false
+                    }
+                  ]
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "draggable": true,
+                        "id": "trend_delete_popup",
+                        "modal": false,
+                        "overlayDismiss": false,
+                        "resizable": false,
+                        "showCloseIcon": true,
+                        "type": "open",
+                        "viewParams": {
+                          "area": "{/root/trendConfig_0/Table.props.selection.data[0].area}",
+                          "id": "{/root/trendConfig_0/Table.props.selection.data[0].id}",
+                          "name": "{/root/trendConfig_0/Table.props.selection.data[0].trendname}",
+                          "site": "{/root/trendConfig_0/Table.props.selection.data[0].site}"
+                        },
+                        "viewPath": "Trend/_Popups/Delete",
+                        "viewportBound": false
+                      },
+                      "scope": "C",
+                      "type": "popup"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Button_7",
+                  "tooltip": {
+                    "enabled": true,
+                    "text": "Delete Trend"
+                  }
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.visible": {
+                    "binding": {
+                      "config": {
+                        "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(isNull({.../Table.props.selection.selectedRow}),\r\n\tFalse,\r\n\tif(hasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027),\r\n\t\t{.../Table.props.selection.data[0].username} \u003d \u0027SuperConf\u0027 || {.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName},\r\n\t\t{.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName}\r\n\t)\r\n)"
+                      },
+                      "enabled": false,
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "image": {
+                    "height": 30,
+                    "icon": {
+                      "path": "material/delete"
+                    },
+                    "width": 30
+                  },
+                  "style": {
+                    "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                    "marginBottom": "3px",
+                    "marginLeft": "5px",
+                    "marginTop": "3px"
+                  },
+                  "text": ""
+                },
+                "scripts": {
+                  "customMethods": [],
+                  "extensionFunctions": null,
+                  "messageHandlers": [
+                    {
+                      "messageType": "delete-trend",
+                      "pageScope": true,
+                      "script": "\timport traceback\n\ttry:\n\t\tsystem.db.runNamedQuery(\u0027trends/deleteTrend\u0027,payload)\n\t\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)\n\texcept Exception, e:\n\t\tsystem.perspective.print(traceback.format_exc())\n\t\t\t\t",
+                      "sessionScope": false,
+                      "viewScope": false
+                    }
+                  ]
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Form/Panel-normal",
+                "overflow": "visible",
+                "paddingRight": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "basis": "400px",
+              "grow": 1
+            },
+            "props": {
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "area",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 40
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "site",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": 50
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "trendname",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "username",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": false,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "id",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": false,
+                  "width": ""
+                }
+              ],
+              "data": {
+                "$": [
+                  "ds",
+                  192,
+                  1718607707728
+                ],
+                "$columns": [
+                  {
+                    "data": [
+                      "High Voltage",
+                      "Water Monitoring System"
+                    ],
+                    "name": "area",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      "",
+                      "North West Pump Station"
+                    ],
+                    "name": "site",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      "Test for Alex",
+                      "Tank Levels"
+                    ],
+                    "name": "trendname",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      "SuperConf",
+                      "SuperConf"
+                    ],
+                    "name": "username",
+                    "type": "String"
+                  },
+                  {
+                    "data": [
+                      64,
+                      63
+                    ],
+                    "name": "id",
+                    "type": "Integer"
+                  }
+                ]
+              },
+              "enableHeader": false,
+              "filter": {
+                "enabled": true
+              },
+              "pager": {
+                "bottom": false
+              },
+              "rows": {
+                "highlight": {
+                  "color": "#C0C0C0"
+                }
+              },
+              "selection": {
+                "data": [
+                  {
+                    "area": "Water Monitoring System",
+                    "id": 63,
+                    "site": "North West Pump Station",
+                    "trendname": "Tank Levels",
+                    "username": "SuperConf"
+                  }
+                ],
+                "selectedColumn": "site",
+                "selectedRow": 1
+              },
+              "style": {
+                "marginLeft": "5px",
+                "marginRight": "5px"
+              }
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "refresh-table",
+                  "pageScope": true,
+                  "script": "\tarea \u003d self.view.params.areaFilter\n\tsite \u003d self.view.params.siteFilter\n\tusername \u003d \u0027%\u0027\n\tif self.parent.getChild(\"FlexContainer_1\").getChild(\"ToggleSwitch\").props.selected:\n\t\tusername \u003d \u0027%\u0027\n\telse:\n\t\tusername \u003d self.session.props.auth.user.userName\n\tparams \u003d {\u0027area\u0027:area, \u0027username\u0027:username, \u0027site\u0027:site}\n\t\n\tdata \u003d system.db.runNamedQuery(\u0027trends/getTrendList\u0027, params)\n\tself.props.data \u003d data",
+                  "sessionScope": false,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "trendConfig_0"
+        },
+        "position": {
+          "basis": "500px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "../FlexContainer/Hide.custom.docked"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "custom": {
+              "docked": true
+            },
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tif self.custom.docked:\n\t\tself.custom.docked \u003d False\n\telse:\n\t\tself.custom.docked \u003d True"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Hide"
+            },
+            "position": {
+              "basis": "36px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.path": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.custom.docked}\r\n\t,\u0027material/keyboard_arrow_up\u0027\r\n\t,\u0027material/keyboard_arrow_down\u0027\r\n)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "",
+                "cursor": "pointer"
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "36px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginBottom": "auto",
+            "marginTop": "auto",
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "custom": {
+              "key": "histprov:sql_history:/drv:ignition-alexandrina-council:mqtt engine:/tag:edge nodes/"
+            },
+            "meta": {
+              "name": "PowerChart"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "config": {
+                "tagBrowserStartPath": "[MQTT Engine]Edge Nodes"
+              },
+              "interaction": {
+                "chartZoomLevel": 1,
+                "rangeZoomLevel": 1
+              },
+              "title": {
+                "visible": true
+              }
+            },
+            "type": "ia.chart.powerchart"
+          }
+        ],
+        "meta": {
+          "name": "powerChart"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027pageload-refresh-sites\u0027, scope\u003d\u0027page\u0027)\n\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

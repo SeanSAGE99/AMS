@@ -1,0 +1,3598 @@
+{
+  "custom": {
+    "instances": [
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 8/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 8/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 10/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 24/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 25/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 25/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 30/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 31/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 31/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 32/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 33/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 34/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 35/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 36/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 36/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Aerobridge 37/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier B/Arrivals/Lights/BPG-RSC16/Light Mast A"
+      }
+    ]
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\t# Check the instances of \"Light Mast\" UDT type in the areaPath\n\tinstances \u003d []\n\tres \u003d system.tag.browse(self.params.areaPath, {\"tagType\": \"UdtInstance\", \"recursive\": True, \u0027typeId\u0027: \u0027Common/Light Mast\u0027})\n\tfor result in res.getResults():\n\t    deviceTagPath \u003d result[\"fullPath\"]\n\t\n\t    # Check if the light mast instance is enabled. It is done by checking if the \"contactor 2 on\" tag is enabled for the instance\n\t    modeTagEnabledPath \u003d \"{}/Status/Contactor 2 On.Enabled\".format(deviceTagPath)\n\t    modeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\n\t    if modeTagEnabled.value:\n\t        instances.append({\"deviceTagPath\": result[\"fullPath\"], \"deviceName\": result[\"name\"]})\n\t\n\t# Assign the \u0027instances\u0027 list to the custom property to make it available in the view.\n\tself.custom.instances \u003d instances"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "areaPath": "International/T1/Pier B/Arrivals"
+  },
+  "propConfig": {
+    "params.areaPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Pier B Apron"
+        },
+        "position": {
+          "height": 0.8555,
+          "width": 1,
+          "y": 0.1155
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Pier B Apron.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top - International"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/T1/Pier B/Apron"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX07"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.8111,
+          "y": 0.2512
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX07",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX13A"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.2334,
+          "y": 0.6908
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX13A",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX14"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.3495,
+          "y": 0.566
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX14",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX15"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4162,
+          "y": 0.9425
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX15",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX16"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.5887,
+          "y": 0.6265
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX03",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX51"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.2675,
+          "y": 0.9427
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX51",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX52"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.1934,
+          "y": 0.8164
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX52",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.7136,
+          "y": 0.841
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX01",
+            "deviceParentPath": "[default]International/T1/Pier B/Apron"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.6346,
+          "y": 0.7697
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]International/Distribution Boards Visible"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX16",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX53"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.6164,
+          "y": 0.5691
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX102",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX17"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.293,
+          "y": 0.44
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX04",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX18"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.264,
+          "y": 0.314
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX04A",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX19"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.2395,
+          "y": 0.189
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX05",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX20"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.313,
+          "y": 0.108
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX12",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX21"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.428,
+          "y": 0.093
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBXT",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX22"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4995,
+          "y": 0.177
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX06A",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX23"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.612,
+          "y": 0.065
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX10",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX24"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.8162,
+          "y": 0.0521
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX11",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX25"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.8167,
+          "y": 0.2011
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX09",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX7"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.7081,
+          "y": 0.4232
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX06",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX8"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.6356,
+          "y": 0.4832
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX02A",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX26"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.6082,
+          "y": 0.6985
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_RSC12",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_2"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.6786,
+          "y": 0.913
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX101",
+            "deviceParentPath": "[default]International/T1/Pier B/Apron"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX27"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.5037,
+          "y": 0.9425
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX00",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX28"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.5912,
+          "y": 0.9425
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG_DBX100",
+            "deviceParentPath": "International/T1/Pier B/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_0"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.2371,
+          "y": 0.9259
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.2597,
+          "y": 0.9252
+        },
+        "props": {
+          "text": 8,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_1"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.2996,
+          "y": 0.7629
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3418,
+          "y": 0.7909
+        },
+        "props": {
+          "text": 9,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_2"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3741,
+          "y": 0.6189
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.4203,
+          "y": 0.6469
+        },
+        "props": {
+          "text": 10,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_3"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3881,
+          "y": 0.5199
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3888,
+          "y": 0.3229
+        },
+        "props": {
+          "text": 24,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_4"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3716,
+          "y": 0.3199
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_5"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3766,
+          "y": 0.1629
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3818,
+          "y": 0.2229
+        },
+        "props": {
+          "text": 25,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_6"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3246,
+          "y": 0.1429
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_7"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.4771,
+          "y": 0.3609
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_8"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.5466,
+          "y": 0.2739
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.5708,
+          "y": 0.3259
+        },
+        "props": {
+          "text": 31,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_9"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6091,
+          "y": 0.1739
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6393,
+          "y": 0.2429
+        },
+        "props": {
+          "text": 33,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_10"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.7921,
+          "y": 0.0899
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_11"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.7511,
+          "y": 0.2209
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.7699,
+          "y": 0.0854
+        },
+        "props": {
+          "text": 37,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_12"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6996,
+          "y": 0.3379
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6818,
+          "y": 0.2789
+        },
+        "props": {
+          "text": 34,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_13"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6271,
+          "y": 0.4139
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6093,
+          "y": 0.3979
+        },
+        "props": {
+          "text": 32,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_14"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.5641,
+          "y": 0.5639
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.5483,
+          "y": 0.4829
+        },
+        "props": {
+          "text": 30,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_15"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.1394,
+          "y": 0.9719
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 2"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "240deg"
+          },
+          "width": 0.0456,
+          "x": 0.187,
+          "y": 0.8827
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 8",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 1"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.1505,
+          "y": 0.9126
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 8",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 3"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.2474,
+          "y": 0.8658
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 8",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 4"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.2671,
+          "y": 0.7842
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 9",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 5"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.3097,
+          "y": 0.702
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 9",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 6"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.3412,
+          "y": 0.6363
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 10",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 7"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "150deg"
+          },
+          "width": 0.0456,
+          "x": 0.3492,
+          "y": 0.3571
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 24",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 8"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0364,
+          "x": 0.3562,
+          "y": 0.4602
+        },
+        "props": {
+          "params": {
+            "deviceName": "BPG-RSC16",
+            "deviceParentPath": "International/T1/Pier B/Arrivals/Lights",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 9"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0364,
+          "x": 0.3402,
+          "y": 0.2595
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 24",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 10"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "150deg"
+          },
+          "width": 0.0456,
+          "x": 0.3022,
+          "y": 0.1791
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 25",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 11"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.3449,
+          "y": 0.1829
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 25",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 12"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.4876,
+          "y": 0.3025
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 31",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 13"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.5145,
+          "y": 0.2941
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 31",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 14"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.5571,
+          "y": 0.2144
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 31",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 15"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.5771,
+          "y": 0.1936
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 33",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 16"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "61deg"
+          },
+          "width": 0.0456,
+          "x": 0.6289,
+          "y": 0.1617
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 33",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_16"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6861,
+          "y": 0.0859
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.7008,
+          "y": 0.1569
+        },
+        "props": {
+          "text": 35,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 17"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.6542,
+          "y": 0.1055
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 35",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 18"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.6968,
+          "y": 0.0268
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 35",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 19"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "149deg"
+          },
+          "width": 0.0456,
+          "x": 0.7698,
+          "y": 0.1266
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 36",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 20"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "237deg"
+          },
+          "width": 0.0456,
+          "x": 0.7266,
+          "y": 0.0218
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 37",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_17"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.7703,
+          "y": 0.1349
+        },
+        "props": {
+          "text": 36,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_17"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.7766,
+          "y": 0.0609
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 21"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "60deg"
+          },
+          "width": 0.0456,
+          "x": 0.7711,
+          "y": 0.2074
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 36",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 22"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.574,
+          "y": 0.5038
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 30",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 23"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.5955,
+          "y": 0.4341
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 32",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 24"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.6373,
+          "y": 0.354
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 32",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 25"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.668,
+          "y": 0.3571
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 34",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 26"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.7103,
+          "y": 0.2783
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 34",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 27"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.7201,
+          "y": 0.2412
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 36",
+            "deviceParentPath": "International/T1/Pier B/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.1122,
+          "y": 0.8203
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 8",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 8",
+            "mast2Name": "Light Mast B",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 8",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_0"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.16,
+          "y": 0.7128
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 9",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast B",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 8",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 9",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_1"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.245,
+          "y": 0.5868
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 10",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 9",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 10",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_2"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.219,
+          "y": 0.4637
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 24",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Lights/BPG-RSC16",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 24",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_3"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.1924,
+          "y": 0.2666
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 25",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 24",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 25",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_4"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.4821,
+          "y": 0.2182
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 31",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 31",
+            "mast2Name": "Light Mast B",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 31",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_5"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.5285,
+          "y": 0.1001
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 33",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast B",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 31",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 33",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_6"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.5894,
+          "y": 0.027
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 35",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 33",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 35",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_7"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.7221,
+          "y": 0.0031
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 37",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 35",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 37",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_8"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.9091,
+          "y": 0.2252
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 36",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 36",
+            "mast2Name": "Light Mast B",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 36",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_9"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.8086,
+          "y": 0.3367
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 34",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast B",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 36",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 34",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_10"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.7518,
+          "y": 0.48
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 32",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 34",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 32",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_11"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.7034,
+          "y": 0.5646
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 30",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 32",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier B/Arrivals/Aerobridge 30",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1042,
+          "x": 0.8815,
+          "y": 0.9079
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Title"
+          },
+          "text": "Apron Light Level",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights Off Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Off"
+            },
+            "position": {
+              "basis": "NaNpx",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "Off"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights 50pct Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "50pct"
+            },
+            "position": {
+              "basis": "NaNpx",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "50%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights 100pct Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "100pct"
+            },
+            "position": {
+              "basis": "NaNpx",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "100%"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1042,
+          "x": 0.8815,
+          "y": 0.9399
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-evenly",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Pumps"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.7145,
+          "y": 0.6939
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sewer Pump Station 1",
+            "Pump1Name": "Sewer Pump 1",
+            "Pump2Name": "Sewer Pump 2",
+            "Pump3Name": "Sewer Pump 3",
+            "Pump4Name": "Macerator",
+            "PumpRight": false,
+            "WellOrPit": "BPG Sump Pit",
+            "combinedPump": "Sewer Pump Station 1",
+            "deviceName": "BPG-RSC29 BPG SPS1",
+            "deviceParentPath": "International/T1/Pier B/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_0"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.1681,
+          "y": 0.5252
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sewer Pump Station 2",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "Pump 3",
+            "Pump4Name": "Macerator",
+            "PumpRight": false,
+            "WellOrPit": "Well",
+            "combinedPump": "",
+            "deviceName": "BPG SPS2",
+            "deviceParentPath": "International/T1/Pier B/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_1"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.9087,
+          "y": 0.293
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sewer Pump Station 3",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "Sewer Pump Station 3",
+            "deviceName": "BPG-RSC26 BPG SPS3",
+            "deviceParentPath": "International/T1/Pier B/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_2"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0656,
+          "x": 0.8507,
+          "y": 0.5209
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sewer Pump Station 4",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "combinedPump": "Sewer Pump Station 4",
+            "deviceName": "BPG SPS4",
+            "deviceParentPath": "International/T1/Pier B/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_6"
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.3596,
+          "y": 0.706
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 33",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_12"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4844,
+          "y": 0.7567
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 15",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_13"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4844,
+          "y": 0.8096
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 7",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_14"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4184,
+          "y": 0.6746
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 42",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_15"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4441,
+          "y": 0.3691
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 16",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_16"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4187,
+          "y": 0.298
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 31",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_17"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.478,
+          "y": 0.3847
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 17",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_18"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.5566,
+          "y": 0.3567
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 1",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_19"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.5405,
+          "y": 0.4221
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 32",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_20"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.5265,
+          "y": 0.5085
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 45",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_7"
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.325,
+          "y": 0.0275
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 20",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_8"
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.3823,
+          "y": 0.0275
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 21",
+            "deviceParentPath": "International/T1/Pier B/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.1464,
+          "y": 0.3567
+        },
+        "props": {
+          "params": {
+            "deviceName": "AMS1 Genius Block Fault-LAN 3 Block 23",
+            "deviceParentPath": "International/T1/Pier B/Apron/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0.0693,
+      "y": 0.1558
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[10].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[11].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[12].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[13].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[14].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[15].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[16].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[17].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[18].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[19].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[20].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[21].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[22].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[23].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[24].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.hydraulics"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[25].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Hydraulics Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[26].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.internalTransport"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[27].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[5].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[6].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[7].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[8].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[9].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3025,
+                "y": 0.7058
+              }
+            ],
+            "x": 0.4979,
+            "y": 0.6799
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4521,
+                "y": 0.949
+              }
+            ],
+            "x": 0.4843,
+            "y": 0.8154
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3032,
+                "y": 0.9499
+              }
+            ],
+            "x": 0.3568,
+            "y": 0.8423
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2635,
+                "y": 0.8211
+              }
+            ],
+            "x": 0.3901,
+            "y": 0.776
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6365,
+                "y": 0.7865
+              }
+            ],
+            "x": 0.5151,
+            "y": 0.6837
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.815,
+                "y": 0.2682
+              }
+            ],
+            "x": 0.6052,
+            "y": 0.3827
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6115,
+                "y": 0.7164
+              }
+            ],
+            "x": 0.5151,
+            "y": 0.6702
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5916,
+                "y": 0.6442
+              }
+            ],
+            "x": 0.5146,
+            "y": 0.6442
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6395,
+                "y": 0.499
+              }
+            ],
+            "x": 0.5182,
+            "y": 0.5817
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_9",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3328,
+                "y": 0.3297
+              }
+            ],
+            "x": 0.462,
+            "y": 0.4384
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_10",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.363,
+                "y": 0.4577
+              }
+            ],
+            "x": 0.487,
+            "y": 0.5086
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_11",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3099,
+                "y": 0.2029
+              }
+            ],
+            "x": 0.4432,
+            "y": 0.3856
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.3488,
+                "y": 0.1365
+              }
+            ],
+            "x": 0.3818,
+            "y": 0.2615
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_13",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4635,
+                "y": 0.1183
+              }
+            ],
+            "x": 0.5047,
+            "y": 0.4566
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_14",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5354,
+                "y": 0.2048
+              }
+            ],
+            "x": 0.5491,
+            "y": 0.3788
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_15",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6484,
+                "y": 0.0933
+              }
+            ],
+            "x": 0.6557,
+            "y": 0.2654
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_16",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8193,
+                "y": 0.0645
+              }
+            ],
+            "x": 0.6953,
+            "y": 0.2183
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_17",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8197,
+                "y": 0.2173
+              }
+            ],
+            "x": 0.6437,
+            "y": 0.3356
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_18",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7114,
+                "y": 0.4385
+              }
+            ],
+            "x": 0.5604,
+            "y": 0.4596
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_19",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6204,
+                "y": 0.5826
+              }
+            ],
+            "x": 0.5589,
+            "y": 0.6096
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_20",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7172,
+                "y": 0.8577
+              }
+            ],
+            "x": 0.513,
+            "y": 0.7577
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_21",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6824,
+                "y": 0.9192
+              }
+            ],
+            "x": 0.6277,
+            "y": 0.8337
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_22",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5396,
+                "y": 0.9481
+              }
+            ],
+            "x": 0.5151,
+            "y": 0.8211
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_23",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5942,
+                "y": 0.948
+              }
+            ],
+            "x": 0.5354,
+            "y": 0.8384
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_24",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7323,
+                "y": 0.7288
+              }
+            ],
+            "x": 0.6047,
+            "y": 0.749
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_25",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2167,
+                "y": 0.5528
+              }
+            ],
+            "x": 0.4672,
+            "y": 0.4865
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [],
+                    "x": 0.3943,
+                    "y": 0.0856
+                  },
+                  {
+                    "connections": [],
+                    "x": 0.3368,
+                    "y": 0.0856
+                  }
+                ],
+                "x": 0.3998,
+                "y": 0.1606
+              }
+            ],
+            "x": 0.412,
+            "y": 0.3269
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_26",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1828,
+                "y": 0.4038
+              }
+            ],
+            "x": 0.4318,
+            "y": 0.3817
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,2612 @@
+{
+  "custom": {
+    "instances": [
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 51/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 51/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast C",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 51/Light Mast C"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 53/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 54/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 54/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 56/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 57/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 57/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 58/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 59/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 61/Light Mast A"
+      },
+      {
+        "deviceName": "Light Mast B",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 61/Light Mast B"
+      },
+      {
+        "deviceName": "Light Mast A",
+        "deviceTagPath": "[default]International/T1/Pier C/Arrivals/Aerobridge 63/Light Mast A"
+      }
+    ]
+  },
+  "events": {
+    "system": {
+      "onStartup": {
+        "config": {
+          "script": "\t# Check the instances of \"Light Mast\" UDT type in the areaPath\n\tinstances \u003d []\n\tres \u003d system.tag.browse(self.params.areaPath, {\"tagType\": \"UdtInstance\", \"recursive\": True, \u0027typeId\u0027: \u0027Common/Light Mast\u0027})\n\tfor result in res.getResults():\n\t    deviceTagPath \u003d result[\"fullPath\"]\n\t\n\t    # Check if the light mast instance is enabled. It is done by checking if the \"contactor 2 on\" tag is enabled for the instance\n\t    modeTagEnabledPath \u003d \"{}/Status/Contactor 2 On.Enabled\".format(deviceTagPath)\n\t    modeTagEnabled \u003d system.tag.read(modeTagEnabledPath)\n\t\n\t    if modeTagEnabled.value:\n\t        instances.append({\"deviceTagPath\": result[\"fullPath\"], \"deviceName\": result[\"name\"]})\n\t\n\t# Assign the \u0027instances\u0027 list to the custom property to make it available in the view.\n\tself.custom.instances \u003d instances"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {
+    "areaPath": "International/T1/Pier C/Arrivals"
+  },
+  "propConfig": {
+    "params.areaPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Pier C Apron"
+        },
+        "position": {
+          "height": 0.8845,
+          "width": 1,
+          "y": 0.1155
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/International/Pier C Apron.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 1
+        },
+        "props": {
+          "params": {
+            "sitePath": "International/T1/Pier C/Apron"
+          },
+          "path": "Navigation/Top Strip"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX34"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.7985,
+          "y": 0.1981
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPG_DBX34",
+            "deviceParentPath": "International/T1/Pier C/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX27"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.7027,
+          "y": 0.4106
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPG_DBX27",
+            "deviceParentPath": "International/T1/Pier C/Apron/",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_0"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.4138,
+          "y": 0.714
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPG_DBX01",
+            "deviceParentPath": "International/T1/Pier C/Apron",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_1"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.5668,
+          "y": 0.519
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPG_DBX03",
+            "deviceParentPath": "International/T1/Pier C/Apron",
+            "popupWindow": "Popups/Distribution Boards/Siemens DB"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX35"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.489,
+          "y": 0.1021
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPG_DBX26",
+            "deviceParentPath": "International/T1/Pier C/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX36"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.1575,
+          "y": 0.2761
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPG_DBX04",
+            "deviceParentPath": "International/T1/Pier C/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "DBX37"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.197,
+          "y": 0.3851
+        },
+        "props": {
+          "params": {
+            "deviceName": "CPG_DBX02",
+            "deviceParentPath": "International/T1/Pier C/Apron",
+            "key": {
+              "deviceName": "value"
+            }
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_15"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.2754,
+          "y": 0.8419
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 3"
+        },
+        "position": {
+          "height": 0.1241,
+          "rotate": {
+            "angle": "240deg"
+          },
+          "width": 0.0456,
+          "x": 0.2345,
+          "y": 0.1847
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 57",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 3"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 1"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.2718,
+          "y": 0.6075
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 51",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast C"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 2"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "240deg"
+          },
+          "width": 0.0456,
+          "x": 0.2255,
+          "y": 0.7999
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 51",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_16"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3099,
+          "y": 0.7899
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 4"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "240deg"
+          },
+          "width": 0.0456,
+          "x": 0.26,
+          "y": 0.7479
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 51",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_17"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3027,
+          "y": 0.5865
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_18"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3172,
+          "y": 0.7203
+        },
+        "props": {
+          "text": 51,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 5"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0364,
+          "x": 0.2713,
+          "y": 0.5265
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 51",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast C"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 6"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.2728,
+          "y": 0.3615
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 53",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_19"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3165,
+          "y": 0.4735
+        },
+        "props": {
+          "text": 53,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_18"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3022,
+          "y": 0.3385
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_19"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.2747,
+          "y": 0.2615
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_20"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3033,
+          "y": 0.2735
+        },
+        "props": {
+          "text": 55,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 7"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "240deg"
+          },
+          "width": 0.0456,
+          "x": 0.26,
+          "y": 0.0659
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 57",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_20"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.3099,
+          "y": 0.1079
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_21"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3296,
+          "y": 0.2536
+        },
+        "props": {
+          "text": 57,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 8"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "61deg"
+          },
+          "width": 0.0456,
+          "x": 0.3296,
+          "y": 0.0964
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 57",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_22"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.3836,
+          "y": 0.2558
+        },
+        "props": {
+          "text": 58,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_21"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.4339,
+          "y": 0.1499
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 9"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "61deg"
+          },
+          "width": 0.0456,
+          "x": 0.4536,
+          "y": 0.1384
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 58",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 10"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0364,
+          "x": 0.4019,
+          "y": 0.0916
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 58",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 11"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "270deg"
+          },
+          "width": 0.0364,
+          "x": 0.5384,
+          "y": 0.1336
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 59",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_22"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.5704,
+          "y": 0.1919
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_23"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.5048,
+          "y": 0.2432
+        },
+        "props": {
+          "text": 59,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 12"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.5819,
+          "y": 0.1336
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 59",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_23"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.7597,
+          "y": 0.2734
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_24"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.7438,
+          "y": 0.2113
+        },
+        "props": {
+          "text": 61,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 13"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.7705,
+          "y": 0.2152
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 61",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 14"
+        },
+        "position": {
+          "height": 0.1241,
+          "rotate": {
+            "angle": "119deg"
+          },
+          "width": 0.0456,
+          "x": 0.7439,
+          "y": 0.2816
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 61",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast B"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 3"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 15"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.6974,
+          "y": 0.0736
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 61",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_24"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6859,
+          "y": 0.1319
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_25"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6661,
+          "y": 0.1826
+        },
+        "props": {
+          "text": 60,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 16"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "240deg"
+          },
+          "width": 0.0456,
+          "x": 0.6361,
+          "y": 0.089
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 61",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 17"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "61deg"
+          },
+          "width": 0.0456,
+          "x": 0.6876,
+          "y": 0.3394
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 63",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Icon_25"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6674,
+          "y": 0.3509
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_26"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6476,
+          "y": 0.3204
+        },
+        "props": {
+          "text": 63,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 18"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "149deg"
+          },
+          "width": 0.0456,
+          "x": 0.6454,
+          "y": 0.3892
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 63",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_27"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.6328,
+          "y": 0.3752
+        },
+        "props": {
+          "text": 56,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_26"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.6098,
+          "y": 0.3942
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 19"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "90deg"
+          },
+          "width": 0.0364,
+          "x": 0.6211,
+          "y": 0.4134
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 56",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 20"
+        },
+        "position": {
+          "height": 0.0673,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0364,
+          "x": 0.5782,
+          "y": 0.4134
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 56",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 21"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "61deg"
+          },
+          "width": 0.0456,
+          "x": 0.5301,
+          "y": 0.5624
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 54",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 22"
+        },
+        "position": {
+          "height": 0.0842,
+          "rotate": {
+            "angle": "149deg"
+          },
+          "width": 0.0456,
+          "x": 0.4879,
+          "y": 0.6122
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 54",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 2"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_28"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.496,
+          "y": 0.5132
+        },
+        "props": {
+          "text": 54,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon_27"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.5099,
+          "y": 0.5739
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Icon_28"
+        },
+        "position": {
+          "height": 0.0288,
+          "width": 0.0156,
+          "x": 0.4378,
+          "y": 0.8413
+        },
+        "props": {
+          "color": "var(--neutral-50)",
+          "path": "material/fiber_manual_record"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Label_29"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.026,
+          "x": 0.4078,
+          "y": 0.7603
+        },
+        "props": {
+          "text": 50,
+          "textStyle": {
+            "color": "var(--neutral-50)",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Apron Light Sector 23"
+        },
+        "position": {
+          "height": 0.0673,
+          "width": 0.0364,
+          "x": 0.4486,
+          "y": 0.7816
+        },
+        "props": {
+          "params": {
+            "deviceName": "Aerobridge 54",
+            "deviceParentPath": "International/T1/Pier C/Arrivals",
+            "lightmastName": "Light Mast A"
+          },
+          "path": "Templates/Aerobridges/Apron Light Sector 1"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.1349,
+          "y": 0.7347
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 51",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 51",
+            "mast2Name": "Light Mast C",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 51",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_0"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.135,
+          "y": 0.485
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 53",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast C",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 51",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 53",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_1"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.1694,
+          "y": 0.1109
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 57",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 57",
+            "mast2Name": "Light Mast B",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 57",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_2"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.3657,
+          "y": 0.0465
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 58",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast B",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 57",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 58",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_3"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.499,
+          "y": 0.0505
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 59",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 58",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 59",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_4"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.6146,
+          "y": 0.0399
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 60",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 59",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 61",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_5"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.874,
+          "y": 0.0764
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 61",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 61",
+            "mast2Name": "Light Mast B",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 61",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_6"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.8381,
+          "y": 0.3571
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 63",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast B",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 61",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 63",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_7"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.625,
+          "y": 0.6157
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 54",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 56",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 54",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_8"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.7354,
+          "y": 0.5639
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 56",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 63",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 56",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bay Light_9"
+        },
+        "position": {
+          "height": 0.0337,
+          "width": 0.0521,
+          "x": 0.5802,
+          "y": 0.7754
+        },
+        "props": {
+          "params": {
+            "deviceName": "Bay 50",
+            "deviceParentPath": "International",
+            "mast1Name": "Light Mast A",
+            "mast1ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 54",
+            "mast2Name": "Light Mast A",
+            "mast2ParentPath": "International/T1/Pier C/Arrivals/Aerobridge 54",
+            "popupWindow": "Popups/Aerobridge/Apron Light Control"
+          },
+          "path": "Templates/Aerobridges/Bay Light"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.1042,
+          "x": 0.8815,
+          "y": 0.9079
+        },
+        "props": {
+          "style": {
+            "classes": "Framework/Card/Title"
+          },
+          "text": "Apron Light Level",
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights Off Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "children": [],
+                                "name": "Administrator"
+                              }
+                            ],
+                            "name": "Roles"
+                          }
+                        ],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Off"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "props": {
+              "image": {
+                "width": 32
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "Off"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights 50pct Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "permissions": {
+                    "securityLevels": [
+                      {
+                        "children": [],
+                        "name": "Authenticated"
+                      }
+                    ],
+                    "type": "AllOf"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "50pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "50%"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tinstances \u003d instances \u003d self.view.custom.instances\n\tfor instance in instances:\n\t\ttagParterPath \u003d instance[\u0027deviceTagPath\u0027]\n\t\ttagname \u003d \"Control/Lights 100pct Command\"\n\t\twriteTags \u003d \u0027{}/{}\u0027.format(tagParterPath, tagname)\n\t\tsystem.tag.writeBlocking(writeTags, 1)\t\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "100pct"
+            },
+            "position": {
+              "basis": "34px",
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+              },
+              "text": "100%"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1042,
+          "x": 0.8815,
+          "y": 0.9399
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-evenly",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Pumps"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.3193,
+          "y": 0.8736
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "Sewer Pump Station 3 Etihad Lounge",
+            "Pump1Name": "Sewer Pump 1",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CP2-RSC18 CPG SPS3",
+            "deviceParentPath": "International/T1/Pier C/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_0"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.0873,
+          "y": 0.8716
+        },
+        "props": {
+          "params": {
+            "Pump1Name": "Sewer Pump 1",
+            "Pump2Name": "Sewer Pump 2",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "",
+            "deviceName": "CPG-RSC19 CPG SPS2",
+            "deviceParentPath": "International/T1/Pier C/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pit"
+        },
+        "position": {
+          "height": 0.0747,
+          "width": 0.0482,
+          "x": 0.5382,
+          "y": 0.2218
+        },
+        "props": {
+          "params": {
+            "deviceName": "Pit",
+            "deviceParentPath": "International/T1/Pier C/Apron/Hydraulics/Etihad Store",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/WMS/Pit"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0308,
+          "width": 0.046,
+          "x": 0.5767,
+          "y": 0.2288
+        },
+        "props": {
+          "text": "Etihad Store",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Pumps_1"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.4906,
+          "y": 0.8245
+        },
+        "props": {
+          "params": {
+            "LabelOverride": "",
+            "Pump1Name": "Sewer Pump 1",
+            "Pump2Name": "Sewer Pump 2",
+            "Pump3Name": "Sewer Pump 3",
+            "Pump4Name": "Macerator",
+            "PumpRight": false,
+            "WellOrPit": "Pit",
+            "combinedPump": "Combined Pump",
+            "deviceName": "FAC1 CPG SPS1",
+            "deviceParentPath": "International/T1/Pier C/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_2"
+        },
+        "position": {
+          "height": 0.1212,
+          "width": 0.0657,
+          "x": 0.3513,
+          "y": 0.1442
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "LabelOverride": "Sewer Pump Station 4",
+            "Pump1Name": "",
+            "Pump2Name": "",
+            "Pump3Name": "",
+            "Pump4Name": "",
+            "PumpRight": false,
+            "WellOrPit": "",
+            "alwaysVisible": false,
+            "combinedPump": "Sewer Pump Station 4",
+            "deviceName": "CPG-DBX34 CPG SPS4",
+            "deviceParentPath": "International/T1/Pier C/Apron/Hydraulics",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_16"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3349,
+          "y": 0.7694
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 22",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_23"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.368,
+          "y": 0.6442
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 23",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_24"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3457,
+          "y": 0.5701
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 24",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_25"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4352,
+          "y": 0.5683
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 43",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Escalator_11"
+        },
+        "position": {
+          "height": 0.0646,
+          "width": 0.0575,
+          "x": 0.3872,
+          "y": 0.5311
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": false,
+            "deviceName": "Escalator 34",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Escalator"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_19"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3235,
+          "y": 0.2712
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 44",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_20"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.3699,
+          "y": 0.3956
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": false,
+            "deviceName": "Lift 26",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_21"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.0284,
+          "x": 0.4249,
+          "y": 0.3216
+        },
+        "props": {
+          "params": {
+            "alarmRight": true,
+            "alwaysVisible": false,
+            "deviceName": "Lift 33",
+            "deviceParentPath": "International/T1/Pier C/Internal Transportation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_4"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.2155,
+          "y": 0.6582
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 8 Block 2",
+            "deviceParentPath": "International/T1/Pier C/Apron/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_5"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.1399,
+          "y": 0.351
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Pier C/Apron/CPG_DBX02/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_6"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0879,
+          "y": 0.5399
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 8 Block 3",
+            "deviceParentPath": "International/T1/Pier C/Apron/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_7"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.1005,
+          "y": 0.242
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Pier C/Apron/CPG_DBX04/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_8"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.0864,
+          "y": 0.0889
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 8 Block 4",
+            "deviceParentPath": "International/T1/Pier C/Apron/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_9"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.6397,
+          "y": 0.4849
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Pier C/Apron/CPG_DBX03/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_10"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.4867,
+          "y": 0.6799
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault",
+            "deviceParentPath": "International/T1/Pier C/Apron/CPG_DBX03/Alarms",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_11"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.6494,
+          "y": 0.6754
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 8 Block 5",
+            "deviceParentPath": "International/T1/Pier C/Apron/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_12"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.6252,
+          "y": 0.8357
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 8 Block 10",
+            "deviceParentPath": "International/T1/Pier C/Apron/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Genius Block_13"
+        },
+        "position": {
+          "height": 0.101,
+          "width": 0.0563,
+          "x": 0.683,
+          "y": 0.8357
+        },
+        "props": {
+          "params": {
+            "deviceName": "FAC1 Genius Block Fault-LAN 8 Block 11",
+            "deviceParentPath": "International/T1/Pier C/Apron/AMS Panel",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)"
+          },
+          "path": "Templates/Others/Genius Block"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.0255,
+      "y": 0.0596
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[10].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[11].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[12].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[3].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[4].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[5].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[6].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.distributionBoards"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[7].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[8].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      },
+      "props.pipes[9].visible": {
+        "binding": {
+          "config": {
+            "path": "session.custom.visibility.geniusBlocks"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.8016,
+                "y": 0.2144
+              }
+            ],
+            "x": 0.4959,
+            "y": 0.3606
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_0",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7063,
+                "y": 0.4268
+              }
+            ],
+            "x": 0.4256,
+            "y": 0.4721
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.4156,
+                "y": 0.7308
+              }
+            ],
+            "x": 0.3808,
+            "y": 0.7029
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5693,
+                "y": 0.5366
+              }
+            ],
+            "x": 0.3828,
+            "y": 0.4731
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.5276,
+                "y": 0.1288
+              }
+            ],
+            "x": 0.4292,
+            "y": 0.3346
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_5",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2288,
+                "y": 0.2914
+              }
+            ],
+            "x": 0.3427,
+            "y": 0.353
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2661,
+                "y": 0.4106
+              }
+            ],
+            "x": 0.3432,
+            "y": 0.6019
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.2516,
+                "y": 0.7068
+              }
+            ],
+            "x": 0.3917,
+            "y": 0.7962
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1245,
+                "y": 0.5904
+              }
+            ],
+            "x": 0.3375,
+            "y": 0.601
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.1234,
+                "y": 0.1644
+              }
+            ],
+            "x": 0.3422,
+            "y": 0.3423
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_9",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6698,
+                "y": 0.7279
+              }
+            ],
+            "x": 0.3755,
+            "y": 0.6125
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_10",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.6448,
+                "y": 0.8837
+              }
+            ],
+            "x": 0.376,
+            "y": 0.7337
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_11",
+          "origin": {
+            "connections": [
+              {
+                "connections": [],
+                "x": 0.7028,
+                "y": 0.8847
+              }
+            ],
+            "x": 0.6615,
+            "y": 0.8839
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

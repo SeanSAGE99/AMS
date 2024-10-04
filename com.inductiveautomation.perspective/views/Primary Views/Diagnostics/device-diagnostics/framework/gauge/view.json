@@ -1,0 +1,114 @@
+{
+  "custom": {},
+  "params": {
+    "loadFactor": 0
+  },
+  "propConfig": {
+    "params.loadFactor": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 274,
+      "width": 283
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "key": "value"
+        },
+        "meta": {
+          "name": "gauge"
+        },
+        "position": {
+          "height": 0.9769,
+          "width": 0.9971,
+          "y": 0.0101
+        },
+        "propConfig": {
+          "props.elements": {
+            "binding": {
+              "config": {
+                "path": "view.params.loadFactor"
+              },
+              "transforms": [
+                {
+                  "code": "\t# creating a simple donut chart svg to display the load factor\n\t\n\timport math\n\t\n\tif value \u003e 0.5:\n\t\tlarge_arc_flag \u003d 1\n\telse:\n\t\tlarge_arc_flag \u003d 0\n\t\n\tif value \u003e 1.0:\n\t\tvalue \u003d 1.0\n\t\n\tif value \u003c 0.01:\n\t\tx \u003d 1.0\n\t\ty \u003d 0.0\n\telse:\n\t\tx \u003d math.cos(2.0*math.pi*value)\n\t\ty \u003d math.sin(2.0*math.pi*value)\n\t\n\tpath \u003d \u0027M 1 0 A 1 1 0 \u0027 + str(large_arc_flag) + \u0027 1 \u0027 + str(x) + \u0027 \u0027 + str(y) + \u0027 L 0 0\u0027\n\t\n\telements \u003d []\n\telements.append({\"type\": \"circle\", \"fill\": \"#F3F6F9\", \"cx\":0, \"cy\":0, \"r\":1})\n\telements.append({\"type\": \"path\", \"d\":path,\"fill\":\"#003E69\"})\n\telements.append({\"type\": \"circle\", \"fill\":\"#FFFFFF\", \"cx\":0, \"cy\": 0, \"r\":0.8})\n\treturn elements",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "transform": "rotate(90deg)"
+          },
+          "viewBox": "-1 -1 2 2"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "load"
+        },
+        "position": {
+          "height": 0.3759,
+          "width": 0.5866,
+          "x": 0.2067,
+          "y": 0.312
+        },
+        "propConfig": {
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "expression": "if(({view.params.loadFactor}*100) \u003e\u003d 100, \u0027red\u0027,\u0027--neutral-100\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.loadFactor"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(int(value*100)) + \u0027%\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": 35,
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0.5548,
+      "y": -0.9526
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

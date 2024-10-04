@@ -1,0 +1,178 @@
+{
+  "custom": {
+    "obj_value": {
+      "bln_available": true,
+      "int_scanRate": 30000,
+      "int_timeout": 3000,
+      "str_ip": "10.32.15.4"
+    }
+  },
+  "params": {
+    "obj_param": {
+      "str_ip": "10.32.15.4",
+      "str_label": "Sub4"
+    }
+  },
+  "propConfig": {
+    "custom.obj_value": {
+      "persistent": true
+    },
+    "custom.obj_value.bln_available": {
+      "binding": {
+        "config": {
+          "struct": {
+            "int_timeout": "{view.custom.obj_value.int_timeout}",
+            "scan": "now({view.custom.obj_value.int_scanRate})",
+            "str_ip": "{view.custom.obj_value.str_ip}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\treturn self.view.rootContainer.ping(value.str_ip, value.int_timeout)",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.obj_value.int_status": {
+      "persistent": true
+    },
+    "custom.obj_value.str_colour": {
+      "binding": {
+        "config": {
+          "expression": "case({view.custom.obj_value.bln_available},\r\n\ttrue, \"lightGreen\",\r\n\tfalse, \"salmon\",\r\n\t\"darkgrey\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.obj_value.str_ip": {
+      "binding": {
+        "config": {
+          "path": "view.params.obj_param.str_ip"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.obj_value.str_style": {
+      "persistent": true
+    },
+    "params.obj_param": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 70,
+      "width": 100
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.obj_param.str_label"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "text"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "ip"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.obj_param.str_ip"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "text"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "height": "100%",
+          "width": "100%"
+        },
+        "propConfig": {
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "view.custom.obj_value.str_colour"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "border": "solid 1px grey",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -149,
+      "y": -827
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "ping",
+          "params": [
+            "host",
+            "timeout"
+          ],
+          "script": "\t# implement your method here\n\tfrom java.net import InetAddress\n\tip \u003d InetAddress.getByName(host)\n\tr \u003d  ip.isReachable(timeout)\n\treturn r #boolean"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.coord"
+  }
+}

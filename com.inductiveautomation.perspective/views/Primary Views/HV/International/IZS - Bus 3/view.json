@@ -1,0 +1,1828 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.6875,
+          "x": 0.1927,
+          "y": 0.0244
+        },
+        "props": {
+          "style": {
+            "borderColor": "var(--neutral-60)",
+            "borderStyle": "solid",
+            "borderWidth": 2
+          },
+          "text": "Energy Australia Sub No. 5208 33kV Switchroom",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/izs-bus2"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.002,
+          "y": 0.0042
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "IZS Bus 2",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/izs-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.0749,
+          "y": 0.0042
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "IZS Overview",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/HV/International/izs-bus1"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 0.0332,
+          "width": 0.0698,
+          "x": 0.9266,
+          "y": 0.0043
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "IZS Bus 1",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "TX with Temp"
+        },
+        "position": {
+          "height": 0.0462,
+          "width": 0.0974,
+          "x": 0.1396,
+          "y": 0.1288
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Transformer 5",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Transformers/TX with Temp"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.1885,
+          "y": 0.2
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB22",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": true,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P642"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.1432,
+          "y": 0.3452
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED022",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P642"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P127"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.1432,
+          "y": 0.3856
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED122",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P127"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_Bus_Intertrip"
+        },
+        "position": {
+          "height": 0.0317,
+          "width": 0.0635,
+          "x": 0.1253,
+          "y": 0.0933
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2/Bus3 Feeder Intertrip Disabled"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "text": "Bus 3 Feeder Intertrip Disabled",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "right"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Voltage Transformer"
+        },
+        "position": {
+          "height": 0.1091,
+          "width": 0.0464,
+          "x": 0.1058,
+          "y": 0.6231
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Voltage Transformer 21",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Voltage Transformer"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_1"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.8521,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB31",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P128"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.7849,
+          "y": 0.8218
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED130",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_2"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.7677,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB30",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_3"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.686,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB29",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P131"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.7036,
+          "y": 0.8218
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED129",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P132"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.6234,
+          "y": 0.8218
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED128",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P133"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.6236,
+          "y": 0.7805
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED028",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_4"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.6063,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB28",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P134"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.5406,
+          "y": 0.8218
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED127",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_5"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.5229,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB27",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P136"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.4573,
+          "y": 0.8218
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED126",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_6"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.4401,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB26",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P138"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.376,
+          "y": 0.8218
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED125",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_7"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.3584,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB25",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P140"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.2932,
+          "y": 0.8218
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED124",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_8"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.2766,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB24",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_9"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.1937,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB23",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "CB_10"
+        },
+        "position": {
+          "height": 0.1442,
+          "width": 0.047,
+          "x": 0.0208,
+          "y": 0.5756
+        },
+        "props": {
+          "params": {
+            "DeviceName": "CB20",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "EarthToBusbarVisible": false,
+            "EarthTop": false,
+            "Rackable": true,
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/CB"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_21"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.3505,
+          "x": 0.4433,
+          "y": 0.2625
+        },
+        "props": {
+          "style": {
+            "classes": "UI/Text/Heading1"
+          },
+          "text": "International Zone Substation - Bus 3 (Tx 5)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P723"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.8698,
+          "y": 0.78
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED031",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P723"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P521"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.7849,
+          "y": 0.7802
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED030",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P522"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.4573,
+          "y": 0.7802
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED026",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P523"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.3761,
+          "y": 0.781
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED025",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P525"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.2109,
+          "y": 0.781
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED023",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P724"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.0385,
+          "y": 0.781
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED020",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P723"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0458,
+          "x": 0.43,
+          "y": 0.4692
+        },
+        "props": {
+          "text": "Bus No 3",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.0198,
+          "y": 0.9633
+        },
+        "props": {
+          "text": "Bus Tie 2-3",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/HV/International/substation-1"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.1932,
+          "y": 0.9629
+        },
+        "props": {
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "text": "CSB-1 (CB 11)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/HV/International/ulm-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.0234,
+          "x": 0.277,
+          "y": 0.9629
+        },
+        "props": {
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "text": "ULM (CB 1)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/HV/International/substation-7"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_10"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.358,
+          "y": 0.9636
+        },
+        "props": {
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "text": "Sub 7 (CB 1)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/HV/International/substation-4"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.4396,
+          "y": 0.9636
+        },
+        "props": {
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "text": "Sub 4 (CB 7)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/HV/International/acs2-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.5221,
+          "y": 0.9636
+        },
+        "props": {
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "text": "ACS 2 (SW 1)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/HV/International/substation-1a"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.6857,
+          "y": 0.9636
+        },
+        "props": {
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "text": "CSB 1A (CB 1)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.8511,
+          "y": 0.9636
+        },
+        "props": {
+          "text": "Bus Tie 1-3",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.6055,
+          "y": 0.9636
+        },
+        "props": {
+          "text": "Spare",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "page": "/HV/International/wler-substation"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Label_16"
+        },
+        "position": {
+          "height": 0.0313,
+          "width": 0.026,
+          "x": 0.7669,
+          "y": 0.9636
+        },
+        "props": {
+          "style": {
+            "classes": "HoverPointer"
+          },
+          "text": "WLER (CB 5)",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P526"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.7034,
+          "y": 0.781
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED029",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P521"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P123"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.5405,
+          "y": 0.7802
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED027",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "RED615"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.2934,
+          "y": 0.781
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED024",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/RED615"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "MiCOM P124"
+        },
+        "position": {
+          "height": 0.0349,
+          "width": 0.0517,
+          "x": 0.2105,
+          "y": 0.8215
+        },
+        "props": {
+          "params": {
+            "deviceName": "IED123",
+            "deviceParentPath": "High Voltage/International/IZS Substation"
+          },
+          "path": "Templates/HV/IEDs/MiCOM P123"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "SitopUPS"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.0661,
+          "y": 0.3965
+        },
+        "props": {
+          "params": {
+            "DeviceName": "UPS 3",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/UPS/SitopUPS"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Battery Charger"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.0141,
+          "y": 0.3946
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Battery Charger 2",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Battery Chargers/Battery Charger"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC_0"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.013,
+          "y": 0.1779
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC2 Status",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "PLC"
+        },
+        "position": {
+          "height": 0.0817,
+          "width": 0.0547,
+          "x": 0.0135,
+          "y": 0.0817
+        },
+        "props": {
+          "params": {
+            "DeviceName": "PLC1 Status",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/PLC"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bus Earthed"
+        },
+        "position": {
+          "height": 0.0548,
+          "rotate": {
+            "angle": "180deg"
+          },
+          "width": 0.0146,
+          "x": 0.0995,
+          "y": 0.519
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2/Bus3 Earthed"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs920",
+              "name": "defs920",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 12.315,-12.749185 -9.9588,-0.0051",
+                  "id": "path11",
+                  "name": "path11",
+                  "stroke": {
+                    "width": "0.80302px"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 9.9585,-15.157785 -5.0774,-0.0098",
+                  "id": "path13",
+                  "name": "path13",
+                  "stroke": {
+                    "width": "0.79838px"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 8.565,-17.565785 -2.2964,-0.02092",
+                  "id": "path15",
+                  "name": "path15",
+                  "stroke": {
+                    "width": "0.78722px"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M 7.4254,-12.267885 7.4225,2.7661146",
+                  "id": "path17",
+                  "name": "path17",
+                  "stroke": {
+                    "width": "0.74263px"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M 7.4225,2.7665146 0.3238,14.832515",
+                  "id": "path19",
+                  "name": "path19",
+                  "stroke": {
+                    "width": "0.74263px"
+                  },
+                  "type": "path"
+                }
+              ],
+              "fill": {
+                "paint": "transparent",
+                "rule": "evenodd"
+              },
+              "id": "g21",
+              "name": "g21",
+              "stroke": {
+                "linecap": "round",
+                "paint": "#008000"
+              },
+              "transform": "matrix(0.8273,0,0,0.6548,-0.011416,12.75)",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 10.583 22.49"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Arc Flash"
+        },
+        "position": {
+          "height": 0.0808,
+          "width": 0.0745,
+          "x": 0.0438,
+          "y": 0.5058
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Arc Flash Relay 21",
+            "DeviceParentPath": "High Voltage/International/IZS Substation/Bus3 PLC1 and PLC2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/HV/Arc Flash/Arc Flash"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Modbus Gateway_2"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.0672,
+          "x": 0.0067,
+          "y": 0.2764
+        },
+        "props": {
+          "params": {
+            "DeviceName": "Gateway 2",
+            "DeviceParentPath": "High Voltage/International/IZS Substation",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Comms/Modbus Gateway"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "pipes": [
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_2",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.8641,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.8641,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_3",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.6979,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.6979,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_6",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.5349,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.5349,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_7",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.4521,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.4521,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_8",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.3705,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.3705,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--infoSecondary)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_9",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.2885,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.2885,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_10",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.2057,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.2057,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--symbolFill--faulted)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_12",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.0327,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.0327,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_11",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.2005,
+                "y": 0.1721
+              }
+            ],
+            "x": 0.2005,
+            "y": 0.2481
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_13",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.2005,
+                "y": 0.0561
+              }
+            ],
+            "x": 0.2005,
+            "y": 0.1317
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_14",
+          "origin": {
+            "connections": [
+              {
+                "connections": [
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.1134,
+                        "y": 0.624
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.0327,
+                            "y": 0.624
+                          },
+                          {
+                            "x": 0.0208,
+                            "y": 0.501
+                          }
+                        ],
+                        "x": 0.0327,
+                        "y": 0.501
+                      }
+                    ],
+                    "x": 0.1134,
+                    "y": 0.501
+                  },
+                  {
+                    "connections": [
+                      {
+                        "connections": [],
+                        "x": 0.2057,
+                        "y": 0.624
+                      },
+                      {
+                        "connections": [
+                          {
+                            "connections": [],
+                            "x": 0.2885,
+                            "y": 0.624
+                          },
+                          {
+                            "connections": [
+                              {
+                                "connections": [],
+                                "x": 0.3705,
+                                "y": 0.6231
+                              },
+                              {
+                                "connections": [
+                                  {
+                                    "connections": [],
+                                    "x": 0.4521,
+                                    "y": 0.624
+                                  },
+                                  {
+                                    "connections": [
+                                      {
+                                        "connections": [],
+                                        "x": 0.5349,
+                                        "y": 0.6231
+                                      },
+                                      {
+                                        "connections": [
+                                          {
+                                            "connections": [],
+                                            "x": 0.6185,
+                                            "y": 0.6231
+                                          },
+                                          {
+                                            "connections": [
+                                              {
+                                                "connections": [],
+                                                "x": 0.6979,
+                                                "y": 0.6231
+                                              },
+                                              {
+                                                "connections": [
+                                                  {
+                                                    "connections": [],
+                                                    "x": 0.7799,
+                                                    "y": 0.6231
+                                                  },
+                                                  {
+                                                    "connections": [
+                                                      {
+                                                        "connections": [],
+                                                        "x": 0.8641,
+                                                        "y": 0.624
+                                                      },
+                                                      {
+                                                        "x": 0.8755,
+                                                        "y": 0.501
+                                                      }
+                                                    ],
+                                                    "x": 0.8641,
+                                                    "y": 0.501
+                                                  }
+                                                ],
+                                                "x": 0.7799,
+                                                "y": 0.501
+                                              }
+                                            ],
+                                            "x": 0.6979,
+                                            "y": 0.501
+                                          }
+                                        ],
+                                        "x": 0.6185,
+                                        "y": 0.501
+                                      }
+                                    ],
+                                    "x": 0.5349,
+                                    "y": 0.501
+                                  }
+                                ],
+                                "x": 0.4521,
+                                "y": 0.501
+                              }
+                            ],
+                            "x": 0.3705,
+                            "y": 0.501
+                          }
+                        ],
+                        "x": 0.2885,
+                        "y": 0.501
+                      }
+                    ],
+                    "x": 0.2057,
+                    "y": 0.501
+                  }
+                ],
+                "x": 0.2005,
+                "y": 0.501
+              }
+            ],
+            "x": 0.2005,
+            "y": 0.2981
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_1",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.6185,
+                "y": 0.6741
+              }
+            ],
+            "x": 0.6185,
+            "y": 0.9602
+          },
+          "start": "none",
+          "stroke": "var(--neutral-60)",
+          "visible": true,
+          "width": 3
+        },
+        {
+          "appearance": "p\u0026id",
+          "end": "none",
+          "fill": "",
+          "flanges": true,
+          "lineVariant": "solid",
+          "name": "pipe_4",
+          "origin": {
+            "connections": [
+              {
+                "x": 0.7799,
+                "y": 0.9602
+              }
+            ],
+            "x": 0.7799,
+            "y": 0.6741
+          },
+          "start": "none",
+          "stroke": "var(--dev-sym-paused)",
+          "visible": true,
+          "width": 3
+        }
+      ],
+      "style": {
+        "classes": "UI/Pages/Background"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

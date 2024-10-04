@@ -1,0 +1,575 @@
+{
+  "custom": {},
+  "params": {
+    "deviceName": ""
+  },
+  "propConfig": {
+    "custom.diagnostics": {
+      "persistent": true
+    },
+    "params.deviceName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t# clear out the current device selection in the device list and send a message to the\n\t# \u0027update_device_name\u0027 message handler to set the main view\u0027s deviceName custom prop\n\t# to None \n\n\tself.parent.parent.getChild(\"deviceListContainer\").getChild(\"table\").props.selection.selectedRow \u003d None\n\tsystem.perspective.sendMessage(\u0027update_device_name\u0027,payload\u003d{\u0027name\u0027:None},scope\u003d\u0027page\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "go_back"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# if deviceName param is not equal to the empty string or None, then\n\t# a device must be selected and this \u0027back\u0027 button should be visible so\n\t# that the user can \u0027navigate\u0027 back to select a different device\n\t\n\tif value not in [\u0027\u0027,None]:\n\t\treturn True\n\telse:\n\t\treturn False",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "path": "material/chevron_left",
+              "style": {
+                "classes": "device-diagnostics/icon"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "title"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# this label is used to either display the name of this resource, \u0027Device Diagnostics\u0027,\n\t# or the name of the selected device (based on the deviceName view param)\n\t\n\tif value not in [\u0027\u0027,None]:\n\t\treturn \u0027Selected Device: \u0027 + value\n\telse:\n\t\treturn \u0027Device Diagnostics\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": 26,
+                "marginLeft": "8px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "header"
+        },
+        "position": {
+          "basis": "50px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "classes": "device-diagnostics/header"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "basis": "50px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "marginLeft": "5px"
+                  },
+                  "text": "Device List"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t# if a device is selected, then this will \u0027clear out\u0027 the device selection;\n\t# by setting selectedRow to None, this triggers the table\u0027s onSelectionChange\n\t# event, which will send a message to the \u0027update_device_name\u0027 message\n\t# handler on the \u0027main\u0027 view (to set the selected device to null)\n\t\n\t# this will also refresh the data in the device list\n\t\n\tself.parent.parent.getChild(\"table\").props.selection.selectedRow \u003d None\n\tself.parent.parent.getChild(\"table\").refreshBinding(\u0027props.data\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "refresh"
+                },
+                "position": {
+                  "basis": "25px",
+                  "shrink": 0
+                },
+                "props": {
+                  "path": "material/refresh",
+                  "style": {
+                    "cursor": "pointer"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "titleContainer"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "device-diagnostics/header"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "component": {
+                "onSelectionChange": {
+                  "config": {
+                    "script": "\t# when the selected row changes, this sends a message to the\n\t# \u0027update_device_name\u0027 message handler on the \u0027main\u0027 view to\n\t# update the selected device custom prop\n\t\n\tif event.selectedRow \u003d\u003d None:\n\t\tpayload \u003d {\u0027name\u0027:None}\n\telse:\n\t\tpayload \u003d {\u0027name\u0027:event.data[0][\u0027Name\u0027]}\n\tsystem.perspective.sendMessage(\u0027update_device_name\u0027,payload\u003dpayload,scope\u003d\u0027page\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "table"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "expression": "0"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# this gets the list of device connections from the gateway and\n\t# forms the dataset for the device list table\n\t\n\tdata \u003d []\n\t\n\tdevice_ds \u003d system.device.listDevices()\n\t\n\tfor x in range(0,device_ds.getRowCount()):\n\t\tname \u003d device_ds.getValueAt(x,\u0027Name\u0027)\n\t\tdriver \u003d device_ds.getValueAt(x,\u0027Driver\u0027)\n\t\t\n\t\t# if a device is disabled, then the value in the State column is \u0027N/A\u0027 (in the\n\t\t# ds returned from system.device.listDevices); instead, \u0027Disabled\u0027 is displayed\n\t\t\n\t\tif device_ds.getValueAt(x,\u0027Enabled\u0027) \u003d\u003d False:\n\t\t\tstatus \u003d \u0027Disabled\u0027\n\t\telse:\n\t\t\tstatus \u003d device_ds.getValueAt(x,\u0027State\u0027)\n\t\n\t\trow \u003d {\u0027Name\u0027:name,\u0027Driver\u0027:driver,\u0027Status\u0027:status}\n\t\tdata.append(row)\n\t\n\treturn data",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Name",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "center",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "center",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": false,
+                  "sort": "none",
+                  "sortable": false,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Driver",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "center",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "center",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": false,
+                  "sort": "none",
+                  "sortable": false,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Status",
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "center",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "center",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": false,
+                  "sort": "none",
+                  "sortable": false,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                }
+              ],
+              "pager": {
+                "bottom": false
+              },
+              "selection": {
+                "data": [
+                  {
+                    "Driver": "ModbusTcp",
+                    "Name": "SubIZS_MXB1v2",
+                    "Status": "Disabled"
+                  }
+                ],
+                "selectedColumn": "Name",
+                "selectedRow": 3
+              },
+              "style": {
+                "borderStyle": "none"
+              },
+              "virtualized": false
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "deviceListContainer"
+        },
+        "position": {
+          "basis": "90%",
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "transforms": [
+                {
+                  "code": "\t# if a device is currently selected (deviceName param is not equal to the empty string or None),\n\t# then we should not display the device list table; otherwise, we should display it\n\t\n\tif value not in [\u0027\u0027,None]:\n\t\treturn False\n\telse:\n\t\treturn True",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "device-diagnostics/main-section",
+            "marginBottom": "5px",
+            "marginLeft": "5px",
+            "marginRight": "5px",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "title"
+                },
+                "position": {
+                  "basis": "50px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "marginLeft": "5px"
+                  },
+                  "text": "Diagnostics"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "titleContainer"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "device-diagnostics/header"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "diagnostics"
+            },
+            "position": {
+              "basis": "320px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.deviceName": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.deviceName"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "path": "device-diagnostics/framework/diagnostics-sm"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "diagnosticsContainer"
+        },
+        "position": {
+          "basis": "60%",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.deviceName"
+              },
+              "transforms": [
+                {
+                  "code": "\t# if the deviceName param is not equal to the empty string or None, then display\n\t# the diagnostics; otherwise, do not display the diagnostics\n\t\n\tif value not in [\u0027\u0027,None]:\n\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "classes": "device-diagnostics/main-section",
+            "marginBottom": "5px",
+            "marginLeft": "5px",
+            "marginRight": "5px",
+            "marginTop": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

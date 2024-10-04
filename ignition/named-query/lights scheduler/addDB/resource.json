@@ -1,0 +1,80 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "sql_data",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "d8870f0e0d0ce384f12771a5a3d5bf56e6a8fdc936bf45d7055ffb1d97533417",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2023-02-10T04:37:01Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "db_name",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "plc_name",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "day_lights",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "night_lights",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "off_time",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "on_time",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "dynalite",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "enabled",
+        "sqlType": 6
+      },
+      {
+        "type": "QueryString",
+        "identifier": "table_name",
+        "sqlType": 7
+      }
+    ]
+  }
+}

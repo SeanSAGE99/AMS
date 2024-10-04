@@ -1,0 +1,1021 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1040,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "P6 Overview"
+        },
+        "position": {
+          "height": 0.923,
+          "width": 1,
+          "y": 0.0385
+        },
+        "props": {
+          "fit": {
+            "mode": "fill"
+          },
+          "source": "/system/images/CarParks/International/P6 Overview.svg"
+        },
+        "type": "ia.display.image"
+      },
+      {
+        "meta": {
+          "name": "Top Strip"
+        },
+        "position": {
+          "height": 0.0385,
+          "width": 0.6125,
+          "x": 0.3832
+        },
+        "props": {
+          "params": {
+            "alarmsVisible": true,
+            "commsVisible": false,
+            "maintenanceVisible": false,
+            "sitePath": "International/Precinct/P6 Car Park",
+            "trendsVisible": true
+          },
+          "path": "Navigation/Site Navigation Small"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Street Lights DB"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0729,
+          "x": 0.359,
+          "y": 0.9395
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBXGE-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.7226,
+          "y": 0.798
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 4",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_0"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.7434,
+          "y": 0.798
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 3",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_1"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.7643,
+          "y": 0.798
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 2",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Lift_2"
+        },
+        "position": {
+          "height": 0.0525,
+          "width": 0.02844,
+          "x": 0.7851,
+          "y": 0.798
+        },
+        "props": {
+          "params": {
+            "alarmRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Lift 1",
+            "deviceParentPath": "International/Precinct/P6 Car Park",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          },
+          "path": "Templates/Internal Transport/Lift"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Air Conditioner"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.1125,
+          "x": 0.7088,
+          "y": 0.4067
+        },
+        "props": {
+          "params": {
+            "deviceName": "Air Conditioner",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 1/P6 DRM12 Air Conditioner Units",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Car Parks/ppuAir Conditioner"
+          },
+          "path": "Templates/Car Parks/Air Conditioner"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "page": "/International/Car Parks/P6 Car Park/MSB Power Metering"
+              },
+              "scope": "C",
+              "type": "nav"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0646,
+          "x": 0.1118,
+          "y": 0.7603
+        },
+        "props": {
+          "style": {
+            "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text"
+          },
+          "text": "MSB Meters",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Boolean Status with Alarm"
+        },
+        "position": {
+          "height": 0.0294,
+          "width": 0.1167,
+          "x": 0.1125,
+          "y": 0.1328
+        },
+        "props": {
+          "params": {
+            "deviceName": "PE Cell 1",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC North East"
+          },
+          "path": "Templates/Car Parks/Boolean Status with Alarm"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Boolean Status with Alarm_0"
+        },
+        "position": {
+          "height": 0.0294,
+          "width": 0.1167,
+          "x": 0.1125,
+          "y": 0.1674
+        },
+        "props": {
+          "params": {
+            "deviceName": "PE Cell 2",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC North East"
+          },
+          "path": "Templates/Car Parks/Boolean Status with Alarm"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump"
+        },
+        "position": {
+          "height": 0.0882,
+          "width": 0.04816,
+          "x": 0.1123,
+          "y": 0.8259
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Diesel Fire Pump 2",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level/Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Simple Pump_0"
+        },
+        "position": {
+          "height": 0.0882,
+          "width": 0.04816,
+          "x": 0.2058,
+          "y": 0.8259
+        },
+        "props": {
+          "params": {
+            "PumpRight": false,
+            "alwaysVisible": true,
+            "deviceName": "Diesel Fire Pump 1",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level/Pumps",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": ""
+          },
+          "path": "Templates/WMS/Simple Pump"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Pumps_1"
+        },
+        "position": {
+          "height": 0.12117,
+          "width": 0.06566,
+          "x": 0.3968,
+          "y": 0.8124
+        },
+        "props": {
+          "params": {
+            "Analogue1Name": "",
+            "Analogue2Name": "",
+            "GeoPage": true,
+            "LabelOverride": "P6 Sewer Pump Station",
+            "Pump1Name": "Pump 1",
+            "Pump2Name": "Pump 2",
+            "Pump3Name": "Pump 3",
+            "Pump4Name": "Macerator",
+            "PumpRight": false,
+            "WellOrPit": "Well",
+            "alwaysVisible": true,
+            "combinedPump": "",
+            "deviceName": "P6 Sewer Pump Station",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Floor",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "popupWindow": "Popups/WMS/ppuPumps"
+          },
+          "path": "Templates/WMS/Pumps"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L10"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.3023
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX11-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 11",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L9"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.3484
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX10-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 10",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L8"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.3946
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX09-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 9",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L7"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.4407
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX08-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 8",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L6"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.4869
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX07-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 7",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L11"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.533
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX06-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 6",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L12"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.5792
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX05-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 5",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L13"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.6253
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX04-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 4",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L14"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.6715
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX03-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 3",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L15"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.7176
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX02-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L16"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.7638
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX01-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L17"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.2697,
+          "y": 0.8099
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX0G-S",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L18"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.3023
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX11-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 11",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L19"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.3484
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX10-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 10",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L20"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.3946
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX09-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 9",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L21"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.4407
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX08-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 8",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L22"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.4869
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX07-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 7",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L23"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.533
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX06-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 6",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L24"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.5792
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX05-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 5",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L25"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.6253
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX04-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 4",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L26"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.6715
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX03-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 3",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L27"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.7176
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX02-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 2",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L28"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.7638
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX01-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Level 1",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Distribution Board_L29"
+        },
+        "position": {
+          "height": 0.0327,
+          "width": 0.0885,
+          "x": 0.5942,
+          "y": 0.8099
+        },
+        "props": {
+          "params": {
+            "alwaysVisible": true,
+            "deviceName": "P6_DBX0G-N",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level",
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 8pt)",
+            "popupWindow": "Popups/Distribution Boards/Non Standard/Siemens DB with Load"
+          },
+          "path": "Templates/Distribution Boards/Distribution Board"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Maintenance Status Command Set_0"
+        },
+        "position": {
+          "height": 0.0294,
+          "width": 0.1667,
+          "x": 0.5897,
+          "y": 0.9409
+        },
+        "props": {
+          "params": {
+            "label": "Lights Maintenance Mode",
+            "onOffCommandPLC1": {
+              "tagParentPath": "International/Precinct/P6 Car Park/Level 7/P6 Car Park North East Riser PLC/Light Maintenance Mode/Control"
+            },
+            "onOffCommandPLC2": {
+              "tagParentPath": "International/Precinct/P6 Car Park/Ground Level/P6 Car Park South West Riser PLC/Light Maintenance Mode/Control"
+            },
+            "singleCommandPLC1": {
+              "tagParentPath": "International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC North East/Light Maintenance Mode Level 8-11/Control"
+            },
+            "singleCommandPLC2": {
+              "tagParentPath": "International/Precinct/P6 Car Park/Level 9/P6 Car Park Extension PLC South West/Light Maintenance Mode Level 8-11/Control"
+            },
+            "statusTag": {
+              "tagName": "On",
+              "tagParentPath": "International/Precinct/P6 Car Park/Ground Level/P6 Car Park South West Riser PLC/Light Maintenance Mode/Status"
+            }
+          },
+          "path": "Templates/Car Parks/Maintenance Status Command Set"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.359,
+          "y": 0.9722
+        },
+        "props": {
+          "text": "Street Lights",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Boolean Status with Alarm_1"
+        },
+        "position": {
+          "height": 0.0298,
+          "width": 0.138,
+          "x": 0.0911,
+          "y": 0.0971
+        },
+        "props": {
+          "params": {
+            "deviceName": "P6 Ramp Light Sensor",
+            "deviceParentPath": "International/Precinct/P6 Car Park/Ground Level/P6 Car Park South West Riser PLC"
+          },
+          "path": "Templates/Car Parks/Boolean Status with Alarm"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.2092,
+          "y": 0.2237
+        },
+        "props": {
+          "text": "South West Riser",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0213,
+          "width": 0.0729,
+          "x": 0.6351,
+          "y": 0.2237
+        },
+        "props": {
+          "text": "North East Riser",
+          "textStyle": {
+            "fontSize": "clamp(4pt, calc(0.4*(1.0vmin + 1.0vmax)), 18pt)",
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.aspectRatio": {
+        "binding": {
+          "config": {
+            "expression": "{view.props.defaultSize.width} + \u0027:\u0027 + {view.props.defaultSize.height}"
+          },
+          "type": "expr"
+        }
+      },
+      "props.pipes[0].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[1].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      },
+      "props.pipes[2].visible": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "direct",
+            "tagPath": "[default]International/Distribution Boards Visible"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

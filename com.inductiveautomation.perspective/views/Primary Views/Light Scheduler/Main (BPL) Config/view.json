@@ -1,0 +1,2210 @@
+{
+  "custom": {
+    "table_name": "T1LightScheduler"
+  },
+  "params": {
+    "areaFilter": "International",
+    "siteFilter": "BPG_DBX01"
+  },
+  "propConfig": {
+    "custom.filterText": {
+      "persistent": true
+    },
+    "custom.table_name": {
+      "binding": {
+        "config": {
+          "path": "/root/DBconfig/FlexContainer_1/FlexContainer/Dropdown.props.value"
+        },
+        "transforms": [
+          {
+            "fallback": null,
+            "inputType": "scalar",
+            "mappings": [
+              {
+                "input": "International",
+                "output": "T1LightScheduler"
+              },
+              {
+                "input": "Domestic",
+                "output": "T2LightScheduler"
+              }
+            ],
+            "outputType": "scalar",
+            "type": "map"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.areaFilter": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.filterText": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.siteFilter": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1920
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "position": {
+              "basis": "24px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "marginBottom": "auto",
+                "marginTop": "auto",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "component": {
+                "onEditCellCommit": {
+                  "config": {
+                    "script": "\trowToChange \u003d event.row\n\tcolToChange \u003d event.column\n\tvalue \u003d event.value\n#\tself.props.data \u003d system.dataset.setValue(self.props.data, rowToChange, colToChange, event.value)\n\tid \u003d self.props.data.getValueAt(rowToChange, \u0027Id\u0027)\n\tsystem.perspective.print(id)\n\tquery \u003d \"UPDATE \" + self.view.custom.table_name + \" SET %s \u003d ? WHERE Id \u003d ?\" % colToChange\n\targs \u003d [value,id]\n\t\n\tsystem.db.runPrepUpdate(query, args, \u0027sql_data\u0027)\n\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Table"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "table_name": "{view.custom.table_name}"
+                    },
+                    "queryPath": "lights scheduler/Select Terminal DBs",
+                    "returnFormat": "dataset"
+                  },
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "cells": {
+                "allowEditOn": "single-click"
+              },
+              "columns": [
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "Id",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "DB_Name",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": false,
+                  "field": "PLC_Name",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "Dynalite",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "Enabled",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "Day",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "Curfew",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "Off_Time",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                },
+                {
+                  "align": "center",
+                  "boolean": "checkbox",
+                  "dateFormat": "MM/DD/YYYY",
+                  "editable": true,
+                  "field": "On_Time",
+                  "filter": {
+                    "boolean": {
+                      "condition": ""
+                    },
+                    "date": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "enabled": false,
+                    "number": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "string": {
+                      "condition": "",
+                      "value": ""
+                    },
+                    "visible": "on-hover"
+                  },
+                  "footer": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "header": {
+                    "align": "center",
+                    "justify": "left",
+                    "style": {
+                      "classes": ""
+                    },
+                    "title": ""
+                  },
+                  "justify": "auto",
+                  "number": "value",
+                  "numberFormat": "0,0.##",
+                  "progressBar": {
+                    "bar": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "max": 100,
+                    "min": 0,
+                    "track": {
+                      "color": "",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "value": {
+                      "enabled": true,
+                      "format": "0,0.##",
+                      "justify": "center",
+                      "style": {
+                        "classes": ""
+                      }
+                    }
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sort": "none",
+                  "sortable": true,
+                  "strictWidth": false,
+                  "style": {
+                    "classes": ""
+                  },
+                  "toggleSwitch": {
+                    "color": {
+                      "selected": "",
+                      "unselected": ""
+                    }
+                  },
+                  "viewParams": {},
+                  "viewPath": "",
+                  "visible": true,
+                  "width": ""
+                }
+              ],
+              "filter": {
+                "enabled": true
+              }
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "refresh-table",
+                  "pageScope": true,
+                  "script": "\t# implement your handler here\n\tparameters \u003d {\u0027table_name\u0027:self.view.custom.table_name}\n\tdata \u003d system.db.runNamedQuery(\u0027lights scheduler/Select Terminal DBs\u0027,parameters)\n\tself.props.data \u003d data",
+                  "sessionScope": false,
+                  "viewScope": false
+                }
+              ]
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "table"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label_0"
+                },
+                "props": {
+                  "style": {
+                    "fontWeight": "bold",
+                    "marginLeft": "5px"
+                  },
+                  "text": "Selected DB: "
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "32px"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "..../table/Table.props.selection.data[0].DB_Name"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value \u003d\u003d None:\n\t\tvalue \u003d \" \"\n\treturn value",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "paddingLeft": "5px"
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-no-shadow"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "text": "Area"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)\n\tsystem.perspective.sendMessage(\u0027refresh-dbs\u0027, scope\u003d\u0027page\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Dropdown"
+                    },
+                    "position": {
+                      "basis": "256px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.value": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.areaFilter"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "options": [
+                        {
+                          "label": "International",
+                          "value": "International"
+                        },
+                        {
+                          "label": "Domestic",
+                          "value": "Domestic"
+                        }
+                      ]
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "text": "DB Name:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\tsystem.perspective.sendMessage(\u0027refresh-dbplc\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Dropdown"
+                    },
+                    "position": {
+                      "basis": "256px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.value": {
+                        "binding": {
+                          "config": {
+                            "bidirectional": true,
+                            "path": "view.params.siteFilter"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "options": {
+                        "$": [
+                          "ds",
+                          192,
+                          1684819336777
+                        ],
+                        "$columns": [
+                          {
+                            "data": [
+                              "BP1_DBX04",
+                              "BP1_DBX05",
+                              "BP1_DBX10",
+                              "BP1_DBX11",
+                              "BP1_DBX17",
+                              "BP1_DBX51",
+                              "BP1_DBX52",
+                              "BP2_DBX04",
+                              "BP2_DBX06",
+                              "BP2_DBX06C",
+                              "BP2_DBX07",
+                              "BP2_DBX07A",
+                              "BP2_DBX08A",
+                              "BP2_DBX09A",
+                              "BP2_DBX10A",
+                              "BP2_DBX11",
+                              "BP2_DBX12",
+                              "BP2_DBX14",
+                              "BP2_DBX17",
+                              "BP2_DBX25",
+                              "BP2_DBX30",
+                              "BP2_DBX31",
+                              "BP2_DBX53B",
+                              "BP2_DBX54",
+                              "BP3_DBX01",
+                              "BP3_DBX02",
+                              "BPG_DBX01",
+                              "BPG_DBX07",
+                              "BPG_DBX13A",
+                              "BPG_DBX14",
+                              "BPG_DBX15",
+                              "BPG_DBX16",
+                              "BPG_DBX51",
+                              "BPG_DBX52",
+                              "BT1_DBX101",
+                              "BT1_DBX31",
+                              "BT1_DBX33",
+                              "BT1_DBX36",
+                              "BT1_DBX37",
+                              "BTG_DBX43",
+                              "BTG_DBX51",
+                              "BTG_DBX52",
+                              "BTG_DBX53",
+                              "BTG_DBX53A",
+                              "BTG_DBX54",
+                              "BTG_DBX55",
+                              "BTG_DBX56",
+                              "BTG_DBX57",
+                              "BTG_DBX59",
+                              "CP1_DBX07",
+                              "CP1_DBX15",
+                              "CP1_DBX16",
+                              "CP1_DBX21",
+                              "CP2_DBX04",
+                              "CP2_DBX13",
+                              "CP2_DBX14",
+                              "CP2_DBX16",
+                              "CP2_DBX17",
+                              "CP2_DBX18",
+                              "CP2_DBX19",
+                              "CP2_DBX20",
+                              "CP2_DBX21",
+                              "CP2_DBX22",
+                              "CP3_DBX01",
+                              "CP3_DBX02",
+                              "CPG_DBX01",
+                              "CPG_DBX27",
+                              "CPG_DBX34",
+                              "CRD_DBX01",
+                              "CTG_DBX03",
+                              "CTG_DBX12",
+                              "CTG_DBX13",
+                              "T1_DBXG25",
+                              "T1_DBXVBUS"
+                            ],
+                            "name": "Value",
+                            "type": "String"
+                          },
+                          {
+                            "data": [
+                              "BP1_DBX04",
+                              "BP1_DBX05",
+                              "BP1_DBX10",
+                              "BP1_DBX11",
+                              "BP1_DBX17",
+                              "BP1_DBX51",
+                              "BP1_DBX52",
+                              "BP2_DBX04",
+                              "BP2_DBX06",
+                              "BP2_DBX06C",
+                              "BP2_DBX07",
+                              "BP2_DBX07A",
+                              "BP2_DBX08A",
+                              "BP2_DBX09A",
+                              "BP2_DBX10A",
+                              "BP2_DBX11",
+                              "BP2_DBX12",
+                              "BP2_DBX14",
+                              "BP2_DBX17",
+                              "BP2_DBX25",
+                              "BP2_DBX30",
+                              "BP2_DBX31",
+                              "BP2_DBX53B",
+                              "BP2_DBX54",
+                              "BP3_DBX01",
+                              "BP3_DBX02",
+                              "BPG_DBX01",
+                              "BPG_DBX07",
+                              "BPG_DBX13A",
+                              "BPG_DBX14",
+                              "BPG_DBX15",
+                              "BPG_DBX16",
+                              "BPG_DBX51",
+                              "BPG_DBX52",
+                              "BT1_DBX101",
+                              "BT1_DBX31",
+                              "BT1_DBX33",
+                              "BT1_DBX36",
+                              "BT1_DBX37",
+                              "BTG_DBX43",
+                              "BTG_DBX51",
+                              "BTG_DBX52",
+                              "BTG_DBX53",
+                              "BTG_DBX53A",
+                              "BTG_DBX54",
+                              "BTG_DBX55",
+                              "BTG_DBX56",
+                              "BTG_DBX57",
+                              "BTG_DBX59",
+                              "CP1_DBX07",
+                              "CP1_DBX15",
+                              "CP1_DBX16",
+                              "CP1_DBX21",
+                              "CP2_DBX04",
+                              "CP2_DBX13",
+                              "CP2_DBX14",
+                              "CP2_DBX16",
+                              "CP2_DBX17",
+                              "CP2_DBX18",
+                              "CP2_DBX19",
+                              "CP2_DBX20",
+                              "CP2_DBX21",
+                              "CP2_DBX22",
+                              "CP3_DBX01",
+                              "CP3_DBX02",
+                              "CPG_DBX01",
+                              "CPG_DBX27",
+                              "CPG_DBX34",
+                              "CRD_DBX01",
+                              "CTG_DBX03",
+                              "CTG_DBX12",
+                              "CTG_DBX13",
+                              "T1_DBXG25",
+                              "T1_DBXVBUS"
+                            ],
+                            "name": "Label",
+                            "type": "String"
+                          }
+                        ]
+                      }
+                    },
+                    "scripts": {
+                      "customMethods": [],
+                      "extensionFunctions": null,
+                      "messageHandlers": [
+                        {
+                          "messageType": "refresh-dbs",
+                          "pageScope": true,
+                          "script": "\tarea \u003d self.parent.parent.getChild(\"FlexContainer\").getChild(\"Dropdown\").props.value\n\theaders \u003d [\u0027Value\u0027, \u0027Label\u0027]\n\tdata \u003d []\n#\tdata.append([\u0027%\u0027])\n\t\t\t\n\tif area !\u003d \u0027%\u0027:\t\t\t\n\t\ttags \u003d system.tag.browse(area, filter\u003d{\u0027tagType\u0027:\u0027UdtInstance\u0027, \u0027recursive\u0027:True, \u0027name\u0027:\u0027*DBX*\u0027})\n\n\t\tif tags:\n\t\t\ttags \u003d [tag[\u0027name\u0027] for tag in tags]\n#\t\t\ttags \u003d [tag[\u0027fullPath\u0027] for tag in tags]\n#\t\t\tpaths \u003d [\u0027{}/Parameters/Site_Name\u0027.format(tag) for tag in tags]\n#\t\t\tvals \u003d system.tag.readBlocking(paths)\n#\t\t\tvals \u003d [val.value for val in vals]\n#\t\t\tvals \u003d sorted(vals)\n\t\t\tvals \u003d sorted(tags)\n\t\t\t\n\t\t\tfor val in vals:\n\t\t\t\tdata.append([val, val])\n\tdatads \u003d system.dataset.toDataSet(headers, data)\n\tself.props.options \u003d datads\n\tself.props.value \u003d \u0027%\u0027\n",
+                          "sessionScope": false,
+                          "viewScope": false
+                        },
+                        {
+                          "messageType": "pageload-refresh-dbs",
+                          "pageScope": true,
+                          "script": "\tarea \u003d self.parent.parent.getChild(\"FlexContainer\").getChild(\"Dropdown\").props.value\n\theaders \u003d [\u0027Value\u0027, \u0027Label\u0027]\n\tdata \u003d []\n#\tdata.append([\u0027%\u0027])\n\t\t\t\t\n\tif area !\u003d \u0027%\u0027 and area !\u003d \u0027General\u0027:\t\n\t\ttags \u003d system.tag.browse(area, filter\u003d{\u0027tagType\u0027:\u0027UdtInstance\u0027, \u0027recursive\u0027:True, \u0027name\u0027:\u0027Site Details\u0027})\n\t\t\n\t\tif tags:\n\t\t\ttags \u003d [tag[\u0027fullPath\u0027] for tag in tags]\n\t\t\tpaths \u003d [\u0027{}/Parameters/Site_Name\u0027.format(tag) for tag in tags]\n\t\t\tvals \u003d system.tag.readBlocking(paths)\n\t\t\tvals \u003d [val.value for val in vals]\n\t\t\tvals \u003d sorted(vals)\n\t\t\n\t\t\tfor val in vals:\n\t\t\t\tdata.append([val, val])\n\tdatads \u003d system.dataset.toDataSet(headers, data)\n\tself.props.options \u003d datads\n\t\t",
+                          "sessionScope": false,
+                          "viewScope": false
+                        }
+                      ]
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "DB Name"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "text": "PLC Name:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "TextField"
+                    },
+                    "position": {
+                      "basis": "378px"
+                    },
+                    "props": {
+                      "text": null
+                    },
+                    "scripts": {
+                      "customMethods": [],
+                      "extensionFunctions": null,
+                      "messageHandlers": [
+                        {
+                          "messageType": "refresh-dbplc",
+                          "pageScope": true,
+                          "script": "\tarea \u003d self.parent.parent.getChild(\"FlexContainer\").getChild(\"Dropdown\").props.value\n\tdbname \u003d self.parent.parent.getChild(\"DB Name\").getChild(\"Dropdown\").props.value\n\t\t\t\t\n\tif dbname and area!\u003d \u0027%\u0027:\t\t\t\n\t\ttags \u003d system.tag.browse(area, filter\u003d{\u0027tagType\u0027:\u0027UdtInstance\u0027, \u0027recursive\u0027:True, \u0027name\u0027:dbname})\n\t\n\t\tfor tag in tags.getResults():\n\t\t    if tag[\u0027fullPath\u0027]:\n\t\t    \ttag \u003d tag[\u0027fullPath\u0027]\n\t\t\tpath \u003d \u0027{}/Parameters/PLC Name\u0027.format(tag)\n\t\t\tvalues \u003d system.tag.readBlocking(path)\n\t\t    value \u003d values[0]\n\n\tself.props.text \u003d value.value\n",
+                          "sessionScope": false,
+                          "viewScope": false
+                        }
+                      ]
+                    },
+                    "type": "ia.input.text-field"
+                  }
+                ],
+                "meta": {
+                  "name": "PLC Name"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "text": "Day Lights:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Dropdown"
+                    },
+                    "position": {
+                      "basis": "256px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "options": {
+                        "$": [
+                          "ds",
+                          192,
+                          1674020944261
+                        ],
+                        "$columns": [
+                          {
+                            "data": [
+                              "0",
+                              "25",
+                              "50",
+                              "75",
+                              "100"
+                            ],
+                            "name": "Value",
+                            "type": "String"
+                          },
+                          {
+                            "data": [
+                              "Off",
+                              "25%",
+                              "50%",
+                              "75%",
+                              "100%"
+                            ],
+                            "name": "Label",
+                            "type": "String"
+                          }
+                        ]
+                      },
+                      "value": "100"
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "Day Lights"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "text": "Night Lights:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Dropdown"
+                    },
+                    "position": {
+                      "basis": "256px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "options": {
+                        "$": [
+                          "ds",
+                          192,
+                          1674020948162
+                        ],
+                        "$columns": [
+                          {
+                            "data": [
+                              "0",
+                              "25",
+                              "50",
+                              "75",
+                              "100"
+                            ],
+                            "name": "Value",
+                            "type": "String"
+                          },
+                          {
+                            "data": [
+                              "Off",
+                              "25%",
+                              "50%",
+                              "75%",
+                              "100%"
+                            ],
+                            "name": "Label",
+                            "type": "String"
+                          }
+                        ]
+                      },
+                      "value": "25"
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "Night Lights"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "text": "Off Time:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Dropdown"
+                    },
+                    "position": {
+                      "basis": "256px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "options": {
+                        "$": [
+                          "ds",
+                          192,
+                          1674021005013
+                        ],
+                        "$columns": [
+                          {
+                            "data": [
+                              "23",
+                              "0",
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                            ],
+                            "name": "Value",
+                            "type": "String"
+                          },
+                          {
+                            "data": [
+                              "23:00",
+                              "00:00",
+                              "01:00",
+                              "02:00",
+                              "03:00",
+                              "04:00",
+                              "05:00"
+                            ],
+                            "name": "Label",
+                            "type": "String"
+                          }
+                        ]
+                      },
+                      "value": "1"
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "Off Time"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "100px"
+                    },
+                    "props": {
+                      "text": "On Time:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Dropdown"
+                    },
+                    "position": {
+                      "basis": "256px",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "options": {
+                        "$": [
+                          "ds",
+                          192,
+                          1674021009987
+                        ],
+                        "$columns": [
+                          {
+                            "data": [
+                              "23",
+                              "0",
+                              "1",
+                              "2",
+                              "3",
+                              "4",
+                              "5"
+                            ],
+                            "name": "Value",
+                            "type": "String"
+                          },
+                          {
+                            "data": [
+                              "23:00",
+                              "00:00",
+                              "01:00",
+                              "02:00",
+                              "03:00",
+                              "04:00",
+                              "05:00"
+                            ],
+                            "name": "Label",
+                            "type": "String"
+                          }
+                        ]
+                      },
+                      "value": "3"
+                    },
+                    "type": "ia.input.dropdown"
+                  }
+                ],
+                "meta": {
+                  "name": "On Time"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Dynalite"
+                },
+                "position": {
+                  "basis": "36px"
+                },
+                "props": {
+                  "label": {
+                    "text": "Dynalite Controller in a DB"
+                  }
+                },
+                "type": "ia.input.toggle-switch"
+              },
+              {
+                "meta": {
+                  "name": "Enable"
+                },
+                "position": {
+                  "basis": "36px"
+                },
+                "props": {
+                  "label": {
+                    "text": "Light Scheduler Enabled"
+                  }
+                },
+                "type": "ia.input.toggle-switch"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "props": {
+                      "text": "Add Distribution Board:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\timport traceback\n\ttry:\n\t\tduplication \u003d \u0027false\u0027\n\t\tdb_name \u003d self.parent.parent.getChild(\"DB Name\").getChild(\"Dropdown\").props.value\n\t\ttable \u003d self.parent.parent.parent.parent.getChild(\"table\").getChild(\"Table\").props.data\n\t\tpyTable \u003d system.dataset.toPyDataSet(table)\n\t\t\n\t\t#system.perspective.print(pyTable[1])\n\t\t\n\t\tfor row in pyTable:\n\t\t    # Checking if db name already exsist in the dataset\n\t\t    if db_name \u003d\u003d row[1]:\n\t\t    \tduplication \u003d \u0027true\u0027\n\t\t   \t\t\n\t   \t\t\n#\t\tsystem.perspective.print(duplication)\n\t\t\n\t\tif duplication \u003d\u003d \u0027true\u0027:\n\t\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Distribution Board already exisit in the Light Scheduler!\"\n\t\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/Faulted\u0027\n\t\telse: \n\t\t\tplc_name \u003d self.parent.parent.getChild(\"PLC Name\").getChild(\"TextField\").props.text\n\t\t\tday_lights \u003d self.parent.parent.getChild(\"Day Lights\").getChild(\"Dropdown\").props.value\n\t\t\tnight_lights \u003d self.parent.parent.getChild(\"Night Lights\").getChild(\"Dropdown\").props.value\n\t\t\toff_time \u003d self.parent.parent.getChild(\"Off Time\").getChild(\"Dropdown\").props.value\n\t\t\ton_time \u003d self.parent.parent.getChild(\"On Time\").getChild(\"Dropdown\").props.value\n\t\t\tdynalite \u003d self.parent.parent.getChild(\"Dynalite\").props.selected\n\t\t\tenabled \u003d self.parent.parent.getChild(\"Enable\").props.selected\n\t\t\n#\t\t\tparams \u003d {\u0027db_name\u0027:db_name, \u0027plc_name\u0027:plc_name, \u0027day_lights\u0027:day_lights, \u0027night_lights\u0027:night_lights, \u0027off_time\u0027:off_time, \u0027on_time\u0027:on_time, \u0027dynalite\u0027:dynalite,\u0027enabled\u0027:enabled,\u0027table_name\u0027:self.view.custom.table_name}\n\t\t\tparams \u003d {\u0027db_name\u0027:db_name, \u0027plc_name\u0027:plc_name, \u0027day_lights\u0027:day_lights, \u0027night_lights\u0027:night_lights, \u0027off_time\u0027:off_time, \u0027on_time\u0027:on_time, \u0027dynalite\u0027:dynalite,\u0027enabled\u0027:enabled}\t\t\t\n\t\t\tsystem.perspective.print(params)\n\t\t\tsystem.db.runNamedQuery(\u0027lights scheduler/addDB\u0027, params)\n\t\t\t\n\t\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Distribution Board \" + db_name + \" added to the Light Scheduler!\"\n\t\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/On\u0027\n\t\t\t\n\t\t\n\t\t\n\texcept Exception, e:\n\t\ttb \u003d traceback.format_exc()\n\t\tsystem.perspective.print(tb)\n\t\t\n\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)\t\t\n"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Add Record",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Load Selected Trend"
+                      }
+                    },
+                    "position": {
+                      "basis": "76px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "expression": "if ({.../DB Name/Dropdown.props.value} !\u003d \u0027%\u0027,true, false)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "height": 30,
+                        "icon": {
+                          "path": "material/library_add"
+                        },
+                        "width": 30
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginBottom": "3px",
+                        "marginLeft": "5px",
+                        "marginRight": "100px",
+                        "marginTop": "3px"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "Add Record"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px",
+                    "marginTop": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-normal",
+                "paddingRight": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "props": {
+                      "text": "Delete Record:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "draggable": true,
+                            "id": "light_scheduler_delete_popup",
+                            "modal": false,
+                            "overlayDismiss": false,
+                            "resizable": false,
+                            "showCloseIcon": true,
+                            "type": "open",
+                            "viewParams": {
+                              "db_name": "{/root/table/Table.props.selection.data[0].DB_Name}",
+                              "id": "{/root/table/Table.props.selection.data[0].Id}",
+                              "table_name": "{view.custom.table_name}"
+                            },
+                            "viewPath": "Popups/Distribution Boards/Light Scheduler/Delete",
+                            "viewportBound": false
+                          },
+                          "scope": "C",
+                          "type": "popup"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Delete",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Delete Row"
+                      }
+                    },
+                    "position": {
+                      "basis": "76px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.enabled": {
+                        "binding": {
+                          "config": {
+                            "expression": "if(isNull({.../Table.props.selection.selectedRow}),\r\n\tFalse,\r\n\tif(hasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027),\r\n\t\t{.../Table.props.selection.data[0].username} \u003d \u0027SuperConf\u0027 || {.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName},\r\n\t\t{.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName}\r\n\t)\r\n)"
+                          },
+                          "enabled": false,
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "image": {
+                        "height": 30,
+                        "icon": {
+                          "path": "material/delete"
+                        },
+                        "width": 30
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginBottom": "3px",
+                        "marginLeft": "5px",
+                        "marginTop": "3px"
+                      },
+                      "text": ""
+                    },
+                    "scripts": {
+                      "customMethods": [],
+                      "extensionFunctions": null,
+                      "messageHandlers": [
+                        {
+                          "messageType": "delete-db",
+                          "pageScope": true,
+                          "script": "\timport traceback\n\ttry:\n\t\tsystem.db.runNamedQuery(\u0027lights scheduler/deleteDB\u0027,payload)\n\t\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Distribution Board deleted from the Light Scheduler\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/On\u0027\n\texcept Exception, e:\n\t\tsystem.perspective.print(traceback.format_exc())\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Cannot delete Distribution Board from the Light Scheduler\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/Faulted\u0027\n\t\t\t\t",
+                          "sessionScope": false,
+                          "viewScope": false
+                        }
+                      ]
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "180px"
+                    },
+                    "props": {
+                      "text": "Download to CSV:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "custom": {
+                      "key": "test1"
+                    },
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\timport traceback\n\t\n\ttry:\n\t\n\t\ttime \u003d system.date.now()\n\t\ttime \u003d system.date.format(time, \"yyyy-MM-dd HHmmss\")\n\t\ttime \u003d str(time)\n\t\ttable \u003d self.parent.parent.parent.getSibling(\"table\").getChild(\"Table\").props.data\n\t\tcsv \u003d system.dataset.toCSV(dataset \u003d table, showHeaders \u003d True, forExport \u003d True)\n\t\tsystem.perspective.print(csv)\n#\t\tfilePath \u003d \"C:\\\\myExports\\\\T1 Light Scheduler \" + time + \".csv\"\n\t\tfilename \u003d self.view.custom.table_name + \u0027 \u0027 + time + \u0027.csv\u0027\n\t\tsystem.perspective.download(filename, csv)\n#\t\tsystem.file.writeFile(filePath, csv)\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Light Scheduler downloaded to CSV file\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/On\u0027\n\t\t\n\texcept:\n\t\tsystem.perspective.print(traceback.format_exc())\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Cannot download Light Scheduler to CSV file\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/Faulted\u0027\n\t\t\n\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "FileDownload",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Download to CSV file"
+                      }
+                    },
+                    "position": {
+                      "basis": "76px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "image": {
+                        "height": 30,
+                        "icon": {
+                          "path": "material/cloud_download"
+                        },
+                        "width": 30
+                      },
+                      "style": {
+                        "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                        "marginBottom": "3px",
+                        "marginLeft": "5px",
+                        "marginRight": "5px",
+                        "marginTop": "3px"
+                      },
+                      "text": ""
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "184px"
+                    },
+                    "props": {
+                      "text": "Upload from CSV:"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "custom": {
+                      "fileName": "value"
+                    },
+                    "events": {
+                      "component": {
+                        "onFileReceived": {
+                          "config": {
+                            "script": "\t\n\timport csv\n\timport traceback\n\ttry:\n\t\t\n\t\tfile_name \u003d event.file.name\t\n\t\tfile_path \u003d \u0027C:\\\\ProgramData\\\\LightSchedulers\\\\\u0027 + file_name\n\t\tevent.file.copyTo(file_path)\n\t\tcontent \u003d event.file.getString() #filedata\n\t\t#system.perspective.print(content)\n\t\n\t\t# Check if this file has just been uploaded - to stop a double import (potential platform/browser bug)\n\t\tif file_name \u003c\u003e self.custom.fileName:\n\t\t\t# Call the import function on the table\n\t\t\t#\tself.parent.parent.getChild(\"Table\").importCSV(filename, filedata)\n\t\t\tself.custom.fileName \u003d file_name\n\t\n\t\t\t# start db transaction\n\t\t\ttxID \u003d system.db.beginTransaction(\u0027sql_data\u0027, timeout\u003d10000)\n\t\t\n\t\t\t# delete all orders from table\n\t\t\tquery1 \u003d \"TRUNCATE TABLE \" + self.view.custom.table_name\n\t\t\tsystem.db.runUpdateQuery(query1, \u0027sql_data\u0027, tx\u003dtxID)\n\t\t\n\t\t\t# insert new records in the table\n\t\t\tquery \u003d \"INSERT INTO \" + self.view.custom.table_name + \" (DB_Name, PLC_Name, Dynalite, Enabled, Day, Curfew, Off_Time, On_Time) VALUES {values}\"\n\t\t\t\n\t\t\t# open selected csv file\n\t\t\tcsvFile \u003d open(file_path, \u0027rU\u0027)\n\t\t\t#system.perspective.print(csvFile)\n\t\t\n\t\t\t# read selected csv file\n\t\t\tcsvRead \u003d csv.reader(csvFile)\n\t\t\t#skip first 5 rows\n\t\t\tfor row in range (5):\n\t\t\t\tnext(csvRead)\n\t\t\t\n\t\t\targs \u003d []\n\t\t\tvalues \u003d []\n\t\t\n\t\t\tfor row in csvRead:\n\t\t\t\tDB_Name \u003d row[1]\n\t\t\t\tPLC_Name \u003d row[2]\n\t\t\t\tDynalite \u003d row[3]\n\t\t\t\tEnabled \u003d row[4]\n\t\t\t\tDay \u003d row[5]\n\t\t\t\tCurfew \u003d row[6]\n\t\t\t\tOff_Time \u003d row[7]\n\t\t\t\tOn_Time \u003d row[8]\n\t\t\t\t# insert data into sql table\n\t\t\t\tvalues.append(\"(?,?,?,?,?,?,?,?)\")\n\t\t\t\targs.extend([DB_Name, PLC_Name, Dynalite, Enabled, Day, Curfew, Off_Time, On_Time])\n\t\t\tcsvFile.close()\n\t\t\t\n\t\t\tsystem.perspective.print(args)\n\t\t\n\t\t\tsystem.db.runPrepUpdate(query.format(values\u003d\", \".join(values)), args, \u0027sql_data\u0027, tx\u003dtxID)\n\t\t\tsystem.db.commitTransaction(txID)\n\t\t\tsystem.db.closeTransaction(txID)\n\t\t\t\n\t\t\t\n\t\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Light Scheduler uploaded from CSV file\"\n\t\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/On\u0027\n\t\t\t#system.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)\n\t\telse:\n\t\t\tself.custom.fileName \u003d \u0027\u0027\n\t\n\texcept Exception, e:\n\t\ttb \u003d traceback.format_exc()\n\t\tsystem.perspective.print(tb)\n\t\tself.parent.parent.getSibling(\"Result\").props.text \u003d \"Cannot upload Light Scheduler from CSV file\"\n\t\tself.parent.parent.getSibling(\"Result\").props.textStyle.classes \u003d \u0027Device/Status/Text/Faulted\u0027\n\t\t\t\n\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)\n\t\n\t\n\t"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "FileUpload",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Upload from csv file"
+                      }
+                    },
+                    "position": {
+                      "basis": "76px"
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "fileUploadIcon": {
+                        "color": "var(--neutral-80)",
+                        "style": {
+                          "cursor": "pointer"
+                        },
+                        "text": "Upload"
+                      },
+                      "maxUploads": 1,
+                      "supportedFileTypes": [
+                        "csv"
+                      ]
+                    },
+                    "type": "ia.input.fileupload"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_1"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "marginBottom": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "classes": "UI/Form/Panel-normal",
+                "overflow": "visible",
+                "paddingRight": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "38px"
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Form/Panel-normal"
+              },
+              "text": "Last Message:",
+              "textStyle": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Result"
+            },
+            "position": {
+              "basis": "72px"
+            },
+            "propConfig": {
+              "props.text": {
+                "onChange": {
+                  "enabled": false,
+                  "script": "\tsystem.perspective.sendMessage(\u0027refresh-table\u0027)"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "classes": "UI/Form/Panel-normal"
+              },
+              "textStyle": {
+                "classes": "Device/Status/Text/Faulted",
+                "fontStyle": "italic",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tshared.Lights.LightsScheduler()"
+                  },
+                  "enabled": false,
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Scheduler",
+              "tooltip": {
+                "enabled": true,
+                "text": "Delete Row"
+              }
+            },
+            "position": {
+              "basis": "76px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "meta.visible": {
+                "binding": {
+                  "config": {
+                    "expression": "isAuthorized(true,\u0027Authenticated\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "if(isNull({.../Table.props.selection.selectedRow}),\r\n\tFalse,\r\n\tif(hasRole(\u0027GroupSCADAIgnitionMaintenance\u0027, {session.props.auth.user.userName}, \u0027lgits.local\u0027),\r\n\t\t{.../Table.props.selection.data[0].username} \u003d \u0027SuperConf\u0027 || {.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName},\r\n\t\t{.../Table.props.selection.data[0].username} \u003d {session.props.auth.user.userName}\r\n\t)\r\n)"
+                  },
+                  "enabled": false,
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "image": {
+                "height": 30,
+                "icon": {
+                  "path": "material/highlight"
+                },
+                "width": 30
+              },
+              "style": {
+                "classes": "Input/Button/Body-normal Input/Button/Colour/Normal Input/Button/Text",
+                "marginBottom": "3px",
+                "marginLeft": "5px",
+                "marginTop": "3px"
+              },
+              "text": ""
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "DBconfig"
+        },
+        "position": {
+          "basis": "500px",
+          "display": null,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027refresh-table\u0027, scope\u003d\u0027page\u0027)\n"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "classes": "UI/Pages/Background",
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}
