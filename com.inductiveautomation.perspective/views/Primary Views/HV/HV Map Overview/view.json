@@ -185,7 +185,7 @@
         "urlTemplateParams": {}
       }
     ],
-    "selectedMap": "offlineStreet"
+    "selectedMap": "onlineStreet"
   },
   "params": {},
   "propConfig": {
@@ -222,7 +222,7 @@
         "children": [
           {
             "custom": {
-              "zoom": 15
+              "zoom": 17
             },
             "events": {
               "component": {
@@ -290,7 +290,7 @@
                   "type": "property"
                 }
               },
-              "props.layers.ui.view[10].params.visible": {
+              "props.layers.ui.view[11].params.visible": {
                 "binding": {
                   "config": {
                     "expression": "{[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Alarm}||{[default]Water Monitoring System/Domestic/Lords Road Pump Station/Eleventh Street Sewer Pump Station/Pump Station Communications Alarm}"
@@ -388,6 +388,18 @@
                         "zoomLevel": 13
                       },
                       "path": "_ProjectTemplates/Map Icons/Map_Substation",
+                      "shadow": true,
+                      "transparentBackground": true
+                    },
+                    {
+                      "lat": -35.50810917,
+                      "lng": 138.7736196,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Goolwa_PS_JubileeEst",
+                        "subArea": "Goolwa"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
                       "shadow": false,
                       "transparentBackground": true
                     },
@@ -505,18 +517,6 @@
                       "params": {
                         "area": "Alexandrina",
                         "siteId": "Goolwa_PS_HowellSt",
-                        "subArea": "Goolwa"
-                      },
-                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
-                      "shadow": false,
-                      "transparentBackground": true
-                    },
-                    {
-                      "lat": -35.50810917,
-                      "lng": 138.7736196,
-                      "params": {
-                        "area": "Alexandrina",
-                        "siteId": "Goolwa_PS_JubileeEst",
                         "subArea": "Goolwa"
                       },
                       "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
@@ -908,6 +908,18 @@
                       "transparentBackground": true
                     },
                     {
+                      "lat": -35.25772064,
+                      "lng": 138.8903703,
+                      "params": {
+                        "area": "Alexandrina",
+                        "siteId": "Strath_PoolBackwash",
+                        "subArea": "Strathalbyn"
+                      },
+                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "shadow": false,
+                      "transparentBackground": true
+                    },
+                    {
                       "lat": -35.53170376,
                       "lng": 138.6782535,
                       "params": {
@@ -944,14 +956,16 @@
                       "transparentBackground": true
                     },
                     {
-                      "lat": -35.25772064,
-                      "lng": 138.8903703,
+                      "lat": -33.93175,
+                      "lng": 151.1771,
                       "params": {
-                        "area": "Alexandrina",
-                        "siteId": "Strath_PoolBackwash",
-                        "subArea": "Strathalbyn"
+                        "deviceTagPath": "High Voltage/Domestic/Substation V",
+                        "navigationLabel": "Substation V",
+                        "navigationPage": "/HV/Domestic/substation-v",
+                        "visible": true,
+                        "zoomLevel": 13
                       },
-                      "path": "_ProjectTemplates/Map Icons/SiteType_WWPS",
+                      "path": "_ProjectTemplates/Map Icons/Map_Substation",
                       "shadow": false,
                       "transparentBackground": true
                     }
@@ -1101,8 +1115,8 @@
       "name": "root"
     },
     "position": {
-      "x": 25,
-      "y": 100
+      "x": -534,
+      "y": 161
     },
     "type": "ia.container.flex"
   }
